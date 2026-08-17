@@ -1,1 +1,34 @@
-# Repository-specific ignore rules will be added with implementation scaffolding.
+# Rust / Cargo build output
+# Canonical schemas, fixtures and committed generated artifacts stay tracked.
+target/
+*.rs.bk
+
+# TypeScript package build output (generators and generated packages)
+node_modules/
+dist/
+!generated/**/dist/
+*.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*
+
+# Test and coverage output
+*.profraw
+*.profdata
+/coverage/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/secrets/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editors
+/.idea/
+/.vscode/
+*.swp
