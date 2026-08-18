@@ -13,7 +13,6 @@ known = [
   "ratatoskr-platform",
   "ratatoskr-extractor",
   "ratatoskr-knowledge",
-  "ratatoskr-web",
   "ratatoskr-x",
 ]
 
@@ -69,7 +68,7 @@ lifecycle      = "proposed"                # proposed|accepted|published|depreca
 classification = "internal"                # public|internal|privileged (SECURITY.md separation rule)
 owner          = "ratatoskr-platform"
 producers      = ["ratatoskr-extractor", "ratatoskr-knowledge", "ratatoskr-platform", "ratatoskr-x"]
-consumers      = ["ratatoskr-platform", "ratatoskr-knowledge", "ratatoskr-web"]
+consumers      = ["ratatoskr-platform", "ratatoskr-knowledge"]
 crate_name     = "ratatoskr-event-envelope"
 canonical_path = "crates/event-envelope/src/envelope.rs"
 fixtures_dir   = "fixtures/core/event-envelope"
@@ -108,7 +107,7 @@ lifecycle      = "proposed"
 classification = "public"
 owner          = "ratatoskr-platform"
 producers      = ["ratatoskr-platform", "ratatoskr-extractor", "ratatoskr-knowledge"]
-consumers      = ["ratatoskr-web", "ratatoskr-platform"]
+consumers      = ["ratatoskr-platform"]
 crate_name     = "ratatoskr-error-contracts"
 canonical_path = "crates/error-contracts/src/envelope.rs"
 fixtures_dir   = "fixtures/core/error-envelope"
@@ -130,7 +129,7 @@ lifecycle      = "proposed"
 classification = "public"
 owner          = "ratatoskr-platform"
 producers      = ["ratatoskr-platform"]
-consumers      = ["ratatoskr-web", "ratatoskr-platform"]
+consumers      = ["ratatoskr-platform"]
 crate_name     = "ratatoskr-operation-contracts"
 canonical_path = "crates/operation-contracts/src/snapshot.rs"
 fixtures_dir   = "fixtures/platform/operation-snapshot"
@@ -177,7 +176,7 @@ lifecycle      = "proposed"
 classification = "internal"
 owner          = "ratatoskr-platform"
 producers      = ["ratatoskr-platform"]
-consumers      = ["ratatoskr-web", "ratatoskr-knowledge"]
+consumers      = ["ratatoskr-knowledge"]
 crate_name     = "ratatoskr-operation-contracts"
 canonical_path = "crates/operation-contracts/src/events.rs"
 fixtures_dir   = "fixtures/events/platform.operation.progressed.v1"
