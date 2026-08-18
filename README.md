@@ -171,6 +171,14 @@ Repository-local CI is expected to include formatting, linting, unit tests, JSON
 
 `ratatoskr-workspace` pins a compatible contracts commit together with the corresponding producer and consumer commits. Child repositories must remain buildable outside the workspace and must not commit relative path dependencies such as `../contracts` for production builds. The workspace may apply temporary local dependency overrides while validating a cross-repository changeset.
 
+Until milestone 10 publishes the first tagged packages, a consumer depends on a contract crate as a Cargo git dependency pinned to a full commit SHA:
+
+```toml
+ratatoskr-event-envelope = { git = "ssh://git@github.com/po4yka/ratatoskr-contracts.git", rev = "216924f1420c179ad2e87ffda6cf2135befb461e" }
+```
+
+This is the only sanctioned interim form. It satisfies the rule above because it is not a path dependency and it resolves identically from a clean checkout. A branch or a tag reference is not sufficient, because neither pins: a branch moves, and a tag can be moved. When milestone 10 lands, the `git`/`rev` pair is replaced by a version requirement against the published package, and the workspace lock records the version instead of the SHA.
+
 ## Non-goals
 
 - Shared persistence entities or migrations.
