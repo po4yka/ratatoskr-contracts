@@ -1,0 +1,176 @@
+# fixtures/invalid-expectations.toml
+#
+# Every file under any `invalid/` directory has an entry here, keyed by its path relative to
+# `fixtures/`. An "invalid" fixture with no declared reason is untestable: it might be failing
+# because of a typo.
+#
+# `rejected_by` makes ADR-0001's "the schema is a lower bound" consequence auditable per fixture.
+# The test asserts BOTH directions: the fixture is rejected by every layer listed, and ACCEPTED
+# by every layer not listed. A fixture that is invalid by accident fails the build.
+#
+#   json_schema — rejected by the generated draft 2020-12 schema
+#   serde       — rejected by the canonical Rust type's `Deserialize`
+#
+# `error_contains` is a substring of the rejecting layer's error text. TOML literal strings
+# (single quotes) are used throughout so a published `pattern` can be quoted verbatim.
+
+# ---------------------------------------------------------------------------
+# core/event-envelope
+# ---------------------------------------------------------------------------
+
+["core/event-envelope/invalid/event-type-missing-version.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'must be `<bounded_context>.<aggregate>.<action>.v<major>`'
+reason         = "ARCHITECTURE S9.1 requires the .v<major> suffix; the published `pattern` also rejects it."
+
+["core/event-envelope/invalid/event-type-three-segments.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'must be `<bounded_context>.<aggregate>.<action>.v<major>`'
+reason         = "Only two name segments before the version. The grammar is exactly three name segments plus `.v<major>`; a shorter name is not a shorter contract, it is a different one."
+
+["core/event-envelope/invalid/event-type-v0.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'has an invalid major version'
+reason         = "ADR-0002: majors start at 1, so there are no draft contracts on the wire. The published `pattern` spells the same rule as `[1-9][0-9]{0,3}`."
+
+["core/event-envelope/invalid/event-type-leading-zero-major.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'has an invalid major version'
+reason         = "ADR-0002 rule 3: the canonical form is byte-exact, so `v01` and `v1` must not both name major 1."
+
+["core/event-envelope/invalid/event-type-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[a-z][a-z0-9_]{0,31}$'
+reason         = "Event name segments are snake_case; every example in README and ARCHITECTURE S9.1 is lowercase. One spelling per event name."
+
+["core/event-envelope/invalid/aggregate-id-missing-kind.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'must be `<kind>:<local_id>`'
+reason         = "A bare UUID does not say what it refers to. D4: `aggregate_id` is polymorphic, so the kind is carried on the wire."
+
+["core/event-envelope/invalid/tenant-id-wrong-kind.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected entity kind "user"'
+reason         = "TenantRef is closed to `user`, unlike every other reference. Tenancy governs authorization; an unrecognised owner kind must stop processing, not be relayed. DOMAIN invariant 6, 'rejected explicitly'."
+
+["core/event-envelope/invalid/occurred-at-offset.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'not in canonical form'
+reason         = "ARCHITECTURE S9.2 requires UTC on the wire; the published pattern requires the literal Z, and the Rust layer rejects the offset spelling of an instant it renders as Z."
+
+["core/event-envelope/invalid/occurred-at-trailing-zeros.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "`...:00.000Z` renders as `...:00Z`, so it is a second spelling of one instant. Canonicality is a Rust-layer rule; JSON Schema cannot express it, and the published pattern permits the fraction. See ADR-0001 consequences."
+
+["core/event-envelope/invalid/occurred-at-naive.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'is not RFC 3339'
+reason         = "An instant with no offset is ambiguous. ARCHITECTURE S9.2: RFC 3339 UTC on the wire."
+
+["core/event-envelope/invalid/event-id-uppercase-uuid.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'EventId "018F0000-0000-7000-8000-000000000081" does not match'
+reason         = "`uuid::Uuid::try_parse` accepts uppercase, braced and urn: forms; admitting them would give one identity several spellings and break deduplication on `event_id`."
+
+["core/event-envelope/invalid/payload-not-object.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'invalid type: sequence, expected a map'
+reason         = "The payload is typed as a JSON object so payload contracts can evolve additively; an array or a scalar has no place to add a member."
+
+["core/event-envelope/invalid/schema-version-2.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unsupported envelope schema_version 2'
+reason         = "Envelope major 2 is beyond this build. The v1 schema pins `const: 1`, and EnvelopeSchemaVersion refuses it at parse. DOMAIN invariant 6, 'rejected explicitly'."
+
+["core/event-envelope/invalid/producer-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'ProducerName "Ratatoskr-Extractor" does not match'
+reason         = "Deployment identities are kebab-case, as every service name in README and ARCHITECTURE S5.2 is. One spelling per deployable."
+
+# ---------------------------------------------------------------------------
+# core/error-envelope
+# ---------------------------------------------------------------------------
+
+["core/error-envelope/invalid/code-single-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'ErrorCode "not_found" does not match'
+reason         = "An error code is namespaced by its owning bounded context, so two services cannot mint the same code with different meanings. AGENTS principle 7."
+
+["core/error-envelope/invalid/code-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'ErrorCode "Platform.operation.not_found" does not match'
+reason         = "Codes are the branch key for every consumer; case variance would make equality comparison locale-sensitive folklore."
+
+["core/error-envelope/invalid/trace-id-short.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'TraceId "4bf92f3577b34da6" does not match'
+reason         = "W3C Trace Context fixes the trace-id at 32 lowercase hex characters. A truncated value correlates to nothing."
+
+["core/error-envelope/invalid/field-path-embeds-a-value.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'FieldPath "/tenant_id=018f0000-0000-7000-8000-000000000005" does not match'
+reason         = "ARCHITECTURE S5.5: validation errors identify safe field paths. The restricted alphabet makes it structurally impossible to smuggle a rejected value into an error payload. The smuggled value is a reserved-block UUID rather than the personal identifier the specification's example used: the secret/PII scan bans that shape everywhere under fixtures/, so the two rules would otherwise contradict each other."
+
+["core/error-envelope/invalid/message-contains-newline.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[^\x00-\x1f\x7f]{1,1024}$'
+reason         = "The newline ban is what makes a stack trace and a forged log line unrepresentable in a wire message. ARCHITECTURE S5.5, S14."
+
+# ---------------------------------------------------------------------------
+# platform/operation-snapshot
+# ---------------------------------------------------------------------------
+
+["platform/operation-snapshot/invalid/unknown-status.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `paused`'
+reason         = "D6: the lifecycle enum is closed. A client that guesses at an unknown state reports unfinished work as finished. DOMAIN invariant 6, 'rejected explicitly'."
+
+["platform/operation-snapshot/invalid/progress-percent-over-100.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'progress_percent must be 0..=100; got 101'
+reason         = "ARCHITECTURE S5.4 bounds the percentage. The bound holds through deserialization, not only through the constructor."
+
+["platform/operation-snapshot/invalid/progress-percent-fractional.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'invalid type: floating point `42.5`, expected u8'
+reason         = "The estimate is whole percent. A float on the wire makes canonical serialization and content hashing platform-dependent."
+
+["platform/operation-snapshot/invalid/terminal-without-terminated-at.json"]
+rejected_by    = ["serde"]
+error_contains = 'terminated_at must be present exactly when status is terminal'
+reason         = "Invariant I1. Cross-field; JSON Schema draft 2020-12 cannot express it without unreadable if/then, so only the Rust type rejects it."
+
+["platform/operation-snapshot/invalid/running-with-terminated-at.json"]
+rejected_by    = ["serde"]
+error_contains = 'terminated_at must be present exactly when status is terminal'
+reason         = "Invariant I1, the other direction: a non-terminal status carrying a termination instant. Cross-field, so the Rust type is the only layer that sees it."
+
+["platform/operation-snapshot/invalid/failed-without-errors.json"]
+rejected_by    = ["serde"]
+error_contains = 'status `failed` requires at least one error'
+reason         = "Invariant I2. A failure with nothing to explain it is unactionable for the consumer. Cross-field."
+
+["platform/operation-snapshot/invalid/succeeded-with-errors.json"]
+rejected_by    = ["serde"]
+error_contains = 'status `succeeded` forbids errors'
+reason         = "Invariant I3. `succeeded` means every requested effect was produced; a terminal error contradicts that and belongs to `partially_succeeded`. Cross-field."
+
+["platform/operation-snapshot/invalid/partially-succeeded-without-diagnostic.json"]
+rejected_by    = ["serde"]
+error_contains = 'status `partially_succeeded` requires at least one warning or error'
+reason         = "Invariant I4. Partial success must say which effects were not produced. Cross-field."
+
+["platform/operation-snapshot/invalid/status-changed-before-accepted.json"]
+rejected_by    = ["serde"]
+error_contains = 'is earlier than accepted_at'
+reason         = "Invariant I5. An operation cannot change state before it was accepted. Cross-field, and comparing two instants is beyond JSON Schema."
+
+# ---------------------------------------------------------------------------
+# events/platform.operation.progressed.v1
+# ---------------------------------------------------------------------------
+
+["events/platform.operation.progressed.v1/invalid/payload-missing-operation-id.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `operation_id`'
+reason         = "A progress fact that does not say which operation progressed is unroutable. `operation_id` is required in both layers."

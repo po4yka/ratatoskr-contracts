@@ -1,0 +1,18 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000105",
+  "kind": "content.document.extract",
+  "status": "failed",
+  "errors": [
+    {
+      "code": "content.extraction.unsupported_media",
+      "message": "The attached media type is not supported.",
+      "retryable": false
+    }
+  ],
+  "retryable": false,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000105",
+  "tenant_id": "user:018f0000-0000-7000-8000-000000000005",
+  "accepted_at": "2026-08-17T10:00:00Z",
+  "status_changed_at": "2026-08-17T10:00:12Z",
+  "terminated_at": "2026-08-17T10:00:12Z"
+}

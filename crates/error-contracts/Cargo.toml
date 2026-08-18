@@ -1,0 +1,24 @@
+[package]
+name        = "ratatoskr-error-contracts"
+description = "Machine-actionable Ratatoskr error and warning envelopes with stable codes."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+uuid.workspace       = true
+jiff.workspace       = true
+regex.workspace      = true
+thiserror.workspace  = true
+
+[dev-dependencies]
+jsonschema.workspace = true
+
+[lints]
+workspace = true

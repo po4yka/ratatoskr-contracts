@@ -1,0 +1,12 @@
+{
+  "event_id": "018f0000-0000-7000-8000-000000000011",
+  "event_type": "platform.operation.progressed.v1",
+  "occurred_at": "2026-08-17T10:00:00Z",
+  "producer": "ratatoskr-platform",
+  "aggregate_id": "operation:018f0000-0000-7000-8000-000000000012",
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000012",
+  "schema_version": 1,
+  "payload": {
+    "progress_percent": 42
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "event_id": "018f0000-0000-7000-8000-000000000051",
+  "event_type": "content.document.extracted.v1",
+  "occurred_at": "2026-08-17T10:00:00Z",
+  "producer": "ratatoskr-extractor",
+  "aggregate_id": "document:018f0000-0000-7000-8000-000000000052",
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000053",
+  "schema_version": 1,
+  "payload": {},
+  "recorded_at": "2026-08-17T10:00:01Z"
+}

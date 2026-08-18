@@ -1,0 +1,12 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000102",
+  "kind": "content.document.extract",
+  "status": "running",
+  "stage": "normalizing",
+  "progress_percent": 42,
+  "retryable": false,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000102",
+  "tenant_id": "user:018f0000-0000-7000-8000-000000000005",
+  "accepted_at": "2026-08-17T10:00:00Z",
+  "status_changed_at": "2026-08-17T10:00:07Z"
+}

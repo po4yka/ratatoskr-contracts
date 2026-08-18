@@ -1,0 +1,6 @@
+{
+  "code": "content.extraction.unsupported_media",
+  "message": "The attached media type is not supported.",
+  "retryable": false,
+  "remediation_class": "convert_then_retry"
+}

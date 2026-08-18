@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.json     text eol=lf
+*.rs       text eol=lf
+*.toml     text eol=lf
+*.md       text eol=lf
+Cargo.lock text eol=lf
+schemas/** linguist-generated=true

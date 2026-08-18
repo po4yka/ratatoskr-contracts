@@ -1,0 +1,442 @@
+{
+  "$id": "urn:ratatoskr:contracts:platform:v1:OperationSnapshot",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OperationSnapshot",
+  "description": "A point-in-time public view of a long-running operation (`ARCHITECTURE.md` S5.4).\n\nNamed `OperationSnapshot`, not `Operation`, because this repository owns wire representations,\nnot entities (`ARCHITECTURE.md` S15.1, S15.12). Two snapshots of the same `operation_id` at\ndifferent `status_changed_at` are both valid and are not expected to be equal.\n\nNo `schema_version` field: S5.4's field list does not include one, and the envelope already\ncarries the envelope major. A third version axis is a compatibility hazard, not a feature.\n\n`Deserialize` is hand-written (the **only** hand-written `Deserialize` in this repository)\nbecause the invariants below are cross-field and serde has no validation hook. It parses a\nprivate mirror struct and then checks. A field added to the public struct and not the mirror\nwould be silently dropped; test `O-2` (byte round-trip of a fixture carrying every field)\nfails immediately if that happens, and a source comment points at it.\n\n# Cross-field invariants\n\nEvery one is re-checkable through [`OperationSnapshot::validate`]:\n\n- **I1** `terminated_at` is present exactly when `status.is_terminal()`.\n- **I2** `failed` requires at least one error.\n- **I3** `succeeded` forbids errors.\n- **I4** `partially_succeeded` requires at least one warning or error.\n- **I5** `status_changed_at` and `terminated_at` are never earlier than `accepted_at`.",
+  "type": "object",
+  "properties": {
+    "accepted_at": {
+      "description": "Instant the accepting component durably recorded the request. Platform-observed, not\nclient-asserted.",
+      "$ref": "#/$defs/WireTimestamp"
+    },
+    "correlation_id": {
+      "description": "The unit of user-visible work this operation belongs to, e.g. `operation:018f…`.\nEvery event and error emitted while serving the operation carries the same value.",
+      "$ref": "#/$defs/EntityRef"
+    },
+    "errors": {
+      "description": "Terminal failures. Non-empty exactly when `status` is `failed`; permitted on\n`partially_succeeded` and `cancelled`; forbidden on `succeeded`.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ErrorEnvelope"
+      }
+    },
+    "kind": {
+      "description": "What work this operation performs.",
+      "$ref": "#/$defs/OperationKind"
+    },
+    "operation_id": {
+      "description": "Stable identity of the operation, assigned when it was accepted and never reused.\n`UUIDv7` when newly minted. Bare UUID on the wire.",
+      "$ref": "#/$defs/OperationId"
+    },
+    "progress_percent": {
+      "description": "Whole-percent completion estimate. Absent means unknown, never zero.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProgressPercent"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "results": {
+      "description": "References to what the operation produced. Empty until effects exist. Ordering is\nproducer-defined and is not contract-significant.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/OperationResultRef"
+      }
+    },
+    "retryable": {
+      "description": "Whether resubmitting the identical request may succeed. Meaningful only for a terminal\nunsuccessful status; `false` otherwise. Deliberately unconstrained by `status`: no\ndocument states the rule, and a harmless nonsensical value beats an invented one.",
+      "type": "boolean"
+    },
+    "stage": {
+      "description": "Producer-defined phase inside the current status. Absent when the producer publishes none.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/OperationStage"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "description": "Current lifecycle state. Closed enum; see [`OperationStatus`].",
+      "$ref": "#/$defs/OperationStatus"
+    },
+    "status_changed_at": {
+      "description": "Instant `status` last changed. Platform-observed. Equal to `accepted_at` for the first\nsnapshot; never earlier.",
+      "$ref": "#/$defs/WireTimestamp"
+    },
+    "tenant_id": {
+      "description": "The owner of the data this operation concerns. Absent for system-initiated operations.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TenantRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "terminated_at": {
+      "description": "Instant the operation first reached a terminal status. Present exactly when\n`status.is_terminal()`.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/WireTimestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "warnings": {
+      "description": "Non-terminal problems that did not prevent the recorded outcome. Distinct from `errors`\n(`ARCHITECTURE.md` S5.5).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/WarningEnvelope"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "accepted_at",
+    "correlation_id",
+    "kind",
+    "operation_id",
+    "retryable",
+    "status",
+    "status_changed_at"
+  ],
+  "x-ratatoskr-provenance": {
+    "canonical_source": "ratatoskr_operation_contracts::OperationSnapshot",
+    "contract_id": "platform.operation_snapshot",
+    "contract_major_version": 1,
+    "generated": "DO NOT EDIT — generated by contractsc from the canonical Rust source. Change the Rust type and run `cargo contracts generate`.",
+    "generator": "contractsc",
+    "generator_version": "0.1.0",
+    "schemars_version": "1.2.2",
+    "source_digest": "sha256:b08c7cb6b4554f0841ed0b566535d8e5e91dd65ecd0d61894580102347f461af",
+    "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
+  },
+  "x-ratatoskr-unknown-policy": "preserve",
+  "$defs": {
+    "BlobRef": {
+      "title": "BlobRef",
+      "description": "Opaque, content-addressed handle to stored bytes.\n\nCarries no bucket, host, filesystem path, signed URL or expiry: `ARCHITECTURE.md` S14\nforbids all of them (\"Blob references are opaque and do not expose filesystem paths or\nsigned storage URLs\"). Resolving a handle to bytes is a service concern and needs separate\nauthorization.\n\nThis tightens S5.1's `BlobRef(pub String)`; S5.1's own requirement list says identifier\nstring formats are \"stable and validated\", which a public `String` cannot guarantee.\n`INTERFACES.md`'s richer blob description (hash, size, media type, authorization metadata)\nis a descriptor, not a handle; the descriptor arrives with Document IR in m5.\n\nThe two-colon shape is deliberate: parsed as an `EntityRef` it is kind `blob`, local id\n`sha256:<hex>`.",
+      "type": "string",
+      "examples": [
+        "blob:sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "maxLength": 76,
+      "pattern": "^blob:sha256:[0-9a-f]{64}$"
+    },
+    "EntityRef": {
+      "title": "EntityRef",
+      "description": "A namespaced, polymorphic wire reference, serialized as `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised kind is preserved verbatim. The local identity is opaque and need not be a UUID.",
+      "type": "string",
+      "examples": [
+        "document:018f0000-0000-7000-8000-000000000002",
+        "x-post:123"
+      ],
+      "maxLength": 289,
+      "pattern": "^[a-z][a-z0-9_-]{0,31}:[A-Za-z0-9][A-Za-z0-9._~:@+-]{0,255}$"
+    },
+    "ErrorCode": {
+      "title": "ErrorCode",
+      "description": "Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.\n`platform.operation.not_found`.\n\nThe code is the contract; the message is not. A consumer branches on this and on nothing\nelse (`AGENTS.md` principle 7: \"Separate stable error codes from human-readable messages\nand provider diagnostics\"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider\nresponses to be normalized into service-owned codes, so a provider's own code never\nappears here.",
+      "type": "string",
+      "examples": [
+        "platform.operation.not_found",
+        "content.extraction.unsupported_media"
+      ],
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9_]{0,31}(\\.[a-z][a-z0-9_]{0,31}){1,3}$"
+    },
+    "ErrorEnvelope": {
+      "description": "A terminal, machine-actionable failure crossing a process boundary\n(`ARCHITECTURE.md` S5.5).\n\nContains no stack trace, no raw provider response, no credential and no storage path\n(`ARCHITECTURE.md` S14, `SECURITY.md`). See spec D8 for the removal of S5.5's\n`details: Option<serde_json::Value>`.",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Stable machine-actionable code. The only field a consumer may branch on.",
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "correlation_id": {
+          "description": "The unit of user-visible work this failure belongs to, e.g. `operation:018f…`.\nRequired by `INTERFACES.md` (\"Error envelopes expose stable code, safe message, retry\nclass, correlation ID, and partial effects\"); additive to S5.5.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EntityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "field_violations": {
+          "description": "Field-level violations. Non-empty only for validation failures.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FieldViolation"
+          }
+        },
+        "message": {
+          "description": "Human-readable explanation for an operator or an end user. Not machine-parsed and not\nstable across releases; changing it is not a contract change.",
+          "$ref": "#/$defs/SafeMessage"
+        },
+        "retryable": {
+          "description": "Whether repeating the identical request may succeed later without operator action.\nExplicit, never inferred from `code` by the consumer (`ARCHITECTURE.md` S5.5:\n\"retryability is explicit\").",
+          "type": "boolean"
+        },
+        "trace_id": {
+          "description": "W3C trace-id of the failing request, for log correlation.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TraceId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "x-ratatoskr-unknown-policy": "preserve"
+    },
+    "FieldPath": {
+      "title": "FieldPath",
+      "description": "RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to\nidentifier-shaped tokens, e.g. `/blocks/3/text`.\n\nStructure only. The restricted alphabet makes it structurally impossible to smuggle a\nrejected **value** (which may be user content or a credential) into an error payload —\n`/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: \"validation errors\nidentify safe field paths.\"",
+      "type": "string",
+      "examples": [
+        "/blocks/3/text",
+        "/tenant_id"
+      ],
+      "maxLength": 256,
+      "pattern": "^(/[A-Za-z0-9_-]+)+$"
+    },
+    "FieldViolation": {
+      "description": "One field-level validation failure.",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Stable code for this specific violation.",
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "field_path": {
+          "description": "Safe path to the offending member. Never contains the rejected value.",
+          "$ref": "#/$defs/FieldPath"
+        },
+        "message": {
+          "description": "User-safe explanation. Must not echo the rejected value.",
+          "$ref": "#/$defs/SafeMessage"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "field_path",
+        "message"
+      ],
+      "x-ratatoskr-unknown-policy": "preserve"
+    },
+    "OperationId": {
+      "title": "OperationId",
+      "description": "Identity of one long-running operation, stable for its whole lifecycle. Bare canonical lowercase hyphenated UUID; not namespaced.",
+      "type": "string",
+      "format": "uuid",
+      "examples": [
+        "018f0000-0000-7000-8000-000000000001"
+      ],
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "OperationKind": {
+      "title": "OperationKind",
+      "description": "What work the operation performs, e.g. `content.document.extract`.\nPresent tense: a kind names an activity, not a completed fact — unlike an event action.\nOpen by construction (a validated string), so there is no unknown-variant problem.",
+      "type": "string",
+      "examples": [
+        "content.document.extract",
+        "social.source.sync"
+      ],
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9_]{0,31}(\\.[a-z][a-z0-9_]{0,31}){1,3}$"
+    },
+    "OperationResultKind": {
+      "title": "OperationResultKind",
+      "description": "What an [`OperationResultRef`](crate::OperationResultRef) points at, e.g.\n`content.document`.",
+      "type": "string",
+      "examples": [
+        "content.document"
+      ],
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9_]{0,31}(\\.[a-z][a-z0-9_]{0,31}){1,3}$"
+    },
+    "OperationResultRef": {
+      "description": "A typed pointer to something the operation produced.\n\nA pointer, never inlined content: an operation may produce megabytes, and\n`ARCHITECTURE.md` S14 requires user content to be separable from metadata so telemetry can\nomit it.",
+      "type": "object",
+      "properties": {
+        "blob": {
+          "description": "Content-addressed handle when the result is stored bytes rather than a modelled entity.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlobRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_kind": {
+          "description": "What the target is.",
+          "$ref": "#/$defs/OperationResultKind"
+        },
+        "target": {
+          "description": "Namespaced reference to the produced entity, e.g. `document:018f…`.",
+          "$ref": "#/$defs/EntityRef"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "result_kind",
+        "target"
+      ],
+      "x-ratatoskr-unknown-policy": "preserve"
+    },
+    "OperationStage": {
+      "title": "OperationStage",
+      "description": "Producer-defined phase inside the current status, e.g. `downloading`.\n**Display only.** The stage vocabulary is per `kind` and is not a contract: a client must\nnot branch on it. Branch on `status`.",
+      "type": "string",
+      "examples": [
+        "downloading",
+        "normalizing"
+      ],
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]{0,63}$"
+    },
+    "OperationStatus": {
+      "description": "The public lifecycle state of a long-running operation (`ARCHITECTURE.md` S5.4).\n\n**Closed.** An unrecognised value is rejected at deserialization with an error naming the\nlegal variants (`DOMAIN.md` invariant 6, \"rejected explicitly\" branch; `ARCHITECTURE.md` S9.2\npermits enum additions only \"when consumers preserve **or safely reject** unknown values\").\nA client that guesses at an unknown lifecycle state reports unfinished work as finished, which\nis the failure this enum exists to prevent. Adding a state is therefore a new major version.\n\n`#[non_exhaustive]` so a future addition is not source-breaking for downstream Rust.\n\nProgress is monotonic in lifecycle semantics (S5.4). That is a producer obligation: it is\nunenforceable from a single snapshot, and this repository publishes no transition table\nbecause a transition table is a business workflow (`AGENTS.md` hard boundaries).",
+      "oneOf": [
+        {
+          "description": "The request was received and is durably recorded. No work has started.",
+          "type": "string",
+          "const": "accepted"
+        },
+        {
+          "description": "The work is scheduled and waiting for capacity.",
+          "type": "string",
+          "const": "queued"
+        },
+        {
+          "description": "The work is executing.",
+          "type": "string",
+          "const": "running"
+        },
+        {
+          "description": "Terminal. Every requested effect was produced.",
+          "type": "string",
+          "const": "succeeded"
+        },
+        {
+          "description": "Terminal. Some requested effects were produced; `warnings` explains which were not.",
+          "type": "string",
+          "const": "partially_succeeded"
+        },
+        {
+          "description": "Terminal. No usable effect was produced; `errors` is non-empty.",
+          "type": "string",
+          "const": "failed"
+        },
+        {
+          "description": "Terminal. Stopped on request before completion.",
+          "type": "string",
+          "const": "cancelled"
+        }
+      ]
+    },
+    "ProgressPercent": {
+      "title": "ProgressPercent",
+      "description": "Completion estimate in whole percent, 0..=100 inclusive. Integer, never floating point, so canonical serialization is platform-independent. Absence means the producer cannot estimate, never zero.",
+      "type": "integer",
+      "examples": [
+        42
+      ],
+      "maximum": 100,
+      "minimum": 0
+    },
+    "SafeMessage": {
+      "title": "SafeMessage",
+      "description": "Human-readable text safe to show to an operator or an end user.\n\n1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it\nmakes it structurally impossible to smuggle a stack trace or a forged log line into a wire\nmessage (`ARCHITECTURE.md` S5.5 \"no stack traces or secrets in wire errors\", S14).\n\nNot machine-parsed and not stable across releases; changing a message is not a contract\nchange. Consumers branch on codes, never on this.",
+      "type": "string",
+      "examples": [
+        "The requested document does not exist."
+      ],
+      "maxLength": 1024,
+      "pattern": "^[^\\x00-\\x1f\\x7f]{1,1024}$"
+    },
+    "TenantRef": {
+      "title": "TenantRef",
+      "description": "The owner of the data a record concerns, wire form `user:<uuid>`. The kind set is closed: a consumer that cannot understand the owner kind must reject the record rather than process it.",
+      "type": "string",
+      "examples": [
+        "user:018f0000-0000-7000-8000-000000000005"
+      ],
+      "maxLength": 41,
+      "pattern": "^user:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "TraceId": {
+      "title": "TraceId",
+      "description": "W3C Trace Context `trace-id`: 32 lowercase hex characters.\nFor log correlation only; never a business key and never an authorization input.",
+      "type": "string",
+      "examples": [
+        "4bf92f3577b34da6a3ce929d0e0e4736"
+      ],
+      "maxLength": 32,
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "WarningEnvelope": {
+      "description": "A non-terminal problem that did not prevent the recorded outcome.\n\nA distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires\n\"partial-success warnings are distinct from terminal errors\", and a shared type with a\nseverity field would let a producer emit a \"warning\" that consumers treat as fatal.",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Stable machine-actionable code, same grammar as an error code.",
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "field_path": {
+          "description": "Where in the input the problem was observed, when a path applies.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FieldPath"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "message": {
+          "description": "User-safe explanation.",
+          "$ref": "#/$defs/SafeMessage"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message"
+      ],
+      "x-ratatoskr-unknown-policy": "preserve"
+    },
+    "WireTimestamp": {
+      "title": "WireTimestamp",
+      "description": "An instant on the wire: RFC 3339 in UTC with the literal `Z` designator. Exactly one spelling is accepted per instant — an input that does not re-render to itself is rejected. The field holding it declares the clock authority.",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2026-08-17T10:00:00Z"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?Z$"
+    }
+  }
+}

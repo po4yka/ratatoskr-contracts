@@ -23,9 +23,19 @@ Its purpose is to make cross-repository evolution explicit and safe. It must not
 
 ## Current phase
 
-The repository is in architecture bootstrap. Do not assume crates, schema generators, package publication, compatibility tooling, or CI commands exist unless they are present in the checked-out tree.
+Implementation milestones 1 through 4 exist. The checked-out tree contains:
 
-When adding the initial implementation, keep the repository independently buildable and make generated outputs reproducible. Do not create speculative schemas unrelated to an active consumer/producer changeset.
+- `contracts.toml` — machine-readable contract metadata (owner, family, major version, lifecycle, classification, producers, consumers, canonical path, per-field authority/unit/nullability, lint vocabulary);
+- four contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`;
+- `tools/contractsc` — the deterministic generator and gate, run as `cargo contracts`;
+- `schemas/json-schema/**` and `schemas/events/**` — generated JSON Schema artifacts;
+- `fixtures/**` — valid, invalid and compatibility fixtures, with `fixtures/invalid-expectations.toml` naming the layer that must reject each invalid fixture.
+
+Commands: `cargo contracts generate`, `cargo contracts check`, `cargo contracts compat <OLD> <NEW>`, `cargo test --workspace --locked`, `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, then `git diff --exit-code`. `DEVELOPMENT.md` holds the full list.
+
+Milestones 5 through 10 do **not** exist. There is no Document IR, social-source or AI-archive crate, no OpenAPI document, no generated TypeScript, Kotlin or Swift, no CI configuration, no frozen compatibility baseline, and no publishing. Do not assume any of them exist unless they are present in the checked-out tree.
+
+Keep the repository independently buildable and generated outputs reproducible. Do not create speculative schemas unrelated to an active consumer/producer changeset.
 
 ## Sources of truth
 
@@ -33,7 +43,7 @@ Use this order:
 
 1. active cross-repository changeset and accepted ADRs;
 2. `README.md` and repository architecture documentation;
-3. canonical schema sources in `schemas/` or typed source crates, once established;
+3. the typed source crates in `crates/`; `schemas/` is generated from them and is never a source (ADR-0001);
 4. generated artifacts;
 5. consumer-specific copies, which must never override the canonical contract.
 
@@ -151,10 +161,11 @@ Never coordinate an unversioned simultaneous cutover across repositories.
 
 ## Canonical source and generated artifacts
 
-Choose one canonical representation per contract family. For example:
+**Decided in [ADR-0001](docs/adr/0001-canonical-schema-source-format.md): Rust-first.** The canonical source of every contract's shape is the Rust type in `crates/*/src/**.rs`. Everything under `schemas/` is generated from those types by `cargo contracts generate` and must never be hand-edited.
 
-- typed Rust source that derives JSON Schema; or
-- canonical JSON Schema/OpenAPI that generates language bindings.
+The generated JSON Schema is a **lower bound** on validity: it accepts payloads the Rust type rejects, because JSON Schema draft 2020-12 cannot express the cross-field invariants or the one-spelling-per-instant rule. Each invalid fixture therefore declares which layer must reject it in `fixtures/invalid-expectations.toml`.
+
+OpenAPI is explicitly not decided by ADR-0001; `ARCHITECTURE.md` S4 gives it a different canonical source, and a follow-up ADR at milestone 8 decides it.
 
 Do not maintain two hand-edited authoritative copies.
 

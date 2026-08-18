@@ -1,0 +1,196 @@
+# contracts.toml — machine-readable contract metadata.
+# Governance authority for every contract in this repository.
+# Shape authority is the Rust type named by each [[contract.root_type]].rust_path.
+# Validated by `cargo contracts check`; see the spec §4.3.
+
+metadata_version = 1
+
+# ---------------------------------------------------------------------------
+# Closed vocabularies. Any token outside these fails the build.
+# ---------------------------------------------------------------------------
+[services]
+known = [
+  "ratatoskr-platform",
+  "ratatoskr-extractor",
+  "ratatoskr-knowledge",
+  "ratatoskr-web",
+  "ratatoskr-x",
+]
+
+# Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
+# (EntityKind::Other preserves anything matching the token grammar); this list is
+# what every fixture is checked against, so the wire is open but typos fail.
+#
+# It is a deliberate SUPERSET of EntityKind::KNOWN. The first five are the kinds
+# this build maps to a named variant. The last three are the kinds the
+# unknown-kind fixtures exercise on purpose, and each is named by exactly one
+# fixture:
+#   x-post        README's `"aggregate_id": "x-post:123"` — a provider-minted,
+#                 non-UUID local part (D4).
+#   repository    valid/unknown-aggregate-kind.json — a kind this build has never
+#                 heard of survives as EntityKind::Other.
+#   social_source compat/old-consumer-new-producer/future-aggregate-kind.json — a
+#                 bounded context added in m5-m7 does not stop a consumer built today.
+# Adding a token here is a review decision: it widens what a fixture may contain,
+# never what the wire type understands.
+[entity_kinds]
+known = [
+  "blob", "document", "event", "operation", "user",
+  "repository", "social_source", "x-post",
+]
+
+# ---------------------------------------------------------------------------
+# Lint vocabulary (§6.5). Data, not prose, so the lint can read it.
+# ---------------------------------------------------------------------------
+[lint]
+# AGENTS.md: "Reject fields that are added with vague names such as `status`,
+# `data`, `metadata`, or `timestamp` without a precise documented contract."
+banned_property_names = [
+  "data", "metadata", "status", "timestamp", "info", "value", "values",
+  "params", "properties", "extra", "misc", "content", "object", "item",
+  "result", "body", "payload",
+]
+# AGENTS.md principle 6: "Money, sizes, durations, and counters have explicit units."
+required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version"]
+# AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
+# observed, received, or processed." Every `format: date-time` property must be
+# in this vocabulary.
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at"]
+min_waiver_justification_chars = 40
+
+# ---------------------------------------------------------------------------
+# Contracts
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "core.event_envelope"     # ^[a-z][a-z0-9_]*\.[a-z][a-z0-9_]*$
+family         = "core"                    # directory under schemas/json-schema/
+major_version  = 1                         # >= 1
+lifecycle      = "proposed"                # proposed|accepted|published|deprecated|removed (DATA_MODEL)
+classification = "internal"                # public|internal|privileged (SECURITY.md separation rule)
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-knowledge", "ratatoskr-platform", "ratatoskr-x"]
+consumers      = ["ratatoskr-platform", "ratatoskr-knowledge", "ratatoskr-web"]
+crate_name     = "ratatoskr-event-envelope"
+canonical_path = "crates/event-envelope/src/envelope.rs"
+fixtures_dir   = "fixtures/core/event-envelope"
+summary        = "Common envelope for every asynchronous domain event."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_event_envelope::EventEnvelope"
+output         = "schemas/json-schema/core/event-envelope.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:core:v1:EventEnvelope"
+unknown_policy = "preserve"                # preserve|reject
+privacy        = "boundary_metadata"       # boundary_metadata|user_content|identity|audit
+                                           # NOTE: there is no `credential` variant. A
+                                           # credential-bearing contract cannot be declared at
+                                           # all; it fails at parse. SECURITY.md baseline.
+
+# Field-level governance. REQUIRED for (a) every `format: date-time` property and
+# (b) every property the lint flags. Optional elsewhere.
+[[contract.field]]
+pointer     = "/properties/occurred_at"
+authority   = "producer_asserted"          # producer_asserted|provider_authored|observed|received|processed|derived
+nullability = "required"                   # required|omitted_when_absent
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant at which the fact became true in the producing bounded context. Not the publish time and not the receive time."
+
+# Waiver for a name the lint bans. Without a waiver the build fails.
+[[contract.vague_field_waiver]]
+pointer       = "/properties/payload"
+justification = "Name fixed by the normative wire example in ARCHITECTURE S5.2. Constrained to a JSON object; its shape is selected by event_type, whose registered schema is the precise contract."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "core.error_envelope"
+family         = "core"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "public"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform", "ratatoskr-extractor", "ratatoskr-knowledge"]
+consumers      = ["ratatoskr-web", "ratatoskr-platform"]
+crate_name     = "ratatoskr-error-contracts"
+canonical_path = "crates/error-contracts/src/envelope.rs"
+fixtures_dir   = "fixtures/core/error-envelope"
+summary        = "Machine-actionable error with a stable code, a user-safe message and explicit retryability."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_error_contracts::ErrorEnvelope"
+output         = "schemas/json-schema/core/error-envelope.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:core:v1:ErrorEnvelope"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.operation_snapshot"
+family         = "platform"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "public"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web", "ratatoskr-platform"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/snapshot.rs"
+fixtures_dir   = "fixtures/platform/operation-snapshot"
+summary        = "Point-in-time public view of a long-running operation."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::OperationSnapshot"
+output         = "schemas/json-schema/platform/operation-snapshot.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:platform:v1:OperationSnapshot"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/accepted_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the accepting component durably recorded the request. Platform-observed, not client-asserted."
+
+[[contract.field]]
+pointer     = "/properties/status_changed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant `status` last changed. Equal to accepted_at for the first snapshot; never earlier."
+
+[[contract.field]]
+pointer     = "/properties/terminated_at"
+authority   = "observed"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the operation first reached a terminal status. Present exactly when status is terminal."
+
+[[contract.vague_field_waiver]]
+pointer       = "/properties/status"
+justification = "Name fixed by ARCHITECTURE S5.4, which enumerates the seven permitted values. Closed enum with documented terminality; the contract is precise despite the generic name."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.operation_progressed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web", "ratatoskr-knowledge"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/platform.operation.progressed.v1"
+summary        = "Fact: an operation reached the status carried in the payload."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::OperationProgressed"
+output         = "schemas/events/platform.operation.progressed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:OperationProgressed"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+# Legal only when family = "events".
+[contract.event]
+event_type   = "platform.operation.progressed.v1"
+payload_type = "ratatoskr_operation_contracts::OperationProgressed"

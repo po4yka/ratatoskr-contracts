@@ -1,0 +1,10 @@
+{
+  "operation": {
+    "kind": "content.document.extract",
+    "status": "running",
+    "retryable": false,
+    "correlation_id": "operation:018f0000-0000-7000-8000-000000000122",
+    "accepted_at": "2026-08-17T10:00:00Z",
+    "status_changed_at": "2026-08-17T10:00:02Z"
+  }
+}

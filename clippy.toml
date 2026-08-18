@@ -1,0 +1,5 @@
+msrv = "1.97"
+disallowed-types = [
+  { path = "std::collections::HashMap", reason = "non-deterministic iteration order; use BTreeMap or serde_json::Map" },
+  { path = "std::time::SystemTime",     reason = "use ratatoskr_identifiers::WireTimestamp" },
+]

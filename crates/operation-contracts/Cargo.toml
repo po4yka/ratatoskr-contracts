@@ -1,0 +1,28 @@
+[package]
+name        = "ratatoskr-operation-contracts"
+description = "Public view of long-running Ratatoskr operations and their lifecycle events."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace     = true
+ratatoskr-error-contracts.workspace = true
+# Needed for `impl EventPayload for OperationProgressed` (spec S5.4). The S3 dependency table
+# omits it, but the orphan rule leaves this crate as the only legal home for that impl.
+ratatoskr-event-envelope.workspace  = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+uuid.workspace       = true
+jiff.workspace       = true
+regex.workspace      = true
+thiserror.workspace  = true
+
+[dev-dependencies]
+jsonschema.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,16 @@
+{
+  "event_id": "018f0000-0000-7000-8000-000000000021",
+  "event_type": "content.document.extracted.v1",
+  "occurred_at": "2026-08-17T10:00:00Z",
+  "producer": "ratatoskr-extractor",
+  "aggregate_id": "document:018f0000-0000-7000-8000-000000000022",
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000023",
+  "schema_version": 1,
+  "payload": {},
+  "retention_class": {
+    "labels": [
+      "audit"
+    ],
+    "retention_days": 30
+  }
+}

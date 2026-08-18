@@ -1,0 +1,5 @@
+{
+  "code": "content.extraction.failed",
+  "message": "Extraction failed.\nStack frames are unrepresentable on the wire.",
+  "retryable": false
+}

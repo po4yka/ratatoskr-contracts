@@ -1,0 +1,12 @@
+{
+  "code": "platform.request.invalid",
+  "message": "The request failed validation.",
+  "retryable": false,
+  "field_violations": [
+    {
+      "field_path": "/tenant_id=018f0000-0000-7000-8000-000000000005",
+      "code": "platform.request.unknown_tenant",
+      "message": "The named owner is not known."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+[alias]
+contracts = "run --locked --quiet --package ratatoskr-contractsc --bin contractsc --"

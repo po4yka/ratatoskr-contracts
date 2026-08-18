@@ -1,0 +1,11 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000106",
+  "kind": "content.document.extract",
+  "status": "cancelled",
+  "progress_percent": 35,
+  "retryable": true,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000106",
+  "accepted_at": "2026-08-17T10:00:00Z",
+  "status_changed_at": "2026-08-17T10:02:00Z",
+  "terminated_at": "2026-08-17T10:02:00Z"
+}

@@ -1,0 +1,35 @@
+[package]
+name        = "ratatoskr-contractsc"
+description = "Deterministic contract generator and gate for ratatoskr-contracts."
+publish     = false
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[[bin]]
+name = "contractsc"
+path = "src/main.rs"
+
+[dependencies]
+ratatoskr-identifiers.workspace         = true
+ratatoskr-event-envelope.workspace      = true
+ratatoskr-error-contracts.workspace     = true
+ratatoskr-operation-contracts.workspace = true
+schemars.workspace   = true
+serde.workspace      = true
+serde_json.workspace = true
+toml.workspace       = true
+clap.workspace       = true
+sha2.workspace       = true
+hex.workspace        = true
+anyhow.workspace     = true
+regex.workspace      = true
+
+[dev-dependencies]
+jsonschema.workspace = true
+proptest.workspace   = true
+
+[lints]
+workspace = true

@@ -1,0 +1,10 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000118",
+  "kind": "social.source.sync",
+  "status": "partially_succeeded",
+  "retryable": true,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000118",
+  "accepted_at": "2026-08-17T10:00:00Z",
+  "status_changed_at": "2026-08-17T10:05:00Z",
+  "terminated_at": "2026-08-17T10:05:00Z"
+}

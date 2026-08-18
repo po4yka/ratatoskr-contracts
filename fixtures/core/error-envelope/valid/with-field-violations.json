@@ -1,0 +1,13 @@
+{
+  "code": "platform.request.invalid",
+  "message": "The request failed validation.",
+  "retryable": false,
+  "field_violations": [
+    {
+      "field_path": "/blocks/3/text",
+      "code": "content.block.text_required",
+      "message": "A text block must carry text."
+    }
+  ],
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000091"
+}

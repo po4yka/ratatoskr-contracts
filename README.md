@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr Next. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** architecture bootstrap. No runtime crates, schemas, generators, or published packages are implemented yet.
+> **Status:** milestones 1–4 implemented. Shared identifiers, the event envelope, error contracts, operation contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. Document IR, social-source and AI-archive contracts, OpenAPI, generated TypeScript, CI and package publication do **not** exist yet.
 
 ## Role in Ratatoskr Next
 
@@ -23,25 +23,26 @@ It is **not** a shared domain-model repository, ORM layer, utility dumping groun
 
 ## Contract families
 
-The initial contract surface is expected to include:
+The full contract surface is expected to include the tree below. `(now)` marks what exists today; every other entry is a later milestone and is deliberately absent, because this repository does not create speculative schemas.
 
 ```text
 crates/
-├── identifiers/
-├── event-envelope/
-├── operation-contracts/
+├── identifiers/            (now)
+├── event-envelope/         (now)
+├── operation-contracts/    (now)
+├── error-contracts/        (now)
 ├── document-contracts/
 ├── social-contracts/
-├── ai-archive-contracts/
-└── error-contracts/
+└── ai-archive-contracts/
 
 schemas/
-├── events/
-├── json-schema/
+├── events/                 (now, generated)
+├── json-schema/            (now, generated)
 └── openapi/
 
+fixtures/                   (now)
 generated/
-tools/
+tools/                      (now: contractsc)
 ```
 
 ### Event envelope
@@ -134,7 +135,7 @@ Exactly-once processing is not promised by the schema. Producers and consumers i
 
 Long-running work is represented by an operation contract rather than a synchronous HTTP response. The common model supports:
 
-- accepted, queued, running, completed, partially completed, failed, and cancelled states;
+- the seven states `accepted`, `queued`, `running`, `succeeded`, `partially_succeeded`, `failed` and `cancelled`, spelled exactly as the wire spells them;
 - progress phases and user-safe messages;
 - typed result references;
 - retryability and structured errors;
@@ -192,4 +193,6 @@ Repository-local CI is expected to include formatting, linting, unit tests, JSON
 
 ## Project status
 
-Everything described here is a target contract architecture. The repository currently contains documentation bootstrap only; implementation choices remain subject to ADRs and contract-focused review.
+Milestones 1 through 4 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, the deterministic generator and gate, generated JSON Schema, and the fixture suite. Milestones 5 through 10 — Document IR, social sources, AI archives, cross-language generation, CI and publishing — are still target architecture.
+
+Two decisions are recorded and accepted: [ADR-0001](docs/adr/0001-canonical-schema-source-format.md) (Rust-first canonical source) and [ADR-0002](docs/adr/0002-event-naming-and-major-version-strategy.md) (event naming and the two version axes). Nothing is published, so every contract here remains subject to further ADRs and contract-focused review.

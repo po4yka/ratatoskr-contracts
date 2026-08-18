@@ -1,0 +1,25 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000103",
+  "kind": "social.source.sync",
+  "status": "partially_succeeded",
+  "progress_percent": 100,
+  "results": [
+    {
+      "result_kind": "content.document",
+      "target": "document:018f0000-0000-7000-8000-000000000104"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "social.source.item_skipped",
+      "message": "One item was skipped because its media type is not supported.",
+      "field_path": "/items/7"
+    }
+  ],
+  "retryable": true,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000103",
+  "tenant_id": "user:018f0000-0000-7000-8000-000000000005",
+  "accepted_at": "2026-08-17T10:00:00Z",
+  "status_changed_at": "2026-08-17T10:05:00Z",
+  "terminated_at": "2026-08-17T10:05:00Z"
+}
