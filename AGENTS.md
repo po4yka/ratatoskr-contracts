@@ -31,7 +31,7 @@ Implementation milestones 1 through 4 exist. The checked-out tree contains:
 - `schemas/json-schema/**` and `schemas/events/**` — generated JSON Schema artifacts;
 - `fixtures/**` — valid, invalid and compatibility fixtures, with `fixtures/invalid-expectations.toml` naming the layer that must reject each invalid fixture.
 
-Commands: `cargo contracts generate`, `cargo contracts check`, `cargo contracts compat <OLD> <NEW>`, `cargo test --workspace --locked`, `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, then `git diff --exit-code`. `DEVELOPMENT.md` holds the full list.
+Commands, in gate order: `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo contracts check`, `cargo test --workspace --locked`, `cargo contracts generate`, then `git diff --exit-code`. Never run `generate` before `check` in a gate: it repairs drift in place and makes the drift step report `current` for an artifact that was committed wrong. Use `cargo contracts compat <OLD> <NEW>` to classify a change. `DEVELOPMENT.md` holds the full list and the separate editing-loop order.
 
 Milestones 5 through 10 do **not** exist. There is no Document IR, social-source or AI-archive crate, no OpenAPI document, no generated TypeScript, Kotlin or Swift, no CI configuration, no frozen compatibility baseline, and no publishing. Do not assume any of them exist unless they are present in the checked-out tree.
 
