@@ -72,7 +72,7 @@ Option A. The canonical source of the shape of every milestone 1–4 contract is
 
 ## Consequences
 
-- **The JSON Schema is a lower bound on validity.** It accepts payloads that the Rust type rejects: the cross-field invariants and the one-spelling-per-instant rule. Every generated file states this in its `validation_note`, and it is why every invalid fixture declares in `fixtures/invalid-expectations.toml` which layer must reject it. This is not a defect to be hidden by generating unreadable `allOf`/`if-then` blocks.
+- **The JSON Schema is a lower bound on validity.** It accepts payloads that the Rust type rejects: the cross-field invariants, the one-spelling-per-instant rule, and — added by ADR-0007 — the one-spelling-per-UUID-reference rule on `EntityRef`. Every generated file states this in its `validation_note`, and it is why every invalid fixture declares in `fixtures/invalid-expectations.toml` which layer must reject it. This is not a defect to be hidden by generating unreadable `allOf`/`if-then` blocks.
 - Consumers that are not written in Rust get the schema, not the invariants, until milestone 8 generates typed clients. This is a known gap, recorded here.
 - A `schemars` upgrade is a repository-wide regenerate-and-review event. It gets its own PR, the whole diff is reviewed, and the changeset records it. The `schemars_version` member of the provenance block records which version produced the bytes. This is not automatable and must not be automated.
 - A contributor who knows only JSON Schema cannot add a contract without writing Rust.
@@ -106,5 +106,6 @@ Command surface: `cargo contracts generate`, `cargo contracts check`, `cargo tes
 ## Follow-up
 
 - An OpenAPI canonical-source ADR at milestone 8.
+- ADR-0007 adds the third lower-bound rule named in Consequences. Any further Rust-only canonicality rule extends that list and is recorded in the ADR that introduces it, never left implicit.
 - ADR-0004 (unknown-field and unknown-variant policy) formalises the per-type choices this work makes. The backlog entry already exists in `docs/adr/README.md`.
 - ADR-0005 (deterministic generated package publishing) must decide whether generated TypeScript is committed or published, and whether `$id` moves from a URN to a resolvable HTTP identifier.

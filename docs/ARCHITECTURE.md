@@ -94,7 +94,16 @@ Requirements:
 - UUIDv7 for newly generated internal IDs unless a provider supplies a stable external numeric/string ID;
 - provider IDs remain opaque strings or bounded numeric wrappers;
 - no database primary-key types leak into public payloads;
-- identifier string formats are stable and validated.
+- identifier string formats are stable and validated;
+- wire form follows the three-clause rule below (ADR-0007).
+
+**Wire form of an identifier field** (ADR-0007). This rule governs the fields of the contracts in this repository. It is descriptive of what ships; it is not asserted over identifier fields owned by other repositories.
+
+1. A field carrying the record's **own** identity is a bare canonical lowercase-hyphenated UUID in a typed newtype: `event_id`, `operation_id`.
+2. A field **pointing at** another Ratatoskr domain record is `<kind>:<local_id>`, because a pointer's referent kind must be readable from the value alone: `aggregate_id`, `correlation_id`, `causation_id`, `tenant_id`. The kind vocabulary is open (`EntityRef`) unless authorization requires it closed (`TenantRef`).
+3. A handle to a **non-domain external system** keeps that system's own grammar in its own validated newtype: `BlobRef` is content-addressed, and the error envelope's `trace_id` is bare 32-hex because W3C Trace Context fixes that spelling. Clause 3 applies only where an external specification already fixes the spelling; it is not a general exemption from clause 2.
+
+A local identity that is a UUID has exactly one accepted spelling, the canonical lowercase hyphenated one. A local identity that is not a UUID stays fully opaque and case-sensitive.
 
 ### 5.2. Event envelope
 
@@ -117,6 +126,8 @@ All domain events use a common envelope.
 
 Envelope fields are stable across event families. Payloads are versioned independently through `event_type` major versions.
 
+**The two version axes** (ADR-0002, confirmed). `event_type`'s `.v<major>` suffix is the one and only major of the **payload** contract. `schema_version` is the one and only major of the **envelope** contract. They describe different objects, so they can never agree or disagree and neither mirrors the other. A build that does not understand the envelope major refuses the message rather than half-reading it. No other contract in this repository may name a property `schema_version`; a payload that needs its own version names it after what it versions, for example `document_ir_version`. `cargo contracts check` rule L8 enforces that.
+
 ### 5.3. Commands
 
 Commands request work and may be rejected. They are not facts.
@@ -124,7 +135,8 @@ Commands request work and may be rejected. They are not facts.
 A command contract includes:
 
 - command ID;
-- command type and version;
+- command type, whose `.v<major>` suffix is the payload major;
+- envelope schema version;
 - actor and tenant context;
 - correlation and causation IDs;
 - idempotency key;
@@ -168,11 +180,13 @@ Errors have stable machine-readable codes and human-readable messages.
 
 ```rust
 pub struct ErrorEnvelope {
-    pub code: String,
-    pub message: String,
+    pub code: ErrorCode,
+    pub message: SafeMessage,
     pub retryable: bool,
-    pub details: Option<serde_json::Value>,
-    pub trace_id: Option<String>,
+    pub field_violations: Vec<FieldViolation>,
+    pub correlation_id: Option<EntityRef>,
+    pub trace_id: Option<TraceId>,
+    pub extensions: Extensions,
 }
 ```
 
@@ -180,9 +194,10 @@ Rules:
 
 - no stack traces or secrets in wire errors;
 - provider responses are normalized into service-owned error codes;
-- validation errors identify safe field paths;
+- validation errors identify safe field paths, carried in `field_violations`;
 - retryability is explicit;
-- partial-success warnings are distinct from terminal errors.
+- partial-success warnings are distinct from terminal errors;
+- there is no untyped `details` member on this contract (ADR-0008). An earlier draft of this block declared `details: Option<serde_json::Value>`. It is gone: the contract is classified `public`, and an unbounded free-JSON member on a public error is the carrier S14 and `THREAT_MODEL.md` are written against. Where a producer later needs to carry provider diagnostics, the sanctioned path is S14's bounded `metadata`/`unknown` shape — a discriminated `{kind, value}` carrier — on an `internal`-classified contract, not a free blob here.
 
 ## 6. Document contracts
 
@@ -197,7 +212,7 @@ pub struct Document {
     pub blocks: Vec<Block>,
     pub provenance: Vec<SourceSpan>,
     pub content_hash: String,
-    pub schema_version: u32,
+    pub document_ir_version: u32,
 }
 ```
 

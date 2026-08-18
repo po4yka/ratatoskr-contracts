@@ -102,6 +102,54 @@ fn rejects_empty_local_id() {
     ));
 }
 
+/// I-3. ADR-0007: one spelling per UUID identity. Both published patterns accept
+/// `event:018F0000-…`, so without this rule the same event has two unequal references and the
+/// `causation_id` → `EventId` join silently misses.
+#[test]
+fn rejects_non_canonical_uuid_local_id() {
+    let published = regex::Regex::new(EntityRef::PATTERN).expect("PATTERN compiles");
+    for rejected in [
+        "event:018F0000-0000-7000-8000-000000000001",
+        "document:018f0000-0000-7000-8000-00000000000A",
+        "user:018F0000-0000-7000-8000-000000000005",
+        // An unknown provider kind is not exempt: the rule is about the identity, not the kind.
+        "x-post:018F0000-0000-7000-8000-000000000002",
+    ] {
+        assert!(
+            published.is_match(rejected),
+            "{rejected} matches the published pattern, which is why the Rust layer must catch it"
+        );
+        let error = EntityRef::parse(rejected).expect_err("a non-canonical UUID is not a spelling");
+        assert!(
+            matches!(error, IdentifierError::NonCanonicalUuid { .. }),
+            "{rejected}: {error}"
+        );
+        assert!(
+            error
+                .to_string()
+                .contains("is a UUID in non-canonical form")
+        );
+    }
+}
+
+/// I-3. The rule fires on UUID shape alone, so every opaque local identity survives untouched.
+/// `ARCHITECTURE.md` S5.1: "provider IDs remain opaque strings".
+#[test]
+fn keeps_non_uuid_local_ids_opaque_and_case_sensitive() {
+    for accepted in [
+        "x-post:123",
+        "x-post:AbC-123",
+        "repository:OWNER.Name",
+        "user:123",
+        "blob:sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        // One hex digit short of a UUID: not a UUID, so neither folded nor rejected.
+        "document:018F0000-0000-7000-8000-00000000000",
+    ] {
+        let parsed = EntityRef::parse(accepted).expect("an opaque local identity stays legal");
+        assert_eq!(parsed.to_wire(), accepted, "the local part is never folded");
+    }
+}
+
 /// I-12. `DOMAIN.md` invariant 6, **preserved** branch: a kind from a bounded context this build
 /// has never heard of is kept verbatim so the record stays routable, ackable and loggable.
 #[test]

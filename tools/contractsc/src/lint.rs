@@ -24,13 +24,23 @@ use crate::registry;
 /// Justifications that are not justifications (L7), compared case-insensitively after trimming.
 pub const PLACEHOLDER_JUSTIFICATIONS: &[&str] = &["todo", "n/a", "na", "none", "see above", "-"];
 
+/// L8: the property name that means "envelope major", and the one type allowed to declare it.
+///
+/// ADR-0002 gives the repository two version axes: `event_type`'s `.v<major>` is the payload
+/// major, and `schema_version` is the envelope major. They describe different objects, so a second
+/// property with the same name anywhere else — most concretely the `schema_version: u32` that
+/// `ARCHITECTURE.md` S6.1 puts inside `Document` — would put two same-named integers in one
+/// message that look like they must agree and do not. The two axes are kept apart by a name that
+/// only the envelope may use, checked here rather than asked for in prose.
+pub const ENVELOPE_MAJOR_PROPERTY: (&str, &str) = ("schema_version", "EventEnvelope");
+
 /// The waiver / governance key of a property: `TypeName#/properties/name`.
 #[must_use]
 pub fn key(type_name: &str, pointer: &str) -> String {
     format!("{type_name}#{pointer}")
 }
 
-/// Runs L1–L7 over the in-memory generated schemas.
+/// Runs L1–L8 over the in-memory generated schemas.
 #[must_use]
 pub fn run(metadata: &Metadata, generated: &BTreeMap<PathBuf, String>) -> Vec<Finding> {
     let mut findings = Vec::new();
@@ -183,6 +193,19 @@ fn lint_type(
             });
         }
 
+        let (reserved_name, reserved_owner) = ENVELOPE_MAJOR_PROPERTY;
+        if name == reserved_name && type_name != reserved_owner {
+            findings.push(Finding::Lint {
+                rule: "L8",
+                pointer: identity.clone(),
+                detail: format!(
+                    "{name:?} is reserved for the envelope major on {reserved_owner} (ADR-0002); \
+                     a payload that needs its own version names it after what it versions, e.g. \
+                     `document_ir_version`"
+                ),
+            });
+        }
+
         let declared_type = resolved.get("type").and_then(serde_json::Value::as_str);
         if declared_type == Some("integer")
             && !metadata
@@ -212,31 +235,7 @@ fn lint_type(
         }
 
         if resolved.get("format").and_then(serde_json::Value::as_str) == Some("date-time") {
-            if !metadata
-                .lint
-                .timestamp_property_names
-                .iter()
-                .any(|known| known == name)
-            {
-                findings.push(Finding::Lint {
-                    rule: "L4",
-                    pointer: identity.clone(),
-                    detail: format!(
-                        "{name:?} is a date-time property outside \
-                         [lint].timestamp_property_names"
-                    ),
-                });
-            }
-            if !governed.contains(&identity) {
-                findings.push(Finding::Lint {
-                    rule: "L4",
-                    pointer: identity.clone(),
-                    detail: format!(
-                        "{name:?} is a date-time property with no [[contract.field]] entry \
-                         declaring its clock authority"
-                    ),
-                });
-            }
+            lint_timestamp(name, &identity, metadata, governed, findings);
         }
 
         let described = property
@@ -251,6 +250,42 @@ fn lint_type(
                 detail: format!("{name:?} has no description; write the rustdoc"),
             });
         }
+    }
+}
+
+/// L4, both branches: a `format: date-time` property must be in the timestamp vocabulary **and**
+/// carry a `[[contract.field]]` entry naming its clock authority. Both are reported in one run, so
+/// an operator is not sent round the fix-and-rerun loop twice for one property.
+fn lint_timestamp(
+    name: &str,
+    identity: &str,
+    metadata: &Metadata,
+    governed: &BTreeSet<String>,
+    findings: &mut Vec<Finding>,
+) {
+    if !metadata
+        .lint
+        .timestamp_property_names
+        .iter()
+        .any(|known| known == name)
+    {
+        findings.push(Finding::Lint {
+            rule: "L4",
+            pointer: identity.to_owned(),
+            detail: format!(
+                "{name:?} is a date-time property outside [lint].timestamp_property_names"
+            ),
+        });
+    }
+    if !governed.contains(identity) {
+        findings.push(Finding::Lint {
+            rule: "L4",
+            pointer: identity.to_owned(),
+            detail: format!(
+                "{name:?} is a date-time property with no [[contract.field]] entry declaring its \
+                 clock authority"
+            ),
+        });
     }
 }
 

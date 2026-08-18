@@ -92,7 +92,8 @@ If a type exists only to make one service implementation convenient, it belongs 
 All asynchronous contracts must use the canonical event/command envelope once implemented. The envelope should include, at minimum:
 
 - globally unique event or command ID;
-- type and major schema version;
+- event or command type, whose `.v<major>` suffix is the **payload** major;
+- envelope schema version, which is the **envelope** major and never mirrors the payload major (ADR-0002);
 - occurrence/request timestamp;
 - producer;
 - aggregate or target ID;
@@ -270,6 +271,7 @@ Do not claim compatibility based only on successful compilation of this reposito
 - Mark fields containing user content, provider identifiers, or audit data so retention and redaction behavior can be designed explicitly.
 - Ensure error contracts do not leak provider responses containing secrets.
 - Keep public API contracts separate from privileged internal/admin contracts.
+- `extensions` is a preservation channel, not an authoring channel (ADR-0008). A producer never invents a key in it; every value a producer intends a consumer to read is a typed field in this repository. A relay forwards upstream keys verbatim, which is what the channel exists for. The testable form is `extensions.is_empty()` on the envelopes a service **constructs**, never on the envelopes it forwards.
 
 ## Git and PR workflow
 

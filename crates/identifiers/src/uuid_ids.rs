@@ -1,4 +1,4 @@
-//! Typed UUID identities for the fields whose referent kind is fixed by the schema.
+//! Typed UUID identities for the fields that carry a record's own identity (ADR-0007).
 
 use core::convert::TryFrom;
 use core::fmt;
@@ -224,6 +224,12 @@ uuid_newtype! {
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot
     /// is an [`EntityRef`] instead, so `operation:`, `command:` and future kinds fit there without
     /// an envelope major bump; use `CorrelationId::as_entity_ref` to put one of these into it.
+    ///
+    /// `correlation` is deliberately **not** an [`EntityKind`] variant and not in
+    /// `contracts.toml [entity_kinds].known`: a correlation scope is not a Ratatoskr entity, so
+    /// widening one lands in the open vocabulary as `EntityKind::Other("correlation")`. A fixture
+    /// that wants to carry `correlation:` must add the token to `contracts.toml` first, which is
+    /// the governed path that file describes (ADR-0007).
     pub struct CorrelationId,
     kind = "correlation",
     description = "A correlation identity minted by a producer for work not bound to an \

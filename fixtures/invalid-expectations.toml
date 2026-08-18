@@ -48,6 +48,11 @@ rejected_by    = ["json_schema", "serde"]
 error_contains = 'must be `<kind>:<local_id>`'
 reason         = "A bare UUID does not say what it refers to. D4: `aggregate_id` is polymorphic, so the kind is carried on the wire."
 
+["core/event-envelope/invalid/aggregate-id-uppercase-uuid.json"]
+rejected_by    = ["serde"]
+error_contains = 'is a UUID in non-canonical form'
+reason         = "ADR-0007, one spelling per UUID identity. `EntityRef::PATTERN` accepts `document:018F…` because the local half is deliberately case-permissive for provider slugs, so the canonicality rule is conditional on the value being a UUID and only the Rust layer can express it — the same lower-bound case as occurred-at-trailing-zeros.json. Without it `event:018f…` and `event:018F…` are two unequal references to one event and the causation join misses."
+
 ["core/event-envelope/invalid/tenant-id-wrong-kind.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'expected entity kind "user"'

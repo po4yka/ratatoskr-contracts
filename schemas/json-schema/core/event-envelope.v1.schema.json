@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "aggregate_id": {
-      "description": "Namespaced reference to the aggregate the fact is about, e.g. `document:018f…` or\n`x-post:123`. Polymorphic — the referent kind varies by event type — therefore an\n[`EntityRef`] and not a typed newtype. Required.",
+      "description": "Namespaced reference to the aggregate the fact is about, e.g. `document:018f…` or\n`x-post:123`. This field **points at** another record rather than carrying the envelope's\nown identity, so the referent kind is on the wire and the type is an [`EntityRef`] and not\na typed newtype (ADR-0007). Required.",
       "$ref": "#/$defs/EntityRef"
     },
     "causation_id": {
@@ -80,14 +80,14 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:c4b59ebda8d5c26edd84f12879bf991ee2d1b5bf01ac651cec31b434eb0ec5eb",
+    "source_digest": "sha256:af561430b64a4b5ec8abda26076efc4e30fe4fa40643c4392b1b024cfa3f3b1d",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
   "$defs": {
     "EntityRef": {
       "title": "EntityRef",
-      "description": "A namespaced, polymorphic wire reference, serialized as `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised kind is preserved verbatim. The local identity is opaque and need not be a UUID.",
+      "description": "A namespaced, polymorphic wire reference, serialized as `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised kind is preserved verbatim. The local identity is opaque and need not be a UUID; when it is one it must be the canonical lowercase hyphenated spelling, so one identity has one reference. Equality is octet equality of `<kind>:<local_id>`: the kind is lowercase by grammar, and the local part is case-sensitive and never case-folded, because provider identities are case-significant. This rule is narrower than the `pattern` below, which cannot express it.",
       "type": "string",
       "examples": [
         "document:018f0000-0000-7000-8000-000000000002",

@@ -104,8 +104,9 @@ pub struct EventEnvelope {
     pub producer: ProducerName,
 
     /// Namespaced reference to the aggregate the fact is about, e.g. `document:018f…` or
-    /// `x-post:123`. Polymorphic — the referent kind varies by event type — therefore an
-    /// [`EntityRef`] and not a typed newtype. Required.
+    /// `x-post:123`. This field **points at** another record rather than carrying the envelope's
+    /// own identity, so the referent kind is on the wire and the type is an [`EntityRef`] and not
+    /// a typed newtype (ADR-0007). Required.
     pub aggregate_id: EntityRef,
 
     /// Namespaced reference tying this event to the unit of user-visible work it belongs to, e.g.

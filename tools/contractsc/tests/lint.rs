@@ -1,4 +1,4 @@
-//! The field lint — tests L-1 to L-7.
+//! The field lint — tests L-1 to L-8.
 //!
 //! `AGENTS.md`'s review rules, mechanised: "Reject fields that are added with vague names such as
 //! `status`, `data`, `metadata`, or `timestamp` without a precise documented contract",
@@ -239,6 +239,37 @@ fn rejects_empty_waiver_justification() {
     let hits = lint_hits(&metadata, &schemas);
     assert!(
         hits.contains(&("L7".to_owned(), "Probe#/properties/status".to_owned())),
+        "{hits:?}"
+    );
+}
+
+/// L-8. ADR-0002: `schema_version` is the envelope major and nothing else may be called that.
+/// The committed catalogue is clean, and a payload that declares its own `schema_version` — which
+/// is exactly what `ARCHITECTURE.md` S6.1's `Document` does — fails the gate rather than shipping
+/// two same-named integers in one message.
+#[test]
+fn reserves_schema_version_for_the_envelope() {
+    let text = std::fs::read_to_string(repo_root().join(Metadata::FILE_NAME))
+        .expect("contracts.toml is committed");
+    let metadata = Metadata::parse(&text).expect("contracts.toml parses");
+    let generated =
+        generate(&metadata, GENERATOR_VERSION).expect("the committed contracts generate");
+    assert!(
+        !lint_hits(&metadata, &generated)
+            .iter()
+            .any(|(rule, _)| rule == "L8"),
+        "only EventEnvelope declares schema_version today"
+    );
+
+    let colliding = probe_schemas(&serde_json::json!({
+        "schema_version": described("integer"),
+    }));
+    let hits = lint_hits(&probe_metadata(""), &colliding);
+    assert!(
+        hits.contains(&(
+            "L8".to_owned(),
+            "Probe#/properties/schema_version".to_owned()
+        )),
         "{hits:?}"
     );
 }

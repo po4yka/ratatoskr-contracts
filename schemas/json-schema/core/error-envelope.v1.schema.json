@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:core:v1:ErrorEnvelope",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ErrorEnvelope",
-  "description": "A terminal, machine-actionable failure crossing a process boundary\n(`ARCHITECTURE.md` S5.5).\n\nContains no stack trace, no raw provider response, no credential and no storage path\n(`ARCHITECTURE.md` S14, `SECURITY.md`). See spec D8 for the removal of S5.5's\n`details: Option<serde_json::Value>`.",
+  "description": "A terminal, machine-actionable failure crossing a process boundary\n(`ARCHITECTURE.md` S5.5).\n\nContains no stack trace, no raw provider response, no credential and no storage path\n(`ARCHITECTURE.md` S14, `SECURITY.md`). S5.5's `details: Option<serde_json::Value>` is\ndeliberately absent: ADR-0008 records that decision, its scope (this contract, major 1) and\nthe sanctioned path for a producer that later needs to carry provider diagnostics.",
   "type": "object",
   "properties": {
     "code": {
@@ -61,14 +61,14 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:13ad4813cfd60ef1351132d85cc9078637b82f8e6197fae23bbdc7c4ef111f64",
+    "source_digest": "sha256:964139d926478aced8c60f29f26c209a46e367e75bf55424195b32fd580bd81f",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
   "$defs": {
     "EntityRef": {
       "title": "EntityRef",
-      "description": "A namespaced, polymorphic wire reference, serialized as `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised kind is preserved verbatim. The local identity is opaque and need not be a UUID.",
+      "description": "A namespaced, polymorphic wire reference, serialized as `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised kind is preserved verbatim. The local identity is opaque and need not be a UUID; when it is one it must be the canonical lowercase hyphenated spelling, so one identity has one reference. Equality is octet equality of `<kind>:<local_id>`: the kind is lowercase by grammar, and the local part is case-sensitive and never case-folded, because provider identities are case-significant. This rule is narrower than the `pattern` below, which cannot express it.",
       "type": "string",
       "examples": [
         "document:018f0000-0000-7000-8000-000000000002",

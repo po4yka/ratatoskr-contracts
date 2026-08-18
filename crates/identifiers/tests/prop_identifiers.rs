@@ -54,14 +54,30 @@ proptest! {
         );
     }
 
-    /// Q-2.
+    /// Q-2. Every pair drawn from the two published patterns lands in exactly one of two states,
+    /// and the split is the ADR-0007 canonical-UUID rule. Stated as both branches so the property
+    /// stays total: the rule narrows the accepted set, and a property that only asserted the
+    /// accepting branch would be false.
     #[test]
     fn prop_entity_ref_roundtrip(
         kind in "[a-z][a-z0-9_-]{0,31}",
         local_id in "[A-Za-z0-9][A-Za-z0-9._~:@+-]{0,255}",
     ) {
         let wire = format!("{kind}:{local_id}");
-        let parsed = EntityRef::parse(&wire).unwrap();
+        // `EventId::parse` succeeds on exactly the canonical lowercase hyphenated UUIDs, so it is
+        // the canonicality oracle without a second copy of the pattern.
+        let folded = local_id.to_ascii_lowercase();
+        let non_canonical_uuid = folded != local_id && EventId::parse(&folded).is_ok();
+
+        let Ok(parsed) = EntityRef::parse(&wire) else {
+            prop_assert!(
+                non_canonical_uuid,
+                "{wire} was rejected but is not a non-canonical UUID"
+            );
+            return Ok(());
+        };
+        prop_assert!(!non_canonical_uuid, "{wire} is a non-canonical UUID yet parsed");
+
         prop_assert_eq!(parsed.to_wire(), wire.clone());
         prop_assert_eq!(parsed.to_string(), wire.clone());
         prop_assert_eq!(parsed.kind().as_str(), kind.as_str());

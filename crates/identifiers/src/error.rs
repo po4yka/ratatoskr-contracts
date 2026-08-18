@@ -54,6 +54,20 @@ pub enum IdentifierError {
         /// The offending local identity, echoed for diagnosis only.
         local_id: String,
     },
+    /// The local half of a qualified reference **is** a UUID, spelled some way other than the one
+    /// canonical way. Distinct from [`Self::NotAUuid`] (it is a UUID) and from
+    /// [`Self::PatternMismatch`] (the published `pattern` does match): one identity must have one
+    /// reference, or a causation join silently misses.
+    #[error(
+        "entity local id {local_id:?} is a UUID in non-canonical form; the only accepted \
+             spelling is {canonical:?}"
+    )]
+    NonCanonicalUuid {
+        /// The offending local identity, echoed for diagnosis only.
+        local_id: String,
+        /// The one spelling of this identity that the contract accepts.
+        canonical: String,
+    },
     /// The input is not an RFC 3339 instant at all.
     #[error("instant {input:?} is not RFC 3339: {reason}")]
     MalformedInstant {

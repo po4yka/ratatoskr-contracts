@@ -141,6 +141,19 @@ impl FromStr for EntityKind {
 ///
 /// This is the type behind the `aggregate_id`, `correlation_id` and `causation_id` strings in
 /// `ARCHITECTURE.md` S5.2 and behind `README.md`'s `"aggregate_id": "x-post:123"`.
+///
+/// **Equality is octet equality of the rendered `<kind>:<local_id>`.** The kind is lowercase by
+/// grammar. The local part is case-**sensitive** and is never case-folded, because provider
+/// identities are case-significant (`github/AGENTS.md`: "case normalization must not collapse
+/// distinct provider identities"). The one exception is the rule below, which removes a second
+/// spelling rather than merging two identities.
+///
+/// **One spelling per UUID identity (ADR-0007).** A local part that *is* a UUID must be the
+/// canonical lowercase hyphenated one; `event:018F…` is rejected at parse. Hex case carries no
+/// information in a UUID (RFC 9562 renders lowercase), so nothing is lost, and without the rule
+/// `event:018f…` and `event:018F…` would be two unequal references to one event and the
+/// `causation_id` → [`EventId`](crate::EventId) join would miss. A local part that is not a UUID
+/// stays fully opaque.
 #[derive(
     Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, serde::Serialize, serde::Deserialize,
 )]
@@ -160,6 +173,11 @@ impl EntityRef {
     pub const MAX_LEN: usize = 289;
 
     /// Joins an already-validated kind and local identity.
+    ///
+    /// The wire boundary is [`Self::parse`] — every deserialization routes through it — so the
+    /// canonical-UUID rule is enforced there. This constructor takes an [`EntityLocalId`] the
+    /// caller has already validated; in-crate callers build one from `uuid::Uuid::to_string()`,
+    /// which is canonical by construction.
     #[must_use]
     pub fn new(kind: EntityKind, local_id: EntityLocalId) -> Self {
         Self { kind, local_id }
@@ -172,17 +190,18 @@ impl EntityRef {
     /// [`IdentifierError::MissingKindSeparator`] when there is no colon,
     /// [`IdentifierError::PatternMismatch`] when either half violates its grammar,
     /// [`IdentifierError::Empty`] or [`IdentifierError::TooLong`] for a local identity outside
-    /// its bounds.
+    /// its bounds, [`IdentifierError::NonCanonicalUuid`] for a local part that is a UUID spelled
+    /// some way other than the canonical lowercase hyphenated one.
     pub fn parse(raw: &str) -> Result<Self, IdentifierError> {
         let Some((kind, local_id)) = raw.split_once(':') else {
             return Err(IdentifierError::MissingKindSeparator {
                 input: raw.to_owned(),
             });
         };
-        Ok(Self {
-            kind: EntityKind::parse(kind)?,
-            local_id: EntityLocalId::parse(local_id)?,
-        })
+        let kind = EntityKind::parse(kind)?;
+        let local_id = EntityLocalId::parse(local_id)?;
+        reject_non_canonical_uuid(local_id.as_str())?;
+        Ok(Self { kind, local_id })
     }
 
     /// The namespace half.
@@ -214,6 +233,21 @@ impl EntityRef {
         out.push_str(self.local_id.as_str());
         out
     }
+}
+
+/// One spelling per UUID identity (ADR-0007).
+///
+/// Fires only when the ASCII-lowercase form of the local part is a canonical UUID and the input is
+/// not already that form, so a provider slug, a numeric id and `sha256:<hex>` are all untouched.
+fn reject_non_canonical_uuid(local_id: &str) -> Result<(), IdentifierError> {
+    let canonical = local_id.to_ascii_lowercase();
+    if canonical != local_id && canonical_uuid(&canonical).is_some() {
+        return Err(IdentifierError::NonCanonicalUuid {
+            local_id: local_id.to_owned(),
+            canonical,
+        });
+    }
+    Ok(())
 }
 
 impl fmt::Display for EntityRef {
@@ -260,7 +294,12 @@ impl schemars::JsonSchema for EntityRef {
             "description": "A namespaced, polymorphic wire reference, serialized as \
                             `<kind>:<local_id>`. The kind vocabulary is open: an unrecognised \
                             kind is preserved verbatim. The local identity is opaque and need \
-                            not be a UUID.",
+                            not be a UUID; when it is one it must be the canonical lowercase \
+                            hyphenated spelling, so one identity has one reference. Equality is \
+                            octet equality of `<kind>:<local_id>`: the kind is lowercase by \
+                            grammar, and the local part is case-sensitive and never case-folded, \
+                            because provider identities are case-significant. This rule is \
+                            narrower than the `pattern` below, which cannot express it.",
             "pattern": Self::PATTERN,
             "maxLength": Self::MAX_LEN,
             "examples": ["document:018f0000-0000-7000-8000-000000000002", "x-post:123"],

@@ -10,7 +10,11 @@
 //!
 //! The typed surface has no untyped `details` member, no stack trace, no raw provider response,
 //! no credential and no storage path (`ARCHITECTURE.md` S14, `SECURITY.md`, `THREAT_MODEL.md`).
-//! Structure that a consumer must read is typed.
+//! Structure that a consumer must read is typed. This contract is classified `public`
+//! (`contracts.toml`); where a future producer genuinely needs to carry provider diagnostics, the
+//! sanctioned path is a separate `internal`-classified contract with a discriminated, bounded
+//! carrier — `ARCHITECTURE.md` S14's "bounded `metadata` or `unknown` fields" — not a free blob
+//! here. ADR-0008 records the decision and that path.
 //!
 //! # The extension channel is a producer obligation, not a guarantee
 //!
@@ -20,7 +24,8 @@
 //! `message` and nothing else. Keeping provider payloads out of `extensions` is therefore a
 //! reviewed obligation on the producing service (`AGENTS.md`, "Ensure error contracts do not leak
 //! provider responses containing secrets"), recorded as a residual risk in `docs/THREAT_MODEL.md`.
-//! A producer that wants the strict check asserts `extensions.is_empty()` in its own test.
+//! A producer never *authors* a key here; the testable rule is `extensions.is_empty()` on the
+//! envelopes it constructs, never on the envelopes it forwards (ADR-0008).
 //!
 //! # Codes versus messages
 //!

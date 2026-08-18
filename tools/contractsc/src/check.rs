@@ -47,7 +47,7 @@ pub enum Finding {
         /// What is wrong and how to fix it.
         detail: String,
     },
-    /// A field lint rule L1–L7 failed.
+    /// A field lint rule L1–L8 failed.
     Lint {
         /// The rule identifier, e.g. `L1`.
         rule: &'static str,

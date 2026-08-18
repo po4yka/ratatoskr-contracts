@@ -12,8 +12,13 @@ use std::collections::BTreeMap;
 /// and `x-ratatoskr-unknown-policy: "preserve"` on the parent. `BTreeMap`, not `IndexMap`, so
 /// preserved keys re-serialize in a deterministic sorted order.
 ///
-/// A producer that wants strict rejection of its own typos asserts `extensions.is_empty()` in its
-/// own test. There is no strict wire mode in m1–m4.
+/// **This channel is for preservation, not for authoring (ADR-0008).** A producer never invents a
+/// key here: every value a producer intends a consumer to read is a typed field in this
+/// repository. The map exists so a consumer built today re-emits a later producer's additive
+/// fields verbatim. A relay — `ratatoskr-platform` is both a producer and a consumer of the error
+/// envelope — forwards upstream keys unchanged; that is the behaviour the channel exists for. The
+/// testable form of the rule is `extensions.is_empty()` on the values a producer *constructs*,
+/// never on the values it forwards. There is no strict wire mode in m1–m4.
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 #[serde(transparent)]
 pub struct Extensions(BTreeMap<String, serde_json::Value>);

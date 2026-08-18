@@ -10,8 +10,9 @@ use crate::trace::TraceId;
 /// (`ARCHITECTURE.md` S5.5).
 ///
 /// Contains no stack trace, no raw provider response, no credential and no storage path
-/// (`ARCHITECTURE.md` S14, `SECURITY.md`). See spec D8 for the removal of S5.5's
-/// `details: Option<serde_json::Value>`.
+/// (`ARCHITECTURE.md` S14, `SECURITY.md`). S5.5's `details: Option<serde_json::Value>` is
+/// deliberately absent: ADR-0008 records that decision, its scope (this contract, major 1) and
+/// the sanctioned path for a producer that later needs to carry provider diagnostics.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct ErrorEnvelope {
     /// Stable machine-actionable code. The only field a consumer may branch on.
