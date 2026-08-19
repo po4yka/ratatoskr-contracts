@@ -174,10 +174,12 @@ Repository-local CI is expected to include formatting, linting, unit tests, JSON
 Until milestone 10 publishes the first tagged packages, a consumer depends on a contract crate as a Cargo git dependency pinned to a full commit SHA:
 
 ```toml
-ratatoskr-event-envelope = { git = "ssh://git@github.com/po4yka/ratatoskr-contracts.git", rev = "216924f1420c179ad2e87ffda6cf2135befb461e" }
+ratatoskr-event-envelope = { git = "https://github.com/po4yka/ratatoskr-contracts.git", rev = "216924f1420c179ad2e87ffda6cf2135befb461e" }
 ```
 
 This is the only sanctioned interim form. It satisfies the rule above because it is not a path dependency and it resolves identically from a clean checkout. A branch or a tag reference is not sufficient, because neither pins: a branch moves, and a tag can be moved. When milestone 10 lands, the `git`/`rev` pair is replaced by a version requirement against the published package, and the workspace lock records the version instead of the SHA.
+
+The pin is the `rev`, not the transport. Use `https://` while this repository is public: it resolves anonymously, so a consumer needs no credential locally and its CI needs no deploy key. A consumer that switches to `ssh://` gains a long-lived private key in CI and protects nothing that is already world-readable. If this repository is ever made private, `ssh://` becomes correct and every consumer needs the key — a consumer must not mix the two forms in one manifest, because two URLs for one source are two distinct packages.
 
 ## Non-goals
 
