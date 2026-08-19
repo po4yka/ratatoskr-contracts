@@ -42,7 +42,7 @@ jobs:
       # gate looks at any of them, and `[sources] unknown-git = "deny"` is what keeps this graph
       # publishable: cargo refuses to publish a crate with a git dependency, so without this the
       # failure would first appear at milestone 10.
-      - uses: taiki-e/install-action@e3ab72c6373acd1a99e065598c6b0c1eaad63dae # v2.62.34
+      - uses: taiki-e/install-action@5b4d68e2e660441203ab128a23676f1e4faf1532 # v2.86.3
         with:
           tool: cargo-deny
       - run: cargo deny check
@@ -66,10 +66,9 @@ jobs:
       - name: The gate and DEVELOPMENT.md are one list
         run: |
           set -euo pipefail
-          # shellcheck disable=SC2001  # a regex substitution, which ${x//y/z} cannot express
-          strip() { sed -E 's/[[:space:]]+#.*$//; s/[[:space:]]+$//' | grep -vE '^[[:space:]]*(#|$)'; }
-          in_ci=$(grep -E '^[[:space:]]+- run: ' .github/workflows/ci.yml \
-                  | sed -E 's/^[[:space:]]+- run: //' | strip)
+          strip() { awk '{sub(/[[:space:]]+#.*$/,""); sub(/[[:space:]]+$/,""); if ($0 ~ /^[[:space:]]*(#|$)/) next; print}'; }
+          in_ci=$(awk '/^[[:space:]]+- run: /{sub(/^[[:space:]]+- run: /,""); print}' \
+                  .github/workflows/ci.yml | strip)
           in_doc=$(awk '/^Gate, run by CI and before every commit:/{f=1} f&&/^```bash$/{c=1;next} c&&/^```$/{exit} c' \
                    DEVELOPMENT.md | strip)
           if [ "$in_ci" != "$in_doc" ]; then
@@ -78,4 +77,4 @@ jobs:
             exit 1
           fi
           echo "the two lists are identical:"
-          echo "$in_ci" | sed 's/^/  /'
+          echo "$in_ci" | awk '{print "  " $0}'
