@@ -58,3 +58,8 @@ panic              = "deny"
 missing_errors_doc = "deny"
 missing_panics_doc = "deny"
 float_arithmetic   = "deny"
+# `panic`, `unwrap_used` and `expect_used` above close every EXPLICIT panic path and leave the most
+# common implicit one open. Both of these are `allow` by default and live in `clippy::restriction`, so
+# `pedantic` does not enable them.
+indexing_slicing   = "deny"     # `v[i]` and `&s[a..b]` panicking out of bounds
+string_slice       = "deny"     # `&s[..n]` panicking because n is not a UTF-8 char boundary

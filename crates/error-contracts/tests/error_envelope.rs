@@ -120,7 +120,9 @@ fn roundtrips_with_field_violations() {
     .iter()
     .map(|name| rendered.find(name).expect("every member is rendered"))
     .collect();
-    assert!(order.windows(2).all(|pair| pair[0] < pair[1]));
+    // `is_sorted_by` rather than `windows(2)` and two indexes: it says "strictly increasing"
+    // directly, and it needs no `#[allow(clippy::indexing_slicing)]` to say it.
+    assert!(order.is_sorted_by(|a, b| a < b));
 }
 
 /// The three members every failure must carry; everything else starts empty and is omitted.

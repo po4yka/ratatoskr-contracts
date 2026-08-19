@@ -50,14 +50,13 @@ jobs:
       - run: cargo fmt --all -- --check
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
 
-      # ORDER IS NOT INTERCHANGEABLE, and DEVELOPMENT.md explains why at length: `generate` repairs
-      # drift in place, so a `check` that ran after it would inspect a tree that had just been
-      # repaired and would report a wrongly committed artifact as current. `check` first, `generate`
-      # last, as a proof of the write path whose pass condition is rewriting nothing.
+      # One command with one exit code, covering drift, a tampered provenance digest, an orphan
+      # schema, a contracts.toml claim that does not match reality, the field lint, the fixtures and a
+      # secret scan over fixtures/**. It deliberately does NOT run `cargo contracts generate`
+      # afterwards: running the writer to prove the reader was right is a second mechanism for one job,
+      # and DEVELOPMENT.md records the one gap this leaves.
       - run: cargo contracts check
       - run: cargo test --workspace --locked
-      - run: cargo contracts generate
-      - run: git diff --exit-code
 
       # The repository's own rule is that this file and DEVELOPMENT.md carry one list; the rule had no
       # enforcement until now, which is the same class of defect as a document claiming a capability
