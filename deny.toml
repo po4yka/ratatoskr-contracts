@@ -1,0 +1,40 @@
+# What `cargo deny check` enforces, and why each section is here rather than left to taste.
+#
+# The advisory database is the reason this file exists at all: nothing else in the gate reads RustSec,
+# and in the sibling `ratatoskr-platform` five findings against the TLS path went unnoticed until
+# `cargo deny` was first run against it.
+
+[advisories]
+version = 2
+yanked  = "deny"          # a yanked lockfile entry is a build that cannot be reproduced
+
+[licenses]
+version = 2
+# Every expression the current graph resolves to. The same list is used in ratatoskr-platform, so the
+# two files can be compared rather than reasoned about separately.
+allow = [
+    "Apache-2.0",
+    "MIT",
+    "MIT-0",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-3.0",
+    "Zlib",
+    "CDLA-Permissive-2.0",
+]
+# One shared list covers two graphs, so a few entries are unused in either one. That is the price of
+# the lists being identical, and it is not a defect worth a warning on every run.
+unused-allowed-license = "allow"
+
+[bans]
+# Two versions of one crate is usually accidental rather than wrong, so this warns rather than fails.
+multiple-versions = "warn"
+
+[sources]
+unknown-registry = "deny"
+# This crate graph must contain NO git dependency, and that is a publication requirement rather than
+# a preference: cargo refuses to publish a crate that depends on a git source, so a git dependency
+# added here would not fail until milestone 10 tried to publish and could not. `allow-git` is
+# deliberately absent — there is nothing to allow, and an empty allowance for a dependency form this
+# repository must never have would be a configuration that governs nothing.
+unknown-git = "deny"

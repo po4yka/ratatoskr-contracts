@@ -1,0 +1,81 @@
+# The gate DEVELOPMENT.md documents, enforced. The command list here and the list under
+# "Gate, run by CI and before every commit" are the same list, and the last step in this job asserts
+# that mechanically rather than trusting anybody to keep them aligned.
+#
+# The contracts git dependency needs no credential anywhere: this repository IS contracts, and
+# deny.toml forbids a git source in its own graph.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# SECURITY.md: deny by default. The gate reads the tree and needs nothing else.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The gate reads the tree and pushes nothing, so leaving the checkout token in .git/config
+          # would be a credential kept for no reason.
+          persist-credentials: false
+
+      - name: Show the pinned toolchain
+        run: rustup show           # rust-toolchain.toml is the only supported toolchain
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+
+      - run: cargo fetch --locked
+
+      # Reads RustSec, the licence set, duplicate versions and the source policy. Nothing else in the
+      # gate looks at any of them, and `[sources] unknown-git = "deny"` is what keeps this graph
+      # publishable: cargo refuses to publish a crate with a git dependency, so without this the
+      # failure would first appear at milestone 10.
+      - uses: taiki-e/install-action@e3ab72c6373acd1a99e065598c6b0c1eaad63dae # v2.62.34
+        with:
+          tool: cargo-deny
+      - run: cargo deny check
+
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+
+      # ORDER IS NOT INTERCHANGEABLE, and DEVELOPMENT.md explains why at length: `generate` repairs
+      # drift in place, so a `check` that ran after it would inspect a tree that had just been
+      # repaired and would report a wrongly committed artifact as current. `check` first, `generate`
+      # last, as a proof of the write path whose pass condition is rewriting nothing.
+      - run: cargo contracts check
+      - run: cargo test --workspace --locked
+      - run: cargo contracts generate
+      - run: git diff --exit-code
+
+      # The repository's own rule is that this file and DEVELOPMENT.md carry one list; the rule had no
+      # enforcement until now, which is the same class of defect as a document claiming a capability
+      # the tree does not have. Trailing `# ...` comments and continuation lines in the documented
+      # block are stripped before comparing, because they are commentary rather than commands.
+      - name: The gate and DEVELOPMENT.md are one list
+        run: |
+          set -euo pipefail
+          # shellcheck disable=SC2001  # a regex substitution, which ${x//y/z} cannot express
+          strip() { sed -E 's/[[:space:]]+#.*$//; s/[[:space:]]+$//' | grep -vE '^[[:space:]]*(#|$)'; }
+          in_ci=$(grep -E '^[[:space:]]+- run: ' .github/workflows/ci.yml \
+                  | sed -E 's/^[[:space:]]+- run: //' | strip)
+          in_doc=$(awk '/^Gate, run by CI and before every commit:/{f=1} f&&/^```bash$/{c=1;next} c&&/^```$/{exit} c' \
+                   DEVELOPMENT.md | strip)
+          if [ "$in_ci" != "$in_doc" ]; then
+            echo "::error::ci.yml and DEVELOPMENT.md have drifted. DEVELOPMENT.md is the one that is wrong."
+            diff <(echo "$in_ci") <(echo "$in_doc") || true
+            exit 1
+          fi
+          echo "the two lists are identical:"
+          echo "$in_ci" | sed 's/^/  /'

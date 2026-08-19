@@ -10,7 +10,9 @@ Implementation milestones 1 through 4 exist and the commands below are real.
 
 Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts` and `ratatoskr-operation-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; and valid, invalid and compatibility fixtures under `fixtures/`.
 
-Absent: Document IR, social-source and AI-archive contracts; OpenAPI in any form; generated TypeScript, Kotlin or Swift packages; CI configuration; a frozen compatibility baseline; and package publication. Those are milestones 5 through 10.
+Absent: Document IR, social-source and AI-archive contracts; OpenAPI in any form; generated TypeScript, Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are milestones 5 through 10.
+
+Present since the gate was wired to CI: `.github/workflows/ci.yml`, which runs the gate below and nothing else. That is the part of milestone 9 that needed no new capability. The rest of item 9 — a frozen compatibility baseline to check against, and package CI — is still absent, so CI existing is not the same as milestone 9 being done.
 
 ## Intended toolchain
 
@@ -45,6 +47,9 @@ Gate, run by CI and before every commit:
 
 ```bash
 cargo fetch --locked
+cargo deny check                             # RustSec advisories, licences, duplicate versions,
+                                             #   and `unknown-git = "deny"`, which is what keeps this
+                                             #   graph publishable at milestone 10
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo contracts check                        # read-only: schema validation + drift + metadata
@@ -69,9 +74,9 @@ cargo contracts compat <OLD.json> <NEW.json>
 
 `cargo contracts` is the alias in `.cargo/config.toml` for the `contractsc` binary in `tools/contractsc`.
 
-`cargo contracts check` is deliberately one command with one exit code, so the milestone 9 CI can adopt it unchanged. It reports drift against the committed artifacts, a tampered provenance digest, an orphan schema, a `contracts.toml` claim that does not match reality, a field-lint violation, a fixture that is not rejected for its declared reason, and a secret or personal-data pattern anywhere under `fixtures/**` (every file in that tree, not only `*.json`).
+`cargo contracts check` is deliberately one command with one exit code, and `.github/workflows/ci.yml` adopted it unchanged, as intended. It reports drift against the committed artifacts, a tampered provenance digest, an orphan schema, a `contracts.toml` claim that does not match reality, a field-lint violation, a fixture that is not rejected for its declared reason, and a secret or personal-data pattern anywhere under `fixtures/**` (every file in that tree, not only `*.json`).
 
-`check` is not a replacement for `cargo test --workspace`. Its fixture step exercises the `serde` layer only, because the JSON Schema validator is a development dependency of the generator. The `json_schema` column of `fixtures/invalid-expectations.toml`, and the rule that every `valid/` fixture is byte-canonical, are asserted by `cargo test` instead. A CI job must run both.
+`check` is not a replacement for `cargo test --workspace`. Its fixture step exercises the `serde` layer only, because the JSON Schema validator is a development dependency of the generator. The `json_schema` column of `fixtures/invalid-expectations.toml`, and the rule that every `valid/` fixture is byte-canonical, are asserted by `cargo test` instead. A CI job must run both, and the one in `.github/workflows/ci.yml` does.
 
 Package build and publish do not exist yet; that is milestone 10.
 
