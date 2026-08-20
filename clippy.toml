@@ -3,3 +3,41 @@ disallowed-types = [
   { path = "std::collections::HashMap", reason = "non-deterministic iteration order; use BTreeMap or serde_json::Map" },
   { path = "std::time::SystemTime",     reason = "use ratatoskr_identifiers::WireTimestamp" },
 ]
+
+# ---- Size limits ----
+#
+# Three numbers, and only one of them is a new gate. `too_many_lines` arrives with `pedantic` and
+# `too_many_arguments` is warn-by-default in `clippy::complexity`, so `-D warnings` in CI already
+# makes both fatal. Their thresholds are written down at clippy's current defaults so that a
+# toolchain bump raising a default cannot loosen this tree without a commit that says so.
+# `excessive-nesting-threshold` is the behavioural change: its default is 0, and 0 disables the lint.
+#
+# Each number is the worst case measured across BOTH Rust repositories on 2026-08-20, and this
+# repository sits under two of the three. The fleet number is used anyway, because one number per
+# limit is cheaper to read than two numbers and a footnote explaining the difference. The tighter
+# values this tree could carry today are recorded here rather than enforced: 83 lines and 6
+# arguments, both in `lint_type`, `tools/contractsc/src/lint.rs:158`. Taking them is a one-line
+# change with its own measurement.
+#
+# Clippy fires when the count EXCEEDS the threshold, so an item sitting exactly on a number is silent
+# and the next line, argument or block is the failure. `--all-targets` measures test bodies too.
+#
+# An exception is taken at the site, as `#[expect(clippy::too_many_lines, reason = "...")]`, and
+# never by raising a number here — a raised number applies to code nobody has written yet. `expect`
+# and not `allow`: `expect` reports `unfulfilled_lint_expectations` once the item drops back under
+# the limit, so the exemption deletes itself instead of outliving its reason.
+
+# Longest function: 83 lines, `lint_type` in `tools/contractsc/src/lint.rs`. Blank and comment-only
+# lines do not count, so that is 83 lines of code.
+too-many-lines-threshold = 100
+
+# Widest signature: 6 arguments, the same `lint_type`. `self` counts, so a method with five real
+# arguments already sits at six.
+too-many-arguments-threshold = 7
+
+# The default is 0, and 0 disables the lint, so this line is what turns `excessive_nesting` on. Five
+# is the deepest block in this repository and two blocks sit exactly there:
+# `tools/contractsc/src/compat.rs:684` and `tools/contractsc/src/fixtures.rs:186`. The sixth level
+# fails CI. Blocks are counted, not `if`s — an `impl` and an inline `mod` each add one before the
+# function body opens.
+excessive-nesting-threshold = 5

@@ -52,6 +52,7 @@ cargo deny check                             # RustSec advisories, licences, dup
                                              #   graph publishable at milestone 10
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
+git ls-files -z "*.rs" | xargs -0 -r wc -l | awk '$2 != "total" && $1 > 850 { print; bad = 1 } END { exit bad }'
 cargo contracts check                        # read-only: schema validation + drift + metadata
                                              #   + field lint + fixtures + secret scan; one exit code
 cargo test --workspace --locked
@@ -94,3 +95,11 @@ Package build and publish do not exist yet; that is milestone 10.
 ## Rules
 
 No service-private domain models, ORM entities, credentials, or real private data belong here. Generated artifacts are reviewed but not hand-edited. Cross-repository contract work must use `ratatoskr-workspace`.
+
+The size limits are in `clippy.toml` and carry the fleet numbers, not this repository's own: 100
+lines in a function, 7 arguments in a signature, 5 levels of block nesting. This tree sits under the
+first two — its worst is 83 lines and 6 arguments, both in `lint_type` — and that is recorded in
+`clippy.toml` rather than enforced, because one number per limit across the fleet is cheaper to read
+than two numbers and a footnote. The fourth limit is in `ci.yml`, because no Rust lint counts the
+lines in a file: 850 lines in a tracked `.rs` file, against 817 in `tools/contractsc/src/compat.rs`.
+Take `#[expect(clippy::too_many_lines, reason = "...")]` at the site rather than raising a number.
