@@ -1,12 +1,23 @@
 # Ratatoskr Contracts
 
-`ratatoskr-contracts` is the wire-contract repository for Ratatoskr Next. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
+`ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
 > **Status:** milestones 1–4 implemented. Shared identifiers, the event envelope, error contracts, operation contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. Document IR, social-source and AI-archive contracts, OpenAPI, generated TypeScript, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
 
-## Role in Ratatoskr Next
+> [!IMPORTANT]
+> **Ratatoskr is in development.** No database holds data that has to survive a schema change.
+> While this status holds, these two rules replace what the documents below plan:
+>
+> - the API and the database keep their first version. There is no `v2` and no later major
+>   version.
+> - the database has no migrations. One schema definition exists, and a schema change edits it in
+>   place.
+>
+> Only the repository owner changes this status.
 
-Ratatoskr Next is a multi-repository system built around bounded contexts. Services own their domain models and persistence independently; this repository contains only the stable boundary types required for interoperability.
+## Role in Ratatoskr
+
+Ratatoskr is a multi-repository system built around bounded contexts. Services own their domain models and persistence independently; this repository contains only the stable boundary types required for interoperability.
 
 It is intended to provide:
 
