@@ -22,20 +22,91 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:b2ce14ae1b9439e7e3752289fd82de2530fa4b1ea40cfae11d8fd7586710318b",
+    "source_digest": "sha256:32584e43112a9bc338ef246654a96ce00207ed2745d52efc65814cd8d3677049",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
   "$defs": {
-    "BlobRef": {
-      "title": "BlobRef",
-      "description": "Opaque, content-addressed handle to stored bytes.\n\nCarries no bucket, host, filesystem path, signed URL or expiry: `ARCHITECTURE.md` S14\nforbids all of them (\"Blob references are opaque and do not expose filesystem paths or\nsigned storage URLs\"). Resolving a handle to bytes is a service concern and needs separate\nauthorization.\n\nThis tightens S5.1's `BlobRef(pub String)`; S5.1's own requirement list says identifier\nstring formats are \"stable and validated\", which a public `String` cannot guarantee.\n`INTERFACES.md`'s richer blob description (hash, size, media type, authorization metadata)\nis a descriptor, not a handle; the descriptor arrives with Document IR in m5.\n\nThe two-colon shape is deliberate: parsed as an `EntityRef` it is kind `blob`, local id\n`sha256:<hex>`.",
+    "BlobOwner": {
+      "title": "BlobOwner",
+      "description": "Deployment identity of the service that owns and resolves a blob.",
       "type": "string",
       "examples": [
-        "blob:sha256:0000000000000000000000000000000000000000000000000000000000000000"
+        "ratatoskr-extractor",
+        "ratatoskr-vault"
       ],
-      "maxLength": 76,
-      "pattern": "^blob:sha256:[0-9a-f]{64}$"
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9-]{1,63}$"
+    },
+    "BlobRef": {
+      "description": "Reference to content-addressed bytes owned by one service.\n\nThis is a reference, not a storage API. The owner writes and resolves the bytes under its own\ncontent-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can\nappear in this contract.",
+      "type": "object",
+      "properties": {
+        "digest": {
+          "description": "Digest that names the bytes and lets a reader verify them.",
+          "$ref": "#/$defs/ContentDigest"
+        },
+        "length_bytes": {
+          "description": "Exact byte length of the stored value.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0
+        },
+        "media_type": {
+          "description": "Media type of the stored bytes.",
+          "$ref": "#/$defs/MediaType"
+        },
+        "owner_service": {
+          "description": "Service that owns the bytes and their lifecycle.",
+          "$ref": "#/$defs/BlobOwner"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "digest",
+        "length_bytes",
+        "media_type",
+        "owner_service"
+      ]
+    },
+    "ContentDigest": {
+      "description": "A content digest with an explicit algorithm.",
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "description": "Hash algorithm used to produce `hex`.",
+          "$ref": "#/$defs/DigestAlgorithm"
+        },
+        "hex": {
+          "description": "Lowercase hexadecimal digest bytes.",
+          "$ref": "#/$defs/DigestHex"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "hex"
+      ]
+    },
+    "DigestAlgorithm": {
+      "description": "Algorithm used to calculate a content digest.",
+      "oneOf": [
+        {
+          "description": "SHA-256.",
+          "type": "string",
+          "const": "sha256"
+        }
+      ]
+    },
+    "DigestHex": {
+      "title": "DigestHex",
+      "description": "Lowercase hexadecimal bytes of a content digest.",
+      "type": "string",
+      "examples": [
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "maxLength": 64,
+      "pattern": "^[0-9a-f]{64}$"
     },
     "EntityRef": {
       "title": "EntityRef",
@@ -148,6 +219,17 @@
         "message"
       ],
       "x-ratatoskr-unknown-policy": "preserve"
+    },
+    "MediaType": {
+      "title": "MediaType",
+      "description": "Internet media type of stored bytes, without parameters.",
+      "type": "string",
+      "examples": [
+        "text/html",
+        "application/pdf"
+      ],
+      "maxLength": 255,
+      "pattern": "^[a-z0-9][a-z0-9!#$&^_.+-]{0,126}/[a-z0-9][a-z0-9!#$&^_.+-]{0,126}$"
     },
     "OperationId": {
       "title": "OperationId",

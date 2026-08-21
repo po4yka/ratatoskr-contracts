@@ -10,11 +10,8 @@
 //! readable from the value alone. The kind set of an owner field is closed ([`TenantRef`]); every
 //! other pointer's kind vocabulary is open.
 //!
-//! A handle to a **non-domain external system** keeps that system's own grammar in its own
-//! validated newtype, whatever shape that grammar has: [`BlobRef`] is content-addressed
-//! (`blob:sha256:<hex>`) and `ratatoskr_error_contracts::TraceId` is bare 32-hex because W3C Trace
-//! Context says so. This clause is descriptive of what ships, not an escape hatch: a new field
-//! qualifies only when an external specification already fixes its spelling.
+//! [`BlobRef`] is a structured content-addressed reference. It names the owning service, digest,
+//! media type and byte length without exposing a storage location.
 //!
 //! The first two clauses are the only reading under which every identifier in the
 //! `ARCHITECTURE.md` S5.2 example is legal — `event_id` is bare there, the other four are
@@ -40,11 +37,11 @@ mod timestamp;
 mod uuid_ids;
 mod wire;
 
-pub use crate::blob::BlobRef;
+pub use crate::blob::{BlobOwner, BlobRef, ContentDigest, DigestAlgorithm, DigestHex, MediaType};
 pub use crate::entity::{EntityKind, EntityLocalId, EntityRef, TenantRef};
 pub use crate::error::IdentifierError;
 pub use crate::macros::doc_description;
 pub use crate::text::SafeMessage;
 pub use crate::timestamp::WireTimestamp;
-pub use crate::uuid_ids::{CorrelationId, EventId, OperationId, UserId};
+pub use crate::uuid_ids::{CorrelationId, DocumentId, EventId, OperationId, UserId};
 pub use crate::wire::{Extensions, canonical_json, dropped_field_pointers};

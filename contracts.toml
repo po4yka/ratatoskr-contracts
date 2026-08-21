@@ -12,7 +12,9 @@ metadata_version = 1
 known = [
   "ratatoskr-platform",
   "ratatoskr-extractor",
+  "ratatoskr-github",
   "ratatoskr-knowledge",
+  "ratatoskr-vault",
   "ratatoskr-x",
 ]
 
@@ -100,6 +102,28 @@ justification = "Name fixed by the normative wire example in ARCHITECTURE S5.2. 
 
 # ---------------------------------------------------------------------------
 [[contract]]
+id             = "core.blob_ref"
+family         = "core"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-extractor"
+producers      = ["ratatoskr-extractor", "ratatoskr-github", "ratatoskr-knowledge", "ratatoskr-vault"]
+consumers      = ["ratatoskr-extractor", "ratatoskr-knowledge", "ratatoskr-vault"]
+crate_name     = "ratatoskr-identifiers"
+canonical_path = "crates/identifiers/src/blob.rs"
+fixtures_dir   = "fixtures/core/blob-ref"
+summary        = "Content-addressed reference to bytes owned by one service."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_identifiers::BlobRef"
+output         = "schemas/json-schema/core/blob-ref.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:core:v1:BlobRef"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
 id             = "core.error_envelope"
 family         = "core"
 major_version  = 1
@@ -119,6 +143,28 @@ output         = "schemas/json-schema/core/error-envelope.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:core:v1:ErrorEnvelope"
 unknown_policy = "preserve"
 privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "content.document"
+family         = "content"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-extractor"
+producers      = ["ratatoskr-extractor"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-document-contracts"
+canonical_path = "crates/document-contracts/src/document.rs"
+fixtures_dir   = "fixtures/content/document"
+summary        = "Canonical ordered document blocks and extraction provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_document_contracts::Document"
+output         = "schemas/json-schema/content/document.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:content:v1:Document"
+unknown_policy = "reject"
+privacy        = "user_content"
 
 # ---------------------------------------------------------------------------
 [[contract]]
@@ -193,3 +239,33 @@ privacy        = "boundary_metadata"
 [contract.event]
 event_type   = "platform.operation.progressed.v1"
 payload_type = "ratatoskr_operation_contracts::OperationProgressed"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.operation_reported"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-github", "ratatoskr-knowledge", "ratatoskr-vault", "ratatoskr-x"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/platform.operation.reported.v1"
+summary        = "Producer report of operation progress facts known outside Platform."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::OperationReported"
+output         = "schemas/events/platform.operation.reported.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:OperationReported"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.vague_field_waiver]]
+pointer       = "/properties/status"
+justification = "The closed OperationStatus enum defines the exact lifecycle vocabulary a producer may report; consumers never infer values from free text."
+
+[contract.event]
+event_type   = "platform.operation.reported.v1"
+payload_type = "ratatoskr_operation_contracts::OperationReported"

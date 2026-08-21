@@ -8,8 +8,8 @@
 1. Define directories and machine-readable contract metadata.
 2. Choose canonical schema source format and generator architecture.
 3. Implement shared identifiers and event envelope.
-4. Implement operation and error contracts.
-5. Implement Document IR and provenance.
+4. Implement operation and error contracts. **Implemented.**
+5. Implement Document IR and provenance. **Implemented.**
 6. Implement social-source contracts.
 7. Implement AI archive graph/content contracts.
 8. Add deterministic Rust/TypeScript generation.

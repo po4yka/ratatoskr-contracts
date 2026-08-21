@@ -1,34 +1,105 @@
-//! The opaque, content-addressed blob handle.
+//! Content-addressed references to bytes owned by a Ratatoskr service.
 
 use crate::wire_string_newtype;
 
 wire_string_newtype! {
-    /// Opaque, content-addressed handle to stored bytes.
-    ///
-    /// Carries no bucket, host, filesystem path, signed URL or expiry: `ARCHITECTURE.md` S14
-    /// forbids all of them ("Blob references are opaque and do not expose filesystem paths or
-    /// signed storage URLs"). Resolving a handle to bytes is a service concern and needs separate
-    /// authorization.
-    ///
-    /// This tightens S5.1's `BlobRef(pub String)`; S5.1's own requirement list says identifier
-    /// string formats are "stable and validated", which a public `String` cannot guarantee.
-    /// `INTERFACES.md`'s richer blob description (hash, size, media type, authorization metadata)
-    /// is a descriptor, not a handle; the descriptor arrives with Document IR in m5.
-    ///
-    /// The two-colon shape is deliberate: parsed as an `EntityRef` it is kind `blob`, local id
-    /// `sha256:<hex>`.
-    pub struct BlobRef {
-        pattern  = r"^blob:sha256:[0-9a-f]{64}$",
-        max_len  = 76,
-        examples = ["blob:sha256:0000000000000000000000000000000000000000000000000000000000000000"],
+    /// Deployment identity of the service that owns and resolves a blob.
+    pub struct BlobOwner {
+        pattern  = r"^[a-z][a-z0-9-]{1,63}$",
+        max_len  = 64,
+        examples = ["ratatoskr-extractor", "ratatoskr-vault"],
     }
 }
 
-impl BlobRef {
-    /// The 64-character lowercase hex digest.
-    #[must_use]
-    pub fn sha256_hex(&self) -> &str {
-        const PREFIX: &str = "blob:sha256:";
-        self.as_str().get(PREFIX.len()..).unwrap_or("")
+wire_string_newtype! {
+    /// Lowercase hexadecimal bytes of a content digest.
+    pub struct DigestHex {
+        pattern  = r"^[0-9a-f]{64}$",
+        max_len  = 64,
+        examples = ["0000000000000000000000000000000000000000000000000000000000000000"],
     }
+}
+
+wire_string_newtype! {
+    /// Internet media type of stored bytes, without parameters.
+    pub struct MediaType {
+        pattern  = r"^[a-z0-9][a-z0-9!#$&^_.+-]{0,126}/[a-z0-9][a-z0-9!#$&^_.+-]{0,126}$",
+        max_len  = 255,
+        examples = ["text/html", "application/pdf"],
+    }
+}
+
+/// Algorithm used to calculate a content digest.
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
+    serde::Serialize,
+    serde::Deserialize,
+    schemars::JsonSchema,
+)]
+#[serde(rename_all = "snake_case")]
+#[non_exhaustive]
+pub enum DigestAlgorithm {
+    /// SHA-256.
+    Sha256,
+}
+
+/// A content digest with an explicit algorithm.
+#[derive(
+    Debug,
+    Clone,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
+    serde::Serialize,
+    serde::Deserialize,
+    schemars::JsonSchema,
+)]
+#[serde(deny_unknown_fields)]
+pub struct ContentDigest {
+    /// Hash algorithm used to produce `hex`.
+    pub algorithm: DigestAlgorithm,
+
+    /// Lowercase hexadecimal digest bytes.
+    pub hex: DigestHex,
+}
+
+/// Reference to content-addressed bytes owned by one service.
+///
+/// This is a reference, not a storage API. The owner writes and resolves the bytes under its own
+/// content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
+/// appear in this contract.
+#[derive(
+    Debug,
+    Clone,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
+    serde::Serialize,
+    serde::Deserialize,
+    schemars::JsonSchema,
+)]
+#[serde(deny_unknown_fields)]
+pub struct BlobRef {
+    /// Service that owns the bytes and their lifecycle.
+    pub owner_service: BlobOwner,
+
+    /// Digest that names the bytes and lets a reader verify them.
+    pub digest: ContentDigest,
+
+    /// Media type of the stored bytes.
+    pub media_type: MediaType,
+
+    /// Exact byte length of the stored value.
+    pub length_bytes: u64,
 }

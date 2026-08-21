@@ -1,0 +1,9 @@
+{
+  "owner_service": "ratatoskr-extractor",
+  "digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "media_type": "text/html",
+  "length_bytes": 42
+}

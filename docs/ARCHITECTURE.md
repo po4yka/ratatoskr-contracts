@@ -86,7 +86,12 @@ pub struct UserId(pub Uuid);
 pub struct OperationId(pub Uuid);
 pub struct EventId(pub Uuid);
 pub struct CorrelationId(pub Uuid);
-pub struct BlobRef(pub String);
+pub struct BlobRef {
+    pub owner_service: BlobOwner,
+    pub digest: ContentDigest,
+    pub media_type: MediaType,
+    pub length_bytes: u64,
+}
 ```
 
 Requirements:
@@ -101,7 +106,7 @@ Requirements:
 
 1. A field carrying the record's **own** identity is a bare canonical lowercase-hyphenated UUID in a typed newtype: `event_id`, `operation_id`.
 2. A field **pointing at** another Ratatoskr domain record is `<kind>:<local_id>`, because a pointer's referent kind must be readable from the value alone: `aggregate_id`, `correlation_id`, `causation_id`, `tenant_id`. The kind vocabulary is open (`EntityRef`) unless authorization requires it closed (`TenantRef`).
-3. A handle to a **non-domain external system** keeps that system's own grammar in its own validated newtype: `BlobRef` is content-addressed, and the error envelope's `trace_id` is bare 32-hex because W3C Trace Context fixes that spelling. Clause 3 applies only where an external specification already fixes the spelling; it is not a general exemption from clause 2.
+3. A handle to a **non-domain external system** keeps that system's own grammar in its own validated newtype: the error envelope's `trace_id` is bare 32-hex because W3C Trace Context fixes that spelling. Clause 3 applies only where an external specification already fixes the spelling; it is not a general exemption from clause 2. `BlobRef` is not an identifier newtype: it is a structured reference naming the owner, digest, media type and byte length.
 
 A local identity that is a UUID has exactly one accepted spelling, the canonical lowercase hyphenated one. A local identity that is not a UUID stays fully opaque and case-sensitive.
 
@@ -208,11 +213,12 @@ The normalized document is structured, not Markdown-first.
 ```rust
 pub struct Document {
     pub document_id: DocumentId,
-    pub metadata: DocumentMetadata,
+    pub source_address: DocumentAddress,
+    pub content_digest: ContentDigest,
+    pub title: Option<String>,
+    pub language: Option<LanguageTag>,
     pub blocks: Vec<Block>,
-    pub provenance: Vec<SourceSpan>,
-    pub content_hash: String,
-    pub document_ir_version: u32,
+    pub provenance: Vec<DocumentProvenance>,
 }
 ```
 
@@ -222,26 +228,20 @@ Representative blocks:
 pub enum Block {
     Heading { level: u8, text: String },
     Paragraph { text: String },
-    List { ordered: bool, items: Vec<String> },
-    Quote { text: String },
-    Code { language: Option<String>, text: String },
-    Table { rows: Vec<Vec<String>> },
-    Image { source: String, alt: Option<String> },
-    Unknown { kind: String, value: serde_json::Value },
+}
+
+pub struct DocumentProvenance {
+    pub block_index: u32,
+    pub extraction_strategy: ExtractionStrategy,
+    pub source_blob: BlobRef,
 }
 ```
 
-`Unknown` preserves forward compatibility. Rendered Markdown, HTML, plain text, and LLM context are derived representations.
+Version one is the shared intersection used by Extractor and Knowledge. More block kinds are added only when both sides need them. Rendered Markdown, HTML, plain text, and LLM context are derived representations. The content digest covers the canonical JSON bytes of `blocks` alone, so block order, kinds and text are significant while identity and provenance are not.
 
 ### 6.2. Provenance
 
-Provenance connects normalized blocks to source evidence:
-
-- source URL or blob;
-- byte, DOM, page, or provider-object location;
-- extraction strategy;
-- observed timestamp;
-- optional confidence.
+Provenance connects each normalized block index to the stored source blob and extraction strategy. More precise byte, DOM, page or provider-object spans are added only when a producer and consumer both use them.
 
 Consumers may display citations without depending on extractor-private storage.
 

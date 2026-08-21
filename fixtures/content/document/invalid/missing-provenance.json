@@ -1,0 +1,9 @@
+{
+  "document_id": "018f0000-0000-7000-8000-000000000021",
+  "source_address": "document:fixture-source",
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "blocks": []
+}

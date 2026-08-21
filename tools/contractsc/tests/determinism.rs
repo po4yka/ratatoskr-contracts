@@ -47,8 +47,8 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        4,
-        "four registered roots produce four artifacts"
+        7,
+        "seven registered roots produce seven artifacts"
     );
 }
 

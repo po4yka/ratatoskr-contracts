@@ -135,14 +135,21 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         };
     }
     match rust_path {
+        "ratatoskr_document_contracts::Document" => {
+            render!(ratatoskr_document_contracts::Document)
+        }
         "ratatoskr_error_contracts::ErrorEnvelope" => {
             render!(ratatoskr_error_contracts::ErrorEnvelope)
         }
         "ratatoskr_event_envelope::EventEnvelope" => {
             render!(ratatoskr_event_envelope::EventEnvelope)
         }
+        "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
         "ratatoskr_operation_contracts::OperationProgressed" => {
             render!(ratatoskr_operation_contracts::OperationProgressed)
+        }
+        "ratatoskr_operation_contracts::OperationReported" => {
+            render!(ratatoskr_operation_contracts::OperationReported)
         }
         "ratatoskr_operation_contracts::OperationSnapshot" => {
             render!(ratatoskr_operation_contracts::OperationSnapshot)

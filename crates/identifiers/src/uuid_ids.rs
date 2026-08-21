@@ -181,6 +181,16 @@ macro_rules! uuid_newtype {
 }
 
 uuid_newtype! {
+    /// Identity of one normalized document.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID.
+    pub struct DocumentId,
+    kind = "document",
+    description = "Identity of one normalized document. Bare canonical lowercase hyphenated UUID; \
+                   not namespaced."
+}
+
+uuid_newtype! {
     /// Identity of one event occurrence. Also the at-least-once **deduplication key**: a consumer
     /// that has already processed this `event_id` must treat a redelivery as a no-op
     /// (`ARCHITECTURE.md` S15.6).

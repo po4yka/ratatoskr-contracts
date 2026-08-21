@@ -1361,6 +1361,7 @@ dependencies = [
  "hex",
  "jsonschema",
  "proptest",
+ "ratatoskr-document-contracts",
  "ratatoskr-error-contracts",
  "ratatoskr-event-envelope",
  "ratatoskr-identifiers",
@@ -1371,6 +1372,17 @@ dependencies = [
  "serde_json",
  "sha2",
  "toml",
+]
+
+[[package]]
+name = "ratatoskr-document-contracts"
+version = "0.1.0"
+dependencies = [
+ "ratatoskr-identifiers",
+ "regex",
+ "schemars",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

@@ -1,35 +1,27 @@
 {
-  "$id": "urn:ratatoskr:contracts:platform:v1:OperationSnapshot",
+  "$id": "urn:ratatoskr:contracts:events:v1:OperationReported",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "OperationSnapshot",
-  "description": "A point-in-time public view of a long-running operation (`ARCHITECTURE.md` S5.4).\n\nNamed `OperationSnapshot`, not `Operation`, because this repository owns wire representations,\nnot entities (`ARCHITECTURE.md` S15.1, S15.12). Two snapshots of the same `operation_id` at\ndifferent `status_changed_at` are both valid and are not expected to be equal.\n\nNo `schema_version` field: S5.4's field list does not include one, and the envelope already\ncarries the envelope major. A third version axis is a compatibility hazard, not a feature.\n\n`Deserialize` is hand-written (the **only** hand-written `Deserialize` in this repository)\nbecause the invariants below are cross-field and serde has no validation hook. It parses a\nprivate mirror struct and then checks. A field added to the public struct and not the mirror\nwould be silently dropped; test `O-2` (byte round-trip of a fixture carrying every field)\nfails immediately if that happens, and a source comment points at it.\n\n# Cross-field invariants\n\nEvery one is re-checkable through [`OperationSnapshot::validate`]:\n\n- **I1** `terminated_at` is present exactly when `status.is_terminal()`.\n- **I2** `failed` requires at least one error.\n- **I3** `succeeded` forbids errors.\n- **I4** `partially_succeeded` requires at least one warning or error.\n- **I5** `status_changed_at` and `terminated_at` are never earlier than `accepted_at`.",
+  "title": "OperationReported",
+  "description": "Payload of `platform.operation.reported.v1`.\n\nA service reports only the operation progress facts it produced. Platform combines the report\nwith the request facts it owns before clients observe an [`OperationSnapshot`].\n\nSnapshot-only request facts are absent on purpose: `kind` is chosen by the component that\naccepted the request, `accepted_at` is that component's clock, and `correlation_id` and\n`tenant_id` belong to the accepted request. Requiring them here would make every producer copy\nPlatform's operation record.",
   "type": "object",
   "properties": {
-    "accepted_at": {
-      "description": "Instant the accepting component durably recorded the request. Platform-observed, not\nclient-asserted.",
-      "$ref": "#/$defs/WireTimestamp"
-    },
-    "correlation_id": {
-      "description": "The unit of user-visible work this operation belongs to, e.g. `operation:018f…`.\nEvery event and error emitted while serving the operation carries the same value.",
-      "$ref": "#/$defs/EntityRef"
-    },
-    "errors": {
-      "description": "Terminal failures. Non-empty exactly when `status` is `failed`; permitted on\n`partially_succeeded` and `cancelled`; forbidden on `succeeded`.",
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/ErrorEnvelope"
-      }
-    },
-    "kind": {
-      "description": "What work this operation performs.",
-      "$ref": "#/$defs/OperationKind"
+    "error": {
+      "description": "Terminal failure, when one prevented a usable result.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorEnvelope"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "operation_id": {
-      "description": "Stable identity of the operation, assigned when it was accepted and never reused.\n`UUIDv7` when newly minted. Bare UUID on the wire.",
+      "description": "Operation whose work reached `status`.",
       "$ref": "#/$defs/OperationId"
     },
     "progress_percent": {
-      "description": "Whole-percent completion estimate. Absent means unknown, never zero.",
+      "description": "Whole-percent completion estimate. Absent means unknown.",
       "anyOf": [
         {
           "$ref": "#/$defs/ProgressPercent"
@@ -40,18 +32,14 @@
       ]
     },
     "results": {
-      "description": "References to what the operation produced. Empty until effects exist. Ordering is\nproducer-defined and is not contract-significant.",
+      "description": "References to effects the producer completed.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/OperationResultRef"
       }
     },
-    "retryable": {
-      "description": "Whether resubmitting the identical request may succeed. Meaningful only for a terminal\nunsuccessful status; `false` otherwise. Deliberately unconstrained by `status`: no\ndocument states the rule, and a harmless nonsensical value beats an invented one.",
-      "type": "boolean"
-    },
     "stage": {
-      "description": "Producer-defined phase inside the current status. Absent when the producer publishes none.",
+      "description": "Producer-defined display phase inside the status.",
       "anyOf": [
         {
           "$ref": "#/$defs/OperationStage"
@@ -62,37 +50,11 @@
       ]
     },
     "status": {
-      "description": "Current lifecycle state. Closed enum; see [`OperationStatus`].",
+      "description": "Lifecycle status reached by the producer.",
       "$ref": "#/$defs/OperationStatus"
     },
-    "status_changed_at": {
-      "description": "Instant `status` last changed. Platform-observed. Equal to `accepted_at` for the first\nsnapshot; never earlier.",
-      "$ref": "#/$defs/WireTimestamp"
-    },
-    "tenant_id": {
-      "description": "The owner of the data this operation concerns. Absent for system-initiated operations.",
-      "anyOf": [
-        {
-          "$ref": "#/$defs/TenantRef"
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "terminated_at": {
-      "description": "Instant the operation first reached a terminal status. Present exactly when\n`status.is_terminal()`.",
-      "anyOf": [
-        {
-          "$ref": "#/$defs/WireTimestamp"
-        },
-        {
-          "type": "null"
-        }
-      ]
-    },
     "warnings": {
-      "description": "Non-terminal problems that did not prevent the recorded outcome. Distinct from `errors`\n(`ARCHITECTURE.md` S5.5).",
+      "description": "Non-terminal problems that did not prevent the reported outcome.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/WarningEnvelope"
@@ -101,23 +63,18 @@
   },
   "additionalProperties": true,
   "required": [
-    "accepted_at",
-    "correlation_id",
-    "kind",
     "operation_id",
-    "retryable",
-    "status",
-    "status_changed_at"
+    "status"
   ],
   "x-ratatoskr-provenance": {
-    "canonical_source": "ratatoskr_operation_contracts::OperationSnapshot",
-    "contract_id": "platform.operation_snapshot",
+    "canonical_source": "ratatoskr_operation_contracts::OperationReported",
+    "contract_id": "platform.operation_reported",
     "contract_major_version": 1,
     "generated": "DO NOT EDIT — generated by contractsc from the canonical Rust source. Change the Rust type and run `cargo contracts generate`.",
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:82af767444781f4e894530aa087e471ed37aec3dbf819a1447274c6194acbdf6",
+    "source_digest": "sha256:de732a412253009b158ca4b7e2c6bf5793fa030ec4a71020c5c8eff9341478cc",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -336,17 +293,6 @@
       ],
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
     },
-    "OperationKind": {
-      "title": "OperationKind",
-      "description": "What work the operation performs, e.g. `content.document.extract`.\nPresent tense: a kind names an activity, not a completed fact — unlike an event action.\nOpen by construction (a validated string), so there is no unknown-variant problem.",
-      "type": "string",
-      "examples": [
-        "content.document.extract",
-        "social.source.sync"
-      ],
-      "maxLength": 128,
-      "pattern": "^[a-z][a-z0-9_]{0,31}(\\.[a-z][a-z0-9_]{0,31}){1,3}$"
-    },
     "OperationResultKind": {
       "title": "OperationResultKind",
       "description": "What an [`OperationResultRef`](crate::OperationResultRef) points at, e.g.\n`content.document`.",
@@ -459,16 +405,6 @@
       "maxLength": 1024,
       "pattern": "^[^\\x00-\\x1f\\x7f]{1,1024}$"
     },
-    "TenantRef": {
-      "title": "TenantRef",
-      "description": "The owner of the data a record concerns, wire form `user:<uuid>`. The kind set is closed: a consumer that cannot understand the owner kind must reject the record rather than process it.",
-      "type": "string",
-      "examples": [
-        "user:018f0000-0000-7000-8000-000000000005"
-      ],
-      "maxLength": 41,
-      "pattern": "^user:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
-    },
     "TraceId": {
       "title": "TraceId",
       "description": "W3C Trace Context `trace-id`: 32 lowercase hex characters.\nFor log correlation only; never a business key and never an authorization input.",
@@ -509,16 +445,6 @@
         "message"
       ],
       "x-ratatoskr-unknown-policy": "preserve"
-    },
-    "WireTimestamp": {
-      "title": "WireTimestamp",
-      "description": "An instant on the wire: RFC 3339 in UTC with the literal `Z` designator. Exactly one spelling is accepted per instant — an input that does not re-render to itself is rejected. The field holding it declares the clock authority.",
-      "type": "string",
-      "format": "date-time",
-      "examples": [
-        "2026-08-17T10:00:00Z"
-      ],
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?Z$"
     }
   }
 }

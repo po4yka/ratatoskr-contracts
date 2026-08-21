@@ -12,8 +12,8 @@
 
 use proptest::prelude::*;
 use ratatoskr_identifiers::{
-    BlobRef, CorrelationId, EntityLocalId, EntityRef, EventId, OperationId, SafeMessage, UserId,
-    WireTimestamp,
+    BlobOwner, CorrelationId, DigestHex, DocumentId, EntityLocalId, EntityRef, EventId, MediaType,
+    OperationId, SafeMessage, UserId, WireTimestamp,
 };
 
 /// Q-3 helper: the published `PATTERN` is the compiled validator, so a string the pattern rejects
@@ -42,6 +42,7 @@ proptest! {
         let wire = value.to_string();
 
         prop_assert_eq!(EventId::parse(&wire).unwrap(), EventId(value));
+        prop_assert_eq!(DocumentId::parse(&wire).unwrap(), DocumentId(value));
         prop_assert_eq!(UserId::parse(&wire).unwrap(), UserId(value));
         prop_assert_eq!(OperationId::parse(&wire).unwrap(), OperationId(value));
         prop_assert_eq!(CorrelationId::parse(&wire).unwrap(), CorrelationId(value));
@@ -96,7 +97,9 @@ proptest! {
             EntityLocalId::parse,
             &candidate,
         )?;
-        rejects_everything_outside_pattern(BlobRef::PATTERN, BlobRef::parse, &candidate)?;
+        rejects_everything_outside_pattern(BlobOwner::PATTERN, BlobOwner::parse, &candidate)?;
+        rejects_everything_outside_pattern(DigestHex::PATTERN, DigestHex::parse, &candidate)?;
+        rejects_everything_outside_pattern(MediaType::PATTERN, MediaType::parse, &candidate)?;
         rejects_everything_outside_pattern(SafeMessage::PATTERN, SafeMessage::parse, &candidate)?;
     }
 

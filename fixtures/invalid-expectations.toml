@@ -94,6 +94,15 @@ error_contains = 'ProducerName "Ratatoskr-Extractor" does not match'
 reason         = "Deployment identities are kebab-case, as every service name in README and ARCHITECTURE S5.2 is. One spelling per deployable."
 
 # ---------------------------------------------------------------------------
+# core/blob-ref
+# ---------------------------------------------------------------------------
+
+["core/blob-ref/invalid/missing-digest.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `digest`'
+reason         = "Without a digest the reference cannot name or verify the stored bytes."
+
+# ---------------------------------------------------------------------------
 # core/error-envelope
 # ---------------------------------------------------------------------------
 
@@ -121,6 +130,15 @@ reason         = "ARCHITECTURE S5.5: validation errors identify safe field paths
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'does not match ^[^\x00-\x1f\x7f]{1,1024}$'
 reason         = "The newline ban is what makes a stack trace and a forged log line unrepresentable in a wire message. ARCHITECTURE S5.5, S14."
+
+# ---------------------------------------------------------------------------
+# content/document
+# ---------------------------------------------------------------------------
+
+["content/document/invalid/missing-provenance.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `provenance`'
+reason         = "Knowledge must be able to trace normalized blocks to the stored source and extraction strategy."
 
 # ---------------------------------------------------------------------------
 # platform/operation-snapshot
@@ -179,3 +197,12 @@ reason         = "Invariant I5. An operation cannot change state before it was a
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `operation_id`'
 reason         = "A progress fact that does not say which operation progressed is unroutable. `operation_id` is required in both layers."
+
+# ---------------------------------------------------------------------------
+# events/platform.operation.reported.v1
+# ---------------------------------------------------------------------------
+
+["events/platform.operation.reported.v1/invalid/missing-status.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `status`'
+reason         = "A report without the lifecycle status reached gives Platform no state to apply."

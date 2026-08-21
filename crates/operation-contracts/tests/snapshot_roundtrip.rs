@@ -12,8 +12,9 @@ use ratatoskr_error_contracts::{
 };
 use ratatoskr_event_envelope::{EventEnvelope, EventPayload, EventType};
 use ratatoskr_identifiers::{
-    BlobRef, EntityRef, Extensions, OperationId, SafeMessage, TenantRef, WireTimestamp,
-    canonical_json, dropped_field_pointers,
+    BlobOwner, BlobRef, ContentDigest, DigestAlgorithm, DigestHex, EntityRef, Extensions,
+    MediaType, OperationId, SafeMessage, TenantRef, WireTimestamp, canonical_json,
+    dropped_field_pointers,
 };
 use ratatoskr_operation_contracts::{
     OperationKind, OperationProgressed, OperationResultKind, OperationResultRef, OperationSnapshot,
@@ -45,6 +46,21 @@ fn message(raw: &str) -> SafeMessage {
     SafeMessage::parse(raw).expect("a legal message")
 }
 
+fn blob_ref() -> BlobRef {
+    BlobRef {
+        owner_service: BlobOwner::parse("ratatoskr-extractor").expect("a legal blob owner"),
+        digest: ContentDigest {
+            algorithm: DigestAlgorithm::Sha256,
+            hex: DigestHex::parse(
+                "0000000000000000000000000000000000000000000000000000000000000000",
+            )
+            .expect("a legal digest"),
+        },
+        media_type: MediaType::parse("application/json").expect("a legal media type"),
+        length_bytes: 128,
+    }
+}
+
 /// A snapshot in which **every** member is present and non-default, including the preserved
 /// extension maps at every nesting level.
 ///
@@ -70,13 +86,7 @@ fn snapshot_carrying_every_field() -> OperationSnapshot {
                 .expect("a legal result kind"),
             target: EntityRef::parse("document:018f0000-0000-7000-8000-000000000021")
                 .expect("a legal reference"),
-            blob: Some(
-                BlobRef::parse(
-                    "blob:sha256:\
-                     0000000000000000000000000000000000000000000000000000000000000000",
-                )
-                .expect("a legal blob handle"),
-            ),
+            blob: Some(blob_ref()),
             extensions: result_extensions,
         }],
         errors: vec![ErrorEnvelope {

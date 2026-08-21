@@ -1,5 +1,4 @@
-//! `BlobRef` — test I-9. `ARCHITECTURE.md` S14: blob references are opaque and expose no
-//! filesystem path or signed storage URL.
+//! `BlobRef` — content-addressed reference tests.
 
 #![allow(
     clippy::expect_used,
@@ -11,35 +10,59 @@ use ratatoskr_identifiers::BlobRef;
 
 const DIGEST: &str = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
 
-/// I-9.
+#[test]
+fn a_reference_without_a_digest_is_refused() {
+    let complete = serde_json::json!({
+        "owner_service": "ratatoskr-extractor",
+        "digest": { "algorithm": "sha256", "hex": DIGEST },
+        "media_type": "text/html",
+        "length_bytes": 42
+    });
+    serde_json::from_value::<BlobRef>(complete.clone()).expect("the complete reference is valid");
+
+    let mut missing = complete;
+    missing
+        .as_object_mut()
+        .expect("the fixture is an object")
+        .remove("digest");
+    let error = serde_json::from_value::<BlobRef>(missing).expect_err("digest is required");
+    assert!(
+        error.to_string().contains("missing field `digest`"),
+        "{error}"
+    );
+}
+
 #[test]
 fn rejects_urls_and_filesystem_paths() {
     for rejected in [
-        "https://signed.example/blob?sig=abc",
-        "s3://bucket/k",
-        "/var/lib/blob",
-        "blob:md5-0123456789abcdef0123456789abcdef",
-        "blob:sha256:",
-        &format!("blob:sha256:{}", DIGEST.to_uppercase()),
-        &format!("blob:sha512:{DIGEST}"),
+        r#""https://signed.example/blob?sig=abc""#,
+        r#""s3://bucket/k""#,
+        r#""/var/lib/blob""#,
+        r#""blob:sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef""#,
     ] {
         assert!(
-            BlobRef::parse(rejected).is_err(),
-            "{rejected} must not parse as a BlobRef"
+            serde_json::from_str::<BlobRef>(rejected).is_err(),
+            "{rejected} must not parse as a structured BlobRef"
         );
     }
 }
 
-/// The handle carries the digest and nothing else.
 #[test]
-fn exposes_only_the_digest() {
-    let wire = format!("blob:sha256:{DIGEST}");
-    let handle = BlobRef::parse(&wire).expect("a content-addressed handle is legal");
-    assert_eq!(handle.sha256_hex(), DIGEST);
-    assert_eq!(handle.as_str(), wire);
+fn carries_only_resolution_and_verification_facts() {
+    let reference: BlobRef = serde_json::from_value(serde_json::json!({
+        "owner_service": "ratatoskr-extractor",
+        "digest": { "algorithm": "sha256", "hex": DIGEST },
+        "media_type": "text/html",
+        "length_bytes": 42
+    }))
+    .expect("a complete reference is valid");
+    let wire = serde_json::to_value(reference).expect("the reference serializes");
+
     assert_eq!(
-        serde_json::to_string(&handle).unwrap(),
-        format!("\"{wire}\"")
+        wire.get("owner_service"),
+        Some(&serde_json::json!("ratatoskr-extractor"))
     );
-    assert_eq!(wire.len(), BlobRef::MAX_LEN);
+    assert_eq!(wire.get("length_bytes"), Some(&serde_json::json!(42)));
+    assert!(wire.get("path").is_none());
+    assert!(wire.get("url").is_none());
 }

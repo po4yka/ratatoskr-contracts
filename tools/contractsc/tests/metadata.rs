@@ -169,7 +169,7 @@ fn event_metadata_matches_the_payload_type() {
         );
         checked += 1;
     }
-    assert_eq!(checked, 1, "one event contract is registered in m1–m4");
+    assert_eq!(checked, 2, "two event contracts are registered");
 }
 
 /// M-9. A credential-bearing contract cannot be declared at all: `privacy = "credential"` fails at

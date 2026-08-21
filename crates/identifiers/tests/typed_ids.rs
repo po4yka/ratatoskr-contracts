@@ -7,7 +7,7 @@
 )]
 
 use ratatoskr_identifiers::{
-    CorrelationId, EntityKind, EntityRef, EventId, IdentifierError, OperationId, UserId,
+    CorrelationId, DocumentId, EntityKind, EntityRef, EventId, IdentifierError, OperationId, UserId,
 };
 
 const EVENT_UUID: &str = "018f0000-0000-7000-8000-000000000001";
@@ -106,6 +106,7 @@ fn accepts_non_v7_uuid_and_reports_version() {
     let v7 = EventId::parse(EVENT_UUID).expect("a v7 UUID parses");
     assert!(v7.is_uuid_v7());
     assert!(EventId::new_v7().is_uuid_v7());
+    assert!(DocumentId::new_v7().is_uuid_v7());
     assert!(UserId::new_v7().is_uuid_v7());
     assert!(OperationId::new_v7().is_uuid_v7());
     assert!(CorrelationId::new_v7().is_uuid_v7());

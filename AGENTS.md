@@ -23,17 +23,17 @@ Its purpose is to make cross-repository evolution explicit and safe. It must not
 
 ## Current phase
 
-Implementation milestones 1 through 4 exist. The checked-out tree contains:
+Implementation milestones 1 through 5 exist. The checked-out tree contains:
 
 - `contracts.toml` — machine-readable contract metadata (owner, family, major version, lifecycle, classification, producers, consumers, canonical path, per-field authority/unit/nullability, lint vocabulary);
-- four contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`;
+- five contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`, `crates/document-contracts`;
 - `tools/contractsc` — the deterministic generator and gate, run as `cargo contracts`;
 - `schemas/json-schema/**` and `schemas/events/**` — generated JSON Schema artifacts;
 - `fixtures/**` — valid, invalid and compatibility fixtures, with `fixtures/invalid-expectations.toml` naming the layer that must reject each invalid fixture.
 
 Commands, in gate order: `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo contracts check`, `cargo test --workspace --locked`, `cargo contracts generate`, then `git diff --exit-code`. Never run `generate` before `check` in a gate: it repairs drift in place and makes the drift step report `current` for an artifact that was committed wrong. Use `cargo contracts compat <OLD> <NEW>` to classify a change. `DEVELOPMENT.md` holds the full list and the separate editing-loop order.
 
-Milestones 5 through 10 do **not** exist. There is no Document IR, social-source or AI-archive crate, no OpenAPI document, no generated TypeScript, Kotlin or Swift, no CI configuration, no frozen compatibility baseline, and no publishing. Do not assume any of them exist unless they are present in the checked-out tree.
+Milestones 6 through 10 do **not** exist. There is no social-source or AI-archive crate, no OpenAPI document, no generated TypeScript, Kotlin or Swift, no frozen compatibility baseline, and no publishing. Do not assume any of them exist unless they are present in the checked-out tree.
 
 Keep the repository independently buildable and generated outputs reproducible. Do not create speculative schemas unrelated to an active consumer/producer changeset.
 

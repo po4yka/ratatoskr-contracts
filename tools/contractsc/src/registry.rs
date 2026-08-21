@@ -4,7 +4,7 @@
 //! over `.rs` files: every one of those makes the generated output depend on link order or
 //! filesystem order, which is exactly what `ARCHITECTURE.md` S11 forbids.
 //!
-//! The dependency of this crate on the four contract crates **is** the enumeration mechanism: a
+//! The dependency of this crate on the contract crates **is** the enumeration mechanism: a
 //! contract that is not reachable from here cannot be generated, and `contracts.toml` rule R2
 //! proves the two lists are the same set in both directions.
 
@@ -67,10 +67,14 @@ macro_rules! root_types {
 }
 
 root_types! {
+    "ratatoskr_document_contracts::Document"           => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
+    "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
     "ratatoskr_operation_contracts::OperationProgressed"
         => ratatoskr_operation_contracts::OperationProgressed,
+    "ratatoskr_operation_contracts::OperationReported"
+        => ratatoskr_operation_contracts::OperationReported,
     "ratatoskr_operation_contracts::OperationSnapshot"
         => ratatoskr_operation_contracts::OperationSnapshot,
 }
@@ -86,6 +90,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_operation_contracts::OperationProgressed",
         <ratatoskr_operation_contracts::OperationProgressed as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_operation_contracts::OperationReported",
+        <ratatoskr_operation_contracts::OperationReported as EventPayload>::EVENT_TYPE,
     );
     declared
 }

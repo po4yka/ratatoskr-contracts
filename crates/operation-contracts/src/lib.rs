@@ -3,7 +3,8 @@
 //! # What is on the wire
 //!
 //! - [`OperationSnapshot`] — a point-in-time public view (`ARCHITECTURE.md` S5.4).
-//! - [`OperationProgressed`] — the payload of `platform.operation.progressed.v1`.
+//! - [`OperationReported`] — producer progress sent to Platform.
+//! - [`OperationProgressed`] — Platform's client-facing lifecycle snapshot event.
 //! - [`OperationStatus`] — the closed lifecycle enum a client branches on.
 //!
 //! # Two vocabularies, on purpose
@@ -29,7 +30,7 @@ mod snapshot;
 mod status;
 
 pub use crate::error::OperationContractError;
-pub use crate::events::OperationProgressed;
+pub use crate::events::{OperationProgressed, OperationReported};
 pub use crate::kind::{OperationKind, OperationResultKind, OperationStage};
 pub use crate::percent::ProgressPercent;
 pub use crate::result_ref::OperationResultRef;
