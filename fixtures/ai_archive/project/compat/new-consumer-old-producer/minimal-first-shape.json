@@ -1,0 +1,7 @@
+{
+  "ai_project_id": "018f0000-0000-7000-8000-000000000402",
+  "provider": "claude",
+  "title": "Contract work",
+  "parser_name": "claude_export",
+  "parser_version": "1.4.2"
+}

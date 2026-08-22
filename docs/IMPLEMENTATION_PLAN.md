@@ -11,7 +11,7 @@
 4. Implement operation and error contracts. **Implemented.**
 5. Implement Document IR and provenance. **Implemented.**
 6. Implement social-source contracts. **Implemented.**
-7. Implement AI archive graph/content contracts.
+7. Implement AI archive graph/content contracts. **Implemented.**
 8. Add deterministic Rust/TypeScript generation.
 9. Add fixture, compatibility, and package CI.
 10. Publish first tagged artifacts and integrate them in one vertical slice.

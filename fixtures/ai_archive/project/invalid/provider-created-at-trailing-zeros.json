@@ -1,0 +1,12 @@
+{
+  "ai_project_id": "018f0000-0000-7000-8000-000000000402",
+  "provider": "claude",
+  "external_project_id": "prd_01j9",
+  "title": "Contract work",
+  "description": "Everything about the wire contracts.",
+  "instructions": "Answer tersely.\nCite sources.",
+  "provider_created_at": "2026-07-01T08:00:00.000Z",
+  "provider_updated_at": "2026-08-01T09:30:00Z",
+  "parser_name": "claude_export",
+  "parser_version": "1.4.2"
+}

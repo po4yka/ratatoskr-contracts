@@ -135,6 +135,27 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         };
     }
     match rust_path {
+        "ratatoskr_ai_archive_contracts::AiArchiveImport" => {
+            render!(ratatoskr_ai_archive_contracts::AiArchiveImport)
+        }
+        "ratatoskr_ai_archive_contracts::AiArchiveSnapshot" => {
+            render!(ratatoskr_ai_archive_contracts::AiArchiveSnapshot)
+        }
+        "ratatoskr_ai_archive_contracts::AiConversation" => {
+            render!(ratatoskr_ai_archive_contracts::AiConversation)
+        }
+        "ratatoskr_ai_archive_contracts::AiConversationAdded" => {
+            render!(ratatoskr_ai_archive_contracts::AiConversationAdded)
+        }
+        "ratatoskr_ai_archive_contracts::AiConversationUpdated" => {
+            render!(ratatoskr_ai_archive_contracts::AiConversationUpdated)
+        }
+        "ratatoskr_ai_archive_contracts::AiMessage" => {
+            render!(ratatoskr_ai_archive_contracts::AiMessage)
+        }
+        "ratatoskr_ai_archive_contracts::AiProject" => {
+            render!(ratatoskr_ai_archive_contracts::AiProject)
+        }
         "ratatoskr_document_contracts::Document" => {
             render!(ratatoskr_document_contracts::Document)
         }

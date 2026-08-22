@@ -7,13 +7,16 @@
 )]
 
 use ratatoskr_identifiers::{
-    CorrelationId, DocumentId, EntityKind, EntityRef, EventId, IdentifierError, OperationId,
-    SocialSourceId, UserId,
+    AiArchiveId, AiConversationId, AiProjectId, CorrelationId, DocumentId, EntityKind, EntityRef,
+    EventId, IdentifierError, OperationId, SocialSourceId, UserId,
 };
 
 const EVENT_UUID: &str = "018f0000-0000-7000-8000-000000000001";
 const USER_UUID: &str = "018f0000-0000-7000-8000-000000000005";
 const SOURCE_UUID: &str = "018f0000-0000-7000-8000-000000000201";
+const ARCHIVE_UUID: &str = "018f0000-0000-7000-8000-000000000401";
+const PROJECT_UUID: &str = "018f0000-0000-7000-8000-000000000402";
+const CONVERSATION_UUID: &str = "018f0000-0000-7000-8000-000000000403";
 
 /// I-4. `ARCHITECTURE.md` S5.2 shows `event_id` bare, with no `event:` prefix.
 #[test]
@@ -159,4 +162,80 @@ fn social_source_id_is_a_bare_uuid_with_the_social_source_kind() {
         error,
         IdentifierError::KindMismatch { expected: "social_source", ref actual } if actual == "event"
     ));
+}
+
+/// An AI-archive import, project and conversation each carry their own identity, so each is a
+/// bare canonical UUID newtype whose widened reference names its own kind (ADR-0007 clause 1).
+#[test]
+fn ai_archive_ids_are_bare_uuids_with_their_own_kinds() {
+    let archive_id = AiArchiveId::parse(ARCHIVE_UUID).expect("a canonical UUID parses");
+    assert_eq!(
+        serde_json::to_string(&archive_id).unwrap(),
+        format!("\"{ARCHIVE_UUID}\"")
+    );
+    let decoded: AiArchiveId =
+        serde_json::from_str(&format!("\"{ARCHIVE_UUID}\"")).expect("and deserializes");
+    assert_eq!(decoded, archive_id);
+
+    let as_ref: EntityRef = archive_id.into();
+    assert_eq!(as_ref.to_wire(), format!("ai_archive:{ARCHIVE_UUID}"));
+    assert_eq!(as_ref.kind().as_str(), "ai_archive");
+    assert_eq!(
+        AiArchiveId::try_from(&as_ref).expect("the kind matches"),
+        archive_id
+    );
+    for rejected in [
+        "018F0000-0000-7000-8000-000000000401",
+        "{018f0000-0000-7000-8000-000000000401}",
+        "ai_archive:018f0000-0000-7000-8000-000000000401",
+    ] {
+        assert!(
+            matches!(
+                AiArchiveId::parse(rejected),
+                Err(IdentifierError::PatternMismatch { .. })
+            ),
+            "{rejected} must not parse as an AiArchiveId"
+        );
+    }
+    let event_ref = EntityRef::parse(&format!("event:{EVENT_UUID}")).expect("a legal reference");
+    let error = AiArchiveId::try_from(&event_ref).expect_err("an event is not an ai archive");
+    assert!(matches!(
+        error,
+        IdentifierError::KindMismatch { expected: "ai_archive", ref actual } if actual == "event"
+    ));
+
+    let project_id = AiProjectId::parse(PROJECT_UUID).expect("a canonical UUID parses");
+    let project_ref: EntityRef = project_id.into();
+    assert_eq!(project_ref.to_wire(), format!("ai_project:{PROJECT_UUID}"));
+    assert_eq!(project_ref.kind().as_str(), "ai_project");
+    assert_eq!(
+        AiProjectId::try_from(&project_ref).expect("the kind matches"),
+        project_id
+    );
+
+    let conversation_id =
+        AiConversationId::parse(CONVERSATION_UUID).expect("a canonical UUID parses");
+    let conversation_ref: EntityRef = conversation_id.into();
+    assert_eq!(
+        conversation_ref.to_wire(),
+        format!("ai_conversation:{CONVERSATION_UUID}")
+    );
+    assert_eq!(conversation_ref.kind().as_str(), "ai_conversation");
+    assert_eq!(
+        AiConversationId::try_from(&conversation_ref).expect("the kind matches"),
+        conversation_id
+    );
+
+    // A project reference does not become a conversation identity.
+    let error =
+        AiConversationId::try_from(&project_ref).expect_err("a project is not a conversation");
+    assert!(matches!(
+        error,
+        IdentifierError::KindMismatch { expected: "ai_conversation", ref actual }
+            if actual == "ai_project"
+    ));
+
+    assert!(AiArchiveId::new_v7().is_uuid_v7());
+    assert!(AiProjectId::new_v7().is_uuid_v7());
+    assert!(AiConversationId::new_v7().is_uuid_v7());
 }

@@ -67,7 +67,19 @@ macro_rules! root_types {
 }
 
 root_types! {
-    "ratatoskr_document_contracts::Document"           => ratatoskr_document_contracts::Document,
+    "ratatoskr_ai_archive_contracts::AiArchiveImport"
+        => ratatoskr_ai_archive_contracts::AiArchiveImport,
+    "ratatoskr_ai_archive_contracts::AiArchiveSnapshot"
+        => ratatoskr_ai_archive_contracts::AiArchiveSnapshot,
+    "ratatoskr_ai_archive_contracts::AiConversation"
+        => ratatoskr_ai_archive_contracts::AiConversation,
+    "ratatoskr_ai_archive_contracts::AiConversationAdded"
+        => ratatoskr_ai_archive_contracts::AiConversationAdded,
+    "ratatoskr_ai_archive_contracts::AiConversationUpdated"
+        => ratatoskr_ai_archive_contracts::AiConversationUpdated,
+    "ratatoskr_ai_archive_contracts::AiMessage"  => ratatoskr_ai_archive_contracts::AiMessage,
+    "ratatoskr_ai_archive_contracts::AiProject"  => ratatoskr_ai_archive_contracts::AiProject,
+    "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
@@ -93,6 +105,18 @@ root_types! {
 #[must_use]
 pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     let mut declared = BTreeMap::new();
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiArchiveImport",
+        <ratatoskr_ai_archive_contracts::AiArchiveImport as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiConversationAdded",
+        <ratatoskr_ai_archive_contracts::AiConversationAdded as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiConversationUpdated",
+        <ratatoskr_ai_archive_contracts::AiConversationUpdated as EventPayload>::EVENT_TYPE,
+    );
     declared.insert(
         "ratatoskr_operation_contracts::OperationProgressed",
         <ratatoskr_operation_contracts::OperationProgressed as EventPayload>::EVENT_TYPE,

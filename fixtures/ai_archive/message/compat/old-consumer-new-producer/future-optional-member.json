@@ -1,0 +1,37 @@
+{
+  "external_message_id": "msg-0002",
+  "author_role": "assistant",
+  "parent_message_id": "msg-0001",
+  "parts": [
+    {
+      "part_kind": "text",
+      "text": "Searching the web for current results."
+    },
+    {
+      "part_kind": "tool_call",
+      "tool_call": {
+        "tool_call_id": "call_abc123",
+        "tool_name": "web_search"
+      }
+    },
+    {
+      "part_kind": "tool_result",
+      "tool_result": {
+        "outcome": "succeeded",
+        "output_text": "3 results found.",
+        "tool_call_id": "call_abc123"
+      }
+    },
+    {
+      "part_kind": "markdown",
+      "markdown": "Here is **the answer**."
+    }
+  ],
+  "model": "gpt-5.2",
+  "provider_created_at": "2026-08-02T10:01:00Z",
+  "parser_name": "chatgpt_export",
+  "parser_version": "2026.08.1",
+  "provider_message_flags": [
+    "pinned"
+  ]
+}

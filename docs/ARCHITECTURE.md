@@ -299,52 +299,35 @@ The secret/PII scanner bans URLs and `@`-handles under `fixtures/**` (S12), so c
 
 ## 8. AI archive contracts
 
-### 8.1. Provider export
+The canonical source is the `ratatoskr-ai-archive-contracts` crate (`crates/ai-archive-contracts`); the generated schemas are four JSON Schema roots under `schemas/json-schema/ai_archive/` plus one schema per event under `schemas/events/`. `ratatoskr-chatgpt` and `ratatoskr-claude` produce; `ratatoskr-knowledge` consumes. One shared grammar serves both providers; nothing in the crate names a provider except as an open token value.
 
-A provider export contract records immutable archive evidence, parser identity, detected schema, import timestamps, completeness, and warnings.
+### 8.1. The import and its evidence
 
-### 8.2. Projects and conversations
+`AiArchiveImport` is the head of every import: Ratatoskr's own `ai_archive_id`, the open `provider` token, the owner (`TenantRef`), the immutable raw provider export as a `BlobRef`, `imported_at` (observed — the producer's clock), parser name/version stamps, the completeness report, and warnings. The same type is the payload of `ai_archive.archive.imported.v1`, so the event and the snapshot cannot disagree about what an import claims. `AiArchiveSnapshot` composes the head with every project and conversation; it is the canonical normalized tree a bulk load or a re-parse verification consumes.
 
-Project contracts support:
+### 8.2. Graph nodes and parser stamps
 
-- title, description, instructions, and visibility;
-- project knowledge or sources;
-- provider IDs and timestamps;
-- first/last observed snapshot;
-- external references.
+`AiProject`, `AiConversation` and `AiMessage` are the graph nodes. Conversations reference their optional project by kinded `EntityRef` (`ai_project:<uuid>`, ADR-0007 clause 2); messages carry an optional `parent_message_id` naming a sibling by provider external id, so branches, regenerated answers and edited histories survive normalization without inventing list positions. Messages travel in provider presentation order. Provider external ids are opaque `EntityLocalId`s; provider-authored timestamps are present only when the export supplied them and are never fabricated.
 
-Conversations are graphs. Messages include an optional parent ID and heterogeneous content parts.
+Every node carries `parser_name` and `parser_version` stamps — opaque bounded tokens. Consumers may compare stamps for staleness; none may parse them. A mixed-history import (part re-parsed by a newer build) shows that seam per node.
 
-```rust
-pub enum ContentPart {
-    Text(String),
-    Markdown(String),
-    Image(BlobRef),
-    File(AttachmentRef),
-    Code(CodeBlock),
-    Citation(Citation),
-    ToolCall(ToolCall),
-    ToolResult(ToolResult),
-    Artifact(ArtifactRef),
-    Canvas(CanvasRef),
-    Unknown(serde_json::Value),
-}
-```
+### 8.3. Content parts
 
-Unknown provider variants must survive normalization and re-export.
+`AiContentPart` is one internally tagged grammar (`part_kind`) for both providers: `text`, `markdown`, `image` (`BlobRef`), `asset` (`AiAsset`: open `asset_kind` token + `BlobRef` + optional file name — files, artifacts and canvas-like objects are asset kinds, not separate types), `citation` (optional title, HTTPS URL, stored passage blob), `tool_call` and `tool_result` (linked by provider tool-call id, closed `Succeeded`/`Failed` outcome).
 
-### 8.3. Completeness
+A part whose discriminator this build does not know — or a non-object part — parses into the unknown channel and re-serializes byte-identically (`AGENTS.md`: archive imports must not discard unrecognized records). A *recognized* discriminator with a malformed body fails loudly instead of being demoted to unknown: half-typing a record we do understand would be worse than refusing it, and the raw export blob is the preservation channel of last resort. `Serialize`, `Deserialize` and `JsonSchema` are hand-written because serde's tagged enums cannot express the catch-all variant; the published schema's unknown branch is exclusive of the known branches so `oneOf` stays exact.
 
-```text
-complete
-conversations_complete
-structurally_partial
-assets_partial
-unknown
-failed_validation
-```
+### 8.4. Completeness
 
-Completeness is evidence-based. A parser may not mark an export complete merely because it parsed every known file.
+`AiCompletenessReport` states the closed vocabulary of `docs/ARCHITECTURE.md` S8.3 verbatim — `complete`, `conversations_complete`, `structurally_partial`, `assets_partial`, `unknown`, `failed_validation` — plus verifiable counts and structured gaps. Two cross-field invariants are enforced at parse: every state other than `complete` requires at least one gap naming what is missing, and `conversation_count`/`gap_count` must equal the counts computable from the carried nodes wherever the payload carries them (on the head-only imported event they are producer-asserted, like `message_count` and `asset_count` everywhere). `gap_kind` is an open token: providers find new ways to be incomplete, and a consumer carries a gap it does not classify rather than dropping it. Completeness is evidence-based; a parser may not mark an import complete merely because it parsed every known file.
+
+### 8.5. Events
+
+`ai_archive.archive.imported.v1` carries the head; `ai_archive.conversation.added.v1` and `ai_archive.conversation.updated.v1` each carry the whole conversation graph plus the owning `ai_archive_id`. Per-conversation payloads keep at-least-once redelivery idempotent and replay convergent (state-carried transfer, the social precedent) without shipping multi-megabyte whole-archive events. All three implement the envelope crate's payload contract and travel only inside the common envelope.
+
+### 8.6. Fixtures and the URL scanner
+
+The secret/PII scanner bans URLs under `fixtures/**` (S12), so committed citation fixtures omit the optional `url`; wire coverage for it comes from the crate's round-trip drift-guard test, which constructs a snapshot carrying every field including a citation URL and an unknown content part.
 
 ## 9. Naming and versioning
 

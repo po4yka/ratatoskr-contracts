@@ -47,8 +47,9 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        10,
-        "ten registered roots produce ten artifacts; update this pin when the registry changes"
+        17,
+        "seventeen registered roots produce seventeen artifacts; update this pin when the \
+         registry changes"
     );
 }
 

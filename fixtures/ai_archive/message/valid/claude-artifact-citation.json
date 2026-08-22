@@ -1,0 +1,44 @@
+{
+  "external_message_id": "msg-0010",
+  "author_role": "assistant",
+  "parts": [
+    {
+      "part_kind": "markdown",
+      "markdown": "# Analysis\nBody of the answer."
+    },
+    {
+      "part_kind": "asset",
+      "asset": {
+        "asset_kind": "artifact",
+        "blob": {
+          "digest": {
+            "algorithm": "sha256",
+            "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+          },
+          "length_bytes": 4096,
+          "media_type": "text/html",
+          "owner_service": "ratatoskr-claude"
+        },
+        "file_name": "analysis.html"
+      }
+    },
+    {
+      "part_kind": "citation",
+      "citation": {
+        "source_blob": {
+          "digest": {
+            "algorithm": "sha256",
+            "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+          },
+          "length_bytes": 512,
+          "media_type": "text/html",
+          "owner_service": "ratatoskr-claude"
+        },
+        "title": "A cited page"
+      }
+    }
+  ],
+  "model": "claude-opus-4-6",
+  "parser_name": "claude_export",
+  "parser_version": "1.4.2"
+}

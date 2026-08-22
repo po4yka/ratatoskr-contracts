@@ -13,12 +13,13 @@ name = "contractsc"
 path = "src/main.rs"
 
 [dependencies]
-ratatoskr-identifiers.workspace         = true
-ratatoskr-event-envelope.workspace      = true
-ratatoskr-error-contracts.workspace     = true
+ratatoskr-identifiers.workspace      = true
+ratatoskr-error-contracts.workspace  = true
+ratatoskr-event-envelope.workspace   = true
 ratatoskr-operation-contracts.workspace = true
 ratatoskr-document-contracts.workspace  = true
 ratatoskr-social-contracts.workspace    = true
+ratatoskr-ai-archive-contracts.workspace = true
 schemars.workspace   = true
 serde.workspace      = true
 serde_json.workspace = true

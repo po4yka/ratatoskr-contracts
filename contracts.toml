@@ -15,6 +15,8 @@ known = [
   "ratatoskr-github",
   "ratatoskr-knowledge",
   "ratatoskr-vault",
+  "ratatoskr-chatgpt",
+  "ratatoskr-claude",
   "ratatoskr-x",
   "ratatoskr-instagram",
   "ratatoskr-threads",
@@ -38,6 +40,7 @@ known = [
 # never what the wire type understands.
 [entity_kinds]
 known = [
+  "ai_archive", "ai_conversation", "ai_project",
   "blob", "document", "event", "operation", "user",
   "repository", "social_source", "x-post",
 ]
@@ -58,7 +61,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "provider_created_at", "provider_updated_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -359,3 +362,211 @@ privacy        = "user_content"
 [contract.event]
 event_type   = "social.source.updated.v1"
 payload_type = "ratatoskr_social_contracts::SocialSourceUpdated"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.archive_snapshot"
+family         = "ai_archive"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/snapshot.rs"
+fixtures_dir   = "fixtures/ai_archive/archive-snapshot"
+summary        = "The whole normalized graph of one provider export import."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiArchiveSnapshot"
+output         = "schemas/json-schema/ai_archive/archive-snapshot.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:ai_archive:v1:AiArchiveSnapshot"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.project"
+family         = "ai_archive"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/graph.rs"
+fixtures_dir   = "fixtures/ai_archive/project"
+summary        = "One normalized AI project node with its parser stamp."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiProject"
+output         = "schemas/json-schema/ai_archive/project.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:ai_archive:v1:AiProject"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/provider_created_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the project was created. Present only when the export supplied it; never inferred."
+
+[[contract.field]]
+pointer     = "/properties/provider_updated_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the project last changed. Present only when the export supplied it; never inferred."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.conversation"
+family         = "ai_archive"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/graph.rs"
+fixtures_dir   = "fixtures/ai_archive/conversation"
+summary        = "One normalized AI conversation graph with parser stamp and content digest."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiConversation"
+output         = "schemas/json-schema/ai_archive/conversation.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:ai_archive:v1:AiConversation"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/provider_created_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the conversation was created. Present only when the export supplied it; never inferred from import time."
+
+[[contract.field]]
+pointer     = "/properties/provider_updated_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the conversation last changed. Present only when the export supplied it; never inferred."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.message"
+family         = "ai_archive"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/graph.rs"
+fixtures_dir   = "fixtures/ai_archive/message"
+summary        = "One normalized AI message node with content parts and parser stamp."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiMessage"
+output         = "schemas/json-schema/ai_archive/message.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:ai_archive:v1:AiMessage"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/provider_created_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the message was written. Present only when the export supplied it; never fabricated."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.archive_imported"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/snapshot.rs"
+fixtures_dir   = "fixtures/events/ai_archive.archive.imported.v1"
+summary        = "Fact: one provider export finished importing as immutable evidence."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiArchiveImport"
+output         = "schemas/events/ai_archive.archive.imported.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiArchiveImport"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/imported_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the producing service finished importing the export into normalized nodes. The producer's clock, not the provider's."
+
+[contract.event]
+event_type   = "ai_archive.archive.imported.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiArchiveImport"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.conversation_added"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.conversation.added.v1"
+summary        = "Fact: a conversation entered a user's AI-archive index."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiConversationAdded"
+output         = "schemas/events/ai_archive.conversation.added.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiConversationAdded"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.conversation.added.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiConversationAdded"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.conversation_updated"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.conversation.updated.v1"
+summary        = "Fact: an existing conversation's normalized record changed."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiConversationUpdated"
+output         = "schemas/events/ai_archive.conversation.updated.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiConversationUpdated"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.conversation.updated.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiConversationUpdated"

@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–6 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. AI-archive contracts, OpenAPI, generated TypeScript, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
+> **Status:** milestones 1–7 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. OpenAPI, generated TypeScript, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -44,7 +44,7 @@ crates/
 ├── error-contracts/        (now)
 ├── document-contracts/     (now)
 ├── social-contracts/       (now)
-└── ai-archive-contracts/
+└── ai-archive-contracts/   (now)
 
 schemas/
 ├── events/                 (now, generated)
@@ -162,7 +162,7 @@ X, Instagram, and Threads preserve different levels of authority over saved stat
 
 ### AI archives
 
-ChatGPT and Claude exports share normalized project, conversation, message-graph, content-part, attachment, snapshot, and completeness-report contracts. Provider-specific records remain available as opaque JSON or blob references.
+ChatGPT and Claude exports share one normalized grammar in `ratatoskr-ai-archive-contracts`: an import head names the immutable export evidence by `BlobRef` beside its completeness report; project, conversation and message nodes carry parser stamps and provider external ids; conversations are graphs whose messages reference parents, so branches and regenerated answers survive normalization. One shared content-part grammar (text, markdown, image, asset, citation, tool call, tool result) serves both providers, and unrecognized parts are preserved verbatim through normalization and re-export. The `ai_archive.archive.imported.v1`, `ai_archive.conversation.added.v1` and `ai_archive.conversation.updated.v1` events carry the head and whole conversations inside the common envelope.
 
 ## Proposed development workflow
 
@@ -208,12 +208,12 @@ The pin is the `rev`, not the transport. Use `https://` while this repository is
 3. Define Document IR and extraction event schemas.
 4. Define GitHub/Vault desired-state and verification events.
 5. Define social-source contracts.
-6. Define AI-archive snapshot and completeness contracts.
+6. Define AI-archive snapshot and completeness contracts. Done.
 7. Generate the first public Edge OpenAPI artifacts.
 8. Add compatibility and generated-drift CI.
 
 ## Project status
 
-Milestones 1 through 6 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the deterministic generator and gate, generated JSON Schema, and the fixture suite. The gate also runs in CI. Milestones 7 through 10 — AI archives, cross-language generation, the frozen compatibility baseline, package CI and publishing — are still target architecture.
+Milestones 1 through 7 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the deterministic generator and gate, generated JSON Schema, and the fixture suite. The gate also runs in CI. Milestones 8 through 10 — cross-language generation, the frozen compatibility baseline, package CI and publishing — are still target architecture.
 
 Two decisions are recorded and accepted: [ADR-0001](docs/adr/0001-canonical-schema-source-format.md) (Rust-first canonical source) and [ADR-0002](docs/adr/0002-event-naming-and-major-version-strategy.md) (event naming and the two version axes). Nothing is published, so every contract here remains subject to further ADRs and contract-focused review.

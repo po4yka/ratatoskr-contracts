@@ -1,0 +1,68 @@
+{
+  "ai_archive_id": "018f0000-0000-7000-8000-000000000401",
+  "conversation": {
+    "ai_conversation_id": "018f0000-0000-7000-8000-000000000403",
+    "provider": "claude",
+    "external_conversation_id": "conv-88",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "project_ref": "ai_project:018f0000-0000-7000-8000-000000000402",
+    "title": "Contract work session",
+    "provider_created_at": "2026-08-01T09:00:00Z",
+    "provider_updated_at": "2026-08-01T09:45:00Z",
+    "messages": [
+      {
+        "external_message_id": "msg-0010",
+        "author_role": "assistant",
+        "parts": [
+          {
+            "part_kind": "markdown",
+            "markdown": "# Analysis\nBody of the answer."
+          },
+          {
+            "part_kind": "asset",
+            "asset": {
+              "asset_kind": "artifact",
+              "blob": {
+                "digest": {
+                  "algorithm": "sha256",
+                  "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                },
+                "length_bytes": 4096,
+                "media_type": "text/html",
+                "owner_service": "ratatoskr-claude"
+              },
+              "file_name": "analysis.html"
+            }
+          },
+          {
+            "part_kind": "citation",
+            "citation": {
+              "source_blob": {
+                "digest": {
+                  "algorithm": "sha256",
+                  "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                },
+                "length_bytes": 512,
+                "media_type": "text/html",
+                "owner_service": "ratatoskr-claude"
+              },
+              "title": "A cited page"
+            }
+          }
+        ],
+        "model": "claude-opus-4-6",
+        "parser_name": "claude_export",
+        "parser_version": "1.4.2"
+      }
+    ],
+    "content_digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "parser_name": "claude_export",
+    "parser_version": "1.4.2"
+  },
+  "extensions": {
+    "provider_edit_state": "final"
+  }
+}

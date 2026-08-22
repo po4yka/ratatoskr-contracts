@@ -1,0 +1,31 @@
+{
+  "ai_archive_id": "018f0000-0000-7000-8000-000000000403",
+  "provider": "claude",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "source_export": {
+    "owner_service": "ratatoskr-claude",
+    "digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "media_type": "application/zip",
+    "length_bytes": 3145728
+  },
+  "imported_at": "2026-08-19T09:15:00Z",
+  "parser_name": "claude_export",
+  "parser_version": "1.4.2",
+  "completeness_report": {
+    "completeness": "conversations_complete",
+    "conversation_count": 0,
+    "message_count": 0,
+    "asset_count": 0,
+    "gap_count": 1,
+    "gaps": [
+      {
+        "gap_kind": "missing_file",
+        "detail": "Two image files were absent from the export.",
+        "affected_count": 2
+      }
+    ]
+  }
+}

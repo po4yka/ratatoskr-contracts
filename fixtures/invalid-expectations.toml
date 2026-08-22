@@ -263,3 +263,72 @@ reason         = "The payload is state-carried transfer: without the snapshot th
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `owner`'
 reason         = "Every snapshot of a source carries the same owner; an update that cannot say whose library changed is unroutable for tenancy-scoped consumers."
+
+# ---------------------------------------------------------------------------
+# ai_archive/archive-snapshot
+# ---------------------------------------------------------------------------
+
+["ai_archive/archive-snapshot/invalid/unknown-completeness-state.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant'
+reason         = "ARCHITECTURE S8.3 fixes the completeness vocabulary; an unrecognized state must stop processing instead of being read as whole-enough, because indexing depth and re-import scheduling hang off it."
+
+["ai_archive/archive-snapshot/invalid/partial-without-gap.json"]
+rejected_by    = ["serde"]
+error_contains = "requires at least one gap"
+reason         = "Invariant A1: every completeness state other than complete must name at least one gap. Cross-field, so JSON Schema cannot express it and the schema layer accepts this payload - the lower-bound rule of ADR-0001."
+
+["ai_archive/archive-snapshot/invalid/conversation-count-mismatch.json"]
+rejected_by    = ["serde"]
+error_contains = 'conversation_count 5 does not match the 1'
+reason         = "Invariant A2: a report's conversation count must equal the conversations the payload carries, so a producer cannot report evidence its own snapshot disproves."
+
+["ai_archive/archive-snapshot/invalid/imported-at-trailing-zeros.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "`...:00.000Z` renders as `...:00Z`, so it is a second spelling of one instant. Canonicality is a Rust-layer rule; JSON Schema cannot express it, and the published pattern permits the fraction. See ADR-0001 consequences."
+
+["ai_archive/conversation/invalid/provider-uppercase-token.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[a-z][a-z0-9_]{0,31}$'
+reason         = "The provider vocabulary is open but its token grammar is not: segments are snake_case, matching every event-type segment and the social Platform precedent. One spelling per provider name."
+
+["ai_archive/conversation/invalid/missing-owner.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `owner`"
+reason         = "Tenancy governs authorization and data separation (SECURITY.md); a conversation whose owner is unknown must stop processing rather than default to any tenant."
+
+["ai_archive/message/invalid/malformed-known-part.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected only `text`'
+reason         = "A recognized part_kind claims grammar this build owns, so a wrong member is a malformed record that fails loudly - it is never demoted to the unknown-preservation channel, which is reserved for unrecognized records."
+
+["ai_archive/message/invalid/uppercase-author-role.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant'
+reason         = "Author roles are a closed four-value vocabulary; role drives attribution, and silently filing an unrecognized role under a default would misattribute statements."
+
+["ai_archive/project/invalid/provider-created-at-trailing-zeros.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "One spelling per instant on the whole wire: `.000` adds no information and renders away, so only the canonical form parses. Serde-layer rule; the pattern permits the fraction."
+
+["events/ai_archive.archive.imported.v1/invalid/missing-completeness-report.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `completeness_report`"
+reason         = "The imported event is the evidence claim: identity, owner, timing and completeness travel together, because a consumer cannot decide how to index an import whose wholeness is unknown."
+
+["ai_archive/archive-snapshot/invalid/gap-count-mismatch.json"]
+rejected_by    = ["serde"]
+error_contains = 'gap_count'
+reason         = "Invariant A3: the declared gap count must equal the gaps carried."
+
+["events/ai_archive.conversation.added.v1/invalid/missing-conversation.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `conversation`"
+reason         = "State-carried transfer is the replay-safety stance: an added event without the whole conversation would be an unactionable announcement, so the member is required."
+
+["events/ai_archive.conversation.updated.v1/invalid/missing-ai-archive-id.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `ai_archive_id`"
+reason         = "The owning import ties a conversation to its evidence and completeness report; without it a consumer cannot trace the record back to the export it was parsed from."

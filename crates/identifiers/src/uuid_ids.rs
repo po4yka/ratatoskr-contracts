@@ -242,6 +242,43 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one import of a provider AI account export — one parse of the immutable
+    /// evidence into normalized graph nodes.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. The provider's own export/session
+    /// identifiers stay opaque in their own fields; this identity is Ratatoskr's own and is
+    /// never derived from the provider's.
+    pub struct AiArchiveId,
+    kind = "ai_archive",
+    description = "Identity of one import of a provider AI account export. Bare canonical \
+                   lowercase hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
+    /// Identity of one normalized AI project.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. The provider's own project id is a
+    /// different field (`external_project_id`) and stays opaque; this identity is Ratatoskr's
+    /// own and is never derived from the provider's.
+    pub struct AiProjectId,
+    kind = "ai_project",
+    description = "Identity of one normalized AI project. Bare canonical lowercase hyphenated \
+                   UUID; not namespaced."
+}
+
+uuid_newtype! {
+    /// Identity of one normalized AI conversation.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. The provider's own conversation id
+    /// is a different field (`external_conversation_id`) and stays opaque; this identity is
+    /// Ratatoskr's own and is never derived from the provider's.
+    pub struct AiConversationId,
+    kind = "ai_conversation",
+    description = "Identity of one normalized AI conversation. Bare canonical lowercase \
+                   hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// A correlation identity minted by a producer for work not bound to an operation.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot
