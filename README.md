@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–5 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. Social-source and AI-archive contracts, OpenAPI, generated TypeScript, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
+> **Status:** milestones 1–6 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema and the fixture suite. AI-archive contracts, OpenAPI, generated TypeScript, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -42,8 +42,8 @@ crates/
 ├── event-envelope/         (now)
 ├── operation-contracts/    (now)
 ├── error-contracts/        (now)
-├── document-contracts/
-├── social-contracts/
+├── document-contracts/     (now)
+├── social-contracts/       (now)
 └── ai-archive-contracts/
 
 schemas/
@@ -158,7 +158,7 @@ The extractor publishes a typed Document IR rather than treating Markdown as the
 
 ### Social sources
 
-X, Instagram, and Threads preserve different levels of authority over saved state. The common contract distinguishes official platform observations, explicit user captures, data-export observations, and legacy imports instead of reducing them to one ambiguous `is_saved` flag.
+X, Instagram, and Threads preserve different levels of authority over saved state. The common contract (`ratatoskr-social-contracts`) distinguishes official platform observations, explicit user captures, data-export observations, and legacy imports instead of reducing them to one ambiguous `is_saved` flag. A `SocialSourceSnapshot` carries the normalized record — identity, author, text, media by `BlobRef`, quote/reply/repost relations, provider-native folder memberships — beside the facts of one capture of it: acquisition method, saved authority, completeness with explanatory warnings, an opaque sync checkpoint, and observed upstream availability. The `social.source.captured.v1` and `social.source.updated.v1` events carry the whole snapshot inside the common envelope.
 
 ### AI archives
 
@@ -214,6 +214,6 @@ The pin is the `rev`, not the transport. Use `https://` while this repository is
 
 ## Project status
 
-Milestones 1 through 5 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the deterministic generator and gate, generated JSON Schema, and the fixture suite. The gate also runs in CI. Milestones 6 through 10 — social sources, AI archives, cross-language generation, the frozen compatibility baseline, package CI and publishing — are still target architecture.
+Milestones 1 through 6 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the deterministic generator and gate, generated JSON Schema, and the fixture suite. The gate also runs in CI. Milestones 7 through 10 — AI archives, cross-language generation, the frozen compatibility baseline, package CI and publishing — are still target architecture.
 
 Two decisions are recorded and accepted: [ADR-0001](docs/adr/0001-canonical-schema-source-format.md) (Rust-first canonical source) and [ADR-0002](docs/adr/0002-event-naming-and-major-version-strategy.md) (event naming and the two version axes). Nothing is published, so every contract here remains subject to further ADRs and contract-focused review.

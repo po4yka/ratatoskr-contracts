@@ -6,7 +6,7 @@ references:
 context: |
   `ratatoskr-contracts` — The wire-contract repository. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-  Stack: Rust, edition 2024, toolchain pinned by rust-toolchain.toml. A Cargo workspace of five crates plus tools/contractsc.
+  Stack: Rust, edition 2024, toolchain pinned by rust-toolchain.toml. A Cargo workspace of six crates plus tools/contractsc.
 
   Tests: `cargo test --workspace --locked`. Integration suites live in tools/contractsc/tests/*.rs and cover determinism, lint, compatibility, secrets and provenance.
 

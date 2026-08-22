@@ -206,3 +206,60 @@ reason         = "A progress fact that does not say which operation progressed i
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `status`'
 reason         = "A report without the lifecycle status reached gives Platform no state to apply."
+
+# ---------------------------------------------------------------------------
+# social/social-source-snapshot
+# ---------------------------------------------------------------------------
+
+["social/social-source-snapshot/invalid/unknown-acquisition-method.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `carrier_pigeon`'
+reason         = "AcquisitionMethod is closed: how a source entered the library decides retention and provenance handling, and an unrecognized method must stop processing instead of being filed under a default. DOMAIN invariant 6, 'rejected explicitly'."
+
+["social/social-source-snapshot/invalid/unknown-saved-authority.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `platform_says_so`'
+reason         = "SavedAuthority is closed. Misreading authority is exactly the Instagram-phantom-bookmark failure mode AGENTS.md forbids; a consumer that guesses treats a maybe-saved source as saved."
+
+["social/social-source-snapshot/invalid/partial-without-warning.json"]
+rejected_by    = ["serde"]
+error_contains = 'completeness `partial` requires at least one warning'
+reason         = "Invariant S1. A partial capture that explains nothing leaves the consumer unable to act on the gap. Cross-field, so JSON Schema draft 2020-12 cannot express it; only the Rust type rejects it."
+
+["social/social-source-snapshot/invalid/captured-at-trailing-zeros.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "`...:00.000Z` renders as `...:00Z`, so it is a second spelling of one instant. Canonicality is a Rust-layer rule the published `pattern` permits; see ADR-0001 consequences and the event-envelope fixture of the same shape."
+
+["social/social-source-snapshot/invalid/missing-social-source-id.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `social_source_id`'
+reason         = "Without Ratatoskr's own identity there is nothing to deduplicate against or update later; the provider id alone is not stable across platform changes."
+
+["social/social-source-snapshot/invalid/unknown-upstream-availability.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `shadowbanned`'
+reason         = "UpstreamAvailability is closed because availability drives conservative retention decisions. An unrecognized state must stop processing rather than be read as available."
+
+["social/social-source-snapshot/invalid/media-missing-blob.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `blob`'
+reason         = "A media item without its BlobRef names bytes nobody can resolve or verify; media travels strictly by reference in this contract."
+
+# ---------------------------------------------------------------------------
+# events/social.source.captured.v1
+# ---------------------------------------------------------------------------
+
+["events/social.source.captured.v1/invalid/missing-source.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `source`'
+reason         = "The payload is state-carried transfer: without the snapshot the event announces a capture of nothing and cannot be indexed idempotently."
+
+# ---------------------------------------------------------------------------
+# events/social.source.updated.v1
+# ---------------------------------------------------------------------------
+
+["events/social.source.updated.v1/invalid/source-missing-owner.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `owner`'
+reason         = "Every snapshot of a source carries the same owner; an update that cannot say whose library changed is unroutable for tenancy-scoped consumers."

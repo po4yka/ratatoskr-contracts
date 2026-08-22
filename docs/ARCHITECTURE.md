@@ -247,13 +247,16 @@ Consumers may display citations without depending on extractor-private storage.
 
 ## 7. Social contracts
 
-Social sources preserve acquisition method and saved-state authority.
+Social sources preserve acquisition method and saved-state authority. The canonical source is the `ratatoskr-social-contracts` crate (`crates/social-contracts`); the generated schema is `schemas/json-schema/social/social-source-snapshot.v1.schema.json` plus one schema per event under `schemas/events/`.
+
+### 7.1. Vocabularies
 
 ```rust
 pub enum AcquisitionMethod {
     OfficialApi,
     ShareExtension,
     BrowserExtension,
+    PublicResolution,
     DataExport,
     LegacyImport,
 }
@@ -266,20 +269,33 @@ pub enum SavedAuthority {
 }
 ```
 
-A normalized social source includes:
+`AcquisitionMethod` and `SavedAuthority` are **closed**: an unknown value is rejected at parse (`DOMAIN.md` invariant 6, "rejected explicitly"), because misreading how a source arrived — or what its saved-state claim is worth — is exactly how an Instagram capture becomes a phantom bookmark. `CaptureCompleteness` (`complete`, `partial`) and `UpstreamAvailability` (`available`, `unavailable`, `deleted_upstream`) are closed for the same reason: both drive retention and re-fetch decisions.
 
-- platform and external ID;
-- canonical URL;
-- owner user;
-- author;
-- published and captured timestamps;
-- text and media descriptors;
-- quote/reply/repost relations;
-- native collection references;
-- content hash and raw blob reference;
-- upstream availability state.
+`Platform`, `SocialMediaKind` and `SocialRelationKind` are **open validated tokens** (snake_case, the event-type segment grammar): new platforms, media kinds and relation kinds must not break a running consumer, and consumers treat unrecognized values generically instead of branching.
 
-The contract must not collapse an Instagram capture and an X bookmark into the same boolean `is_saved` semantics.
+The contract must not collapse an Instagram capture and an X bookmark into the same boolean `is_saved` semantics. An Instagram or Threads explicit capture is representable only as `explicit_user_capture`; `authoritative_platform_state` is reachable only where the platform itself exposes saved state through a supported channel (X bookmarks through the supported API), and exact bookmark timestamps are never fabricated — `published_at` is present only when the provider authored it.
+
+### 7.2. The snapshot
+
+`SocialSourceSnapshot` carries the normalized record beside the facts of one capture of it, in one flat structure:
+
+- identity: `social_source_id` (Ratatoskr's own, bare UUID), `platform`, `external_post_id`, optional `permalink` (absolute HTTPS);
+- ownership and authorship: `owner` (`TenantRef`), inline `SocialAuthor` (`platform`, `external_author_id`, optional bare `handle` without the `@`, optional `display_name`);
+- content: optional `text` (line breaks preserved, other control characters banned), `media` items by reference (`media_kind`, `BlobRef`, optional `alt_text` — never media bytes), `content_digest`, optional `raw_blob`;
+- structure: `relations` (quote/reply/repost, target named by provider post id), `folders` (provider-native folder id and optional provider-authored name);
+- capture facts: `acquisition`, `saved_authority`, `completeness`, `upstream_availability`, optional `checkpoint` (opaque sync cursor: printable ASCII, never interpreted), `warnings`, `published_at` (provider-authored) and `captured_at` (observed).
+
+One cross-field invariant holds: `completeness = partial` requires at least one warning naming what is missing. The rule is asymmetric on purpose — a `complete` capture may still carry warnings that did not reduce completeness. `published_at <= captured_at` is deliberately **not** an invariant (provider clocks skew), and neither is `authoritative_platform_state ⇒ official_api` (a data export also carries authoritative platform state).
+
+Folder membership says nothing about authority: it is populated only where the provider exposes folders through a supported channel, and a folder-less explicit capture is a complete representation of what happened. A deleted-upstream source keeps everything captured before it went away.
+
+### 7.3. Events
+
+`social.source.captured.v1` means a source became part of a user's library; `social.source.updated.v1` means its normalized record changed. Both payloads carry the whole snapshot (state-carried transfer), so at-least-once redelivery is idempotent on `event_id` and no prior event is needed to interpret a later one. Both implement the envelope crate's `EventPayload` and travel only inside the common envelope.
+
+### 7.4. Fixtures and the URL scanner
+
+The secret/PII scanner bans URLs and `@`-handles under `fixtures/**` (S12), so committed social fixtures omit the optional `permalink` and carry handles in bare form. Wire coverage for those members comes from the crate's Rust round-trip test, which constructs a snapshot carrying every field.
 
 ## 8. AI archive contracts
 

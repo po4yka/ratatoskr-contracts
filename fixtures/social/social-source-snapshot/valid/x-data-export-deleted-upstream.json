@@ -1,0 +1,22 @@
+{
+  "social_source_id": "018f0000-0000-7000-8000-000000000204",
+  "platform": "x",
+  "external_post_id": "111222333444",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "author": {
+    "platform": "x",
+    "external_author_id": "987654321",
+    "handle": "example_user"
+  },
+  "published_at": "2025-01-02T08:00:00Z",
+  "captured_at": "2026-08-17T13:00:00Z",
+  "text": "Bookmarked long ago; the post is gone upstream.",
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "acquisition": "data_export",
+  "saved_authority": "export_observation",
+  "completeness": "complete",
+  "upstream_availability": "deleted_upstream"
+}

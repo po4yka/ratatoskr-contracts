@@ -1,0 +1,50 @@
+{
+  "source": {
+    "social_source_id": "018f0000-0000-7000-8000-000000000202",
+    "platform": "instagram",
+    "external_post_id": "C-abc123_456",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "author": {
+      "platform": "instagram",
+      "external_author_id": "creator.slug.01",
+      "handle": "creator.slug.01"
+    },
+    "published_at": "2026-08-15T18:00:00Z",
+    "captured_at": "2026-08-17T11:30:00Z",
+    "text": "Captured from my feed.\nSaved for the recipe.",
+    "media": [
+      {
+        "media_kind": "image",
+        "blob": {
+          "owner_service": "ratatoskr-x",
+          "digest": {
+            "algorithm": "sha256",
+            "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+          },
+          "media_type": "image/jpeg",
+          "length_bytes": 4096
+        }
+      }
+    ],
+    "content_digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "acquisition": "share_extension",
+    "saved_authority": "explicit_user_capture",
+    "completeness": "partial",
+    "upstream_availability": "available",
+    "warnings": [
+      {
+        "code": "social.source.media_download_failed",
+        "message": "Media item 1 of 2 (the carousel's second image) expired before download."
+      }
+    ]
+  },
+  "provider_edit_history": [
+    {
+      "edited_at": "2026-08-17T09:00:00Z",
+      "note": "caption typos fixed"
+    }
+  ]
+}

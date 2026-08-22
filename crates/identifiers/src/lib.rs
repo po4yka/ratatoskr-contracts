@@ -43,5 +43,7 @@ pub use crate::error::IdentifierError;
 pub use crate::macros::doc_description;
 pub use crate::text::SafeMessage;
 pub use crate::timestamp::WireTimestamp;
-pub use crate::uuid_ids::{CorrelationId, DocumentId, EventId, OperationId, UserId};
+pub use crate::uuid_ids::{
+    CorrelationId, DocumentId, EventId, OperationId, SocialSourceId, UserId,
+};
 pub use crate::wire::{Extensions, canonical_json, dropped_field_pointers};

@@ -6,11 +6,11 @@
 
 ## Current stage
 
-Implementation milestones 1 through 5 exist and the commands below are real.
+Implementation milestones 1 through 6 exist and the commands below are real.
 
-Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts` and `ratatoskr-document-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; and valid, invalid and compatibility fixtures under `fixtures/`.
+Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts` and `ratatoskr-social-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; and valid, invalid and compatibility fixtures under `fixtures/`.
 
-Absent: social-source and AI-archive contracts; OpenAPI in any form; generated TypeScript, Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are milestones 6 through 10.
+Absent: AI-archive contracts; OpenAPI in any form; generated TypeScript, Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are milestones 7 through 10.
 
 Present since the gate was wired to CI: `.github/workflows/ci.yml`, which runs the gate below and nothing else. That is the part of milestone 9 that needed no new capability. The rest of item 9 — a frozen compatibility baseline to check against, and package CI — is still absent, so CI existing is not the same as milestone 9 being done.
 

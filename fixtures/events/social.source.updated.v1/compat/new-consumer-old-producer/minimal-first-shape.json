@@ -1,0 +1,21 @@
+{
+  "source": {
+    "social_source_id": "018f0000-0000-7000-8000-000000000206",
+    "platform": "x",
+    "external_post_id": "1234567890123456789",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "author": {
+      "platform": "x",
+      "external_author_id": "987654321"
+    },
+    "captured_at": "2026-08-17T10:00:00Z",
+    "content_digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "acquisition": "official_api",
+    "saved_authority": "authoritative_platform_state",
+    "completeness": "complete",
+    "upstream_availability": "available"
+  }
+}

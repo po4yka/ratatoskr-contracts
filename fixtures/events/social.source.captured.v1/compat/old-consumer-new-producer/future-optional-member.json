@@ -1,0 +1,23 @@
+{
+  "source": {
+    "social_source_id": "018f0000-0000-7000-8000-000000000203",
+    "platform": "threads",
+    "external_post_id": "thread_98765",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "author": {
+      "platform": "threads",
+      "external_author_id": "555000111",
+      "display_name": "Public Figure"
+    },
+    "captured_at": "2026-08-17T12:00:00Z",
+    "text": "A text-only thread worth keeping.",
+    "content_digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "acquisition": "public_resolution",
+    "saved_authority": "explicit_user_capture",
+    "completeness": "complete",
+    "upstream_availability": "available"
+  }
+}

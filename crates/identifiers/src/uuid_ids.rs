@@ -229,6 +229,19 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one normalized social source — a post, permalink or capture preserved from
+    /// X, Instagram or Threads into a user's library.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. The provider's own id for the same
+    /// post is a different field (`external_post_id`) and stays opaque; this identity is
+    /// Ratatoskr's own and is never derived from the provider's.
+    pub struct SocialSourceId,
+    kind = "social_source",
+    description = "Identity of one normalized social source in a user's library. Bare canonical \
+                   lowercase hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// A correlation identity minted by a producer for work not bound to an operation.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot

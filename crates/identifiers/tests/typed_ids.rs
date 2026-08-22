@@ -7,11 +7,13 @@
 )]
 
 use ratatoskr_identifiers::{
-    CorrelationId, DocumentId, EntityKind, EntityRef, EventId, IdentifierError, OperationId, UserId,
+    CorrelationId, DocumentId, EntityKind, EntityRef, EventId, IdentifierError, OperationId,
+    SocialSourceId, UserId,
 };
 
 const EVENT_UUID: &str = "018f0000-0000-7000-8000-000000000001";
 const USER_UUID: &str = "018f0000-0000-7000-8000-000000000005";
+const SOURCE_UUID: &str = "018f0000-0000-7000-8000-000000000201";
 
 /// I-4. `ARCHITECTURE.md` S5.2 shows `event_id` bare, with no `event:` prefix.
 #[test]
@@ -110,4 +112,51 @@ fn accepts_non_v7_uuid_and_reports_version() {
     assert!(UserId::new_v7().is_uuid_v7());
     assert!(OperationId::new_v7().is_uuid_v7());
     assert!(CorrelationId::new_v7().is_uuid_v7());
+    assert!(SocialSourceId::new_v7().is_uuid_v7());
+}
+
+/// A social source carries its own identity, so it is a bare canonical UUID newtype whose
+/// widened reference names the `social_source` kind (ADR-0007 clause 1).
+#[test]
+fn social_source_id_is_a_bare_uuid_with_the_social_source_kind() {
+    let source_id = SocialSourceId::parse(SOURCE_UUID).expect("a canonical UUID parses");
+    assert_eq!(
+        serde_json::to_string(&source_id).unwrap(),
+        format!("\"{SOURCE_UUID}\"")
+    );
+
+    let decoded: SocialSourceId =
+        serde_json::from_str(&format!("\"{SOURCE_UUID}\"")).expect("and deserializes");
+    assert_eq!(decoded, source_id);
+
+    let as_ref: EntityRef = source_id.into();
+    assert_eq!(as_ref.to_wire(), format!("social_source:{SOURCE_UUID}"));
+    assert_eq!(as_ref.kind().as_str(), "social_source");
+    assert_eq!(
+        SocialSourceId::try_from(&as_ref).expect("the kind matches"),
+        source_id
+    );
+
+    // One spelling per identity: any other rendering of the same UUID is refused.
+    for rejected in [
+        "018F0000-0000-7000-8000-000000000201",
+        "{018f0000-0000-7000-8000-000000000201}",
+        "social_source:018f0000-0000-7000-8000-000000000201",
+    ] {
+        assert!(
+            matches!(
+                SocialSourceId::parse(rejected),
+                Err(IdentifierError::PatternMismatch { .. })
+            ),
+            "{rejected} must not parse as a SocialSourceId"
+        );
+    }
+
+    // A different kind does not become a social source.
+    let event_ref = EntityRef::parse(&format!("event:{EVENT_UUID}")).expect("a legal reference");
+    let error = SocialSourceId::try_from(&event_ref).expect_err("an event is not a social source");
+    assert!(matches!(
+        error,
+        IdentifierError::KindMismatch { expected: "social_source", ref actual } if actual == "event"
+    ));
 }

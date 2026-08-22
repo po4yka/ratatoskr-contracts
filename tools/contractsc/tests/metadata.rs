@@ -169,7 +169,10 @@ fn event_metadata_matches_the_payload_type() {
         );
         checked += 1;
     }
-    assert_eq!(checked, 2, "two event contracts are registered");
+    assert_eq!(
+        checked, 4,
+        "four event contracts are registered; update this pin when the registry changes"
+    );
 }
 
 /// M-9. A credential-bearing contract cannot be declared at all: `privacy = "credential"` fails at

@@ -1,0 +1,26 @@
+{
+  "social_source_id": "018f0000-0000-7000-8000-000000000205",
+  "platform": "x",
+  "external_post_id": "555666777",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "author": {
+    "platform": "x",
+    "external_author_id": "246813579"
+  },
+  "captured_at": "2026-08-17T14:00:00Z",
+  "text": "Migrated from the monolith with text only.",
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "acquisition": "legacy_import",
+  "saved_authority": "legacy_observation",
+  "completeness": "partial",
+  "upstream_availability": "unavailable",
+  "warnings": [
+    {
+      "code": "social.source.legacy_media_missing",
+      "message": "The monolith record named two images it never stored."
+    }
+  ]
+}

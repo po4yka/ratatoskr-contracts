@@ -1,0 +1,75 @@
+{
+  "social_source_id": "018f0000-0000-7000-8000-000000000201",
+  "platform": "x",
+  "external_post_id": "1234567890123456789",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "author": {
+    "platform": "x",
+    "external_author_id": "987654321",
+    "handle": "example_user",
+    "display_name": "Example User"
+  },
+  "published_at": "2026-08-16T09:30:00Z",
+  "captured_at": "2026-08-17T10:00:00Z",
+  "text": "First line.\nSecond line.",
+  "media": [
+    {
+      "media_kind": "image",
+      "blob": {
+        "owner_service": "ratatoskr-x",
+        "digest": {
+          "algorithm": "sha256",
+          "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+        },
+        "media_type": "image/jpeg",
+        "length_bytes": 2048
+      },
+      "alt_text": "A chart of test results."
+    },
+    {
+      "media_kind": "video",
+      "blob": {
+        "owner_service": "ratatoskr-x",
+        "digest": {
+          "algorithm": "sha256",
+          "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+        },
+        "media_type": "video/mp4",
+        "length_bytes": 1048576
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_kind": "quote",
+      "target_post_id": "9988776655"
+    }
+  ],
+  "folders": [
+    {
+      "folder_id": "folder-abc",
+      "folder_name": "Read later"
+    },
+    {
+      "folder_id": "folder-def"
+    }
+  ],
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "raw_blob": {
+    "owner_service": "ratatoskr-x",
+    "digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "media_type": "application/json",
+    "length_bytes": 4096
+  },
+  "acquisition": "carrier_pigeon",
+  "saved_authority": "authoritative_platform_state",
+  "completeness": "complete",
+  "upstream_availability": "available",
+  "checkpoint": "eyJib29rbWFya19yZXNwb25zZV9pZCI6IjEifQ=="
+}

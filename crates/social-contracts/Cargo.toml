@@ -1,0 +1,23 @@
+[package]
+name        = "ratatoskr-social-contracts"
+description = "Normalized social-source records and captured/updated events for X, Instagram and Threads."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace     = true
+ratatoskr-error-contracts.workspace = true
+# Needed for `impl EventPayload for SocialSource{Captured,Updated}`; the orphan rule leaves
+# this crate as the only legal home for those impls.
+ratatoskr-event-envelope.workspace  = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+regex.workspace      = true
+thiserror.workspace  = true
+
+[lints]
+workspace = true

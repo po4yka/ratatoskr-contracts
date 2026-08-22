@@ -10,7 +10,7 @@
 3. Implement shared identifiers and event envelope.
 4. Implement operation and error contracts. **Implemented.**
 5. Implement Document IR and provenance. **Implemented.**
-6. Implement social-source contracts.
+6. Implement social-source contracts. **Implemented.**
 7. Implement AI archive graph/content contracts.
 8. Add deterministic Rust/TypeScript generation.
 9. Add fixture, compatibility, and package CI.

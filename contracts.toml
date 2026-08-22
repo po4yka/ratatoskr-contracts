@@ -16,6 +16,8 @@ known = [
   "ratatoskr-knowledge",
   "ratatoskr-vault",
   "ratatoskr-x",
+  "ratatoskr-instagram",
+  "ratatoskr-threads",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -56,7 +58,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -269,3 +271,91 @@ justification = "The closed OperationStatus enum defines the exact lifecycle voc
 [contract.event]
 event_type   = "platform.operation.reported.v1"
 payload_type = "ratatoskr_operation_contracts::OperationReported"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "social.social_source_snapshot"
+family         = "social"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-x"
+producers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/snapshot.rs"
+fixtures_dir   = "fixtures/social/social-source-snapshot"
+summary        = "Normalized social source plus the facts of one capture of it."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialSourceSnapshot"
+output         = "schemas/json-schema/social/social-source-snapshot.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:social:v1:SocialSourceSnapshot"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/published_at"
+authority   = "provider_authored"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the provider says the source was published. Present only when the provider supplied it; never inferred from capture time, and never a bookmark time."
+
+[[contract.field]]
+pointer     = "/properties/captured_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the producing service captured or last refreshed this record into its library. The producer's clock, not the provider's."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "social.source_captured"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-x"
+producers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/social.source.captured.v1"
+summary        = "Fact: a social source became part of a user's library."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialSourceCaptured"
+output         = "schemas/events/social.source.captured.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:SocialSourceCaptured"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "social.source.captured.v1"
+payload_type = "ratatoskr_social_contracts::SocialSourceCaptured"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "social.source_updated"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-x"
+producers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/social.source.updated.v1"
+summary        = "Fact: an existing social source's normalized record changed."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialSourceUpdated"
+output         = "schemas/events/social.source.updated.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:SocialSourceUpdated"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "social.source.updated.v1"
+payload_type = "ratatoskr_social_contracts::SocialSourceUpdated"

@@ -18,8 +18,9 @@ use crate::status::OperationStatus;
 /// No `schema_version` field: S5.4's field list does not include one, and the envelope already
 /// carries the envelope major. A third version axis is a compatibility hazard, not a feature.
 ///
-/// `Deserialize` is hand-written (the **only** hand-written `Deserialize` in this repository)
-/// because the invariants below are cross-field and serde has no validation hook. It parses a
+/// `Deserialize` is hand-written (one of the two hand-written `Deserialize` impls in this
+/// repository, beside `ratatoskr-social-contracts`'s snapshot) because the invariants below are
+/// cross-field and serde has no validation hook. It parses a
 /// private mirror struct and then checks. A field added to the public struct and not the mirror
 /// would be silently dropped; test `O-2` (byte round-trip of a fixture carrying every field)
 /// fails immediately if that happens, and a source comment points at it.
