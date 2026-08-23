@@ -203,14 +203,16 @@ The pin is the `rev`, not the transport. Use `https://` while this repository is
 
 ## Initial milestones
 
-1. Establish naming, identifier, timestamp, error, and event-envelope conventions.
-2. Define operation contracts used by Platform and clients.
-3. Define Document IR and extraction event schemas.
-4. Define GitHub/Vault desired-state and verification events.
-5. Define social-source contracts.
-6. Define AI-archive snapshot and completeness contracts. Done.
-7. Generate the first public Edge OpenAPI artifacts.
-8. Add compatibility and generated-drift CI.
+1. Define directories and machine-readable contract metadata.
+2. Choose the Rust-first canonical source and deterministic generator architecture.
+3. Implement shared identifiers and the event envelope.
+4. Implement operation and error contracts.
+5. Implement Document IR and provenance.
+6. Implement social-source contracts.
+7. Implement AI archive graph and content contracts.
+8. Add deterministic Rust and TypeScript generation.
+9. Add fixture, compatibility, and package CI.
+10. Publish the first tagged artifacts and integrate them in one vertical slice.
 
 ## Project status
 
