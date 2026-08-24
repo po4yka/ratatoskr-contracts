@@ -29,7 +29,7 @@ struct Cli {
     command: Command,
 }
 
-/// The three verbs `DEVELOPMENT.md` names.
+/// The four verbs `DEVELOPMENT.md` names.
 #[derive(Debug, clap::Subcommand)]
 enum Command {
     /// Write every generated artifact. Writes a file only when its bytes differ.
@@ -37,6 +37,9 @@ enum Command {
     /// Read-only gate: metadata validation, drift detection, the field lint, fixture validation
     /// and the secret scan. Writes nothing, ever. Exit 1 on any finding.
     Check,
+    /// Compile the current generated TypeScript under a throwaway strict-mode project.
+    /// Not part of the repository gate. Exit 1 on diagnostics or a missing compiler.
+    CheckTypescript,
     /// Classify a change between two JSON Schema files.
     Compat {
         /// The baseline schema.
@@ -58,6 +61,7 @@ fn main() -> anyhow::Result<std::process::ExitCode> {
     match cli.command {
         Command::Generate => run_generate(&root),
         Command::Check => run_check(&root),
+        Command::CheckTypescript => run_check_typescript(&root),
         Command::Compat { old, new, format } => run_compat(&old, &new, format),
     }
 }
@@ -112,6 +116,46 @@ fn run_check(root: &Path) -> anyhow::Result<std::process::ExitCode> {
     } else {
         std::process::ExitCode::FAILURE
     })
+}
+
+/// `contractsc check-typescript`.
+///
+/// The environment override is read here, at the process boundary; the library stays free of
+/// environment lookups, which is what keeps the determinism guarantees honest.
+fn run_check_typescript(root: &Path) -> anyhow::Result<std::process::ExitCode> {
+    use ratatoskr_contractsc::typescript::{CompileVerdict, SpawnOutcome, check_typescript_with};
+
+    let metadata = load_metadata(root)?;
+    let env_override = std::env::var("CONTRACTSC_TSC").ok();
+    let verdict = check_typescript_with(
+        &metadata,
+        GENERATOR_VERSION,
+        env_override.as_deref(),
+        |directory, program, arguments| {
+            std::process::Command::new(program)
+                .args(arguments)
+                .current_dir(directory)
+                .output()
+                .map(|output| SpawnOutcome {
+                    success: output.status.success(),
+                    output: format!(
+                        "{}{}",
+                        String::from_utf8_lossy(&output.stdout),
+                        String::from_utf8_lossy(&output.stderr)
+                    ),
+                })
+        },
+    )?;
+    let exit_code = match &verdict {
+        CompileVerdict::Compiled => std::process::ExitCode::SUCCESS,
+        _ => std::process::ExitCode::FAILURE,
+    };
+    match verdict {
+        CompileVerdict::Compiled => println!("typescript: strict-mode compilation succeeded"),
+        CompileVerdict::Diagnostics(output) => eprint!("{output}"),
+        CompileVerdict::Unavailable(guidance) => eprintln!("{guidance}"),
+    }
+    Ok(exit_code)
 }
 
 /// `contractsc compat`.

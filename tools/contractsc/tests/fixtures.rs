@@ -43,9 +43,14 @@ fn committed() -> Metadata {
     Metadata::parse(&text).expect("contracts.toml parses")
 }
 
-/// Every generated artifact, in memory.
+/// Every generated artifact, in memory. JSON-family only: the TypeScript family is not a JSON
+/// Schema document and is validated by the determinism suite instead.
 fn generated() -> BTreeMap<PathBuf, String> {
-    generate(&committed(), GENERATOR_VERSION).expect("the committed contracts generate")
+    generate(&committed(), GENERATOR_VERSION)
+        .expect("the committed contracts generate")
+        .into_iter()
+        .filter(|(path, _)| path.to_string_lossy().ends_with(".schema.json"))
+        .collect()
 }
 
 /// Every contract with fixtures, in metadata order.

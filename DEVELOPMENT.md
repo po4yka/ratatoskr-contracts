@@ -6,11 +6,11 @@
 
 ## Current stage
 
-Implementation milestones 1 through 7 exist and the commands below are real.
+Implementation milestones 1 through 7 exist, milestone 8's deterministic TypeScript generation exists, and the commands below are real.
 
-Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts` and `ratatoskr-ai-archive-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; and valid, invalid and compatibility fixtures under `fixtures/`.
+Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts` and `ratatoskr-ai-archive-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; generated TypeScript under `generated/typescript/`, produced and verified by the same pipeline; and valid, invalid and compatibility fixtures under `fixtures/`.
 
-Absent: OpenAPI in any form; generated TypeScript, Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are milestones 8 through 10.
+Absent: OpenAPI in any form; generated Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are the rest of milestones 9 through 10.
 
 Present since the gate was wired to CI: `.github/workflows/ci.yml`, which runs the gate below and nothing else. That is the part of milestone 9 that needed no new capability. The rest of item 9 — a frozen compatibility baseline to check against, and package CI — is still absent, so CI existing is not the same as milestone 9 being done.
 
@@ -37,11 +37,17 @@ Editing loop, after you change a canonical Rust type:
 
 ```bash
 cargo fetch --locked                         # bootstrap: resolve exactly the committed lockfile
-cargo contracts generate                     # write every generated artifact
+cargo contracts generate                     # write every generated artifact — JSON Schema and
+                                             #   TypeScript alike, one run for both families
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --locked
+cargo contracts check-typescript             # optional, editing-loop only: compile the emitted
+                                             #   declarations under strict-mode tsc; needs Node
+                                             #   locally, is NOT part of the gate
 ```
+
+Both generated families are owned by the generator. `generated/typescript/` mirrors `schemas/` path-for-path (`schemas/<family>/<name>.v<minor>.schema.json` becomes `generated/typescript/<family>/<name>.v<minor>.ts`, derived mechanically from the same `contracts.toml` rows), carries the same nine-member provenance header as a leading block comment with a digest over its own body, and is classified by `cargo contracts check` exactly like the JSON family: missing, stale, tampered and orphaned all fail the gate.
 
 Gate, run by CI and before every commit:
 
@@ -66,10 +72,7 @@ provenance digest was hand-edited. Running the writer to prove the reader was ri
 mechanism for one job, and `git diff --exit-code` inspects tracked files only, so it never covered the
 missing-artifact direction it appeared to.
 
-One residual gap, stated rather than papered over: `orphans()` sweeps `schemas/` for `*.schema.json`
-and nothing else, so a generated artifact written outside that tree or under another extension is not
-reported as orphaned. That is a `contractsc` limitation, not something the deleted `git diff` covered
-either — it would have caught such a file only while it was untracked, which `git diff` does not see.
+One residual gap, stated rather than papered over: `orphans()` sweeps `schemas/` for `*.schema.json` and `generated/typescript/` for `*.ts`, so a generated artifact written under any *other* tree or extension is still not reported as orphaned. That is a `contractsc` limitation, not something the deleted `git diff` covered either — it would have caught such a file only while it was untracked, which `git diff` does not see.
 
 The ORDER RULE still holds whenever you run both by hand, which the editing loop above does.
 `generate` repairs drift in place, so a `check` that follows it inspects a tree that was just repaired
@@ -86,7 +89,9 @@ cargo contracts compat <OLD.json> <NEW.json>
 
 `cargo contracts` is the alias in `.cargo/config.toml` for the `contractsc` binary in `tools/contractsc`.
 
-`cargo contracts check` is deliberately one command with one exit code, and `.github/workflows/ci.yml` adopted it unchanged, as intended. It reports drift against the committed artifacts, a tampered provenance digest, an orphan schema, a `contracts.toml` claim that does not match reality, a field-lint violation, a fixture that is not rejected for its declared reason, and a secret or personal-data pattern anywhere under `fixtures/**` (every file in that tree, not only `*.json`).
+The `check-typescript` verb resolves its compiler through the `CONTRACTSC_TSC` environment variable first, then `npx --no-install tsc`. With neither available it exits non-zero naming both escape hatches; that outcome is expected on machines without Node and is why the verb is not a gate step.
+
+`cargo contracts check` is deliberately one command with one exit code, and `.github/workflows/ci.yml` adopted it unchanged, as intended. It reports drift against the committed artifacts of both families, a tampered provenance digest (JSON extension keyword or TypeScript block comment), an orphan under either managed tree, a `contracts.toml` claim that does not match reality, a field-lint violation, a fixture that is not rejected for its declared reason, and a secret or personal-data pattern anywhere under `fixtures/**` (every file in that tree, not only `*.json`).
 
 `check` is not a replacement for `cargo test --workspace`. Its fixture step exercises the `serde` layer only, because the JSON Schema validator is a development dependency of the generator. The `json_schema` column of `fixtures/invalid-expectations.toml`, and the rule that every `valid/` fixture is byte-canonical, are asserted by `cargo test` instead. A CI job must run both, and the one in `.github/workflows/ci.yml` does.
 

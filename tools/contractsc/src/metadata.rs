@@ -444,7 +444,14 @@ fn rule_r6(
             });
         }
     }
-    for output in generated.keys() {
+    // Claims govern the authored `output` column, which names the JSON Schema family. The
+    // TypeScript counterparts are not authored anywhere: their paths are derived mechanically
+    // from the very same rows (design D1 of add-typescript-generation), so claiming them again
+    // would duplicate the naming authority D1 exists to avoid.
+    for output in generated
+        .keys()
+        .filter(|path| path.to_string_lossy().ends_with(crate::SCHEMA_SUFFIX))
+    {
         let claimed = metadata.contracts.iter().any(|contract| {
             contract
                 .root_types

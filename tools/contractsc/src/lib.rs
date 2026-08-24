@@ -27,12 +27,14 @@ pub mod provenance;
 pub mod registry;
 pub mod render;
 pub mod secrets;
+pub mod typescript;
 
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
 pub use crate::check::{CheckReport, Finding};
 pub use crate::metadata::Metadata;
+pub use crate::typescript::emit_typescript;
 
 /// This generator's own version, recorded in every provenance block.
 ///
@@ -71,6 +73,14 @@ pub enum GenError {
         /// The TOML parse error, which `deny_unknown_fields` makes precise.
         detail: String,
     },
+    /// A normalized schema used a construct outside the supported TypeScript subset, so no sound
+    /// TypeScript projection exists. The generator never emits an unsound approximation.
+    UnrepresentableConstruct {
+        /// The `$id` of the offending schema.
+        schema_id: String,
+        /// The construct, spelled as the document spells it.
+        construct: String,
+    },
 }
 
 impl std::fmt::Display for GenError {
@@ -83,6 +93,14 @@ impl std::fmt::Display for GenError {
             ),
             Self::Io { path, detail } => write!(formatter, "{}: {detail}", path.display()),
             Self::Metadata { detail } => write!(formatter, "contracts.toml: {detail}"),
+            Self::UnrepresentableConstruct {
+                schema_id,
+                construct,
+            } => write!(
+                formatter,
+                "{construct} has no TypeScript projection in {schema_id}; the generator never \
+                 emits an unsound approximation"
+            ),
         }
     }
 }
@@ -134,6 +152,16 @@ pub fn generate(
         );
 
         generated.insert(PathBuf::from(&declared.output), render::render(&schema));
+
+        // The TypeScript family mirrors the JSON Schema family one-to-one (design D1): the path
+        // is derived mechanically from the same `output` field, and the emitter consumes the
+        // very value the JSON renderer serialized — provenance block included, so the `.ts`
+        // header can name the same contract identity (D2, D5).
+        let Some(typescript_output) = typescript::typescript_output_path(&declared.output) else {
+            continue;
+        };
+        let typescript_body = typescript::emit_typescript(&declared.schema_id, schema.as_value())?;
+        generated.insert(PathBuf::from(typescript_output), typescript_body);
     }
     Ok(generated)
 }
@@ -188,11 +216,23 @@ fn drift(root: &Path, generated: &BTreeMap<PathBuf, String>) -> Vec<Finding> {
             });
         }
         // A file whose own body no longer implies its own digest was edited by hand. That is a
-        // different failure from routine staleness, and `AGENTS.md` forbids it outright.
-        let self_consistent = provenance::recompute_digest(&actual)
-            .ok()
-            .zip(provenance::embedded_digest(&actual))
-            .is_some_and(|(recomputed, embedded)| recomputed == embedded);
+        // different failure from routine staleness, and `AGENTS.md` forbids it outright. Each
+        // family recomputes through its own provenance spelling: a JSON extension keyword for
+        // `schemas/`, the leading block comment for `generated/typescript/`.
+        let is_typescript = relative
+            .extension()
+            .is_some_and(|extension| extension == "ts");
+        let self_consistent = if is_typescript {
+            typescript::recompute_digest(&actual)
+                .ok()
+                .zip(typescript::embedded_digest(&actual))
+                .is_some_and(|(recomputed, embedded)| recomputed == embedded)
+        } else {
+            provenance::recompute_digest(&actual)
+                .ok()
+                .zip(provenance::embedded_digest(&actual))
+                .is_some_and(|(recomputed, embedded)| recomputed == embedded)
+        };
         if !self_consistent {
             findings.push(Finding::Tampered {
                 path: relative.clone(),
@@ -202,23 +242,33 @@ fn drift(root: &Path, generated: &BTreeMap<PathBuf, String>) -> Vec<Finding> {
     findings
 }
 
-/// Sweeps `schemas/**` for artifacts no registered root type produces.
+/// Sweeps the managed output directories for artifacts no registered root type produces: a
+/// leftover `*.schema.json` under `schemas/**` and, identically, a stray `.ts` under
+/// [`typescript::TYPESCRIPT_DIR`] — files `git diff` alone would never catch.
 fn orphans(root: &Path, generated: &BTreeMap<PathBuf, String>) -> Vec<Finding> {
     let mut findings = Vec::new();
-    for absolute in fixtures::walk_json(&root.join(SCHEMAS_DIR)) {
-        let Ok(relative) = absolute.strip_prefix(root) else {
-            continue;
-        };
-        if !absolute
-            .file_name()
-            .is_some_and(|name| name.to_string_lossy().ends_with(SCHEMA_SUFFIX))
-        {
-            continue;
-        }
-        if !generated.contains_key(relative) {
-            findings.push(Finding::Orphan {
-                path: relative.to_path_buf(),
-            });
+    let sweeps = [
+        (Path::new(SCHEMAS_DIR), SCHEMA_SUFFIX),
+        (Path::new(typescript::TYPESCRIPT_DIR), ".ts"),
+    ];
+    for (directory, suffix) in sweeps {
+        // `walk_all`, not `walk_json`: the TypeScript family is `.ts` files, which the JSON
+        // filter would silently drop and the sweep would never see.
+        for absolute in fixtures::walk_all(&root.join(directory)) {
+            let Ok(relative) = absolute.strip_prefix(root) else {
+                continue;
+            };
+            if !absolute
+                .file_name()
+                .is_some_and(|name| name.to_string_lossy().ends_with(suffix))
+            {
+                continue;
+            }
+            if !generated.contains_key(relative) {
+                findings.push(Finding::Orphan {
+                    path: relative.to_path_buf(),
+                });
+            }
         }
     }
     findings

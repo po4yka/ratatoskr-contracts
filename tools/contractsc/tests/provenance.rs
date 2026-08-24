@@ -14,7 +14,7 @@ use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
 use ratatoskr_contractsc::{
-    GENERATOR_VERSION, Metadata, generate, normalize, provenance, registry, render,
+    GENERATOR_VERSION, Metadata, generate, normalize, provenance, registry, render, typescript,
 };
 
 /// Every member the provenance block must carry, and nothing else.
@@ -39,12 +39,18 @@ fn repo_root() -> PathBuf {
         .to_path_buf()
 }
 
-/// Every generated artifact, in memory.
+/// Every generated artifact, in memory. The TypeScript family is excluded: its provenance
+/// rides in a leading block comment rather than a JSON extension keyword, and the
+/// `typescript_header_*` tests cover it with comment-aware rules.
 fn generated() -> BTreeMap<PathBuf, String> {
     let path = repo_root().join(Metadata::FILE_NAME);
     let text = std::fs::read_to_string(&path).expect("contracts.toml is committed");
     let metadata = Metadata::parse(&text).expect("contracts.toml parses");
-    generate(&metadata, GENERATOR_VERSION).expect("the committed contracts generate")
+    generate(&metadata, GENERATOR_VERSION)
+        .expect("the committed contracts generate")
+        .into_iter()
+        .filter(|(path, _)| path.to_string_lossy().ends_with(".schema.json"))
+        .collect()
 }
 
 /// P-1. All nine members are present, the marker string is exact, and the digest is a lowercase
@@ -201,4 +207,146 @@ fn serialize_and_deserialize_contracts_are_identical() {
             root.rust_path
         );
     }
+}
+
+/// Every `.ts` artifact, in memory.
+fn typescript_generated() -> BTreeMap<PathBuf, String> {
+    let path = repo_root().join(Metadata::FILE_NAME);
+    let text = std::fs::read_to_string(&path).expect("contracts.toml is committed");
+    let metadata = Metadata::parse(&text).expect("contracts.toml parses");
+    generate(&metadata, GENERATOR_VERSION)
+        .expect("the committed contracts generate")
+        .into_iter()
+        .filter(|(path, _)| path.to_string_lossy().ends_with(".ts"))
+        .collect()
+}
+
+/// The member keys spelled in a header's content lines, in order. A content line is a header
+/// line stripped of its comment decoration; `key: value` lines contribute their key, blank
+/// separators contribute nothing.
+fn header_members(header: &str) -> Vec<&str> {
+    header
+        .lines()
+        .map(str::trim)
+        .filter(|line| *line != "/*" && *line != "*/" && !line.is_empty() && *line != "*")
+        .map(|line| {
+            assert!(
+                line.starts_with("* "),
+                "every header line is a comment continuation: {line:?}"
+            );
+            let content = line.get(2..).expect("the `* ` prefix is two bytes");
+            let (key, separator) = content
+                .split_once(": ")
+                .unwrap_or_else(|| panic!("header line {content:?} is not `key: value`"));
+            assert!(
+                !separator.contains('\n'),
+                "a provenance member value spans one line only"
+            );
+            key
+        })
+        .collect()
+}
+
+/// P-TS-1. Each `.ts` artifact opens with the provenance block comment: the generated-file
+/// marker as the first member line, then the remaining eight members, and no timestamp member
+/// anywhere — the same nine-member rigor the JSON family carries (design D5).
+#[test]
+fn typescript_header_carries_required_members() {
+    for (path, file) in typescript_generated() {
+        let (header, _) = typescript::header_and_body(&file)
+            .unwrap_or_else(|| panic!("{} has no leading block comment", path.display()));
+        let members = header_members(header);
+
+        assert_eq!(
+            members.first(),
+            Some(&"generated"),
+            "{}: the marker member must come first",
+            path.display()
+        );
+        let marker_line = header
+            .lines()
+            .map(str::trim)
+            .find(|line| line.starts_with("* generated: "))
+            .unwrap_or_else(|| panic!("{}: no generated marker", path.display()));
+        assert_eq!(
+            marker_line,
+            format!("* generated: {}", provenance::GENERATED_MARKER),
+            "{}: wrong generated-file marker",
+            path.display()
+        );
+
+        let keys: Vec<&str> = members.clone();
+        let mut expected = REQUIRED_MEMBERS.to_vec();
+        expected.sort_unstable();
+        let mut seen = keys.clone();
+        seen.sort_unstable();
+        assert_eq!(seen, expected, "{}", path.display());
+        assert_eq!(
+            keys.len(),
+            REQUIRED_MEMBERS.len(),
+            "{} repeats a provenance member",
+            path.display()
+        );
+
+        for clock_reading in ["generated_at", "built_at", "timestamp", "date"] {
+            assert!(
+                !keys.contains(&clock_reading),
+                "{} records {clock_reading}, which no generator can reproduce",
+                path.display()
+            );
+        }
+    }
+}
+
+/// P-TS-2. The recorded digest is SHA-256 over the header-less body, recomputable by stripping
+/// everything through the closing comment delimiter; flipping any body byte breaks the match,
+/// which is what makes hand edits distinguishable from staleness.
+#[test]
+fn typescript_body_digest_detects_tampering() {
+    for (path, file) in typescript_generated() {
+        let (_, body) = typescript::header_and_body(&file)
+            .unwrap_or_else(|| panic!("{} has no leading block comment", path.display()));
+        let embedded = typescript::embedded_digest(&file)
+            .unwrap_or_else(|| panic!("{} carries no source_digest", path.display()));
+        let recomputed =
+            typescript::recompute_digest(&file).unwrap_or_else(|error| panic!("{error}"));
+        assert_eq!(embedded, recomputed, "{}", path.display());
+
+        let hex = embedded
+            .strip_prefix("sha256:")
+            .unwrap_or_else(|| panic!("{embedded} is not a sha256 digest"));
+        assert_eq!(hex.len(), 64, "{embedded}");
+        assert!(
+            hex.chars()
+                .all(|c| c.is_ascii_digit() || ('a'..='f').contains(&c)),
+            "{embedded} is not lowercase hex"
+        );
+
+        let mut tampered = body.to_owned();
+        if let Some(position) = tampered.find("export") {
+            tampered.replace_range(position..=position, "E");
+        }
+        assert_ne!(
+            tampered,
+            body,
+            "{}: export anchor still exists",
+            path.display()
+        );
+        let tampered_file = format!("{}\n{}", header_of(&file), tampered);
+        let tampered_recomputed =
+            typescript::recompute_digest(&tampered_file).unwrap_or_else(|error| panic!("{error}"));
+        assert_ne!(
+            tampered_recomputed,
+            embedded,
+            "{}: digest did not move after an edit",
+            path.display()
+        );
+    }
+}
+
+/// The header half of an already-split artifact, for reconstruction in tampering scenarios.
+fn header_of(file: &str) -> &str {
+    typescript::header_and_body(file)
+        .map(|(header, _)| header)
+        .expect("the artifact carries a header")
 }

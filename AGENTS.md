@@ -23,12 +23,13 @@ Its purpose is to make cross-repository evolution explicit and safe. It must not
 
 ## Current phase
 
-Implementation milestones 1 through 7 exist. The checked-out tree contains:
+Implementation milestones 1 through 7 exist, plus milestone 8's deterministic TypeScript generation. The checked-out tree contains:
 
 - `contracts.toml` — machine-readable contract metadata (owner, family, major version, lifecycle, classification, producers, consumers, canonical path, per-field authority/unit/nullability, lint vocabulary);
 - seven contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`, `crates/document-contracts`, `crates/social-contracts`, `crates/ai-archive-contracts`;
 - `tools/contractsc` — the deterministic generator and gate, run as `cargo contracts`;
 - `schemas/json-schema/**` and `schemas/events/**` — generated JSON Schema artifacts;
+- `generated/typescript/**` — generated TypeScript declarations mirroring `schemas/` one-to-one, with provenance headers, verified by `cargo contracts check` and compilable through `cargo contracts check-typescript` (not a gate step);
 - `fixtures/**` — valid, invalid and compatibility fixtures, with `fixtures/invalid-expectations.toml` naming the layer that must reject each invalid fixture.
 
 The gate is the read-only command block in `DEVELOPMENT.md`: dependency policy, formatting, Clippy,
@@ -37,9 +38,7 @@ source-size limits, `cargo contracts check`, and workspace tests. It does not ru
 stale, orphaned, and provenance-modified generated schemas without repairing the tree first. Use
 `cargo contracts compat <OLD> <NEW>` to classify a change.
 
-Milestones 8 through 10 do **not** exist. There is no OpenAPI document, generated TypeScript,
-Kotlin or Swift, frozen compatibility baseline, package CI, or publishing. Do not assume any of
-them exist unless they are present in the checked-out tree.
+Milestones beyond 8 are incomplete. There is no OpenAPI document, no Kotlin or Swift generation, no frozen compatibility baseline, no package CI, and no publishing. Do not assume any of them exist unless they are present in the checked-out tree.
 
 Keep the repository independently buildable and generated outputs reproducible. Do not create speculative schemas unrelated to an active consumer/producer changeset.
 

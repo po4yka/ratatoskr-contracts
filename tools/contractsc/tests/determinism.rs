@@ -1,4 +1,5 @@
-//! Deterministic generation and the clean-tree guarantee — tests G-1 to G-9.
+//! Deterministic generation and the clean-tree guarantee — tests G-1 to G-9, plus the TypeScript
+//! projection suite TS-1 to TS-4.
 //!
 //! `docs/TESTING.md`: "Deterministic generation and clean-tree checks" (T3) and "Release
 //! artifacts are rebuilt and compared with committed/generated expectations" (T10).
@@ -13,7 +14,9 @@
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
-use ratatoskr_contractsc::{Finding, GENERATOR_VERSION, Metadata, check, generate};
+use ratatoskr_contractsc::{
+    Finding, GENERATOR_VERSION, Metadata, SCHEMA_SUFFIX, check, emit_typescript, generate,
+};
 
 /// The repository root, derived from the compiled-in manifest directory so the tests do not
 /// depend on the working directory either.
@@ -47,9 +50,9 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        17,
-        "seventeen registered roots produce seventeen artifacts; update this pin when the \
-         registry changes"
+        34,
+        "seventeen registered roots produce seventeen JSON Schema artifacts plus seventeen \
+         TypeScript counterparts; update this pin when the registry changes"
     );
 }
 
@@ -80,9 +83,13 @@ fn serde_json_map_is_btreemap() {
 }
 
 /// G-4. Every `required` array is lexicographic, so a Rust field reorder is a schema no-op.
+/// JSON-family only: the TypeScript family has no `required` keyword to sort.
 #[test]
 fn required_arrays_are_sorted() {
     for (path, body) in generated() {
+        if !path.to_string_lossy().ends_with(SCHEMA_SUFFIX) {
+            continue;
+        }
         let document: serde_json::Value = serde_json::from_str(&body).expect("valid JSON");
         let mut checked = 0usize;
         visit(&document, &mut |node| {
@@ -109,10 +116,13 @@ fn required_arrays_are_sorted() {
 }
 
 /// G-5. No generated schema contains a floating-point number, whose rendering can differ between
-/// platforms.
+/// platforms. JSON-family only: TypeScript spells numbers as `number` either way.
 #[test]
 fn no_floats_in_generated_schemas() {
     for (path, body) in generated() {
+        if !path.to_string_lossy().ends_with(SCHEMA_SUFFIX) {
+            continue;
+        }
         let document: serde_json::Value = serde_json::from_str(&body).expect("valid JSON");
         assert!(
             !contains_float(&document),
@@ -278,6 +288,236 @@ fn check_detects_an_orphan_schema() {
     );
 }
 
+/// C-TS-1. A deleted `.ts` artifact is reported `Missing` and fails the gate, exactly as a
+/// deleted JSON Schema would be.
+#[test]
+fn check_reports_missing_typescript_declaration() {
+    let staged = StagedTree::new("ts-missing");
+    let relative = Path::new("generated/typescript/json-schema/core/event-envelope.v1.ts");
+    std::fs::remove_file(staged.path.join(relative)).expect("the staged copy is writable");
+
+    let report = check(&staged.path).expect("check runs against the staged copy");
+    assert!(
+        report.findings.iter().any(|finding| matches!(
+            finding,
+            Finding::Missing { path } if path == relative
+        )),
+        "expected a Missing finding, got {report}"
+    );
+    assert_eq!(report.exit_code(), 1, "the gate must fail");
+}
+
+/// C-TS-2. A `.ts` whose bytes differ from what generation produces is reported `Stale`. The
+/// edit here also breaks the digest, which co-fires `Tampered`; this test pins the Stale half.
+#[test]
+fn check_reports_stale_typescript_regeneration() {
+    let staged = StagedTree::new("ts-stale");
+    let relative = Path::new("generated/typescript/events/social.source.updated.v1.ts");
+    let target = staged.path.join(relative);
+    let body = std::fs::read_to_string(&target).expect("the artifact is committed");
+    let edited = body.replacen("export interface", "export interfaCe", 1);
+    assert_ne!(edited, body, "the export anchor still exists");
+    std::fs::write(&target, &edited).expect("the staged copy is writable");
+
+    let report = check(&staged.path).expect("check runs against the staged copy");
+    assert!(
+        report.findings.iter().any(|finding| matches!(
+            finding,
+            Finding::Stale { path, .. } if path == relative
+        )),
+        "expected a Stale finding, got {report}"
+    );
+    assert_eq!(report.exit_code(), 1, "the gate must fail");
+}
+
+/// C-TS-3. An artifact whose recorded digest no longer matches its own body is reported
+/// `Tampered` — the `AGENTS.md` hand-edit violation — even when the edit is a single hex digit
+/// of the header. Mirrors G-8 for the TypeScript provenance spelling.
+#[test]
+fn check_reports_tampered_typescript_declaration() {
+    let staged = StagedTree::new("ts-tampered");
+    let relative = Path::new("generated/typescript/json-schema/core/blob-ref.v1.ts");
+    let target = staged.path.join(relative);
+    let body = std::fs::read_to_string(&target).expect("the artifact is committed");
+    let needle = " * source_digest: sha256:";
+    let hex_start = body.find(needle).expect("the digest member exists") + needle.len();
+    let first_hex = body
+        .get(hex_start..hex_start + 1)
+        .expect("the digest starts with a hex digit");
+    let flipped = if first_hex == "0" { "1" } else { "0" };
+    let edited = format!(
+        "{}{flipped}{}",
+        body.get(..hex_start + 1).expect("boundary checked above"),
+        body.get(hex_start + 2..).unwrap_or_default()
+    );
+    assert_ne!(edited, body, "the recorded digest was actually changed");
+    std::fs::write(&target, &edited).expect("the staged copy is writable");
+
+    let report = check(&staged.path).expect("check runs against the staged copy");
+    assert!(
+        report.findings.contains(&Finding::Tampered {
+            path: relative.to_path_buf(),
+        }),
+        "expected a Tampered finding, got {report}"
+    );
+    assert_eq!(report.exit_code(), 1, "the gate must fail");
+}
+
+/// C-TS-4. A stray `.ts` under `generated/typescript/` that no registered root produces is an
+/// `Orphan`, mirroring the schemas sweep.
+#[test]
+fn check_reports_orphaned_typescript_file() {
+    let staged = StagedTree::new("ts-orphan");
+    let relative = Path::new("generated/typescript/json-schema/core/retired.v1.ts");
+    let orphan = staged.path.join(relative);
+    std::fs::create_dir_all(orphan.parent().expect("the parent exists"))
+        .expect("the staged copy is writable");
+    std::fs::write(&orphan, "/*\n */\nexport type Retired = never;\n")
+        .expect("the staged copy is writable");
+
+    let report = check(&staged.path).expect("check runs against the staged copy");
+    assert!(
+        report.findings.contains(&Finding::Orphan {
+            path: relative.to_path_buf(),
+        }),
+        "expected an Orphan finding, got {report}"
+    );
+    assert_eq!(report.exit_code(), 1, "the gate must fail");
+}
+
+/// TS-1. After `generate()` every root type has exactly one `.ts` under `generated/typescript/`
+/// mirroring its schema path one-to-one (D1), exporting the final schema-id segment as the root
+/// type followed by every `$defs` member in sorted order (D4), with no imports and no `any`.
+#[test]
+fn generated_typescript_artifacts_mirror_the_schema_tree() {
+    let generated = generated();
+    let typescript = typescript_subset(&generated);
+    assert_eq!(
+        typescript.len(),
+        17,
+        "seventeen roots must yield seventeen TypeScript files; the generator emits no \
+         TypeScript yet"
+    );
+
+    for (path, body) in &generated {
+        let Some(stem) = path
+            .to_string_lossy()
+            .strip_prefix("schemas/")
+            .and_then(|tail| tail.strip_suffix(SCHEMA_SUFFIX))
+            .map(str::to_owned)
+        else {
+            continue;
+        };
+        let typescript_path = PathBuf::from(format!("generated/typescript/{stem}.ts"));
+        let source = generated
+            .get(&typescript_path)
+            .unwrap_or_else(|| panic!("{}: no TypeScript counterpart", typescript_path.display()));
+        let schema: serde_json::Value =
+            serde_json::from_str(body).expect("the schema artifact is valid JSON");
+        let schema_id = schema
+            .get("$id")
+            .and_then(serde_json::Value::as_str)
+            .expect("every artifact names its $id");
+
+        let mut previous_position =
+            exported_declaration_position(source, root_type_name(schema_id)).unwrap_or_else(|| {
+                panic!(
+                    "{}: root type {} is not exported",
+                    typescript_path.display(),
+                    root_type_name(schema_id)
+                )
+            });
+        let definitions = schema
+            .get("$defs")
+            .and_then(serde_json::Value::as_object)
+            .expect("every artifact embeds $defs");
+        for name in definitions.keys() {
+            let position = exported_declaration_position(source, name).unwrap_or_else(|| {
+                panic!(
+                    "{}: $defs member {name} is not exported",
+                    typescript_path.display()
+                )
+            });
+            assert!(
+                position > previous_position,
+                "{}: $defs member {name} is exported before the preceding declaration; \
+                 definitions must follow the root in sorted order",
+                typescript_path.display()
+            );
+            previous_position = position;
+        }
+        let code_only = strip_block_comments(source);
+        assert!(
+            !has_import_statement(&code_only),
+            "{} imports from another artifact; declarations are self-contained",
+            typescript_path.display()
+        );
+        assert!(
+            !contains_bare_word(&code_only, "any"),
+            "{} uses the banned any type",
+            typescript_path.display()
+        );
+    }
+}
+
+/// TS-2. Two independent runs agree byte for byte across the TypeScript family, exactly as G-1
+/// requires of the JSON Schema family.
+#[test]
+fn generated_typescript_is_byte_deterministic() {
+    let metadata = metadata();
+    let first = generate(&metadata, GENERATOR_VERSION).expect("first run");
+    let second = generate(&metadata, GENERATOR_VERSION).expect("second run");
+    let first_typescript = typescript_subset(&first);
+    assert_eq!(
+        first_typescript.len(),
+        17,
+        "the generator emits no TypeScript yet"
+    );
+    assert_eq!(first_typescript, typescript_subset(&second));
+}
+
+/// TS-3. No timestamp-shaped content in generated *code*: a clock reading is the classic way a
+/// generator stops reproducing its own bytes. Block comments are stripped first because `JSDoc`
+/// bodies are verbatim copies of the canonical Rust doc comments, whose prose may legitimately
+/// quote dated examples; anything the emitter itself produces lives outside them.
+#[test]
+fn generated_typescript_contains_no_timestamps() {
+    let generated = generated();
+    let typescript = typescript_subset(&generated);
+    assert_eq!(
+        typescript.len(),
+        17,
+        "the generator emits no TypeScript yet"
+    );
+    for (path, body) in &typescript {
+        if let Some(position) = iso_date_positions(&strip_block_comments(body)).first() {
+            panic!("{path:?}: timestamp-shaped content at byte offset {position}");
+        }
+    }
+}
+
+/// TS-4. Fail-closed projection: a construct outside the D3 subset aborts naming the schema
+/// identifier rather than emitting an unsound approximation. Driven through the public seam
+/// directly, because the compiled-in registry cannot carry such a construct: the schemas come
+/// from schemars over real contract types, and `patternProperties` appears in none of them.
+///
+/// The call goes through [`emit_typescript`] alone — `generate` inserts an artifact only when
+/// every step returned `Ok`, so an emitter error aborts the whole run and leaves no `.ts` behind.
+#[test]
+fn unrepresentable_construct_aborts_generation() {
+    let schema_id = "urn:ratatoskr:contracts:test:v1:Patterned";
+    let schema = serde_json::json!({
+        "$id": schema_id,
+        "type": "object",
+        "patternProperties": {"^x-": {"type": "string"}}
+    });
+    let error = emit_typescript(schema_id, &schema)
+        .expect_err("patternProperties has no TypeScript projection");
+    let rendered = error.to_string();
+    assert!(rendered.contains("patternProperties"), "{rendered}");
+    assert!(rendered.contains(schema_id), "{rendered}");
+}
+
 /// A throwaway copy of the repository, removed when the test ends.
 struct StagedTree {
     /// Root of the copy.
@@ -350,4 +590,151 @@ fn contains_float(value: &serde_json::Value) -> bool {
         serde_json::Value::Array(items) => items.iter().any(contains_float),
         _ => false,
     }
+}
+
+/// Every `(path, body)` of the TypeScript family, in map order.
+fn typescript_subset(generated: &BTreeMap<PathBuf, String>) -> Vec<(&Path, &str)> {
+    let mut subset = Vec::new();
+    for (path, body) in generated {
+        if let Ok(relative) = path.strip_prefix("generated/typescript") {
+            let source: &str = String::as_str(body);
+            subset.push((relative, source));
+        }
+    }
+    subset
+}
+
+/// The final `:`-segment of a schema identifier:
+/// `urn:ratatoskr:contracts:core:v1:EventEnvelope` → `EventEnvelope`.
+fn root_type_name(schema_id: &str) -> &str {
+    schema_id
+        .rsplit(':')
+        .next()
+        .expect("rsplit always yields at least one item")
+}
+
+/// Byte offset of the export declaring `name`, whichever export form the emitter chose for it,
+/// or `None`. Every occurrence of each form's needle is considered, because the *first* one
+/// may sit inside a longer identifier — `export interface AiConversationAdded` contains the
+/// `AiConversation` needle — while a later occurrence is the real declaration.
+fn exported_declaration_position(body: &str, name: &str) -> Option<usize> {
+    const FORMS: [&str; 4] = [
+        "export interface ",
+        "export type ",
+        "export const ",
+        "export enum ",
+    ];
+    FORMS
+        .iter()
+        .filter_map(|form| {
+            let needle = format!("{form}{name}");
+            let mut search_from = 0;
+            while let Some(offset) = body.get(search_from..).and_then(|tail| tail.find(&needle)) {
+                let position = search_from + offset;
+                let end = position + needle.len();
+                match body.get(end..).and_then(|tail| tail.chars().next()) {
+                    // A declaration is followed by `{`, `=`, a newline — anything that is not
+                    // itself part of a longer identifier.
+                    Some(next) if !next.is_alphanumeric() && next != '_' && next != '$' => {
+                        return Some(position);
+                    }
+                    Some(_) => search_from = end,
+                    None => return None,
+                }
+            }
+            None
+        })
+        .min()
+}
+
+/// `true` when `word` occurs as a standalone token — delimited by non-identifier characters —
+/// so prose mentions (`import head`) and longer identifiers (`AiArchiveImport`) do not count.
+fn contains_bare_word(text: &str, word: &str) -> bool {
+    let mut token = String::new();
+    for character in text.chars() {
+        if character.is_ascii_alphanumeric() || character == '_' || character == '$' {
+            token.push(character);
+        } else {
+            if token == word {
+                return true;
+            }
+            token.clear();
+        }
+    }
+    token == word
+}
+
+/// `true` when some line is an import *statement*: the keyword followed by a braced or starred
+/// clause, a module string, or a `from` tail. The committed contracts do contain a property
+/// literally named `import` (`AiArchiveImport.import`) and one named `imported_at`; neither
+/// spelling imports anything, so both must pass.
+fn has_import_statement(code: &str) -> bool {
+    code.lines().any(|line| {
+        let Some(rest) = line.trim_start().strip_prefix("import") else {
+            return false;
+        };
+        let head = rest.trim_start();
+        head.starts_with('{')
+            || head.starts_with('*')
+            || head.starts_with('"')
+            || head.starts_with('\'')
+            || rest.contains(" from ")
+    })
+}
+
+/// Byte offsets of every `\d{4}-\d{2}-\d{2}` shape: the timestamp spelling TS-3 bans. A manual
+/// scan over bytes rather than a regex dependency; every lookup goes through `get`, so an
+/// offset at the tail of a short file simply fails to match instead of panicking.
+fn iso_date_positions(text: &str) -> Vec<usize> {
+    let bytes = text.as_bytes();
+    let byte_at = |index: usize| bytes.get(index).copied();
+    let digit = |index: usize| byte_at(index).is_some_and(|byte| byte.is_ascii_digit());
+    let hyphen = |index: usize| byte_at(index) == Some(b'-');
+    let mut positions = Vec::new();
+    for start in 0..bytes.len().saturating_sub(9) {
+        if digit(start)
+            && digit(start + 1)
+            && digit(start + 2)
+            && digit(start + 3)
+            && hyphen(start + 4)
+            && digit(start + 5)
+            && digit(start + 6)
+            && hyphen(start + 7)
+            && digit(start + 8)
+            && digit(start + 9)
+        {
+            positions.push(start);
+        }
+    }
+    positions
+}
+
+/// The input with every `/* ... */` block comment removed, newlines preserved so offsets in the
+/// remaining text stay meaningful. A manual scan rather than a regex dependency; string literals
+/// containing `/*` cannot occur in the emitted code, whose only strings are quoted schema
+/// identifiers and doc prose already inside comments.
+fn strip_block_comments(text: &str) -> String {
+    let mut stripped = String::with_capacity(text.len());
+    let mut characters = text.chars().peekable();
+    let mut in_comment = false;
+    while let Some(character) = characters.next() {
+        match (in_comment, character) {
+            (false, '/') if characters.peek() == Some(&'*') => {
+                characters.next();
+                in_comment = true;
+            }
+            (true, '*') if characters.peek() == Some(&'/') => {
+                characters.next();
+                in_comment = false;
+            }
+            (comment_held, character) => {
+                if !comment_held {
+                    stripped.push(character);
+                } else if character == '\n' {
+                    stripped.push('\n');
+                }
+            }
+        }
+    }
+    stripped
 }
