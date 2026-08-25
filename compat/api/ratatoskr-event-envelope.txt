@@ -1,0 +1,381 @@
+# Public API baseline of ratatoskr-event-envelope, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl !core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::EnvelopeError
+impl !core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::EnvelopeError
+impl core::clone::Clone for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::clone::Clone for ratatoskr_event_envelope::EventEnvelope
+impl core::clone::Clone for ratatoskr_event_envelope::EventType
+impl core::clone::Clone for ratatoskr_event_envelope::EventTypeError
+impl core::clone::Clone for ratatoskr_event_envelope::ProducerName
+impl core::cmp::Eq for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::cmp::Eq for ratatoskr_event_envelope::EventType
+impl core::cmp::Eq for ratatoskr_event_envelope::EventTypeError
+impl core::cmp::Eq for ratatoskr_event_envelope::ProducerName
+impl core::cmp::Ord for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::cmp::Ord for ratatoskr_event_envelope::EventType
+impl core::cmp::Ord for ratatoskr_event_envelope::ProducerName
+impl core::cmp::PartialEq for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::cmp::PartialEq for ratatoskr_event_envelope::EventEnvelope
+impl core::cmp::PartialEq for ratatoskr_event_envelope::EventType
+impl core::cmp::PartialEq for ratatoskr_event_envelope::EventTypeError
+impl core::cmp::PartialEq for ratatoskr_event_envelope::ProducerName
+impl core::cmp::PartialOrd for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::cmp::PartialOrd for ratatoskr_event_envelope::EventType
+impl core::cmp::PartialOrd for ratatoskr_event_envelope::ProducerName
+impl core::convert::From<ratatoskr_event_envelope::EnvelopeSchemaVersion> for u32
+impl core::convert::From<ratatoskr_event_envelope::EventType> for alloc::string::String
+impl core::convert::From<ratatoskr_event_envelope::ProducerName> for alloc::string::String
+impl core::convert::From<serde_json::error::Error> for ratatoskr_event_envelope::EnvelopeError
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_event_envelope::EventType
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_event_envelope::ProducerName
+impl core::convert::TryFrom<u32> for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::error::Error for ratatoskr_event_envelope::EnvelopeError
+impl core::error::Error for ratatoskr_event_envelope::EventTypeError
+impl core::fmt::Debug for ratatoskr_event_envelope::EnvelopeError
+impl core::fmt::Debug for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::fmt::Debug for ratatoskr_event_envelope::EventEnvelope
+impl core::fmt::Debug for ratatoskr_event_envelope::EventType
+impl core::fmt::Debug for ratatoskr_event_envelope::EventTypeError
+impl core::fmt::Debug for ratatoskr_event_envelope::ProducerName
+impl core::fmt::Display for ratatoskr_event_envelope::EnvelopeError
+impl core::fmt::Display for ratatoskr_event_envelope::EventType
+impl core::fmt::Display for ratatoskr_event_envelope::EventTypeError
+impl core::fmt::Display for ratatoskr_event_envelope::ProducerName
+impl core::hash::Hash for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::hash::Hash for ratatoskr_event_envelope::EventType
+impl core::hash::Hash for ratatoskr_event_envelope::ProducerName
+impl core::marker::Copy for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::Freeze for ratatoskr_event_envelope::EnvelopeError
+impl core::marker::Freeze for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::Freeze for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::Freeze for ratatoskr_event_envelope::EventType
+impl core::marker::Freeze for ratatoskr_event_envelope::EventTypeError
+impl core::marker::Freeze for ratatoskr_event_envelope::ProducerName
+impl core::marker::Send for ratatoskr_event_envelope::EnvelopeError
+impl core::marker::Send for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::Send for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::Send for ratatoskr_event_envelope::EventType
+impl core::marker::Send for ratatoskr_event_envelope::EventTypeError
+impl core::marker::Send for ratatoskr_event_envelope::ProducerName
+impl core::marker::StructuralPartialEq for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::StructuralPartialEq for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::StructuralPartialEq for ratatoskr_event_envelope::EventType
+impl core::marker::StructuralPartialEq for ratatoskr_event_envelope::EventTypeError
+impl core::marker::StructuralPartialEq for ratatoskr_event_envelope::ProducerName
+impl core::marker::Sync for ratatoskr_event_envelope::EnvelopeError
+impl core::marker::Sync for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::Sync for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::Sync for ratatoskr_event_envelope::EventType
+impl core::marker::Sync for ratatoskr_event_envelope::EventTypeError
+impl core::marker::Sync for ratatoskr_event_envelope::ProducerName
+impl core::marker::Unpin for ratatoskr_event_envelope::EnvelopeError
+impl core::marker::Unpin for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::Unpin for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::Unpin for ratatoskr_event_envelope::EventType
+impl core::marker::Unpin for ratatoskr_event_envelope::EventTypeError
+impl core::marker::Unpin for ratatoskr_event_envelope::ProducerName
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::EnvelopeError
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::EventEnvelope
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::EventType
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::EventTypeError
+impl core::marker::UnsafeUnpin for ratatoskr_event_envelope::ProducerName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::EventEnvelope
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::EventType
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::EventTypeError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_event_envelope::ProducerName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::EventEnvelope
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::EventType
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::EventTypeError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_event_envelope::ProducerName
+impl core::str::traits::FromStr for ratatoskr_event_envelope::EventType
+impl core::str::traits::FromStr for ratatoskr_event_envelope::ProducerName
+impl ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl ratatoskr_event_envelope::EventEnvelope
+impl ratatoskr_event_envelope::EventType
+impl ratatoskr_event_envelope::ProducerName
+impl schemars::JsonSchema for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl schemars::JsonSchema for ratatoskr_event_envelope::EventEnvelope
+impl schemars::JsonSchema for ratatoskr_event_envelope::EventType
+impl schemars::JsonSchema for ratatoskr_event_envelope::ProducerName
+impl serde_core::ser::Serialize for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl serde_core::ser::Serialize for ratatoskr_event_envelope::EventEnvelope
+impl serde_core::ser::Serialize for ratatoskr_event_envelope::EventType
+impl serde_core::ser::Serialize for ratatoskr_event_envelope::ProducerName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_event_envelope::EventEnvelope
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_event_envelope::EventType
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_event_envelope::ProducerName
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::EnvelopeError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::EnvelopeSchemaVersion where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::EventEnvelope where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::EventType where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::EventTypeError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_event_envelope::ProducerName where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::EnvelopeError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::EnvelopeSchemaVersion where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::EventEnvelope where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::EventType where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::EventTypeError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_event_envelope::ProducerName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::EnvelopeError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::EnvelopeSchemaVersion where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::EventEnvelope where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::EventType where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::EventTypeError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_event_envelope::ProducerName where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_event_envelope::EventEnvelope where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_event_envelope::EventType where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_event_envelope::EventTypeError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_event_envelope::ProducerName where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_event_envelope::EnvelopeError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_event_envelope::EventType where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_event_envelope::EventTypeError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_event_envelope::ProducerName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::EnvelopeError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::EventEnvelope where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::EventType where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::EventTypeError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_event_envelope::ProducerName where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::EnvelopeError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::EventEnvelope where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::EventType where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::EventTypeError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_event_envelope::ProducerName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::EnvelopeError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::EventEnvelope where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::EventType where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::EventTypeError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_event_envelope::ProducerName where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_event_envelope::EventEnvelope where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_event_envelope::EventType where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_event_envelope::EventTypeError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_event_envelope::ProducerName where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::EnvelopeError
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::EnvelopeSchemaVersion
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::EventEnvelope
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::EventType
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::EventTypeError
+impl<T> core::convert::From<T> for ratatoskr_event_envelope::ProducerName
+impl<T> dyn_clone::DynClone for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_event_envelope::EventEnvelope where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_event_envelope::EventType where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_event_envelope::EventTypeError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_event_envelope::ProducerName where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_event_envelope::EnvelopeSchemaVersion where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_event_envelope::EventEnvelope where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_event_envelope::EventType where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_event_envelope::ProducerName where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_event_envelope::EnvelopeSchemaVersion::get(self) -> u32
+pub const fn ratatoskr_event_envelope::EventType::major(&self) -> u32
+pub const ratatoskr_event_envelope::EnvelopeSchemaVersion::CURRENT: Self
+pub const ratatoskr_event_envelope::EventPayload::EVENT_TYPE: &'static str
+pub const ratatoskr_event_envelope::EventType::MAX_LEN: usize
+pub const ratatoskr_event_envelope::EventType::PATTERN: &'static str
+pub const ratatoskr_event_envelope::EventType::SEGMENT_PATTERN: &'static str
+pub const ratatoskr_event_envelope::ProducerName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_event_envelope::ProducerName::MAX_LEN: usize
+pub const ratatoskr_event_envelope::ProducerName::PATTERN: &'static str
+pub fn alloc::string::String::from(ratatoskr_event_envelope::EventType) -> Self
+pub fn alloc::string::String::from(ratatoskr_event_envelope::ProducerName) -> Self
+pub fn ratatoskr_event_envelope::EnvelopeError::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::EnvelopeError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::EnvelopeError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::EnvelopeError::from(T) -> T
+pub fn ratatoskr_event_envelope::EnvelopeError::from(serde_json::error::Error) -> Self
+pub fn ratatoskr_event_envelope::EnvelopeError::into(self) -> U
+pub fn ratatoskr_event_envelope::EnvelopeError::source(&self) -> core::option::Option<&(dyn core::error::Error + 'static)>
+pub fn ratatoskr_event_envelope::EnvelopeError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::EnvelopeError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::EnvelopeError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::EnvelopeError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::clone(&self) -> ratatoskr_event_envelope::EnvelopeSchemaVersion
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::clone_into(&self, &mut T)
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::cmp(&self, &ratatoskr_event_envelope::EnvelopeSchemaVersion) -> core::cmp::Ordering
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::eq(&self, &ratatoskr_event_envelope::EnvelopeSchemaVersion) -> bool
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::from(T) -> T
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::into(self) -> U
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::partial_cmp(&self, &ratatoskr_event_envelope::EnvelopeSchemaVersion) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::to_owned(&self) -> T
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::try_from(u32) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::EnvelopeSchemaVersion::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_event_envelope::EventEnvelope::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_event_envelope::EventEnvelope::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::EventEnvelope::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::EventEnvelope::clone(&self) -> ratatoskr_event_envelope::EventEnvelope
+pub fn ratatoskr_event_envelope::EventEnvelope::clone_into(&self, &mut T)
+pub fn ratatoskr_event_envelope::EventEnvelope::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_event_envelope::EventEnvelope::eq(&self, &ratatoskr_event_envelope::EventEnvelope) -> bool
+pub fn ratatoskr_event_envelope::EventEnvelope::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::EventEnvelope::from(T) -> T
+pub fn ratatoskr_event_envelope::EventEnvelope::from_json(&[u8]) -> core::result::Result<Self, ratatoskr_event_envelope::EnvelopeError>
+pub fn ratatoskr_event_envelope::EventEnvelope::inline_schema() -> bool
+pub fn ratatoskr_event_envelope::EventEnvelope::into(self) -> U
+pub fn ratatoskr_event_envelope::EventEnvelope::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_event_envelope::EventEnvelope::payload_as<P: ratatoskr_event_envelope::EventPayload>(&self) -> core::result::Result<P, ratatoskr_event_envelope::EnvelopeError>
+pub fn ratatoskr_event_envelope::EventEnvelope::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EventEnvelope::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EventEnvelope::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_event_envelope::EventEnvelope::set_payload<P: ratatoskr_event_envelope::EventPayload>(&mut self, &P) -> core::result::Result<(), ratatoskr_event_envelope::EnvelopeError>
+pub fn ratatoskr_event_envelope::EventEnvelope::to_canonical_json(&self) -> core::result::Result<alloc::string::String, ratatoskr_event_envelope::EnvelopeError>
+pub fn ratatoskr_event_envelope::EventEnvelope::to_owned(&self) -> T
+pub fn ratatoskr_event_envelope::EventEnvelope::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::EventEnvelope::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::EventEnvelope::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_event_envelope::EventPayload::event_type() -> ratatoskr_event_envelope::EventType
+pub fn ratatoskr_event_envelope::EventType::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_event_envelope::EventType::action(&self) -> &str
+pub fn ratatoskr_event_envelope::EventType::action_looks_past_tense(&self) -> bool
+pub fn ratatoskr_event_envelope::EventType::aggregate(&self) -> &str
+pub fn ratatoskr_event_envelope::EventType::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::EventType::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::EventType::bounded_context(&self) -> &str
+pub fn ratatoskr_event_envelope::EventType::clone(&self) -> ratatoskr_event_envelope::EventType
+pub fn ratatoskr_event_envelope::EventType::clone_into(&self, &mut T)
+pub fn ratatoskr_event_envelope::EventType::cmp(&self, &ratatoskr_event_envelope::EventType) -> core::cmp::Ordering
+pub fn ratatoskr_event_envelope::EventType::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_event_envelope::EventType::eq(&self, &ratatoskr_event_envelope::EventType) -> bool
+pub fn ratatoskr_event_envelope::EventType::family(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::EventType::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::EventType::from(T) -> T
+pub fn ratatoskr_event_envelope::EventType::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_event_envelope::EventType::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_event_envelope::EventType::into(self) -> U
+pub fn ratatoskr_event_envelope::EventType::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_event_envelope::EventType::new(&str, &str, &str, u32) -> core::result::Result<Self, ratatoskr_event_envelope::EventTypeError>
+pub fn ratatoskr_event_envelope::EventType::parse(&str) -> core::result::Result<Self, ratatoskr_event_envelope::EventTypeError>
+pub fn ratatoskr_event_envelope::EventType::partial_cmp(&self, &ratatoskr_event_envelope::EventType) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_event_envelope::EventType::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EventType::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::EventType::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_event_envelope::EventType::to_owned(&self) -> T
+pub fn ratatoskr_event_envelope::EventType::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::EventType::to_wire(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::EventType::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::EventType::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_event_envelope::EventType::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::EventType::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_event_envelope::EventType::with_major(&self, u32) -> Self
+pub fn ratatoskr_event_envelope::EventTypeError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_event_envelope::EventTypeError::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::EventTypeError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::EventTypeError::clone(&self) -> ratatoskr_event_envelope::EventTypeError
+pub fn ratatoskr_event_envelope::EventTypeError::clone_into(&self, &mut T)
+pub fn ratatoskr_event_envelope::EventTypeError::eq(&self, &ratatoskr_event_envelope::EventTypeError) -> bool
+pub fn ratatoskr_event_envelope::EventTypeError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::EventTypeError::from(T) -> T
+pub fn ratatoskr_event_envelope::EventTypeError::into(self) -> U
+pub fn ratatoskr_event_envelope::EventTypeError::to_owned(&self) -> T
+pub fn ratatoskr_event_envelope::EventTypeError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::EventTypeError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::EventTypeError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::EventTypeError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_event_envelope::ProducerName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_event_envelope::ProducerName::as_str(&self) -> &str
+pub fn ratatoskr_event_envelope::ProducerName::borrow(&self) -> &T
+pub fn ratatoskr_event_envelope::ProducerName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_event_envelope::ProducerName::clone(&self) -> ratatoskr_event_envelope::ProducerName
+pub fn ratatoskr_event_envelope::ProducerName::clone_into(&self, &mut T)
+pub fn ratatoskr_event_envelope::ProducerName::cmp(&self, &ratatoskr_event_envelope::ProducerName) -> core::cmp::Ordering
+pub fn ratatoskr_event_envelope::ProducerName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_event_envelope::ProducerName::eq(&self, &ratatoskr_event_envelope::ProducerName) -> bool
+pub fn ratatoskr_event_envelope::ProducerName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_event_envelope::ProducerName::from(T) -> T
+pub fn ratatoskr_event_envelope::ProducerName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_event_envelope::ProducerName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_event_envelope::ProducerName::into(self) -> U
+pub fn ratatoskr_event_envelope::ProducerName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_event_envelope::ProducerName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_event_envelope::ProducerName::partial_cmp(&self, &ratatoskr_event_envelope::ProducerName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_event_envelope::ProducerName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::ProducerName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_event_envelope::ProducerName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_event_envelope::ProducerName::to_owned(&self) -> T
+pub fn ratatoskr_event_envelope::ProducerName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_event_envelope::ProducerName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_event_envelope::ProducerName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_event_envelope::ProducerName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_event_envelope::ProducerName::type_id(&self) -> core::any::TypeId
+pub fn u32::from(ratatoskr_event_envelope::EnvelopeSchemaVersion) -> Self
+pub mod ratatoskr_event_envelope
+pub ratatoskr_event_envelope::EnvelopeError::Json(serde_json::error::Error)
+pub ratatoskr_event_envelope::EnvelopeError::PayloadNotAnObject
+pub ratatoskr_event_envelope::EnvelopeError::PayloadType
+pub ratatoskr_event_envelope::EnvelopeError::PayloadType::expected: &'static str
+pub ratatoskr_event_envelope::EnvelopeError::PayloadType::found: alloc::string::String
+pub ratatoskr_event_envelope::EnvelopeError::UnsupportedSchemaVersion
+pub ratatoskr_event_envelope::EnvelopeError::UnsupportedSchemaVersion::found: u32
+pub ratatoskr_event_envelope::EnvelopeError::UnsupportedSchemaVersion::supported: u32
+pub ratatoskr_event_envelope::EventEnvelope::aggregate_id: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_event_envelope::EventEnvelope::causation_id: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_event_envelope::EventEnvelope::correlation_id: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_event_envelope::EventEnvelope::event_id: ratatoskr_identifiers::uuid_ids::EventId
+pub ratatoskr_event_envelope::EventEnvelope::event_type: ratatoskr_event_envelope::EventType
+pub ratatoskr_event_envelope::EventEnvelope::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_event_envelope::EventEnvelope::occurred_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_event_envelope::EventEnvelope::payload: serde_json::map::Map<alloc::string::String, serde_json::value::Value>
+pub ratatoskr_event_envelope::EventEnvelope::producer: ratatoskr_event_envelope::ProducerName
+pub ratatoskr_event_envelope::EventEnvelope::schema_version: ratatoskr_event_envelope::EnvelopeSchemaVersion
+pub ratatoskr_event_envelope::EventEnvelope::tenant_id: core::option::Option<ratatoskr_identifiers::entity::TenantRef>
+pub ratatoskr_event_envelope::EventTypeError::InvalidMajor
+pub ratatoskr_event_envelope::EventTypeError::InvalidMajor::input: alloc::string::String
+pub ratatoskr_event_envelope::EventTypeError::InvalidSegment
+pub ratatoskr_event_envelope::EventTypeError::InvalidSegment::pattern: &'static str
+pub ratatoskr_event_envelope::EventTypeError::InvalidSegment::segment: alloc::string::String
+pub ratatoskr_event_envelope::EventTypeError::TooLong
+pub ratatoskr_event_envelope::EventTypeError::TooLong::got: usize
+pub ratatoskr_event_envelope::EventTypeError::TooLong::input: alloc::string::String
+pub ratatoskr_event_envelope::EventTypeError::WrongShape
+pub ratatoskr_event_envelope::EventTypeError::WrongShape::input: alloc::string::String
+pub struct ratatoskr_event_envelope::EnvelopeSchemaVersion(_)
+pub struct ratatoskr_event_envelope::EventEnvelope
+pub struct ratatoskr_event_envelope::EventType
+pub struct ratatoskr_event_envelope::ProducerName(_)
+pub trait ratatoskr_event_envelope::EventPayload: serde_core::ser::Serialize + serde_core::de::DeserializeOwned + schemars::JsonSchema
+pub type ratatoskr_event_envelope::EnvelopeError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::EnvelopeError::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::EnvelopeSchemaVersion::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::EnvelopeSchemaVersion::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::EnvelopeSchemaVersion::Error = ratatoskr_event_envelope::EnvelopeError
+pub type ratatoskr_event_envelope::EnvelopeSchemaVersion::Owned = T
+pub type ratatoskr_event_envelope::EventEnvelope::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::EventEnvelope::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::EventEnvelope::Owned = T
+pub type ratatoskr_event_envelope::EventType::Err = ratatoskr_event_envelope::EventTypeError
+pub type ratatoskr_event_envelope::EventType::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::EventType::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::EventType::Error = ratatoskr_event_envelope::EventTypeError
+pub type ratatoskr_event_envelope::EventType::Owned = T
+pub type ratatoskr_event_envelope::EventTypeError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::EventTypeError::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::EventTypeError::Owned = T
+pub type ratatoskr_event_envelope::ProducerName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_event_envelope::ProducerName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_event_envelope::ProducerName::Error = core::convert::Infallible
+pub type ratatoskr_event_envelope::ProducerName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_event_envelope::ProducerName::Owned = T
+pub unsafe fn ratatoskr_event_envelope::EnvelopeSchemaVersion::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_event_envelope::EventEnvelope::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_event_envelope::EventType::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_event_envelope::EventTypeError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_event_envelope::ProducerName::clone_to_uninit(&self, *mut u8)

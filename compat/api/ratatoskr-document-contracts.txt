@@ -1,0 +1,381 @@
+# Public API baseline of ratatoskr-document-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_document_contracts::Document
+impl core::clone::Clone for ratatoskr_document_contracts::DocumentAddress
+impl core::clone::Clone for ratatoskr_document_contracts::DocumentBlock
+impl core::clone::Clone for ratatoskr_document_contracts::DocumentProvenance
+impl core::clone::Clone for ratatoskr_document_contracts::ExtractionStrategy
+impl core::clone::Clone for ratatoskr_document_contracts::LanguageTag
+impl core::cmp::Eq for ratatoskr_document_contracts::DocumentAddress
+impl core::cmp::Eq for ratatoskr_document_contracts::ExtractionStrategy
+impl core::cmp::Eq for ratatoskr_document_contracts::LanguageTag
+impl core::cmp::Ord for ratatoskr_document_contracts::DocumentAddress
+impl core::cmp::Ord for ratatoskr_document_contracts::ExtractionStrategy
+impl core::cmp::Ord for ratatoskr_document_contracts::LanguageTag
+impl core::cmp::PartialEq for ratatoskr_document_contracts::Document
+impl core::cmp::PartialEq for ratatoskr_document_contracts::DocumentAddress
+impl core::cmp::PartialEq for ratatoskr_document_contracts::DocumentBlock
+impl core::cmp::PartialEq for ratatoskr_document_contracts::DocumentProvenance
+impl core::cmp::PartialEq for ratatoskr_document_contracts::ExtractionStrategy
+impl core::cmp::PartialEq for ratatoskr_document_contracts::LanguageTag
+impl core::cmp::PartialOrd for ratatoskr_document_contracts::DocumentAddress
+impl core::cmp::PartialOrd for ratatoskr_document_contracts::ExtractionStrategy
+impl core::cmp::PartialOrd for ratatoskr_document_contracts::LanguageTag
+impl core::convert::From<ratatoskr_document_contracts::DocumentAddress> for alloc::string::String
+impl core::convert::From<ratatoskr_document_contracts::ExtractionStrategy> for alloc::string::String
+impl core::convert::From<ratatoskr_document_contracts::LanguageTag> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_document_contracts::DocumentAddress
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_document_contracts::ExtractionStrategy
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_document_contracts::LanguageTag
+impl core::fmt::Debug for ratatoskr_document_contracts::Document
+impl core::fmt::Debug for ratatoskr_document_contracts::DocumentAddress
+impl core::fmt::Debug for ratatoskr_document_contracts::DocumentBlock
+impl core::fmt::Debug for ratatoskr_document_contracts::DocumentProvenance
+impl core::fmt::Debug for ratatoskr_document_contracts::ExtractionStrategy
+impl core::fmt::Debug for ratatoskr_document_contracts::LanguageTag
+impl core::fmt::Display for ratatoskr_document_contracts::DocumentAddress
+impl core::fmt::Display for ratatoskr_document_contracts::ExtractionStrategy
+impl core::fmt::Display for ratatoskr_document_contracts::LanguageTag
+impl core::hash::Hash for ratatoskr_document_contracts::DocumentAddress
+impl core::hash::Hash for ratatoskr_document_contracts::ExtractionStrategy
+impl core::hash::Hash for ratatoskr_document_contracts::LanguageTag
+impl core::marker::Freeze for ratatoskr_document_contracts::Document
+impl core::marker::Freeze for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::Freeze for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::Freeze for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::Freeze for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::Freeze for ratatoskr_document_contracts::LanguageTag
+impl core::marker::Send for ratatoskr_document_contracts::Document
+impl core::marker::Send for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::Send for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::Send for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::Send for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::Send for ratatoskr_document_contracts::LanguageTag
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::Document
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::StructuralPartialEq for ratatoskr_document_contracts::LanguageTag
+impl core::marker::Sync for ratatoskr_document_contracts::Document
+impl core::marker::Sync for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::Sync for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::Sync for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::Sync for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::Sync for ratatoskr_document_contracts::LanguageTag
+impl core::marker::Unpin for ratatoskr_document_contracts::Document
+impl core::marker::Unpin for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::Unpin for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::Unpin for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::Unpin for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::Unpin for ratatoskr_document_contracts::LanguageTag
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::Document
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::DocumentAddress
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::DocumentBlock
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::DocumentProvenance
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::ExtractionStrategy
+impl core::marker::UnsafeUnpin for ratatoskr_document_contracts::LanguageTag
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::Document
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::DocumentAddress
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::DocumentBlock
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::DocumentProvenance
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::ExtractionStrategy
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_document_contracts::LanguageTag
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::Document
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::DocumentAddress
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::DocumentBlock
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::DocumentProvenance
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::ExtractionStrategy
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_document_contracts::LanguageTag
+impl core::str::traits::FromStr for ratatoskr_document_contracts::DocumentAddress
+impl core::str::traits::FromStr for ratatoskr_document_contracts::ExtractionStrategy
+impl core::str::traits::FromStr for ratatoskr_document_contracts::LanguageTag
+impl ratatoskr_document_contracts::DocumentAddress
+impl ratatoskr_document_contracts::ExtractionStrategy
+impl ratatoskr_document_contracts::LanguageTag
+impl schemars::JsonSchema for ratatoskr_document_contracts::Document
+impl schemars::JsonSchema for ratatoskr_document_contracts::DocumentAddress
+impl schemars::JsonSchema for ratatoskr_document_contracts::DocumentBlock
+impl schemars::JsonSchema for ratatoskr_document_contracts::DocumentProvenance
+impl schemars::JsonSchema for ratatoskr_document_contracts::ExtractionStrategy
+impl schemars::JsonSchema for ratatoskr_document_contracts::LanguageTag
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::Document
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::DocumentAddress
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::DocumentBlock
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::DocumentProvenance
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::ExtractionStrategy
+impl serde_core::ser::Serialize for ratatoskr_document_contracts::LanguageTag
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::Document
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::DocumentAddress
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::DocumentBlock
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::DocumentProvenance
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::ExtractionStrategy
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_document_contracts::LanguageTag
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::Document where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::DocumentAddress where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::DocumentBlock where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::DocumentProvenance where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::ExtractionStrategy where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_document_contracts::LanguageTag where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::Document where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::DocumentAddress where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::DocumentBlock where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::DocumentProvenance where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::ExtractionStrategy where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_document_contracts::LanguageTag where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::Document where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::DocumentAddress where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::DocumentBlock where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::DocumentProvenance where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::ExtractionStrategy where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_document_contracts::LanguageTag where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::Document where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::DocumentAddress where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::DocumentBlock where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::DocumentProvenance where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::ExtractionStrategy where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_document_contracts::LanguageTag where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_document_contracts::DocumentAddress where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_document_contracts::ExtractionStrategy where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_document_contracts::LanguageTag where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::Document where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::DocumentAddress where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::DocumentBlock where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::DocumentProvenance where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::ExtractionStrategy where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_document_contracts::LanguageTag where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::Document where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::DocumentAddress where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::DocumentBlock where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::DocumentProvenance where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::ExtractionStrategy where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_document_contracts::LanguageTag where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::Document where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::DocumentAddress where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::DocumentBlock where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::DocumentProvenance where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::ExtractionStrategy where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_document_contracts::LanguageTag where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::Document where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::DocumentAddress where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::DocumentBlock where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::DocumentProvenance where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::ExtractionStrategy where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_document_contracts::LanguageTag where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::Document
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::DocumentAddress
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::DocumentBlock
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::DocumentProvenance
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::ExtractionStrategy
+impl<T> core::convert::From<T> for ratatoskr_document_contracts::LanguageTag
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::Document where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::DocumentAddress where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::DocumentBlock where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::DocumentProvenance where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::ExtractionStrategy where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_document_contracts::LanguageTag where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::Document where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::DocumentAddress where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::DocumentBlock where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::DocumentProvenance where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::ExtractionStrategy where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::LanguageTag where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_document_contracts::DocumentAddress::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_document_contracts::DocumentAddress::MAX_LEN: usize
+pub const ratatoskr_document_contracts::DocumentAddress::PATTERN: &'static str
+pub const ratatoskr_document_contracts::ExtractionStrategy::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_document_contracts::ExtractionStrategy::MAX_LEN: usize
+pub const ratatoskr_document_contracts::ExtractionStrategy::PATTERN: &'static str
+pub const ratatoskr_document_contracts::LanguageTag::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_document_contracts::LanguageTag::MAX_LEN: usize
+pub const ratatoskr_document_contracts::LanguageTag::PATTERN: &'static str
+pub fn alloc::string::String::from(ratatoskr_document_contracts::DocumentAddress) -> Self
+pub fn alloc::string::String::from(ratatoskr_document_contracts::ExtractionStrategy) -> Self
+pub fn alloc::string::String::from(ratatoskr_document_contracts::LanguageTag) -> Self
+pub fn ratatoskr_document_contracts::Document::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::Document::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::Document::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::Document::clone(&self) -> ratatoskr_document_contracts::Document
+pub fn ratatoskr_document_contracts::Document::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::Document::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::Document::eq(&self, &ratatoskr_document_contracts::Document) -> bool
+pub fn ratatoskr_document_contracts::Document::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::Document::from(T) -> T
+pub fn ratatoskr_document_contracts::Document::inline_schema() -> bool
+pub fn ratatoskr_document_contracts::Document::into(self) -> U
+pub fn ratatoskr_document_contracts::Document::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::Document::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::Document::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::Document::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::Document::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::Document::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::Document::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::Document::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_document_contracts::DocumentAddress::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::DocumentAddress::as_str(&self) -> &str
+pub fn ratatoskr_document_contracts::DocumentAddress::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::DocumentAddress::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::DocumentAddress::clone(&self) -> ratatoskr_document_contracts::DocumentAddress
+pub fn ratatoskr_document_contracts::DocumentAddress::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::DocumentAddress::cmp(&self, &ratatoskr_document_contracts::DocumentAddress) -> core::cmp::Ordering
+pub fn ratatoskr_document_contracts::DocumentAddress::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::DocumentAddress::eq(&self, &ratatoskr_document_contracts::DocumentAddress) -> bool
+pub fn ratatoskr_document_contracts::DocumentAddress::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::DocumentAddress::from(T) -> T
+pub fn ratatoskr_document_contracts::DocumentAddress::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_document_contracts::DocumentAddress::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_document_contracts::DocumentAddress::into(self) -> U
+pub fn ratatoskr_document_contracts::DocumentAddress::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::DocumentAddress::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_document_contracts::DocumentAddress::partial_cmp(&self, &ratatoskr_document_contracts::DocumentAddress) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_document_contracts::DocumentAddress::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentAddress::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentAddress::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::DocumentAddress::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::DocumentAddress::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_document_contracts::DocumentAddress::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::DocumentAddress::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_document_contracts::DocumentAddress::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::DocumentAddress::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_document_contracts::DocumentBlock::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::DocumentBlock::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::DocumentBlock::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::DocumentBlock::clone(&self) -> ratatoskr_document_contracts::DocumentBlock
+pub fn ratatoskr_document_contracts::DocumentBlock::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::DocumentBlock::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::DocumentBlock::eq(&self, &ratatoskr_document_contracts::DocumentBlock) -> bool
+pub fn ratatoskr_document_contracts::DocumentBlock::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::DocumentBlock::from(T) -> T
+pub fn ratatoskr_document_contracts::DocumentBlock::inline_schema() -> bool
+pub fn ratatoskr_document_contracts::DocumentBlock::into(self) -> U
+pub fn ratatoskr_document_contracts::DocumentBlock::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::DocumentBlock::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentBlock::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentBlock::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::DocumentBlock::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::DocumentBlock::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::DocumentBlock::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::DocumentBlock::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_document_contracts::DocumentProvenance::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::DocumentProvenance::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::DocumentProvenance::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::DocumentProvenance::clone(&self) -> ratatoskr_document_contracts::DocumentProvenance
+pub fn ratatoskr_document_contracts::DocumentProvenance::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::DocumentProvenance::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::DocumentProvenance::eq(&self, &ratatoskr_document_contracts::DocumentProvenance) -> bool
+pub fn ratatoskr_document_contracts::DocumentProvenance::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::DocumentProvenance::from(T) -> T
+pub fn ratatoskr_document_contracts::DocumentProvenance::inline_schema() -> bool
+pub fn ratatoskr_document_contracts::DocumentProvenance::into(self) -> U
+pub fn ratatoskr_document_contracts::DocumentProvenance::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::DocumentProvenance::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentProvenance::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::DocumentProvenance::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::DocumentProvenance::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::DocumentProvenance::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::DocumentProvenance::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::DocumentProvenance::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_document_contracts::ExtractionStrategy::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::ExtractionStrategy::as_str(&self) -> &str
+pub fn ratatoskr_document_contracts::ExtractionStrategy::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::ExtractionStrategy::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::ExtractionStrategy::clone(&self) -> ratatoskr_document_contracts::ExtractionStrategy
+pub fn ratatoskr_document_contracts::ExtractionStrategy::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::ExtractionStrategy::cmp(&self, &ratatoskr_document_contracts::ExtractionStrategy) -> core::cmp::Ordering
+pub fn ratatoskr_document_contracts::ExtractionStrategy::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::eq(&self, &ratatoskr_document_contracts::ExtractionStrategy) -> bool
+pub fn ratatoskr_document_contracts::ExtractionStrategy::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::ExtractionStrategy::from(T) -> T
+pub fn ratatoskr_document_contracts::ExtractionStrategy::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_document_contracts::ExtractionStrategy::into(self) -> U
+pub fn ratatoskr_document_contracts::ExtractionStrategy::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::ExtractionStrategy::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::partial_cmp(&self, &ratatoskr_document_contracts::ExtractionStrategy) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::ExtractionStrategy::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::ExtractionStrategy::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_document_contracts::ExtractionStrategy::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::ExtractionStrategy::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_document_contracts::LanguageTag::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_document_contracts::LanguageTag::as_str(&self) -> &str
+pub fn ratatoskr_document_contracts::LanguageTag::borrow(&self) -> &T
+pub fn ratatoskr_document_contracts::LanguageTag::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_document_contracts::LanguageTag::clone(&self) -> ratatoskr_document_contracts::LanguageTag
+pub fn ratatoskr_document_contracts::LanguageTag::clone_into(&self, &mut T)
+pub fn ratatoskr_document_contracts::LanguageTag::cmp(&self, &ratatoskr_document_contracts::LanguageTag) -> core::cmp::Ordering
+pub fn ratatoskr_document_contracts::LanguageTag::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_document_contracts::LanguageTag::eq(&self, &ratatoskr_document_contracts::LanguageTag) -> bool
+pub fn ratatoskr_document_contracts::LanguageTag::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_document_contracts::LanguageTag::from(T) -> T
+pub fn ratatoskr_document_contracts::LanguageTag::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_document_contracts::LanguageTag::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_document_contracts::LanguageTag::into(self) -> U
+pub fn ratatoskr_document_contracts::LanguageTag::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_document_contracts::LanguageTag::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_document_contracts::LanguageTag::partial_cmp(&self, &ratatoskr_document_contracts::LanguageTag) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_document_contracts::LanguageTag::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::LanguageTag::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_document_contracts::LanguageTag::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_document_contracts::LanguageTag::to_owned(&self) -> T
+pub fn ratatoskr_document_contracts::LanguageTag::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_document_contracts::LanguageTag::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_document_contracts::LanguageTag::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_document_contracts::LanguageTag::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_document_contracts::LanguageTag::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_document_contracts
+pub ratatoskr_document_contracts::Document::blocks: alloc::vec::Vec<ratatoskr_document_contracts::DocumentBlock>
+pub ratatoskr_document_contracts::Document::content_digest: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_document_contracts::Document::document_id: ratatoskr_identifiers::uuid_ids::DocumentId
+pub ratatoskr_document_contracts::Document::language: core::option::Option<ratatoskr_document_contracts::LanguageTag>
+pub ratatoskr_document_contracts::Document::provenance: alloc::vec::Vec<ratatoskr_document_contracts::DocumentProvenance>
+pub ratatoskr_document_contracts::Document::source_address: ratatoskr_document_contracts::DocumentAddress
+pub ratatoskr_document_contracts::Document::title: core::option::Option<alloc::string::String>
+pub ratatoskr_document_contracts::DocumentBlock::Heading
+pub ratatoskr_document_contracts::DocumentBlock::Heading::level: u8
+pub ratatoskr_document_contracts::DocumentBlock::Heading::text: alloc::string::String
+pub ratatoskr_document_contracts::DocumentBlock::Paragraph
+pub ratatoskr_document_contracts::DocumentBlock::Paragraph::text: alloc::string::String
+pub ratatoskr_document_contracts::DocumentProvenance::block_index: u32
+pub ratatoskr_document_contracts::DocumentProvenance::extraction_strategy: ratatoskr_document_contracts::ExtractionStrategy
+pub ratatoskr_document_contracts::DocumentProvenance::source_blob: ratatoskr_identifiers::blob::BlobRef
+pub struct ratatoskr_document_contracts::Document
+pub struct ratatoskr_document_contracts::DocumentAddress(_)
+pub struct ratatoskr_document_contracts::DocumentProvenance
+pub struct ratatoskr_document_contracts::ExtractionStrategy(_)
+pub struct ratatoskr_document_contracts::LanguageTag(_)
+pub type ratatoskr_document_contracts::Document::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::Document::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::Document::Owned = T
+pub type ratatoskr_document_contracts::DocumentAddress::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::DocumentAddress::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::DocumentAddress::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::DocumentAddress::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::DocumentAddress::Owned = T
+pub type ratatoskr_document_contracts::DocumentBlock::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::DocumentBlock::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::DocumentBlock::Owned = T
+pub type ratatoskr_document_contracts::DocumentProvenance::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::DocumentProvenance::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::DocumentProvenance::Owned = T
+pub type ratatoskr_document_contracts::ExtractionStrategy::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::ExtractionStrategy::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::ExtractionStrategy::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::ExtractionStrategy::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::ExtractionStrategy::Owned = T
+pub type ratatoskr_document_contracts::LanguageTag::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::LanguageTag::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_document_contracts::LanguageTag::Error = core::convert::Infallible
+pub type ratatoskr_document_contracts::LanguageTag::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_document_contracts::LanguageTag::Owned = T
+pub unsafe fn ratatoskr_document_contracts::Document::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_document_contracts::DocumentAddress::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_document_contracts::DocumentBlock::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_document_contracts::DocumentProvenance::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_document_contracts::ExtractionStrategy::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_document_contracts::LanguageTag::clone_to_uninit(&self, *mut u8)

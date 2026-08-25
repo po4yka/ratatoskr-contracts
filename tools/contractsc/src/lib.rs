@@ -17,6 +17,7 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+pub mod api;
 pub mod check;
 pub mod compat;
 pub mod fixtures;

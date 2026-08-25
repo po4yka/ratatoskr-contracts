@@ -1,0 +1,1837 @@
+# Public API baseline of ratatoskr-ai-archive-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiAsset
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiCitation
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiConversation
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiFileName
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiGap
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiMessage
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiModelName
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiProject
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiProvider
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiText
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiTitle
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiToolName
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::ParserName
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAsset
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiCitation
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiFileName
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiGap
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiModelName
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiProvider
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiText
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiTitle
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiToolName
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::ParserName
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiAsset
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiCitation
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiFileName
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiModelName
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiProvider
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiText
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiTitle
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiToolName
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::ParserName
+impl core::cmp::Ord for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiAsset
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiCitation
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiConversation
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiFileName
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiGap
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiMessage
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiModelName
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiProject
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiProvider
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiText
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiTitle
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiToolName
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::ParserName
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiAsset
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiCitation
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiFileName
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiModelName
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiProvider
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiText
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiTitle
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolName
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::ParserName
+impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiAssetKind> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiFileName> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiGapKind> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiModelName> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiProvider> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiSourceUrl> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiText> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiTitle> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::AiToolName> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::ParserName> for alloc::string::String
+impl core::convert::From<ratatoskr_ai_archive_contracts::ParserVersion> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiFileName
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiModelName
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiProvider
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiText
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiTitle
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::AiToolName
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::ParserName
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::error::Error for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiAsset
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiCitation
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiConversation
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiFileName
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiGap
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiMessage
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiModelName
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiProject
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiProvider
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiText
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiTitle
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiToolName
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::ParserName
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiFileName
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiModelName
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiProvider
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiText
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiTitle
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::AiToolName
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::ParserName
+impl core::fmt::Display for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiAsset
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiCitation
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiFileName
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiModelName
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiProvider
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiText
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiTitle
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiToolName
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::ParserName
+impl core::hash::Hash for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::Copy for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::Copy for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::Copy for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::Send for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::Send for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiAsset
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiCitation
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiConversation
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiFileName
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiGap
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiMessage
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiModelName
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiProject
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiProvider
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiText
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiTitle
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiToolName
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::ParserName
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiAsset
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiCitation
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiConversation
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiFileName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiGap
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiMessage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiModelName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiProject
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiProvider
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiText
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiTitle
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiToolName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::ParserName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiAsset
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiCitation
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiContentPart
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiConversation
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiFileName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiGap
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiMessage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiModelName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiProject
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiProvider
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiText
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiTitle
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiToolCall
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiToolName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiToolResult
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::ParserName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiAssetKind
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiFileName
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiGapKind
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiModelName
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiProvider
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiText
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiTitle
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::AiToolName
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::ParserName
+impl core::str::traits::FromStr for ratatoskr_ai_archive_contracts::ParserVersion
+impl ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl ratatoskr_ai_archive_contracts::AiArchiveImport
+impl ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl ratatoskr_ai_archive_contracts::AiAssetKind
+impl ratatoskr_ai_archive_contracts::AiContentPart
+impl ratatoskr_ai_archive_contracts::AiFileName
+impl ratatoskr_ai_archive_contracts::AiGapKind
+impl ratatoskr_ai_archive_contracts::AiMessage
+impl ratatoskr_ai_archive_contracts::AiModelName
+impl ratatoskr_ai_archive_contracts::AiProvider
+impl ratatoskr_ai_archive_contracts::AiSourceUrl
+impl ratatoskr_ai_archive_contracts::AiText
+impl ratatoskr_ai_archive_contracts::AiTitle
+impl ratatoskr_ai_archive_contracts::AiToolName
+impl ratatoskr_ai_archive_contracts::ParserName
+impl ratatoskr_ai_archive_contracts::ParserVersion
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiAsset
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiAssetKind
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiCitation
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiContentPart
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiConversation
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiFileName
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiGap
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiGapKind
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiMessage
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiModelName
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiProject
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiProvider
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiText
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiTitle
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiToolCall
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiToolName
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiToolResult
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::ParserName
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::ParserVersion
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiAsset
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiAssetKind
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiCitation
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiContentPart
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiConversation
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiFileName
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiGap
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiGapKind
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiMessage
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiModelName
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiProject
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiProvider
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiText
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiTitle
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiToolCall
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiToolName
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiToolResult
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::ParserName
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::ParserVersion
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiAsset
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiAssetKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiCitation
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiContentPart
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiConversation
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiFileName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiGap
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiGapKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiMessage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiModelName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiProject
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiProvider
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiText
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiTitle
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiToolCall
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiToolName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiToolResult
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::ParserName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::ParserVersion
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiAuthorRole where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiCitation where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiCompletenessReport where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiContentPart where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiConversation where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiConversationAdded where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiConversationUpdated where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiFileName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiGap where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiGapKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiMessage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiModelName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiProject where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiProvider where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiSourceUrl where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiText where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiTitle where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiToolCall where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiToolName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiToolOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiToolResult where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::ParserName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::ParserVersion where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiAuthorRole where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiCitation where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiCompletenessReport where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiContentPart where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiConversation where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiConversationAdded where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiConversationUpdated where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiFileName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiGap where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiGapKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiMessage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiModelName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiProject where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiProvider where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiSourceUrl where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiText where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiTitle where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiToolCall where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiToolName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiToolOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiToolResult where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::ParserName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::ParserVersion where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiAuthorRole where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiCitation where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiCompletenessReport where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiContentPart where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiConversation where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiConversationAdded where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiConversationUpdated where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiFileName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiGap where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiGapKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiMessage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiModelName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiProject where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiProvider where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiSourceUrl where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiText where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiTitle where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiToolCall where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiToolName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiToolOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiToolResult where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::ParserName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::ParserVersion where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiAuthorRole where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiCitation where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiContentPart where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiConversation where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiConversationAdded where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiFileName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiGap where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiGapKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiMessage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiModelName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiProject where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiProvider where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiSourceUrl where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiText where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiTitle where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiToolCall where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiToolName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiToolOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiToolResult where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::ParserName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::ParserVersion where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiFileName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiGapKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiModelName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiProvider where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiSourceUrl where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiText where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiTitle where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::AiToolName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::ParserName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::ParserVersion where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveImport where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiAsset where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiAssetKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiAuthorRole where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiCitation where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiContentPart where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiConversation where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiConversationAdded where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiFileName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiGap where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiGapKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiMessage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiModelName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiProject where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiProvider where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiSourceUrl where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiText where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiTitle where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiToolCall where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiToolName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiToolOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiToolResult where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::ParserName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::ParserVersion where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveImport where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiAsset where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiAssetKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiAuthorRole where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiCitation where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiContentPart where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiConversation where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiConversationAdded where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiFileName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiGap where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiGapKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiMessage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiModelName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiProject where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiProvider where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiSourceUrl where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiText where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiTitle where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiToolCall where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiToolName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiToolOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiToolResult where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::ParserName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::ParserVersion where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveImport where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiAsset where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiAssetKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiAuthorRole where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiCitation where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiContentPart where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiConversation where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiConversationAdded where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiFileName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiGap where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiGapKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiMessage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiModelName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiProject where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiProvider where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiSourceUrl where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiText where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiTitle where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiToolCall where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiToolName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiToolOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiToolResult where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::ParserName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::ParserVersion where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiAuthorRole where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiCitation where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiContentPart where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiConversation where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiConversationAdded where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiFileName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiGap where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiGapKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiMessage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiModelName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiProject where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiProvider where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiSourceUrl where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiText where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiTitle where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiToolCall where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiToolName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiToolOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiToolResult where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::ParserName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::ParserVersion where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiAsset
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiAssetKind
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiCitation
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiContentPart
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiConversation
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiFileName
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiGap
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiGapKind
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiMessage
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiModelName
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiProject
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiProvider
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiText
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiTitle
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiToolCall
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiToolName
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiToolResult
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::ParserName
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::ParserVersion
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiAuthorRole where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiCitation where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiContentPart where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiConversation where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiConversationAdded where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiFileName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiGap where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiGapKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiMessage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiModelName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiProject where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiProvider where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiSourceUrl where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiText where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiTitle where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiToolCall where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiToolName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiToolOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiToolResult where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::ParserName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::ParserVersion where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveImport where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiAsset where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiAssetKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiAuthorRole where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiCitation where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiCompletenessReport where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiContentPart where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiConversation where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiConversationAdded where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiConversationUpdated where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiFileName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiGap where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiGapKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiMessage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiModelName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiProject where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiProvider where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiSourceUrl where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiText where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiTitle where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiToolCall where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiToolName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiToolOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiToolResult where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::ParserName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::ParserVersion where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_ai_archive_contracts::AiArchiveImport::EVENT_TYPE: &'static str
+pub const ratatoskr_ai_archive_contracts::AiAssetKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiAssetKind::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiAssetKind::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiConversationAdded::EVENT_TYPE: &'static str
+pub const ratatoskr_ai_archive_contracts::AiConversationUpdated::EVENT_TYPE: &'static str
+pub const ratatoskr_ai_archive_contracts::AiFileName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiFileName::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiFileName::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiGapKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiGapKind::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiGapKind::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiModelName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiModelName::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiModelName::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiProvider::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiProvider::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiProvider::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiSourceUrl::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiSourceUrl::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiSourceUrl::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiText::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiText::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiText::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiTitle::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiTitle::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiTitle::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::AiToolName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::AiToolName::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::AiToolName::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::ParserName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::ParserName::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::ParserName::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::ParserVersion::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_ai_archive_contracts::ParserVersion::MAX_LEN: usize
+pub const ratatoskr_ai_archive_contracts::ParserVersion::PATTERN: &'static str
+pub enum ratatoskr_ai_archive_contracts::AiContentPart
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiAssetKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiFileName) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiGapKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiModelName) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiProvider) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiSourceUrl) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiText) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiTitle) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::AiToolName) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::ParserName) -> Self
+pub fn alloc::string::String::from(ratatoskr_ai_archive_contracts::ParserVersion) -> Self
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::clone(&self) -> ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::cmp(&self, &ratatoskr_ai_archive_contracts::AiArchiveCompleteness) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::eq(&self, &ratatoskr_ai_archive_contracts::AiArchiveCompleteness) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::is_complete(self) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiArchiveCompleteness) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::clone(&self) -> ratatoskr_ai_archive_contracts::AiArchiveImport
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::eq(&self, &ratatoskr_ai_archive_contracts::AiArchiveImport) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::validate(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::archive_id(&self) -> &ratatoskr_identifiers::uuid_ids::AiArchiveId
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::clone(&self) -> ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::conversation_by_id(&self, &ratatoskr_identifiers::uuid_ids::AiConversationId) -> impl core::iter::traits::iterator::Iterator<Item = &ratatoskr_ai_archive_contracts::AiConversation>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::eq(&self, &ratatoskr_ai_archive_contracts::AiArchiveSnapshot) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::validate(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiAsset::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiAsset::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiAsset::clone(&self) -> ratatoskr_ai_archive_contracts::AiAsset
+pub fn ratatoskr_ai_archive_contracts::AiAsset::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiAsset::cmp(&self, &ratatoskr_ai_archive_contracts::AiAsset) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiAsset::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::eq(&self, &ratatoskr_ai_archive_contracts::AiAsset) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiAsset::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiAsset::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAsset::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiAsset::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiAsset::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiAsset::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiAsset::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiAsset) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiAsset::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAsset::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAsset::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::clone(&self) -> ratatoskr_ai_archive_contracts::AiAssetKind
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::cmp(&self, &ratatoskr_ai_archive_contracts::AiAssetKind) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::eq(&self, &ratatoskr_ai_archive_contracts::AiAssetKind) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiAssetKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAssetKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::clone(&self) -> ratatoskr_ai_archive_contracts::AiAuthorRole
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::cmp(&self, &ratatoskr_ai_archive_contracts::AiAuthorRole) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::eq(&self, &ratatoskr_ai_archive_contracts::AiAuthorRole) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiAuthorRole) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiAuthorRole::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiCitation::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiCitation::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiCitation::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiCitation::clone(&self) -> ratatoskr_ai_archive_contracts::AiCitation
+pub fn ratatoskr_ai_archive_contracts::AiCitation::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiCitation::cmp(&self, &ratatoskr_ai_archive_contracts::AiCitation) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiCitation::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::eq(&self, &ratatoskr_ai_archive_contracts::AiCitation) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiCitation::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiCitation::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiCitation::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiCitation::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiCitation::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiCitation::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiCitation::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiCitation) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiCitation::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiCitation::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiCitation::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::clone(&self) -> ratatoskr_ai_archive_contracts::AiCompletenessReport
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::eq(&self, &ratatoskr_ai_archive_contracts::AiCompletenessReport) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiCompletenessReport::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::as_unknown(&self) -> core::option::Option<&serde_json::value::Value>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::clone(&self) -> ratatoskr_ai_archive_contracts::AiContentPart
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::eq(&self, &ratatoskr_ai_archive_contracts::AiContentPart) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::is_unknown(&self) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::serialize<S>(&self, S) -> core::result::Result<<S as serde_core::ser::Serializer>::Ok, <S as serde_core::ser::Serializer>::Error> where S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiContentPart::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiConversation::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiConversation::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiConversation::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiConversation::clone(&self) -> ratatoskr_ai_archive_contracts::AiConversation
+pub fn ratatoskr_ai_archive_contracts::AiConversation::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiConversation::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiConversation::eq(&self, &ratatoskr_ai_archive_contracts::AiConversation) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversation::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiConversation::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversation::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversation::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiConversation::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiConversation::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversation::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversation::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiConversation::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversation::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversation::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversation::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::clone(&self) -> ratatoskr_ai_archive_contracts::AiConversationAdded
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::eq(&self, &ratatoskr_ai_archive_contracts::AiConversationAdded) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::clone(&self) -> ratatoskr_ai_archive_contracts::AiConversationUpdated
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::eq(&self, &ratatoskr_ai_archive_contracts::AiConversationUpdated) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiConversationUpdated::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiFileName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiFileName::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiFileName::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiFileName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiFileName::clone(&self) -> ratatoskr_ai_archive_contracts::AiFileName
+pub fn ratatoskr_ai_archive_contracts::AiFileName::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiFileName::cmp(&self, &ratatoskr_ai_archive_contracts::AiFileName) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiFileName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::eq(&self, &ratatoskr_ai_archive_contracts::AiFileName) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiFileName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiFileName::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiFileName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiFileName::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiFileName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiFileName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiFileName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiFileName::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiFileName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiFileName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiFileName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiGap::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiGap::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiGap::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiGap::clone(&self) -> ratatoskr_ai_archive_contracts::AiGap
+pub fn ratatoskr_ai_archive_contracts::AiGap::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiGap::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiGap::eq(&self, &ratatoskr_ai_archive_contracts::AiGap) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiGap::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiGap::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiGap::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiGap::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiGap::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiGap::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiGap::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiGap::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiGap::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiGap::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiGap::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiGap::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::clone(&self) -> ratatoskr_ai_archive_contracts::AiGapKind
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::cmp(&self, &ratatoskr_ai_archive_contracts::AiGapKind) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::eq(&self, &ratatoskr_ai_archive_contracts::AiGapKind) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiGapKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiGapKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiMessage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiMessage::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiMessage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiMessage::clone(&self) -> ratatoskr_ai_archive_contracts::AiMessage
+pub fn ratatoskr_ai_archive_contracts::AiMessage::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiMessage::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiMessage::eq(&self, &ratatoskr_ai_archive_contracts::AiMessage) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiMessage::external_message_id(&self) -> &ratatoskr_identifiers::entity::EntityLocalId
+pub fn ratatoskr_ai_archive_contracts::AiMessage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiMessage::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiMessage::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiMessage::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiMessage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiMessage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiMessage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiMessage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiMessage::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiMessage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiMessage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiMessage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiModelName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiModelName::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiModelName::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiModelName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiModelName::clone(&self) -> ratatoskr_ai_archive_contracts::AiModelName
+pub fn ratatoskr_ai_archive_contracts::AiModelName::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiModelName::cmp(&self, &ratatoskr_ai_archive_contracts::AiModelName) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiModelName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::eq(&self, &ratatoskr_ai_archive_contracts::AiModelName) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiModelName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiModelName::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiModelName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiModelName::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiModelName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiModelName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiModelName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiModelName::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiModelName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiModelName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiModelName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiProject::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiProject::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiProject::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiProject::clone(&self) -> ratatoskr_ai_archive_contracts::AiProject
+pub fn ratatoskr_ai_archive_contracts::AiProject::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiProject::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiProject::eq(&self, &ratatoskr_ai_archive_contracts::AiProject) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiProject::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiProject::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiProject::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiProject::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiProject::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiProject::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiProject::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiProject::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiProject::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiProject::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiProject::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiProject::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiProvider::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiProvider::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiProvider::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiProvider::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiProvider::clone(&self) -> ratatoskr_ai_archive_contracts::AiProvider
+pub fn ratatoskr_ai_archive_contracts::AiProvider::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiProvider::cmp(&self, &ratatoskr_ai_archive_contracts::AiProvider) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiProvider::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::eq(&self, &ratatoskr_ai_archive_contracts::AiProvider) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiProvider::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiProvider::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiProvider::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiProvider::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiProvider::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiProvider::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiProvider) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiProvider::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiProvider::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiProvider::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiProvider::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::clone(&self) -> ratatoskr_ai_archive_contracts::AiSourceUrl
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::cmp(&self, &ratatoskr_ai_archive_contracts::AiSourceUrl) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::eq(&self, &ratatoskr_ai_archive_contracts::AiSourceUrl) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiSourceUrl) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiSourceUrl::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiText::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiText::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiText::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiText::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiText::clone(&self) -> ratatoskr_ai_archive_contracts::AiText
+pub fn ratatoskr_ai_archive_contracts::AiText::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiText::cmp(&self, &ratatoskr_ai_archive_contracts::AiText) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiText::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiText::eq(&self, &ratatoskr_ai_archive_contracts::AiText) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiText::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiText::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiText::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiText::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiText::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiText::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiText::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiText::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiText) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiText::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiText::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiText::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiText::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiText::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiText::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiText::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiText::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiText::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiTitle::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiTitle::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiTitle::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiTitle::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiTitle::clone(&self) -> ratatoskr_ai_archive_contracts::AiTitle
+pub fn ratatoskr_ai_archive_contracts::AiTitle::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiTitle::cmp(&self, &ratatoskr_ai_archive_contracts::AiTitle) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiTitle::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::eq(&self, &ratatoskr_ai_archive_contracts::AiTitle) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiTitle::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiTitle::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiTitle::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiTitle::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiTitle::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiTitle::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiTitle) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiTitle::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiTitle::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiTitle::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiTitle::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::clone(&self) -> ratatoskr_ai_archive_contracts::AiToolCall
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::cmp(&self, &ratatoskr_ai_archive_contracts::AiToolCall) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::eq(&self, &ratatoskr_ai_archive_contracts::AiToolCall) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiToolCall) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolCall::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiToolName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiToolName::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::AiToolName::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiToolName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiToolName::clone(&self) -> ratatoskr_ai_archive_contracts::AiToolName
+pub fn ratatoskr_ai_archive_contracts::AiToolName::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiToolName::cmp(&self, &ratatoskr_ai_archive_contracts::AiToolName) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiToolName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::eq(&self, &ratatoskr_ai_archive_contracts::AiToolName) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiToolName::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiToolName::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiToolName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiToolName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiToolName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiToolName::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::AiToolName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::clone(&self) -> ratatoskr_ai_archive_contracts::AiToolOutcome
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::cmp(&self, &ratatoskr_ai_archive_contracts::AiToolOutcome) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::eq(&self, &ratatoskr_ai_archive_contracts::AiToolOutcome) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiToolOutcome) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::clone(&self) -> ratatoskr_ai_archive_contracts::AiToolResult
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::cmp(&self, &ratatoskr_ai_archive_contracts::AiToolResult) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::eq(&self, &ratatoskr_ai_archive_contracts::AiToolResult) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::partial_cmp(&self, &ratatoskr_ai_archive_contracts::AiToolResult) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiToolResult::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::ParserName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::ParserName::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::ParserName::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::ParserName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::ParserName::clone(&self) -> ratatoskr_ai_archive_contracts::ParserName
+pub fn ratatoskr_ai_archive_contracts::ParserName::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::ParserName::cmp(&self, &ratatoskr_ai_archive_contracts::ParserName) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::ParserName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::ParserName::eq(&self, &ratatoskr_ai_archive_contracts::ParserName) -> bool
+pub fn ratatoskr_ai_archive_contracts::ParserName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::ParserName::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::ParserName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::ParserName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::ParserName::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::ParserName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::ParserName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::ParserName::partial_cmp(&self, &ratatoskr_ai_archive_contracts::ParserName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::ParserName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::ParserName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::ParserName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::ParserName::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::ParserName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::ParserName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::as_str(&self) -> &str
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::clone(&self) -> ratatoskr_ai_archive_contracts::ParserVersion
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::cmp(&self, &ratatoskr_ai_archive_contracts::ParserVersion) -> core::cmp::Ordering
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::eq(&self, &ratatoskr_ai_archive_contracts::ParserVersion) -> bool
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::partial_cmp(&self, &ratatoskr_ai_archive_contracts::ParserVersion) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::ParserVersion::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_ai_archive_contracts
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::AssetsPartial
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Complete
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::ConversationsComplete
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::FailedValidation
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::StructurallyPartial
+pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Unknown
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch::actual: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch::declared: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch::actual: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch::declared: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::IncompleteWithoutGap
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::completeness_report: ratatoskr_ai_archive_contracts::AiCompletenessReport
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::imported_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::owner: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::parser_name: ratatoskr_ai_archive_contracts::ParserName
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::parser_version: ratatoskr_ai_archive_contracts::ParserVersion
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::provider: ratatoskr_ai_archive_contracts::AiProvider
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::source_export: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_ai_archive_contracts::AiArchiveImport::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::conversations: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiConversation>
+pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::import: ratatoskr_ai_archive_contracts::AiArchiveImport
+pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::projects: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiProject>
+pub ratatoskr_ai_archive_contracts::AiAsset::asset_kind: ratatoskr_ai_archive_contracts::AiAssetKind
+pub ratatoskr_ai_archive_contracts::AiAsset::blob: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_ai_archive_contracts::AiAsset::file_name: core::option::Option<ratatoskr_ai_archive_contracts::AiFileName>
+pub ratatoskr_ai_archive_contracts::AiAuthorRole::Assistant
+pub ratatoskr_ai_archive_contracts::AiAuthorRole::System
+pub ratatoskr_ai_archive_contracts::AiAuthorRole::Tool
+pub ratatoskr_ai_archive_contracts::AiAuthorRole::User
+pub ratatoskr_ai_archive_contracts::AiCitation::source_blob: core::option::Option<ratatoskr_identifiers::blob::BlobRef>
+pub ratatoskr_ai_archive_contracts::AiCitation::title: core::option::Option<ratatoskr_ai_archive_contracts::AiTitle>
+pub ratatoskr_ai_archive_contracts::AiCitation::url: core::option::Option<ratatoskr_ai_archive_contracts::AiSourceUrl>
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::asset_count: u32
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::completeness: ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::conversation_count: u32
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::gap_count: u32
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::gaps: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiGap>
+pub ratatoskr_ai_archive_contracts::AiCompletenessReport::message_count: u32
+pub ratatoskr_ai_archive_contracts::AiContentPart::Asset
+pub ratatoskr_ai_archive_contracts::AiContentPart::Asset::asset: ratatoskr_ai_archive_contracts::AiAsset
+pub ratatoskr_ai_archive_contracts::AiContentPart::Citation
+pub ratatoskr_ai_archive_contracts::AiContentPart::Citation::citation: ratatoskr_ai_archive_contracts::AiCitation
+pub ratatoskr_ai_archive_contracts::AiContentPart::Image
+pub ratatoskr_ai_archive_contracts::AiContentPart::Image::image: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_ai_archive_contracts::AiContentPart::Markdown
+pub ratatoskr_ai_archive_contracts::AiContentPart::Markdown::markdown: ratatoskr_ai_archive_contracts::AiText
+pub ratatoskr_ai_archive_contracts::AiContentPart::Text
+pub ratatoskr_ai_archive_contracts::AiContentPart::Text::text: ratatoskr_ai_archive_contracts::AiText
+pub ratatoskr_ai_archive_contracts::AiContentPart::ToolCall
+pub ratatoskr_ai_archive_contracts::AiContentPart::ToolCall::tool_call: ratatoskr_ai_archive_contracts::AiToolCall
+pub ratatoskr_ai_archive_contracts::AiContentPart::ToolResult
+pub ratatoskr_ai_archive_contracts::AiContentPart::ToolResult::tool_result: ratatoskr_ai_archive_contracts::AiToolResult
+pub ratatoskr_ai_archive_contracts::AiContentPart::Unknown(serde_json::value::Value)
+pub ratatoskr_ai_archive_contracts::AiConversation::ai_conversation_id: ratatoskr_identifiers::uuid_ids::AiConversationId
+pub ratatoskr_ai_archive_contracts::AiConversation::content_digest: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_ai_archive_contracts::AiConversation::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiConversation::external_conversation_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub ratatoskr_ai_archive_contracts::AiConversation::messages: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiMessage>
+pub ratatoskr_ai_archive_contracts::AiConversation::owner: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_ai_archive_contracts::AiConversation::parser_name: ratatoskr_ai_archive_contracts::ParserName
+pub ratatoskr_ai_archive_contracts::AiConversation::parser_version: ratatoskr_ai_archive_contracts::ParserVersion
+pub ratatoskr_ai_archive_contracts::AiConversation::project_ref: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_ai_archive_contracts::AiConversation::provider: ratatoskr_ai_archive_contracts::AiProvider
+pub ratatoskr_ai_archive_contracts::AiConversation::provider_created_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_ai_archive_contracts::AiConversation::provider_updated_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_ai_archive_contracts::AiConversation::title: core::option::Option<ratatoskr_ai_archive_contracts::AiTitle>
+pub ratatoskr_ai_archive_contracts::AiConversation::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_ai_archive_contracts::AiConversationAdded::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
+pub ratatoskr_ai_archive_contracts::AiConversationAdded::conversation: ratatoskr_ai_archive_contracts::AiConversation
+pub ratatoskr_ai_archive_contracts::AiConversationAdded::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiConversationUpdated::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
+pub ratatoskr_ai_archive_contracts::AiConversationUpdated::conversation: ratatoskr_ai_archive_contracts::AiConversation
+pub ratatoskr_ai_archive_contracts::AiConversationUpdated::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiGap::affected_count: core::option::Option<u32>
+pub ratatoskr_ai_archive_contracts::AiGap::detail: ratatoskr_identifiers::text::SafeMessage
+pub ratatoskr_ai_archive_contracts::AiGap::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiGap::external_ref: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub ratatoskr_ai_archive_contracts::AiGap::gap_kind: ratatoskr_ai_archive_contracts::AiGapKind
+pub ratatoskr_ai_archive_contracts::AiMessage::author_role: ratatoskr_ai_archive_contracts::AiAuthorRole
+pub ratatoskr_ai_archive_contracts::AiMessage::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiMessage::external_message_id: ratatoskr_identifiers::entity::EntityLocalId
+pub ratatoskr_ai_archive_contracts::AiMessage::model: core::option::Option<ratatoskr_ai_archive_contracts::AiModelName>
+pub ratatoskr_ai_archive_contracts::AiMessage::parent_message_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub ratatoskr_ai_archive_contracts::AiMessage::parser_name: ratatoskr_ai_archive_contracts::ParserName
+pub ratatoskr_ai_archive_contracts::AiMessage::parser_version: ratatoskr_ai_archive_contracts::ParserVersion
+pub ratatoskr_ai_archive_contracts::AiMessage::parts: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiContentPart>
+pub ratatoskr_ai_archive_contracts::AiMessage::provider_created_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_ai_archive_contracts::AiProject::ai_project_id: ratatoskr_identifiers::uuid_ids::AiProjectId
+pub ratatoskr_ai_archive_contracts::AiProject::description: core::option::Option<ratatoskr_ai_archive_contracts::AiText>
+pub ratatoskr_ai_archive_contracts::AiProject::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_ai_archive_contracts::AiProject::external_project_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub ratatoskr_ai_archive_contracts::AiProject::instructions: core::option::Option<ratatoskr_ai_archive_contracts::AiText>
+pub ratatoskr_ai_archive_contracts::AiProject::parser_name: ratatoskr_ai_archive_contracts::ParserName
+pub ratatoskr_ai_archive_contracts::AiProject::parser_version: ratatoskr_ai_archive_contracts::ParserVersion
+pub ratatoskr_ai_archive_contracts::AiProject::provider: ratatoskr_ai_archive_contracts::AiProvider
+pub ratatoskr_ai_archive_contracts::AiProject::provider_created_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_ai_archive_contracts::AiProject::provider_updated_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_ai_archive_contracts::AiProject::title: ratatoskr_ai_archive_contracts::AiTitle
+pub ratatoskr_ai_archive_contracts::AiToolCall::tool_call_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub ratatoskr_ai_archive_contracts::AiToolCall::tool_name: ratatoskr_ai_archive_contracts::AiToolName
+pub ratatoskr_ai_archive_contracts::AiToolOutcome::Failed
+pub ratatoskr_ai_archive_contracts::AiToolOutcome::Succeeded
+pub ratatoskr_ai_archive_contracts::AiToolResult::outcome: ratatoskr_ai_archive_contracts::AiToolOutcome
+pub ratatoskr_ai_archive_contracts::AiToolResult::output_text: core::option::Option<ratatoskr_ai_archive_contracts::AiText>
+pub ratatoskr_ai_archive_contracts::AiToolResult::tool_call_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
+pub struct ratatoskr_ai_archive_contracts::AiArchiveImport
+pub struct ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+pub struct ratatoskr_ai_archive_contracts::AiAsset
+pub struct ratatoskr_ai_archive_contracts::AiAssetKind(_)
+pub struct ratatoskr_ai_archive_contracts::AiCitation
+pub struct ratatoskr_ai_archive_contracts::AiCompletenessReport
+pub struct ratatoskr_ai_archive_contracts::AiConversation
+pub struct ratatoskr_ai_archive_contracts::AiConversationAdded
+pub struct ratatoskr_ai_archive_contracts::AiConversationUpdated
+pub struct ratatoskr_ai_archive_contracts::AiFileName(_)
+pub struct ratatoskr_ai_archive_contracts::AiGap
+pub struct ratatoskr_ai_archive_contracts::AiGapKind(_)
+pub struct ratatoskr_ai_archive_contracts::AiMessage
+pub struct ratatoskr_ai_archive_contracts::AiModelName(_)
+pub struct ratatoskr_ai_archive_contracts::AiProject
+pub struct ratatoskr_ai_archive_contracts::AiProvider(_)
+pub struct ratatoskr_ai_archive_contracts::AiSourceUrl(_)
+pub struct ratatoskr_ai_archive_contracts::AiText(_)
+pub struct ratatoskr_ai_archive_contracts::AiTitle(_)
+pub struct ratatoskr_ai_archive_contracts::AiToolCall
+pub struct ratatoskr_ai_archive_contracts::AiToolName(_)
+pub struct ratatoskr_ai_archive_contracts::AiToolResult
+pub struct ratatoskr_ai_archive_contracts::ParserName(_)
+pub struct ratatoskr_ai_archive_contracts::ParserVersion(_)
+pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiAsset::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiAsset::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiAsset::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiCitation::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiCitation::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiCitation::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiContentPart::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiContentPart::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiContentPart::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiConversation::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiConversation::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversation::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiFileName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiFileName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiFileName::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiFileName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiFileName::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiGap::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiGap::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiGap::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiMessage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiMessage::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiMessage::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiModelName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiModelName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiModelName::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiModelName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiModelName::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiProject::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiProject::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiProject::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiProvider::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiProvider::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiProvider::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiProvider::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiProvider::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiText::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiText::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiText::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiText::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiText::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiTitle::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiTitle::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiTitle::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiTitle::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiTitle::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiToolCall::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiToolCall::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolCall::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiToolName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiToolName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiToolName::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiToolName::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiToolResult::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiToolResult::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolResult::Owned = T
+pub type ratatoskr_ai_archive_contracts::ParserName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::ParserName::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::ParserName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserName::Owned = T
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Owned = T
+pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveImport::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiAsset::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiAssetKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiAuthorRole::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiCitation::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiCompletenessReport::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiContentPart::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiConversation::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiConversationAdded::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiConversationUpdated::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiFileName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiGap::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiGapKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiMessage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiModelName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiProject::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiProvider::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiSourceUrl::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiText::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiTitle::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiToolCall::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiToolName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiToolOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiToolResult::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::ParserName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::ParserVersion::clone_to_uninit(&self, *mut u8)

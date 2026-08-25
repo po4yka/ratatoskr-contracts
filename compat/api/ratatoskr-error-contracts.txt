@@ -1,0 +1,385 @@
+# Public API baseline of ratatoskr-error-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_error_contracts::ErrorCode
+impl core::clone::Clone for ratatoskr_error_contracts::ErrorEnvelope
+impl core::clone::Clone for ratatoskr_error_contracts::FieldPath
+impl core::clone::Clone for ratatoskr_error_contracts::FieldViolation
+impl core::clone::Clone for ratatoskr_error_contracts::TraceId
+impl core::clone::Clone for ratatoskr_error_contracts::WarningEnvelope
+impl core::cmp::Eq for ratatoskr_error_contracts::ErrorCode
+impl core::cmp::Eq for ratatoskr_error_contracts::FieldPath
+impl core::cmp::Eq for ratatoskr_error_contracts::TraceId
+impl core::cmp::Ord for ratatoskr_error_contracts::ErrorCode
+impl core::cmp::Ord for ratatoskr_error_contracts::FieldPath
+impl core::cmp::Ord for ratatoskr_error_contracts::TraceId
+impl core::cmp::PartialEq for ratatoskr_error_contracts::ErrorCode
+impl core::cmp::PartialEq for ratatoskr_error_contracts::ErrorEnvelope
+impl core::cmp::PartialEq for ratatoskr_error_contracts::FieldPath
+impl core::cmp::PartialEq for ratatoskr_error_contracts::FieldViolation
+impl core::cmp::PartialEq for ratatoskr_error_contracts::TraceId
+impl core::cmp::PartialEq for ratatoskr_error_contracts::WarningEnvelope
+impl core::cmp::PartialOrd for ratatoskr_error_contracts::ErrorCode
+impl core::cmp::PartialOrd for ratatoskr_error_contracts::FieldPath
+impl core::cmp::PartialOrd for ratatoskr_error_contracts::TraceId
+impl core::convert::From<ratatoskr_error_contracts::ErrorCode> for alloc::string::String
+impl core::convert::From<ratatoskr_error_contracts::FieldPath> for alloc::string::String
+impl core::convert::From<ratatoskr_error_contracts::TraceId> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_error_contracts::ErrorCode
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_error_contracts::FieldPath
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_error_contracts::TraceId
+impl core::fmt::Debug for ratatoskr_error_contracts::ErrorCode
+impl core::fmt::Debug for ratatoskr_error_contracts::ErrorEnvelope
+impl core::fmt::Debug for ratatoskr_error_contracts::FieldPath
+impl core::fmt::Debug for ratatoskr_error_contracts::FieldViolation
+impl core::fmt::Debug for ratatoskr_error_contracts::TraceId
+impl core::fmt::Debug for ratatoskr_error_contracts::WarningEnvelope
+impl core::fmt::Display for ratatoskr_error_contracts::ErrorCode
+impl core::fmt::Display for ratatoskr_error_contracts::FieldPath
+impl core::fmt::Display for ratatoskr_error_contracts::TraceId
+impl core::hash::Hash for ratatoskr_error_contracts::ErrorCode
+impl core::hash::Hash for ratatoskr_error_contracts::FieldPath
+impl core::hash::Hash for ratatoskr_error_contracts::TraceId
+impl core::marker::Freeze for ratatoskr_error_contracts::ErrorCode
+impl core::marker::Freeze for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::Freeze for ratatoskr_error_contracts::FieldPath
+impl core::marker::Freeze for ratatoskr_error_contracts::FieldViolation
+impl core::marker::Freeze for ratatoskr_error_contracts::TraceId
+impl core::marker::Freeze for ratatoskr_error_contracts::WarningEnvelope
+impl core::marker::Send for ratatoskr_error_contracts::ErrorCode
+impl core::marker::Send for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::Send for ratatoskr_error_contracts::FieldPath
+impl core::marker::Send for ratatoskr_error_contracts::FieldViolation
+impl core::marker::Send for ratatoskr_error_contracts::TraceId
+impl core::marker::Send for ratatoskr_error_contracts::WarningEnvelope
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::ErrorCode
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::FieldPath
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::FieldViolation
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::TraceId
+impl core::marker::StructuralPartialEq for ratatoskr_error_contracts::WarningEnvelope
+impl core::marker::Sync for ratatoskr_error_contracts::ErrorCode
+impl core::marker::Sync for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::Sync for ratatoskr_error_contracts::FieldPath
+impl core::marker::Sync for ratatoskr_error_contracts::FieldViolation
+impl core::marker::Sync for ratatoskr_error_contracts::TraceId
+impl core::marker::Sync for ratatoskr_error_contracts::WarningEnvelope
+impl core::marker::Unpin for ratatoskr_error_contracts::ErrorCode
+impl core::marker::Unpin for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::Unpin for ratatoskr_error_contracts::FieldPath
+impl core::marker::Unpin for ratatoskr_error_contracts::FieldViolation
+impl core::marker::Unpin for ratatoskr_error_contracts::TraceId
+impl core::marker::Unpin for ratatoskr_error_contracts::WarningEnvelope
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::ErrorCode
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::ErrorEnvelope
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::FieldPath
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::FieldViolation
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::TraceId
+impl core::marker::UnsafeUnpin for ratatoskr_error_contracts::WarningEnvelope
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::ErrorCode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::ErrorEnvelope
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::FieldPath
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::FieldViolation
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::TraceId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_error_contracts::WarningEnvelope
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::ErrorCode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::ErrorEnvelope
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::FieldPath
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::FieldViolation
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::TraceId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_error_contracts::WarningEnvelope
+impl core::str::traits::FromStr for ratatoskr_error_contracts::ErrorCode
+impl core::str::traits::FromStr for ratatoskr_error_contracts::FieldPath
+impl core::str::traits::FromStr for ratatoskr_error_contracts::TraceId
+impl ratatoskr_error_contracts::ErrorCode
+impl ratatoskr_error_contracts::ErrorEnvelope
+impl ratatoskr_error_contracts::FieldPath
+impl ratatoskr_error_contracts::TraceId
+impl schemars::JsonSchema for ratatoskr_error_contracts::ErrorCode
+impl schemars::JsonSchema for ratatoskr_error_contracts::ErrorEnvelope
+impl schemars::JsonSchema for ratatoskr_error_contracts::FieldPath
+impl schemars::JsonSchema for ratatoskr_error_contracts::FieldViolation
+impl schemars::JsonSchema for ratatoskr_error_contracts::TraceId
+impl schemars::JsonSchema for ratatoskr_error_contracts::WarningEnvelope
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::ErrorCode
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::ErrorEnvelope
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::FieldPath
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::FieldViolation
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::TraceId
+impl serde_core::ser::Serialize for ratatoskr_error_contracts::WarningEnvelope
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::ErrorCode
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::ErrorEnvelope
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::FieldPath
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::FieldViolation
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::TraceId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_error_contracts::WarningEnvelope
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::ErrorCode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::ErrorEnvelope where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::FieldPath where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::FieldViolation where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::TraceId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_error_contracts::WarningEnvelope where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::ErrorCode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::ErrorEnvelope where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::FieldPath where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::FieldViolation where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::TraceId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_error_contracts::WarningEnvelope where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::ErrorCode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::ErrorEnvelope where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::FieldPath where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::FieldViolation where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::TraceId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_error_contracts::WarningEnvelope where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::ErrorCode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::ErrorEnvelope where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::FieldPath where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::FieldViolation where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::TraceId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_error_contracts::WarningEnvelope where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_error_contracts::ErrorCode where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_error_contracts::FieldPath where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_error_contracts::TraceId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::ErrorCode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::ErrorEnvelope where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::FieldPath where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::FieldViolation where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::TraceId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_error_contracts::WarningEnvelope where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::ErrorCode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::ErrorEnvelope where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::FieldPath where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::FieldViolation where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::TraceId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_error_contracts::WarningEnvelope where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::ErrorCode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::ErrorEnvelope where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::FieldPath where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::FieldViolation where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::TraceId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_error_contracts::WarningEnvelope where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::ErrorCode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::ErrorEnvelope where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::FieldPath where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::FieldViolation where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::TraceId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_error_contracts::WarningEnvelope where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::ErrorCode
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::ErrorEnvelope
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::FieldPath
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::FieldViolation
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::TraceId
+impl<T> core::convert::From<T> for ratatoskr_error_contracts::WarningEnvelope
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::ErrorCode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::ErrorEnvelope where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::FieldPath where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::FieldViolation where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::TraceId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_error_contracts::WarningEnvelope where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::ErrorCode where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::ErrorEnvelope where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::FieldPath where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::FieldViolation where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::TraceId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_error_contracts::WarningEnvelope where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_error_contracts::ErrorCode::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_error_contracts::ErrorCode::MAX_LEN: usize
+pub const ratatoskr_error_contracts::ErrorCode::PATTERN: &'static str
+pub const ratatoskr_error_contracts::FieldPath::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_error_contracts::FieldPath::MAX_LEN: usize
+pub const ratatoskr_error_contracts::FieldPath::PATTERN: &'static str
+pub const ratatoskr_error_contracts::TraceId::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_error_contracts::TraceId::MAX_LEN: usize
+pub const ratatoskr_error_contracts::TraceId::PATTERN: &'static str
+pub fn alloc::string::String::from(ratatoskr_error_contracts::ErrorCode) -> Self
+pub fn alloc::string::String::from(ratatoskr_error_contracts::FieldPath) -> Self
+pub fn alloc::string::String::from(ratatoskr_error_contracts::TraceId) -> Self
+pub fn ratatoskr_error_contracts::ErrorCode::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::ErrorCode::as_str(&self) -> &str
+pub fn ratatoskr_error_contracts::ErrorCode::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::ErrorCode::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::ErrorCode::bounded_context(&self) -> &str
+pub fn ratatoskr_error_contracts::ErrorCode::clone(&self) -> ratatoskr_error_contracts::ErrorCode
+pub fn ratatoskr_error_contracts::ErrorCode::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::ErrorCode::cmp(&self, &ratatoskr_error_contracts::ErrorCode) -> core::cmp::Ordering
+pub fn ratatoskr_error_contracts::ErrorCode::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::ErrorCode::eq(&self, &ratatoskr_error_contracts::ErrorCode) -> bool
+pub fn ratatoskr_error_contracts::ErrorCode::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::ErrorCode::from(T) -> T
+pub fn ratatoskr_error_contracts::ErrorCode::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_error_contracts::ErrorCode::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_error_contracts::ErrorCode::into(self) -> U
+pub fn ratatoskr_error_contracts::ErrorCode::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::ErrorCode::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_error_contracts::ErrorCode::partial_cmp(&self, &ratatoskr_error_contracts::ErrorCode) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_error_contracts::ErrorCode::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::ErrorCode::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::ErrorCode::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::ErrorCode::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::ErrorCode::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_error_contracts::ErrorCode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::ErrorCode::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_error_contracts::ErrorCode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::ErrorCode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_error_contracts::ErrorEnvelope::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::ErrorEnvelope::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::ErrorEnvelope::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::ErrorEnvelope::clone(&self) -> ratatoskr_error_contracts::ErrorEnvelope
+pub fn ratatoskr_error_contracts::ErrorEnvelope::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::ErrorEnvelope::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::ErrorEnvelope::eq(&self, &ratatoskr_error_contracts::ErrorEnvelope) -> bool
+pub fn ratatoskr_error_contracts::ErrorEnvelope::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::ErrorEnvelope::from(T) -> T
+pub fn ratatoskr_error_contracts::ErrorEnvelope::inline_schema() -> bool
+pub fn ratatoskr_error_contracts::ErrorEnvelope::into(self) -> U
+pub fn ratatoskr_error_contracts::ErrorEnvelope::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::ErrorEnvelope::new(ratatoskr_error_contracts::ErrorCode, ratatoskr_identifiers::text::SafeMessage, bool) -> Self
+pub fn ratatoskr_error_contracts::ErrorEnvelope::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::ErrorEnvelope::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::ErrorEnvelope::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::ErrorEnvelope::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::ErrorEnvelope::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::ErrorEnvelope::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::ErrorEnvelope::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_error_contracts::FieldPath::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::FieldPath::as_str(&self) -> &str
+pub fn ratatoskr_error_contracts::FieldPath::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::FieldPath::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::FieldPath::clone(&self) -> ratatoskr_error_contracts::FieldPath
+pub fn ratatoskr_error_contracts::FieldPath::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::FieldPath::cmp(&self, &ratatoskr_error_contracts::FieldPath) -> core::cmp::Ordering
+pub fn ratatoskr_error_contracts::FieldPath::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::FieldPath::eq(&self, &ratatoskr_error_contracts::FieldPath) -> bool
+pub fn ratatoskr_error_contracts::FieldPath::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::FieldPath::from(T) -> T
+pub fn ratatoskr_error_contracts::FieldPath::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_error_contracts::FieldPath::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_error_contracts::FieldPath::into(self) -> U
+pub fn ratatoskr_error_contracts::FieldPath::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::FieldPath::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_error_contracts::FieldPath::partial_cmp(&self, &ratatoskr_error_contracts::FieldPath) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_error_contracts::FieldPath::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::FieldPath::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::FieldPath::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::FieldPath::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::FieldPath::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_error_contracts::FieldPath::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::FieldPath::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_error_contracts::FieldPath::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::FieldPath::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_error_contracts::FieldViolation::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::FieldViolation::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::FieldViolation::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::FieldViolation::clone(&self) -> ratatoskr_error_contracts::FieldViolation
+pub fn ratatoskr_error_contracts::FieldViolation::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::FieldViolation::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::FieldViolation::eq(&self, &ratatoskr_error_contracts::FieldViolation) -> bool
+pub fn ratatoskr_error_contracts::FieldViolation::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::FieldViolation::from(T) -> T
+pub fn ratatoskr_error_contracts::FieldViolation::inline_schema() -> bool
+pub fn ratatoskr_error_contracts::FieldViolation::into(self) -> U
+pub fn ratatoskr_error_contracts::FieldViolation::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::FieldViolation::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::FieldViolation::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::FieldViolation::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::FieldViolation::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::FieldViolation::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::FieldViolation::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::FieldViolation::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_error_contracts::TraceId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::TraceId::as_str(&self) -> &str
+pub fn ratatoskr_error_contracts::TraceId::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::TraceId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::TraceId::clone(&self) -> ratatoskr_error_contracts::TraceId
+pub fn ratatoskr_error_contracts::TraceId::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::TraceId::cmp(&self, &ratatoskr_error_contracts::TraceId) -> core::cmp::Ordering
+pub fn ratatoskr_error_contracts::TraceId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::TraceId::eq(&self, &ratatoskr_error_contracts::TraceId) -> bool
+pub fn ratatoskr_error_contracts::TraceId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::TraceId::from(T) -> T
+pub fn ratatoskr_error_contracts::TraceId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_error_contracts::TraceId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_error_contracts::TraceId::into(self) -> U
+pub fn ratatoskr_error_contracts::TraceId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::TraceId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_error_contracts::TraceId::partial_cmp(&self, &ratatoskr_error_contracts::TraceId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_error_contracts::TraceId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::TraceId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::TraceId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::TraceId::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::TraceId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_error_contracts::TraceId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::TraceId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_error_contracts::TraceId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::TraceId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_error_contracts::WarningEnvelope::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_error_contracts::WarningEnvelope::borrow(&self) -> &T
+pub fn ratatoskr_error_contracts::WarningEnvelope::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_error_contracts::WarningEnvelope::clone(&self) -> ratatoskr_error_contracts::WarningEnvelope
+pub fn ratatoskr_error_contracts::WarningEnvelope::clone_into(&self, &mut T)
+pub fn ratatoskr_error_contracts::WarningEnvelope::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_error_contracts::WarningEnvelope::eq(&self, &ratatoskr_error_contracts::WarningEnvelope) -> bool
+pub fn ratatoskr_error_contracts::WarningEnvelope::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_error_contracts::WarningEnvelope::from(T) -> T
+pub fn ratatoskr_error_contracts::WarningEnvelope::inline_schema() -> bool
+pub fn ratatoskr_error_contracts::WarningEnvelope::into(self) -> U
+pub fn ratatoskr_error_contracts::WarningEnvelope::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_error_contracts::WarningEnvelope::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::WarningEnvelope::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_error_contracts::WarningEnvelope::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_error_contracts::WarningEnvelope::to_owned(&self) -> T
+pub fn ratatoskr_error_contracts::WarningEnvelope::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_error_contracts::WarningEnvelope::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_error_contracts::WarningEnvelope::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_error_contracts
+pub ratatoskr_error_contracts::ErrorEnvelope::code: ratatoskr_error_contracts::ErrorCode
+pub ratatoskr_error_contracts::ErrorEnvelope::correlation_id: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_error_contracts::ErrorEnvelope::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_error_contracts::ErrorEnvelope::field_violations: alloc::vec::Vec<ratatoskr_error_contracts::FieldViolation>
+pub ratatoskr_error_contracts::ErrorEnvelope::message: ratatoskr_identifiers::text::SafeMessage
+pub ratatoskr_error_contracts::ErrorEnvelope::retryable: bool
+pub ratatoskr_error_contracts::ErrorEnvelope::trace_id: core::option::Option<ratatoskr_error_contracts::TraceId>
+pub ratatoskr_error_contracts::FieldViolation::code: ratatoskr_error_contracts::ErrorCode
+pub ratatoskr_error_contracts::FieldViolation::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_error_contracts::FieldViolation::field_path: ratatoskr_error_contracts::FieldPath
+pub ratatoskr_error_contracts::FieldViolation::message: ratatoskr_identifiers::text::SafeMessage
+pub ratatoskr_error_contracts::WarningEnvelope::code: ratatoskr_error_contracts::ErrorCode
+pub ratatoskr_error_contracts::WarningEnvelope::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_error_contracts::WarningEnvelope::field_path: core::option::Option<ratatoskr_error_contracts::FieldPath>
+pub ratatoskr_error_contracts::WarningEnvelope::message: ratatoskr_identifiers::text::SafeMessage
+pub struct ratatoskr_error_contracts::ErrorCode(_)
+pub struct ratatoskr_error_contracts::ErrorEnvelope
+pub struct ratatoskr_error_contracts::FieldPath(_)
+pub struct ratatoskr_error_contracts::FieldViolation
+pub struct ratatoskr_error_contracts::TraceId(_)
+pub struct ratatoskr_error_contracts::WarningEnvelope
+pub type ratatoskr_error_contracts::ErrorCode::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::ErrorCode::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::ErrorCode::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::ErrorCode::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::ErrorCode::Owned = T
+pub type ratatoskr_error_contracts::ErrorEnvelope::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::ErrorEnvelope::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::ErrorEnvelope::Owned = T
+pub type ratatoskr_error_contracts::FieldPath::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::FieldPath::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::FieldPath::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::FieldPath::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::FieldPath::Owned = T
+pub type ratatoskr_error_contracts::FieldViolation::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::FieldViolation::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::FieldViolation::Owned = T
+pub type ratatoskr_error_contracts::TraceId::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::TraceId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::TraceId::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::TraceId::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_error_contracts::TraceId::Owned = T
+pub type ratatoskr_error_contracts::WarningEnvelope::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_error_contracts::WarningEnvelope::Error = core::convert::Infallible
+pub type ratatoskr_error_contracts::WarningEnvelope::Owned = T
+pub unsafe fn ratatoskr_error_contracts::ErrorCode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_error_contracts::ErrorEnvelope::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_error_contracts::FieldPath::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_error_contracts::FieldViolation::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_error_contracts::TraceId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_error_contracts::WarningEnvelope::clone_to_uninit(&self, *mut u8)

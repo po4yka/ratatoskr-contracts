@@ -1,7 +1,7 @@
 # Contracts implementation plan
 
 > Status: Proposed  
-> Last reviewed: 2026-08-17
+> Last reviewed: 2026-08-25
 
 ## Milestones
 
@@ -13,7 +13,7 @@
 6. Implement social-source contracts. **Implemented.**
 7. Implement AI archive graph/content contracts. **Implemented.**
 8. Add deterministic Rust/TypeScript generation.
-9. Add fixture, compatibility, and package CI.
+9. Add fixture, compatibility, and package CI. **Implemented.**
 10. Publish first tagged artifacts and integrate them in one vertical slice.
 
 ## Definition of Done

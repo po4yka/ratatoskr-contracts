@@ -1,0 +1,649 @@
+# Public API baseline of ratatoskr-operation-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationContractError
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationKind
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationProgressed
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationReported
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationResultKind
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationResultRef
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationSnapshot
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationStage
+impl core::clone::Clone for ratatoskr_operation_contracts::OperationStatus
+impl core::clone::Clone for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::Eq for ratatoskr_operation_contracts::OperationContractError
+impl core::cmp::Eq for ratatoskr_operation_contracts::OperationKind
+impl core::cmp::Eq for ratatoskr_operation_contracts::OperationResultKind
+impl core::cmp::Eq for ratatoskr_operation_contracts::OperationStage
+impl core::cmp::Eq for ratatoskr_operation_contracts::OperationStatus
+impl core::cmp::Eq for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::Ord for ratatoskr_operation_contracts::OperationKind
+impl core::cmp::Ord for ratatoskr_operation_contracts::OperationResultKind
+impl core::cmp::Ord for ratatoskr_operation_contracts::OperationStage
+impl core::cmp::Ord for ratatoskr_operation_contracts::OperationStatus
+impl core::cmp::Ord for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationContractError
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationKind
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationProgressed
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationReported
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationResultKind
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationResultRef
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationSnapshot
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStage
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStatus
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationKind
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationResultKind
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationStage
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationStatus
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::ProgressPercent
+impl core::convert::From<ratatoskr_identifiers::error::IdentifierError> for ratatoskr_operation_contracts::OperationContractError
+impl core::convert::From<ratatoskr_operation_contracts::OperationKind> for alloc::string::String
+impl core::convert::From<ratatoskr_operation_contracts::OperationResultKind> for alloc::string::String
+impl core::convert::From<ratatoskr_operation_contracts::OperationStage> for alloc::string::String
+impl core::convert::From<ratatoskr_operation_contracts::ProgressPercent> for u8
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationResultKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationStage
+impl core::convert::TryFrom<u8> for ratatoskr_operation_contracts::ProgressPercent
+impl core::error::Error for ratatoskr_operation_contracts::OperationContractError
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationContractError
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationKind
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationProgressed
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationReported
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationResultKind
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationResultRef
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationSnapshot
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStage
+impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStatus
+impl core::fmt::Debug for ratatoskr_operation_contracts::ProgressPercent
+impl core::fmt::Display for ratatoskr_operation_contracts::OperationContractError
+impl core::fmt::Display for ratatoskr_operation_contracts::OperationKind
+impl core::fmt::Display for ratatoskr_operation_contracts::OperationResultKind
+impl core::fmt::Display for ratatoskr_operation_contracts::OperationStage
+impl core::fmt::Display for ratatoskr_operation_contracts::OperationStatus
+impl core::fmt::Display for ratatoskr_operation_contracts::ProgressPercent
+impl core::hash::Hash for ratatoskr_operation_contracts::OperationKind
+impl core::hash::Hash for ratatoskr_operation_contracts::OperationResultKind
+impl core::hash::Hash for ratatoskr_operation_contracts::OperationStage
+impl core::hash::Hash for ratatoskr_operation_contracts::OperationStatus
+impl core::hash::Hash for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Copy for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Copy for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationKind
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationReported
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStage
+impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Freeze for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Send for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::Send for ratatoskr_operation_contracts::OperationKind
+impl core::marker::Send for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::Send for ratatoskr_operation_contracts::OperationReported
+impl core::marker::Send for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::Send for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::Send for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::Send for ratatoskr_operation_contracts::OperationStage
+impl core::marker::Send for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Send for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationKind
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationReported
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStage
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationKind
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationReported
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationStage
+impl core::marker::Sync for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Sync for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationKind
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationReported
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStage
+impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Unpin for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationContractError
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationKind
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationProgressed
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationReported
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationResultKind
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationResultRef
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationSnapshot
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStage
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ProgressPercent
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationProgressed
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationReported
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationResultKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationResultRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationSnapshot
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStatus
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ProgressPercent
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationProgressed
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationReported
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationResultKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationResultRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationSnapshot
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStatus
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ProgressPercent
+impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationKind
+impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationResultKind
+impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationStage
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationProgressed
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationReported
+impl ratatoskr_operation_contracts::OperationKind
+impl ratatoskr_operation_contracts::OperationResultKind
+impl ratatoskr_operation_contracts::OperationSnapshot
+impl ratatoskr_operation_contracts::OperationStage
+impl ratatoskr_operation_contracts::OperationStatus
+impl ratatoskr_operation_contracts::ProgressPercent
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationKind
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationProgressed
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationReported
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationResultKind
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationResultRef
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationSnapshot
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStage
+impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStatus
+impl schemars::JsonSchema for ratatoskr_operation_contracts::ProgressPercent
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationKind
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationProgressed
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationReported
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationResultKind
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationResultRef
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationSnapshot
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStage
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStatus
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ProgressPercent
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationProgressed
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationReported
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationResultKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationResultRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationSnapshot
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStatus
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ProgressPercent
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationReported where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationResultKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationResultRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationReported where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationResultKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationResultRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationReported where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationResultKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationResultRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationReported where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationResultKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationResultRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationResultKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationStage where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationStatus where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::ProgressPercent where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationProgressed where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationReported where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationResultKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationResultRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationSnapshot where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStatus where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::ProgressPercent where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationProgressed where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationReported where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationResultKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationResultRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationSnapshot where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationProgressed where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationReported where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationResultKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationResultRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationSnapshot where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationReported where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationResultKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationResultRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationContractError
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationKind
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationProgressed
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationReported
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationResultKind
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationResultRef
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationSnapshot
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStage
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStatus
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ProgressPercent
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationReported where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationResultKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationResultRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationProgressed where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationReported where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationResultKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationResultRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationSnapshot where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStatus where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ProgressPercent where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_operation_contracts::OperationStatus::as_str(self) -> &'static str
+pub const fn ratatoskr_operation_contracts::OperationStatus::is_terminal(self) -> bool
+pub const fn ratatoskr_operation_contracts::ProgressPercent::get(self) -> u8
+pub const ratatoskr_operation_contracts::OperationKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operation_contracts::OperationKind::MAX_LEN: usize
+pub const ratatoskr_operation_contracts::OperationKind::PATTERN: &'static str
+pub const ratatoskr_operation_contracts::OperationProgressed::EVENT_TYPE: &'static str
+pub const ratatoskr_operation_contracts::OperationReported::EVENT_TYPE: &'static str
+pub const ratatoskr_operation_contracts::OperationResultKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operation_contracts::OperationResultKind::MAX_LEN: usize
+pub const ratatoskr_operation_contracts::OperationResultKind::PATTERN: &'static str
+pub const ratatoskr_operation_contracts::OperationStage::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operation_contracts::OperationStage::MAX_LEN: usize
+pub const ratatoskr_operation_contracts::OperationStage::PATTERN: &'static str
+pub const ratatoskr_operation_contracts::OperationStatus::ALL: [Self; 7]
+pub const ratatoskr_operation_contracts::ProgressPercent::MAX: u8
+pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationResultKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationStage) -> Self
+pub fn ratatoskr_operation_contracts::OperationContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationContractError::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationContractError::clone(&self) -> ratatoskr_operation_contracts::OperationContractError
+pub fn ratatoskr_operation_contracts::OperationContractError::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationContractError::eq(&self, &ratatoskr_operation_contracts::OperationContractError) -> bool
+pub fn ratatoskr_operation_contracts::OperationContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationContractError::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationContractError::from(ratatoskr_identifiers::error::IdentifierError) -> Self
+pub fn ratatoskr_operation_contracts::OperationContractError::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationContractError::source(&self) -> core::option::Option<&(dyn core::error::Error + 'static)>
+pub fn ratatoskr_operation_contracts::OperationContractError::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::OperationContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationKind::as_str(&self) -> &str
+pub fn ratatoskr_operation_contracts::OperationKind::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationKind::clone(&self) -> ratatoskr_operation_contracts::OperationKind
+pub fn ratatoskr_operation_contracts::OperationKind::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationKind::cmp(&self, &ratatoskr_operation_contracts::OperationKind) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::OperationKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationKind::eq(&self, &ratatoskr_operation_contracts::OperationKind) -> bool
+pub fn ratatoskr_operation_contracts::OperationKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationKind::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operation_contracts::OperationKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::OperationKind::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operation_contracts::OperationKind::partial_cmp(&self, &ratatoskr_operation_contracts::OperationKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::OperationKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationKind::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::OperationKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::OperationKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationProgressed::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationProgressed::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationProgressed::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationProgressed::clone(&self) -> ratatoskr_operation_contracts::OperationProgressed
+pub fn ratatoskr_operation_contracts::OperationProgressed::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationProgressed::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationProgressed::eq(&self, &ratatoskr_operation_contracts::OperationProgressed) -> bool
+pub fn ratatoskr_operation_contracts::OperationProgressed::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationProgressed::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationProgressed::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::OperationProgressed::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationProgressed::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationProgressed::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationProgressed::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationProgressed::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationProgressed::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationProgressed::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationProgressed::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationProgressed::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationReported::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationReported::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationReported::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationReported::clone(&self) -> ratatoskr_operation_contracts::OperationReported
+pub fn ratatoskr_operation_contracts::OperationReported::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationReported::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationReported::eq(&self, &ratatoskr_operation_contracts::OperationReported) -> bool
+pub fn ratatoskr_operation_contracts::OperationReported::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationReported::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationReported::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::OperationReported::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationReported::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationReported::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationReported::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationReported::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationReported::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationReported::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationReported::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationReported::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationResultKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationResultKind::as_str(&self) -> &str
+pub fn ratatoskr_operation_contracts::OperationResultKind::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationResultKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationResultKind::clone(&self) -> ratatoskr_operation_contracts::OperationResultKind
+pub fn ratatoskr_operation_contracts::OperationResultKind::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationResultKind::cmp(&self, &ratatoskr_operation_contracts::OperationResultKind) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::OperationResultKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationResultKind::eq(&self, &ratatoskr_operation_contracts::OperationResultKind) -> bool
+pub fn ratatoskr_operation_contracts::OperationResultKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationResultKind::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationResultKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operation_contracts::OperationResultKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::OperationResultKind::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationResultKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationResultKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operation_contracts::OperationResultKind::partial_cmp(&self, &ratatoskr_operation_contracts::OperationResultKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::OperationResultKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationResultKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationResultKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationResultKind::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationResultKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::OperationResultKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationResultKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::OperationResultKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationResultKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationResultRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationResultRef::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationResultRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationResultRef::clone(&self) -> ratatoskr_operation_contracts::OperationResultRef
+pub fn ratatoskr_operation_contracts::OperationResultRef::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationResultRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationResultRef::eq(&self, &ratatoskr_operation_contracts::OperationResultRef) -> bool
+pub fn ratatoskr_operation_contracts::OperationResultRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationResultRef::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationResultRef::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::OperationResultRef::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationResultRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationResultRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationResultRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationResultRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationResultRef::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationResultRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationResultRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationResultRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationSnapshot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationSnapshot::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationSnapshot::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationSnapshot::clone(&self) -> ratatoskr_operation_contracts::OperationSnapshot
+pub fn ratatoskr_operation_contracts::OperationSnapshot::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationSnapshot::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationSnapshot::eq(&self, &ratatoskr_operation_contracts::OperationSnapshot) -> bool
+pub fn ratatoskr_operation_contracts::OperationSnapshot::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationSnapshot::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationSnapshot::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::OperationSnapshot::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationSnapshot::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationSnapshot::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationSnapshot::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationSnapshot::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationSnapshot::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationSnapshot::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationSnapshot::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationSnapshot::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationSnapshot::validate(&self) -> core::result::Result<(), ratatoskr_operation_contracts::OperationContractError>
+pub fn ratatoskr_operation_contracts::OperationStage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationStage::as_str(&self) -> &str
+pub fn ratatoskr_operation_contracts::OperationStage::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationStage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationStage::clone(&self) -> ratatoskr_operation_contracts::OperationStage
+pub fn ratatoskr_operation_contracts::OperationStage::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationStage::cmp(&self, &ratatoskr_operation_contracts::OperationStage) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::OperationStage::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationStage::eq(&self, &ratatoskr_operation_contracts::OperationStage) -> bool
+pub fn ratatoskr_operation_contracts::OperationStage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationStage::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationStage::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operation_contracts::OperationStage::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::OperationStage::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationStage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationStage::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operation_contracts::OperationStage::partial_cmp(&self, &ratatoskr_operation_contracts::OperationStage) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::OperationStage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationStage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationStage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationStage::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationStage::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::OperationStage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationStage::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::OperationStage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationStage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationStatus::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::OperationStatus::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::OperationStatus::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::OperationStatus::clone(&self) -> ratatoskr_operation_contracts::OperationStatus
+pub fn ratatoskr_operation_contracts::OperationStatus::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::OperationStatus::cmp(&self, &ratatoskr_operation_contracts::OperationStatus) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::OperationStatus::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationStatus::eq(&self, &ratatoskr_operation_contracts::OperationStatus) -> bool
+pub fn ratatoskr_operation_contracts::OperationStatus::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::OperationStatus::from(T) -> T
+pub fn ratatoskr_operation_contracts::OperationStatus::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::OperationStatus::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::OperationStatus::into(self) -> U
+pub fn ratatoskr_operation_contracts::OperationStatus::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::OperationStatus::partial_cmp(&self, &ratatoskr_operation_contracts::OperationStatus) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::OperationStatus::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationStatus::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::OperationStatus::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::OperationStatus::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::OperationStatus::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::OperationStatus::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::OperationStatus::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::OperationStatus::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::ProgressPercent::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::ProgressPercent::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::ProgressPercent::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::ProgressPercent::clone(&self) -> ratatoskr_operation_contracts::ProgressPercent
+pub fn ratatoskr_operation_contracts::ProgressPercent::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::ProgressPercent::cmp(&self, &ratatoskr_operation_contracts::ProgressPercent) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::ProgressPercent::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::ProgressPercent::eq(&self, &ratatoskr_operation_contracts::ProgressPercent) -> bool
+pub fn ratatoskr_operation_contracts::ProgressPercent::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::ProgressPercent::from(T) -> T
+pub fn ratatoskr_operation_contracts::ProgressPercent::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::ProgressPercent::into(self) -> U
+pub fn ratatoskr_operation_contracts::ProgressPercent::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::ProgressPercent::new(u8) -> core::result::Result<Self, ratatoskr_operation_contracts::OperationContractError>
+pub fn ratatoskr_operation_contracts::ProgressPercent::partial_cmp(&self, &ratatoskr_operation_contracts::ProgressPercent) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::ProgressPercent::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ProgressPercent::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ProgressPercent::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::ProgressPercent::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::ProgressPercent::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::ProgressPercent::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::ProgressPercent::try_from(u8) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::ProgressPercent::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::ProgressPercent::type_id(&self) -> core::any::TypeId
+pub fn u8::from(ratatoskr_operation_contracts::ProgressPercent) -> Self
+pub mod ratatoskr_operation_contracts
+pub ratatoskr_operation_contracts::OperationContractError::FailedWithoutError
+pub ratatoskr_operation_contracts::OperationContractError::Identifier(ratatoskr_identifiers::error::IdentifierError)
+pub ratatoskr_operation_contracts::OperationContractError::PartialWithoutDiagnostic
+pub ratatoskr_operation_contracts::OperationContractError::ProgressPercentOutOfRange
+pub ratatoskr_operation_contracts::OperationContractError::ProgressPercentOutOfRange::got: u8
+pub ratatoskr_operation_contracts::OperationContractError::SucceededWithError
+pub ratatoskr_operation_contracts::OperationContractError::SucceededWithError::count: usize
+pub ratatoskr_operation_contracts::OperationContractError::TerminationMismatch
+pub ratatoskr_operation_contracts::OperationContractError::TerminationMismatch::present: bool
+pub ratatoskr_operation_contracts::OperationContractError::TerminationMismatch::status: &'static str
+pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder
+pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::accepted_at: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::later: &'static str
+pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::later_value: alloc::string::String
+pub ratatoskr_operation_contracts::OperationProgressed::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::OperationProgressed::operation: ratatoskr_operation_contracts::OperationSnapshot
+pub ratatoskr_operation_contracts::OperationReported::error: core::option::Option<ratatoskr_error_contracts::envelope::ErrorEnvelope>
+pub ratatoskr_operation_contracts::OperationReported::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::OperationReported::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_operation_contracts::OperationReported::progress_percent: core::option::Option<ratatoskr_operation_contracts::ProgressPercent>
+pub ratatoskr_operation_contracts::OperationReported::results: alloc::vec::Vec<ratatoskr_operation_contracts::OperationResultRef>
+pub ratatoskr_operation_contracts::OperationReported::stage: core::option::Option<ratatoskr_operation_contracts::OperationStage>
+pub ratatoskr_operation_contracts::OperationReported::status: ratatoskr_operation_contracts::OperationStatus
+pub ratatoskr_operation_contracts::OperationReported::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_operation_contracts::OperationResultRef::blob: core::option::Option<ratatoskr_identifiers::blob::BlobRef>
+pub ratatoskr_operation_contracts::OperationResultRef::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::OperationResultRef::result_kind: ratatoskr_operation_contracts::OperationResultKind
+pub ratatoskr_operation_contracts::OperationResultRef::target: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_operation_contracts::OperationSnapshot::accepted_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operation_contracts::OperationSnapshot::correlation_id: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_operation_contracts::OperationSnapshot::errors: alloc::vec::Vec<ratatoskr_error_contracts::envelope::ErrorEnvelope>
+pub ratatoskr_operation_contracts::OperationSnapshot::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::OperationSnapshot::kind: ratatoskr_operation_contracts::OperationKind
+pub ratatoskr_operation_contracts::OperationSnapshot::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_operation_contracts::OperationSnapshot::progress_percent: core::option::Option<ratatoskr_operation_contracts::ProgressPercent>
+pub ratatoskr_operation_contracts::OperationSnapshot::results: alloc::vec::Vec<ratatoskr_operation_contracts::OperationResultRef>
+pub ratatoskr_operation_contracts::OperationSnapshot::retryable: bool
+pub ratatoskr_operation_contracts::OperationSnapshot::stage: core::option::Option<ratatoskr_operation_contracts::OperationStage>
+pub ratatoskr_operation_contracts::OperationSnapshot::status: ratatoskr_operation_contracts::OperationStatus
+pub ratatoskr_operation_contracts::OperationSnapshot::status_changed_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operation_contracts::OperationSnapshot::tenant_id: core::option::Option<ratatoskr_identifiers::entity::TenantRef>
+pub ratatoskr_operation_contracts::OperationSnapshot::terminated_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_operation_contracts::OperationSnapshot::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_operation_contracts::OperationStatus::Accepted
+pub ratatoskr_operation_contracts::OperationStatus::Cancelled
+pub ratatoskr_operation_contracts::OperationStatus::Failed
+pub ratatoskr_operation_contracts::OperationStatus::PartiallySucceeded
+pub ratatoskr_operation_contracts::OperationStatus::Queued
+pub ratatoskr_operation_contracts::OperationStatus::Running
+pub ratatoskr_operation_contracts::OperationStatus::Succeeded
+pub struct ratatoskr_operation_contracts::OperationKind(_)
+pub struct ratatoskr_operation_contracts::OperationProgressed
+pub struct ratatoskr_operation_contracts::OperationReported
+pub struct ratatoskr_operation_contracts::OperationResultKind(_)
+pub struct ratatoskr_operation_contracts::OperationResultRef
+pub struct ratatoskr_operation_contracts::OperationSnapshot
+pub struct ratatoskr_operation_contracts::OperationStage(_)
+pub struct ratatoskr_operation_contracts::ProgressPercent(_)
+pub type ratatoskr_operation_contracts::OperationContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationContractError::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationContractError::Owned = T
+pub type ratatoskr_operation_contracts::OperationKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationKind::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationKind::Owned = T
+pub type ratatoskr_operation_contracts::OperationProgressed::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationProgressed::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationProgressed::Owned = T
+pub type ratatoskr_operation_contracts::OperationReported::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationReported::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationReported::Owned = T
+pub type ratatoskr_operation_contracts::OperationResultKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationResultKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationResultKind::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationResultKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationResultKind::Owned = T
+pub type ratatoskr_operation_contracts::OperationResultRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationResultRef::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationResultRef::Owned = T
+pub type ratatoskr_operation_contracts::OperationSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationSnapshot::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationSnapshot::Owned = T
+pub type ratatoskr_operation_contracts::OperationStage::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationStage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationStage::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationStage::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationStage::Owned = T
+pub type ratatoskr_operation_contracts::OperationStatus::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::OperationStatus::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationStatus::Owned = T
+pub type ratatoskr_operation_contracts::ProgressPercent::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::ProgressPercent::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::ProgressPercent::Error = ratatoskr_operation_contracts::OperationContractError
+pub type ratatoskr_operation_contracts::ProgressPercent::Owned = T
+pub unsafe fn ratatoskr_operation_contracts::OperationContractError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationProgressed::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationReported::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationResultKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationResultRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationSnapshot::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationStage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::OperationStatus::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::ProgressPercent::clone_to_uninit(&self, *mut u8)

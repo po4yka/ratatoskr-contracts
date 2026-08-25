@@ -6,13 +6,13 @@
 
 ## Current stage
 
-Implementation milestones 1 through 7 exist, milestone 8's deterministic TypeScript generation exists, and the commands below are real.
+Implementation milestones 1 through 9 exist — the last one as the assurance layer described below — milestone 8's deterministic TypeScript generation exists, and the commands below are real.
 
-Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts` and `ratatoskr-ai-archive-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; generated TypeScript under `generated/typescript/`, produced and verified by the same pipeline; and valid, invalid and compatibility fixtures under `fixtures/`.
+Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts` and `ratatoskr-ai-archive-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; generated TypeScript under `generated/typescript/`, produced and verified by the same pipeline; valid, invalid and compatibility fixtures under `fixtures/`; and frozen public-API baselines per crate under `compat/api/`.
 
-Absent: OpenAPI in any form; generated Kotlin or Swift packages; a frozen compatibility baseline; and package publication. Those are the rest of milestones 9 through 10.
+Absent: OpenAPI in any form; generated Kotlin or Swift packages; and package publication. Those are the rest of milestone 10.
 
-Present since the gate was wired to CI: `.github/workflows/ci.yml`, which runs the gate below and nothing else. That is the part of milestone 9 that needed no new capability. The rest of item 9 — a frozen compatibility baseline to check against, and package CI — is still absent, so CI existing is not the same as milestone 9 being done.
+Milestone 9 exists as two layers. The gate runs in `.github/workflows/ci.yml` unchanged, and fixture validation against current types has always been its job: `cargo contracts check` rejects a fixture that does not fail for its declared reason, and `cargo test --workspace --locked` asserts the JSON-Schema-layer expectations. On top of it, `.github/workflows/contracts.yml` carries three assurance jobs that are deliberately not gate steps — `compatibility` diffs every contract crate's public API against the frozen baselines under `compat/api/` and fails on any un-blessed difference (additive ones included), `determinism` regenerates on a clean checkout and requires the tree to survive byte for byte, and `package` uploads the TypeScript generation output as a workflow artifact. Package publication to a registry is milestone 10; an artifact is not publication.
 
 ## Intended toolchain
 
@@ -87,15 +87,26 @@ Classify a change between two schema files with:
 cargo contracts compat <OLD.json> <NEW.json>
 ```
 
+Diff a crate's exported Rust surface against its frozen reference, and bless an intentional change:
+
+```bash
+cargo contracts api-check     # regenerate in memory, diff against compat/api/, exit 1 on any difference
+cargo contracts api-write     # rewrite compat/api/<crate>.txt; review the diff; commit it
+```
+
+Both need the producer installed once: `cargo install --locked --version 0.52.0 cargo-public-api`. It drives rustdoc JSON through a nightly compiler and installs none itself — the machine needs `rustup toolchain install nightly-2025-08-02 --profile minimal` beside the pinned stable. The version and the nightly date are both pinned because each shapes the emitted text (0.52.0 dropped function parameter names from the default output), so bumping either pin means rerunning `api-write` and committing the moved baselines with the upgrade; every baseline carries a provenance header naming what produced it. Neither verb is part of the gate — CI runs `api-check` in the `compatibility` job of `.github/workflows/contracts.yml`.
+
+The baselines freeze the exported surface, not its meaning: a signature-preserving semantic change is invisible to any diff tool, and review remains the guard.
+
 `cargo contracts` is the alias in `.cargo/config.toml` for the `contractsc` binary in `tools/contractsc`.
 
 The `check-typescript` verb resolves its compiler through the `CONTRACTSC_TSC` environment variable first, then `npx --no-install tsc`. With neither available it exits non-zero naming both escape hatches; that outcome is expected on machines without Node and is why the verb is not a gate step.
 
 `cargo contracts check` is deliberately one command with one exit code, and `.github/workflows/ci.yml` adopted it unchanged, as intended. It reports drift against the committed artifacts of both families, a tampered provenance digest (JSON extension keyword or TypeScript block comment), an orphan under either managed tree, a `contracts.toml` claim that does not match reality, a field-lint violation, a fixture that is not rejected for its declared reason, and a secret or personal-data pattern anywhere under `fixtures/**` (every file in that tree, not only `*.json`).
 
-`check` is not a replacement for `cargo test --workspace`. Its fixture step exercises the `serde` layer only, because the JSON Schema validator is a development dependency of the generator. The `json_schema` column of `fixtures/invalid-expectations.toml`, and the rule that every `valid/` fixture is byte-canonical, are asserted by `cargo test` instead. A CI job must run both, and the one in `.github/workflows/ci.yml` does.
+`check` is not a replacement for `cargo test --workspace`. Its fixture step exercises the `serde` layer only, because the JSON Schema validator is a development dependency of the generator. The `json_schema` column of `fixtures/invalid-expectations.toml`, and the rule that every `valid/` fixture is byte-canonical, are asserted by `cargo test` instead. A CI job must run both, and the one in `.github/workflows/ci.yml` does. The three milestone-9 assurance jobs live beside it in `.github/workflows/contracts.yml`, outside the gate list on purpose: the mechanical assertion at the bottom of ci.yml keeps the gate list identical to the fenced block above, and those jobs carry installation requirements — a nightly toolchain, the `cargo-public-api` binary — that no local pre-commit run should have to pay for.
 
-Package build and publish do not exist yet; that is milestone 10.
+Package build and publish do not exist yet; that is milestone 10. What exists since milestone 9 is the packaging *artifact*: the `package` job tars `generated/typescript/` from the committed tree (already proven equal to freshly generated output by `check` and by the `determinism` job) and uploads it, so a consumer can trial the declarations before any registry exists.
 
 ## Rules
 

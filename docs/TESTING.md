@@ -1,12 +1,13 @@
 # Contracts testing strategy
 
 > Status: Proposed  
-> Last reviewed: 2026-08-17
+> Last reviewed: 2026-08-25
 
 Required tests:
 
 - Schema self-validation and valid/invalid fixtures.
 - Backward/forward compatibility by family.
+- Public-API compatibility against the frozen baselines under `compat/api/`.
 - Deterministic generation and clean-tree checks.
 - Rust/TypeScript compile and round-trip serialization.
 - Unknown field/variant behavior.
@@ -15,6 +16,14 @@ Required tests:
 - Workspace producer/consumer impact and version-range checks.
 
 A test must demonstrate detection of a deliberate breaking change. Updating snapshots without explaining semantic change is prohibited. Release artifacts are rebuilt and compared with committed/generated expectations.
+
+## Public-API compatibility
+
+The seven contract crates are consumed across the workspace, so their exported Rust surface is watched the same way generated schemas are. `compat/api/<package>.txt` freezes each crate's public items, produced by `cargo-public-api`; `cargo contracts api-write` regenerates them and `cargo contracts api-check` diffs current sources against the committed files, failing on any difference — additions included, because consumers compile against everything a crate exports.
+
+The suite is `tools/contractsc/tests/api_compat.rs`, tests A-1 to A-4: an identical snapshot classifies clean, a removed item classifies breaking by name, an added item classifies additive by name, and regenerating the baseline blesses an approved change without other edits. CI runs the real check per push in the `compatibility` job of `.github/workflows/contracts.yml`.
+
+The same stated limit as the schema classifier applies: the comparison sees presence, absence and signature text, never a meaning change behind an unchanged signature. Review stays the guard.
 
 ## Test-first
 

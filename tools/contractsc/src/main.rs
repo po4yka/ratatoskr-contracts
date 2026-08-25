@@ -9,7 +9,7 @@ use std::path::{Path, PathBuf};
 use anyhow::Context as _;
 use clap::Parser as _;
 use ratatoskr_contractsc::compat::ReportFormat;
-use ratatoskr_contractsc::{GENERATOR_VERSION, Metadata, compat, generate};
+use ratatoskr_contractsc::{GENERATOR_VERSION, Metadata, api, compat, generate};
 
 /// Deterministic contract generator and gate for `ratatoskr-contracts`.
 #[derive(Debug, clap::Parser)]
@@ -29,7 +29,7 @@ struct Cli {
     command: Command,
 }
 
-/// The four verbs `DEVELOPMENT.md` names.
+/// The verbs `DEVELOPMENT.md` names.
 #[derive(Debug, clap::Subcommand)]
 enum Command {
     /// Write every generated artifact. Writes a file only when its bytes differ.
@@ -50,6 +50,14 @@ enum Command {
         #[arg(long, value_enum, default_value = "text")]
         format: ReportFormat,
     },
+    /// Rewrite every contract crate's public-API baseline under `compat/api/`. Requires the
+    /// `cargo-public-api` binary. This is the bless path for an approved public-API change:
+    /// rerun, review the diff, commit it with the change that caused it.
+    ApiWrite,
+    /// Regenerate every crate's public API in memory and diff against the committed baselines
+    /// under `compat/api/`. Exit 1 when anything differs — additive differences included.
+    /// Not part of the repository gate; CI runs it in its own compatibility job.
+    ApiCheck,
 }
 
 fn main() -> anyhow::Result<std::process::ExitCode> {
@@ -63,6 +71,8 @@ fn main() -> anyhow::Result<std::process::ExitCode> {
         Command::Check => run_check(&root),
         Command::CheckTypescript => run_check_typescript(&root),
         Command::Compat { old, new, format } => run_compat(&old, &new, format),
+        Command::ApiWrite => run_api_write(&root),
+        Command::ApiCheck => run_api_check(&root),
     }
 }
 
@@ -180,4 +190,140 @@ fn read_schema(path: &Path) -> anyhow::Result<serde_json::Value> {
     let text =
         std::fs::read_to_string(path).with_context(|| format!("cannot read {}", path.display()))?;
     serde_json::from_str(&text).with_context(|| format!("{} is not JSON", path.display()))
+}
+
+/// The package names of every contract crate, derived from the same registry that drives
+/// generation, so a crate cannot gain or lose a baseline without gaining or losing a root type.
+fn contract_crate_names() -> Vec<String> {
+    api::contract_crate_names().into_iter().collect()
+}
+
+/// The manifest path of one contract crate.
+///
+/// The package `ratatoskr-<short>` lives in `crates/<short>`; the leading hyphenated prefix is
+/// what differs between a package name and a directory name here. A future mismatch between that
+/// spelling rule and the tree fails loudly right here, never silently.
+fn crate_manifest(root: &Path, package_name: &str) -> anyhow::Result<PathBuf> {
+    let short = package_name
+        .strip_prefix("ratatoskr-")
+        .unwrap_or(package_name);
+    let manifest = root.join("crates").join(short).join("Cargo.toml");
+    anyhow::ensure!(
+        manifest.is_file(),
+        "{} is missing; a registered root type names package {package_name}",
+        manifest.display()
+    );
+    Ok(manifest)
+}
+
+/// Runs `cargo public-api` against one crate manifest and returns its stdout.
+///
+/// Plain output is already one public item per line; the compact spellings are the omit flags
+/// (`-s`, `--omit`), and there has never been a `--short-text`. Process spawning lives here, at
+/// the boundary, for the same reason the environment override of `check-typescript` does: the
+/// library stays free of everything that makes output depend on the machine.
+fn public_api_text(root: &Path, crate_name: &str) -> anyhow::Result<String> {
+    let manifest = crate_manifest(root, crate_name)?;
+    let output = std::process::Command::new("cargo")
+        .arg("public-api")
+        .arg("--manifest-path")
+        .arg(&manifest)
+        .output()
+        .context(
+            "cannot run cargo public-api; install it with: cargo install cargo-public-api --locked",
+        )?;
+    anyhow::ensure!(
+        output.status.success(),
+        "cargo public-api failed for {crate_name}:\n{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    Ok(String::from_utf8_lossy(&output.stdout).to_string())
+}
+
+/// The provenance line every baseline records: which producer version, which compiler.
+///
+/// The repository pins stable as its only supported toolchain, so `resolve_toolchain` inside
+/// cargo-public-api hands the doc build to the `nightly` channel; the version recorded here is
+/// that compiler's, read through the same resolution, never the active stable's.
+fn producer_versions() -> anyhow::Result<String> {
+    let tool = std::process::Command::new("cargo")
+        .args(["public-api", "--version"])
+        .output()
+        .context(
+            "cannot run cargo public-api; install it with: cargo install cargo-public-api --locked",
+        )?;
+    let compiler = std::process::Command::new("rustup")
+        .args(["run", "nightly", "rustc", "--version"])
+        .output()
+        .context("cannot ask the nightly toolchain for its rustc version")?;
+    anyhow::ensure!(
+        compiler.status.success(),
+        "the nightly toolchain is not usable: {}{}",
+        String::from_utf8_lossy(&compiler.stdout),
+        String::from_utf8_lossy(&compiler.stderr)
+    );
+    Ok(format!(
+        "{}, over {}",
+        String::from_utf8_lossy(&tool.stdout).trim(),
+        String::from_utf8_lossy(&compiler.stdout).trim()
+    ))
+}
+
+/// `contractsc api-write`.
+fn run_api_write(root: &Path) -> anyhow::Result<std::process::ExitCode> {
+    let producer = producer_versions()?;
+    for crate_name in contract_crate_names() {
+        let document = api::render_baseline(
+            &crate_name,
+            &producer,
+            &api::snapshot_items(&public_api_text(root, &crate_name)?),
+        );
+        let relative = PathBuf::from(api::API_BASELINE_DIR).join(format!("{crate_name}.txt"));
+        let absolute = root.join(&relative);
+        if std::fs::read_to_string(&absolute).is_ok_and(|existing| existing == document) {
+            println!("unchanged {}", relative.display());
+            continue;
+        }
+        if let Some(parent) = absolute.parent() {
+            std::fs::create_dir_all(parent)
+                .with_context(|| format!("cannot create {}", parent.display()))?;
+        }
+        std::fs::write(&absolute, document)
+            .with_context(|| format!("cannot write {}", absolute.display()))?;
+        println!("wrote     {}", relative.display());
+    }
+    Ok(std::process::ExitCode::SUCCESS)
+}
+
+/// `contractsc api-check`.
+fn run_api_check(root: &Path) -> anyhow::Result<std::process::ExitCode> {
+    let mut dirty = 0usize;
+    for crate_name in contract_crate_names() {
+        let baseline_path = root
+            .join(api::API_BASELINE_DIR)
+            .join(format!("{crate_name}.txt"));
+        let committed = std::fs::read_to_string(&baseline_path).with_context(|| {
+            format!(
+                "{} is missing; run `cargo contracts api-write` and commit it",
+                baseline_path.display()
+            )
+        })?;
+        let current = public_api_text(root, &crate_name)?;
+        let diff = api::classify(&committed, &current);
+        print!("{}", diff.report(&crate_name));
+        dirty += usize::from(!diff.is_clean());
+    }
+    if dirty == 0 {
+        println!(
+            "api: every contract crate matches its committed baseline under {}/",
+            api::API_BASELINE_DIR
+        );
+        return Ok(std::process::ExitCode::SUCCESS);
+    }
+    eprintln!(
+        "api: {dirty} crate(s) differ from the committed baselines. An intentional change is \
+         blessed by rerunning `cargo contracts api-write`, reviewing the diff, and committing it."
+    );
+    Ok(std::process::ExitCode::FAILURE)
 }

@@ -1,0 +1,132 @@
+# Milestone-9 assurance beyond the documented gate: the public-API compatibility check against
+# the frozen baselines under compat/api/, the proof that regeneration reproduces the committed
+# bytes end to end, and the packaged TypeScript artifact consumers trial before milestone 10.
+#
+# These are deliberately NOT steps of the gate. The gate list in DEVELOPMENT.md and the `- run:`
+# lines of ci.yml are asserted to be one list by a mechanical step there, and every command in it
+# must stay cheap enough to run locally before each commit; these three jobs are CI-side
+# assurance with their own installation needs. Fixture validation is not duplicated here at all:
+# `cargo contracts check` plus `cargo test --workspace --locked` in the gate job already reject a
+# committed fixture that does not fail for its declared reason, on every push and pull request.
+name: contracts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# SECURITY.md: deny by default. Every job here reads the tree or uploads an artifact and needs
+# nothing else.
+permissions:
+  contents: read
+
+concurrency:
+  group: contracts-${{ github.ref }}
+  # On a pull request the newest push is the only one whose answer matters, and cancelling the
+  # superseded run is what makes the queue keep up. On `main` it is the opposite: a cancelled run
+  # leaves that commit with no verdict at all, and `main` is the branch whose history is supposed
+  # to record whether each commit passed. Two pushes a minute apart would otherwise erase the first
+  # one's result permanently — the log is the only place it ever existed.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  compatibility:
+    name: public-API compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Show the pinned toolchain
+        run: rustup show           # rust-toolchain.toml is the only supported toolchain
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+
+      - run: cargo fetch --locked
+
+      # cargo-public-api builds rustdoc JSON, which needs a nightly compiler, and it never
+      # installs one itself — it switches to the `nightly` channel and fails if that is missing.
+      # The date is pinned rather than floating so baseline bytes cannot move because CI picked up
+      # a different nightly; nightly-2025-08-02 is the minimum cargo-public-api 0.52.x documents,
+      # and bumping either pin is the same kind of reviewed change as any other provenance move:
+      # rerun `cargo contracts api-write`, review the diff, commit it.
+      - name: Install the pinned nightly rustdoc JSON needs
+        run: rustup toolchain install nightly-2025-08-02 --profile minimal
+
+      # taiki-e/install-action does not carry this tool and its releases publish no binaries, so
+      # the documented source install is the honest path. The version is pinned because 0.52.0
+      # itself changed the emitted text (function parameter names dropped by default); an unpinned
+      # install would have rewritten every baseline without anyone asking for it.
+      - name: Install cargo-public-api at a pinned version
+        run: cargo install --locked --version 0.52.0 cargo-public-api
+
+      - run: cargo contracts api-check
+
+  determinism:
+    name: regeneration is deterministic
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Show the pinned toolchain
+        run: rustup show           # rust-toolchain.toml is the only supported toolchain
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+
+      - run: cargo fetch --locked
+
+      # The gate does not run `generate`, and DEVELOPMENT.md records why: `check` proves the
+      # committed bytes match freshly computed ones. This job proves what `check` cannot: that the
+      # WRITE path, run in a clean environment, reproduces the committed tree end to end. It also
+      # covers the residual gap DEVELOPMENT.md states — an orphan written under an unexpected
+      # extension would never be reported by `check`, but it appears here as an untracked file.
+      - run: cargo contracts generate
+
+      # Both directions: tracked content changed, and anything written that was not tracked.
+      - name: The tree survived generation byte for byte
+        run: |
+          set -euo pipefail
+          git diff --exit-code
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::regeneration did not reproduce the committed tree:"
+            git status --porcelain
+            exit 1
+          fi
+          echo "regeneration reproduced every committed artifact exactly"
+
+  package:
+    name: TypeScript artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Tarring the committed tree is enough, and needs no toolchain: whatever is committed has
+      # already been proven equal to freshly generated output by the gate (`check`) and the
+      # determinism job above. Publishing to a registry stays milestone 10; this artifact is the
+      # transport consumers trial until then. The flags keep the archive reproducible in shape —
+      # sorted entries, fixed ownership — though its gzip timestamp makes it a transport, not a
+      # generated artifact with a digest.
+      - name: Pack the TypeScript generation output
+        run: |
+          set -euo pipefail
+          tar --sort=name --owner=0 --group=0 --numeric-owner \
+            -czf "ratatoskr-contracts-typescript-${{ github.sha }}.tar.gz" generated/typescript
+          ls -l "ratatoskr-contracts-typescript-${{ github.sha }}.tar.gz"
+
+      - name: Upload the archive as a workflow artifact
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: ratatoskr-contracts-typescript-${{ github.sha }}
+          path: ratatoskr-contracts-typescript-${{ github.sha }}.tar.gz
+          if-no-files-found: error

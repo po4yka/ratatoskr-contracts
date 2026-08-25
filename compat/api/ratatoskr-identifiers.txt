@@ -1,0 +1,1658 @@
+# Public API baseline of ratatoskr-identifiers, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_identifiers::AiArchiveId
+impl core::clone::Clone for ratatoskr_identifiers::AiConversationId
+impl core::clone::Clone for ratatoskr_identifiers::AiProjectId
+impl core::clone::Clone for ratatoskr_identifiers::BlobOwner
+impl core::clone::Clone for ratatoskr_identifiers::BlobRef
+impl core::clone::Clone for ratatoskr_identifiers::ContentDigest
+impl core::clone::Clone for ratatoskr_identifiers::CorrelationId
+impl core::clone::Clone for ratatoskr_identifiers::DigestAlgorithm
+impl core::clone::Clone for ratatoskr_identifiers::DigestHex
+impl core::clone::Clone for ratatoskr_identifiers::DocumentId
+impl core::clone::Clone for ratatoskr_identifiers::EntityKind
+impl core::clone::Clone for ratatoskr_identifiers::EntityLocalId
+impl core::clone::Clone for ratatoskr_identifiers::EntityRef
+impl core::clone::Clone for ratatoskr_identifiers::EventId
+impl core::clone::Clone for ratatoskr_identifiers::Extensions
+impl core::clone::Clone for ratatoskr_identifiers::IdentifierError
+impl core::clone::Clone for ratatoskr_identifiers::MediaType
+impl core::clone::Clone for ratatoskr_identifiers::OperationId
+impl core::clone::Clone for ratatoskr_identifiers::SafeMessage
+impl core::clone::Clone for ratatoskr_identifiers::SocialSourceId
+impl core::clone::Clone for ratatoskr_identifiers::TenantRef
+impl core::clone::Clone for ratatoskr_identifiers::UserId
+impl core::clone::Clone for ratatoskr_identifiers::WireTimestamp
+impl core::cmp::Eq for ratatoskr_identifiers::AiArchiveId
+impl core::cmp::Eq for ratatoskr_identifiers::AiConversationId
+impl core::cmp::Eq for ratatoskr_identifiers::AiProjectId
+impl core::cmp::Eq for ratatoskr_identifiers::BlobOwner
+impl core::cmp::Eq for ratatoskr_identifiers::BlobRef
+impl core::cmp::Eq for ratatoskr_identifiers::ContentDigest
+impl core::cmp::Eq for ratatoskr_identifiers::CorrelationId
+impl core::cmp::Eq for ratatoskr_identifiers::DigestAlgorithm
+impl core::cmp::Eq for ratatoskr_identifiers::DigestHex
+impl core::cmp::Eq for ratatoskr_identifiers::DocumentId
+impl core::cmp::Eq for ratatoskr_identifiers::EntityKind
+impl core::cmp::Eq for ratatoskr_identifiers::EntityLocalId
+impl core::cmp::Eq for ratatoskr_identifiers::EntityRef
+impl core::cmp::Eq for ratatoskr_identifiers::EventId
+impl core::cmp::Eq for ratatoskr_identifiers::Extensions
+impl core::cmp::Eq for ratatoskr_identifiers::IdentifierError
+impl core::cmp::Eq for ratatoskr_identifiers::MediaType
+impl core::cmp::Eq for ratatoskr_identifiers::OperationId
+impl core::cmp::Eq for ratatoskr_identifiers::SafeMessage
+impl core::cmp::Eq for ratatoskr_identifiers::SocialSourceId
+impl core::cmp::Eq for ratatoskr_identifiers::TenantRef
+impl core::cmp::Eq for ratatoskr_identifiers::UserId
+impl core::cmp::Eq for ratatoskr_identifiers::WireTimestamp
+impl core::cmp::Ord for ratatoskr_identifiers::AiArchiveId
+impl core::cmp::Ord for ratatoskr_identifiers::AiConversationId
+impl core::cmp::Ord for ratatoskr_identifiers::AiProjectId
+impl core::cmp::Ord for ratatoskr_identifiers::BlobOwner
+impl core::cmp::Ord for ratatoskr_identifiers::BlobRef
+impl core::cmp::Ord for ratatoskr_identifiers::ContentDigest
+impl core::cmp::Ord for ratatoskr_identifiers::CorrelationId
+impl core::cmp::Ord for ratatoskr_identifiers::DigestAlgorithm
+impl core::cmp::Ord for ratatoskr_identifiers::DigestHex
+impl core::cmp::Ord for ratatoskr_identifiers::DocumentId
+impl core::cmp::Ord for ratatoskr_identifiers::EntityKind
+impl core::cmp::Ord for ratatoskr_identifiers::EntityLocalId
+impl core::cmp::Ord for ratatoskr_identifiers::EntityRef
+impl core::cmp::Ord for ratatoskr_identifiers::EventId
+impl core::cmp::Ord for ratatoskr_identifiers::MediaType
+impl core::cmp::Ord for ratatoskr_identifiers::OperationId
+impl core::cmp::Ord for ratatoskr_identifiers::SafeMessage
+impl core::cmp::Ord for ratatoskr_identifiers::SocialSourceId
+impl core::cmp::Ord for ratatoskr_identifiers::TenantRef
+impl core::cmp::Ord for ratatoskr_identifiers::UserId
+impl core::cmp::Ord for ratatoskr_identifiers::WireTimestamp
+impl core::cmp::PartialEq for ratatoskr_identifiers::AiArchiveId
+impl core::cmp::PartialEq for ratatoskr_identifiers::AiConversationId
+impl core::cmp::PartialEq for ratatoskr_identifiers::AiProjectId
+impl core::cmp::PartialEq for ratatoskr_identifiers::BlobOwner
+impl core::cmp::PartialEq for ratatoskr_identifiers::BlobRef
+impl core::cmp::PartialEq for ratatoskr_identifiers::ContentDigest
+impl core::cmp::PartialEq for ratatoskr_identifiers::CorrelationId
+impl core::cmp::PartialEq for ratatoskr_identifiers::DigestAlgorithm
+impl core::cmp::PartialEq for ratatoskr_identifiers::DigestHex
+impl core::cmp::PartialEq for ratatoskr_identifiers::DocumentId
+impl core::cmp::PartialEq for ratatoskr_identifiers::EntityKind
+impl core::cmp::PartialEq for ratatoskr_identifiers::EntityLocalId
+impl core::cmp::PartialEq for ratatoskr_identifiers::EntityRef
+impl core::cmp::PartialEq for ratatoskr_identifiers::EventId
+impl core::cmp::PartialEq for ratatoskr_identifiers::Extensions
+impl core::cmp::PartialEq for ratatoskr_identifiers::IdentifierError
+impl core::cmp::PartialEq for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialEq for ratatoskr_identifiers::OperationId
+impl core::cmp::PartialEq for ratatoskr_identifiers::SafeMessage
+impl core::cmp::PartialEq for ratatoskr_identifiers::SocialSourceId
+impl core::cmp::PartialEq for ratatoskr_identifiers::TenantRef
+impl core::cmp::PartialEq for ratatoskr_identifiers::UserId
+impl core::cmp::PartialEq for ratatoskr_identifiers::WireTimestamp
+impl core::cmp::PartialOrd for ratatoskr_identifiers::AiArchiveId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::AiConversationId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::AiProjectId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::BlobOwner
+impl core::cmp::PartialOrd for ratatoskr_identifiers::BlobRef
+impl core::cmp::PartialOrd for ratatoskr_identifiers::ContentDigest
+impl core::cmp::PartialOrd for ratatoskr_identifiers::CorrelationId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::DigestAlgorithm
+impl core::cmp::PartialOrd for ratatoskr_identifiers::DigestHex
+impl core::cmp::PartialOrd for ratatoskr_identifiers::DocumentId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityKind
+impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityLocalId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityRef
+impl core::cmp::PartialOrd for ratatoskr_identifiers::EventId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialOrd for ratatoskr_identifiers::OperationId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::SafeMessage
+impl core::cmp::PartialOrd for ratatoskr_identifiers::SocialSourceId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::TenantRef
+impl core::cmp::PartialOrd for ratatoskr_identifiers::UserId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::WireTimestamp
+impl core::convert::From<ratatoskr_identifiers::AiArchiveId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::AiArchiveId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::AiConversationId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::AiConversationId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::AiProjectId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::AiProjectId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::BlobOwner> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::CorrelationId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::CorrelationId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::DigestHex> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::DocumentId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::DocumentId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::EntityLocalId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::EntityRef> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::EventId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::EventId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::MediaType> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::OperationId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::OperationId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::SafeMessage> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::SocialSourceId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::SocialSourceId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::TenantRef> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::UserId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::UserId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::WireTimestamp> for alloc::string::String
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiArchiveId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiConversationId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiProjectId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::CorrelationId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::DocumentId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::EventId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::OperationId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::SocialSourceId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::UserId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiArchiveId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiConversationId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiProjectId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::BlobOwner
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::CorrelationId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::DigestHex
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::DocumentId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EntityLocalId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EntityRef
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EventId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::MediaType
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::OperationId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SafeMessage
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SocialSourceId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::TenantRef
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::UserId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::WireTimestamp
+impl core::default::Default for ratatoskr_identifiers::Extensions
+impl core::error::Error for ratatoskr_identifiers::IdentifierError
+impl core::fmt::Debug for ratatoskr_identifiers::AiArchiveId
+impl core::fmt::Debug for ratatoskr_identifiers::AiConversationId
+impl core::fmt::Debug for ratatoskr_identifiers::AiProjectId
+impl core::fmt::Debug for ratatoskr_identifiers::BlobOwner
+impl core::fmt::Debug for ratatoskr_identifiers::BlobRef
+impl core::fmt::Debug for ratatoskr_identifiers::ContentDigest
+impl core::fmt::Debug for ratatoskr_identifiers::CorrelationId
+impl core::fmt::Debug for ratatoskr_identifiers::DigestAlgorithm
+impl core::fmt::Debug for ratatoskr_identifiers::DigestHex
+impl core::fmt::Debug for ratatoskr_identifiers::DocumentId
+impl core::fmt::Debug for ratatoskr_identifiers::EntityKind
+impl core::fmt::Debug for ratatoskr_identifiers::EntityLocalId
+impl core::fmt::Debug for ratatoskr_identifiers::EntityRef
+impl core::fmt::Debug for ratatoskr_identifiers::EventId
+impl core::fmt::Debug for ratatoskr_identifiers::Extensions
+impl core::fmt::Debug for ratatoskr_identifiers::IdentifierError
+impl core::fmt::Debug for ratatoskr_identifiers::MediaType
+impl core::fmt::Debug for ratatoskr_identifiers::OperationId
+impl core::fmt::Debug for ratatoskr_identifiers::SafeMessage
+impl core::fmt::Debug for ratatoskr_identifiers::SocialSourceId
+impl core::fmt::Debug for ratatoskr_identifiers::TenantRef
+impl core::fmt::Debug for ratatoskr_identifiers::UserId
+impl core::fmt::Debug for ratatoskr_identifiers::WireTimestamp
+impl core::fmt::Display for ratatoskr_identifiers::AiArchiveId
+impl core::fmt::Display for ratatoskr_identifiers::AiConversationId
+impl core::fmt::Display for ratatoskr_identifiers::AiProjectId
+impl core::fmt::Display for ratatoskr_identifiers::BlobOwner
+impl core::fmt::Display for ratatoskr_identifiers::CorrelationId
+impl core::fmt::Display for ratatoskr_identifiers::DigestHex
+impl core::fmt::Display for ratatoskr_identifiers::DocumentId
+impl core::fmt::Display for ratatoskr_identifiers::EntityKind
+impl core::fmt::Display for ratatoskr_identifiers::EntityLocalId
+impl core::fmt::Display for ratatoskr_identifiers::EntityRef
+impl core::fmt::Display for ratatoskr_identifiers::EventId
+impl core::fmt::Display for ratatoskr_identifiers::IdentifierError
+impl core::fmt::Display for ratatoskr_identifiers::MediaType
+impl core::fmt::Display for ratatoskr_identifiers::OperationId
+impl core::fmt::Display for ratatoskr_identifiers::SafeMessage
+impl core::fmt::Display for ratatoskr_identifiers::SocialSourceId
+impl core::fmt::Display for ratatoskr_identifiers::TenantRef
+impl core::fmt::Display for ratatoskr_identifiers::UserId
+impl core::fmt::Display for ratatoskr_identifiers::WireTimestamp
+impl core::hash::Hash for ratatoskr_identifiers::AiArchiveId
+impl core::hash::Hash for ratatoskr_identifiers::AiConversationId
+impl core::hash::Hash for ratatoskr_identifiers::AiProjectId
+impl core::hash::Hash for ratatoskr_identifiers::BlobOwner
+impl core::hash::Hash for ratatoskr_identifiers::BlobRef
+impl core::hash::Hash for ratatoskr_identifiers::ContentDigest
+impl core::hash::Hash for ratatoskr_identifiers::CorrelationId
+impl core::hash::Hash for ratatoskr_identifiers::DigestAlgorithm
+impl core::hash::Hash for ratatoskr_identifiers::DigestHex
+impl core::hash::Hash for ratatoskr_identifiers::DocumentId
+impl core::hash::Hash for ratatoskr_identifiers::EntityKind
+impl core::hash::Hash for ratatoskr_identifiers::EntityLocalId
+impl core::hash::Hash for ratatoskr_identifiers::EntityRef
+impl core::hash::Hash for ratatoskr_identifiers::EventId
+impl core::hash::Hash for ratatoskr_identifiers::MediaType
+impl core::hash::Hash for ratatoskr_identifiers::OperationId
+impl core::hash::Hash for ratatoskr_identifiers::SafeMessage
+impl core::hash::Hash for ratatoskr_identifiers::SocialSourceId
+impl core::hash::Hash for ratatoskr_identifiers::TenantRef
+impl core::hash::Hash for ratatoskr_identifiers::UserId
+impl core::hash::Hash for ratatoskr_identifiers::WireTimestamp
+impl core::marker::Copy for ratatoskr_identifiers::AiArchiveId
+impl core::marker::Copy for ratatoskr_identifiers::AiConversationId
+impl core::marker::Copy for ratatoskr_identifiers::AiProjectId
+impl core::marker::Copy for ratatoskr_identifiers::CorrelationId
+impl core::marker::Copy for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::Copy for ratatoskr_identifiers::DocumentId
+impl core::marker::Copy for ratatoskr_identifiers::EventId
+impl core::marker::Copy for ratatoskr_identifiers::OperationId
+impl core::marker::Copy for ratatoskr_identifiers::SocialSourceId
+impl core::marker::Copy for ratatoskr_identifiers::TenantRef
+impl core::marker::Copy for ratatoskr_identifiers::UserId
+impl core::marker::Copy for ratatoskr_identifiers::WireTimestamp
+impl core::marker::Freeze for ratatoskr_identifiers::AiArchiveId
+impl core::marker::Freeze for ratatoskr_identifiers::AiConversationId
+impl core::marker::Freeze for ratatoskr_identifiers::AiProjectId
+impl core::marker::Freeze for ratatoskr_identifiers::BlobOwner
+impl core::marker::Freeze for ratatoskr_identifiers::BlobRef
+impl core::marker::Freeze for ratatoskr_identifiers::ContentDigest
+impl core::marker::Freeze for ratatoskr_identifiers::CorrelationId
+impl core::marker::Freeze for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::Freeze for ratatoskr_identifiers::DigestHex
+impl core::marker::Freeze for ratatoskr_identifiers::DocumentId
+impl core::marker::Freeze for ratatoskr_identifiers::EntityKind
+impl core::marker::Freeze for ratatoskr_identifiers::EntityLocalId
+impl core::marker::Freeze for ratatoskr_identifiers::EntityRef
+impl core::marker::Freeze for ratatoskr_identifiers::EventId
+impl core::marker::Freeze for ratatoskr_identifiers::Extensions
+impl core::marker::Freeze for ratatoskr_identifiers::IdentifierError
+impl core::marker::Freeze for ratatoskr_identifiers::MediaType
+impl core::marker::Freeze for ratatoskr_identifiers::OperationId
+impl core::marker::Freeze for ratatoskr_identifiers::SafeMessage
+impl core::marker::Freeze for ratatoskr_identifiers::SocialSourceId
+impl core::marker::Freeze for ratatoskr_identifiers::TenantRef
+impl core::marker::Freeze for ratatoskr_identifiers::UserId
+impl core::marker::Freeze for ratatoskr_identifiers::WireTimestamp
+impl core::marker::Send for ratatoskr_identifiers::AiArchiveId
+impl core::marker::Send for ratatoskr_identifiers::AiConversationId
+impl core::marker::Send for ratatoskr_identifiers::AiProjectId
+impl core::marker::Send for ratatoskr_identifiers::BlobOwner
+impl core::marker::Send for ratatoskr_identifiers::BlobRef
+impl core::marker::Send for ratatoskr_identifiers::ContentDigest
+impl core::marker::Send for ratatoskr_identifiers::CorrelationId
+impl core::marker::Send for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::Send for ratatoskr_identifiers::DigestHex
+impl core::marker::Send for ratatoskr_identifiers::DocumentId
+impl core::marker::Send for ratatoskr_identifiers::EntityKind
+impl core::marker::Send for ratatoskr_identifiers::EntityLocalId
+impl core::marker::Send for ratatoskr_identifiers::EntityRef
+impl core::marker::Send for ratatoskr_identifiers::EventId
+impl core::marker::Send for ratatoskr_identifiers::Extensions
+impl core::marker::Send for ratatoskr_identifiers::IdentifierError
+impl core::marker::Send for ratatoskr_identifiers::MediaType
+impl core::marker::Send for ratatoskr_identifiers::OperationId
+impl core::marker::Send for ratatoskr_identifiers::SafeMessage
+impl core::marker::Send for ratatoskr_identifiers::SocialSourceId
+impl core::marker::Send for ratatoskr_identifiers::TenantRef
+impl core::marker::Send for ratatoskr_identifiers::UserId
+impl core::marker::Send for ratatoskr_identifiers::WireTimestamp
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::AiArchiveId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::AiConversationId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::AiProjectId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::BlobOwner
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::BlobRef
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::ContentDigest
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::CorrelationId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::DigestHex
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::DocumentId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EntityKind
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EntityLocalId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EntityRef
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EventId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::Extensions
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::IdentifierError
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::MediaType
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::OperationId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SafeMessage
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SocialSourceId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::TenantRef
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::UserId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::WireTimestamp
+impl core::marker::Sync for ratatoskr_identifiers::AiArchiveId
+impl core::marker::Sync for ratatoskr_identifiers::AiConversationId
+impl core::marker::Sync for ratatoskr_identifiers::AiProjectId
+impl core::marker::Sync for ratatoskr_identifiers::BlobOwner
+impl core::marker::Sync for ratatoskr_identifiers::BlobRef
+impl core::marker::Sync for ratatoskr_identifiers::ContentDigest
+impl core::marker::Sync for ratatoskr_identifiers::CorrelationId
+impl core::marker::Sync for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::Sync for ratatoskr_identifiers::DigestHex
+impl core::marker::Sync for ratatoskr_identifiers::DocumentId
+impl core::marker::Sync for ratatoskr_identifiers::EntityKind
+impl core::marker::Sync for ratatoskr_identifiers::EntityLocalId
+impl core::marker::Sync for ratatoskr_identifiers::EntityRef
+impl core::marker::Sync for ratatoskr_identifiers::EventId
+impl core::marker::Sync for ratatoskr_identifiers::Extensions
+impl core::marker::Sync for ratatoskr_identifiers::IdentifierError
+impl core::marker::Sync for ratatoskr_identifiers::MediaType
+impl core::marker::Sync for ratatoskr_identifiers::OperationId
+impl core::marker::Sync for ratatoskr_identifiers::SafeMessage
+impl core::marker::Sync for ratatoskr_identifiers::SocialSourceId
+impl core::marker::Sync for ratatoskr_identifiers::TenantRef
+impl core::marker::Sync for ratatoskr_identifiers::UserId
+impl core::marker::Sync for ratatoskr_identifiers::WireTimestamp
+impl core::marker::Unpin for ratatoskr_identifiers::AiArchiveId
+impl core::marker::Unpin for ratatoskr_identifiers::AiConversationId
+impl core::marker::Unpin for ratatoskr_identifiers::AiProjectId
+impl core::marker::Unpin for ratatoskr_identifiers::BlobOwner
+impl core::marker::Unpin for ratatoskr_identifiers::BlobRef
+impl core::marker::Unpin for ratatoskr_identifiers::ContentDigest
+impl core::marker::Unpin for ratatoskr_identifiers::CorrelationId
+impl core::marker::Unpin for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::Unpin for ratatoskr_identifiers::DigestHex
+impl core::marker::Unpin for ratatoskr_identifiers::DocumentId
+impl core::marker::Unpin for ratatoskr_identifiers::EntityKind
+impl core::marker::Unpin for ratatoskr_identifiers::EntityLocalId
+impl core::marker::Unpin for ratatoskr_identifiers::EntityRef
+impl core::marker::Unpin for ratatoskr_identifiers::EventId
+impl core::marker::Unpin for ratatoskr_identifiers::Extensions
+impl core::marker::Unpin for ratatoskr_identifiers::IdentifierError
+impl core::marker::Unpin for ratatoskr_identifiers::MediaType
+impl core::marker::Unpin for ratatoskr_identifiers::OperationId
+impl core::marker::Unpin for ratatoskr_identifiers::SafeMessage
+impl core::marker::Unpin for ratatoskr_identifiers::SocialSourceId
+impl core::marker::Unpin for ratatoskr_identifiers::TenantRef
+impl core::marker::Unpin for ratatoskr_identifiers::UserId
+impl core::marker::Unpin for ratatoskr_identifiers::WireTimestamp
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::AiArchiveId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::AiConversationId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::AiProjectId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::BlobOwner
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::BlobRef
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::ContentDigest
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::CorrelationId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::DigestAlgorithm
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::DigestHex
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::DocumentId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EntityKind
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EntityLocalId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EntityRef
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EventId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::Extensions
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::IdentifierError
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::MediaType
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::OperationId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SafeMessage
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SocialSourceId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::TenantRef
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::UserId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::WireTimestamp
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::AiArchiveId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::AiConversationId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::AiProjectId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::BlobOwner
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::BlobRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::ContentDigest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::CorrelationId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::DigestAlgorithm
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::DigestHex
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::DocumentId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EntityKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EntityLocalId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EntityRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EventId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::Extensions
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::IdentifierError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::OperationId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SafeMessage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SocialSourceId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::TenantRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::UserId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::WireTimestamp
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::AiArchiveId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::AiConversationId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::AiProjectId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::BlobOwner
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::BlobRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::ContentDigest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::CorrelationId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::DigestAlgorithm
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::DigestHex
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::DocumentId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EntityKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EntityLocalId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EntityRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EventId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::Extensions
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::IdentifierError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::OperationId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SafeMessage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SocialSourceId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::TenantRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::UserId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::WireTimestamp
+impl core::str::traits::FromStr for ratatoskr_identifiers::AiArchiveId
+impl core::str::traits::FromStr for ratatoskr_identifiers::AiConversationId
+impl core::str::traits::FromStr for ratatoskr_identifiers::AiProjectId
+impl core::str::traits::FromStr for ratatoskr_identifiers::BlobOwner
+impl core::str::traits::FromStr for ratatoskr_identifiers::CorrelationId
+impl core::str::traits::FromStr for ratatoskr_identifiers::DigestHex
+impl core::str::traits::FromStr for ratatoskr_identifiers::DocumentId
+impl core::str::traits::FromStr for ratatoskr_identifiers::EntityKind
+impl core::str::traits::FromStr for ratatoskr_identifiers::EntityLocalId
+impl core::str::traits::FromStr for ratatoskr_identifiers::EntityRef
+impl core::str::traits::FromStr for ratatoskr_identifiers::EventId
+impl core::str::traits::FromStr for ratatoskr_identifiers::MediaType
+impl core::str::traits::FromStr for ratatoskr_identifiers::OperationId
+impl core::str::traits::FromStr for ratatoskr_identifiers::SafeMessage
+impl core::str::traits::FromStr for ratatoskr_identifiers::SocialSourceId
+impl core::str::traits::FromStr for ratatoskr_identifiers::TenantRef
+impl core::str::traits::FromStr for ratatoskr_identifiers::UserId
+impl core::str::traits::FromStr for ratatoskr_identifiers::WireTimestamp
+impl ratatoskr_identifiers::AiArchiveId
+impl ratatoskr_identifiers::AiConversationId
+impl ratatoskr_identifiers::AiProjectId
+impl ratatoskr_identifiers::BlobOwner
+impl ratatoskr_identifiers::CorrelationId
+impl ratatoskr_identifiers::DigestHex
+impl ratatoskr_identifiers::DocumentId
+impl ratatoskr_identifiers::EntityKind
+impl ratatoskr_identifiers::EntityLocalId
+impl ratatoskr_identifiers::EntityRef
+impl ratatoskr_identifiers::EventId
+impl ratatoskr_identifiers::Extensions
+impl ratatoskr_identifiers::MediaType
+impl ratatoskr_identifiers::OperationId
+impl ratatoskr_identifiers::SafeMessage
+impl ratatoskr_identifiers::SocialSourceId
+impl ratatoskr_identifiers::TenantRef
+impl ratatoskr_identifiers::UserId
+impl ratatoskr_identifiers::WireTimestamp
+impl schemars::JsonSchema for ratatoskr_identifiers::AiArchiveId
+impl schemars::JsonSchema for ratatoskr_identifiers::AiConversationId
+impl schemars::JsonSchema for ratatoskr_identifiers::AiProjectId
+impl schemars::JsonSchema for ratatoskr_identifiers::BlobOwner
+impl schemars::JsonSchema for ratatoskr_identifiers::BlobRef
+impl schemars::JsonSchema for ratatoskr_identifiers::ContentDigest
+impl schemars::JsonSchema for ratatoskr_identifiers::CorrelationId
+impl schemars::JsonSchema for ratatoskr_identifiers::DigestAlgorithm
+impl schemars::JsonSchema for ratatoskr_identifiers::DigestHex
+impl schemars::JsonSchema for ratatoskr_identifiers::DocumentId
+impl schemars::JsonSchema for ratatoskr_identifiers::EntityLocalId
+impl schemars::JsonSchema for ratatoskr_identifiers::EntityRef
+impl schemars::JsonSchema for ratatoskr_identifiers::EventId
+impl schemars::JsonSchema for ratatoskr_identifiers::Extensions
+impl schemars::JsonSchema for ratatoskr_identifiers::MediaType
+impl schemars::JsonSchema for ratatoskr_identifiers::OperationId
+impl schemars::JsonSchema for ratatoskr_identifiers::SafeMessage
+impl schemars::JsonSchema for ratatoskr_identifiers::SocialSourceId
+impl schemars::JsonSchema for ratatoskr_identifiers::TenantRef
+impl schemars::JsonSchema for ratatoskr_identifiers::UserId
+impl schemars::JsonSchema for ratatoskr_identifiers::WireTimestamp
+impl serde_core::ser::Serialize for ratatoskr_identifiers::AiArchiveId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::AiConversationId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::AiProjectId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::BlobOwner
+impl serde_core::ser::Serialize for ratatoskr_identifiers::BlobRef
+impl serde_core::ser::Serialize for ratatoskr_identifiers::ContentDigest
+impl serde_core::ser::Serialize for ratatoskr_identifiers::CorrelationId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::DigestAlgorithm
+impl serde_core::ser::Serialize for ratatoskr_identifiers::DigestHex
+impl serde_core::ser::Serialize for ratatoskr_identifiers::DocumentId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::EntityLocalId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::EntityRef
+impl serde_core::ser::Serialize for ratatoskr_identifiers::EventId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::Extensions
+impl serde_core::ser::Serialize for ratatoskr_identifiers::MediaType
+impl serde_core::ser::Serialize for ratatoskr_identifiers::OperationId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::SafeMessage
+impl serde_core::ser::Serialize for ratatoskr_identifiers::SocialSourceId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::TenantRef
+impl serde_core::ser::Serialize for ratatoskr_identifiers::UserId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::WireTimestamp
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::AiArchiveId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::AiConversationId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::AiProjectId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::BlobOwner
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::BlobRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::ContentDigest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::CorrelationId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::DigestAlgorithm
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::DigestHex
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::DocumentId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EntityLocalId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EntityRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EventId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::Extensions
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::MediaType
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::OperationId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SafeMessage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SocialSourceId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::TenantRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::UserId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::WireTimestamp
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::AiArchiveId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::AiConversationId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::BlobRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::DigestHex where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::DocumentId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EntityKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EntityLocalId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EntityRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EventId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::Extensions where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::MediaType where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::OperationId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::TenantRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::UserId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::WireTimestamp where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::AiArchiveId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::AiConversationId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::BlobRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::DigestHex where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::DocumentId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EntityKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EntityLocalId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EntityRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EventId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::Extensions where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::MediaType where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::OperationId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::TenantRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::UserId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::WireTimestamp where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::AiArchiveId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::AiConversationId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::BlobRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::DigestHex where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::DocumentId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EntityKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EntityLocalId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EntityRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EventId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::Extensions where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::MediaType where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::OperationId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::TenantRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::UserId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::WireTimestamp where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::AiArchiveId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::AiConversationId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::DigestHex where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::DocumentId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EntityKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EntityLocalId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EntityRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EventId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::Extensions where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::UserId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::WireTimestamp where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_identifiers::AiArchiveId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::AiConversationId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::AiProjectId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::BlobOwner where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::CorrelationId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::DigestHex where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::DocumentId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::EntityKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::EntityLocalId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::EntityRef where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::EventId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::IdentifierError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::MediaType where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::OperationId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::SafeMessage where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::SocialSourceId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::TenantRef where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::UserId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::WireTimestamp where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::AiArchiveId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::AiConversationId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::AiProjectId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::BlobOwner where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::BlobRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::ContentDigest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::CorrelationId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::DigestAlgorithm where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::DigestHex where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::DocumentId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::EntityKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::EntityLocalId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::EntityRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::EventId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::Extensions where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::IdentifierError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::MediaType where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::OperationId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::SafeMessage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::SocialSourceId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::TenantRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::UserId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::WireTimestamp where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::AiArchiveId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::AiConversationId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::AiProjectId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::BlobOwner where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::BlobRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::ContentDigest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::CorrelationId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::DigestAlgorithm where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::DigestHex where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::DocumentId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EntityKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EntityLocalId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EntityRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EventId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::TenantRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::UserId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::WireTimestamp where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::AiArchiveId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::AiConversationId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::AiProjectId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::BlobOwner where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::BlobRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::ContentDigest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::CorrelationId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::DigestAlgorithm where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::DigestHex where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::DocumentId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EntityKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EntityLocalId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EntityRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EventId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::TenantRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::UserId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::WireTimestamp where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::AiArchiveId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::AiConversationId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::DigestHex where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::DocumentId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EntityKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EntityLocalId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EntityRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EventId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::Extensions where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::UserId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::WireTimestamp where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_identifiers::AiArchiveId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::AiConversationId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::AiProjectId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::BlobOwner
+impl<T> core::convert::From<T> for ratatoskr_identifiers::BlobRef
+impl<T> core::convert::From<T> for ratatoskr_identifiers::ContentDigest
+impl<T> core::convert::From<T> for ratatoskr_identifiers::CorrelationId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::DigestAlgorithm
+impl<T> core::convert::From<T> for ratatoskr_identifiers::DigestHex
+impl<T> core::convert::From<T> for ratatoskr_identifiers::DocumentId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::EntityKind
+impl<T> core::convert::From<T> for ratatoskr_identifiers::EntityLocalId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::EntityRef
+impl<T> core::convert::From<T> for ratatoskr_identifiers::EventId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::Extensions
+impl<T> core::convert::From<T> for ratatoskr_identifiers::IdentifierError
+impl<T> core::convert::From<T> for ratatoskr_identifiers::MediaType
+impl<T> core::convert::From<T> for ratatoskr_identifiers::OperationId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::SafeMessage
+impl<T> core::convert::From<T> for ratatoskr_identifiers::SocialSourceId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::TenantRef
+impl<T> core::convert::From<T> for ratatoskr_identifiers::UserId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::WireTimestamp
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::AiArchiveId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::AiConversationId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::DigestHex where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::DocumentId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EntityKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EntityLocalId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EntityRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EventId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::Extensions where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::UserId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::WireTimestamp where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::AiArchiveId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::AiConversationId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::AiProjectId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::BlobOwner where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::BlobRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::ContentDigest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::CorrelationId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::DigestAlgorithm where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::DigestHex where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::DocumentId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EntityLocalId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EntityRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EventId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::Extensions where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::MediaType where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::OperationId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SafeMessage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SocialSourceId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::TenantRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::UserId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::WireTimestamp where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_identifiers::TenantRef::of_user(ratatoskr_identifiers::UserId) -> Self
+pub const fn ratatoskr_identifiers::TenantRef::user_id(self) -> ratatoskr_identifiers::UserId
+pub const fn ratatoskr_identifiers::WireTimestamp::as_jiff(self) -> jiff::timestamp::Timestamp
+pub const fn ratatoskr_identifiers::WireTimestamp::from_jiff(jiff::timestamp::Timestamp) -> Self
+pub const ratatoskr_identifiers::AiArchiveId::KIND: &'static str
+pub const ratatoskr_identifiers::AiArchiveId::PATTERN: &'static str
+pub const ratatoskr_identifiers::AiConversationId::KIND: &'static str
+pub const ratatoskr_identifiers::AiConversationId::PATTERN: &'static str
+pub const ratatoskr_identifiers::AiProjectId::KIND: &'static str
+pub const ratatoskr_identifiers::AiProjectId::PATTERN: &'static str
+pub const ratatoskr_identifiers::BlobOwner::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_identifiers::BlobOwner::MAX_LEN: usize
+pub const ratatoskr_identifiers::BlobOwner::PATTERN: &'static str
+pub const ratatoskr_identifiers::CorrelationId::KIND: &'static str
+pub const ratatoskr_identifiers::CorrelationId::PATTERN: &'static str
+pub const ratatoskr_identifiers::DigestHex::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_identifiers::DigestHex::MAX_LEN: usize
+pub const ratatoskr_identifiers::DigestHex::PATTERN: &'static str
+pub const ratatoskr_identifiers::DocumentId::KIND: &'static str
+pub const ratatoskr_identifiers::DocumentId::PATTERN: &'static str
+pub const ratatoskr_identifiers::EntityKind::KNOWN: &'static [&'static str]
+pub const ratatoskr_identifiers::EntityKind::MAX_LEN: usize
+pub const ratatoskr_identifiers::EntityKind::PATTERN: &'static str
+pub const ratatoskr_identifiers::EntityLocalId::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_identifiers::EntityLocalId::MAX_LEN: usize
+pub const ratatoskr_identifiers::EntityLocalId::PATTERN: &'static str
+pub const ratatoskr_identifiers::EntityRef::MAX_LEN: usize
+pub const ratatoskr_identifiers::EntityRef::PATTERN: &'static str
+pub const ratatoskr_identifiers::EventId::KIND: &'static str
+pub const ratatoskr_identifiers::EventId::PATTERN: &'static str
+pub const ratatoskr_identifiers::MediaType::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_identifiers::MediaType::MAX_LEN: usize
+pub const ratatoskr_identifiers::MediaType::PATTERN: &'static str
+pub const ratatoskr_identifiers::OperationId::KIND: &'static str
+pub const ratatoskr_identifiers::OperationId::PATTERN: &'static str
+pub const ratatoskr_identifiers::SafeMessage::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_identifiers::SafeMessage::MAX_LEN: usize
+pub const ratatoskr_identifiers::SafeMessage::PATTERN: &'static str
+pub const ratatoskr_identifiers::SocialSourceId::KIND: &'static str
+pub const ratatoskr_identifiers::SocialSourceId::PATTERN: &'static str
+pub const ratatoskr_identifiers::TenantRef::PATTERN: &'static str
+pub const ratatoskr_identifiers::UserId::KIND: &'static str
+pub const ratatoskr_identifiers::UserId::PATTERN: &'static str
+pub const ratatoskr_identifiers::WireTimestamp::PATTERN: &'static str
+pub fn alloc::string::String::from(ratatoskr_identifiers::AiArchiveId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::AiConversationId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::AiProjectId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::BlobOwner) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::CorrelationId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::DigestHex) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::DocumentId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::EntityLocalId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::EntityRef) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::EventId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::MediaType) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::OperationId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::SafeMessage) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::SocialSourceId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::TenantRef) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::UserId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::WireTimestamp) -> Self
+pub fn ratatoskr_identifiers::AiArchiveId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::AiArchiveId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::AiArchiveId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::AiArchiveId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::AiArchiveId::clone(&self) -> ratatoskr_identifiers::AiArchiveId
+pub fn ratatoskr_identifiers::AiArchiveId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::AiArchiveId::cmp(&self, &ratatoskr_identifiers::AiArchiveId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::AiArchiveId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::AiArchiveId::eq(&self, &ratatoskr_identifiers::AiArchiveId) -> bool
+pub fn ratatoskr_identifiers::AiArchiveId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::AiArchiveId::from(T) -> T
+pub fn ratatoskr_identifiers::AiArchiveId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::AiArchiveId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::AiArchiveId::into(self) -> U
+pub fn ratatoskr_identifiers::AiArchiveId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::AiArchiveId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::AiArchiveId::new_v7() -> Self
+pub fn ratatoskr_identifiers::AiArchiveId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::AiArchiveId::partial_cmp(&self, &ratatoskr_identifiers::AiArchiveId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::AiArchiveId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiArchiveId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiArchiveId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::AiArchiveId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::AiArchiveId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::AiArchiveId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiArchiveId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::AiArchiveId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiArchiveId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::AiArchiveId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::AiConversationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::AiConversationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::AiConversationId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::AiConversationId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::AiConversationId::clone(&self) -> ratatoskr_identifiers::AiConversationId
+pub fn ratatoskr_identifiers::AiConversationId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::AiConversationId::cmp(&self, &ratatoskr_identifiers::AiConversationId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::AiConversationId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::AiConversationId::eq(&self, &ratatoskr_identifiers::AiConversationId) -> bool
+pub fn ratatoskr_identifiers::AiConversationId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::AiConversationId::from(T) -> T
+pub fn ratatoskr_identifiers::AiConversationId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::AiConversationId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::AiConversationId::into(self) -> U
+pub fn ratatoskr_identifiers::AiConversationId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::AiConversationId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::AiConversationId::new_v7() -> Self
+pub fn ratatoskr_identifiers::AiConversationId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::AiConversationId::partial_cmp(&self, &ratatoskr_identifiers::AiConversationId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::AiConversationId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiConversationId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiConversationId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::AiConversationId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::AiConversationId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::AiConversationId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiConversationId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::AiConversationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiConversationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::AiConversationId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::AiProjectId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::AiProjectId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::AiProjectId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::AiProjectId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::AiProjectId::clone(&self) -> ratatoskr_identifiers::AiProjectId
+pub fn ratatoskr_identifiers::AiProjectId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::AiProjectId::cmp(&self, &ratatoskr_identifiers::AiProjectId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::AiProjectId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::AiProjectId::eq(&self, &ratatoskr_identifiers::AiProjectId) -> bool
+pub fn ratatoskr_identifiers::AiProjectId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::AiProjectId::from(T) -> T
+pub fn ratatoskr_identifiers::AiProjectId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::AiProjectId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::AiProjectId::into(self) -> U
+pub fn ratatoskr_identifiers::AiProjectId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::AiProjectId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::AiProjectId::new_v7() -> Self
+pub fn ratatoskr_identifiers::AiProjectId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::AiProjectId::partial_cmp(&self, &ratatoskr_identifiers::AiProjectId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::AiProjectId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiProjectId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::AiProjectId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::AiProjectId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::AiProjectId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::AiProjectId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiProjectId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::AiProjectId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::AiProjectId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::AiProjectId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::BlobOwner::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::BlobOwner::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::BlobOwner::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::BlobOwner::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::BlobOwner::clone(&self) -> ratatoskr_identifiers::BlobOwner
+pub fn ratatoskr_identifiers::BlobOwner::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::BlobOwner::cmp(&self, &ratatoskr_identifiers::BlobOwner) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::BlobOwner::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::BlobOwner::eq(&self, &ratatoskr_identifiers::BlobOwner) -> bool
+pub fn ratatoskr_identifiers::BlobOwner::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::BlobOwner::from(T) -> T
+pub fn ratatoskr_identifiers::BlobOwner::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::BlobOwner::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::BlobOwner::into(self) -> U
+pub fn ratatoskr_identifiers::BlobOwner::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::BlobOwner::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::BlobOwner::partial_cmp(&self, &ratatoskr_identifiers::BlobOwner) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::BlobOwner::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlobOwner::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlobOwner::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::BlobOwner::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::BlobOwner::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::BlobOwner::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::BlobOwner::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::BlobOwner::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::BlobOwner::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::BlobRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::BlobRef::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::BlobRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::BlobRef::clone(&self) -> ratatoskr_identifiers::BlobRef
+pub fn ratatoskr_identifiers::BlobRef::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::BlobRef::cmp(&self, &ratatoskr_identifiers::BlobRef) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::BlobRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::BlobRef::eq(&self, &ratatoskr_identifiers::BlobRef) -> bool
+pub fn ratatoskr_identifiers::BlobRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::BlobRef::from(T) -> T
+pub fn ratatoskr_identifiers::BlobRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::BlobRef::inline_schema() -> bool
+pub fn ratatoskr_identifiers::BlobRef::into(self) -> U
+pub fn ratatoskr_identifiers::BlobRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::BlobRef::partial_cmp(&self, &ratatoskr_identifiers::BlobRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::BlobRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlobRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlobRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::BlobRef::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::BlobRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::BlobRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::BlobRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::ContentDigest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::ContentDigest::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::ContentDigest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::ContentDigest::clone(&self) -> ratatoskr_identifiers::ContentDigest
+pub fn ratatoskr_identifiers::ContentDigest::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::ContentDigest::cmp(&self, &ratatoskr_identifiers::ContentDigest) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::ContentDigest::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::ContentDigest::eq(&self, &ratatoskr_identifiers::ContentDigest) -> bool
+pub fn ratatoskr_identifiers::ContentDigest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::ContentDigest::from(T) -> T
+pub fn ratatoskr_identifiers::ContentDigest::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::ContentDigest::inline_schema() -> bool
+pub fn ratatoskr_identifiers::ContentDigest::into(self) -> U
+pub fn ratatoskr_identifiers::ContentDigest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::ContentDigest::partial_cmp(&self, &ratatoskr_identifiers::ContentDigest) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::ContentDigest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::ContentDigest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::ContentDigest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::ContentDigest::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::ContentDigest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::ContentDigest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::ContentDigest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::CorrelationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::CorrelationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::CorrelationId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::CorrelationId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::CorrelationId::clone(&self) -> ratatoskr_identifiers::CorrelationId
+pub fn ratatoskr_identifiers::CorrelationId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::CorrelationId::cmp(&self, &ratatoskr_identifiers::CorrelationId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::CorrelationId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::CorrelationId::eq(&self, &ratatoskr_identifiers::CorrelationId) -> bool
+pub fn ratatoskr_identifiers::CorrelationId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::CorrelationId::from(T) -> T
+pub fn ratatoskr_identifiers::CorrelationId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::CorrelationId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::CorrelationId::into(self) -> U
+pub fn ratatoskr_identifiers::CorrelationId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::CorrelationId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::CorrelationId::new_v7() -> Self
+pub fn ratatoskr_identifiers::CorrelationId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::CorrelationId::partial_cmp(&self, &ratatoskr_identifiers::CorrelationId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::CorrelationId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::CorrelationId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::CorrelationId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::CorrelationId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::CorrelationId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::CorrelationId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::CorrelationId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::CorrelationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::CorrelationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::CorrelationId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::DigestAlgorithm::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::DigestAlgorithm::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::DigestAlgorithm::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::DigestAlgorithm::clone(&self) -> ratatoskr_identifiers::DigestAlgorithm
+pub fn ratatoskr_identifiers::DigestAlgorithm::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::DigestAlgorithm::cmp(&self, &ratatoskr_identifiers::DigestAlgorithm) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::DigestAlgorithm::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::DigestAlgorithm::eq(&self, &ratatoskr_identifiers::DigestAlgorithm) -> bool
+pub fn ratatoskr_identifiers::DigestAlgorithm::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::DigestAlgorithm::from(T) -> T
+pub fn ratatoskr_identifiers::DigestAlgorithm::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::DigestAlgorithm::inline_schema() -> bool
+pub fn ratatoskr_identifiers::DigestAlgorithm::into(self) -> U
+pub fn ratatoskr_identifiers::DigestAlgorithm::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::DigestAlgorithm::partial_cmp(&self, &ratatoskr_identifiers::DigestAlgorithm) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::DigestAlgorithm::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DigestAlgorithm::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DigestAlgorithm::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::DigestAlgorithm::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::DigestAlgorithm::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::DigestAlgorithm::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::DigestAlgorithm::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::DigestHex::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::DigestHex::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::DigestHex::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::DigestHex::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::DigestHex::clone(&self) -> ratatoskr_identifiers::DigestHex
+pub fn ratatoskr_identifiers::DigestHex::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::DigestHex::cmp(&self, &ratatoskr_identifiers::DigestHex) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::DigestHex::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::DigestHex::eq(&self, &ratatoskr_identifiers::DigestHex) -> bool
+pub fn ratatoskr_identifiers::DigestHex::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::DigestHex::from(T) -> T
+pub fn ratatoskr_identifiers::DigestHex::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::DigestHex::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::DigestHex::into(self) -> U
+pub fn ratatoskr_identifiers::DigestHex::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::DigestHex::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::DigestHex::partial_cmp(&self, &ratatoskr_identifiers::DigestHex) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::DigestHex::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DigestHex::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DigestHex::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::DigestHex::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::DigestHex::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::DigestHex::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::DigestHex::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::DigestHex::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::DigestHex::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::DocumentId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::DocumentId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::DocumentId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::DocumentId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::DocumentId::clone(&self) -> ratatoskr_identifiers::DocumentId
+pub fn ratatoskr_identifiers::DocumentId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::DocumentId::cmp(&self, &ratatoskr_identifiers::DocumentId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::DocumentId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::DocumentId::eq(&self, &ratatoskr_identifiers::DocumentId) -> bool
+pub fn ratatoskr_identifiers::DocumentId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::DocumentId::from(T) -> T
+pub fn ratatoskr_identifiers::DocumentId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::DocumentId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::DocumentId::into(self) -> U
+pub fn ratatoskr_identifiers::DocumentId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::DocumentId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::DocumentId::new_v7() -> Self
+pub fn ratatoskr_identifiers::DocumentId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::DocumentId::partial_cmp(&self, &ratatoskr_identifiers::DocumentId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::DocumentId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DocumentId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::DocumentId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::DocumentId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::DocumentId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::DocumentId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::DocumentId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::DocumentId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::DocumentId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::DocumentId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::EntityKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::EntityKind::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::EntityKind::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::EntityKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::EntityKind::clone(&self) -> ratatoskr_identifiers::EntityKind
+pub fn ratatoskr_identifiers::EntityKind::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::EntityKind::cmp(&self, &ratatoskr_identifiers::EntityKind) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::EntityKind::eq(&self, &ratatoskr_identifiers::EntityKind) -> bool
+pub fn ratatoskr_identifiers::EntityKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::EntityKind::from(T) -> T
+pub fn ratatoskr_identifiers::EntityKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::EntityKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::EntityKind::into(self) -> U
+pub fn ratatoskr_identifiers::EntityKind::is_known(&self) -> bool
+pub fn ratatoskr_identifiers::EntityKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::EntityKind::partial_cmp(&self, &ratatoskr_identifiers::EntityKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::EntityKind::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::EntityKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::EntityKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::EntityKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::EntityKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::EntityLocalId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::EntityLocalId::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::EntityLocalId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::EntityLocalId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::EntityLocalId::clone(&self) -> ratatoskr_identifiers::EntityLocalId
+pub fn ratatoskr_identifiers::EntityLocalId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::EntityLocalId::cmp(&self, &ratatoskr_identifiers::EntityLocalId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::EntityLocalId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::EntityLocalId::eq(&self, &ratatoskr_identifiers::EntityLocalId) -> bool
+pub fn ratatoskr_identifiers::EntityLocalId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::EntityLocalId::from(T) -> T
+pub fn ratatoskr_identifiers::EntityLocalId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::EntityLocalId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::EntityLocalId::into(self) -> U
+pub fn ratatoskr_identifiers::EntityLocalId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::EntityLocalId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::EntityLocalId::partial_cmp(&self, &ratatoskr_identifiers::EntityLocalId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::EntityLocalId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EntityLocalId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EntityLocalId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::EntityLocalId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::EntityLocalId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::EntityLocalId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::EntityLocalId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::EntityLocalId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::EntityLocalId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::EntityRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::EntityRef::as_uuid(&self) -> core::option::Option<uuid::Uuid>
+pub fn ratatoskr_identifiers::EntityRef::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::EntityRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::EntityRef::clone(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::EntityRef::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::EntityRef::cmp(&self, &ratatoskr_identifiers::EntityRef) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::EntityRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::EntityRef::eq(&self, &ratatoskr_identifiers::EntityRef) -> bool
+pub fn ratatoskr_identifiers::EntityRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::EntityRef::from(T) -> T
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiArchiveId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiConversationId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiProjectId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::CorrelationId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::DocumentId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::EventId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::OperationId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::SocialSourceId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::UserId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::EntityRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::EntityRef::into(self) -> U
+pub fn ratatoskr_identifiers::EntityRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::EntityRef::kind(&self) -> &ratatoskr_identifiers::EntityKind
+pub fn ratatoskr_identifiers::EntityRef::local_id(&self) -> &ratatoskr_identifiers::EntityLocalId
+pub fn ratatoskr_identifiers::EntityRef::new(ratatoskr_identifiers::EntityKind, ratatoskr_identifiers::EntityLocalId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::EntityRef::partial_cmp(&self, &ratatoskr_identifiers::EntityRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::EntityRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EntityRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EntityRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::EntityRef::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::EntityRef::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::EntityRef::to_wire(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::EntityRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::EntityRef::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::EntityRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::EntityRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::EventId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::EventId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::EventId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::EventId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::EventId::clone(&self) -> ratatoskr_identifiers::EventId
+pub fn ratatoskr_identifiers::EventId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::EventId::cmp(&self, &ratatoskr_identifiers::EventId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::EventId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::EventId::eq(&self, &ratatoskr_identifiers::EventId) -> bool
+pub fn ratatoskr_identifiers::EventId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::EventId::from(T) -> T
+pub fn ratatoskr_identifiers::EventId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::EventId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::EventId::into(self) -> U
+pub fn ratatoskr_identifiers::EventId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::EventId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::EventId::new_v7() -> Self
+pub fn ratatoskr_identifiers::EventId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::EventId::partial_cmp(&self, &ratatoskr_identifiers::EventId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::EventId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EventId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::EventId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::EventId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::EventId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::EventId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::EventId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::EventId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::EventId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::EventId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::Extensions::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::Extensions::as_map(&self) -> &alloc::collections::btree::map::BTreeMap<alloc::string::String, serde_json::value::Value>
+pub fn ratatoskr_identifiers::Extensions::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::Extensions::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::Extensions::clone(&self) -> ratatoskr_identifiers::Extensions
+pub fn ratatoskr_identifiers::Extensions::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::Extensions::default() -> ratatoskr_identifiers::Extensions
+pub fn ratatoskr_identifiers::Extensions::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::Extensions::eq(&self, &ratatoskr_identifiers::Extensions) -> bool
+pub fn ratatoskr_identifiers::Extensions::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::Extensions::from(T) -> T
+pub fn ratatoskr_identifiers::Extensions::get(&self, &str) -> core::option::Option<&serde_json::value::Value>
+pub fn ratatoskr_identifiers::Extensions::insert(&mut self, impl core::convert::Into<alloc::string::String>, serde_json::value::Value) -> core::option::Option<serde_json::value::Value>
+pub fn ratatoskr_identifiers::Extensions::into(self) -> U
+pub fn ratatoskr_identifiers::Extensions::is_empty(&self) -> bool
+pub fn ratatoskr_identifiers::Extensions::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::Extensions::keys(&self) -> impl core::iter::traits::iterator::Iterator<Item = &str>
+pub fn ratatoskr_identifiers::Extensions::len(&self) -> usize
+pub fn ratatoskr_identifiers::Extensions::new() -> Self
+pub fn ratatoskr_identifiers::Extensions::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::Extensions::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::Extensions::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::Extensions::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::Extensions::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::Extensions::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::Extensions::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::IdentifierError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::IdentifierError::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::IdentifierError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::IdentifierError::clone(&self) -> ratatoskr_identifiers::IdentifierError
+pub fn ratatoskr_identifiers::IdentifierError::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::IdentifierError::eq(&self, &ratatoskr_identifiers::IdentifierError) -> bool
+pub fn ratatoskr_identifiers::IdentifierError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::IdentifierError::from(T) -> T
+pub fn ratatoskr_identifiers::IdentifierError::into(self) -> U
+pub fn ratatoskr_identifiers::IdentifierError::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::IdentifierError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::IdentifierError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::IdentifierError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::IdentifierError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::MediaType::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::MediaType::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::MediaType::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::MediaType::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::MediaType::clone(&self) -> ratatoskr_identifiers::MediaType
+pub fn ratatoskr_identifiers::MediaType::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::MediaType::cmp(&self, &ratatoskr_identifiers::MediaType) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::MediaType::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::MediaType::eq(&self, &ratatoskr_identifiers::MediaType) -> bool
+pub fn ratatoskr_identifiers::MediaType::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::MediaType::from(T) -> T
+pub fn ratatoskr_identifiers::MediaType::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::MediaType::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::MediaType::into(self) -> U
+pub fn ratatoskr_identifiers::MediaType::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::MediaType::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::MediaType::partial_cmp(&self, &ratatoskr_identifiers::MediaType) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::MediaType::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::MediaType::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::MediaType::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::MediaType::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::MediaType::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::MediaType::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::MediaType::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::MediaType::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::MediaType::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::OperationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::OperationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::OperationId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::OperationId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::OperationId::clone(&self) -> ratatoskr_identifiers::OperationId
+pub fn ratatoskr_identifiers::OperationId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::OperationId::cmp(&self, &ratatoskr_identifiers::OperationId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::OperationId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::OperationId::eq(&self, &ratatoskr_identifiers::OperationId) -> bool
+pub fn ratatoskr_identifiers::OperationId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::OperationId::from(T) -> T
+pub fn ratatoskr_identifiers::OperationId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::OperationId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::OperationId::into(self) -> U
+pub fn ratatoskr_identifiers::OperationId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::OperationId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::OperationId::new_v7() -> Self
+pub fn ratatoskr_identifiers::OperationId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::OperationId::partial_cmp(&self, &ratatoskr_identifiers::OperationId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::OperationId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::OperationId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::OperationId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::OperationId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::OperationId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::OperationId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::OperationId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::OperationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::OperationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::OperationId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::SafeMessage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::SafeMessage::as_str(&self) -> &str
+pub fn ratatoskr_identifiers::SafeMessage::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::SafeMessage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::SafeMessage::clone(&self) -> ratatoskr_identifiers::SafeMessage
+pub fn ratatoskr_identifiers::SafeMessage::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::SafeMessage::cmp(&self, &ratatoskr_identifiers::SafeMessage) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::SafeMessage::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::SafeMessage::eq(&self, &ratatoskr_identifiers::SafeMessage) -> bool
+pub fn ratatoskr_identifiers::SafeMessage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::SafeMessage::from(T) -> T
+pub fn ratatoskr_identifiers::SafeMessage::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::SafeMessage::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::SafeMessage::into(self) -> U
+pub fn ratatoskr_identifiers::SafeMessage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::SafeMessage::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::SafeMessage::partial_cmp(&self, &ratatoskr_identifiers::SafeMessage) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::SafeMessage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::SafeMessage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::SafeMessage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::SafeMessage::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::SafeMessage::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::SafeMessage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::SafeMessage::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::SafeMessage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::SafeMessage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::SocialSourceId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::SocialSourceId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::SocialSourceId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::SocialSourceId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::SocialSourceId::clone(&self) -> ratatoskr_identifiers::SocialSourceId
+pub fn ratatoskr_identifiers::SocialSourceId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::SocialSourceId::cmp(&self, &ratatoskr_identifiers::SocialSourceId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::SocialSourceId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::SocialSourceId::eq(&self, &ratatoskr_identifiers::SocialSourceId) -> bool
+pub fn ratatoskr_identifiers::SocialSourceId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::SocialSourceId::from(T) -> T
+pub fn ratatoskr_identifiers::SocialSourceId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::SocialSourceId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::SocialSourceId::into(self) -> U
+pub fn ratatoskr_identifiers::SocialSourceId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::SocialSourceId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::SocialSourceId::new_v7() -> Self
+pub fn ratatoskr_identifiers::SocialSourceId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::SocialSourceId::partial_cmp(&self, &ratatoskr_identifiers::SocialSourceId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::SocialSourceId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::SocialSourceId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::SocialSourceId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::SocialSourceId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::SocialSourceId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::SocialSourceId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::SocialSourceId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::SocialSourceId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::SocialSourceId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::SocialSourceId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::TenantRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::TenantRef::as_entity_ref(self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::TenantRef::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::TenantRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::TenantRef::clone(&self) -> ratatoskr_identifiers::TenantRef
+pub fn ratatoskr_identifiers::TenantRef::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::TenantRef::cmp(&self, &ratatoskr_identifiers::TenantRef) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::TenantRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::TenantRef::eq(&self, &ratatoskr_identifiers::TenantRef) -> bool
+pub fn ratatoskr_identifiers::TenantRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::TenantRef::from(T) -> T
+pub fn ratatoskr_identifiers::TenantRef::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::TenantRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::TenantRef::into(self) -> U
+pub fn ratatoskr_identifiers::TenantRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::TenantRef::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::TenantRef::partial_cmp(&self, &ratatoskr_identifiers::TenantRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::TenantRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::TenantRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::TenantRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::TenantRef::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::TenantRef::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::TenantRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::TenantRef::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::TenantRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::TenantRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::UserId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::UserId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::UserId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::UserId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::UserId::clone(&self) -> ratatoskr_identifiers::UserId
+pub fn ratatoskr_identifiers::UserId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::UserId::cmp(&self, &ratatoskr_identifiers::UserId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::UserId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::UserId::eq(&self, &ratatoskr_identifiers::UserId) -> bool
+pub fn ratatoskr_identifiers::UserId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::UserId::from(T) -> T
+pub fn ratatoskr_identifiers::UserId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::UserId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::UserId::into(self) -> U
+pub fn ratatoskr_identifiers::UserId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::UserId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::UserId::new_v7() -> Self
+pub fn ratatoskr_identifiers::UserId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::UserId::partial_cmp(&self, &ratatoskr_identifiers::UserId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::UserId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::UserId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::UserId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::UserId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::UserId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::UserId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::UserId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::UserId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::UserId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::UserId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::WireTimestamp::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::WireTimestamp::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::WireTimestamp::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::WireTimestamp::clone(&self) -> ratatoskr_identifiers::WireTimestamp
+pub fn ratatoskr_identifiers::WireTimestamp::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::WireTimestamp::cmp(&self, &ratatoskr_identifiers::WireTimestamp) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::WireTimestamp::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::WireTimestamp::eq(&self, &ratatoskr_identifiers::WireTimestamp) -> bool
+pub fn ratatoskr_identifiers::WireTimestamp::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::WireTimestamp::from(T) -> T
+pub fn ratatoskr_identifiers::WireTimestamp::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::WireTimestamp::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::WireTimestamp::into(self) -> U
+pub fn ratatoskr_identifiers::WireTimestamp::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::WireTimestamp::now() -> Self
+pub fn ratatoskr_identifiers::WireTimestamp::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::WireTimestamp::partial_cmp(&self, &ratatoskr_identifiers::WireTimestamp) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::WireTimestamp::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::WireTimestamp::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::WireTimestamp::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::WireTimestamp::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::WireTimestamp::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::WireTimestamp::to_wire(self) -> alloc::string::String
+pub fn ratatoskr_identifiers::WireTimestamp::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::WireTimestamp::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::WireTimestamp::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::WireTimestamp::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::canonical_json<T: serde_core::ser::Serialize>(&T) -> core::result::Result<alloc::string::String, serde_json::error::Error>
+pub fn ratatoskr_identifiers::dropped_field_pointers(&serde_json::value::Value, &serde_json::value::Value) -> alloc::vec::Vec<alloc::string::String>
+pub macro ratatoskr_identifiers::wire_string_newtype!
+pub mod ratatoskr_identifiers
+pub ratatoskr_identifiers::BlobRef::digest: ratatoskr_identifiers::ContentDigest
+pub ratatoskr_identifiers::BlobRef::length_bytes: u64
+pub ratatoskr_identifiers::BlobRef::media_type: ratatoskr_identifiers::MediaType
+pub ratatoskr_identifiers::BlobRef::owner_service: ratatoskr_identifiers::BlobOwner
+pub ratatoskr_identifiers::ContentDigest::algorithm: ratatoskr_identifiers::DigestAlgorithm
+pub ratatoskr_identifiers::ContentDigest::hex: ratatoskr_identifiers::DigestHex
+pub ratatoskr_identifiers::DigestAlgorithm::Sha256
+pub ratatoskr_identifiers::EntityKind::Blob
+pub ratatoskr_identifiers::EntityKind::Document
+pub ratatoskr_identifiers::EntityKind::Event
+pub ratatoskr_identifiers::EntityKind::Operation
+pub ratatoskr_identifiers::EntityKind::Other(alloc::string::String)
+pub ratatoskr_identifiers::EntityKind::User
+pub ratatoskr_identifiers::IdentifierError::Empty
+pub ratatoskr_identifiers::IdentifierError::Empty::type_name: &'static str
+pub ratatoskr_identifiers::IdentifierError::KindMismatch
+pub ratatoskr_identifiers::IdentifierError::KindMismatch::actual: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::KindMismatch::expected: &'static str
+pub ratatoskr_identifiers::IdentifierError::MalformedInstant
+pub ratatoskr_identifiers::IdentifierError::MalformedInstant::input: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::MalformedInstant::reason: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::MissingKindSeparator
+pub ratatoskr_identifiers::IdentifierError::MissingKindSeparator::input: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalInstant
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalInstant::canonical: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalInstant::input: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalUuid
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalUuid::canonical: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::NonCanonicalUuid::local_id: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::NotAUuid
+pub ratatoskr_identifiers::IdentifierError::NotAUuid::local_id: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::PatternMismatch
+pub ratatoskr_identifiers::IdentifierError::PatternMismatch::input: alloc::string::String
+pub ratatoskr_identifiers::IdentifierError::PatternMismatch::pattern: &'static str
+pub ratatoskr_identifiers::IdentifierError::PatternMismatch::type_name: &'static str
+pub ratatoskr_identifiers::IdentifierError::TooLong
+pub ratatoskr_identifiers::IdentifierError::TooLong::got: usize
+pub ratatoskr_identifiers::IdentifierError::TooLong::max: usize
+pub ratatoskr_identifiers::IdentifierError::TooLong::type_name: &'static str
+pub struct ratatoskr_identifiers::AiArchiveId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::AiConversationId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::AiProjectId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::BlobOwner(_)
+pub struct ratatoskr_identifiers::BlobRef
+pub struct ratatoskr_identifiers::ContentDigest
+pub struct ratatoskr_identifiers::CorrelationId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::DigestHex(_)
+pub struct ratatoskr_identifiers::DocumentId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::EntityLocalId(_)
+pub struct ratatoskr_identifiers::EntityRef
+pub struct ratatoskr_identifiers::EventId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::Extensions(_)
+pub struct ratatoskr_identifiers::MediaType(_)
+pub struct ratatoskr_identifiers::OperationId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::SafeMessage(_)
+pub struct ratatoskr_identifiers::SocialSourceId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::TenantRef(_)
+pub struct ratatoskr_identifiers::UserId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::WireTimestamp(_)
+pub type ratatoskr_identifiers::AiArchiveId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiArchiveId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::AiArchiveId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::AiArchiveId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiArchiveId::Owned = T
+pub type ratatoskr_identifiers::AiConversationId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiConversationId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::AiConversationId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::AiConversationId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiConversationId::Owned = T
+pub type ratatoskr_identifiers::AiProjectId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiProjectId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::AiProjectId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::AiProjectId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::AiProjectId::Owned = T
+pub type ratatoskr_identifiers::BlobOwner::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::BlobOwner::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::BlobOwner::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::BlobOwner::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::BlobOwner::Owned = T
+pub type ratatoskr_identifiers::BlobRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::BlobRef::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::BlobRef::Owned = T
+pub type ratatoskr_identifiers::ContentDigest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::ContentDigest::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::ContentDigest::Owned = T
+pub type ratatoskr_identifiers::CorrelationId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::CorrelationId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::CorrelationId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::CorrelationId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::CorrelationId::Owned = T
+pub type ratatoskr_identifiers::DigestAlgorithm::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::DigestAlgorithm::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::DigestAlgorithm::Owned = T
+pub type ratatoskr_identifiers::DigestHex::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::DigestHex::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::DigestHex::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::DigestHex::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::DigestHex::Owned = T
+pub type ratatoskr_identifiers::DocumentId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::DocumentId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::DocumentId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::DocumentId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::DocumentId::Owned = T
+pub type ratatoskr_identifiers::EntityKind::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EntityKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::EntityKind::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::EntityKind::Owned = T
+pub type ratatoskr_identifiers::EntityLocalId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EntityLocalId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::EntityLocalId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::EntityLocalId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EntityLocalId::Owned = T
+pub type ratatoskr_identifiers::EntityRef::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EntityRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::EntityRef::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::EntityRef::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EntityRef::Owned = T
+pub type ratatoskr_identifiers::EventId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EventId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::EventId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::EventId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::EventId::Owned = T
+pub type ratatoskr_identifiers::Extensions::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::Extensions::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::Extensions::Owned = T
+pub type ratatoskr_identifiers::IdentifierError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::IdentifierError::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::IdentifierError::Owned = T
+pub type ratatoskr_identifiers::MediaType::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::MediaType::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::MediaType::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::MediaType::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::MediaType::Owned = T
+pub type ratatoskr_identifiers::OperationId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::OperationId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::OperationId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::OperationId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::OperationId::Owned = T
+pub type ratatoskr_identifiers::SafeMessage::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::SafeMessage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::SafeMessage::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::SafeMessage::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::SafeMessage::Owned = T
+pub type ratatoskr_identifiers::SocialSourceId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::SocialSourceId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::SocialSourceId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::SocialSourceId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::SocialSourceId::Owned = T
+pub type ratatoskr_identifiers::TenantRef::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::TenantRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::TenantRef::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::TenantRef::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::TenantRef::Owned = T
+pub type ratatoskr_identifiers::UserId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::UserId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::UserId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::UserId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::UserId::Owned = T
+pub type ratatoskr_identifiers::WireTimestamp::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::WireTimestamp::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::WireTimestamp::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::WireTimestamp::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::WireTimestamp::Owned = T
+pub unsafe fn ratatoskr_identifiers::AiArchiveId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::AiConversationId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::AiProjectId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::BlobOwner::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::BlobRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::ContentDigest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::CorrelationId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::DigestAlgorithm::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::DigestHex::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::DocumentId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::EntityKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::EntityLocalId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::EntityRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::EventId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::Extensions::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::IdentifierError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::MediaType::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::OperationId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::SafeMessage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::SocialSourceId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::TenantRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::UserId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::WireTimestamp::clone_to_uninit(&self, *mut u8)

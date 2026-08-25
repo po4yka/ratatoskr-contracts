@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–7 implemented, plus the deterministic TypeScript generation of milestone 8. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, and the fixture suite. OpenAPI, a frozen compatibility baseline and package publication do **not** exist yet. Repository CI runs the documented gate.
+> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -52,6 +52,7 @@ schemas/
 └── openapi/
 
 fixtures/                   (now)
+compat/api/                 (now: frozen public-API baselines)
 generated/
 tools/                      (now: contractsc)
 ```
@@ -216,6 +217,6 @@ The pin is the `rev`, not the transport. Use `https://` while this repository is
 
 ## Project status
 
-Milestones 1 through 7 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the deterministic generator and gate, generated JSON Schema, and the fixture suite. The gate also runs in CI. Milestone 8's deterministic TypeScript generation is implemented as well — `generated/typescript/` mirrors `schemas/` one-to-one under the same gate. What remains of milestones 8 through 10 — any further cross-language targets, the frozen compatibility baseline, package CI and publishing — is still target architecture.
+Milestones 1 through 9 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the deterministic generator and gate, generated JSON Schema, the fixture suite, and milestone 8's deterministic TypeScript generation mirroring `schemas/` one-to-one. Milestone 9 is the assurance layer: `.github/workflows/ci.yml` runs the gate, and `.github/workflows/contracts.yml` adds the `compatibility` job (every crate's public API diffed against its frozen baseline under `compat/api/`), the `determinism` job (regeneration reproduces the committed tree byte for byte) and the `package` job (the TypeScript output uploaded as a workflow artifact). What remains of milestones 8 through 10 — any further cross-language targets and publishing tagged packages to a registry — is still target architecture.
 
 Two decisions are recorded and accepted: [ADR-0001](docs/adr/0001-canonical-schema-source-format.md) (Rust-first canonical source) and [ADR-0002](docs/adr/0002-event-naming-and-major-version-strategy.md) (event naming and the two version axes). Nothing is published, so every contract here remains subject to further ADRs and contract-focused review.
