@@ -1,0 +1,695 @@
+# Public API baseline of ratatoskr-backup-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_backup_contracts::BackupExclusion
+impl core::clone::Clone for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::clone::Clone for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::clone::Clone for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::clone::Clone for ratatoskr_backup_contracts::ExclusionExpression
+impl core::clone::Clone for ratatoskr_backup_contracts::MirrorCadence
+impl core::clone::Clone for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::clone::Clone for ratatoskr_backup_contracts::PolicyOutcome
+impl core::clone::Clone for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::clone::Clone for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::clone::Clone for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::cmp::Eq for ratatoskr_backup_contracts::BackupExclusion
+impl core::cmp::Eq for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::cmp::Eq for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::cmp::Eq for ratatoskr_backup_contracts::ExclusionExpression
+impl core::cmp::Eq for ratatoskr_backup_contracts::MirrorCadence
+impl core::cmp::Eq for ratatoskr_backup_contracts::PolicyOutcome
+impl core::cmp::Eq for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::cmp::Eq for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::cmp::Eq for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::cmp::Ord for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::cmp::Ord for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::cmp::Ord for ratatoskr_backup_contracts::ExclusionExpression
+impl core::cmp::Ord for ratatoskr_backup_contracts::MirrorCadence
+impl core::cmp::Ord for ratatoskr_backup_contracts::PolicyOutcome
+impl core::cmp::Ord for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::BackupExclusion
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::ExclusionExpression
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::MirrorCadence
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyOutcome
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::ExclusionExpression
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::MirrorCadence
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::PolicyOutcome
+impl core::cmp::PartialOrd for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::convert::From<ratatoskr_backup_contracts::ExclusionExpression> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_backup_contracts::ExclusionExpression
+impl core::error::Error for ratatoskr_backup_contracts::BackupContractError
+impl core::fmt::Debug for ratatoskr_backup_contracts::BackupContractError
+impl core::fmt::Debug for ratatoskr_backup_contracts::BackupExclusion
+impl core::fmt::Debug for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::fmt::Debug for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::fmt::Debug for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::fmt::Debug for ratatoskr_backup_contracts::ExclusionExpression
+impl core::fmt::Debug for ratatoskr_backup_contracts::MirrorCadence
+impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyOutcome
+impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::fmt::Debug for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::fmt::Display for ratatoskr_backup_contracts::BackupContractError
+impl core::fmt::Display for ratatoskr_backup_contracts::ExclusionExpression
+impl core::hash::Hash for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::hash::Hash for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::hash::Hash for ratatoskr_backup_contracts::ExclusionExpression
+impl core::hash::Hash for ratatoskr_backup_contracts::MirrorCadence
+impl core::hash::Hash for ratatoskr_backup_contracts::PolicyOutcome
+impl core::hash::Hash for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Copy for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::Copy for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::Copy for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::Copy for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::Copy for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Freeze for ratatoskr_backup_contracts::BackupContractError
+impl core::marker::Freeze for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::Freeze for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::Freeze for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::Freeze for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::Freeze for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::Freeze for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::Freeze for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Send for ratatoskr_backup_contracts::BackupContractError
+impl core::marker::Send for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::Send for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::Send for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::Send for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::Send for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::Send for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::Send for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::Send for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::Send for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Send for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::Send for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Sync for ratatoskr_backup_contracts::BackupContractError
+impl core::marker::Sync for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::Sync for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::Sync for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::Sync for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::Sync for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::Sync for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::Sync for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::Sync for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::Sync for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Sync for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::Sync for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Unpin for ratatoskr_backup_contracts::BackupContractError
+impl core::marker::Unpin for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::Unpin for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::Unpin for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::Unpin for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::Unpin for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::Unpin for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::Unpin for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupContractError
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupExclusion
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::ExclusionExpression
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::MirrorCadence
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupExclusion
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::ExclusionExpression
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::MirrorCadence
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupExclusion
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupExclusionScope
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupPriorityHint
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::ExclusionExpression
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::MirrorCadence
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyAcknowledged
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyRejectionCode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyRejectionReason
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::str::traits::FromStr for ratatoskr_backup_contracts::ExclusionExpression
+impl ratatoskr_backup_contracts::DesiredBackupPolicy
+impl ratatoskr_backup_contracts::ExclusionExpression
+impl ratatoskr_backup_contracts::PolicyAcknowledged
+impl ratatoskr_backup_contracts::PolicyRejectionCode
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_backup_contracts::PolicyAcknowledged
+impl schemars::JsonSchema for ratatoskr_backup_contracts::BackupExclusion
+impl schemars::JsonSchema for ratatoskr_backup_contracts::BackupExclusionScope
+impl schemars::JsonSchema for ratatoskr_backup_contracts::BackupPriorityHint
+impl schemars::JsonSchema for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl schemars::JsonSchema for ratatoskr_backup_contracts::ExclusionExpression
+impl schemars::JsonSchema for ratatoskr_backup_contracts::MirrorCadence
+impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyAcknowledged
+impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyOutcome
+impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyRejectionCode
+impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyRejectionReason
+impl schemars::JsonSchema for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupExclusion
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupExclusionScope
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupPriorityHint
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::ExclusionExpression
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::MirrorCadence
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyAcknowledged
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyOutcome
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyRejectionCode
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyRejectionReason
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupExclusion
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupExclusionScope
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupPriorityHint
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::ExclusionExpression
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::MirrorCadence
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyAcknowledged
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyRejectionCode
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyRejectionReason
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupPriorityHint where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::DesiredBackupPolicy where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::ExclusionExpression where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::MirrorCadence where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyAcknowledged where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupPriorityHint where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::DesiredBackupPolicy where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::ExclusionExpression where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::MirrorCadence where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyAcknowledged where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupPriorityHint where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::DesiredBackupPolicy where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::ExclusionExpression where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::MirrorCadence where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyAcknowledged where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::DesiredBackupPolicy where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::ExclusionExpression where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::MirrorCadence where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyAcknowledged where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_backup_contracts::BackupContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_backup_contracts::ExclusionExpression where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::BackupContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::BackupExclusion where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::BackupExclusionScope where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::BackupPriorityHint where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::DesiredBackupPolicy where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::ExclusionExpression where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::MirrorCadence where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyAcknowledged where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyRejectionCode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyRejectionReason where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::RepositoryBackupEntry where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupExclusion where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupExclusionScope where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupPriorityHint where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::DesiredBackupPolicy where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::ExclusionExpression where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::MirrorCadence where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyAcknowledged where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyRejectionCode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyRejectionReason where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::RepositoryBackupEntry where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupExclusion where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupExclusionScope where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupPriorityHint where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::DesiredBackupPolicy where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::ExclusionExpression where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::MirrorCadence where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyAcknowledged where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyRejectionCode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyRejectionReason where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::RepositoryBackupEntry where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::DesiredBackupPolicy where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::ExclusionExpression where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::MirrorCadence where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyAcknowledged where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupContractError
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupExclusion
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupExclusionScope
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupPriorityHint
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::DesiredBackupPolicy
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::ExclusionExpression
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::MirrorCadence
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyAcknowledged
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyOutcome
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyRejectionCode
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyRejectionReason
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::DesiredBackupPolicy where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::ExclusionExpression where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::MirrorCadence where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyAcknowledged where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupExclusion where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupExclusionScope where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupPriorityHint where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::DesiredBackupPolicy where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::ExclusionExpression where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::MirrorCadence where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyAcknowledged where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyRejectionCode where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyRejectionReason where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::RepositoryBackupEntry where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_backup_contracts::ExclusionExpression::MAX_LEN: usize
+pub const ratatoskr_backup_contracts::PolicyAcknowledged::EVENT_TYPE: &'static str
+pub fn alloc::string::String::from(ratatoskr_backup_contracts::ExclusionExpression) -> Self
+pub fn ratatoskr_backup_contracts::BackupContractError::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::BackupContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::BackupContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::BackupContractError::from(T) -> T
+pub fn ratatoskr_backup_contracts::BackupContractError::into(self) -> U
+pub fn ratatoskr_backup_contracts::BackupContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_backup_contracts::BackupContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::BackupContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::BackupContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::BackupExclusion::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::BackupExclusion::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::BackupExclusion::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::BackupExclusion::clone(&self) -> ratatoskr_backup_contracts::BackupExclusion
+pub fn ratatoskr_backup_contracts::BackupExclusion::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::BackupExclusion::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::BackupExclusion::eq(&self, &ratatoskr_backup_contracts::BackupExclusion) -> bool
+pub fn ratatoskr_backup_contracts::BackupExclusion::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::BackupExclusion::from(T) -> T
+pub fn ratatoskr_backup_contracts::BackupExclusion::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::BackupExclusion::into(self) -> U
+pub fn ratatoskr_backup_contracts::BackupExclusion::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::BackupExclusion::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupExclusion::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupExclusion::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::BackupExclusion::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::BackupExclusion::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::BackupExclusion::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::BackupExclusion::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::clone(&self) -> ratatoskr_backup_contracts::BackupExclusionScope
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::cmp(&self, &ratatoskr_backup_contracts::BackupExclusionScope) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::eq(&self, &ratatoskr_backup_contracts::BackupExclusionScope) -> bool
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::from(T) -> T
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::into(self) -> U
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::partial_cmp(&self, &ratatoskr_backup_contracts::BackupExclusionScope) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::BackupExclusionScope::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::clone(&self) -> ratatoskr_backup_contracts::BackupPriorityHint
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::cmp(&self, &ratatoskr_backup_contracts::BackupPriorityHint) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::eq(&self, &ratatoskr_backup_contracts::BackupPriorityHint) -> bool
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::from(T) -> T
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::into(self) -> U
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::partial_cmp(&self, &ratatoskr_backup_contracts::BackupPriorityHint) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::BackupPriorityHint::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::clone(&self) -> ratatoskr_backup_contracts::DesiredBackupPolicy
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::eq(&self, &ratatoskr_backup_contracts::DesiredBackupPolicy) -> bool
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::from(T) -> T
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::into(self) -> U
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::DesiredBackupPolicy::validate(&self) -> core::result::Result<(), ratatoskr_backup_contracts::BackupContractError>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::ExclusionExpression::as_str(&self) -> &str
+pub fn ratatoskr_backup_contracts::ExclusionExpression::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::ExclusionExpression::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::ExclusionExpression::clone(&self) -> ratatoskr_backup_contracts::ExclusionExpression
+pub fn ratatoskr_backup_contracts::ExclusionExpression::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::ExclusionExpression::cmp(&self, &ratatoskr_backup_contracts::ExclusionExpression) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::ExclusionExpression::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::eq(&self, &ratatoskr_backup_contracts::ExclusionExpression) -> bool
+pub fn ratatoskr_backup_contracts::ExclusionExpression::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::ExclusionExpression::from(T) -> T
+pub fn ratatoskr_backup_contracts::ExclusionExpression::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::ExclusionExpression::into(self) -> U
+pub fn ratatoskr_backup_contracts::ExclusionExpression::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::ExclusionExpression::parse(&str) -> core::result::Result<Self, ratatoskr_backup_contracts::BackupContractError>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::partial_cmp(&self, &ratatoskr_backup_contracts::ExclusionExpression) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::ExclusionExpression::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::ExclusionExpression::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_backup_contracts::ExclusionExpression::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::ExclusionExpression::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::MirrorCadence::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::MirrorCadence::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::MirrorCadence::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::MirrorCadence::clone(&self) -> ratatoskr_backup_contracts::MirrorCadence
+pub fn ratatoskr_backup_contracts::MirrorCadence::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::MirrorCadence::cmp(&self, &ratatoskr_backup_contracts::MirrorCadence) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::MirrorCadence::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::MirrorCadence::eq(&self, &ratatoskr_backup_contracts::MirrorCadence) -> bool
+pub fn ratatoskr_backup_contracts::MirrorCadence::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::MirrorCadence::from(T) -> T
+pub fn ratatoskr_backup_contracts::MirrorCadence::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::MirrorCadence::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::MirrorCadence::into(self) -> U
+pub fn ratatoskr_backup_contracts::MirrorCadence::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::MirrorCadence::partial_cmp(&self, &ratatoskr_backup_contracts::MirrorCadence) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::MirrorCadence::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::MirrorCadence::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::MirrorCadence::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::MirrorCadence::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::MirrorCadence::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::MirrorCadence::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::MirrorCadence::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::clone(&self) -> ratatoskr_backup_contracts::PolicyAcknowledged
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::eq(&self, &ratatoskr_backup_contracts::PolicyAcknowledged) -> bool
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::from(T) -> T
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::into(self) -> U
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::PolicyAcknowledged::validate(&self) -> core::result::Result<(), ratatoskr_backup_contracts::BackupContractError>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::PolicyOutcome::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::PolicyOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::PolicyOutcome::clone(&self) -> ratatoskr_backup_contracts::PolicyOutcome
+pub fn ratatoskr_backup_contracts::PolicyOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::PolicyOutcome::cmp(&self, &ratatoskr_backup_contracts::PolicyOutcome) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::PolicyOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::eq(&self, &ratatoskr_backup_contracts::PolicyOutcome) -> bool
+pub fn ratatoskr_backup_contracts::PolicyOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::PolicyOutcome::from(T) -> T
+pub fn ratatoskr_backup_contracts::PolicyOutcome::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::PolicyOutcome::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::PolicyOutcome::into(self) -> U
+pub fn ratatoskr_backup_contracts::PolicyOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::PolicyOutcome::partial_cmp(&self, &ratatoskr_backup_contracts::PolicyOutcome) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::PolicyOutcome::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::PolicyOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::as_str(self) -> &'static str
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::clone(&self) -> ratatoskr_backup_contracts::PolicyRejectionCode
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::cmp(&self, &ratatoskr_backup_contracts::PolicyRejectionCode) -> core::cmp::Ordering
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::eq(&self, &ratatoskr_backup_contracts::PolicyRejectionCode) -> bool
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::from(T) -> T
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::into(self) -> U
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::partial_cmp(&self, &ratatoskr_backup_contracts::PolicyRejectionCode) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyRejectionCode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::clone(&self) -> ratatoskr_backup_contracts::PolicyRejectionReason
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::eq(&self, &ratatoskr_backup_contracts::PolicyRejectionReason) -> bool
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::from(T) -> T
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::into(self) -> U
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::PolicyRejectionReason::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::clone(&self) -> ratatoskr_backup_contracts::RepositoryBackupEntry
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::eq(&self, &ratatoskr_backup_contracts::RepositoryBackupEntry) -> bool
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::from(T) -> T
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::into(self) -> U
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::apply_exclusions<'a, T>(&'a [T], &[ratatoskr_backup_contracts::BackupExclusion], impl core::ops::function::FnMut(&T, &ratatoskr_backup_contracts::BackupExclusion) -> bool) -> alloc::vec::Vec<&'a T>
+pub fn ratatoskr_backup_contracts::entries_absent_from_catalog(&[ratatoskr_identifiers::entity::EntityRef], &[ratatoskr_backup_contracts::RepositoryBackupEntry]) -> alloc::vec::Vec<ratatoskr_identifiers::entity::EntityRef>
+pub fn ratatoskr_backup_contracts::uncovered_catalog_repositories(&[ratatoskr_identifiers::entity::EntityRef], &[ratatoskr_backup_contracts::RepositoryBackupEntry]) -> alloc::vec::Vec<ratatoskr_identifiers::entity::EntityRef>
+pub fn ratatoskr_backup_contracts::validate_policy_succession(u64, u64) -> core::result::Result<(), ratatoskr_backup_contracts::BackupContractError>
+pub mod ratatoskr_backup_contracts
+pub ratatoskr_backup_contracts::BackupContractError::AcceptedWithReason
+pub ratatoskr_backup_contracts::BackupContractError::AcceptedWithoutProgress
+pub ratatoskr_backup_contracts::BackupContractError::AcceptedWithoutProgress::acknowledged: u64
+pub ratatoskr_backup_contracts::BackupContractError::AcceptedWithoutProgress::last_applied: u64
+pub ratatoskr_backup_contracts::BackupContractError::AcknowledgedVersionZero
+pub ratatoskr_backup_contracts::BackupContractError::DuplicateRepositoryEntry
+pub ratatoskr_backup_contracts::BackupContractError::DuplicateRepositoryEntry::repository_ref: alloc::string::String
+pub ratatoskr_backup_contracts::BackupContractError::EmptyExclusionExpression
+pub ratatoskr_backup_contracts::BackupContractError::ExclusionExpressionControlCharacter
+pub ratatoskr_backup_contracts::BackupContractError::ExclusionExpressionTooLong
+pub ratatoskr_backup_contracts::BackupContractError::ExclusionExpressionTooLong::got: usize
+pub ratatoskr_backup_contracts::BackupContractError::ExclusionExpressionTooLong::max: usize
+pub ratatoskr_backup_contracts::BackupContractError::ReasonReferenceForbidden
+pub ratatoskr_backup_contracts::BackupContractError::ReasonReferenceForbidden::code: alloc::string::String
+pub ratatoskr_backup_contracts::BackupContractError::ReasonReferenceRequired
+pub ratatoskr_backup_contracts::BackupContractError::ReasonReferenceRequired::code: alloc::string::String
+pub ratatoskr_backup_contracts::BackupContractError::RejectedWithoutReason
+pub ratatoskr_backup_contracts::BackupContractError::SuccessionNotIncreasing
+pub ratatoskr_backup_contracts::BackupContractError::SuccessionNotIncreasing::candidate: u64
+pub ratatoskr_backup_contracts::BackupContractError::SuccessionNotIncreasing::previous: u64
+pub ratatoskr_backup_contracts::BackupContractError::ZeroPolicyVersion
+pub ratatoskr_backup_contracts::BackupExclusion::expression: ratatoskr_backup_contracts::ExclusionExpression
+pub ratatoskr_backup_contracts::BackupExclusion::scope: ratatoskr_backup_contracts::BackupExclusionScope
+pub ratatoskr_backup_contracts::BackupExclusionScope::PathsMatching
+pub ratatoskr_backup_contracts::BackupExclusionScope::RefsMatching
+pub ratatoskr_backup_contracts::BackupPriorityHint::Bulk
+pub ratatoskr_backup_contracts::BackupPriorityHint::Critical
+pub ratatoskr_backup_contracts::BackupPriorityHint::Standard
+pub ratatoskr_backup_contracts::DesiredBackupPolicy::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_backup_contracts::DesiredBackupPolicy::policy_version: u64
+pub ratatoskr_backup_contracts::DesiredBackupPolicy::produced_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_backup_contracts::DesiredBackupPolicy::producing_service: ratatoskr_event_envelope::producer::ProducerName
+pub ratatoskr_backup_contracts::DesiredBackupPolicy::repositories: alloc::vec::Vec<ratatoskr_backup_contracts::RepositoryBackupEntry>
+pub ratatoskr_backup_contracts::MirrorCadence::Daily
+pub ratatoskr_backup_contracts::MirrorCadence::Eager
+pub ratatoskr_backup_contracts::MirrorCadence::Weekly
+pub ratatoskr_backup_contracts::PolicyAcknowledged::acknowledged_policy_version: u64
+pub ratatoskr_backup_contracts::PolicyAcknowledged::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_backup_contracts::PolicyAcknowledged::last_applied_policy_version: u64
+pub ratatoskr_backup_contracts::PolicyAcknowledged::outcome: ratatoskr_backup_contracts::PolicyOutcome
+pub ratatoskr_backup_contracts::PolicyAcknowledged::reasons: alloc::vec::Vec<ratatoskr_backup_contracts::PolicyRejectionReason>
+pub ratatoskr_backup_contracts::PolicyOutcome::Accepted
+pub ratatoskr_backup_contracts::PolicyOutcome::Rejected
+pub ratatoskr_backup_contracts::PolicyRejectionCode::PolicyVersionNotMonotonic
+pub ratatoskr_backup_contracts::PolicyRejectionCode::RepositoryUnknownInCatalog
+pub ratatoskr_backup_contracts::PolicyRejectionReason::code: ratatoskr_backup_contracts::PolicyRejectionCode
+pub ratatoskr_backup_contracts::PolicyRejectionReason::repository_ref: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_backup_contracts::RepositoryBackupEntry::exclusions: alloc::vec::Vec<ratatoskr_backup_contracts::BackupExclusion>
+pub ratatoskr_backup_contracts::RepositoryBackupEntry::mirror_cadence: ratatoskr_backup_contracts::MirrorCadence
+pub ratatoskr_backup_contracts::RepositoryBackupEntry::priority_hint: ratatoskr_backup_contracts::BackupPriorityHint
+pub ratatoskr_backup_contracts::RepositoryBackupEntry::repository_ref: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_backup_contracts::RepositoryBackupEntry::size_hint_bytes: core::option::Option<u64>
+pub struct ratatoskr_backup_contracts::BackupExclusion
+pub struct ratatoskr_backup_contracts::DesiredBackupPolicy
+pub struct ratatoskr_backup_contracts::ExclusionExpression(_)
+pub struct ratatoskr_backup_contracts::PolicyAcknowledged
+pub struct ratatoskr_backup_contracts::PolicyRejectionReason
+pub struct ratatoskr_backup_contracts::RepositoryBackupEntry
+pub type ratatoskr_backup_contracts::BackupContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::BackupContractError::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::BackupExclusion::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::BackupExclusion::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::BackupExclusion::Owned = T
+pub type ratatoskr_backup_contracts::BackupExclusionScope::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::BackupExclusionScope::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::BackupExclusionScope::Owned = T
+pub type ratatoskr_backup_contracts::BackupPriorityHint::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::BackupPriorityHint::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::BackupPriorityHint::Owned = T
+pub type ratatoskr_backup_contracts::DesiredBackupPolicy::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::DesiredBackupPolicy::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::DesiredBackupPolicy::Owned = T
+pub type ratatoskr_backup_contracts::ExclusionExpression::Err = ratatoskr_backup_contracts::BackupContractError
+pub type ratatoskr_backup_contracts::ExclusionExpression::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::ExclusionExpression::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::ExclusionExpression::Error = ratatoskr_backup_contracts::BackupContractError
+pub type ratatoskr_backup_contracts::ExclusionExpression::Owned = T
+pub type ratatoskr_backup_contracts::MirrorCadence::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::MirrorCadence::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::MirrorCadence::Owned = T
+pub type ratatoskr_backup_contracts::PolicyAcknowledged::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::PolicyAcknowledged::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::PolicyAcknowledged::Owned = T
+pub type ratatoskr_backup_contracts::PolicyOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::PolicyOutcome::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::PolicyOutcome::Owned = T
+pub type ratatoskr_backup_contracts::PolicyRejectionCode::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::PolicyRejectionCode::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::PolicyRejectionCode::Owned = T
+pub type ratatoskr_backup_contracts::PolicyRejectionReason::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::PolicyRejectionReason::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::PolicyRejectionReason::Owned = T
+pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Owned = T
+pub unsafe fn ratatoskr_backup_contracts::BackupExclusion::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::BackupExclusionScope::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::BackupPriorityHint::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::DesiredBackupPolicy::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::ExclusionExpression::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::MirrorCadence::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::PolicyAcknowledged::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::PolicyOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::PolicyRejectionCode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::PolicyRejectionReason::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::RepositoryBackupEntry::clone_to_uninit(&self, *mut u8)

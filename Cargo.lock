@@ -1368,6 +1368,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "ratatoskr-backup-contracts"
+version = "0.1.0"
+dependencies = [
+ "ratatoskr-event-envelope",
+ "ratatoskr-identifiers",
+ "schemars",
+ "serde",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
 name = "ratatoskr-contractsc"
 version = "0.1.0"
 dependencies = [
@@ -1377,6 +1389,7 @@ dependencies = [
  "jsonschema",
  "proptest",
  "ratatoskr-ai-archive-contracts",
+ "ratatoskr-backup-contracts",
  "ratatoskr-document-contracts",
  "ratatoskr-error-contracts",
  "ratatoskr-event-envelope",

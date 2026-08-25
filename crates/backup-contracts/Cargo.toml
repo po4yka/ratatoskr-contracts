@@ -1,0 +1,21 @@
+[package]
+name        = "ratatoskr-backup-contracts"
+description = "Versioned desired-backup-policy documents and the acknowledgment events Vault answers with."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace = true
+# Needed for `impl EventPayload for PolicyAcknowledged`; the orphan rule leaves
+# this crate as the only legal home for that impl.
+ratatoskr-event-envelope.workspace = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+thiserror.workspace  = true
+
+[lints]
+workspace = true

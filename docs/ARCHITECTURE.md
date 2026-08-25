@@ -41,6 +41,7 @@ ratatoskr-contracts/
 │   ├── document-contracts/
 │   ├── social-contracts/
 │   ├── ai-archive-contracts/
+│   ├── backup-contracts/
 │   └── error-contracts/
 ├── schemas/
 │   ├── events/
@@ -203,6 +204,29 @@ Rules:
 - retryability is explicit;
 - partial-success warnings are distinct from terminal errors;
 - there is no untyped `details` member on this contract (ADR-0008). An earlier draft of this block declared `details: Option<serde_json::Value>`. It is gone: the contract is classified `public`, and an unbounded free-JSON member on a public error is the carrier S14 and `THREAT_MODEL.md` are written against. Where a producer later needs to carry provider diagnostics, the sanctioned path is S14's bounded `metadata`/`unknown` shape — a discriminated `{kind, value}` carrier — on an `internal`-classified contract, not a free blob here.
+
+### 5.6. Backup policy contracts
+
+GitHub states which repositories must be preserved and at what depth; Vault answers each published version with an acknowledgment event.
+
+```rust
+pub struct DesiredBackupPolicy {
+    pub policy_version: u64,
+    pub producing_service: ProducerName,
+    pub produced_at: WireTimestamp,
+    pub repositories: Vec<RepositoryBackupEntry>,
+    pub extensions: Extensions,
+}
+```
+
+Rules:
+
+- versions are monotonic and start above zero; succession between two documents is checked by `validate_policy_succession`, because one document cannot know its predecessor;
+- entries name repositories by the shared pointer grammar (`repository:<uuid>`), and two entries of one version never name the same repository;
+- cadence class, priority hint, outcome and rejection codes are closed vocabularies: an unrecognized value stops processing instead of being guessed at, because guessing silently changes what is preserved;
+- exclusions only ever narrow the mirrored set, and their expressions are carrier-safe opaque text whose matching semantics belong to the consuming mirror implementation;
+- coverage is default-deny: a catalog repository a version does not name is out of scope until a successor names it (`uncovered_catalog_repositories`, `entries_absent_from_catalog`, `apply_exclusions` express this as pure functions);
+- Vault answers through `vault.backup_policy.acknowledged.v1` inside the canonical envelope, aggregated as `backup_policy:<version>`: acceptance implies forward progress over `last_applied_policy_version`, rejection implies at least one machine-actionable reason, and a reason's repository reference appears exactly when its code demands one.
 
 ## 6. Document contracts
 

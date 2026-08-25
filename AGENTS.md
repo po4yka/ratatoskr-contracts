@@ -26,7 +26,7 @@ Its purpose is to make cross-repository evolution explicit and safe. It must not
 Implementation milestones 1 through 7 exist, plus milestone 8's deterministic TypeScript generation. The checked-out tree contains:
 
 - `contracts.toml` — machine-readable contract metadata (owner, family, major version, lifecycle, classification, producers, consumers, canonical path, per-field authority/unit/nullability, lint vocabulary);
-- seven contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`, `crates/document-contracts`, `crates/social-contracts`, `crates/ai-archive-contracts`;
+- eight contract crates — `crates/identifiers`, `crates/event-envelope`, `crates/error-contracts`, `crates/operation-contracts`, `crates/document-contracts`, `crates/social-contracts`, `crates/ai-archive-contracts`, `crates/backup-contracts`;
 - `tools/contractsc` — the deterministic generator and gate, run as `cargo contracts`;
 - `schemas/json-schema/**` and `schemas/events/**` — generated JSON Schema artifacts;
 - `generated/typescript/**` — generated TypeScript declarations mirroring `schemas/` one-to-one, with provenance headers, verified by `cargo contracts check` and compilable through `cargo contracts check-typescript` (not a gate step);

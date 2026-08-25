@@ -1,0 +1,10 @@
+{
+  "acknowledged_policy_version": 3,
+  "outcome": "rejected",
+  "reasons": [
+    {
+      "code": "policy_version_not_monotonic"
+    }
+  ],
+  "last_applied_policy_version": 9
+}

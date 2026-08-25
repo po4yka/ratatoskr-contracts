@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
+> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -26,7 +26,7 @@ It is intended to provide:
 - public OpenAPI specifications;
 - shared opaque identifiers and timestamps used on the wire;
 - standard error and pagination envelopes;
-- document, social-source, and AI-archive interchange contracts;
+- document, social-source, AI-archive, and backup-policy interchange contracts;
 - generated client/server artifacts for supported languages;
 - compatibility checks used by child repositories and the workspace CI.
 
@@ -44,7 +44,8 @@ crates/
 ├── error-contracts/        (now)
 ├── document-contracts/     (now)
 ├── social-contracts/       (now)
-└── ai-archive-contracts/   (now)
+├── ai-archive-contracts/   (now)
+└── backup-contracts/       (now)
 
 schemas/
 ├── events/                 (now, generated)
@@ -95,6 +96,7 @@ claude.project.upserted.v1
 knowledge.analysis.completed.v1
 platform.operation.progressed.v1
 telegram.interaction.received.v1
+vault.backup_policy.acknowledged.v1
 ```
 
 ## Ownership boundaries
@@ -165,6 +167,10 @@ X, Instagram, and Threads preserve different levels of authority over saved stat
 
 ChatGPT and Claude exports share one normalized grammar in `ratatoskr-ai-archive-contracts`: an import head names the immutable export evidence by `BlobRef` beside its completeness report; project, conversation and message nodes carry parser stamps and provider external ids; conversations are graphs whose messages reference parents, so branches and regenerated answers survive normalization. One shared content-part grammar (text, markdown, image, asset, citation, tool call, tool result) serves both providers, and unrecognized parts are preserved verbatim through normalization and re-export. The `ai_archive.archive.imported.v1`, `ai_archive.conversation.added.v1` and `ai_archive.conversation.updated.v1` events carry the head and whole conversations inside the common envelope.
 
+### Backup policies
+
+`ratatoskr-github` publishes `DesiredBackupPolicy` (`ratatoskr-backup-contracts`): a monotonic policy version naming, per repository, a mirror cadence class, priority and size hints, and explicit exclusions — WHAT must be preserved as an explicit, versioned, auditable contract between two services that never share a database, instead of implicit job configuration. Coverage is default-deny between versions: a catalog repository a version does not name stays out of scope until a successor names it, and an entry pointing outside Vault's catalog is reportable drift rather than a silent skip. Vault answers each version through the `vault.backup_policy.acknowledged.v1` event inside the common envelope — accepted or rejected with machine-actionable reasons beside the last policy version it fully applied.
+
 ## Proposed development workflow
 
 The repository will publish versioned Rust crates and generated artifacts. A typical contract change will:
@@ -217,6 +223,6 @@ The pin is the `rev`, not the transport. Use `https://` while this repository is
 
 ## Project status
 
-Milestones 1 through 9 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the deterministic generator and gate, generated JSON Schema, the fixture suite, and milestone 8's deterministic TypeScript generation mirroring `schemas/` one-to-one. Milestone 9 is the assurance layer: `.github/workflows/ci.yml` runs the gate, and `.github/workflows/contracts.yml` adds the `compatibility` job (every crate's public API diffed against its frozen baseline under `compat/api/`), the `determinism` job (regeneration reproduces the committed tree byte for byte) and the `package` job (the TypeScript output uploaded as a workflow artifact). What remains of milestones 8 through 10 — any further cross-language targets and publishing tagged packages to a registry — is still target architecture.
+Milestones 1 through 9 of `docs/IMPLEMENTATION_PLAN.md` are implemented: contract metadata, shared identifiers, the event envelope, error and operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the deterministic generator and gate, generated JSON Schema, the fixture suite, and milestone 8's deterministic TypeScript generation mirroring `schemas/` one-to-one. Milestone 9 is the assurance layer: `.github/workflows/ci.yml` runs the gate, and `.github/workflows/contracts.yml` adds the `compatibility` job (every crate's public API diffed against its frozen baseline under `compat/api/`), the `determinism` job (regeneration reproduces the committed tree byte for byte) and the `package` job (the TypeScript output uploaded as a workflow artifact). What remains of milestones 8 through 10 — any further cross-language targets and publishing tagged packages to a registry — is still target architecture.
 
 Two decisions are recorded and accepted: [ADR-0001](docs/adr/0001-canonical-schema-source-format.md) (Rust-first canonical source) and [ADR-0002](docs/adr/0002-event-naming-and-major-version-strategy.md) (event naming and the two version axes). Nothing is published, so every contract here remains subject to further ADRs and contract-focused review.

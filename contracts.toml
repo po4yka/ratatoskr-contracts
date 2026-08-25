@@ -36,11 +36,13 @@ known = [
 #                 heard of survives as EntityKind::Other.
 #   social_source compat/old-consumer-new-producer/future-aggregate-kind.json — a
 #                 bounded context added in m5-m7 does not stop a consumer built today.
+#   backup_policy vault.backup_policy.acknowledged.v1 aggregates on the policy
+#                 itself: `backup_policy:<version>` names the fact being answered.
 # Adding a token here is a review decision: it widens what a fixture may contain,
 # never what the wire type understands.
 [entity_kinds]
 known = [
-  "ai_archive", "ai_conversation", "ai_project",
+  "ai_archive", "ai_conversation", "ai_project", "backup_policy",
   "blob", "document", "event", "operation", "user",
   "repository", "social_source", "x-post",
 ]
@@ -61,7 +63,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "provider_created_at", "provider_updated_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -570,3 +572,58 @@ privacy        = "user_content"
 [contract.event]
 event_type   = "ai_archive.conversation.updated.v1"
 payload_type = "ratatoskr_ai_archive_contracts::AiConversationUpdated"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "backup.desired_backup_policy"
+family         = "backup"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-github"]
+consumers      = ["ratatoskr-vault"]
+crate_name     = "ratatoskr-backup-contracts"
+canonical_path = "crates/backup-contracts/src/policy.rs"
+fixtures_dir   = "fixtures/backup/desired-backup-policy"
+summary        = "Versioned statement of which repositories must be preserved and at what depth."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_backup_contracts::DesiredBackupPolicy"
+output         = "schemas/json-schema/backup/desired-backup-policy.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:backup:v1:DesiredBackupPolicy"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/produced_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the producing service generated this policy document, on its own clock. Producer-asserted: neither a publish nor a receive instant, and unverifiable by the consumer."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "vault.backup_policy_acknowledged"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-vault"
+producers      = ["ratatoskr-vault"]
+consumers      = ["ratatoskr-github"]
+crate_name     = "ratatoskr-backup-contracts"
+canonical_path = "crates/backup-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/vault.backup_policy.acknowledged.v1"
+summary        = "Fact: Vault answered one desired-backup-policy version with accepted or rejected."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_backup_contracts::PolicyAcknowledged"
+output         = "schemas/events/vault.backup_policy.acknowledged.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:PolicyAcknowledged"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "vault.backup_policy.acknowledged.v1"
+payload_type = "ratatoskr_backup_contracts::PolicyAcknowledged"

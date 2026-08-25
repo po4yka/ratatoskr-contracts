@@ -332,3 +332,76 @@ reason         = "State-carried transfer is the replay-safety stance: an added e
 rejected_by    = ["json_schema", "serde"]
 error_contains = "missing field `ai_archive_id`"
 reason         = "The owning import ties a conversation to its evidence and completeness report; without it a consumer cannot trace the record back to the export it was parsed from."
+
+# ---------------------------------------------------------------------------
+# backup/desired-backup-policy
+# ---------------------------------------------------------------------------
+
+["backup/desired-backup-policy/invalid/policy-version-zero.json"]
+rejected_by    = ["serde"]
+error_contains = 'policy_version must be greater than zero'
+reason         = "Versions are monotonic and start above zero: a zeroth version has no place in the succession and would leave the first comparison undefined. The bound lives in the Rust type alone, so JSON Schema accepts what it cannot express - the ADR-0001 lower-bound rule."
+
+["backup/desired-backup-policy/invalid/duplicate-repository-entry.json"]
+rejected_by    = ["serde"]
+error_contains = 'in more than one entry'
+reason         = "Two entries naming one repository contradict the document about what that repository's depth is, and no draft 2020-12 keyword expresses uniqueness across array members - so only the Rust type rejects it."
+
+["backup/desired-backup-policy/invalid/unknown-mirror-cadence.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `hourly`'
+reason         = "MirrorCadence is closed: cadence decides backup frequency, and an unrecognized class read as some default silently changes what gets preserved when. DOMAIN invariant 6, 'rejected explicitly'."
+
+["backup/desired-backup-policy/invalid/unknown-priority-hint.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `urgent`'
+reason         = "BackupPriorityHint is closed: ordering drives scheduling under contention, so a guessed hint reorders backups without anyone deciding to. DOMAIN invariant 6, 'rejected explicitly'."
+
+["backup/desired-backup-policy/invalid/produced-at-trailing-zeros.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "`...:00.000Z` renders as `...:00Z`, so it is a second spelling of one instant. Canonicality is inherited from WireTimestamp and is a Rust-layer rule; the published pattern permits the fraction. See ADR-0001 consequences."
+
+["backup/desired-backup-policy/invalid/exclusion-expression-control-character.json"]
+rejected_by    = ["serde"]
+error_contains = 'contains a control character'
+reason         = "Control bytes corrupt logs, terminals and line-oriented tooling downstream, so the carrier bans C0 and DEL outright; draft 2020-12 cannot ban a character class without freezing the whole alphabet into one pattern, so the Rust type owns the rule."
+
+# ---------------------------------------------------------------------------
+# events/vault.backup_policy.acknowledged.v1
+# ---------------------------------------------------------------------------
+
+["events/vault.backup_policy.acknowledged.v1/invalid/accepted-with-reasons.json"]
+rejected_by    = ["serde"]
+error_contains = 'outcome `accepted` forbids rejection reasons'
+reason         = "Acceptance means every entry was applied; attaching refusal explanations to it tells consumers to prune state they just confirmed. Cross-field, so only the Rust type rejects it."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/rejected-without-reasons.json"]
+rejected_by    = ["serde"]
+error_contains = 'outcome `rejected` requires at least one reason'
+reason         = "AGENTS principle 7: errors are machine-actionable. A rejection that explains nothing leaves GitHub unable either to fix or to escalate; cross-field, so the schema layer accepts what the type refuses."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/reason-reference-without-matching-code.json"]
+rejected_by    = ["serde"]
+error_contains = 'carries a repository reference it must not'
+reason         = "Only `repository_unknown_in_catalog` concerns one repository; a reference on any other code points reconciliation machinery at a target its code never named."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/repository-reason-missing-reference.json"]
+rejected_by    = ["serde"]
+error_contains = 'rejection reason with code `repository_unknown_in_catalog` requires a repository reference'
+reason         = "The unknown-entry report exists so the catalog gap can be closed; without the reference the reason names nothing and cannot be acted on."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/acknowledged-version-zero.json"]
+rejected_by    = ["serde"]
+error_contains = 'must be greater than zero'
+reason         = "No published policy carries version zero, so no acknowledgment can answer one; the floor is a Rust-layer rule the schema cannot express."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/accepted-with-applied-ahead.json"]
+rejected_by    = ["serde"]
+error_contains = 'at or below'
+reason         = "Accepting a version at or below the last applied one is indistinguishable from a replayed acknowledgment; acceptance must imply forward progress."
+
+["events/vault.backup_policy.acknowledged.v1/invalid/unknown-reason-code.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `catalog_on_fire`'
+reason         = "PolicyRejectionCode is closed: GitHub branches on the code to fix and republish, and an unrecognized code filed under any default would route the response to the wrong repair. DOMAIN invariant 6, 'rejected explicitly'."

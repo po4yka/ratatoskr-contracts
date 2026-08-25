@@ -1,0 +1,12 @@
+{
+  "policy_version": 13,
+  "producing_service": "ratatoskr-github",
+  "produced_at": "2026-08-20T09:00:00.000Z",
+  "repositories": [
+    {
+      "repository_ref": "repository:018f0000-0000-7000-8000-000000000504",
+      "mirror_cadence": "daily",
+      "priority_hint": "standard"
+    }
+  ]
+}

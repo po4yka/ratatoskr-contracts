@@ -161,6 +161,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_ai_archive_contracts::AiProject" => {
             render!(ratatoskr_ai_archive_contracts::AiProject)
         }
+        "ratatoskr_backup_contracts::DesiredBackupPolicy" => {
+            render!(ratatoskr_backup_contracts::DesiredBackupPolicy)
+        }
+        "ratatoskr_backup_contracts::PolicyAcknowledged" => {
+            render!(ratatoskr_backup_contracts::PolicyAcknowledged)
+        }
         "ratatoskr_document_contracts::Document" => {
             render!(ratatoskr_document_contracts::Document)
         }

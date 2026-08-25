@@ -1,0 +1,11 @@
+{
+  "acknowledged_policy_version": 5,
+  "outcome": "accepted",
+  "reasons": [
+    {
+      "code": "repository_unknown_in_catalog",
+      "repository_ref": "repository:018f0000-0000-7000-8000-000000000504"
+    }
+  ],
+  "last_applied_policy_version": 4
+}
