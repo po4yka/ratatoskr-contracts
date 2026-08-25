@@ -1,0 +1,8 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000706",
+  "class_registry_version": 1,
+  "class": "archive_imported",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Import finished",
+  "message": "Your provider archive import completed with a full completeness report."
+}

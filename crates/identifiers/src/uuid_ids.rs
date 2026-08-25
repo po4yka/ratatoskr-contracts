@@ -279,6 +279,19 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one raised user-facing notification — one producer judgment that a user
+    /// should be told something, carried as `platform.notification.raised.v1`.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. Also the logical key a consumer uses
+    /// to recognize the same notification re-raised under a new transport event id; at-least-once
+    /// redelivery of the *same* bus record is keyed by `event_id`, not by this.
+    pub struct NotificationId,
+    kind = "notification",
+    description = "Identity of one raised user-facing notification. Bare canonical lowercase \
+                   hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// A correlation identity minted by a producer for work not bound to an operation.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot

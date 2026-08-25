@@ -87,6 +87,8 @@ root_types! {
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
+    "ratatoskr_notification_contracts::NotificationRaised"
+        => ratatoskr_notification_contracts::NotificationRaised,
     "ratatoskr_operation_contracts::OperationProgressed"
         => ratatoskr_operation_contracts::OperationProgressed,
     "ratatoskr_operation_contracts::OperationReported"
@@ -124,6 +126,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_backup_contracts::PolicyAcknowledged",
         <ratatoskr_backup_contracts::PolicyAcknowledged as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_notification_contracts::NotificationRaised",
+        <ratatoskr_notification_contracts::NotificationRaised as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
         "ratatoskr_operation_contracts::OperationProgressed",

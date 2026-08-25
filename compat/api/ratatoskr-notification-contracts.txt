@@ -1,0 +1,299 @@
+# Public API baseline of ratatoskr-notification-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_notification_contracts::NotificationClass
+impl core::clone::Clone for ratatoskr_notification_contracts::NotificationPriority
+impl core::clone::Clone for ratatoskr_notification_contracts::NotificationRaised
+impl core::clone::Clone for ratatoskr_notification_contracts::QuietHoursHint
+impl core::cmp::Eq for ratatoskr_notification_contracts::NotificationClass
+impl core::cmp::Eq for ratatoskr_notification_contracts::NotificationPriority
+impl core::cmp::Eq for ratatoskr_notification_contracts::QuietHoursHint
+impl core::cmp::Ord for ratatoskr_notification_contracts::NotificationClass
+impl core::cmp::Ord for ratatoskr_notification_contracts::NotificationPriority
+impl core::cmp::PartialEq for ratatoskr_notification_contracts::NotificationClass
+impl core::cmp::PartialEq for ratatoskr_notification_contracts::NotificationPriority
+impl core::cmp::PartialEq for ratatoskr_notification_contracts::NotificationRaised
+impl core::cmp::PartialEq for ratatoskr_notification_contracts::QuietHoursHint
+impl core::cmp::PartialOrd for ratatoskr_notification_contracts::NotificationClass
+impl core::cmp::PartialOrd for ratatoskr_notification_contracts::NotificationPriority
+impl core::convert::From<ratatoskr_notification_contracts::NotificationClass> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notification_contracts::NotificationClass
+impl core::error::Error for ratatoskr_notification_contracts::NotificationContractError
+impl core::fmt::Debug for ratatoskr_notification_contracts::NotificationClass
+impl core::fmt::Debug for ratatoskr_notification_contracts::NotificationContractError
+impl core::fmt::Debug for ratatoskr_notification_contracts::NotificationPriority
+impl core::fmt::Debug for ratatoskr_notification_contracts::NotificationRaised
+impl core::fmt::Debug for ratatoskr_notification_contracts::QuietHoursHint
+impl core::fmt::Display for ratatoskr_notification_contracts::NotificationClass
+impl core::fmt::Display for ratatoskr_notification_contracts::NotificationContractError
+impl core::hash::Hash for ratatoskr_notification_contracts::NotificationClass
+impl core::hash::Hash for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Copy for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Copy for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::Freeze for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::Freeze for ratatoskr_notification_contracts::NotificationContractError
+impl core::marker::Freeze for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Freeze for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::Freeze for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::Send for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::Send for ratatoskr_notification_contracts::NotificationContractError
+impl core::marker::Send for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Send for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::Send for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::StructuralPartialEq for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::StructuralPartialEq for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::StructuralPartialEq for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::StructuralPartialEq for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::Sync for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::Sync for ratatoskr_notification_contracts::NotificationContractError
+impl core::marker::Sync for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Sync for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::Sync for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::Unpin for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::Unpin for ratatoskr_notification_contracts::NotificationContractError
+impl core::marker::Unpin for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::Unpin for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::Unpin for ratatoskr_notification_contracts::QuietHoursHint
+impl core::marker::UnsafeUnpin for ratatoskr_notification_contracts::NotificationClass
+impl core::marker::UnsafeUnpin for ratatoskr_notification_contracts::NotificationContractError
+impl core::marker::UnsafeUnpin for ratatoskr_notification_contracts::NotificationPriority
+impl core::marker::UnsafeUnpin for ratatoskr_notification_contracts::NotificationRaised
+impl core::marker::UnsafeUnpin for ratatoskr_notification_contracts::QuietHoursHint
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notification_contracts::NotificationClass
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notification_contracts::NotificationContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notification_contracts::NotificationPriority
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notification_contracts::NotificationRaised
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notification_contracts::QuietHoursHint
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notification_contracts::NotificationClass
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notification_contracts::NotificationContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notification_contracts::NotificationPriority
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notification_contracts::NotificationRaised
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notification_contracts::QuietHoursHint
+impl core::str::traits::FromStr for ratatoskr_notification_contracts::NotificationClass
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notification_contracts::NotificationRaised
+impl ratatoskr_notification_contracts::NotificationClass
+impl ratatoskr_notification_contracts::NotificationRaised
+impl ratatoskr_notification_contracts::QuietHoursHint
+impl schemars::JsonSchema for ratatoskr_notification_contracts::NotificationClass
+impl schemars::JsonSchema for ratatoskr_notification_contracts::NotificationPriority
+impl schemars::JsonSchema for ratatoskr_notification_contracts::NotificationRaised
+impl schemars::JsonSchema for ratatoskr_notification_contracts::QuietHoursHint
+impl serde_core::ser::Serialize for ratatoskr_notification_contracts::NotificationClass
+impl serde_core::ser::Serialize for ratatoskr_notification_contracts::NotificationPriority
+impl serde_core::ser::Serialize for ratatoskr_notification_contracts::NotificationRaised
+impl serde_core::ser::Serialize for ratatoskr_notification_contracts::QuietHoursHint
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notification_contracts::NotificationClass
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notification_contracts::NotificationPriority
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notification_contracts::NotificationRaised
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notification_contracts::QuietHoursHint
+impl<T, U> core::convert::Into<U> for ratatoskr_notification_contracts::NotificationClass where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notification_contracts::NotificationContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notification_contracts::NotificationPriority where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notification_contracts::NotificationRaised where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notification_contracts::QuietHoursHint where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notification_contracts::NotificationClass where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notification_contracts::NotificationContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notification_contracts::NotificationPriority where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notification_contracts::NotificationRaised where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notification_contracts::QuietHoursHint where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notification_contracts::NotificationClass where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notification_contracts::NotificationContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notification_contracts::NotificationPriority where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notification_contracts::NotificationRaised where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notification_contracts::QuietHoursHint where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_notification_contracts::NotificationClass where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notification_contracts::NotificationPriority where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notification_contracts::NotificationRaised where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notification_contracts::QuietHoursHint where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_notification_contracts::NotificationClass where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_notification_contracts::NotificationContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notification_contracts::NotificationClass where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notification_contracts::NotificationContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notification_contracts::NotificationPriority where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notification_contracts::NotificationRaised where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notification_contracts::QuietHoursHint where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notification_contracts::NotificationClass where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notification_contracts::NotificationContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notification_contracts::NotificationPriority where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notification_contracts::NotificationRaised where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notification_contracts::QuietHoursHint where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notification_contracts::NotificationClass where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notification_contracts::NotificationContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notification_contracts::NotificationPriority where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notification_contracts::NotificationRaised where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notification_contracts::QuietHoursHint where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_notification_contracts::NotificationClass where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notification_contracts::NotificationPriority where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notification_contracts::NotificationRaised where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notification_contracts::QuietHoursHint where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_notification_contracts::NotificationClass
+impl<T> core::convert::From<T> for ratatoskr_notification_contracts::NotificationContractError
+impl<T> core::convert::From<T> for ratatoskr_notification_contracts::NotificationPriority
+impl<T> core::convert::From<T> for ratatoskr_notification_contracts::NotificationRaised
+impl<T> core::convert::From<T> for ratatoskr_notification_contracts::QuietHoursHint
+impl<T> dyn_clone::DynClone for ratatoskr_notification_contracts::NotificationClass where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notification_contracts::NotificationPriority where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notification_contracts::NotificationRaised where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notification_contracts::QuietHoursHint where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notification_contracts::NotificationClass where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notification_contracts::NotificationPriority where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notification_contracts::NotificationRaised where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notification_contracts::QuietHoursHint where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_notification_contracts::NotificationClass::is_known(&self) -> bool
+pub const fn ratatoskr_notification_contracts::QuietHoursHint::end_offset_seconds(&self) -> u32
+pub const fn ratatoskr_notification_contracts::QuietHoursHint::start_offset_seconds(&self) -> u32
+pub const ratatoskr_notification_contracts::NOTIFICATION_CLASS_REGISTRY_VERSION: u32
+pub const ratatoskr_notification_contracts::NotificationClass::KNOWN: &'static [&'static str]
+pub const ratatoskr_notification_contracts::NotificationClass::MAX_LEN: usize
+pub const ratatoskr_notification_contracts::NotificationClass::PATTERN: &'static str
+pub const ratatoskr_notification_contracts::NotificationRaised::EVENT_TYPE: &'static str
+pub const ratatoskr_notification_contracts::QuietHoursHint::MAX_OFFSET_SECONDS: u32
+pub fn alloc::string::String::from(ratatoskr_notification_contracts::NotificationClass) -> Self
+pub fn ratatoskr_notification_contracts::NotificationClass::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notification_contracts::NotificationClass::as_str(&self) -> &str
+pub fn ratatoskr_notification_contracts::NotificationClass::borrow(&self) -> &T
+pub fn ratatoskr_notification_contracts::NotificationClass::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notification_contracts::NotificationClass::clone(&self) -> ratatoskr_notification_contracts::NotificationClass
+pub fn ratatoskr_notification_contracts::NotificationClass::clone_into(&self, &mut T)
+pub fn ratatoskr_notification_contracts::NotificationClass::cmp(&self, &ratatoskr_notification_contracts::NotificationClass) -> core::cmp::Ordering
+pub fn ratatoskr_notification_contracts::NotificationClass::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notification_contracts::NotificationClass::eq(&self, &ratatoskr_notification_contracts::NotificationClass) -> bool
+pub fn ratatoskr_notification_contracts::NotificationClass::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notification_contracts::NotificationClass::from(T) -> T
+pub fn ratatoskr_notification_contracts::NotificationClass::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_notification_contracts::NotificationClass::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notification_contracts::NotificationClass::into(self) -> U
+pub fn ratatoskr_notification_contracts::NotificationClass::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notification_contracts::NotificationClass::parse(&str) -> core::result::Result<Self, ratatoskr_notification_contracts::NotificationContractError>
+pub fn ratatoskr_notification_contracts::NotificationClass::partial_cmp(&self, &ratatoskr_notification_contracts::NotificationClass) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notification_contracts::NotificationClass::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationClass::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationClass::serialize<S>(&self, S) -> core::result::Result<<S as serde_core::ser::Serializer>::Ok, <S as serde_core::ser::Serializer>::Error> where S: serde_core::ser::Serializer
+pub fn ratatoskr_notification_contracts::NotificationClass::to_owned(&self) -> T
+pub fn ratatoskr_notification_contracts::NotificationClass::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_notification_contracts::NotificationClass::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationClass::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_notification_contracts::NotificationClass::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationClass::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notification_contracts::NotificationContractError::borrow(&self) -> &T
+pub fn ratatoskr_notification_contracts::NotificationContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notification_contracts::NotificationContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notification_contracts::NotificationContractError::from(T) -> T
+pub fn ratatoskr_notification_contracts::NotificationContractError::into(self) -> U
+pub fn ratatoskr_notification_contracts::NotificationContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_notification_contracts::NotificationContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notification_contracts::NotificationPriority::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notification_contracts::NotificationPriority::borrow(&self) -> &T
+pub fn ratatoskr_notification_contracts::NotificationPriority::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notification_contracts::NotificationPriority::clone(&self) -> ratatoskr_notification_contracts::NotificationPriority
+pub fn ratatoskr_notification_contracts::NotificationPriority::clone_into(&self, &mut T)
+pub fn ratatoskr_notification_contracts::NotificationPriority::cmp(&self, &ratatoskr_notification_contracts::NotificationPriority) -> core::cmp::Ordering
+pub fn ratatoskr_notification_contracts::NotificationPriority::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notification_contracts::NotificationPriority::eq(&self, &ratatoskr_notification_contracts::NotificationPriority) -> bool
+pub fn ratatoskr_notification_contracts::NotificationPriority::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notification_contracts::NotificationPriority::from(T) -> T
+pub fn ratatoskr_notification_contracts::NotificationPriority::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notification_contracts::NotificationPriority::inline_schema() -> bool
+pub fn ratatoskr_notification_contracts::NotificationPriority::into(self) -> U
+pub fn ratatoskr_notification_contracts::NotificationPriority::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notification_contracts::NotificationPriority::partial_cmp(&self, &ratatoskr_notification_contracts::NotificationPriority) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notification_contracts::NotificationPriority::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationPriority::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationPriority::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notification_contracts::NotificationPriority::to_owned(&self) -> T
+pub fn ratatoskr_notification_contracts::NotificationPriority::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationPriority::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationPriority::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notification_contracts::NotificationRaised::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notification_contracts::NotificationRaised::borrow(&self) -> &T
+pub fn ratatoskr_notification_contracts::NotificationRaised::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notification_contracts::NotificationRaised::clone(&self) -> ratatoskr_notification_contracts::NotificationRaised
+pub fn ratatoskr_notification_contracts::NotificationRaised::clone_into(&self, &mut T)
+pub fn ratatoskr_notification_contracts::NotificationRaised::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notification_contracts::NotificationRaised::eq(&self, &ratatoskr_notification_contracts::NotificationRaised) -> bool
+pub fn ratatoskr_notification_contracts::NotificationRaised::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notification_contracts::NotificationRaised::from(T) -> T
+pub fn ratatoskr_notification_contracts::NotificationRaised::inline_schema() -> bool
+pub fn ratatoskr_notification_contracts::NotificationRaised::into(self) -> U
+pub fn ratatoskr_notification_contracts::NotificationRaised::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notification_contracts::NotificationRaised::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationRaised::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::NotificationRaised::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notification_contracts::NotificationRaised::to_owned(&self) -> T
+pub fn ratatoskr_notification_contracts::NotificationRaised::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationRaised::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notification_contracts::NotificationRaised::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notification_contracts::NotificationRaised::validate(&self) -> core::result::Result<(), ratatoskr_notification_contracts::NotificationContractError>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notification_contracts::QuietHoursHint::borrow(&self) -> &T
+pub fn ratatoskr_notification_contracts::QuietHoursHint::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notification_contracts::QuietHoursHint::clone(&self) -> ratatoskr_notification_contracts::QuietHoursHint
+pub fn ratatoskr_notification_contracts::QuietHoursHint::clone_into(&self, &mut T)
+pub fn ratatoskr_notification_contracts::QuietHoursHint::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::eq(&self, &ratatoskr_notification_contracts::QuietHoursHint) -> bool
+pub fn ratatoskr_notification_contracts::QuietHoursHint::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notification_contracts::QuietHoursHint::from(T) -> T
+pub fn ratatoskr_notification_contracts::QuietHoursHint::into(self) -> U
+pub fn ratatoskr_notification_contracts::QuietHoursHint::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notification_contracts::QuietHoursHint::new(u32, u32) -> core::result::Result<Self, ratatoskr_notification_contracts::NotificationContractError>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notification_contracts::QuietHoursHint::to_owned(&self) -> T
+pub fn ratatoskr_notification_contracts::QuietHoursHint::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notification_contracts::QuietHoursHint::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_notification_contracts
+pub ratatoskr_notification_contracts::NotificationClass::AnalysisReady
+pub ratatoskr_notification_contracts::NotificationClass::ArchiveImported
+pub ratatoskr_notification_contracts::NotificationClass::BackupOutcome
+pub ratatoskr_notification_contracts::NotificationClass::OperationCompleted
+pub ratatoskr_notification_contracts::NotificationClass::OperationFailed
+pub ratatoskr_notification_contracts::NotificationClass::Other(alloc::string::String)
+pub ratatoskr_notification_contracts::NotificationClass::WatchTriggered
+pub ratatoskr_notification_contracts::NotificationContractError::MalformedClassToken
+pub ratatoskr_notification_contracts::NotificationContractError::MalformedClassToken::input: alloc::string::String
+pub ratatoskr_notification_contracts::NotificationContractError::MalformedClassToken::pattern: &'static str
+pub ratatoskr_notification_contracts::NotificationContractError::QuietHoursOffsetOutOfRange
+pub ratatoskr_notification_contracts::NotificationContractError::QuietHoursOffsetOutOfRange::got: u32
+pub ratatoskr_notification_contracts::NotificationContractError::QuietHoursOffsetOutOfRange::max: u32
+pub ratatoskr_notification_contracts::NotificationContractError::QuietHoursWindowDegenerate
+pub ratatoskr_notification_contracts::NotificationContractError::ZeroRegistryVersion
+pub ratatoskr_notification_contracts::NotificationPriority::High
+pub ratatoskr_notification_contracts::NotificationPriority::Low
+pub ratatoskr_notification_contracts::NotificationPriority::Normal
+pub ratatoskr_notification_contracts::NotificationRaised::analysis_ref: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_notification_contracts::NotificationRaised::class: ratatoskr_notification_contracts::NotificationClass
+pub ratatoskr_notification_contracts::NotificationRaised::class_registry_version: u32
+pub ratatoskr_notification_contracts::NotificationRaised::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_notification_contracts::NotificationRaised::message: core::option::Option<ratatoskr_identifiers::text::SafeMessage>
+pub ratatoskr_notification_contracts::NotificationRaised::notification_id: ratatoskr_identifiers::uuid_ids::NotificationId
+pub ratatoskr_notification_contracts::NotificationRaised::operation_ref: core::option::Option<ratatoskr_identifiers::entity::EntityRef>
+pub ratatoskr_notification_contracts::NotificationRaised::priority_hint: core::option::Option<ratatoskr_notification_contracts::NotificationPriority>
+pub ratatoskr_notification_contracts::NotificationRaised::quiet_hours: core::option::Option<ratatoskr_notification_contracts::QuietHoursHint>
+pub ratatoskr_notification_contracts::NotificationRaised::recipient: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_notification_contracts::NotificationRaised::title: ratatoskr_identifiers::text::SafeMessage
+pub struct ratatoskr_notification_contracts::NotificationRaised
+pub struct ratatoskr_notification_contracts::QuietHoursHint
+pub type ratatoskr_notification_contracts::NotificationClass::Err = ratatoskr_notification_contracts::NotificationContractError
+pub type ratatoskr_notification_contracts::NotificationClass::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notification_contracts::NotificationClass::Error = core::convert::Infallible
+pub type ratatoskr_notification_contracts::NotificationClass::Error = ratatoskr_notification_contracts::NotificationContractError
+pub type ratatoskr_notification_contracts::NotificationClass::Owned = T
+pub type ratatoskr_notification_contracts::NotificationContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notification_contracts::NotificationContractError::Error = core::convert::Infallible
+pub type ratatoskr_notification_contracts::NotificationPriority::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notification_contracts::NotificationPriority::Error = core::convert::Infallible
+pub type ratatoskr_notification_contracts::NotificationPriority::Owned = T
+pub type ratatoskr_notification_contracts::NotificationRaised::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notification_contracts::NotificationRaised::Error = core::convert::Infallible
+pub type ratatoskr_notification_contracts::NotificationRaised::Owned = T
+pub type ratatoskr_notification_contracts::QuietHoursHint::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notification_contracts::QuietHoursHint::Error = core::convert::Infallible
+pub type ratatoskr_notification_contracts::QuietHoursHint::Owned = T
+pub unsafe fn ratatoskr_notification_contracts::NotificationClass::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notification_contracts::NotificationPriority::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notification_contracts::NotificationRaised::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notification_contracts::QuietHoursHint::clone_to_uninit(&self, *mut u8)

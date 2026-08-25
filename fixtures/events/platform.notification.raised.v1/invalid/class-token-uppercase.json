@@ -1,0 +1,7 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000710",
+  "class_registry_version": 1,
+  "class": "Carrier_Pigeon",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Uppercase class tokens are typos or hostile input"
+}

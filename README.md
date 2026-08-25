@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
+> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the notification contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -26,7 +26,7 @@ It is intended to provide:
 - public OpenAPI specifications;
 - shared opaque identifiers and timestamps used on the wire;
 - standard error and pagination envelopes;
-- document, social-source, AI-archive, and backup-policy interchange contracts;
+- document, social-source, AI-archive, backup-policy, and user-facing-notification interchange contracts;
 - generated client/server artifacts for supported languages;
 - compatibility checks used by child repositories and the workspace CI.
 
@@ -38,14 +38,15 @@ The full contract surface is expected to include the tree below. `(now)` marks w
 
 ```text
 crates/
-├── identifiers/            (now)
-├── event-envelope/         (now)
-├── operation-contracts/    (now)
-├── error-contracts/        (now)
-├── document-contracts/     (now)
-├── social-contracts/       (now)
-├── ai-archive-contracts/   (now)
-└── backup-contracts/       (now)
+├── identifiers/               (now)
+├── event-envelope/            (now)
+├── operation-contracts/       (now)
+├── error-contracts/           (now)
+├── document-contracts/        (now)
+├── social-contracts/          (now)
+├── ai-archive-contracts/      (now)
+├── backup-contracts/          (now)
+└── notification-contracts/    (now)
 
 schemas/
 ├── events/                 (now, generated)
@@ -97,6 +98,7 @@ knowledge.analysis.completed.v1
 platform.operation.progressed.v1
 telegram.interaction.received.v1
 vault.backup_policy.acknowledged.v1
+platform.notification.raised.v1
 ```
 
 ## Ownership boundaries
@@ -170,6 +172,12 @@ ChatGPT and Claude exports share one normalized grammar in `ratatoskr-ai-archive
 ### Backup policies
 
 `ratatoskr-github` publishes `DesiredBackupPolicy` (`ratatoskr-backup-contracts`): a monotonic policy version naming, per repository, a mirror cadence class, priority and size hints, and explicit exclusions — WHAT must be preserved as an explicit, versioned, auditable contract between two services that never share a database, instead of implicit job configuration. Coverage is default-deny between versions: a catalog repository a version does not name stays out of scope until a successor names it, and an entry pointing outside Vault's catalog is reportable drift rather than a silent skip. Vault answers each version through the `vault.backup_policy.acknowledged.v1` event inside the common envelope — accepted or rejected with machine-actionable reasons beside the last policy version it fully applied.
+
+### Notifications
+
+The legacy monolith notified in-process; the fleet cannot. `ratatoskr-notification-contracts` is the documented bus surface `ratatoskr-telegram`'s notification sender honors: one registered event type, `platform.notification.raised.v1`, through which `ratatoskr-knowledge`, `ratatoskr-github`, `ratatoskr-vault` and `ratatoskr-x` state the completed fact that one of their users should be told something — never an order to send, so preference filtering, dedupe and channel choice stay on Telegram's side of the wire.
+
+A raised notification carries its own identity (`NotificationId`, also the aggregate as `notification:<uuid>` and the logical key for suppressing re-raises), a class from a versioned taxonomy whose unknown tokens are preserved rather than rejected — six classes at registry version 1: `operation_completed`, `operation_failed`, `analysis_ready`, `backup_outcome`, `watch_triggered`, `archive_imported` — the recipient in the closed tenancy grammar, carrier-safe title and optional message text, opaque correlation references (`operation_ref`, `analysis_ref`), and advisory delivery hints (a priority level and a daily quiet-hours window in seconds from UTC midnight) whose enforcement is nobody's job but the consumer's. Delivery guarantees are the bus's own at-least-once; nothing stronger is promised here.
 
 ## Proposed development workflow
 

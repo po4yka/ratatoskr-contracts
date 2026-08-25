@@ -18,6 +18,7 @@ impl core::clone::Clone for ratatoskr_identifiers::EventId
 impl core::clone::Clone for ratatoskr_identifiers::Extensions
 impl core::clone::Clone for ratatoskr_identifiers::IdentifierError
 impl core::clone::Clone for ratatoskr_identifiers::MediaType
+impl core::clone::Clone for ratatoskr_identifiers::NotificationId
 impl core::clone::Clone for ratatoskr_identifiers::OperationId
 impl core::clone::Clone for ratatoskr_identifiers::SafeMessage
 impl core::clone::Clone for ratatoskr_identifiers::SocialSourceId
@@ -41,6 +42,7 @@ impl core::cmp::Eq for ratatoskr_identifiers::EventId
 impl core::cmp::Eq for ratatoskr_identifiers::Extensions
 impl core::cmp::Eq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::Eq for ratatoskr_identifiers::MediaType
+impl core::cmp::Eq for ratatoskr_identifiers::NotificationId
 impl core::cmp::Eq for ratatoskr_identifiers::OperationId
 impl core::cmp::Eq for ratatoskr_identifiers::SafeMessage
 impl core::cmp::Eq for ratatoskr_identifiers::SocialSourceId
@@ -62,6 +64,7 @@ impl core::cmp::Ord for ratatoskr_identifiers::EntityLocalId
 impl core::cmp::Ord for ratatoskr_identifiers::EntityRef
 impl core::cmp::Ord for ratatoskr_identifiers::EventId
 impl core::cmp::Ord for ratatoskr_identifiers::MediaType
+impl core::cmp::Ord for ratatoskr_identifiers::NotificationId
 impl core::cmp::Ord for ratatoskr_identifiers::OperationId
 impl core::cmp::Ord for ratatoskr_identifiers::SafeMessage
 impl core::cmp::Ord for ratatoskr_identifiers::SocialSourceId
@@ -85,6 +88,7 @@ impl core::cmp::PartialEq for ratatoskr_identifiers::EventId
 impl core::cmp::PartialEq for ratatoskr_identifiers::Extensions
 impl core::cmp::PartialEq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::PartialEq for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialEq for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::OperationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::SafeMessage
 impl core::cmp::PartialEq for ratatoskr_identifiers::SocialSourceId
@@ -106,6 +110,7 @@ impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityLocalId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityRef
 impl core::cmp::PartialOrd for ratatoskr_identifiers::EventId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialOrd for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::OperationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::SafeMessage
 impl core::cmp::PartialOrd for ratatoskr_identifiers::SocialSourceId
@@ -129,6 +134,8 @@ impl core::convert::From<ratatoskr_identifiers::EntityRef> for alloc::string::St
 impl core::convert::From<ratatoskr_identifiers::EventId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::EventId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::MediaType> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::NotificationId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::NotificationId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::OperationId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::OperationId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::SafeMessage> for alloc::string::String
@@ -144,6 +151,7 @@ impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_ide
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::CorrelationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::DocumentId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::EventId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::OperationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::SocialSourceId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::UserId
@@ -158,6 +166,7 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::En
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EntityRef
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EventId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::MediaType
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::OperationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SafeMessage
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SocialSourceId
@@ -183,6 +192,7 @@ impl core::fmt::Debug for ratatoskr_identifiers::EventId
 impl core::fmt::Debug for ratatoskr_identifiers::Extensions
 impl core::fmt::Debug for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Debug for ratatoskr_identifiers::MediaType
+impl core::fmt::Debug for ratatoskr_identifiers::NotificationId
 impl core::fmt::Debug for ratatoskr_identifiers::OperationId
 impl core::fmt::Debug for ratatoskr_identifiers::SafeMessage
 impl core::fmt::Debug for ratatoskr_identifiers::SocialSourceId
@@ -202,6 +212,7 @@ impl core::fmt::Display for ratatoskr_identifiers::EntityRef
 impl core::fmt::Display for ratatoskr_identifiers::EventId
 impl core::fmt::Display for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Display for ratatoskr_identifiers::MediaType
+impl core::fmt::Display for ratatoskr_identifiers::NotificationId
 impl core::fmt::Display for ratatoskr_identifiers::OperationId
 impl core::fmt::Display for ratatoskr_identifiers::SafeMessage
 impl core::fmt::Display for ratatoskr_identifiers::SocialSourceId
@@ -223,6 +234,7 @@ impl core::hash::Hash for ratatoskr_identifiers::EntityLocalId
 impl core::hash::Hash for ratatoskr_identifiers::EntityRef
 impl core::hash::Hash for ratatoskr_identifiers::EventId
 impl core::hash::Hash for ratatoskr_identifiers::MediaType
+impl core::hash::Hash for ratatoskr_identifiers::NotificationId
 impl core::hash::Hash for ratatoskr_identifiers::OperationId
 impl core::hash::Hash for ratatoskr_identifiers::SafeMessage
 impl core::hash::Hash for ratatoskr_identifiers::SocialSourceId
@@ -236,6 +248,7 @@ impl core::marker::Copy for ratatoskr_identifiers::CorrelationId
 impl core::marker::Copy for ratatoskr_identifiers::DigestAlgorithm
 impl core::marker::Copy for ratatoskr_identifiers::DocumentId
 impl core::marker::Copy for ratatoskr_identifiers::EventId
+impl core::marker::Copy for ratatoskr_identifiers::NotificationId
 impl core::marker::Copy for ratatoskr_identifiers::OperationId
 impl core::marker::Copy for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Copy for ratatoskr_identifiers::TenantRef
@@ -258,6 +271,7 @@ impl core::marker::Freeze for ratatoskr_identifiers::EventId
 impl core::marker::Freeze for ratatoskr_identifiers::Extensions
 impl core::marker::Freeze for ratatoskr_identifiers::IdentifierError
 impl core::marker::Freeze for ratatoskr_identifiers::MediaType
+impl core::marker::Freeze for ratatoskr_identifiers::NotificationId
 impl core::marker::Freeze for ratatoskr_identifiers::OperationId
 impl core::marker::Freeze for ratatoskr_identifiers::SafeMessage
 impl core::marker::Freeze for ratatoskr_identifiers::SocialSourceId
@@ -281,6 +295,7 @@ impl core::marker::Send for ratatoskr_identifiers::EventId
 impl core::marker::Send for ratatoskr_identifiers::Extensions
 impl core::marker::Send for ratatoskr_identifiers::IdentifierError
 impl core::marker::Send for ratatoskr_identifiers::MediaType
+impl core::marker::Send for ratatoskr_identifiers::NotificationId
 impl core::marker::Send for ratatoskr_identifiers::OperationId
 impl core::marker::Send for ratatoskr_identifiers::SafeMessage
 impl core::marker::Send for ratatoskr_identifiers::SocialSourceId
@@ -304,6 +319,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EventId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::Extensions
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::IdentifierError
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::MediaType
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::NotificationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::OperationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SafeMessage
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SocialSourceId
@@ -327,6 +343,7 @@ impl core::marker::Sync for ratatoskr_identifiers::EventId
 impl core::marker::Sync for ratatoskr_identifiers::Extensions
 impl core::marker::Sync for ratatoskr_identifiers::IdentifierError
 impl core::marker::Sync for ratatoskr_identifiers::MediaType
+impl core::marker::Sync for ratatoskr_identifiers::NotificationId
 impl core::marker::Sync for ratatoskr_identifiers::OperationId
 impl core::marker::Sync for ratatoskr_identifiers::SafeMessage
 impl core::marker::Sync for ratatoskr_identifiers::SocialSourceId
@@ -350,6 +367,7 @@ impl core::marker::Unpin for ratatoskr_identifiers::EventId
 impl core::marker::Unpin for ratatoskr_identifiers::Extensions
 impl core::marker::Unpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::Unpin for ratatoskr_identifiers::MediaType
+impl core::marker::Unpin for ratatoskr_identifiers::NotificationId
 impl core::marker::Unpin for ratatoskr_identifiers::OperationId
 impl core::marker::Unpin for ratatoskr_identifiers::SafeMessage
 impl core::marker::Unpin for ratatoskr_identifiers::SocialSourceId
@@ -373,6 +391,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EventId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::Extensions
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::MediaType
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::NotificationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::OperationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SafeMessage
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SocialSourceId
@@ -396,6 +415,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EventId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::Extensions
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::IdentifierError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::OperationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SafeMessage
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SocialSourceId
@@ -419,6 +439,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EventId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::Extensions
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::IdentifierError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::OperationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SafeMessage
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SocialSourceId
@@ -437,6 +458,7 @@ impl core::str::traits::FromStr for ratatoskr_identifiers::EntityLocalId
 impl core::str::traits::FromStr for ratatoskr_identifiers::EntityRef
 impl core::str::traits::FromStr for ratatoskr_identifiers::EventId
 impl core::str::traits::FromStr for ratatoskr_identifiers::MediaType
+impl core::str::traits::FromStr for ratatoskr_identifiers::NotificationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::OperationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::SafeMessage
 impl core::str::traits::FromStr for ratatoskr_identifiers::SocialSourceId
@@ -456,6 +478,7 @@ impl ratatoskr_identifiers::EntityRef
 impl ratatoskr_identifiers::EventId
 impl ratatoskr_identifiers::Extensions
 impl ratatoskr_identifiers::MediaType
+impl ratatoskr_identifiers::NotificationId
 impl ratatoskr_identifiers::OperationId
 impl ratatoskr_identifiers::SafeMessage
 impl ratatoskr_identifiers::SocialSourceId
@@ -477,6 +500,7 @@ impl schemars::JsonSchema for ratatoskr_identifiers::EntityRef
 impl schemars::JsonSchema for ratatoskr_identifiers::EventId
 impl schemars::JsonSchema for ratatoskr_identifiers::Extensions
 impl schemars::JsonSchema for ratatoskr_identifiers::MediaType
+impl schemars::JsonSchema for ratatoskr_identifiers::NotificationId
 impl schemars::JsonSchema for ratatoskr_identifiers::OperationId
 impl schemars::JsonSchema for ratatoskr_identifiers::SafeMessage
 impl schemars::JsonSchema for ratatoskr_identifiers::SocialSourceId
@@ -498,6 +522,7 @@ impl serde_core::ser::Serialize for ratatoskr_identifiers::EntityRef
 impl serde_core::ser::Serialize for ratatoskr_identifiers::EventId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::Extensions
 impl serde_core::ser::Serialize for ratatoskr_identifiers::MediaType
+impl serde_core::ser::Serialize for ratatoskr_identifiers::NotificationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::OperationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::SafeMessage
 impl serde_core::ser::Serialize for ratatoskr_identifiers::SocialSourceId
@@ -519,6 +544,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EntityRef
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EventId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::Extensions
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::MediaType
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::NotificationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::OperationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SafeMessage
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SocialSourceId
@@ -542,6 +568,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EventId where U: co
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::Extensions where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::MediaType where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::NotificationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::OperationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::From<T>
@@ -565,6 +592,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EventId where U:
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::Extensions where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::MediaType where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::NotificationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::OperationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::Into<T>
@@ -588,6 +616,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EventId where U:
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::Extensions where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::MediaType where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::NotificationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::OperationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::TryFrom<T>
@@ -611,6 +640,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EventId where T: core:
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
@@ -630,6 +660,7 @@ impl<T> alloc::string::ToString for ratatoskr_identifiers::EntityRef where T: co
 impl<T> alloc::string::ToString for ratatoskr_identifiers::EventId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::IdentifierError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::MediaType where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::NotificationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::OperationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::SafeMessage where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::SocialSourceId where T: core::fmt::Display + ?core::marker::Sized
@@ -653,6 +684,7 @@ impl<T> core::any::Any for ratatoskr_identifiers::EventId where T: 'static + ?co
 impl<T> core::any::Any for ratatoskr_identifiers::Extensions where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::IdentifierError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::MediaType where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::NotificationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::OperationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::SafeMessage where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::SocialSourceId where T: 'static + ?core::marker::Sized
@@ -676,6 +708,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EventId where T: ?cor
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
@@ -699,6 +732,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EventId where T: ?
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
@@ -722,6 +756,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EventId where T: c
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
@@ -745,6 +780,7 @@ impl<T> core::convert::From<T> for ratatoskr_identifiers::EventId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::Extensions
 impl<T> core::convert::From<T> for ratatoskr_identifiers::IdentifierError
 impl<T> core::convert::From<T> for ratatoskr_identifiers::MediaType
+impl<T> core::convert::From<T> for ratatoskr_identifiers::NotificationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::OperationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::SafeMessage
 impl<T> core::convert::From<T> for ratatoskr_identifiers::SocialSourceId
@@ -768,6 +804,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EventId where T: core::cl
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
@@ -789,6 +826,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EntityRef wh
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EventId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::Extensions where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::MediaType where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::NotificationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::OperationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SafeMessage where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SocialSourceId where T: for<'de> serde_core::de::Deserialize<'de>
@@ -828,6 +866,8 @@ pub const ratatoskr_identifiers::EventId::PATTERN: &'static str
 pub const ratatoskr_identifiers::MediaType::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_identifiers::MediaType::MAX_LEN: usize
 pub const ratatoskr_identifiers::MediaType::PATTERN: &'static str
+pub const ratatoskr_identifiers::NotificationId::KIND: &'static str
+pub const ratatoskr_identifiers::NotificationId::PATTERN: &'static str
 pub const ratatoskr_identifiers::OperationId::KIND: &'static str
 pub const ratatoskr_identifiers::OperationId::PATTERN: &'static str
 pub const ratatoskr_identifiers::SafeMessage::EXAMPLES: &'static [&'static str]
@@ -850,6 +890,7 @@ pub fn alloc::string::String::from(ratatoskr_identifiers::EntityLocalId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::EntityRef) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::EventId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::MediaType) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::OperationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::SafeMessage) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::SocialSourceId) -> Self
@@ -1183,6 +1224,7 @@ pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiProjectId
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::CorrelationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::DocumentId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::EventId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::OperationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::SocialSourceId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::UserId) -> Self
@@ -1300,6 +1342,35 @@ pub fn ratatoskr_identifiers::MediaType::try_from(U) -> core::result::Result<T, 
 pub fn ratatoskr_identifiers::MediaType::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_identifiers::MediaType::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_identifiers::MediaType::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::NotificationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::NotificationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::NotificationId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::NotificationId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::NotificationId::clone(&self) -> ratatoskr_identifiers::NotificationId
+pub fn ratatoskr_identifiers::NotificationId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::NotificationId::cmp(&self, &ratatoskr_identifiers::NotificationId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::NotificationId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::NotificationId::eq(&self, &ratatoskr_identifiers::NotificationId) -> bool
+pub fn ratatoskr_identifiers::NotificationId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::NotificationId::from(T) -> T
+pub fn ratatoskr_identifiers::NotificationId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::NotificationId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::NotificationId::into(self) -> U
+pub fn ratatoskr_identifiers::NotificationId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::NotificationId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::NotificationId::new_v7() -> Self
+pub fn ratatoskr_identifiers::NotificationId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::NotificationId::partial_cmp(&self, &ratatoskr_identifiers::NotificationId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::NotificationId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotificationId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotificationId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::NotificationId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::NotificationId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::NotificationId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotificationId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::NotificationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotificationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::NotificationId::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_identifiers::OperationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_identifiers::OperationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
 pub fn ratatoskr_identifiers::OperationId::borrow(&self) -> &T
@@ -1523,6 +1594,7 @@ pub struct ratatoskr_identifiers::EntityRef
 pub struct ratatoskr_identifiers::EventId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::Extensions(_)
 pub struct ratatoskr_identifiers::MediaType(_)
+pub struct ratatoskr_identifiers::NotificationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::OperationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::SafeMessage(_)
 pub struct ratatoskr_identifiers::SocialSourceId(pub uuid::Uuid)
@@ -1603,6 +1675,11 @@ pub type ratatoskr_identifiers::MediaType::Error = <U as core::convert::TryFrom<
 pub type ratatoskr_identifiers::MediaType::Error = core::convert::Infallible
 pub type ratatoskr_identifiers::MediaType::Error = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::MediaType::Owned = T
+pub type ratatoskr_identifiers::NotificationId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotificationId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::NotificationId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::NotificationId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotificationId::Owned = T
 pub type ratatoskr_identifiers::OperationId::Err = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::OperationId::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_identifiers::OperationId::Error = core::convert::Infallible
@@ -1650,6 +1727,7 @@ pub unsafe fn ratatoskr_identifiers::EventId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::Extensions::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::IdentifierError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::MediaType::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::NotificationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::OperationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::SafeMessage::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::SocialSourceId::clone_to_uninit(&self, *mut u8)

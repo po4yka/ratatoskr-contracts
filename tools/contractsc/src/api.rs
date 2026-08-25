@@ -1,7 +1,7 @@
 //! The Rust public-API compatibility checker: what changed between the committed baseline of a
 //! crate's exported surface and the surface the current sources produce.
 //!
-//! The seven contract crates are consumed across the Ratatoskr workspace, so a change to what
+//! The nine contract crates are consumed across the Ratatoskr workspace, so a change to what
 //! they export — a removed type, a renamed function, a brand-new public item — is a cross-
 //! repository event even when it is semver-compatible. This module owns the comparison and the
 //! classification; producing the current snapshot (`cargo-public-api`) and touching disk stay in

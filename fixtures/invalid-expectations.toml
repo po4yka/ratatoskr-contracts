@@ -405,3 +405,27 @@ reason         = "Accepting a version at or below the last applied one is indist
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'unknown variant `catalog_on_fire`'
 reason         = "PolicyRejectionCode is closed: GitHub branches on the code to fix and republish, and an unrecognized code filed under any default would route the response to the wrong repair. DOMAIN invariant 6, 'rejected explicitly'."
+
+# ---------------------------------------------------------------------------
+# events/platform.notification.raised.v1
+# ---------------------------------------------------------------------------
+
+["events/platform.notification.raised.v1/invalid/class-token-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[a-z][a-z0-9_-]{0,31}$'
+reason         = "Notification-class tokens are snake_case, matching every reference kind and event-name segment; case variance would let one class travel under several spellings and split its routing. An unrecognized token is preserved only when it is well formed - uppercase input is a typo or hostile, not future vocabulary."
+
+["events/platform.notification.raised.v1/invalid/registry-version-zero.json"]
+rejected_by    = ["serde"]
+error_contains = 'class_registry_version must be greater than zero'
+reason         = "Taxonomy registry versions start at 1: a producer that declared version 0 would make 'speaks no vocabulary' representable silence, and consumers could not tell preservation from recognition. The floor lives in the Rust type alone, so the schema layer accepts what it cannot express - the ADR-0001 lower-bound rule."
+
+["events/platform.notification.raised.v1/invalid/unknown-priority-hint.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `urgent`'
+reason         = "NotificationPriority is closed, mirroring BackupPriorityHint: a guessed priority silently reorders delivery, so an unrecognized level must stop processing rather than be read as some default. DOMAIN invariant 6, 'rejected explicitly'."
+
+["events/platform.notification.raised.v1/invalid/quiet-hours-offset-out-of-range.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'at most 86399 seconds'
+reason         = "Each quiet-hours offset names a second inside one UTC day; 86400 names no second of any day, so both the published maximum and the Rust type refuse it. The equality ban between the two bounds is narrower still and lives in the Rust type alone."

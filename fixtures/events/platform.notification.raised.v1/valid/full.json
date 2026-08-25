@@ -1,0 +1,15 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000708",
+  "class_registry_version": 1,
+  "class": "analysis_ready",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Analysis ready",
+  "message": "Every member of the notification grammar appears in this fixture.",
+  "operation_ref": "operation:018f0000-0000-7000-8000-000000000302",
+  "analysis_ref": "analysis:018f0000-0000-7000-8000-000000000401",
+  "priority_hint": "high",
+  "quiet_hours": {
+    "start_offset_seconds": 25200,
+    "end_offset_seconds": 64800
+  }
+}

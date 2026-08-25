@@ -42,6 +42,7 @@ ratatoskr-contracts/
 │   ├── social-contracts/
 │   ├── ai-archive-contracts/
 │   ├── backup-contracts/
+│   ├── notification-contracts/
 │   └── error-contracts/
 ├── schemas/
 │   ├── events/
@@ -227,6 +228,35 @@ Rules:
 - exclusions only ever narrow the mirrored set, and their expressions are carrier-safe opaque text whose matching semantics belong to the consuming mirror implementation;
 - coverage is default-deny: a catalog repository a version does not name is out of scope until a successor names it (`uncovered_catalog_repositories`, `entries_absent_from_catalog`, `apply_exclusions` express this as pure functions);
 - Vault answers through `vault.backup_policy.acknowledged.v1` inside the canonical envelope, aggregated as `backup_policy:<version>`: acceptance implies forward progress over `last_applied_policy_version`, rejection implies at least one machine-actionable reason, and a reason's repository reference appears exactly when its code demands one.
+
+### 5.7. Notification contracts
+
+The legacy monolith notified in-process; the fleet cannot. Producers state the completed fact that a user should be told something through one registered event type; `ratatoskr-telegram`'s notification sender consumes that documented bus surface and owns everything after the fact — preference filtering, dedupe, channel choice.
+
+```rust
+pub struct NotificationRaised {
+    pub notification_id: NotificationId,
+    pub class_registry_version: u32,
+    pub class: NotificationClass,
+    pub recipient: TenantRef,
+    pub title: SafeMessage,
+    pub message: Option<SafeMessage>,
+    pub operation_ref: Option<EntityRef>,
+    pub analysis_ref: Option<EntityRef>,
+    pub priority_hint: Option<NotificationPriority>,
+    pub quiet_hours: Option<QuietHoursHint>,
+    pub extensions: Extensions,
+}
+```
+
+Rules:
+
+- `platform.notification.raised.v1` is a fact, not an order (`AGENTS.md` principle 9): the producer's judgment is complete before the payload exists, and nothing on this wire obliges Telegram to send anything;
+- the class taxonomy is open like `EntityKind`: an unrecognized but well-formed token is preserved verbatim as `NotificationClass::Other` so a later producer's class still reaches its audience, while a token violating the grammar stops processing;
+- `class_registry_version` (floor 1) tells a consumer whether it recognizes or merely preserves a value; bumping it accompanies every growth of the known set, which stays an additive payload-major-1 change;
+- the recipient uses the closed tenancy grammar `user:<uuid>`; correlation references are opaque `<kind>:<local_id>` pointers whose referent kinds this crate never interprets;
+- `priority_hint` and `quiet_hours` are advisory only. Priority is a closed vocabulary because a guessed level silently reorders delivery; quiet hours are two offsets from UTC midnight in seconds, each bounded to one day, wrap-around permitted, equal bounds refused because they cannot say whether they mean an empty day or a full one;
+- delivery guarantees are the bus's own at-least-once semantics; dedupe and preference filtering belong to Telegram, with `notification_id` as the logical suppression key and the envelope aggregate spelled `notification:<uuid>`.
 
 ## 6. Document contracts
 

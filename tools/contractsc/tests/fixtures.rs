@@ -177,6 +177,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
             render!(ratatoskr_event_envelope::EventEnvelope)
         }
         "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
+        "ratatoskr_notification_contracts::NotificationRaised" => {
+            render!(ratatoskr_notification_contracts::NotificationRaised)
+        }
         "ratatoskr_operation_contracts::OperationProgressed" => {
             render!(ratatoskr_operation_contracts::OperationProgressed)
         }

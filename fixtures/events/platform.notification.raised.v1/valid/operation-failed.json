@@ -1,0 +1,10 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000702",
+  "class_registry_version": 1,
+  "class": "operation_failed",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Operation failed",
+  "message": "The requested export stopped with an error you can retry.",
+  "operation_ref": "operation:018f0000-0000-7000-8000-000000000303",
+  "priority_hint": "high"
+}

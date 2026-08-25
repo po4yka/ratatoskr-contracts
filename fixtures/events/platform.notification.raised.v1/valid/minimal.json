@@ -1,0 +1,7 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000707",
+  "class_registry_version": 1,
+  "class": "operation_completed",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Operation completed"
+}

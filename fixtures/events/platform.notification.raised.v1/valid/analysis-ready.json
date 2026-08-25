@@ -1,0 +1,11 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000703",
+  "class_registry_version": 1,
+  "class": "analysis_ready",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Analysis ready",
+  "message": "Your document analysis finished and its findings are available.",
+  "operation_ref": "operation:018f0000-0000-7000-8000-000000000304",
+  "analysis_ref": "analysis:018f0000-0000-7000-8000-000000000401",
+  "priority_hint": "normal"
+}

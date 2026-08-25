@@ -1,0 +1,12 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000704",
+  "class_registry_version": 1,
+  "class": "backup_outcome",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Nightly backup finished",
+  "message": "All mirrored repositories are up to date.",
+  "quiet_hours": {
+    "start_offset_seconds": 82800,
+    "end_offset_seconds": 25200
+  }
+}

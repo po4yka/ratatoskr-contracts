@@ -1,0 +1,22 @@
+[package]
+name        = "ratatoskr-notification-contracts"
+description = "Typed user-facing notification payloads raised onto the documented bus surface the Telegram notification sender consumes."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace = true
+# Needed for `impl EventPayload for NotificationRaised`; the orphan rule leaves
+# this crate as the only legal home for that impl.
+ratatoskr-event-envelope.workspace = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+thiserror.workspace  = true
+regex.workspace      = true
+
+[lints]
+workspace = true

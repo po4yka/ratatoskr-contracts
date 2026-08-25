@@ -1,0 +1,9 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000705",
+  "class_registry_version": 1,
+  "class": "watch_triggered",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Watch rule matched",
+  "message": "A repository you watch published a new release.",
+  "priority_hint": "low"
+}

@@ -1,0 +1,8 @@
+{
+  "notification_id": "018f0000-0000-7000-8000-000000000713",
+  "class_registry_version": 1,
+  "class": "watch_triggered",
+  "recipient": "user:018f0000-0000-7000-8000-000000000005",
+  "title": "Watch rule matched",
+  "priority_hint": "urgent"
+}
