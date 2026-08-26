@@ -9,6 +9,7 @@ pub use crate::events::{
     RepositoryAnalysisCompleted, RepositoryAnalysisFailed, RepositoryAnalysisRequested,
 };
 pub use crate::values::{
-    AnalysisFailureCode, ReadmeAbsenceReason, ReadmeRevision, RepositoryAnalysisContract,
-    RepositoryAnalysisRevision,
+    AnalysisFailureCode, ReadmeAbsenceReason, ReadmeRevision, RepositoryAnalysisAttributes,
+    RepositoryAnalysisContract, RepositoryAnalysisRevision, RepositoryDescription,
+    RepositoryFullName, RepositoryLanguage,
 };

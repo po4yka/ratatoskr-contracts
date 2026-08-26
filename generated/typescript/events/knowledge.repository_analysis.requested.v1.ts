@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:7e45058ba69f6dd4c15111a19dffc68f4d700b20fda4ede65dbb09c26cb92ef4
+ * source_digest: sha256:50630be0984b43e2f073645838511a7b19ef00ea5d90cddab74196b997755ab6
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -31,6 +31,10 @@ export interface RepositoryAnalysisRequested {
   * User whose repository policy caused this request.
   */
  owner: TenantRef;
+ /**
+  * Bounded repository attributes whose digest is named by `source_revision`.
+  */
+ repository_attributes: RepositoryAnalysisAttributes;
  /**
   * Catalog-owned identity of the repository to analyse.
   */
@@ -123,6 +127,24 @@ export type ReadmeAbsenceReason = "not_found" | "not_authorized" | "not_preserve
 export type ReadmeRevision = { /** * Reference to the exact README bytes. The reference carries its content digest. */ content_ref: BlobRef; state: "present"; } | { /** * Why a README is absent, without leaking provider diagnostics or private content. */ reason: ReadmeAbsenceReason; state: "absent"; };
 
 /**
+ * Bounded repository metadata supplied alongside its immutable digest.
+ */
+export interface RepositoryAnalysisAttributes {
+ /**
+  * Repository description when GitHub supplied a non-empty value.
+  */
+ description?: RepositoryDescription | null;
+ /**
+  * Primary language when GitHub supplied one.
+  */
+ primary_language?: RepositoryLanguage | null;
+ /**
+  * Observed mutable alias at the immutable metadata revision.
+  */
+ repository_full_name: RepositoryFullName;
+}
+
+/**
  * The only repository-analysis family available in this contract.
  */
 export type RepositoryAnalysisContract = "repository_analysis";
@@ -149,11 +171,26 @@ export interface RepositoryAnalysisRevision {
 }
 
 /**
+ * Bounded repository description supplied as analysis input.
+ */
+export type RepositoryDescription = string;
+
+/**
+ * GitHub owner/name alias observed for the repository revision.
+ */
+export type RepositoryFullName = string;
+
+/**
  * Identity of one repository record in the GitHub Catalog. Bare canonical lowercase hyphenated UUID; not GitHub's numeric repository identifier.
  *
  * Format: uuid.
  */
 export type RepositoryId = string;
+
+/**
+ * Bounded primary-language label supplied as analysis input.
+ */
+export type RepositoryLanguage = string;
 
 /**
  * The owner of the data a record concerns, wire form `user:<uuid>`. The kind set is closed: a consumer that cannot understand the owner kind must reject the record rather than process it.

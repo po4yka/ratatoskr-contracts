@@ -13,6 +13,9 @@
       "reason": "not_found"
     }
   },
+  "repository_attributes": {
+    "repository_full_name": "owner/repository"
+  },
   "requested_contract": "repository_analysis",
   "idempotency_key": {
     "algorithm": "sha256",

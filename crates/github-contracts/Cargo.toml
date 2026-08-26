@@ -12,6 +12,7 @@ ratatoskr-event-envelope.workspace = true
 ratatoskr-identifiers.workspace    = true
 serde.workspace      = true
 schemars.workspace   = true
+regex.workspace      = true
 
 [dev-dependencies]
 serde_json.workspace = true

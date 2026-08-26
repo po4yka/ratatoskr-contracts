@@ -7,9 +7,9 @@
 )]
 
 use ratatoskr_github_contracts::{
-    AnalysisFailureCode, ReadmeAbsenceReason, ReadmeRevision, RepositoryAnalysisCompleted,
-    RepositoryAnalysisContract, RepositoryAnalysisFailed, RepositoryAnalysisRequested,
-    RepositoryAnalysisRevision,
+    AnalysisFailureCode, ReadmeAbsenceReason, ReadmeRevision, RepositoryAnalysisAttributes,
+    RepositoryAnalysisCompleted, RepositoryAnalysisContract, RepositoryAnalysisFailed,
+    RepositoryAnalysisRequested, RepositoryAnalysisRevision, RepositoryFullName,
 };
 use ratatoskr_identifiers::{
     ContentDigest, DigestAlgorithm, DigestHex, EntityRef, Extensions, RepositoryAnalysisRequestId,
@@ -34,6 +34,12 @@ fn requested_payload_carries_an_immutable_source_revision() {
                 reason: ReadmeAbsenceReason::NotFound,
             },
         },
+        repository_attributes: RepositoryAnalysisAttributes {
+            repository_full_name: RepositoryFullName::parse("owner/repository")
+                .expect("a bounded repository alias"),
+            description: None,
+            primary_language: None,
+        },
         requested_contract: RepositoryAnalysisContract::RepositoryAnalysis,
         idempotency_key: digest(),
         extensions: Extensions::new(),
@@ -45,6 +51,12 @@ fn requested_payload_carries_an_immutable_source_revision() {
             .and_then(serde_json::Value::as_str),
         Some("sha256"),
         "a request must identify the exact repository-attribute revision"
+    );
+    assert_eq!(
+        wire.pointer("/repository_attributes/repository_full_name")
+            .and_then(serde_json::Value::as_str),
+        Some("owner/repository"),
+        "Knowledge needs the bounded metadata snapshot, not a digest it cannot resolve"
     );
 }
 

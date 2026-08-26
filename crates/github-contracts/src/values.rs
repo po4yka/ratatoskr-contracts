@@ -1,6 +1,33 @@
 //! Immutable repository-revision values used by analysis request and terminal facts.
 
-use ratatoskr_identifiers::{BlobRef, ContentDigest};
+use ratatoskr_identifiers::{BlobRef, ContentDigest, wire_string_newtype};
+
+wire_string_newtype! {
+    /// GitHub owner/name alias observed for the repository revision.
+    pub struct RepositoryFullName {
+        pattern  = r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+        max_len  = 201,
+        examples = ["owner/repository"],
+    }
+}
+
+wire_string_newtype! {
+    /// Bounded repository description supplied as analysis input.
+    pub struct RepositoryDescription {
+        pattern  = r"^[^\x00-\x1f\x7f]{1,1024}$",
+        max_len  = 1024,
+        examples = ["A small repository description."],
+    }
+}
+
+wire_string_newtype! {
+    /// Bounded primary-language label supplied as analysis input.
+    pub struct RepositoryLanguage {
+        pattern  = r"^[A-Za-z0-9][A-Za-z0-9+.# -]{0,63}$",
+        max_len  = 64,
+        examples = ["Rust"],
+    }
+}
 
 /// The only repository-analysis family available in this contract.
 #[derive(
@@ -30,6 +57,19 @@ pub struct RepositoryAnalysisRevision {
     pub attributes_digest: ContentDigest,
     /// README state for this exact repository revision.
     pub readme: ReadmeRevision,
+}
+
+/// Bounded repository metadata supplied alongside its immutable digest.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct RepositoryAnalysisAttributes {
+    /// Observed mutable alias at the immutable metadata revision.
+    pub repository_full_name: RepositoryFullName,
+    /// Repository description when GitHub supplied a non-empty value.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<RepositoryDescription>,
+    /// Primary language when GitHub supplied one.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub primary_language: Option<RepositoryLanguage>,
 }
 
 /// README input state for repository analysis.

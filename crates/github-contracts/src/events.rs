@@ -6,7 +6,10 @@ use ratatoskr_identifiers::{
     WireTimestamp,
 };
 
-use crate::values::{AnalysisFailureCode, RepositoryAnalysisContract, RepositoryAnalysisRevision};
+use crate::values::{
+    AnalysisFailureCode, RepositoryAnalysisAttributes, RepositoryAnalysisContract,
+    RepositoryAnalysisRevision,
+};
 
 /// Payload of `knowledge.repository_analysis.requested.v1`.
 ///
@@ -28,6 +31,9 @@ pub struct RepositoryAnalysisRequested {
 
     /// Immutable input revision Knowledge must analyse.
     pub source_revision: RepositoryAnalysisRevision,
+
+    /// Bounded repository attributes whose digest is named by `source_revision`.
+    pub repository_attributes: RepositoryAnalysisAttributes,
 
     /// Exact analysis family requested. This first contract admits no alternative major.
     pub requested_contract: RepositoryAnalysisContract,

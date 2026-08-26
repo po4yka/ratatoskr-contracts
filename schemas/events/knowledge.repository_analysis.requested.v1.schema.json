@@ -19,6 +19,10 @@
       "description": "User whose repository policy caused this request.",
       "$ref": "#/$defs/TenantRef"
     },
+    "repository_attributes": {
+      "description": "Bounded repository attributes whose digest is named by `source_revision`.",
+      "$ref": "#/$defs/RepositoryAnalysisAttributes"
+    },
     "repository_id": {
       "description": "Catalog-owned identity of the repository to analyse.",
       "$ref": "#/$defs/RepositoryId"
@@ -41,6 +45,7 @@
     "github_repository_numeric_id",
     "idempotency_key",
     "owner",
+    "repository_attributes",
     "repository_id",
     "request_id",
     "requested_contract",
@@ -54,7 +59,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:2ee787af656bdf5c87a08e99d516aca318976acc9c960c7d76bf0d3bd6fe6ec7",
+    "source_digest": "sha256:0092ed05a78afff8e7241441d645721635433aad45c95f8fd92651f51f6770bf",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -212,6 +217,41 @@
         }
       ]
     },
+    "RepositoryAnalysisAttributes": {
+      "description": "Bounded repository metadata supplied alongside its immutable digest.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "Repository description when GitHub supplied a non-empty value.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RepositoryDescription"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "primary_language": {
+          "description": "Primary language when GitHub supplied one.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RepositoryLanguage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "repository_full_name": {
+          "description": "Observed mutable alias at the immutable metadata revision.",
+          "$ref": "#/$defs/RepositoryFullName"
+        }
+      },
+      "required": [
+        "repository_full_name"
+      ]
+    },
     "RepositoryAnalysisContract": {
       "description": "The only repository-analysis family available in this contract.",
       "oneOf": [
@@ -250,6 +290,26 @@
         "readme"
       ]
     },
+    "RepositoryDescription": {
+      "title": "RepositoryDescription",
+      "description": "Bounded repository description supplied as analysis input.",
+      "type": "string",
+      "examples": [
+        "A small repository description."
+      ],
+      "maxLength": 1024,
+      "pattern": "^[^\\x00-\\x1f\\x7f]{1,1024}$"
+    },
+    "RepositoryFullName": {
+      "title": "RepositoryFullName",
+      "description": "GitHub owner/name alias observed for the repository revision.",
+      "type": "string",
+      "examples": [
+        "owner/repository"
+      ],
+      "maxLength": 201,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+    },
     "RepositoryId": {
       "title": "RepositoryId",
       "description": "Identity of one repository record in the GitHub Catalog. Bare canonical lowercase hyphenated UUID; not GitHub's numeric repository identifier.",
@@ -259,6 +319,16 @@
         "018f0000-0000-7000-8000-000000000001"
       ],
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "RepositoryLanguage": {
+      "title": "RepositoryLanguage",
+      "description": "Bounded primary-language label supplied as analysis input.",
+      "type": "string",
+      "examples": [
+        "Rust"
+      ],
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9+.# -]{0,63}$"
     },
     "TenantRef": {
       "title": "TenantRef",
