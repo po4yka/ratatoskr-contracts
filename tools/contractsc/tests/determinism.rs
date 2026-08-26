@@ -50,9 +50,9 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        40,
-        "twenty registered roots produce twenty JSON Schema artifacts plus twenty \
-         TypeScript counterparts; update this pin when the registry changes"
+        42,
+        "twenty-one registered roots produce twenty-one JSON Schema artifacts plus \
+         twenty-one TypeScript counterparts; update this pin when the registry changes"
     );
 }
 
@@ -394,8 +394,8 @@ fn generated_typescript_artifacts_mirror_the_schema_tree() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        20,
-        "twenty roots must yield twenty TypeScript files; the generator emits no \
+        21,
+        "twenty-one roots must yield twenty-one TypeScript files; the generator emits no \
          TypeScript yet"
     );
 
@@ -470,8 +470,8 @@ fn generated_typescript_is_byte_deterministic() {
     let first_typescript = typescript_subset(&first);
     assert_eq!(
         first_typescript.len(),
-        20,
-        "twenty roots must yield twenty TypeScript files"
+        21,
+        "twenty-one roots must yield twenty-one TypeScript files"
     );
     assert_eq!(first_typescript, typescript_subset(&second));
 }
@@ -486,8 +486,8 @@ fn generated_typescript_contains_no_timestamps() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        20,
-        "twenty roots must yield twenty TypeScript files"
+        21,
+        "twenty-one roots must yield twenty-one TypeScript files"
     );
     for (path, body) in &typescript {
         if let Some(position) = iso_date_positions(&strip_block_comments(body)).first() {

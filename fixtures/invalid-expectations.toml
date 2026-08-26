@@ -262,8 +262,19 @@ reason         = "The payload is state-carried transfer: without the snapshot th
 ["events/social.source.updated.v1/invalid/source-missing-owner.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `owner`'
-reason         = "Every snapshot of a source carries the same owner; an update that cannot say whose library changed is unroutable for tenancy-scoped consumers."
+reason         = "Every snapshot of a source carries the same owner; an update that cannot say whose library changed is unreadable."
 
+# ---------------------------------------------------------------------------
+# events/social.source.removed.v1
+# ---------------------------------------------------------------------------
+
+["events/social.source.removed.v1/invalid/unknown-reason.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `cache_eviction`'
+reason         = "A removal reason names why the library let go; a vocabulary the contract never agreed must stop processing, not be read as an acceptable deletion."
+
+# ---------------------------------------------------------------------------
+# ai_archive/archive-snapshot
 # ---------------------------------------------------------------------------
 # ai_archive/archive-snapshot
 # ---------------------------------------------------------------------------

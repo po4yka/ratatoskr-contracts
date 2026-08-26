@@ -8,7 +8,7 @@
 )]
 
 use ratatoskr_social_contracts::{
-    AcquisitionMethod, CaptureCompleteness, SavedAuthority, UpstreamAvailability,
+    AcquisitionMethod, CaptureCompleteness, RemovalReason, SavedAuthority, UpstreamAvailability,
 };
 
 #[test]
@@ -48,6 +48,12 @@ fn every_spelled_variant_parses_and_round_trips() {
         let parsed: UpstreamAvailability = serde_json::from_str(&wire).expect(availability);
         assert_eq!(serde_json::to_string(&parsed).unwrap(), wire);
     }
+
+    for reason in ["user_requested", "retention_policy"] {
+        let wire = format!("\"{reason}\"");
+        let parsed: RemovalReason = serde_json::from_str(&wire).expect(reason);
+        assert_eq!(serde_json::to_string(&parsed).unwrap(), wire);
+    }
 }
 
 #[test]
@@ -59,6 +65,7 @@ fn unknown_values_are_rejected_not_guessed() {
         ("platform_says_so", "SavedAuthority"),
         ("half", "CaptureCompleteness"),
         ("shadowbanned", "UpstreamAvailability"),
+        ("cache_eviction", "RemovalReason"),
     ] {
         let wire = format!("\"{}\"", rejected.0);
         let error = match rejected.1 {
@@ -69,6 +76,9 @@ fn unknown_values_are_rejected_not_guessed() {
                 .err()
                 .map(|e| e.to_string()),
             "CaptureCompleteness" => serde_json::from_str::<CaptureCompleteness>(&wire)
+                .err()
+                .map(|e| e.to_string()),
+            "RemovalReason" => serde_json::from_str::<RemovalReason>(&wire)
                 .err()
                 .map(|e| e.to_string()),
             _ => serde_json::from_str::<UpstreamAvailability>(&wire)
