@@ -66,7 +66,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:25d64a32ac8441d4c8f0ff21db02c7db6157625c4477cedac5b2c756c934b3e3",
+    "source_digest": "sha256:bf2025befc51764f548809c92466a8e6e2110cc4e5ea71034375df8a54bbd392",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -162,7 +162,7 @@
       "pattern": "^[a-z][a-z0-9+.-]{1,31}:[^ \\x09-\\x0d]{1,2015}$"
     },
     "DocumentBlock": {
-      "description": "One typed block in document reading order.",
+      "description": "One typed block in document reading order.\n\nThe variant set and its fields grow only through the block-kind extension procedure\nrecorded in ADR-0010 (`docs/adr/0010-document-ir-block-kind-extension-procedure.md`):\nthe producer proposes with a landed extraction path, the consumer accepts by naming a\nconsumption site, and readers reject kinds they do not know at both layers.",
       "oneOf": [
         {
           "description": "A section heading.",

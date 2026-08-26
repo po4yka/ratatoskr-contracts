@@ -291,11 +291,11 @@ pub struct DocumentProvenance {
 }
 ```
 
-Version one is the shared intersection used by Extractor and Knowledge. More block kinds are added only when both sides need them. Rendered Markdown, HTML, plain text, and LLM context are derived representations. The content digest covers the canonical JSON bytes of `blocks` alone, so block order, kinds and text are significant while identity and provenance are not.
+Version one is the shared intersection used by Extractor and Knowledge. More block kinds are added only when both sides need them; ADR-0010 fixes who proposes a kind, who must accept it, what evidence the proposal carries, and the order in which the repositories adopt it. Rendered Markdown, HTML, plain text, and LLM context are derived representations. The content digest covers the canonical JSON bytes of `blocks` alone, so block order, kinds and text are significant while identity and provenance are not.
 
 ### 6.2. Provenance
 
-Provenance connects each normalized block index to the stored source blob and extraction strategy. More precise byte, DOM, page or provider-object spans are added only when a producer and consumer both use them.
+Provenance connects each normalized block index to the stored source blob and extraction strategy. More precise byte, DOM, page or provider-object spans are added only when a producer and consumer both use them, through the same procedure as block kinds (ADR-0010).
 
 Consumers may display citations without depending on extractor-private storage.
 

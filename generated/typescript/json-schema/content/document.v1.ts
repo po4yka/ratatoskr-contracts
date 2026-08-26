@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:6d692f4441b6eddab71e11c51edda166a78983d30f8dc4136130145f22e72bb1
+ * source_digest: sha256:b394062cc862c1e4524f280d820de3f29a5ba0174c7ca16332dcc74b5e3680fc
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -118,6 +118,11 @@ export type DocumentAddress = string;
 
 /**
  * One typed block in document reading order.
+ * 
+ * The variant set and its fields grow only through the block-kind extension procedure
+ * recorded in ADR-0010 (`docs/adr/0010-document-ir-block-kind-extension-procedure.md`):
+ * the producer proposes with a landed extraction path, the consumer accepts by naming a
+ * consumption site, and readers reject kinds they do not know at both layers.
  */
 export type DocumentBlock = { kind: "heading"; /** * Source heading level. * * Format: uint8. */ level: number; /** * Heading text. */ text: string; } | { kind: "paragraph"; /** * Paragraph text. */ text: string; };
 

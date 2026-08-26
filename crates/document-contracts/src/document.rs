@@ -68,6 +68,11 @@ pub struct Document {
 }
 
 /// One typed block in document reading order.
+///
+/// The variant set and its fields grow only through the block-kind extension procedure
+/// recorded in ADR-0010 (`docs/adr/0010-document-ir-block-kind-extension-procedure.md`):
+/// the producer proposes with a landed extraction path, the consumer accepts by naming a
+/// consumption site, and readers reject kinds they do not know at both layers.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 #[non_exhaustive]

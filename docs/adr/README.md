@@ -1,7 +1,7 @@
 # Contracts ADRs
 
 > Status: Proposed  
-> Last reviewed: 2026-08-18
+> Last reviewed: 2026-08-26
 
 Use `NNNN-short-title.md`. Each ADR records context, drivers, options, decision, consequences, security/privacy, compatibility/migration, validation, and follow-up. Supersede decisions; do not rewrite history.
 
@@ -11,6 +11,7 @@ Accepted:
 - [ADR-0002](0002-event-naming-and-major-version-strategy.md): Event naming and major-version strategy. Two version axes: `event_type`'s `.v<major>` versions the payload, `schema_version` versions the envelope. The `schema_version` reading is confirmed and the follow-up is closed.
 - [ADR-0007](0007-identifier-wire-form.md): Identifier wire form. Own identity is a bare typed UUID; a pointer at another record is `<kind>:<local_id>`; an external-system handle keeps that system's grammar. One spelling per UUID reference. Supersedes ADR-0002 §Consequences' identifier bullet.
 - [ADR-0008](0008-error-envelope-structured-detail.md): Structured detail on the error envelope. No `details` member on `core.error_envelope` major 1; `extensions` is a preservation channel, not an authoring channel.
+- [ADR-0010](0010-document-ir-block-kind-extension-procedure.md): Document IR block-kind extension procedure. Extractor proposes, knowledge accepts with a named consumption site, six-item evidence bundle, contracts-then-consumers-then-producer adoption order; readers reject unknown kinds at both layers, and the fixture suite pins that stance.
 
 Backlog. These numbers are reserved and are cited by number from the accepted ADRs, so they are not reassigned:
 
