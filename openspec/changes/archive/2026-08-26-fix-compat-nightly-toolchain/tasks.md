@@ -9,4 +9,4 @@
 ## 3. Verify the repair
 
 - [x] 3.1 Run `RUSTUP_TOOLCHAIN=nightly-2026-06-12 cargo contracts api-check` through `build-gate` and verify every baseline is unchanged.
-- [ ] 3.2 Run the full documented local gate and observe the hosted compatibility workflow pass after integration.
+- [x] 3.2 Run the full documented local gate and observe the hosted compatibility workflow pass after integration. Hosted `contracts` run 32987361221 passed for `a8eb7d5`.

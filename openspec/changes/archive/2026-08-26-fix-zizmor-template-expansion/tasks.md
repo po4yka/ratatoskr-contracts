@@ -12,4 +12,4 @@
 
 ## 3. Verify the gate
 
-- [ ] 3.1 Re-run the local zizmor audit and verify it reports no findings; then run the documented repository gate and observe the hosted zizmor check after integration.
+- [x] 3.1 Re-run the local zizmor audit and verify it reports no findings; then run the documented repository gate and observe the hosted zizmor check after integration. Hosted `zizmor` run 32987361233 passed for `a8eb7d5`.
