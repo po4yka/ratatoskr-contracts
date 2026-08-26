@@ -120,9 +120,10 @@ jobs:
       - name: Pack the TypeScript generation output
         run: |
           set -euo pipefail
+          archive="ratatoskr-contracts-typescript-${GITHUB_SHA}.tar.gz"
           tar --sort=name --owner=0 --group=0 --numeric-owner \
-            -czf "ratatoskr-contracts-typescript-${{ github.sha }}.tar.gz" generated/typescript
-          ls -l "ratatoskr-contracts-typescript-${{ github.sha }}.tar.gz"
+            -czf "$archive" generated/typescript
+          ls -l "$archive"
 
       - name: Upload the archive as a workflow artifact
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
