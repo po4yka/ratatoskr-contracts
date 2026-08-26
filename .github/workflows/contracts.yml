@@ -48,13 +48,13 @@ jobs:
       - run: cargo fetch --locked
 
       # cargo-public-api builds rustdoc JSON, which needs a nightly compiler, and it never
-      # installs one itself — it switches to the `nightly` channel and fails if that is missing.
-      # The date is pinned rather than floating so baseline bytes cannot move because CI picked up
-      # a different nightly; nightly-2025-08-02 is the minimum cargo-public-api 0.52.x documents,
-      # and bumping either pin is the same kind of reviewed change as any other provenance move:
+      # installs one itself. Run it with this named toolchain rather than a floating `nightly`
+      # alias so baseline bytes cannot move because CI picked up a different compiler. This pin
+      # supplies the compiler recorded by the committed API baseline provenance; bumping either pin
+      # is the same kind of reviewed change as any other provenance move:
       # rerun `cargo contracts api-write`, review the diff, commit it.
       - name: Install the pinned nightly rustdoc JSON needs
-        run: rustup toolchain install nightly-2025-08-02 --profile minimal
+        run: rustup toolchain install nightly-2026-06-12 --profile minimal
 
       # taiki-e/install-action does not carry this tool and its releases publish no binaries, so
       # the documented source install is the honest path. The version is pinned because 0.52.0
@@ -63,7 +63,7 @@ jobs:
       - name: Install cargo-public-api at a pinned version
         run: cargo install --locked --version 0.52.0 cargo-public-api
 
-      - run: cargo contracts api-check
+      - run: RUSTUP_TOOLCHAIN=nightly-2026-06-12 cargo contracts api-check
 
   determinism:
     name: regeneration is deterministic
