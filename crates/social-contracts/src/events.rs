@@ -1,7 +1,7 @@
 //! The social-source event payloads.
 
 use ratatoskr_event_envelope::EventPayload;
-use ratatoskr_identifiers::{Extensions, SocialSourceId, TenantRef, WireTimestamp};
+use ratatoskr_identifiers::{ContentDigest, Extensions, SocialSourceId, TenantRef, WireTimestamp};
 
 use crate::snapshot::SocialSourceSnapshot;
 use crate::vocabulary::RemovalReason;
@@ -72,4 +72,26 @@ pub struct SocialSourceRemoved {
 
 impl EventPayload for SocialSourceRemoved {
     const EVENT_TYPE: &'static str = "social.source.removed.v1";
+}
+
+/// Payload of `knowledge.analysis.completed.v1` for a completed social-source analysis.
+/// It is intentionally a linkage fact only: the detailed result and Knowledge-private run
+/// identity remain owned by Knowledge, while source services match this fact by source and digest.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct SocialSourceAnalysisCompleted {
+    /// The user whose source was analysed.
+    pub owner: TenantRef,
+    /// The analysed source identity.
+    pub social_source_id: SocialSourceId,
+    /// The exact normalized source revision analysed.
+    pub content_digest: ContentDigest,
+    /// Instant Knowledge accepted the completed analysis.
+    pub completed_at: WireTimestamp,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for SocialSourceAnalysisCompleted {
+    const EVENT_TYPE: &'static str = "knowledge.analysis.completed.v1";
 }

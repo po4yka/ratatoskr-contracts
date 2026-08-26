@@ -73,7 +73,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "completed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -322,6 +322,39 @@ authority   = "observed"
 nullability = "required"
 unit        = "instant_rfc3339_utc_canonical"
 note        = "Instant the producing service captured or last refreshed this record into its library. The producer's clock, not the provider's."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.social_source_analysis_completed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-instagram"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/knowledge.analysis.completed.v1"
+summary        = "Fact: Knowledge completed analysis of one normalized social-source revision."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
+output         = "schemas/events/knowledge.analysis.completed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:SocialSourceAnalysisCompleted"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/completed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge accepted the completed analysis. Observed from the Knowledge clock."
+
+[contract.event]
+event_type   = "knowledge.analysis.completed.v1"
+payload_type = "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
 
 # ---------------------------------------------------------------------------
 [[contract]]

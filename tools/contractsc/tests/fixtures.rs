@@ -43,6 +43,27 @@ fn committed() -> Metadata {
     Metadata::parse(&text).expect("contracts.toml parses")
 }
 
+#[test]
+fn social_source_analysis_completed_is_registered() {
+    let declared = registry::event_payload_types();
+    assert_eq!(
+        declared.get("ratatoskr_social_contracts::SocialSourceAnalysisCompleted"),
+        Some(&"knowledge.analysis.completed.v1"),
+        "the cross-service completion payload must be registered with its canonical event type"
+    );
+
+    let metadata = committed();
+    let contract = metadata
+        .contracts
+        .iter()
+        .find(|contract| contract.id == "knowledge.social_source_analysis_completed")
+        .expect("the completion payload must have contract metadata");
+    assert_eq!(
+        contract.fixtures_dir, "fixtures/events/knowledge.analysis.completed.v1",
+        "the completion payload must have a dedicated fixture family"
+    );
+}
+
 /// Every generated artifact, in memory. JSON-family only: the TypeScript family is not a JSON
 /// Schema document and is validated by the determinism suite instead.
 fn generated() -> BTreeMap<PathBuf, String> {
@@ -209,6 +230,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_social_contracts::SocialSourceCaptured" => {
             render!(ratatoskr_social_contracts::SocialSourceCaptured)
+        }
+        "ratatoskr_social_contracts::SocialSourceAnalysisCompleted" => {
+            render!(ratatoskr_social_contracts::SocialSourceAnalysisCompleted)
         }
         "ratatoskr_social_contracts::SocialSourceRemoved" => {
             render!(ratatoskr_social_contracts::SocialSourceRemoved)

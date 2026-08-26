@@ -13,8 +13,8 @@ mod common;
 use ratatoskr_event_envelope::{EventEnvelope, EventPayload, EventType};
 use ratatoskr_identifiers::{Extensions, dropped_field_pointers};
 use ratatoskr_social_contracts::{
-    CaptureCompleteness, RemovalReason, SocialSourceCaptured, SocialSourceRemoved,
-    SocialSourceSnapshot, SocialSourceUpdated,
+    CaptureCompleteness, RemovalReason, SocialSourceAnalysisCompleted, SocialSourceCaptured,
+    SocialSourceRemoved, SocialSourceSnapshot, SocialSourceUpdated,
 };
 
 use common::{MINIMAL_ENVELOPE, snapshot_carrying_every_field};
@@ -177,6 +177,32 @@ fn removed_payload_round_trips_through_envelope() {
     let decoded = reparsed
         .payload_as::<SocialSourceRemoved>()
         .expect("the payload comes back typed");
+    assert_eq!(decoded, payload);
+}
+
+/// Completion is a typed, privacy-safe linkage fact rather than a model-output transport.
+#[test]
+fn social_source_analysis_completed_round_trips_through_envelope() {
+    let payload = SocialSourceAnalysisCompleted {
+        owner: ratatoskr_identifiers::TenantRef::parse("user:018f0000-0000-7000-8000-000000000005")
+            .expect("a legal owner"),
+        social_source_id: snapshot().social_source_id,
+        content_digest: snapshot().content_digest,
+        completed_at: common::instant("2026-08-26T14:00:00Z"),
+        extensions: Extensions::new(),
+    };
+    let mut envelope =
+        EventEnvelope::from_json(MINIMAL_ENVELOPE.as_bytes()).expect("the envelope parses");
+    envelope
+        .set_payload(&payload)
+        .expect("the completion serializes");
+    assert_eq!(
+        envelope.event_type.to_string(),
+        "knowledge.analysis.completed.v1"
+    );
+    let decoded = envelope
+        .payload_as::<SocialSourceAnalysisCompleted>()
+        .expect("the completion comes back typed");
     assert_eq!(decoded, payload);
 }
 

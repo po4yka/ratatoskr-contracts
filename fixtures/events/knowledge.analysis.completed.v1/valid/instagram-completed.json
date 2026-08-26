@@ -1,0 +1,9 @@
+{
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "social_source_id": "018f0000-0000-7000-8000-000000000202",
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "completed_at": "2026-08-26T14:00:00Z"
+}

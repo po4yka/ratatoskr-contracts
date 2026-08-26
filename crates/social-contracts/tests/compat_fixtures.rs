@@ -95,6 +95,11 @@ direction_tests!(
     ratatoskr_social_contracts::SocialSourceSnapshot
 );
 direction_tests!(
+    analysis_completed_family,
+    "events/knowledge.analysis.completed.v1",
+    ratatoskr_social_contracts::SocialSourceAnalysisCompleted
+);
+direction_tests!(
     captured_family,
     "events/social.source.captured.v1",
     ratatoskr_social_contracts::SocialSourceCaptured

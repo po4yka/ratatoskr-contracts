@@ -15,6 +15,15 @@
 # (single quotes) are used throughout so a published `pattern` can be quoted verbatim.
 
 # ---------------------------------------------------------------------------
+# events/knowledge.analysis.completed.v1
+# ---------------------------------------------------------------------------
+
+["events/knowledge.analysis.completed.v1/invalid/missing-content-digest.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `content_digest`'
+reason         = "Linkage must name the immutable normalized source revision; identity alone is insufficient."
+
+# ---------------------------------------------------------------------------
 # core/event-envelope
 # ---------------------------------------------------------------------------
 

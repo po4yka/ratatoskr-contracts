@@ -16,6 +16,7 @@ impl core::clone::Clone for ratatoskr_social_contracts::SocialMediaItem
 impl core::clone::Clone for ratatoskr_social_contracts::SocialMediaKind
 impl core::clone::Clone for ratatoskr_social_contracts::SocialRelation
 impl core::clone::Clone for ratatoskr_social_contracts::SocialRelationKind
+impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -71,6 +72,7 @@ impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialMediaKind
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialRelation
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialRelationKind
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -127,6 +129,7 @@ impl core::fmt::Debug for ratatoskr_social_contracts::SocialMediaItem
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialMediaKind
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialRelation
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialRelationKind
+impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -180,6 +183,7 @@ impl core::marker::Freeze for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialRelation
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -202,6 +206,7 @@ impl core::marker::Send for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::Send for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::Send for ratatoskr_social_contracts::SocialRelation
 impl core::marker::Send for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::Send for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -223,6 +228,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialMed
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialRelation
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -245,6 +251,7 @@ impl core::marker::Sync for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::Sync for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::Sync for ratatoskr_social_contracts::SocialRelation
 impl core::marker::Sync for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -267,6 +274,7 @@ impl core::marker::Unpin for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialRelation
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -289,6 +297,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialMediaKind
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialRelation
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialRelationKind
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -311,6 +320,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::Soc
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialMediaKind
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialRelation
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialRelationKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -333,6 +343,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::Social
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialMediaKind
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialRelation
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialRelationKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -347,6 +358,7 @@ impl core::str::traits::FromStr for ratatoskr_social_contracts::PostText
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SocialMediaKind
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SocialRelationKind
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SyncCheckpointCursor
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceCaptured
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceRemoved
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceUpdated
@@ -374,6 +386,7 @@ impl schemars::JsonSchema for ratatoskr_social_contracts::SocialMediaItem
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialMediaKind
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialRelation
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialRelationKind
+impl schemars::JsonSchema for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialSourceCaptured
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialSourceRemoved
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -395,6 +408,7 @@ impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialMediaItem
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialMediaKind
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialRelation
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialRelationKind
+impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialSourceCaptured
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialSourceRemoved
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -416,6 +430,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::Socia
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialMediaKind
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialRelation
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialRelationKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialSourceCaptured
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialSourceRemoved
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -438,6 +453,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialMediaIte
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialMediaKind where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialRelation where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialRelationKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceCaptured where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::From<T>
@@ -460,6 +476,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialMedia
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialMediaKind where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialRelation where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialRelationKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceCaptured where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::Into<T>
@@ -482,6 +499,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialMedia
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialMediaKind where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialRelation where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialRelationKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceCaptured where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::TryFrom<T>
@@ -503,6 +521,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialMediaItem w
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialRelation where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialRelationKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceCaptured where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
@@ -534,6 +553,7 @@ impl<T> core::any::Any for ratatoskr_social_contracts::SocialMediaItem where T: 
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialMediaKind where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialRelation where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialRelationKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceCaptured where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceRemoved where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceSnapshot where T: 'static + ?core::marker::Sized
@@ -556,6 +576,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialMediaItem 
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialMediaKind where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialRelation where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialRelationKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceCaptured where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceRemoved where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceSnapshot where T: ?core::marker::Sized
@@ -578,6 +599,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialMediaIt
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialMediaKind where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialRelation where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialRelationKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceCaptured where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceRemoved where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceSnapshot where T: ?core::marker::Sized
@@ -599,6 +621,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialMediaIt
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialRelation where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialRelationKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceCaptured where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
@@ -621,6 +644,7 @@ impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialMediaItem
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialMediaKind
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialRelation
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialRelationKind
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceCaptured
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceRemoved
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceSnapshot
@@ -642,6 +666,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialMediaItem wher
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialRelation where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialRelationKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceCaptured where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
@@ -663,6 +688,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialM
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialMediaKind where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialRelation where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialRelationKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceAnalysisCompleted where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceCaptured where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceRemoved where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceSnapshot where T: for<'de> serde_core::de::Deserialize<'de>
@@ -690,6 +716,7 @@ pub const ratatoskr_social_contracts::SocialMediaKind::PATTERN: &'static str
 pub const ratatoskr_social_contracts::SocialRelationKind::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::SocialRelationKind::MAX_LEN: usize
 pub const ratatoskr_social_contracts::SocialRelationKind::PATTERN: &'static str
+pub const ratatoskr_social_contracts::SocialSourceAnalysisCompleted::EVENT_TYPE: &'static str
 pub const ratatoskr_social_contracts::SocialSourceCaptured::EVENT_TYPE: &'static str
 pub const ratatoskr_social_contracts::SocialSourceRemoved::EVENT_TYPE: &'static str
 pub const ratatoskr_social_contracts::SocialSourceUpdated::EVENT_TYPE: &'static str
@@ -1071,6 +1098,25 @@ pub fn ratatoskr_social_contracts::SocialRelationKind::try_from(U) -> core::resu
 pub fn ratatoskr_social_contracts::SocialRelationKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_social_contracts::SocialRelationKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_social_contracts::SocialRelationKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::clone(&self) -> ratatoskr_social_contracts::SocialSourceAnalysisCompleted
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::eq(&self, &ratatoskr_social_contracts::SocialSourceAnalysisCompleted) -> bool
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::from(T) -> T
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::inline_schema() -> bool
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::into(self) -> U
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_social_contracts::SocialSourceCaptured::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_social_contracts::SocialSourceCaptured::borrow(&self) -> &T
 pub fn ratatoskr_social_contracts::SocialSourceCaptured::borrow_mut(&mut self) -> &mut T
@@ -1223,6 +1269,11 @@ pub ratatoskr_social_contracts::SocialMediaItem::blob: ratatoskr_identifiers::bl
 pub ratatoskr_social_contracts::SocialMediaItem::media_kind: ratatoskr_social_contracts::SocialMediaKind
 pub ratatoskr_social_contracts::SocialRelation::relation_kind: ratatoskr_social_contracts::SocialRelationKind
 pub ratatoskr_social_contracts::SocialRelation::target_post_id: ratatoskr_identifiers::entity::EntityLocalId
+pub ratatoskr_social_contracts::SocialSourceAnalysisCompleted::completed_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_social_contracts::SocialSourceAnalysisCompleted::content_digest: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_social_contracts::SocialSourceAnalysisCompleted::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_social_contracts::SocialSourceAnalysisCompleted::owner: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_social_contracts::SocialSourceAnalysisCompleted::social_source_id: ratatoskr_identifiers::uuid_ids::SocialSourceId
 pub ratatoskr_social_contracts::SocialSourceCaptured::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_social_contracts::SocialSourceCaptured::source: ratatoskr_social_contracts::SocialSourceSnapshot
 pub ratatoskr_social_contracts::SocialSourceRemoved::extensions: ratatoskr_identifiers::wire::Extensions
@@ -1267,6 +1318,7 @@ pub struct ratatoskr_social_contracts::SocialMediaItem
 pub struct ratatoskr_social_contracts::SocialMediaKind(_)
 pub struct ratatoskr_social_contracts::SocialRelation
 pub struct ratatoskr_social_contracts::SocialRelationKind(_)
+pub struct ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 pub struct ratatoskr_social_contracts::SocialSourceCaptured
 pub struct ratatoskr_social_contracts::SocialSourceRemoved
 pub struct ratatoskr_social_contracts::SocialSourceSnapshot
@@ -1333,6 +1385,9 @@ pub type ratatoskr_social_contracts::SocialRelationKind::Error = <U as core::con
 pub type ratatoskr_social_contracts::SocialRelationKind::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialRelationKind::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::SocialRelationKind::Owned = T
+pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Owned = T
@@ -1368,6 +1423,7 @@ pub unsafe fn ratatoskr_social_contracts::SocialMediaItem::clone_to_uninit(&self
 pub unsafe fn ratatoskr_social_contracts::SocialMediaKind::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialRelation::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialRelationKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SocialSourceAnalysisCompleted::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialSourceCaptured::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialSourceRemoved::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialSourceSnapshot::clone_to_uninit(&self, *mut u8)

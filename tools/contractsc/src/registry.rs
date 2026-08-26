@@ -109,6 +109,8 @@ root_types! {
         => ratatoskr_operation_contracts::OperationSnapshot,
     "ratatoskr_social_contracts::SocialSourceCaptured"
         => ratatoskr_social_contracts::SocialSourceCaptured,
+    "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
+        => ratatoskr_social_contracts::SocialSourceAnalysisCompleted,
     "ratatoskr_social_contracts::SocialSourceRemoved"
         => ratatoskr_social_contracts::SocialSourceRemoved,
     "ratatoskr_social_contracts::SocialSourceSnapshot"
@@ -152,6 +154,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_operation_contracts::OperationReported",
         <ratatoskr_operation_contracts::OperationReported as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_social_contracts::SocialSourceAnalysisCompleted",
+        <ratatoskr_social_contracts::SocialSourceAnalysisCompleted as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
         "ratatoskr_social_contracts::SocialSourceCaptured",
