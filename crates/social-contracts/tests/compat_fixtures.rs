@@ -104,3 +104,8 @@ direction_tests!(
     "events/social.source.updated.v1",
     ratatoskr_social_contracts::SocialSourceUpdated
 );
+direction_tests!(
+    removed_family,
+    "events/social.source.removed.v1",
+    ratatoskr_social_contracts::SocialSourceRemoved
+);

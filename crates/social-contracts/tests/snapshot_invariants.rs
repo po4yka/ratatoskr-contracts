@@ -97,8 +97,10 @@ fn deleted_upstream_keeps_a_complete_capture() {
     snapshot.checkpoint = None;
     snapshot.relations = Vec::new();
     snapshot.folders = Vec::new();
-    snapshot.author.handle = None;
-    snapshot.author.display_name = None;
+    if let Some(author) = snapshot.author.as_mut() {
+        author.handle = None;
+        author.display_name = None;
+    }
     snapshot.permalink = Some(common_permalink());
 
     let rendered = serde_json::to_string(&snapshot).expect("serializes");
@@ -132,7 +134,9 @@ fn minimal_first_day_shape_parses() {
     snapshot.checkpoint = None;
     snapshot.warnings = Vec::new();
     snapshot.extensions = Extensions::new();
-    snapshot.author.external_author_id = EntityLocalId::parse("provider-slug.01").expect("id");
+    if let Some(author) = snapshot.author.as_mut() {
+        author.external_author_id = EntityLocalId::parse("provider-slug.01").expect("id");
+    }
 
     let rendered = serde_json::to_string(&snapshot).expect("serializes");
     let decoded: SocialSourceSnapshot = serde_json::from_str(&rendered).expect("parses");

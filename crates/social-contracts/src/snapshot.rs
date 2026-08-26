@@ -80,8 +80,11 @@ pub struct SocialSourceSnapshot {
     pub owner: TenantRef,
 
     /// Author identity as observed at capture time, denormalized so one payload suffices to
-    /// attribute and index the source.
-    pub author: SocialAuthor,
+    /// attribute and index the source. Absent when the producing service could not observe any
+    /// author account — for example a preserved fallback record for an unavailable source.
+    /// Absence means authorship is unknown; it is never a claim that the source has no author.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub author: Option<SocialAuthor>,
 
     /// Instant the provider says the source was published. Provider-authored: present only
     /// when the provider supplied it, never inferred from capture time. Absent means unknown.
@@ -186,7 +189,8 @@ struct SocialSourceSnapshotWire {
     #[serde(default)]
     permalink: Option<PostPermalink>,
     owner: TenantRef,
-    author: SocialAuthor,
+    #[serde(default)]
+    author: Option<SocialAuthor>,
     #[serde(default)]
     published_at: Option<WireTimestamp>,
     captured_at: WireTimestamp,

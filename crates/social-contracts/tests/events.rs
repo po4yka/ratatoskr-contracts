@@ -13,7 +13,8 @@ mod common;
 use ratatoskr_event_envelope::{EventEnvelope, EventPayload, EventType};
 use ratatoskr_identifiers::{Extensions, dropped_field_pointers};
 use ratatoskr_social_contracts::{
-    CaptureCompleteness, SocialSourceCaptured, SocialSourceSnapshot, SocialSourceUpdated,
+    CaptureCompleteness, RemovalReason, SocialSourceCaptured, SocialSourceRemoved,
+    SocialSourceSnapshot, SocialSourceUpdated,
 };
 
 use common::{MINIMAL_ENVELOPE, snapshot_carrying_every_field};
@@ -140,6 +141,43 @@ fn unrelated_envelope_is_refused() {
             .contains("platform.operation.progressed.v1"),
         "unexpected error: {error}"
     );
+}
+
+/// A removed fact travels inside a real envelope, comes back typed and whole, and carries no
+/// snapshot: the library stopped holding the source, it did not re-describe it.
+#[test]
+fn removed_payload_round_trips_through_envelope() {
+    let payload = SocialSourceRemoved {
+        social_source_id: snapshot().social_source_id,
+        owner: ratatoskr_identifiers::TenantRef::parse("user:018f0000-0000-7000-8000-000000000005")
+            .expect("a legal owner"),
+        reason: RemovalReason::UserRequested,
+        removed_at: common::instant("2026-08-20T08:15:00Z"),
+        extensions: Extensions::new(),
+    };
+
+    let mut envelope =
+        EventEnvelope::from_json(MINIMAL_ENVELOPE.as_bytes()).expect("the minimal envelope parses");
+    envelope
+        .set_payload(&payload)
+        .expect("the payload serializes to a JSON object");
+    assert_eq!(
+        envelope.event_type,
+        SocialSourceRemoved::event_type(),
+        "set_payload binds event_type to the payload type"
+    );
+    assert_eq!(SocialSourceRemoved::EVENT_TYPE, "social.source.removed.v1");
+
+    let wire = envelope
+        .to_canonical_json()
+        .expect("the envelope re-serializes");
+    let reparsed = EventEnvelope::from_json(wire.as_bytes()).expect("the envelope round trips");
+    assert_eq!(reparsed, envelope);
+
+    let decoded = reparsed
+        .payload_as::<SocialSourceRemoved>()
+        .expect("the payload comes back typed");
+    assert_eq!(decoded, payload);
 }
 
 /// The richest legal body shape serves both payloads; completeness stays complete with its one

@@ -1,9 +1,10 @@
-//! The two social-source event payloads.
+//! The social-source event payloads.
 
 use ratatoskr_event_envelope::EventPayload;
-use ratatoskr_identifiers::Extensions;
+use ratatoskr_identifiers::{Extensions, SocialSourceId, TenantRef, WireTimestamp};
 
 use crate::snapshot::SocialSourceSnapshot;
+use crate::vocabulary::RemovalReason;
 
 /// Payload of `social.source.captured.v1`: a source became part of a user's library.
 ///
@@ -41,4 +42,34 @@ pub struct SocialSourceUpdated {
 
 impl EventPayload for SocialSourceUpdated {
     const EVENT_TYPE: &'static str = "social.source.updated.v1";
+}
+
+/// Payload of `social.source.removed.v1`: the user's library stopped holding the source.
+///
+/// A fact about the library, not about the provider: nothing here claims the post was deleted
+/// upstream (`upstream_availability = deleted_upstream` owns that fact). Deliberately minimal —
+/// it names what stopped being held, why, and when. It does not re-carry a snapshot, because a
+/// removed record is no longer indexable content and a redelivered snapshot must not resurrect
+/// it.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct SocialSourceRemoved {
+    /// The library identity that was removed.
+    pub social_source_id: SocialSourceId,
+
+    /// The user whose library no longer holds this source.
+    pub owner: TenantRef,
+
+    /// Why the library let go. Closed vocabulary; an unknown reason stops processing.
+    pub reason: RemovalReason,
+
+    /// Instant the producing service removed the record. Observed: the producer's clock.
+    pub removed_at: WireTimestamp,
+
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for SocialSourceRemoved {
+    const EVENT_TYPE: &'static str = "social.source.removed.v1";
 }

@@ -125,3 +125,30 @@ pub enum UpstreamAvailability {
     /// The provider stated or implied the source no longer exists.
     DeletedUpstream,
 }
+
+/// Why a user's library stopped holding a source (`social.source.removed.v1`).
+///
+/// **Closed on purpose.** A removal fact says the *library* let go; it never claims anything
+/// about upstream state, which `UpstreamAvailability` owns. An unknown reason must stop
+/// processing instead of being read as an acceptable deletion.
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
+    serde::Serialize,
+    serde::Deserialize,
+    schemars::JsonSchema,
+)]
+#[serde(rename_all = "snake_case")]
+#[non_exhaustive]
+pub enum RemovalReason {
+    /// The user explicitly asked Ratatoskr to forget this source.
+    UserRequested,
+    /// A retention policy expired the record; no user action was involved.
+    RetentionPolicy,
+}

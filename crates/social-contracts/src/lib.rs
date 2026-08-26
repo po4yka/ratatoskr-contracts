@@ -37,12 +37,12 @@ mod vocabulary;
 pub use crate::author::SocialAuthor;
 pub use crate::collection::SocialFolderMembership;
 pub use crate::error::SocialContractError;
-pub use crate::events::{SocialSourceCaptured, SocialSourceUpdated};
+pub use crate::events::{SocialSourceCaptured, SocialSourceRemoved, SocialSourceUpdated};
 pub use crate::media::{SocialMediaItem, SocialMediaKind};
 pub use crate::relation::{SocialRelation, SocialRelationKind};
 pub use crate::snapshot::{SocialSourceSnapshot, SyncCheckpointCursor};
 pub use crate::tokens::Platform;
 pub use crate::values::{AuthorHandle, DisplayName, PostPermalink, PostText};
 pub use crate::vocabulary::{
-    AcquisitionMethod, CaptureCompleteness, SavedAuthority, UpstreamAvailability,
+    AcquisitionMethod, CaptureCompleteness, RemovalReason, SavedAuthority, UpstreamAvailability,
 };

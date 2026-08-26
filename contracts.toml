@@ -68,7 +68,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at", "removed_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -369,6 +369,39 @@ privacy        = "user_content"
 [contract.event]
 event_type   = "social.source.updated.v1"
 payload_type = "ratatoskr_social_contracts::SocialSourceUpdated"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "social.source_removed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-x"
+producers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/social.source.removed.v1"
+summary        = "Fact: a user's library stopped holding a social source."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialSourceRemoved"
+output         = "schemas/events/social.source.removed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:SocialSourceRemoved"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/removed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the producing service removed the record from the user's library. Observed: the producer's clock, never the provider's."
+
+[contract.event]
+event_type   = "social.source.removed.v1"
+payload_type = "ratatoskr_social_contracts::SocialSourceRemoved"
 
 # ---------------------------------------------------------------------------
 [[contract]]

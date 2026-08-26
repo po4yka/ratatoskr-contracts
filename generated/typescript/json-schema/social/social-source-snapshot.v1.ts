@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:e5c24394ce3c001a47e776f7d71b1e831d0890f10d884e7aaa31959dfb8c7dc3
+ * source_digest: sha256:5170909f6278d84300e72bd762362e1bd796467b35a3401e067b5a96d584e01a
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -44,9 +44,11 @@ export interface SocialSourceSnapshot {
  acquisition: AcquisitionMethod;
  /**
   * Author identity as observed at capture time, denormalized so one payload suffices to
-  * attribute and index the source.
+  * attribute and index the source. Absent when the producing service could not observe any
+  * author account — for example a preserved fallback record for an unavailable source.
+  * Absence means authorship is unknown; it is never a claim that the source has no author.
   */
- author: SocialAuthor;
+ author?: SocialAuthor | null;
  /**
   * Instant the producing service captured or last refreshed this record into the library.
   * Observed: the producer's clock, not the provider's.

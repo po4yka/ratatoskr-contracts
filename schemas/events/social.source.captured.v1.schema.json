@@ -22,7 +22,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:c0caeb28e76149c6d63a1f96b38fbfea78ae238adbc6f4970a38127c1d75b69a",
+    "source_digest": "sha256:45ba0a176668ecab6e8160cc43dbde7b5a2bffe6d3f4e2e17068c468bf127969",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -448,8 +448,15 @@
           "$ref": "#/$defs/AcquisitionMethod"
         },
         "author": {
-          "description": "Author identity as observed at capture time, denormalized so one payload suffices to\nattribute and index the source.",
-          "$ref": "#/$defs/SocialAuthor"
+          "description": "Author identity as observed at capture time, denormalized so one payload suffices to\nattribute and index the source. Absent when the producing service could not observe any\nauthor account — for example a preserved fallback record for an unavailable source.\nAbsence means authorship is unknown; it is never a claim that the source has no author.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SocialAuthor"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "captured_at": {
           "description": "Instant the producing service captured or last refreshed this record into the library.\nObserved: the producer's clock, not the provider's.",
@@ -574,7 +581,6 @@
       "additionalProperties": true,
       "required": [
         "acquisition",
-        "author",
         "captured_at",
         "completeness",
         "content_digest",

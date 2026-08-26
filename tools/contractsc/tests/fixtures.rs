@@ -192,6 +192,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_social_contracts::SocialSourceCaptured" => {
             render!(ratatoskr_social_contracts::SocialSourceCaptured)
         }
+        "ratatoskr_social_contracts::SocialSourceRemoved" => {
+            render!(ratatoskr_social_contracts::SocialSourceRemoved)
+        }
         "ratatoskr_social_contracts::SocialSourceSnapshot" => {
             render!(ratatoskr_social_contracts::SocialSourceSnapshot)
         }

@@ -102,3 +102,26 @@ fn absent_optionals_serialize_as_absent() {
     let decoded: SocialSourceSnapshot = serde_json::from_str(&rendered).expect("round trip");
     assert_eq!(decoded, snapshot);
 }
+
+/// An authorless snapshot parses to `None` and re-emits with the member absent, never
+/// substituted: absence means authorship was unobservable, and a placeholder would be a claim.
+#[test]
+fn snapshot_without_author_parses_and_reemits_absent() {
+    let rendered = serde_json::to_string(&snapshot_carrying_every_field()).expect("serializes");
+    let mut value: serde_json::Value = serde_json::from_str(&rendered).expect("the form is JSON");
+    value
+        .as_object_mut()
+        .expect("a snapshot renders as an object")
+        .remove("author");
+    let stripped = value.to_string();
+
+    let decoded: SocialSourceSnapshot =
+        serde_json::from_str(&stripped).expect("an authorless snapshot parses");
+    assert!(decoded.author.is_none());
+    assert!(
+        !serde_json::to_string(&decoded)
+            .expect("re-emits")
+            .contains("\"author\":"),
+        "re-emission must keep the author absent, not null"
+    );
+}

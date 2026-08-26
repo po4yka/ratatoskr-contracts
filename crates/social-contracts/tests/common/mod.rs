@@ -84,12 +84,12 @@ pub(crate) fn snapshot_carrying_every_field() -> SocialSourceSnapshot {
         ),
         owner: TenantRef::parse("user:018f0000-0000-7000-8000-000000000005")
             .expect("a legal owner"),
-        author: SocialAuthor {
+        author: Some(SocialAuthor {
             platform: Platform::parse("x").expect("a platform"),
             external_author_id: EntityLocalId::parse("987654321").expect("a provider id"),
             handle: Some(AuthorHandle::parse("example_user").expect("a handle")),
             display_name: Some(DisplayName::parse("Example User").expect("a display name")),
-        },
+        }),
         published_at: Some(instant("2026-08-16T09:30:00Z")),
         captured_at: instant("2026-08-17T10:00:00Z"),
         text: Some(PostText::parse("First line.\nSecond line.").expect("post text")),
