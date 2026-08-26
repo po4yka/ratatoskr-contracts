@@ -258,6 +258,40 @@ Rules:
 - `priority_hint` and `quiet_hours` are advisory only. Priority is a closed vocabulary because a guessed level silently reorders delivery; quiet hours are two offsets from UTC midnight in seconds, each bounded to one day, wrap-around permitted, equal bounds refused because they cannot say whether they mean an empty day or a full one;
 - delivery guarantees are the bus's own at-least-once semantics; dedupe and preference filtering belong to Telegram, with `notification_id` as the logical suppression key and the envelope aggregate spelled `notification:<uuid>`.
 
+### 5.8. Blob transfer contracts
+
+The legacy monolith accepted uploads synchronously in one process; the fleet cannot. `ratatoskr-blob-transfer-contracts` is the shared chunked, resumable, digest-first transfer discipline between upload-capable clients (`ratatoskr-mobile`, `ratatoskr-export-agent`) and receiving services' blob stores (AI-archive receipts, extractor): six document contracts, one per message shape, in the `transfer` family. Routing context comes from platform ADR-0015 — the calls traverse edge under its `transfer` route class to per-service receipts — and a stored outcome yields exactly the `BlobRef` the workspace store spec `blob-references` defines.
+
+```rust
+pub struct UploadSessionRequest {
+    pub declared_size_bytes: u64,
+    pub media_type: MediaType,
+    pub digest: ContentDigest,       // algorithm closed at sha256 for v1
+    pub chunk_size_bytes: u32,
+    pub extensions: Extensions,
+}
+
+#[serde(tag = "outcome", rename_all = "snake_case")]
+pub enum UploadCompletionOutcome {
+    Stored { blob_ref: BlobRef, extensions: Extensions },
+    DigestMismatch {
+        declared_sha256_hex: DigestHex,
+        computed_sha256_hex: DigestHex,
+        extensions: Extensions,
+    },
+}
+```
+
+Rules:
+
+- the declaration precedes every payload byte: size, media type and whole-payload SHA-256 are known before chunk one, so a receiver can refuse an unwanted upload without transferring it;
+- chunks are addressed by zero-based index over the declared fixed chunk size — byte ranges were rejected because they make "the same bytes twice" ambiguous and force receivers to reconcile overlapping deliveries; every chunk except the last is exactly `chunk_size_bytes`, the last is the remainder, and bounds (64 KiB..16 MiB per chunk, at most 10 000 chunks) are protocol constants, not configuration;
+- resumption runs on an opaque server-issued token (`rst_…`, grammar-published); the receiver distinguishes unknown from expired tokens, and the status view names exactly which indices are recorded so an interrupted client re-sends only gaps;
+- replay of identical bytes succeeds once more and changes nothing; divergent bytes for a recorded index are refused as `blob_transfer.chunk_conflict` without corrupting the recorded chunk;
+- finalize verifies the receiver's streamed digest against the declaration and answers one of two terminal truths — `stored` carrying the full `BlobRef`, or explicit `digest_mismatch` carrying expected and computed hex; a premature finalize is refused with the retriable `blob_transfer.finalize_incomplete` while the session stays open;
+- failures speak stable codes in the `blob_transfer.` namespace mapped onto the shared error envelope; the mismatch is deliberately not an envelope fault but an anticipated outcome;
+- the canonical HTTP binding (`POST …/uploads`, `PUT …/chunks/{index}`, `GET …/status`, `POST …/finalize`) is normative prose beside transport-honest types, and receiving services keep ownership of storage placement, quarantine policy and their own announcement surfaces — this protocol ends where their receipt begins.
+
 ## 6. Document contracts
 
 ### 6.1. Canonical Document IR

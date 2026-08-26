@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the notification contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
+> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the notification contracts, the blob-transfer protocol contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -26,7 +26,7 @@ It is intended to provide:
 - public OpenAPI specifications;
 - shared opaque identifiers and timestamps used on the wire;
 - standard error and pagination envelopes;
-- document, social-source, AI-archive, backup-policy, and user-facing-notification interchange contracts;
+- document, social-source, AI-archive, backup-policy, user-facing-notification interchange contracts, and the shared upload transfer protocol;
 - generated client/server artifacts for supported languages;
 - compatibility checks used by child repositories and the workspace CI.
 
@@ -46,7 +46,8 @@ crates/
 ├── social-contracts/          (now)
 ├── ai-archive-contracts/      (now)
 ├── backup-contracts/          (now)
-└── notification-contracts/    (now)
+├── notification-contracts/    (now)
+└── blob-transfer-contracts/   (now)
 
 schemas/
 ├── events/                 (now, generated)
@@ -178,6 +179,12 @@ ChatGPT and Claude exports share one normalized grammar in `ratatoskr-ai-archive
 The legacy monolith notified in-process; the fleet cannot. `ratatoskr-notification-contracts` is the documented bus surface `ratatoskr-telegram`'s notification sender honors: one registered event type, `platform.notification.raised.v1`, through which `ratatoskr-knowledge`, `ratatoskr-github`, `ratatoskr-vault` and `ratatoskr-x` state the completed fact that one of their users should be told something — never an order to send, so preference filtering, dedupe and channel choice stay on Telegram's side of the wire.
 
 A raised notification carries its own identity (`NotificationId`, also the aggregate as `notification:<uuid>` and the logical key for suppressing re-raises), a class from a versioned taxonomy whose unknown tokens are preserved rather than rejected — six classes at registry version 1: `operation_completed`, `operation_failed`, `analysis_ready`, `backup_outcome`, `watch_triggered`, `archive_imported` — the recipient in the closed tenancy grammar, carrier-safe title and optional message text, opaque correlation references (`operation_ref`, `analysis_ref`), and advisory delivery hints (a priority level and a daily quiet-hours window in seconds from UTC midnight) whose enforcement is nobody's job but the consumer's. Delivery guarantees are the bus's own at-least-once; nothing stronger is promised here.
+
+### Blob transfers
+
+The legacy monolith accepted uploads synchronously in one process; the fleet cannot. `ratatoskr-blob-transfer-contracts` is one chunked, resumable, digest-first transfer discipline for every upload-capable client delivering bytes to a receiving service's blob store — mobile and export-agent on the sending side, extractor and the AI-archive services receiving — so no receiver invents its own wire dialect.
+
+A session opens digest-first: the declaration carries total size, media type and the whole-payload SHA-256 before any byte moves, so a receiver refuses unwanted uploads for free. Chunks are addressed by zero-based index over a declared fixed chunk size (bounds are protocol constants), replay of identical bytes is idempotent, divergent bytes conflict without corrupting the record, and an interrupted client resumes from a status view naming exactly which indices survived. Finalize verifies the streamed digest and answers two terminal truths: `stored` carrying the complete `BlobRef` the workspace store spec `blob-references` defines, or explicit `digest_mismatch` with expected and computed digests. Failures speak stable `blob_transfer.` codes through the shared error envelope; the canonical HTTP binding is normative prose beside transport-honest types, per platform ADR-0015's transfer route class. Receiving services keep ownership of storage placement, quarantine policy and their own announcement surfaces.
 
 ## Proposed development workflow
 

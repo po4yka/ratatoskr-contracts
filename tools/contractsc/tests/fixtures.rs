@@ -167,6 +167,24 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_backup_contracts::PolicyAcknowledged" => {
             render!(ratatoskr_backup_contracts::PolicyAcknowledged)
         }
+        "ratatoskr_blob_transfer_contracts::UploadChunkReceipt" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadChunkReceipt)
+        }
+        "ratatoskr_blob_transfer_contracts::UploadCompletionOutcome" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadCompletionOutcome)
+        }
+        "ratatoskr_blob_transfer_contracts::UploadFinalizeRequest" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadFinalizeRequest)
+        }
+        "ratatoskr_blob_transfer_contracts::UploadSessionOpened" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadSessionOpened)
+        }
+        "ratatoskr_blob_transfer_contracts::UploadSessionRequest" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadSessionRequest)
+        }
+        "ratatoskr_blob_transfer_contracts::UploadStatusResponse" => {
+            render!(ratatoskr_blob_transfer_contracts::UploadStatusResponse)
+        }
         "ratatoskr_document_contracts::Document" => {
             render!(ratatoskr_document_contracts::Document)
         }

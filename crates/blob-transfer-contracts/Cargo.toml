@@ -1,0 +1,24 @@
+[package]
+name        = "ratatoskr-blob-transfer-contracts"
+description = "The shared chunked, resumable, digest-first upload transfer protocol between upload-capable clients and receiving services' blob receipts."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+repository.workspace   = true
+
+[dependencies]
+ratatoskr-identifiers.workspace = true
+# The shared error envelope's `ErrorCode` is where the transfer taxonomy maps onto.
+ratatoskr-error-contracts.workspace = true
+# Digest computation for the reference semantics of per-chunk idempotency and
+# finalize verification. Not on the wire; the wire carries hex strings.
+sha2.workspace      = true
+serde.workspace      = true
+serde_json.workspace = true
+schemars.workspace   = true
+thiserror.workspace  = true
+regex.workspace      = true
+
+[lints]
+workspace = true

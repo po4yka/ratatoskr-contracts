@@ -1,0 +1,792 @@
+# Public API baseline of ratatoskr-blob-transfer-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::clone::Clone for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::cmp::Eq for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::cmp::Ord for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::cmp::Ord for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::cmp::Ord for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::cmp::PartialEq for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::cmp::PartialOrd for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::cmp::PartialOrd for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::cmp::PartialOrd for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::convert::From<ratatoskr_blob_transfer_contracts::UploadResumptionToken> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::error::Error for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::error::Error for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::fmt::Debug for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::fmt::Display for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::fmt::Display for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::fmt::Display for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::hash::Hash for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::hash::Hash for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::hash::Hash for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Copy for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::Copy for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::Copy for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::Copy for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Freeze for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Send for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::StructuralPartialEq for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Sync for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::Unpin for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::marker::UnsafeUnpin for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::TransferContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::TransferFailure
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadPlan
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadSession
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl core::str::traits::FromStr for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl ratatoskr_blob_transfer_contracts::TransferFailure
+impl ratatoskr_blob_transfer_contracts::UploadPlan
+impl ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl ratatoskr_blob_transfer_contracts::UploadSession
+impl ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl schemars::JsonSchema for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl serde_core::ser::Serialize for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::TransferContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::TransferErrorCode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::TransferFailure where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadPlan where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadResumptionToken where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadSession where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadSessionOpened where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadSessionRequest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadSessionState where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_blob_transfer_contracts::UploadStatusResponse where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::TransferContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::TransferErrorCode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::TransferFailure where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadPlan where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadResumptionToken where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadSession where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadSessionOpened where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadSessionRequest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadSessionState where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_blob_transfer_contracts::UploadStatusResponse where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::TransferContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::TransferErrorCode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::TransferFailure where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadPlan where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadResumptionToken where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadSession where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadSessionOpened where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadSessionRequest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadSessionState where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_blob_transfer_contracts::UploadStatusResponse where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::TransferFailure where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadPlan where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadSession where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadSessionState where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_blob_transfer_contracts::TransferContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_blob_transfer_contracts::TransferFailure where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::TransferContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::TransferFailure where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadPlan where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadSession where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadSessionState where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::TransferContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::TransferFailure where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadPlan where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadSession where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadSessionState where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::TransferContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::TransferFailure where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadPlan where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadSession where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadSessionState where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::TransferFailure where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadPlan where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadSession where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadSessionState where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::TransferContractError
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::TransferFailure
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadPlan
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadSession
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl<T> core::convert::From<T> for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::TransferErrorCode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::TransferFailure where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadPlan where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadSession where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadSessionState where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadChunkReceipt where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadResumptionToken where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadSessionOpened where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadSessionRequest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadSessionState where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_blob_transfer_contracts::UploadStatusResponse where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::TransferContractError
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::TransferErrorCode
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::TransferFailure
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadPlan
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadResumptionToken
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadSession
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadSessionOpened
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadSessionRequest
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadSessionState
+impl<T> typenum::type_operators::Same for ratatoskr_blob_transfer_contracts::UploadStatusResponse
+pub const fn ratatoskr_blob_transfer_contracts::TransferErrorCode::as_str(&self) -> &'static str
+pub const fn ratatoskr_blob_transfer_contracts::TransferErrorCode::retryable(&self) -> bool
+pub const fn ratatoskr_blob_transfer_contracts::UploadPlan::chunk_size_bytes(&self) -> u32
+pub const fn ratatoskr_blob_transfer_contracts::UploadPlan::declared_size_bytes(&self) -> u64
+pub const fn ratatoskr_blob_transfer_contracts::UploadPlan::expected_chunk_count(&self) -> u32
+pub const ratatoskr_blob_transfer_contracts::CHUNK_SIZE_MAX_BYTES: u32
+pub const ratatoskr_blob_transfer_contracts::CHUNK_SIZE_MIN_BYTES: u32
+pub const ratatoskr_blob_transfer_contracts::MAX_CHUNK_COUNT: u32
+pub const ratatoskr_blob_transfer_contracts::UploadResumptionToken::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_blob_transfer_contracts::UploadResumptionToken::MAX_LEN: usize
+pub const ratatoskr_blob_transfer_contracts::UploadResumptionToken::PATTERN: &'static str
+pub enum ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+pub fn alloc::string::String::from(ratatoskr_blob_transfer_contracts::UploadResumptionToken) -> Self
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::clone(&self) -> ratatoskr_blob_transfer_contracts::ChunkRecordOutcome
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::eq(&self, &ratatoskr_blob_transfer_contracts::ChunkRecordOutcome) -> bool
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::clone(&self) -> ratatoskr_blob_transfer_contracts::TransferErrorCode
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::cmp(&self, &ratatoskr_blob_transfer_contracts::TransferErrorCode) -> core::cmp::Ordering
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::eq(&self, &ratatoskr_blob_transfer_contracts::TransferErrorCode) -> bool
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::error_code(&self) -> ratatoskr_error_contracts::code::ErrorCode
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::partial_cmp(&self, &ratatoskr_blob_transfer_contracts::TransferErrorCode) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferErrorCode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::clone(&self) -> ratatoskr_blob_transfer_contracts::TransferFailure
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::code(&self) -> ratatoskr_blob_transfer_contracts::TransferErrorCode
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::eq(&self, &ratatoskr_blob_transfer_contracts::TransferFailure) -> bool
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::retryable(&self) -> bool
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::TransferFailure::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::eq(&self, &ratatoskr_blob_transfer_contracts::UploadChunkReceipt) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadCompletionOutcome
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::eq(&self, &ratatoskr_blob_transfer_contracts::UploadCompletionOutcome) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::eq(&self, &ratatoskr_blob_transfer_contracts::UploadFinalizeRequest) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::chunk_len(&self, u32) -> core::option::Option<u32>
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadPlan
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::eq(&self, &ratatoskr_blob_transfer_contracts::UploadPlan) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::new(u64, u32) -> core::result::Result<Self, ratatoskr_blob_transfer_contracts::TransferContractError>
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadPlan::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::as_str(&self) -> &str
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadResumptionToken
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::cmp(&self, &ratatoskr_blob_transfer_contracts::UploadResumptionToken) -> core::cmp::Ordering
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::eq(&self, &ratatoskr_blob_transfer_contracts::UploadResumptionToken) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::partial_cmp(&self, &ratatoskr_blob_transfer_contracts::UploadResumptionToken) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadSession
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::eq(&self, &ratatoskr_blob_transfer_contracts::UploadSession) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::finalize(&mut self, ratatoskr_identifiers::blob::BlobOwner, ratatoskr_identifiers::blob::DigestHex) -> core::result::Result<ratatoskr_blob_transfer_contracts::UploadCompletionOutcome, ratatoskr_blob_transfer_contracts::TransferFailure>
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::missing_chunks_count(&self) -> u32
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::new(&ratatoskr_blob_transfer_contracts::UploadSessionRequest) -> core::result::Result<Self, ratatoskr_blob_transfer_contracts::TransferContractError>
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::record(&mut self, u32, &[u8]) -> core::result::Result<ratatoskr_blob_transfer_contracts::ChunkRecordOutcome, ratatoskr_blob_transfer_contracts::TransferFailure>
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::status_view(&self, &ratatoskr_blob_transfer_contracts::UploadResumptionToken) -> ratatoskr_blob_transfer_contracts::UploadStatusResponse
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSession::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadSessionOpened
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::eq(&self, &ratatoskr_blob_transfer_contracts::UploadSessionOpened) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadSessionRequest
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::eq(&self, &ratatoskr_blob_transfer_contracts::UploadSessionRequest) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::validate(&self) -> core::result::Result<(), ratatoskr_blob_transfer_contracts::TransferContractError>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadSessionState
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::cmp(&self, &ratatoskr_blob_transfer_contracts::UploadSessionState) -> core::cmp::Ordering
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::eq(&self, &ratatoskr_blob_transfer_contracts::UploadSessionState) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::partial_cmp(&self, &ratatoskr_blob_transfer_contracts::UploadSessionState) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadSessionState::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::borrow(&self) -> &T
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::clone(&self) -> ratatoskr_blob_transfer_contracts::UploadStatusResponse
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::clone_into(&self, &mut T)
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::eq(&self, &ratatoskr_blob_transfer_contracts::UploadStatusResponse) -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::from(T) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::inline_schema() -> bool
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::into(self) -> U
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::to_owned(&self) -> T
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_blob_transfer_contracts::chunk_digest_hex(&[u8]) -> ratatoskr_identifiers::blob::DigestHex
+pub mod ratatoskr_blob_transfer_contracts
+pub ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::IdempotentReplay
+pub ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::Recorded
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeAboveMaximum
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeAboveMaximum::got: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeAboveMaximum::max: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeBelowMinimum
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeBelowMinimum::got: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ChunkSizeBelowMinimum::min: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::TooManyChunks
+pub ratatoskr_blob_transfer_contracts::TransferContractError::TooManyChunks::got: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::TooManyChunks::max: u32
+pub ratatoskr_blob_transfer_contracts::TransferContractError::ZeroDeclaredSizeBytes
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::ChunkConflict
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::ChunkIndexOutOfRange
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::ChunkLengthInvalid
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::FinalizeIncomplete
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::MediaTypeRejected
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::SessionExpired
+pub ratatoskr_blob_transfer_contracts::TransferErrorCode::SessionUnknown
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkConflict
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkConflict::index: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkIndexOutOfRange
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkIndexOutOfRange::count: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkIndexOutOfRange::index: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkLengthInvalid
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkLengthInvalid::expected_bytes: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkLengthInvalid::got_bytes: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::ChunkLengthInvalid::index: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::FinalizeIncomplete
+pub ratatoskr_blob_transfer_contracts::TransferFailure::FinalizeIncomplete::missing_chunks_count: u32
+pub ratatoskr_blob_transfer_contracts::TransferFailure::MediaTypeRejected
+pub ratatoskr_blob_transfer_contracts::TransferFailure::SessionExpired
+pub ratatoskr_blob_transfer_contracts::TransferFailure::SessionUnknown
+pub ratatoskr_blob_transfer_contracts::UploadChunkReceipt::chunk_index: u32
+pub ratatoskr_blob_transfer_contracts::UploadChunkReceipt::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadChunkReceipt::idempotent_replay: bool
+pub ratatoskr_blob_transfer_contracts::UploadChunkReceipt::received_chunks_count: u32
+pub ratatoskr_blob_transfer_contracts::UploadChunkReceipt::resumption_token: ratatoskr_blob_transfer_contracts::UploadResumptionToken
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::DigestMismatch
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::DigestMismatch::computed_sha256_hex: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::DigestMismatch::declared_sha256_hex: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::DigestMismatch::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Stored
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Stored::blob_ref: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Stored::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::resumption_token: ratatoskr_blob_transfer_contracts::UploadResumptionToken
+pub ratatoskr_blob_transfer_contracts::UploadSessionOpened::chunk_size_bytes: u32
+pub ratatoskr_blob_transfer_contracts::UploadSessionOpened::expires_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_blob_transfer_contracts::UploadSessionOpened::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadSessionOpened::resumption_token: ratatoskr_blob_transfer_contracts::UploadResumptionToken
+pub ratatoskr_blob_transfer_contracts::UploadSessionRequest::chunk_size_bytes: u32
+pub ratatoskr_blob_transfer_contracts::UploadSessionRequest::declared_size_bytes: u64
+pub ratatoskr_blob_transfer_contracts::UploadSessionRequest::digest: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_blob_transfer_contracts::UploadSessionRequest::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadSessionRequest::media_type: ratatoskr_identifiers::blob::MediaType
+pub ratatoskr_blob_transfer_contracts::UploadSessionState::Failed
+pub ratatoskr_blob_transfer_contracts::UploadSessionState::Finalized
+pub ratatoskr_blob_transfer_contracts::UploadSessionState::Open
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::missing_chunks_count: u32
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::received_chunks: alloc::vec::Vec<u32>
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::received_chunks_count: u32
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::resumption_token: ratatoskr_blob_transfer_contracts::UploadResumptionToken
+pub ratatoskr_blob_transfer_contracts::UploadStatusResponse::session_state: ratatoskr_blob_transfer_contracts::UploadSessionState
+pub struct ratatoskr_blob_transfer_contracts::UploadChunkReceipt
+pub struct ratatoskr_blob_transfer_contracts::UploadFinalizeRequest
+pub struct ratatoskr_blob_transfer_contracts::UploadPlan
+pub struct ratatoskr_blob_transfer_contracts::UploadResumptionToken(_)
+pub struct ratatoskr_blob_transfer_contracts::UploadSession
+pub struct ratatoskr_blob_transfer_contracts::UploadSessionOpened
+pub struct ratatoskr_blob_transfer_contracts::UploadSessionRequest
+pub struct ratatoskr_blob_transfer_contracts::UploadStatusResponse
+pub type ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::Output = T
+pub type ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::Owned = T
+pub type ratatoskr_blob_transfer_contracts::TransferContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::TransferContractError::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::TransferContractError::Output = T
+pub type ratatoskr_blob_transfer_contracts::TransferErrorCode::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::TransferErrorCode::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::TransferErrorCode::Output = T
+pub type ratatoskr_blob_transfer_contracts::TransferErrorCode::Owned = T
+pub type ratatoskr_blob_transfer_contracts::TransferFailure::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::TransferFailure::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::TransferFailure::Output = T
+pub type ratatoskr_blob_transfer_contracts::TransferFailure::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadChunkReceipt::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadChunkReceipt::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadChunkReceipt::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadChunkReceipt::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadPlan::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadPlan::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadPlan::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadPlan::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadResumptionToken::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadSession::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadSession::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadSession::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadSession::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionOpened::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadSessionOpened::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadSessionOpened::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionOpened::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionRequest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadSessionRequest::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadSessionRequest::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionRequest::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionState::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadSessionState::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadSessionState::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadSessionState::Owned = T
+pub type ratatoskr_blob_transfer_contracts::UploadStatusResponse::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_blob_transfer_contracts::UploadStatusResponse::Error = core::convert::Infallible
+pub type ratatoskr_blob_transfer_contracts::UploadStatusResponse::Output = T
+pub type ratatoskr_blob_transfer_contracts::UploadStatusResponse::Owned = T
+pub unsafe fn ratatoskr_blob_transfer_contracts::ChunkRecordOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::TransferErrorCode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::TransferFailure::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadChunkReceipt::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadCompletionOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadFinalizeRequest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadPlan::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadResumptionToken::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadSession::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadSessionOpened::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadSessionRequest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadSessionState::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_blob_transfer_contracts::UploadStatusResponse::clone_to_uninit(&self, *mut u8)
+pub use ratatoskr_blob_transfer_contracts::BlobRef
+pub use ratatoskr_blob_transfer_contracts::ContentDigest
+pub use ratatoskr_blob_transfer_contracts::DigestAlgorithm
+pub use ratatoskr_blob_transfer_contracts::DigestHex
+pub use ratatoskr_blob_transfer_contracts::MediaType

@@ -8,7 +8,7 @@
 
 Implementation milestones 1 through 9 exist — the last one as the assurance layer described below — milestone 8's deterministic TypeScript generation exists, and the commands below are real.
 
-Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts`, `ratatoskr-ai-archive-contracts`, `ratatoskr-backup-contracts` and `ratatoskr-notification-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; generated TypeScript under `generated/typescript/`, produced and verified by the same pipeline; valid, invalid and compatibility fixtures under `fixtures/`; and frozen public-API baselines per crate under `compat/api/`.
+Present: `contracts.toml` contract metadata; the `ratatoskr-identifiers`, `ratatoskr-event-envelope`, `ratatoskr-error-contracts`, `ratatoskr-operation-contracts`, `ratatoskr-document-contracts`, `ratatoskr-social-contracts`, `ratatoskr-ai-archive-contracts`, `ratatoskr-backup-contracts`, `ratatoskr-notification-contracts` and `ratatoskr-blob-transfer-contracts` crates; the `contractsc` generator and gate in `tools/contractsc`; generated JSON Schema under `schemas/`; generated TypeScript under `generated/typescript/`, produced and verified by the same pipeline; valid, invalid and compatibility fixtures under `fixtures/`; and frozen public-API baselines per crate under `compat/api/`.
 
 Absent: OpenAPI in any form; generated Kotlin or Swift packages; and package publication. Those are the rest of milestone 10.
 

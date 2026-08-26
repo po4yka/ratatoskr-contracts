@@ -445,3 +445,56 @@ reason         = "NotificationPriority is closed, mirroring BackupPriorityHint: 
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'at most 86399 seconds'
 reason         = "Each quiet-hours offset names a second inside one UTC day; 86400 names no second of any day, so both the published maximum and the Rust type refuse it. The equality ban between the two bounds is narrower still and lives in the Rust type alone."
+
+# ---------------------------------------------------------------------------
+# transfer/upload-session-request + upload-finalize-request
+# ---------------------------------------------------------------------------
+
+["transfer/upload-session-request/invalid/zero-declared-size.json"]
+rejected_by    = ["serde"]
+error_contains = 'declared_size_bytes must be greater than zero'
+reason         = "An empty upload has no chunks, no streamed digest to verify and no blob worth a reference; the floor lives in the Rust type alone, so the schema layer accepts what it cannot express - the ADR-0001 lower-bound rule."
+
+["transfer/upload-session-request/invalid/chunk-size-below-minimum.json"]
+rejected_by    = ["serde"]
+error_contains = 'the protocol minimum is 65536'
+reason         = "Below 65536 bytes a delivery carries less payload than the per-chunk bookkeeping it costs every participant; the bound is protocol data, not configuration, so it is enforced in the Rust type and published as prose, not as a schema numeric range."
+
+["transfer/upload-session-request/invalid/too-many-chunks.json"]
+rejected_by    = ["serde"]
+error_contains = 'the declaration derives 10400 chunks; the protocol maximum is 10000'
+reason         = "The chunk-count bound keeps status answers and resume views bounded for every implementation. The count derives from size over chunk size, so the schema cannot precompute it - the cross-field rule is the checked-intermediate's alone."
+
+["transfer/upload-session-request/invalid/digest-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[0-9a-f]{64}$'
+reason         = "Digest hex is lowercase by contract: one spelling per digest keeps string comparison meaningful for receivers that key stored bytes on it, exactly as ContentDigest publishes elsewhere in this repository."
+
+["transfer/upload-finalize-request/invalid/token-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^rst_[0-9a-v]{24,64}$'
+reason         = "Resumption tokens are opaque but grammar-bounded: uppercase or short input is a corrupted handle, not a future format, and accepting it would let a client drive a session its receiver never minted."
+
+# ---------------------------------------------------------------------------
+# transfer/upload-receipt
+# ---------------------------------------------------------------------------
+
+["transfer/upload-session-opened/invalid/expires-at-non-canonical-fraction.json"]
+rejected_by    = ["serde"]
+error_contains = 'is not in canonical form'
+reason         = "Timestamps have exactly one spelling per instant: .000 renders without a fraction, so the parsed value would not reproduce its input. The pattern admits the shape while canonicality is Rust-side - the ADR-0001 lower-bound rule."
+
+["transfer/upload-status-response/invalid/session-state-unknown-token.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `paused`'
+reason         = "The session phase is closed three-state vocabulary driving client recovery decisions; a guessed fourth state would read as truth about a session the receiver may have failed. Unknown-token preservation belongs to open taxonomies, not to this one."
+
+["transfer/upload-completion-outcome/invalid/outcome-unknown-tag.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `stored_partially`'
+reason         = "Finalize answers exactly two terminal truths - stored or mismatched. A third tag would fabricate an outcome the receiving service never verified; new outcomes arrive as additive variants of the enum, reviewed here first."
+
+["transfer/upload-chunk-receipt/invalid/chunk-index-negative.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = '-1'
+reason         = "Chunk addressing is zero-based index arithmetic: a negative index names no derived chunk and would corrupt the received-set arithmetic both sides compute from the declaration."

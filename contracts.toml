@@ -21,6 +21,8 @@ known = [
   "ratatoskr-instagram",
   "ratatoskr-threads",
   "ratatoskr-telegram",
+  "ratatoskr-mobile",
+  "ratatoskr-export-agent",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -44,7 +46,10 @@ known = [
 #   analysis      the knowledge-analysis side of a notification's `analysis_ref`
 #                 correlation; the kind stays opaque to the notification contract.
 # Adding a token here is a review decision: it widens what a fixture may contain,
-# never what the wire type understands.
+# never what the wire type understands. `ratatoskr-mobile` and
+# `ratatoskr-export-agent` are upload-capable clients; they appear as transfer
+# producers, not because they publish events, but because the transfer protocol's
+# request documents originate on their side of the wire.
 [entity_kinds]
 known = [
   "ai_archive", "ai_conversation", "ai_project", "analysis", "backup_policy",
@@ -68,7 +73,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at", "removed_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -691,3 +696,148 @@ privacy        = "user_content"
 [contract.event]
 event_type   = "platform.notification.raised.v1"
 payload_type = "ratatoskr_notification_contracts::NotificationRaised"
+
+# ---------------------------------------------------------------------------
+# Transfer protocol. One contract per message shape: the fixture harness and
+# R3's output convention bind a fixtures_dir and one generated artifact to a
+# single canonical root, so the grain of governance here is the message, and
+# direction is expressed per block through producers and consumers.
+# ---------------------------------------------------------------------------
+
+[[contract]]
+id             = "transfer.upload_session_request"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+consumers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/request.rs"
+fixtures_dir   = "fixtures/transfer/upload-session-request"
+summary        = "Digest-first upload declaration a client sends before any payload byte moves."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadSessionRequest"
+output         = "schemas/json-schema/transfer/upload-session-request.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadSessionRequest"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "transfer.upload_finalize_request"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+consumers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/request.rs"
+fixtures_dir   = "fixtures/transfer/upload-finalize-request"
+summary        = "Client request to verify and seal a fully recorded upload session."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadFinalizeRequest"
+output         = "schemas/json-schema/transfer/upload-finalize-request.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadFinalizeRequest"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "transfer.upload_session_opened"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/receipt.rs"
+fixtures_dir   = "fixtures/transfer/upload-session-opened"
+summary        = "Receiver answer opening an upload session: opaque token, chunking, expiry."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadSessionOpened"
+output         = "schemas/json-schema/transfer/upload-session-opened.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadSessionOpened"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/expires_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant after which the receiving service refuses the session token. Server-asserted on its own clock; the client never derives it."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "transfer.upload_chunk_receipt"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/receipt.rs"
+fixtures_dir   = "fixtures/transfer/upload-chunk-receipt"
+summary        = "Per-chunk acknowledgement; answers idempotently for replayed identical bytes."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadChunkReceipt"
+output         = "schemas/json-schema/transfer/upload-chunk-receipt.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadChunkReceipt"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "transfer.upload_status_response"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/receipt.rs"
+fixtures_dir   = "fixtures/transfer/upload-status-response"
+summary        = "Resume view naming exactly which derived chunk indices are recorded."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadStatusResponse"
+output         = "schemas/json-schema/transfer/upload-status-response.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadStatusResponse"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "transfer.upload_completion_outcome"
+family         = "transfer"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-extractor", "ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-mobile", "ratatoskr-export-agent"]
+crate_name     = "ratatoskr-blob-transfer-contracts"
+canonical_path = "crates/blob-transfer-contracts/src/receipt.rs"
+fixtures_dir   = "fixtures/transfer/upload-completion-outcome"
+summary        = "Terminal finalize answer: stored under a BlobRef, or explicit digest mismatch."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_blob_transfer_contracts::UploadCompletionOutcome"
+output         = "schemas/json-schema/transfer/upload-completion-outcome.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadCompletionOutcome"
+unknown_policy = "preserve"
+privacy        = "user_content"

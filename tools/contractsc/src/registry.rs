@@ -83,6 +83,18 @@ root_types! {
         => ratatoskr_backup_contracts::DesiredBackupPolicy,
     "ratatoskr_backup_contracts::PolicyAcknowledged"
         => ratatoskr_backup_contracts::PolicyAcknowledged,
+    "ratatoskr_blob_transfer_contracts::UploadChunkReceipt"
+        => ratatoskr_blob_transfer_contracts::UploadChunkReceipt,
+    "ratatoskr_blob_transfer_contracts::UploadCompletionOutcome"
+        => ratatoskr_blob_transfer_contracts::UploadCompletionOutcome,
+    "ratatoskr_blob_transfer_contracts::UploadFinalizeRequest"
+        => ratatoskr_blob_transfer_contracts::UploadFinalizeRequest,
+    "ratatoskr_blob_transfer_contracts::UploadSessionOpened"
+        => ratatoskr_blob_transfer_contracts::UploadSessionOpened,
+    "ratatoskr_blob_transfer_contracts::UploadSessionRequest"
+        => ratatoskr_blob_transfer_contracts::UploadSessionRequest,
+    "ratatoskr_blob_transfer_contracts::UploadStatusResponse"
+        => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
