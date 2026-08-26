@@ -12,7 +12,7 @@
 
 ## 3. Workflow
 
-- [ ] 3.1 Add `.github/workflows/contracts.yml` with `compatibility`, `determinism` and `package` jobs copying ci.yml's trigger, permissions, concurrency, SHA pinning and checkout style, including the header comment stating that fixture validation stays the gate's job. (Cannot start from a failing test: workflow configuration.)
+- [x] 3.1 Add `.github/workflows/contracts.yml` with `compatibility`, `determinism` and `package` jobs copying ci.yml's trigger, permissions, concurrency, SHA pinning and checkout style, including the header comment stating that fixture validation stays the gate's job. (Cannot start from a failing test: workflow configuration.) Verified by hosted `contracts` run 32999112540 on `b53fd76`.
 - [x] 3.2 Validate the workflow mechanically: YAML parse, every `uses:` pinned to a 40-hex commit, no unpinned container image, named jobs, and the packaging tarball built locally matches `git ls-files generated/typescript`.
 
 ## 4. Documentation
