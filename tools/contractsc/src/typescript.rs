@@ -721,7 +721,11 @@ fn push_jsdoc(out: &mut String, node: &Value, indent: usize) {
     let padding = " ".repeat(indent);
     let _ = writeln!(out, "{padding}/**");
     for line in description.lines() {
-        let _ = writeln!(out, "{padding} * {line}");
+        if line.is_empty() {
+            let _ = writeln!(out, "{padding} *");
+        } else {
+            let _ = writeln!(out, "{padding} * {line}");
+        }
     }
     if let Some(note) = format_note {
         if !description.is_empty() {

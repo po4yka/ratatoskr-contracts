@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:eb3fcf2f6bfda3ca0766d2a0b64876ebab18e7fa5366356c97f187edd0bdc113
+ * source_digest: sha256:48ba1481acc6d7f04180c0147a05acb1c5318c8715404be68865e5cfe01a4c20
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.

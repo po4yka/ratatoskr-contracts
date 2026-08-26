@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:12bf2a5c449130253df33dcfefc7c10dcde6b233837d1c0a2ec865c5789decb1
+ * source_digest: sha256:ffc4831637b19eb9e63998b8a659ed4f3d800ba1dafd6ce0250fbc70d027ad32
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `platform.operation.progressed.v1` (`README.md`, `ARCHITECTURE.md` S9.1).
- * 
+ *
  * A fact: the operation **has** reached `operation.status`. It is not a request to change it
  * (`AGENTS.md` principle 9). State-carried transfer — a consumer needs no prior event to
  * interpret this one, which is what makes at-least-once redelivery idempotent.
@@ -32,7 +32,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -90,7 +90,7 @@ export type EntityRef = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -102,7 +102,7 @@ export type ErrorCode = string;
 /**
  * A terminal, machine-actionable failure crossing a process boundary
  * (`ARCHITECTURE.md` S5.5).
- * 
+ *
  * Contains no stack trace, no raw provider response, no credential and no storage path
  * (`ARCHITECTURE.md` S14, `SECURITY.md`). S5.5's `details: Option<serde_json::Value>` is
  * deliberately absent: ADR-0008 records that decision, its scope (this contract, major 1) and
@@ -144,7 +144,7 @@ export interface ErrorEnvelope {
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -198,7 +198,7 @@ export type OperationResultKind = string;
 
 /**
  * A typed pointer to something the operation produced.
- * 
+ *
  * A pointer, never inlined content: an operation may produce megabytes, and
  * `ARCHITECTURE.md` S14 requires user content to be separable from metadata so telemetry can
  * omit it.
@@ -221,25 +221,25 @@ export interface OperationResultRef {
 
 /**
  * A point-in-time public view of a long-running operation (`ARCHITECTURE.md` S5.4).
- * 
+ *
  * Named `OperationSnapshot`, not `Operation`, because this repository owns wire representations,
  * not entities (`ARCHITECTURE.md` S15.1, S15.12). Two snapshots of the same `operation_id` at
  * different `status_changed_at` are both valid and are not expected to be equal.
- * 
+ *
  * No `schema_version` field: S5.4's field list does not include one, and the envelope already
  * carries the envelope major. A third version axis is a compatibility hazard, not a feature.
- * 
+ *
  * `Deserialize` is hand-written (one of the two hand-written `Deserialize` impls in this
  * repository, beside `ratatoskr-social-contracts`'s snapshot) because the invariants below are
  * cross-field and serde has no validation hook. It parses a
  * private mirror struct and then checks. A field added to the public struct and not the mirror
  * would be silently dropped; test `O-2` (byte round-trip of a fixture carrying every field)
  * fails immediately if that happens, and a source comment points at it.
- * 
+ *
  * # Cross-field invariants
- * 
+ *
  * Every one is re-checkable through [`OperationSnapshot::validate`]:
- * 
+ *
  * - **I1** `terminated_at` is present exactly when `status.is_terminal()`.
  * - **I2** `failed` requires at least one error.
  * - **I3** `succeeded` forbids errors.
@@ -325,15 +325,15 @@ export type OperationStage = string;
 
 /**
  * The public lifecycle state of a long-running operation (`ARCHITECTURE.md` S5.4).
- * 
+ *
  * **Closed.** An unrecognised value is rejected at deserialization with an error naming the
  * legal variants (`DOMAIN.md` invariant 6, "rejected explicitly" branch; `ARCHITECTURE.md` S9.2
  * permits enum additions only "when consumers preserve **or safely reject** unknown values").
  * A client that guesses at an unknown lifecycle state reports unfinished work as finished, which
  * is the failure this enum exists to prevent. Adding a state is therefore a new major version.
- * 
+ *
  * `#[non_exhaustive]` so a future addition is not source-breaking for downstream Rust.
- * 
+ *
  * Progress is monotonic in lifecycle semantics (S5.4). That is a producer obligation: it is
  * unenforceable from a single snapshot, and this repository publishes no transition table
  * because a transition table is a business workflow (`AGENTS.md` hard boundaries).
@@ -347,11 +347,11 @@ export type ProgressPercent = number;
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */
@@ -370,7 +370,7 @@ export type TraceId = string;
 
 /**
  * A non-terminal problem that did not prevent the recorded outcome.
- * 
+ *
  * A distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires
  * "partial-success warnings are distinct from terminal errors", and a shared type with a
  * severity field would let a producer emit a "warning" that consumers treat as fatal.

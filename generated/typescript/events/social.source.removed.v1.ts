@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:ddb9a89e73c8febd5178e8ccd88b260f9baa82a163ee47da9dbf1f7684da6394
+ * source_digest: sha256:d9616e94303b8c0b996a89a57716e2f293378093f7ded3af8cb914fb8dd8aa69
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `social.source.removed.v1`: the user's library stopped holding the source.
- * 
+ *
  * A fact about the library, not about the provider: nothing here claims the post was deleted
  * upstream (`upstream_availability = deleted_upstream` owns that fact). Deliberately minimal —
  * it names what stopped being held, why, and when. It does not re-carry a snapshot, because a
@@ -41,7 +41,7 @@ export interface SocialSourceRemoved {
 
 /**
  * Why a user's library stopped holding a source (`social.source.removed.v1`).
- * 
+ *
  * **Closed on purpose.** A removal fact says the *library* let go; it never claims anything
  * about upstream state, which `UpstreamAvailability` owns. An unknown reason must stop
  * processing instead of being read as an acceptable deletion.

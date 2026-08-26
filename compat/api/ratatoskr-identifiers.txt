@@ -20,6 +20,8 @@ impl core::clone::Clone for ratatoskr_identifiers::IdentifierError
 impl core::clone::Clone for ratatoskr_identifiers::MediaType
 impl core::clone::Clone for ratatoskr_identifiers::NotificationId
 impl core::clone::Clone for ratatoskr_identifiers::OperationId
+impl core::clone::Clone for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::clone::Clone for ratatoskr_identifiers::RepositoryId
 impl core::clone::Clone for ratatoskr_identifiers::SafeMessage
 impl core::clone::Clone for ratatoskr_identifiers::SocialSourceId
 impl core::clone::Clone for ratatoskr_identifiers::TenantRef
@@ -44,6 +46,8 @@ impl core::cmp::Eq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::Eq for ratatoskr_identifiers::MediaType
 impl core::cmp::Eq for ratatoskr_identifiers::NotificationId
 impl core::cmp::Eq for ratatoskr_identifiers::OperationId
+impl core::cmp::Eq for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::cmp::Eq for ratatoskr_identifiers::RepositoryId
 impl core::cmp::Eq for ratatoskr_identifiers::SafeMessage
 impl core::cmp::Eq for ratatoskr_identifiers::SocialSourceId
 impl core::cmp::Eq for ratatoskr_identifiers::TenantRef
@@ -66,6 +70,8 @@ impl core::cmp::Ord for ratatoskr_identifiers::EventId
 impl core::cmp::Ord for ratatoskr_identifiers::MediaType
 impl core::cmp::Ord for ratatoskr_identifiers::NotificationId
 impl core::cmp::Ord for ratatoskr_identifiers::OperationId
+impl core::cmp::Ord for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::cmp::Ord for ratatoskr_identifiers::RepositoryId
 impl core::cmp::Ord for ratatoskr_identifiers::SafeMessage
 impl core::cmp::Ord for ratatoskr_identifiers::SocialSourceId
 impl core::cmp::Ord for ratatoskr_identifiers::TenantRef
@@ -90,6 +96,8 @@ impl core::cmp::PartialEq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::PartialEq for ratatoskr_identifiers::MediaType
 impl core::cmp::PartialEq for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::OperationId
+impl core::cmp::PartialEq for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::cmp::PartialEq for ratatoskr_identifiers::RepositoryId
 impl core::cmp::PartialEq for ratatoskr_identifiers::SafeMessage
 impl core::cmp::PartialEq for ratatoskr_identifiers::SocialSourceId
 impl core::cmp::PartialEq for ratatoskr_identifiers::TenantRef
@@ -112,6 +120,8 @@ impl core::cmp::PartialOrd for ratatoskr_identifiers::EventId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::MediaType
 impl core::cmp::PartialOrd for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::OperationId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::RepositoryId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::SafeMessage
 impl core::cmp::PartialOrd for ratatoskr_identifiers::SocialSourceId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::TenantRef
@@ -138,6 +148,10 @@ impl core::convert::From<ratatoskr_identifiers::NotificationId> for alloc::strin
 impl core::convert::From<ratatoskr_identifiers::NotificationId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::OperationId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::OperationId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::RepositoryAnalysisRequestId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::RepositoryAnalysisRequestId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::RepositoryId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::RepositoryId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::SafeMessage> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::SocialSourceId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::SocialSourceId> for ratatoskr_identifiers::EntityRef
@@ -153,6 +167,8 @@ impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_ide
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::EventId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::OperationId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::RepositoryId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::SocialSourceId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::UserId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiArchiveId
@@ -168,6 +184,8 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::Ev
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::MediaType
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::OperationId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::RepositoryId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SafeMessage
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::SocialSourceId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::TenantRef
@@ -194,6 +212,8 @@ impl core::fmt::Debug for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Debug for ratatoskr_identifiers::MediaType
 impl core::fmt::Debug for ratatoskr_identifiers::NotificationId
 impl core::fmt::Debug for ratatoskr_identifiers::OperationId
+impl core::fmt::Debug for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::fmt::Debug for ratatoskr_identifiers::RepositoryId
 impl core::fmt::Debug for ratatoskr_identifiers::SafeMessage
 impl core::fmt::Debug for ratatoskr_identifiers::SocialSourceId
 impl core::fmt::Debug for ratatoskr_identifiers::TenantRef
@@ -214,6 +234,8 @@ impl core::fmt::Display for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Display for ratatoskr_identifiers::MediaType
 impl core::fmt::Display for ratatoskr_identifiers::NotificationId
 impl core::fmt::Display for ratatoskr_identifiers::OperationId
+impl core::fmt::Display for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::fmt::Display for ratatoskr_identifiers::RepositoryId
 impl core::fmt::Display for ratatoskr_identifiers::SafeMessage
 impl core::fmt::Display for ratatoskr_identifiers::SocialSourceId
 impl core::fmt::Display for ratatoskr_identifiers::TenantRef
@@ -236,6 +258,8 @@ impl core::hash::Hash for ratatoskr_identifiers::EventId
 impl core::hash::Hash for ratatoskr_identifiers::MediaType
 impl core::hash::Hash for ratatoskr_identifiers::NotificationId
 impl core::hash::Hash for ratatoskr_identifiers::OperationId
+impl core::hash::Hash for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::hash::Hash for ratatoskr_identifiers::RepositoryId
 impl core::hash::Hash for ratatoskr_identifiers::SafeMessage
 impl core::hash::Hash for ratatoskr_identifiers::SocialSourceId
 impl core::hash::Hash for ratatoskr_identifiers::TenantRef
@@ -250,6 +274,8 @@ impl core::marker::Copy for ratatoskr_identifiers::DocumentId
 impl core::marker::Copy for ratatoskr_identifiers::EventId
 impl core::marker::Copy for ratatoskr_identifiers::NotificationId
 impl core::marker::Copy for ratatoskr_identifiers::OperationId
+impl core::marker::Copy for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::Copy for ratatoskr_identifiers::RepositoryId
 impl core::marker::Copy for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Copy for ratatoskr_identifiers::TenantRef
 impl core::marker::Copy for ratatoskr_identifiers::UserId
@@ -273,6 +299,8 @@ impl core::marker::Freeze for ratatoskr_identifiers::IdentifierError
 impl core::marker::Freeze for ratatoskr_identifiers::MediaType
 impl core::marker::Freeze for ratatoskr_identifiers::NotificationId
 impl core::marker::Freeze for ratatoskr_identifiers::OperationId
+impl core::marker::Freeze for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::Freeze for ratatoskr_identifiers::RepositoryId
 impl core::marker::Freeze for ratatoskr_identifiers::SafeMessage
 impl core::marker::Freeze for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Freeze for ratatoskr_identifiers::TenantRef
@@ -297,6 +325,8 @@ impl core::marker::Send for ratatoskr_identifiers::IdentifierError
 impl core::marker::Send for ratatoskr_identifiers::MediaType
 impl core::marker::Send for ratatoskr_identifiers::NotificationId
 impl core::marker::Send for ratatoskr_identifiers::OperationId
+impl core::marker::Send for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::Send for ratatoskr_identifiers::RepositoryId
 impl core::marker::Send for ratatoskr_identifiers::SafeMessage
 impl core::marker::Send for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Send for ratatoskr_identifiers::TenantRef
@@ -321,6 +351,8 @@ impl core::marker::StructuralPartialEq for ratatoskr_identifiers::IdentifierErro
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::MediaType
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::NotificationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::OperationId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::RepositoryId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SafeMessage
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::SocialSourceId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::TenantRef
@@ -345,6 +377,8 @@ impl core::marker::Sync for ratatoskr_identifiers::IdentifierError
 impl core::marker::Sync for ratatoskr_identifiers::MediaType
 impl core::marker::Sync for ratatoskr_identifiers::NotificationId
 impl core::marker::Sync for ratatoskr_identifiers::OperationId
+impl core::marker::Sync for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::Sync for ratatoskr_identifiers::RepositoryId
 impl core::marker::Sync for ratatoskr_identifiers::SafeMessage
 impl core::marker::Sync for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Sync for ratatoskr_identifiers::TenantRef
@@ -369,6 +403,8 @@ impl core::marker::Unpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::Unpin for ratatoskr_identifiers::MediaType
 impl core::marker::Unpin for ratatoskr_identifiers::NotificationId
 impl core::marker::Unpin for ratatoskr_identifiers::OperationId
+impl core::marker::Unpin for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::Unpin for ratatoskr_identifiers::RepositoryId
 impl core::marker::Unpin for ratatoskr_identifiers::SafeMessage
 impl core::marker::Unpin for ratatoskr_identifiers::SocialSourceId
 impl core::marker::Unpin for ratatoskr_identifiers::TenantRef
@@ -393,6 +429,8 @@ impl core::marker::UnsafeUnpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::MediaType
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::NotificationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::OperationId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::RepositoryId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SafeMessage
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::SocialSourceId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::TenantRef
@@ -417,6 +455,8 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::Identifi
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::MediaType
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::OperationId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::RepositoryId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SafeMessage
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::SocialSourceId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::TenantRef
@@ -441,6 +481,8 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::IdentifierE
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::MediaType
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::OperationId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::RepositoryId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SafeMessage
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::SocialSourceId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::TenantRef
@@ -460,6 +502,8 @@ impl core::str::traits::FromStr for ratatoskr_identifiers::EventId
 impl core::str::traits::FromStr for ratatoskr_identifiers::MediaType
 impl core::str::traits::FromStr for ratatoskr_identifiers::NotificationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::OperationId
+impl core::str::traits::FromStr for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl core::str::traits::FromStr for ratatoskr_identifiers::RepositoryId
 impl core::str::traits::FromStr for ratatoskr_identifiers::SafeMessage
 impl core::str::traits::FromStr for ratatoskr_identifiers::SocialSourceId
 impl core::str::traits::FromStr for ratatoskr_identifiers::TenantRef
@@ -480,6 +524,8 @@ impl ratatoskr_identifiers::Extensions
 impl ratatoskr_identifiers::MediaType
 impl ratatoskr_identifiers::NotificationId
 impl ratatoskr_identifiers::OperationId
+impl ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl ratatoskr_identifiers::RepositoryId
 impl ratatoskr_identifiers::SafeMessage
 impl ratatoskr_identifiers::SocialSourceId
 impl ratatoskr_identifiers::TenantRef
@@ -502,6 +548,8 @@ impl schemars::JsonSchema for ratatoskr_identifiers::Extensions
 impl schemars::JsonSchema for ratatoskr_identifiers::MediaType
 impl schemars::JsonSchema for ratatoskr_identifiers::NotificationId
 impl schemars::JsonSchema for ratatoskr_identifiers::OperationId
+impl schemars::JsonSchema for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl schemars::JsonSchema for ratatoskr_identifiers::RepositoryId
 impl schemars::JsonSchema for ratatoskr_identifiers::SafeMessage
 impl schemars::JsonSchema for ratatoskr_identifiers::SocialSourceId
 impl schemars::JsonSchema for ratatoskr_identifiers::TenantRef
@@ -524,6 +572,8 @@ impl serde_core::ser::Serialize for ratatoskr_identifiers::Extensions
 impl serde_core::ser::Serialize for ratatoskr_identifiers::MediaType
 impl serde_core::ser::Serialize for ratatoskr_identifiers::NotificationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::OperationId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::RepositoryId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::SafeMessage
 impl serde_core::ser::Serialize for ratatoskr_identifiers::SocialSourceId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::TenantRef
@@ -546,6 +596,8 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::Extensions
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::MediaType
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::NotificationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::OperationId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::RepositoryId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SafeMessage
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::SocialSourceId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::TenantRef
@@ -570,6 +622,8 @@ impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::IdentifierError whe
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::MediaType where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::NotificationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::OperationId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::RepositoryId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::TenantRef where U: core::convert::From<T>
@@ -594,6 +648,8 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::IdentifierError 
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::MediaType where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::NotificationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::OperationId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::RepositoryId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::TenantRef where U: core::convert::Into<T>
@@ -618,6 +674,8 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::IdentifierError 
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::MediaType where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::NotificationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::OperationId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::RepositoryId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SafeMessage where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::SocialSourceId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::TenantRef where U: core::convert::TryFrom<T>
@@ -642,6 +700,8 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::IdentifierError where 
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::MediaType where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::RepositoryId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
@@ -662,6 +722,8 @@ impl<T> alloc::string::ToString for ratatoskr_identifiers::IdentifierError where
 impl<T> alloc::string::ToString for ratatoskr_identifiers::MediaType where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::NotificationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::OperationId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::RepositoryId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::SafeMessage where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::SocialSourceId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::TenantRef where T: core::fmt::Display + ?core::marker::Sized
@@ -686,6 +748,8 @@ impl<T> core::any::Any for ratatoskr_identifiers::IdentifierError where T: 'stat
 impl<T> core::any::Any for ratatoskr_identifiers::MediaType where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::NotificationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::OperationId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::RepositoryId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::SafeMessage where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::SocialSourceId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::TenantRef where T: 'static + ?core::marker::Sized
@@ -710,6 +774,8 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::IdentifierError where
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::RepositoryId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::TenantRef where T: ?core::marker::Sized
@@ -734,6 +800,8 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::IdentifierError wh
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::RepositoryId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SafeMessage where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::SocialSourceId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::TenantRef where T: ?core::marker::Sized
@@ -758,6 +826,8 @@ impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::IdentifierError wh
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::MediaType where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::RepositoryId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
@@ -782,6 +852,8 @@ impl<T> core::convert::From<T> for ratatoskr_identifiers::IdentifierError
 impl<T> core::convert::From<T> for ratatoskr_identifiers::MediaType
 impl<T> core::convert::From<T> for ratatoskr_identifiers::NotificationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::OperationId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::RepositoryId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::SafeMessage
 impl<T> core::convert::From<T> for ratatoskr_identifiers::SocialSourceId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::TenantRef
@@ -806,6 +878,8 @@ impl<T> dyn_clone::DynClone for ratatoskr_identifiers::IdentifierError where T: 
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::MediaType where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::OperationId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::RepositoryId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SafeMessage where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::SocialSourceId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::TenantRef where T: core::clone::Clone
@@ -828,6 +902,8 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::Extensions w
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::MediaType where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::NotificationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::OperationId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::RepositoryId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SafeMessage where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::SocialSourceId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::TenantRef where T: for<'de> serde_core::de::Deserialize<'de>
@@ -870,6 +946,10 @@ pub const ratatoskr_identifiers::NotificationId::KIND: &'static str
 pub const ratatoskr_identifiers::NotificationId::PATTERN: &'static str
 pub const ratatoskr_identifiers::OperationId::KIND: &'static str
 pub const ratatoskr_identifiers::OperationId::PATTERN: &'static str
+pub const ratatoskr_identifiers::RepositoryAnalysisRequestId::KIND: &'static str
+pub const ratatoskr_identifiers::RepositoryAnalysisRequestId::PATTERN: &'static str
+pub const ratatoskr_identifiers::RepositoryId::KIND: &'static str
+pub const ratatoskr_identifiers::RepositoryId::PATTERN: &'static str
 pub const ratatoskr_identifiers::SafeMessage::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_identifiers::SafeMessage::MAX_LEN: usize
 pub const ratatoskr_identifiers::SafeMessage::PATTERN: &'static str
@@ -892,6 +972,8 @@ pub fn alloc::string::String::from(ratatoskr_identifiers::EventId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::MediaType) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::OperationId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::RepositoryAnalysisRequestId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::RepositoryId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::SafeMessage) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::SocialSourceId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::TenantRef) -> Self
@@ -1226,6 +1308,8 @@ pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::DocumentId)
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::EventId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::OperationId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::RepositoryAnalysisRequestId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::RepositoryId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::SocialSourceId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::UserId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from_str(&str) -> core::result::Result<Self, Self::Err>
@@ -1400,6 +1484,64 @@ pub fn ratatoskr_identifiers::OperationId::try_from(U) -> core::result::Result<T
 pub fn ratatoskr_identifiers::OperationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_identifiers::OperationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_identifiers::OperationId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::clone(&self) -> ratatoskr_identifiers::RepositoryAnalysisRequestId
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::cmp(&self, &ratatoskr_identifiers::RepositoryAnalysisRequestId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::eq(&self, &ratatoskr_identifiers::RepositoryAnalysisRequestId) -> bool
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::from(T) -> T
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::into(self) -> U
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::new_v7() -> Self
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::partial_cmp(&self, &ratatoskr_identifiers::RepositoryAnalysisRequestId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::RepositoryAnalysisRequestId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::RepositoryId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::RepositoryId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::RepositoryId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::RepositoryId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::RepositoryId::clone(&self) -> ratatoskr_identifiers::RepositoryId
+pub fn ratatoskr_identifiers::RepositoryId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::RepositoryId::cmp(&self, &ratatoskr_identifiers::RepositoryId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::RepositoryId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::RepositoryId::eq(&self, &ratatoskr_identifiers::RepositoryId) -> bool
+pub fn ratatoskr_identifiers::RepositoryId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::RepositoryId::from(T) -> T
+pub fn ratatoskr_identifiers::RepositoryId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::RepositoryId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::RepositoryId::into(self) -> U
+pub fn ratatoskr_identifiers::RepositoryId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::RepositoryId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::RepositoryId::new_v7() -> Self
+pub fn ratatoskr_identifiers::RepositoryId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::RepositoryId::partial_cmp(&self, &ratatoskr_identifiers::RepositoryId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::RepositoryId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::RepositoryId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::RepositoryId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::RepositoryId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::RepositoryId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::RepositoryId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::RepositoryId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::RepositoryId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::RepositoryId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::RepositoryId::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_identifiers::SafeMessage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_identifiers::SafeMessage::as_str(&self) -> &str
 pub fn ratatoskr_identifiers::SafeMessage::borrow(&self) -> &T
@@ -1596,6 +1738,8 @@ pub struct ratatoskr_identifiers::Extensions(_)
 pub struct ratatoskr_identifiers::MediaType(_)
 pub struct ratatoskr_identifiers::NotificationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::OperationId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::RepositoryAnalysisRequestId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::RepositoryId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::SafeMessage(_)
 pub struct ratatoskr_identifiers::SocialSourceId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::TenantRef(_)
@@ -1685,6 +1829,16 @@ pub type ratatoskr_identifiers::OperationId::Error = <U as core::convert::TryFro
 pub type ratatoskr_identifiers::OperationId::Error = core::convert::Infallible
 pub type ratatoskr_identifiers::OperationId::Error = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::OperationId::Owned = T
+pub type ratatoskr_identifiers::RepositoryAnalysisRequestId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::RepositoryAnalysisRequestId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::RepositoryAnalysisRequestId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::RepositoryAnalysisRequestId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::RepositoryAnalysisRequestId::Owned = T
+pub type ratatoskr_identifiers::RepositoryId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::RepositoryId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::RepositoryId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::RepositoryId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::RepositoryId::Owned = T
 pub type ratatoskr_identifiers::SafeMessage::Err = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::SafeMessage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_identifiers::SafeMessage::Error = core::convert::Infallible
@@ -1729,6 +1883,8 @@ pub unsafe fn ratatoskr_identifiers::IdentifierError::clone_to_uninit(&self, *mu
 pub unsafe fn ratatoskr_identifiers::MediaType::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::NotificationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::OperationId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::RepositoryAnalysisRequestId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::RepositoryId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::SafeMessage::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::SocialSourceId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::TenantRef::clone_to_uninit(&self, *mut u8)

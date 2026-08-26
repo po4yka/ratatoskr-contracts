@@ -1,0 +1,11 @@
+{
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "repository_id": "018f0000-0000-7000-8000-000000000601",
+  "github_repository_numeric_id": 42,
+  "request_id": "018f0000-0000-7000-8000-000000000602",
+  "requested_contract": "repository_analysis",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"
+  }
+}

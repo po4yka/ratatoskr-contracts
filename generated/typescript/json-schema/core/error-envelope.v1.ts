@@ -7,13 +7,13 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:17a29d2995cc560a615d8b97f6bbd9c941c243376be2aaed6589c996c35195d5
+ * source_digest: sha256:8a9601020085bba19e27e70290a4775fe1163037f7f62a8f3f6a66ad26772a24
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * A terminal, machine-actionable failure crossing a process boundary
  * (`ARCHITECTURE.md` S5.5).
- * 
+ *
  * Contains no stack trace, no raw provider response, no credential and no storage path
  * (`ARCHITECTURE.md` S14, `SECURITY.md`). S5.5's `details: Option<serde_json::Value>` is
  * deliberately absent: ADR-0008 records that decision, its scope (this contract, major 1) and
@@ -60,7 +60,7 @@ export type EntityRef = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -72,7 +72,7 @@ export type ErrorCode = string;
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -101,11 +101,11 @@ export interface FieldViolation {
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */

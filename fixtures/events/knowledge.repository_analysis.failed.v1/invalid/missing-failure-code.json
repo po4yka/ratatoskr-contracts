@@ -1,0 +1,15 @@
+{
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "repository_id": "018f0000-0000-7000-8000-000000000601",
+  "github_repository_numeric_id": 42,
+  "request_id": "018f0000-0000-7000-8000-000000000602",
+  "source_revision": {
+    "attributes_digest": {
+      "algorithm": "sha256",
+      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "readme": { "state": "absent", "reason": "not_found" }
+  },
+  "retryable": true,
+  "failed_at": "2026-08-26T14:00:00Z"
+}

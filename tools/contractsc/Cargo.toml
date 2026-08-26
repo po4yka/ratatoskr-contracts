@@ -23,6 +23,7 @@ ratatoskr-ai-archive-contracts.workspace = true
 ratatoskr-backup-contracts.workspace     = true
 ratatoskr-notification-contracts.workspace = true
 ratatoskr-blob-transfer-contracts.workspace = true
+ratatoskr-github-contracts.workspace = true
 schemars.workspace   = true
 serde.workspace      = true
 serde_json.workspace = true

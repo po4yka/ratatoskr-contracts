@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:05795fda1707b5dbab8fdb07b612e883cab69c2c79f9d04753fc10d18ac07c9c
+ * source_digest: sha256:7e65034f8cc6ab8a14906d6de2666ed4287ca06790b8e3705753f0b32d31461b
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * One normalized project node.
- * 
+ *
  * Projects group conversations. Every field is either Ratatoskr's own identity, an explicit
  * provider reference, or provider-authored content; nothing is inferred.
  */
@@ -72,7 +72,7 @@ export type AiProjectId = string;
 
 /**
  * The AI provider an archive came from, e.g. `chatgpt`, `claude`.
- * 
+ *
  * **Open on purpose.** A validated token, not an enum: a provider added by a later milestone
  * must not break a running consumer, and no consumer may assume the vocabulary is
  * exhaustive. Branch on equality with known tokens; treat everything else generically. The
@@ -83,7 +83,7 @@ export type AiProvider = string;
 
 /**
  * Multi-line normalized text: project instructions and descriptions.
- * 
+ *
  * Line breaks are content and survive verbatim (`\n`, `\r\n`, `\t`); every other C0
  * control and DEL is banned so text cannot smuggle terminal escapes into a renderer. The
  * upper bound lives in `MAX_LEN` rather than the pattern: a bounded repetition that large
@@ -94,7 +94,7 @@ export type AiText = string;
 
 /**
  * A provider- or user-authored single-line title of a project or conversation.
- * 
+ *
  * Control characters are banned so a title cannot forge log lines; every other Unicode is
  * content. Not machine-parsed; consumers never branch on it.
  */
@@ -108,23 +108,23 @@ export type EntityLocalId = string;
 
 /**
  * Which parser normalized a node, e.g. `chatgpt_export`, `claude_export`.
- * 
+ *
  * **Open on purpose**, like [`AiProvider`]: a parser rename or addition must not break a
  * running consumer. Opaque to consumers beyond display and staleness comparison; no
  * consumer may branch on its internals.
- * 
+ *
  * [`AiProvider`]: crate::AiProvider
  */
 export type ParserName = string;
 
 /**
  * The build of the [`ParserName`] that normalized a node.
- * 
+ *
  * Bounded printable ASCII without whitespace: semver (`1.4.2`), date-based (`2026.08.1`)
  * and commit-sha spellings all fit. Deliberately **not** semver-typed — parsers version in
  * more than one scheme, and any tighter grammar would reject an honest stamp. Consumers MAY
  * compare stamps for staleness; none may parse them for semantics.
- * 
+ *
  * [`ParserName`]: crate::ParserName
  */
 export type ParserVersion = string;

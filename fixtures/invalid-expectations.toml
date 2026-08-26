@@ -24,6 +24,25 @@ error_contains = 'missing field `content_digest`'
 reason         = "Linkage must name the immutable normalized source revision; identity alone is insufficient."
 
 # ---------------------------------------------------------------------------
+# events/knowledge.repository_analysis.*.v1
+# ---------------------------------------------------------------------------
+
+["events/knowledge.repository_analysis.requested.v1/invalid/missing-source-revision.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `source_revision`'
+reason         = "Knowledge may only analyse a declared immutable repository input, never a mutable catalog alias."
+
+["events/knowledge.repository_analysis.completed.v1/invalid/missing-result-ref.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `analysis_result_ref`'
+reason         = "A completion without its opaque Knowledge result reference cannot resolve the Catalog linkage."
+
+["events/knowledge.repository_analysis.failed.v1/invalid/missing-failure-code.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `failure_code`'
+reason         = "A terminal failure must supply a closed safe code so Catalog can resolve pending state without provider diagnostics."
+
+# ---------------------------------------------------------------------------
 # core/event-envelope
 # ---------------------------------------------------------------------------
 

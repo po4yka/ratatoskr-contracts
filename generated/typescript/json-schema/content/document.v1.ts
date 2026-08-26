@@ -7,17 +7,17 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:b394062cc862c1e4524f280d820de3f29a5ba0174c7ca16332dcc74b5e3680fc
+ * source_digest: sha256:3d1126b233b73fb41f55b9c36ea86e7d3e43b439c148babe2d0e27bec8b6521f
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Canonical Document IR version one.
- * 
+ *
  * The shape is the shared intersection between Extractor and Knowledge. Rendered Markdown,
  * quality-scoring diagnostics and service-private storage fields are deliberately absent.
- * 
+ *
  * # Content hashing
- * 
+ *
  * `content_digest` is SHA-256 over the UTF-8 bytes of the repository's canonical JSON rendering
  * of `blocks` alone. Block order, discriminants and text are significant; identity, source
  * address, title, language and provenance are not. A producer does not rewrite extracted text
@@ -61,7 +61,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -118,7 +118,7 @@ export type DocumentAddress = string;
 
 /**
  * One typed block in document reading order.
- * 
+ *
  * The variant set and its fields grow only through the block-kind extension procedure
  * recorded in ADR-0010 (`docs/adr/0010-document-ir-block-kind-extension-procedure.md`):
  * the producer proposes with a landed extraction path, the consumer accepts by naming a

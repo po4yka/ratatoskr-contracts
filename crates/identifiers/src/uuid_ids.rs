@@ -242,6 +242,28 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one repository record in the GitHub Catalog.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. This is Ratatoskr's catalog
+    /// identity, distinct from GitHub's stable numeric repository identifier.
+    pub struct RepositoryId,
+    kind = "repository",
+    description = "Identity of one repository record in the GitHub Catalog. Bare canonical \
+                   lowercase hyphenated UUID; not GitHub's numeric repository identifier."
+}
+
+uuid_newtype! {
+    /// Identity of one repository-analysis request accepted by Knowledge.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. It is the terminal-fact join key,
+    /// not the transport envelope's at-least-once event identity.
+    pub struct RepositoryAnalysisRequestId,
+    kind = "repository_analysis_request",
+    description = "Identity of one repository-analysis request. Bare canonical lowercase \
+                   hyphenated UUID; used to join terminal facts to the accepted request."
+}
+
+uuid_newtype! {
     /// Identity of one import of a provider AI account export — one parse of the immutable
     /// evidence into normalized graph nodes.
     ///

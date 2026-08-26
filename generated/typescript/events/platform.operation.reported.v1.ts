@@ -7,15 +7,15 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:135e2ad1d12e8695748f34343ae643c503ae01b75e6cf85aa6e51a929f4cf3fd
+ * source_digest: sha256:0f0f17d7351eeef8edf89b9695e2889e4106beaba436eee2305e4418151e543a
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `platform.operation.reported.v1`.
- * 
+ *
  * A service reports only the operation progress facts it produced. Platform combines the report
  * with the request facts it owns before clients observe an [`OperationSnapshot`].
- * 
+ *
  * Snapshot-only request facts are absent on purpose: `kind` is chosen by the component that
  * accepted the request, `accepted_at` is that component's clock, and `correlation_id` and
  * `tenant_id` belong to the accepted request. Requiring them here would make every producer copy
@@ -60,7 +60,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -118,7 +118,7 @@ export type EntityRef = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -130,7 +130,7 @@ export type ErrorCode = string;
 /**
  * A terminal, machine-actionable failure crossing a process boundary
  * (`ARCHITECTURE.md` S5.5).
- * 
+ *
  * Contains no stack trace, no raw provider response, no credential and no storage path
  * (`ARCHITECTURE.md` S14, `SECURITY.md`). S5.5's `details: Option<serde_json::Value>` is
  * deliberately absent: ADR-0008 records that decision, its scope (this contract, major 1) and
@@ -172,7 +172,7 @@ export interface ErrorEnvelope {
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -219,7 +219,7 @@ export type OperationResultKind = string;
 
 /**
  * A typed pointer to something the operation produced.
- * 
+ *
  * A pointer, never inlined content: an operation may produce megabytes, and
  * `ARCHITECTURE.md` S14 requires user content to be separable from metadata so telemetry can
  * omit it.
@@ -249,15 +249,15 @@ export type OperationStage = string;
 
 /**
  * The public lifecycle state of a long-running operation (`ARCHITECTURE.md` S5.4).
- * 
+ *
  * **Closed.** An unrecognised value is rejected at deserialization with an error naming the
  * legal variants (`DOMAIN.md` invariant 6, "rejected explicitly" branch; `ARCHITECTURE.md` S9.2
  * permits enum additions only "when consumers preserve **or safely reject** unknown values").
  * A client that guesses at an unknown lifecycle state reports unfinished work as finished, which
  * is the failure this enum exists to prevent. Adding a state is therefore a new major version.
- * 
+ *
  * `#[non_exhaustive]` so a future addition is not source-breaking for downstream Rust.
- * 
+ *
  * Progress is monotonic in lifecycle semantics (S5.4). That is a producer obligation: it is
  * unenforceable from a single snapshot, and this repository publishes no transition table
  * because a transition table is a business workflow (`AGENTS.md` hard boundaries).
@@ -271,11 +271,11 @@ export type ProgressPercent = number;
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */
@@ -289,7 +289,7 @@ export type TraceId = string;
 
 /**
  * A non-terminal problem that did not prevent the recorded outcome.
- * 
+ *
  * A distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires
  * "partial-success warnings are distinct from terminal errors", and a shared type with a
  * severity field would let a producer emit a "warning" that consumers treat as fatal.

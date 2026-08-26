@@ -7,13 +7,13 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:37128446559c366df83ceead57760d16919a4548e273d058f4853a2d8c0ca341
+ * source_digest: sha256:d1b704eee091831c6ae1d54fa072c3960f13c790009d1339502dd419144848f1
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Opens an upload session: the digest-first declaration a client sends before any payload byte
  * moves.
- * 
+ *
  * The declaration is what a receiver refuses on when it refuses at all — size, media type and
  * digest are all known here, so an unwanted upload never transfers its first chunk. The digest
  * algorithm travels inside `digest` and version 1 speaks exactly

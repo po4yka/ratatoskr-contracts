@@ -7,17 +7,17 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:4dec45621f7543b1f885b1295bd0290aeff2dd929a04220646ccd1ba5eb245fa
+ * source_digest: sha256:78486d7445ac57300257d48b24876729d0bb4c1fe76b88d85391702aae860c20
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `vault.backup_policy.acknowledged.v1`: Vault answered a desired-backup-policy
  * version.
- * 
+ *
  * A fact, not a request (`AGENTS.md` principle 9): the decision was reached before this event
  * existed. One acknowledgment answers exactly one policy version; the aggregate identifier of
  * the carrying envelope names that version as `backup_policy:<version>`.
- * 
+ *
  * `Deserialize` is hand-written because the acknowledgment's self-consistency rules are
  * cross-field: outcome versus reasons, reason code versus repository reference, and acceptance
  * implying forward progress. It parses a private mirror struct and then checks. A field added
@@ -59,7 +59,7 @@ export type EntityRef = string;
 
 /**
  * The decision Vault reached on one policy version.
- * 
+ *
  * **Closed on purpose**: consumers branch on the outcome to prune or keep state, and an
  * unrecognized outcome must stop processing instead of being read as either branch.
  */
@@ -67,7 +67,7 @@ export type PolicyOutcome = "accepted" | "rejected";
 
 /**
  * Why a policy version was rejected.
- * 
+ *
  * **Closed on purpose**: GitHub branches on the code to fix and republish, and an unrecognized
  * code must stop processing instead of being filed under a default. Adding a variant is an
  * additive, non-breaking expansion.
@@ -76,7 +76,7 @@ export type PolicyRejectionCode = "policy_version_not_monotonic" | "repository_u
 
 /**
  * One machine-actionable rejection reason.
- * 
+ *
  * A flat struct rather than a tagged enum, keeping the schema simple and the pairing rule — a
  * repository reference appears exactly when the code demands one — enforceable at parse time.
  */

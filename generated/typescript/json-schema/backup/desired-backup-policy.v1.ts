@@ -7,19 +7,19 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:a75135963a978807d87d068af4b44644769bead6ff95e3cf80b9c2a1c0e14a93
+ * source_digest: sha256:f63621531264e564d7c021ae27305be7e1503158d581656abab7cae7e28eb504
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * The versioned policy document GitHub publishes: which repositories must be preserved and at
  * what depth.
- * 
+ *
  * Named `DesiredBackupPolicy`, not `BackupPolicy`, because it states intent, not achieved
  * state: Vault answers each version through [`PolicyAcknowledged`]
  * (`crate::PolicyAcknowledged`). Successive documents for the same estate carry strictly
  * increasing `policy_version` values; succession itself is checked by
  * [`validate_policy_succession`], because one document cannot know its predecessor.
- * 
+ *
  * `Deserialize` is hand-written because two invariants are cross-field: the version floor and
  * per-document uniqueness of repository references. It parses a private mirror struct and then
  * checks. A field added to the public struct and not to the mirror would be silently dropped;
@@ -54,7 +54,7 @@ export interface DesiredBackupPolicy {
 
 /**
  * One explicit narrowing of a repository's mirrored set.
- * 
+ *
  * An exclusion only ever removes candidates; it can never widen what is mirrored.
  */
 export interface BackupExclusion {
@@ -70,7 +70,7 @@ export interface BackupExclusion {
 
 /**
  * What an exclusion's expression matches inside a repository.
- * 
+ *
  * **Closed on purpose**: the scope decides which matcher interprets the expression downstream,
  * and guessing a scope silently changes what is mirrored.
  */
@@ -78,7 +78,7 @@ export type BackupExclusionScope = "refs_matching" | "paths_matching";
 
 /**
  * How urgently a repository's mirror should be brought up relative to its siblings.
- * 
+ *
  * **Closed on purpose**: ordering drives scheduling under contention, and an unrecognized hint
  * silently reorders backups. A hint, never a guarantee — Vault schedules within its own
  * capacity.
@@ -97,7 +97,7 @@ export type ExclusionExpression = string;
 
 /**
  * How often a repository's mirror is refreshed.
- * 
+ *
  * **Closed on purpose.** The class decides backup frequency, so an unrecognized value must stop
  * processing instead of being read as some default cadence. Coarse classes only: mapping a
  * class onto concrete intervals is Vault-scheduler territory, not wire grammar. Adding a
@@ -107,7 +107,7 @@ export type MirrorCadence = "eager" | "daily" | "weekly";
 
 /**
  * The deployable that emitted this record, e.g. `ratatoskr-extractor`.
- * 
+ *
  * A deployment identity, not an instance identity: never a hostname, pod name, region or
  * build version. Kebab-case, because the service names in `README.md` and
  * `ARCHITECTURE.md` S5.2 are kebab-case. Every value used inside this repository must be

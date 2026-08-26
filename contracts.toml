@@ -69,11 +69,11 @@ banned_property_names = [
   "result", "body", "payload",
 ]
 # AGENTS.md principle 6: "Money, sizes, durations, and counters have explicit units."
-required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version"]
+required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version", "_numeric_id"]
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "completed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -355,6 +355,98 @@ note        = "Instant Knowledge accepted the completed analysis. Observed from 
 [contract.event]
 event_type   = "knowledge.analysis.completed.v1"
 payload_type = "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.repository_analysis_requested"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-github"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/knowledge.repository_analysis.requested.v1"
+summary        = "Command: GitHub Catalog requests Knowledge analysis of one immutable repository revision."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryAnalysisRequested"
+output         = "schemas/events/knowledge.repository_analysis.requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:RepositoryAnalysisRequested"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "knowledge.repository_analysis.requested.v1"
+payload_type = "ratatoskr_github_contracts::RepositoryAnalysisRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.repository_analysis_completed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-github"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/knowledge.repository_analysis.completed.v1"
+summary        = "Fact: Knowledge completed analysis of one immutable GitHub repository revision."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
+output         = "schemas/events/knowledge.repository_analysis.completed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:RepositoryAnalysisCompleted"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/completed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge accepted the completed analysis result, according to the Knowledge clock."
+
+[contract.event]
+event_type   = "knowledge.repository_analysis.completed.v1"
+payload_type = "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.repository_analysis_failed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-github"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/knowledge.repository_analysis.failed.v1"
+summary        = "Fact: Knowledge reached a terminal, safe-coded failure for one immutable repository analysis request."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryAnalysisFailed"
+output         = "schemas/events/knowledge.repository_analysis.failed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:RepositoryAnalysisFailed"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/failed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge accepted the terminal failure, according to the Knowledge clock."
+
+[contract.event]
+event_type   = "knowledge.repository_analysis.failed.v1"
+payload_type = "ratatoskr_github_contracts::RepositoryAnalysisFailed"
 
 # ---------------------------------------------------------------------------
 [[contract]]

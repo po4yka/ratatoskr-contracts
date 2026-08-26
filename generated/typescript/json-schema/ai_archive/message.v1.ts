@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:a8e5a2503e1541e610d10772385810199adae63398ed47e3fef6a5a08f652e56
+ * source_digest: sha256:f88704aec6c28afe64c66cd8834e9157efee318d6d61e3dbc6dec7e261df8020
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -56,10 +56,10 @@ export interface AiMessage {
 
 /**
  * One stored asset of an AI conversation: a file, artifact or canvas-like object.
- * 
+ *
  * A reference, never bytes. `asset_kind` says what the provider called it; the [`BlobRef`]
  * names where the bytes live and lets a reader verify them.
- * 
+ *
  * [`BlobRef`]: ratatoskr_identifiers::BlobRef
  */
 export interface AiAsset {
@@ -79,7 +79,7 @@ export interface AiAsset {
 
 /**
  * What an [`AiAsset`] holds, e.g. `file`, `artifact`, `canvas`.
- * 
+ *
  * **Open on purpose.** Providers draw the file/artifact/canvas line differently and redraw
  * it over time; a validated token keeps new kinds from breaking a running consumer, and a
  * consumer renders or skips an unrecognized kind generically while keeping the record.
@@ -88,7 +88,7 @@ export type AiAssetKind = string;
 
 /**
  * Who authored a message.
- * 
+ *
  * **Closed on purpose.** Role drives attribution, indexing and rendering; silently filing an
  * unrecognized role under a default would misattribute statements to their author. Both
  * supported providers' exports normalize into exactly these roles (a Claude export's `human`
@@ -98,7 +98,7 @@ export type AiAuthorRole = "user" | "assistant" | "system" | "tool";
 
 /**
  * One citation inside a message: what was cited and where its evidence lives.
- * 
+ *
  * Every member is optional because providers cite differently — a URL, a stored passage, a
  * bare title, or any combination. A citation with no resolvable member is still honest: it
  * records that the model attributed its statement to something.
@@ -125,7 +125,7 @@ export type AiContentPart = { part_kind: "text"; text: AiText; } | { markdown: A
 
 /**
  * A display name of one stored asset file, as the export named it.
- * 
+ *
  * A single path segment, never a path: no slash separates directories here, because this
  * contract names a stored blob by reference and must never carry a storage location. The
  * first character is alphanumeric or an underscore, so no accepted spelling collides with a
@@ -135,7 +135,7 @@ export type AiFileName = string;
 
 /**
  * The model a message was answered with, e.g. `gpt-5.2`, `claude-opus-4-6`.
- * 
+ *
  * **Open on purpose**: model names are provider-owned and change constantly; dots, digits
  * and hyphens all occur. Consumers treat an unrecognized name as opaque display text.
  */
@@ -143,7 +143,7 @@ export type AiModelName = string;
 
 /**
  * The canonical HTTPS address of a cited source.
- * 
+ *
  * A deliberate lower bound: absolute `https://`, no whitespace, no control characters.
  * Full URL syntax validation belongs to the producer that minted the link; this contract
  * only guarantees the value is unambiguous to render and store. `http://` is refused —
@@ -153,7 +153,7 @@ export type AiSourceUrl = string;
 
 /**
  * Multi-line normalized text: project instructions and descriptions.
- * 
+ *
  * Line breaks are content and survive verbatim (`\n`, `\r\n`, `\t`); every other C0
  * control and DEL is banned so text cannot smuggle terminal escapes into a renderer. The
  * upper bound lives in `MAX_LEN` rather than the pattern: a bounded repetition that large
@@ -164,7 +164,7 @@ export type AiText = string;
 
 /**
  * A provider- or user-authored single-line title of a project or conversation.
- * 
+ *
  * Control characters are banned so a title cannot forge log lines; every other Unicode is
  * content. Not machine-parsed; consumers never branch on it.
  */
@@ -187,7 +187,7 @@ export interface AiToolCall {
 
 /**
  * The name a provider gave one tool, e.g. `web_search`, `code_interpreter`.
- * 
+ *
  * **Open on purpose**, like every provider-owned vocabulary here: dots and hyphens occur in
  * real tool names, so the token alphabet is wider than the snake_case segment grammar.
  */
@@ -195,7 +195,7 @@ export type AiToolName = string;
 
 /**
  * How a tool invocation ended.
- * 
+ *
  * **Closed on purpose**: a consumer must not guess whether an unclassifiable outcome means
  * the assistant's answer rests on a failed call. Adding a variant is an additive wire
  * change consumers adopt by upgrading; until then an unknown outcome stops processing.
@@ -229,7 +229,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -292,23 +292,23 @@ export type MediaType = string;
 
 /**
  * Which parser normalized a node, e.g. `chatgpt_export`, `claude_export`.
- * 
+ *
  * **Open on purpose**, like [`AiProvider`]: a parser rename or addition must not break a
  * running consumer. Opaque to consumers beyond display and staleness comparison; no
  * consumer may branch on its internals.
- * 
+ *
  * [`AiProvider`]: crate::AiProvider
  */
 export type ParserName = string;
 
 /**
  * The build of the [`ParserName`] that normalized a node.
- * 
+ *
  * Bounded printable ASCII without whitespace: semver (`1.4.2`), date-based (`2026.08.1`)
  * and commit-sha spellings all fit. Deliberately **not** semver-typed — parsers version in
  * more than one scheme, and any tighter grammar would reject an honest stamp. Consumers MAY
  * compare stamps for staleness; none may parse them for semantics.
- * 
+ *
  * [`ParserName`]: crate::ParserName
  */
 export type ParserVersion = string;

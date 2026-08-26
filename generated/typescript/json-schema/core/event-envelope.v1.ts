@@ -7,17 +7,17 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:621c5921143805ff3081699df0ccd46bfb3f0d76f7a7fdf630533323b6280d24
+ * source_digest: sha256:0da3de4f66e3397da4fea5f1c338b13c272e0f385d5d43fb016f93056e5cdceb
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * The common envelope for every asynchronous domain event (`ARCHITECTURE.md` S5.2).
- * 
+ *
  * **Tolerant reader.** Unknown top-level fields land in [`Self::extensions`] and are re-emitted
  * unchanged, so adding an optional envelope field stays backward compatible exactly as
  * `AGENTS.md` classifies it. A future *envelope major* is a different matter and is refused by
  * [`EnvelopeSchemaVersion`].
- * 
+ *
  * Field order below is the order in `ARCHITECTURE.md` S5.2, and derived `Serialize` preserves
  * it, so the documented example is a byte-exact fixture.
  */
@@ -108,7 +108,7 @@ export type EventType = string;
 
 /**
  * The deployable that emitted this record, e.g. `ratatoskr-extractor`.
- * 
+ *
  * A deployment identity, not an instance identity: never a hostname, pod name, region or
  * build version. Kebab-case, because the service names in `README.md` and
  * `ARCHITECTURE.md` S5.2 are kebab-case. Every value used inside this repository must be

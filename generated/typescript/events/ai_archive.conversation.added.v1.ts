@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:f9b6bf0f1e50d622a907098d34f572e0a4462f95d94034a4a635bf87dd1ac4b2
+ * source_digest: sha256:19c1b5551ccfc085576d39c4f9642392e7d35f18b586c35179907196bb41df1e
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `ai_archive.conversation.added.v1`: a conversation entered the index.
- * 
+ *
  * Carries the whole conversation graph plus the owning import's identity (state-carried
  * transfer), so at-least-once redelivery is idempotent on `event_id` and no earlier event is
  * needed to interpret this one.
@@ -38,10 +38,10 @@ export type AiArchiveId = string;
 
 /**
  * One stored asset of an AI conversation: a file, artifact or canvas-like object.
- * 
+ *
  * A reference, never bytes. `asset_kind` says what the provider called it; the [`BlobRef`]
  * names where the bytes live and lets a reader verify them.
- * 
+ *
  * [`BlobRef`]: ratatoskr_identifiers::BlobRef
  */
 export interface AiAsset {
@@ -61,7 +61,7 @@ export interface AiAsset {
 
 /**
  * What an [`AiAsset`] holds, e.g. `file`, `artifact`, `canvas`.
- * 
+ *
  * **Open on purpose.** Providers draw the file/artifact/canvas line differently and redraw
  * it over time; a validated token keeps new kinds from breaking a running consumer, and a
  * consumer renders or skips an unrecognized kind generically while keeping the record.
@@ -70,7 +70,7 @@ export type AiAssetKind = string;
 
 /**
  * Who authored a message.
- * 
+ *
  * **Closed on purpose.** Role drives attribution, indexing and rendering; silently filing an
  * unrecognized role under a default would misattribute statements to their author. Both
  * supported providers' exports normalize into exactly these roles (a Claude export's `human`
@@ -80,7 +80,7 @@ export type AiAuthorRole = "user" | "assistant" | "system" | "tool";
 
 /**
  * One citation inside a message: what was cited and where its evidence lives.
- * 
+ *
  * Every member is optional because providers cite differently — a URL, a stored passage, a
  * bare title, or any combination. A citation with no resolvable member is still honest: it
  * records that the model attributed its statement to something.
@@ -107,7 +107,7 @@ export type AiContentPart = { part_kind: "text"; text: AiText; } | { markdown: A
 
 /**
  * One normalized conversation node: the unit Knowledge indexes.
- * 
+ *
  * Messages travel in provider presentation order; the graph structure rides beside the order
  * in each message's optional parent reference, so branches, regenerated answers and edited
  * histories all survive normalization without inventing list positions for them.
@@ -185,7 +185,7 @@ export type AiConversationId = string;
 
 /**
  * A display name of one stored asset file, as the export named it.
- * 
+ *
  * A single path segment, never a path: no slash separates directories here, because this
  * contract names a stored blob by reference and must never carry a storage location. The
  * first character is alphanumeric or an underscore, so no accepted spelling collides with a
@@ -239,7 +239,7 @@ export interface AiMessage {
 
 /**
  * The model a message was answered with, e.g. `gpt-5.2`, `claude-opus-4-6`.
- * 
+ *
  * **Open on purpose**: model names are provider-owned and change constantly; dots, digits
  * and hyphens all occur. Consumers treat an unrecognized name as opaque display text.
  */
@@ -247,7 +247,7 @@ export type AiModelName = string;
 
 /**
  * The AI provider an archive came from, e.g. `chatgpt`, `claude`.
- * 
+ *
  * **Open on purpose.** A validated token, not an enum: a provider added by a later milestone
  * must not break a running consumer, and no consumer may assume the vocabulary is
  * exhaustive. Branch on equality with known tokens; treat everything else generically. The
@@ -258,7 +258,7 @@ export type AiProvider = string;
 
 /**
  * The canonical HTTPS address of a cited source.
- * 
+ *
  * A deliberate lower bound: absolute `https://`, no whitespace, no control characters.
  * Full URL syntax validation belongs to the producer that minted the link; this contract
  * only guarantees the value is unambiguous to render and store. `http://` is refused —
@@ -268,7 +268,7 @@ export type AiSourceUrl = string;
 
 /**
  * Multi-line normalized text: project instructions and descriptions.
- * 
+ *
  * Line breaks are content and survive verbatim (`\n`, `\r\n`, `\t`); every other C0
  * control and DEL is banned so text cannot smuggle terminal escapes into a renderer. The
  * upper bound lives in `MAX_LEN` rather than the pattern: a bounded repetition that large
@@ -279,7 +279,7 @@ export type AiText = string;
 
 /**
  * A provider- or user-authored single-line title of a project or conversation.
- * 
+ *
  * Control characters are banned so a title cannot forge log lines; every other Unicode is
  * content. Not machine-parsed; consumers never branch on it.
  */
@@ -302,7 +302,7 @@ export interface AiToolCall {
 
 /**
  * The name a provider gave one tool, e.g. `web_search`, `code_interpreter`.
- * 
+ *
  * **Open on purpose**, like every provider-owned vocabulary here: dots and hyphens occur in
  * real tool names, so the token alphabet is wider than the snake_case segment grammar.
  */
@@ -310,7 +310,7 @@ export type AiToolName = string;
 
 /**
  * How a tool invocation ended.
- * 
+ *
  * **Closed on purpose**: a consumer must not guess whether an unclassifiable outcome means
  * the assistant's answer rests on a failed call. Adding a variant is an additive wire
  * change consumers adopt by upgrading; until then an unknown outcome stops processing.
@@ -344,7 +344,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -408,7 +408,7 @@ export type EntityRef = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -420,7 +420,7 @@ export type ErrorCode = string;
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -435,34 +435,34 @@ export type MediaType = string;
 
 /**
  * Which parser normalized a node, e.g. `chatgpt_export`, `claude_export`.
- * 
+ *
  * **Open on purpose**, like [`AiProvider`]: a parser rename or addition must not break a
  * running consumer. Opaque to consumers beyond display and staleness comparison; no
  * consumer may branch on its internals.
- * 
+ *
  * [`AiProvider`]: crate::AiProvider
  */
 export type ParserName = string;
 
 /**
  * The build of the [`ParserName`] that normalized a node.
- * 
+ *
  * Bounded printable ASCII without whitespace: semver (`1.4.2`), date-based (`2026.08.1`)
  * and commit-sha spellings all fit. Deliberately **not** semver-typed — parsers version in
  * more than one scheme, and any tighter grammar would reject an honest stamp. Consumers MAY
  * compare stamps for staleness; none may parse them for semantics.
- * 
+ *
  * [`ParserName`]: crate::ParserName
  */
 export type ParserVersion = string;
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */
@@ -475,7 +475,7 @@ export type TenantRef = string;
 
 /**
  * A non-terminal problem that did not prevent the recorded outcome.
- * 
+ *
  * A distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires
  * "partial-success warnings are distinct from terminal errors", and a shared type with a
  * severity field would let a producer emit a "warning" that consumers treat as fatal.

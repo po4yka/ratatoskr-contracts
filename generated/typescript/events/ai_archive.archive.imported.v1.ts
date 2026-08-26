@@ -7,25 +7,25 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:5c785155bd791d36718b6f66f162f384aac1f0367756717e1e657f4ec512b865
+ * source_digest: sha256:05872b3aa20cdc5f528334c69a3eb8d5672c1d6084f3212868bf684c55820d79
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * The head of one import: identity, owner, immutable evidence, timing, stamps, completeness.
- * 
+ *
  * This type is both the head member of [`AiArchiveSnapshot`] and the payload of
  * `ai_archive.archive.imported.v1`, so the event and the snapshot cannot disagree about what
  * an import claims.
- * 
+ *
  * # Cross-field invariant
- * 
+ *
  * Re-checkable through [`Self::validate`]:
- * 
+ *
  * - **A1** every completeness state other than `complete` requires at least one gap naming
  *   what is missing. The rule is asymmetric on purpose: a complete import carries zero gaps by
  *   definition — non-blocking problems travel as warnings instead, exactly like the social
  *   snapshot's complete-capture rule.
- * 
+ *
  * `Deserialize` is hand-written below because invariant A1 is cross-field.
  */
 export interface AiArchiveImport {
@@ -74,7 +74,7 @@ export interface AiArchiveImport {
 
 /**
  * Whether one import obtained the whole export, stated per `docs/ARCHITECTURE.md` S8.3.
- * 
+ *
  * **Closed on purpose**: indexing depth, retention and re-import scheduling hang off this
  * state, so an unrecognized value must stop processing rather than be read as "whole enough".
  * Completeness is evidence-based: a parser may not mark an import `complete` merely because it
@@ -91,7 +91,7 @@ export type AiArchiveId = string;
 
 /**
  * The evidence-based completeness report of one import.
- * 
+ *
  * `conversation_count` and `gap_count` are **verifiable**: they are checked against the
  * payload wherever the payload carries the nodes they count (invariant A2/A3). The imported
  * event's head has no tree attached, so there those two counts are producer-asserted like the
@@ -161,18 +161,18 @@ export interface AiGap {
 /**
  * What kind of hole a [`AiGap`] records, e.g. `missing_file`, `truncated_conversation`,
  * `undecodable_record`.
- * 
+ *
  * **Open on purpose**: providers find new ways to be incomplete, and a consumer must be
  * able to carry a gap it does not classify rather than drop it. Branch on equality with
  * known kinds; treat everything else generically.
- * 
+ *
  * [`AiGap`]: crate::AiGap
  */
 export type AiGapKind = string;
 
 /**
  * The AI provider an archive came from, e.g. `chatgpt`, `claude`.
- * 
+ *
  * **Open on purpose.** A validated token, not an enum: a provider added by a later milestone
  * must not break a running consumer, and no consumer may assume the vocabulary is
  * exhaustive. Branch on equality with known tokens; treat everything else generically. The
@@ -188,7 +188,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -247,7 +247,7 @@ export type EntityLocalId = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -259,7 +259,7 @@ export type ErrorCode = string;
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -274,34 +274,34 @@ export type MediaType = string;
 
 /**
  * Which parser normalized a node, e.g. `chatgpt_export`, `claude_export`.
- * 
+ *
  * **Open on purpose**, like [`AiProvider`]: a parser rename or addition must not break a
  * running consumer. Opaque to consumers beyond display and staleness comparison; no
  * consumer may branch on its internals.
- * 
+ *
  * [`AiProvider`]: crate::AiProvider
  */
 export type ParserName = string;
 
 /**
  * The build of the [`ParserName`] that normalized a node.
- * 
+ *
  * Bounded printable ASCII without whitespace: semver (`1.4.2`), date-based (`2026.08.1`)
  * and commit-sha spellings all fit. Deliberately **not** semver-typed — parsers version in
  * more than one scheme, and any tighter grammar would reject an honest stamp. Consumers MAY
  * compare stamps for staleness; none may parse them for semantics.
- * 
+ *
  * [`ParserName`]: crate::ParserName
  */
 export type ParserVersion = string;
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */
@@ -314,7 +314,7 @@ export type TenantRef = string;
 
 /**
  * A non-terminal problem that did not prevent the recorded outcome.
- * 
+ *
  * A distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires
  * "partial-success warnings are distinct from terminal errors", and a shared type with a
  * severity field would let a producer emit a "warning" that consumers treat as fatal.

@@ -150,6 +150,10 @@ fn roundtrip(rust_path: &str, value: &serde_json::Value) -> Result<serde_json::V
 
 /// Deserializes into the canonical Rust type, then renders it with the repository's canonical
 /// JSON rule — which serializes the **typed value**, so struct fields keep declaration order.
+#[expect(
+    clippy::too_many_lines,
+    reason = "the explicit exhaustive type-to-renderer dispatch is a test seam; splitting it would hide missing registered roots"
+)]
 fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, String> {
     macro_rules! render {
         ($ty:ty) => {
@@ -214,6 +218,15 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_event_envelope::EventEnvelope" => {
             render!(ratatoskr_event_envelope::EventEnvelope)
+        }
+        "ratatoskr_github_contracts::RepositoryAnalysisCompleted" => {
+            render!(ratatoskr_github_contracts::RepositoryAnalysisCompleted)
+        }
+        "ratatoskr_github_contracts::RepositoryAnalysisFailed" => {
+            render!(ratatoskr_github_contracts::RepositoryAnalysisFailed)
+        }
+        "ratatoskr_github_contracts::RepositoryAnalysisRequested" => {
+            render!(ratatoskr_github_contracts::RepositoryAnalysisRequested)
         }
         "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
         "ratatoskr_notification_contracts::NotificationRaised" => {

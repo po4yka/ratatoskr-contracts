@@ -7,12 +7,12 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:fecd10d7c568765e71c56d9fbf699ab3ffc7210b59c42d0f12e5dea83ef23863
+ * source_digest: sha256:c207f191bdae03b79d48d1db9749fc3a3513a991ae28d333f1f4527d5d6fa1d6
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `social.source.captured.v1`: a source became part of a user's library.
- * 
+ *
  * A fact, not a request (`AGENTS.md` principle 9). The whole snapshot travels in the payload —
  * state-carried transfer — so a consumer can index the source from this event alone and an
  * at-least-once redelivery is idempotent on `event_id`.
@@ -27,7 +27,7 @@ export interface SocialSourceCaptured {
 
 /**
  * How the source entered the user's library.
- * 
+ *
  * **Closed on purpose.** An unknown value is rejected at parse rather than guessed at: the
  * method determines retention, re-acquisition and provenance handling, and silently filing an
  * unrecognized method under a default is how provenance rots. Adding a variant is an additive
@@ -37,7 +37,7 @@ export type AcquisitionMethod = "official_api" | "share_extension" | "browser_ex
 
 /**
  * A provider handle (screen name) in its bare form, without the `@` presentation prefix.
- * 
+ *
  * No external specification fixes one handle grammar across X, Instagram and Threads, so
  * this is a bounded attribute alphabet rather than an ADR-0007 clause-3 external grammar:
  * alphanumerics, dots and underscores. Handles are single-line tokens; the `@` is added by
@@ -52,7 +52,7 @@ export type BlobOwner = string;
 
 /**
  * Reference to content-addressed bytes owned by one service.
- * 
+ *
  * This is a reference, not a storage API. The owner writes and resolves the bytes under its own
  * content-addressed directory. No host, filesystem path, signed URL, credentials, or expiry can
  * appear in this contract.
@@ -80,7 +80,7 @@ export interface BlobRef {
 
 /**
  * Whether this capture obtained everything the producer knows how to capture.
- * 
+ *
  * **Closed on purpose**: a consumer must not guess whether a capture it cannot classify is
  * safe to treat as whole. `partial` requires at least one warning naming what is missing
  * (enforced where the snapshot is parsed).
@@ -113,7 +113,7 @@ export type DigestHex = string;
 
 /**
  * A provider-authored or user-authored display name.
- * 
+ *
  * Single-line human text: control characters are banned so a name cannot forge log lines,
  * but any other Unicode is content. Not machine-parsed; consumers never branch on it.
  */
@@ -128,7 +128,7 @@ export type EntityLocalId = string;
 /**
  * Stable, machine-actionable error code: 2–4 dot-separated snake_case segments, e.g.
  * `platform.operation.not_found`.
- * 
+ *
  * The code is the contract; the message is not. A consumer branches on this and on nothing
  * else (`AGENTS.md` principle 7: "Separate stable error codes from human-readable messages
  * and provider diagnostics"). Service-owned: `ARCHITECTURE.md` S5.5 requires provider
@@ -140,7 +140,7 @@ export type ErrorCode = string;
 /**
  * RFC 6901 JSON Pointer to the offending member of the rejected payload, restricted to
  * identifier-shaped tokens, e.g. `/blocks/3/text`.
- * 
+ *
  * Structure only. The restricted alphabet makes it structurally impossible to smuggle a
  * rejected **value** (which may be user content or a credential) into an error payload —
  * `/tenant_id=alice@example.com` does not parse. `ARCHITECTURE.md` S5.5: "validation errors
@@ -155,7 +155,7 @@ export type MediaType = string;
 
 /**
  * The platform a social source originates from, e.g. `x`, `instagram`, `threads`.
- * 
+ *
  * **Open on purpose.** A validated token, not an enum: a platform added by a later
  * milestone must not break a running consumer, and no consumer may assume the vocabulary
  * is exhaustive. Branch on equality with known tokens; treat everything else generically.
@@ -166,7 +166,7 @@ export type Platform = string;
 
 /**
  * The canonical HTTPS permalink of a source on its platform.
- * 
+ *
  * A deliberate lower bound: absolute `https://`, no whitespace, no control characters.
  * Full URL syntax validation belongs to the producer that minted the link; this contract
  * only guarantees the value is unambiguous to render and store. `http://` is refused —
@@ -176,7 +176,7 @@ export type PostPermalink = string;
 
 /**
  * Normalized user-authored text: a post body, a caption, media alt text.
- * 
+ *
  * Line breaks are content and survive verbatim (`\n`, `\r\n`, `\t`); every other C0
  * control and DEL is banned so a post cannot smuggle terminal escapes into a renderer.
  * The upper bound lives in `MAX_LEN` rather than the pattern: a bounded repetition that
@@ -187,11 +187,11 @@ export type PostText = string;
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */
@@ -199,7 +199,7 @@ export type SafeMessage = string;
 
 /**
  * What the saved-state claim in this snapshot is worth.
- * 
+ *
  * **Closed on purpose.** `AGENTS.md`: never model Instagram or Threads explicit capture as
  * authoritative membership in the provider's native Saved list. An unknown authority must stop
  * processing — a consumer that guesses treats a maybe-saved source as saved.
@@ -208,7 +208,7 @@ export type SavedAuthority = "authoritative_platform_state" | "explicit_user_cap
 
 /**
  * The author of a social source, denormalized into the record.
- * 
+ *
  * Inline on purpose: one captured event carries everything Knowledge needs to attribute and
  * index the source, with no second lookup against an author record this repository does not
  * define. The author's identity is the provider's (`platform` plus `external_author_id`),
@@ -235,11 +235,11 @@ export interface SocialAuthor {
 
 /**
  * Membership of this source in one provider-native folder (e.g. an X bookmark folder).
- * 
+ *
  * Provider-native only, on purpose: `AGENTS.md` separates native collections from
  * Ratatoskr-side ones, and no current consumer changeset needs the latter — when one does,
  * that is a new field with its own authority story, not a second variant smuggled in here.
- * 
+ *
  * Membership says nothing about [`SavedAuthority`](crate::SavedAuthority): it is populated
  * only where the provider actually exposes folders through a supported channel. An Instagram
  * or Threads explicit capture carries none, and must never be read as native Saved-list
@@ -258,7 +258,7 @@ export interface SocialFolderMembership {
 
 /**
  * One media attachment of a social source, described by reference.
- * 
+ *
  * The bytes live behind the [`BlobRef`]; this contract never carries image, video or other
  * media bytes, so a payload stays indexable and loggable without a retention decision.
  */
@@ -280,7 +280,7 @@ export interface SocialMediaItem {
 
 /**
  * What kind of bytes a media item refers to, e.g. `image`, `video`, `animated`.
- * 
+ *
  * **Open on purpose**, like [`Platform`](crate::Platform): providers add kinds without
  * warning, and an unknown kind is rendered generically or skipped — never a reason to
  * discard the record. Consumers branch on equality; treat everything else generically.
@@ -289,7 +289,7 @@ export type SocialMediaKind = string;
 
 /**
  * A link from this source to the post it quotes, replies to or reposts.
- * 
+ *
  * The target is named by its provider external id on the same platform — relations never
  * cross platforms, so no platform field is carried. The target's own Ratatoskr identity, if
  * it ever becomes one, is discovered by consumers through `platform` plus this id.
@@ -308,7 +308,7 @@ export interface SocialRelation {
 /**
  * How this source references another post on the same platform, e.g. `quote`, `reply`,
  * `repost`.
- * 
+ *
  * **Open on purpose**, like [`SocialMediaKind`](crate::SocialMediaKind): a relation kind a
  * consumer does not know is skipped while the record is kept, never a reason to discard
  * the snapshot.
@@ -325,26 +325,26 @@ export type SocialSourceId = string;
 /**
  * A normalized social source plus the facts of *this* capture of it
  * (`docs/ARCHITECTURE.md` S7).
- * 
+ *
  * Named `SocialSourceSnapshot`, not `SocialSource`, because this repository owns wire
  * representations, not entities: two snapshots of the same `social_source_id` captured at
  * different `captured_at` instants are both valid and are not expected to be equal.
- * 
+ *
  * Record facts (identity, author, text, media, relations, folders) sit beside capture facts
  * (acquisition, authority, completeness, availability, checkpoint, warnings) in one flat
  * structure, mirroring the operation snapshot precedent. Both event payloads carry this whole
  * struct — state-carried transfer makes at-least-once redelivery idempotent.
- * 
+ *
  * `Deserialize` is hand-written because the invariant below is cross-field and serde has no
  * validation hook. It parses a private mirror struct and then checks. A field added to the
  * public struct and not the mirror would be silently dropped; test
  * `snapshot_roundtrip.rs::roundtrips_a_snapshot_carrying_every_field` fails immediately if
  * that happens.
- * 
+ *
  * # Cross-field invariant
- * 
+ *
  * Re-checkable through [`Self::validate`]:
- * 
+ *
  * - **S1** `completeness = partial` requires at least one warning naming what is missing.
  *   The rule is asymmetric on purpose: a complete capture may still carry warnings for
  *   problems that did not reduce completeness.
@@ -458,7 +458,7 @@ export interface SocialSourceSnapshot {
 /**
  * An opaque sync-checkpoint cursor produced by the capturing service's sync run: where a
  * later sync of the same provider collection may resume.
- * 
+ *
  * Opaque on purpose. Cursors are provider-defined continuation tokens (base64 blobs, JSON
  * fragments); any tighter grammar would break on provider evolution, and no consumer may
  * interpret or rewrite one. The bound is deliberately loose — printable ASCII without
@@ -473,7 +473,7 @@ export type TenantRef = string;
 
 /**
  * The observed upstream availability of the source at `captured_at`.
- * 
+ *
  * **Closed on purpose**: availability drives conservative retention and re-fetch decisions,
  * and an unrecognized state must stop processing instead of being read as "fine". A source
  * observed deleted upstream keeps whatever was captured before it went away.
@@ -482,7 +482,7 @@ export type UpstreamAvailability = "available" | "unavailable" | "deleted_upstre
 
 /**
  * A non-terminal problem that did not prevent the recorded outcome.
- * 
+ *
  * A distinct type, not a flag on [`ErrorEnvelope`]: `ARCHITECTURE.md` S5.5 requires
  * "partial-success warnings are distinct from terminal errors", and a shared type with a
  * severity field would let a producer emit a "warning" that consumers treat as fatal.

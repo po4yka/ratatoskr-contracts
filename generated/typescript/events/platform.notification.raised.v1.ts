@@ -7,20 +7,20 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:90b507c86c18f0c5b61a1b7fdc53e3b0d621ad70c38ac4ae45ccb6f16d5fff88
+ * source_digest: sha256:0e0b719d3fd0040ae344234866642236336a531d7a5580881d46ced1eedae2ab
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `platform.notification.raised.v1`: a producer judged that one of its users should
  * be told something.
- * 
+ *
  * A fact, not an order (`AGENTS.md` principle 9): by the time this payload exists the judgment
  * is complete, and whether a message is actually sent — preference filtering, dedupe, quiet
  * hours, channel choice — is `ratatoskr-telegram`'s decision. The aggregate identifier of the
  * carrying envelope names the raised notification itself as `notification:<uuid>`, because the
  * notification is what consumers acknowledge, suppress and dedupe; its identity is never
  * borrowed from the causing operation or analysis.
- * 
+ *
  * The only cross-field invariant today is the taxonomy registry floor, but `Deserialize` is
  * hand-written anyway, following the crate family's checked-intermediate pattern: a private
  * wire mirror parses field by field, then [`Self::validate`] runs. A field added to the public
@@ -105,10 +105,10 @@ export type NotificationId = string;
 
 /**
  * How urgently a producer judges its notification should reach the user.
- * 
+ *
  * A **hint, never an order**: enforcement stays with `ratatoskr-telegram`, which applies it
  * through the user's own preferences. Absent means the consumer's default ordering applies.
- * 
+ *
  * **Closed on purpose**, mirroring `BackupPriorityHint`: a guessed priority silently reorders
  * delivery, so an unrecognized value must stop processing rather than be read as some default.
  * Adding a level later is an additive, non-breaking expansion governed by the payload major,
@@ -136,11 +136,11 @@ export interface QuietHoursHint {
 
 /**
  * Human-readable text safe to show to an operator or an end user.
- * 
+ *
  * 1..=1024 characters with no C0 or DEL control characters. The newline ban is the point: it
  * makes it structurally impossible to smuggle a stack trace or a forged log line into a wire
  * message (`ARCHITECTURE.md` S5.5 "no stack traces or secrets in wire errors", S14).
- * 
+ *
  * Not machine-parsed and not stable across releases; changing a message is not a contract
  * change. Consumers branch on codes, never on this.
  */

@@ -98,6 +98,12 @@ root_types! {
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
+    "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
+        => ratatoskr_github_contracts::RepositoryAnalysisCompleted,
+    "ratatoskr_github_contracts::RepositoryAnalysisFailed"
+        => ratatoskr_github_contracts::RepositoryAnalysisFailed,
+    "ratatoskr_github_contracts::RepositoryAnalysisRequested"
+        => ratatoskr_github_contracts::RepositoryAnalysisRequested,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
     "ratatoskr_notification_contracts::NotificationRaised"
         => ratatoskr_notification_contracts::NotificationRaised,
@@ -142,6 +148,18 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_backup_contracts::PolicyAcknowledged",
         <ratatoskr_backup_contracts::PolicyAcknowledged as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_github_contracts::RepositoryAnalysisCompleted",
+        <ratatoskr_github_contracts::RepositoryAnalysisCompleted as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_github_contracts::RepositoryAnalysisFailed",
+        <ratatoskr_github_contracts::RepositoryAnalysisFailed as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_github_contracts::RepositoryAnalysisRequested",
+        <ratatoskr_github_contracts::RepositoryAnalysisRequested as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
         "ratatoskr_notification_contracts::NotificationRaised",

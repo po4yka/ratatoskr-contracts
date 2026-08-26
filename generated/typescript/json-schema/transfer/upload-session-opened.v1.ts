@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:a6fa6727886808611c035c0a2eef4a698dd2edcf0068e43b7cdfb7348daeacd9
+ * source_digest: sha256:bc6e3c3f10b393e8692521131c71da28edd2b273b31b1dde18bc608f6a884bb0
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -37,7 +37,7 @@ export interface UploadSessionOpened {
 /**
  * Server-issued handle naming one upload session. Required on every chunk receipt, status
  * and finalize call after opening.
- * 
+ *
  * Opaque by contract: a client compares tokens, stores them and presents them back, and
  * never parses one. The issuing service mints it unguessable — at least 128 bits of entropy
  * — because whoever holds the token drives the session; expiry is the server's decision,
