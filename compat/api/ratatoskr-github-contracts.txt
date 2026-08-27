@@ -1228,7 +1228,6 @@ pub fn ratatoskr_github_contracts::RepositoryActionRequest::deserialize<__D>(__D
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::eq(&self, &ratatoskr_github_contracts::RepositoryActionRequest) -> bool
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::from(T) -> T
-pub fn ratatoskr_github_contracts::RepositoryActionRequest::inline_schema() -> bool
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::into(self) -> U
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
 pub fn ratatoskr_github_contracts::RepositoryActionRequest::new(ratatoskr_github_contracts::RepositoryActionCapability, ratatoskr_github_contracts::RepositoryPreviewTarget, core::option::Option<ratatoskr_github_contracts::GitHubAccountRef>, ratatoskr_github_contracts::ConfirmationEvidenceRef, ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> core::result::Result<Self, ratatoskr_github_contracts::RepositoryInteractionContractError>
@@ -1248,7 +1247,6 @@ pub fn ratatoskr_github_contracts::RepositoryActionResult::deserialize<__D>(__D)
 pub fn ratatoskr_github_contracts::RepositoryActionResult::eq(&self, &ratatoskr_github_contracts::RepositoryActionResult) -> bool
 pub fn ratatoskr_github_contracts::RepositoryActionResult::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
 pub fn ratatoskr_github_contracts::RepositoryActionResult::from(T) -> T
-pub fn ratatoskr_github_contracts::RepositoryActionResult::inline_schema() -> bool
 pub fn ratatoskr_github_contracts::RepositoryActionResult::into(self) -> U
 pub fn ratatoskr_github_contracts::RepositoryActionResult::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
 pub fn ratatoskr_github_contracts::RepositoryActionResult::new(ratatoskr_github_contracts::RepositoryMetadataOutcome, ratatoskr_github_contracts::RepositoryProviderStarOutcome, ratatoskr_github_contracts::RepositoryDesiredBackupOutcome) -> Self

@@ -428,6 +428,7 @@ impl ratatoskr_social_contracts::Platform
 impl ratatoskr_social_contracts::PostPermalink
 impl ratatoskr_social_contracts::PostText
 impl ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl ratatoskr_social_contracts::SocialCaptureProvider
 impl ratatoskr_social_contracts::SocialMediaKind
 impl ratatoskr_social_contracts::SocialRelationKind
 impl ratatoskr_social_contracts::SocialSourceSnapshot
@@ -811,6 +812,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SyncChe
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::UpstreamAvailability where T: for<'de> serde_core::de::Deserialize<'de>
 pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::as_str(self) -> &'static str
 pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::is_terminal_source_failure(self) -> bool
+pub const fn ratatoskr_social_contracts::SocialCaptureProvider::command_subject(self) -> &'static str
 pub const ratatoskr_social_contracts::AuthorHandle::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::AuthorHandle::MAX_LEN: usize
 pub const ratatoskr_social_contracts::AuthorHandle::PATTERN: &'static str
