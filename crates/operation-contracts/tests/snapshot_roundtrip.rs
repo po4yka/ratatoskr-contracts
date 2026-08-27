@@ -87,6 +87,7 @@ fn snapshot_carrying_every_field() -> OperationSnapshot {
             target: EntityRef::parse("document:018f0000-0000-7000-8000-000000000021")
                 .expect("a legal reference"),
             blob: Some(blob_ref()),
+            ai_archive_import_summary: None,
             extensions: result_extensions,
         }],
         errors: vec![ErrorEnvelope {
@@ -123,6 +124,71 @@ fn snapshot_carrying_every_field() -> OperationSnapshot {
         terminated_at: Some(instant("2026-08-17T10:05:00Z")),
         extensions,
     }
+}
+
+#[test]
+fn ai_archive_import_summary_is_a_typed_result_field_not_an_extension() {
+    let result: OperationResultRef = serde_json::from_value(serde_json::json!({
+        "result_kind": "ai_archive.import",
+        "target": "ai_archive:018f0000-0000-7000-8000-000000000021",
+        "ai_archive_import_summary": {
+            "ai_archive_id": "018f0000-0000-7000-8000-000000000021",
+            "provider": "chatgpt",
+            "completeness": "complete",
+            "conversation_count": 1,
+            "message_count": 2,
+            "asset_count": 3,
+            "gap_count": 0,
+            "warning_count": 0
+        }
+    }))
+    .expect("the summary is a valid operation result");
+
+    assert!(
+        result.extensions.is_empty(),
+        "an authored summary must not use the extension preservation channel"
+    );
+}
+
+#[test]
+fn ai_archive_import_summary_must_match_an_ai_archive_result_target() {
+    let non_archive_result = serde_json::from_value::<OperationResultRef>(serde_json::json!({
+        "result_kind": "content.document",
+        "target": "document:018f0000-0000-7000-8000-000000000021",
+        "ai_archive_import_summary": {
+            "ai_archive_id": "018f0000-0000-7000-8000-000000000021",
+            "provider": "chatgpt",
+            "completeness": "complete",
+            "conversation_count": 1,
+            "message_count": 2,
+            "asset_count": 3,
+            "gap_count": 0,
+            "warning_count": 0
+        }
+    }));
+    assert!(
+        non_archive_result.is_err(),
+        "a typed AI archive summary is invalid on a non-AI result"
+    );
+
+    let mismatched_target = serde_json::from_value::<OperationResultRef>(serde_json::json!({
+        "result_kind": "ai_archive.import",
+        "target": "ai_archive:018f0000-0000-7000-8000-000000000022",
+        "ai_archive_import_summary": {
+            "ai_archive_id": "018f0000-0000-7000-8000-000000000021",
+            "provider": "chatgpt",
+            "completeness": "complete",
+            "conversation_count": 1,
+            "message_count": 2,
+            "asset_count": 3,
+            "gap_count": 0,
+            "warning_count": 0
+        }
+    }));
+    assert!(
+        mismatched_target.is_err(),
+        "an AI archive summary must name the same archive as its result target"
+    );
 }
 
 /// O-2. The drift guard for the hand-written `Deserialize`.

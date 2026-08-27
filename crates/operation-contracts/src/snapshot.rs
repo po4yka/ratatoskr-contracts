@@ -34,6 +34,7 @@ use crate::status::OperationStatus;
 /// - **I3** `succeeded` forbids errors.
 /// - **I4** `partially_succeeded` requires at least one warning or error.
 /// - **I5** `status_changed_at` and `terminated_at` are never earlier than `accepted_at`.
+/// - **I6** every result satisfies its own typed-field association constraints.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, schemars::JsonSchema)]
 pub struct OperationSnapshot {
     /// Stable identity of the operation, assigned when it was accepted and never reused.
@@ -110,7 +111,8 @@ impl OperationSnapshot {
     /// [`OperationContractError::FailedWithoutError`] for I2,
     /// [`OperationContractError::SucceededWithError`] for I3,
     /// [`OperationContractError::PartialWithoutDiagnostic`] for I4,
-    /// [`OperationContractError::TimestampsOutOfOrder`] for I5.
+    /// [`OperationContractError::TimestampsOutOfOrder`] for I5, or any result's association
+    /// error for I6.
     pub fn validate(&self) -> Result<(), OperationContractError> {
         // I1
         if self.terminated_at.is_some() != self.status.is_terminal() {
@@ -152,6 +154,10 @@ impl OperationSnapshot {
                 later_value: terminated_at.to_wire(),
                 accepted_at: self.accepted_at.to_wire(),
             });
+        }
+        // I6
+        for result in &self.results {
+            result.validate()?;
         }
         Ok(())
     }

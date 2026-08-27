@@ -157,6 +157,7 @@ impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_co
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationReported
 impl ratatoskr_operation_contracts::OperationKind
 impl ratatoskr_operation_contracts::OperationResultKind
+impl ratatoskr_operation_contracts::OperationResultRef
 impl ratatoskr_operation_contracts::OperationSnapshot
 impl ratatoskr_operation_contracts::OperationStage
 impl ratatoskr_operation_contracts::OperationStatus
@@ -433,7 +434,7 @@ pub fn ratatoskr_operation_contracts::OperationResultRef::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::OperationResultRef::borrow_mut(&mut self) -> &mut T
 pub fn ratatoskr_operation_contracts::OperationResultRef::clone(&self) -> ratatoskr_operation_contracts::OperationResultRef
 pub fn ratatoskr_operation_contracts::OperationResultRef::clone_into(&self, &mut T)
-pub fn ratatoskr_operation_contracts::OperationResultRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::OperationResultRef::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
 pub fn ratatoskr_operation_contracts::OperationResultRef::eq(&self, &ratatoskr_operation_contracts::OperationResultRef) -> bool
 pub fn ratatoskr_operation_contracts::OperationResultRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
 pub fn ratatoskr_operation_contracts::OperationResultRef::from(T) -> T
@@ -447,6 +448,7 @@ pub fn ratatoskr_operation_contracts::OperationResultRef::to_owned(&self) -> T
 pub fn ratatoskr_operation_contracts::OperationResultRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_operation_contracts::OperationResultRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::OperationResultRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationResultRef::validate(&self) -> core::result::Result<(), ratatoskr_operation_contracts::OperationContractError>
 pub fn ratatoskr_operation_contracts::OperationSnapshot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::OperationSnapshot::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::OperationSnapshot::borrow_mut(&mut self) -> &mut T
@@ -542,6 +544,11 @@ pub fn ratatoskr_operation_contracts::ProgressPercent::try_into(self) -> core::r
 pub fn ratatoskr_operation_contracts::ProgressPercent::type_id(&self) -> core::any::TypeId
 pub fn u8::from(ratatoskr_operation_contracts::ProgressPercent) -> Self
 pub mod ratatoskr_operation_contracts
+pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch
+pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch::actual: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch::expected: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryUnexpectedResultKind
+pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryUnexpectedResultKind::actual: alloc::string::String
 pub ratatoskr_operation_contracts::OperationContractError::FailedWithoutError
 pub ratatoskr_operation_contracts::OperationContractError::Identifier(ratatoskr_identifiers::error::IdentifierError)
 pub ratatoskr_operation_contracts::OperationContractError::PartialWithoutDiagnostic
@@ -566,6 +573,7 @@ pub ratatoskr_operation_contracts::OperationReported::results: alloc::vec::Vec<r
 pub ratatoskr_operation_contracts::OperationReported::stage: core::option::Option<ratatoskr_operation_contracts::OperationStage>
 pub ratatoskr_operation_contracts::OperationReported::status: ratatoskr_operation_contracts::OperationStatus
 pub ratatoskr_operation_contracts::OperationReported::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_operation_contracts::OperationResultRef::ai_archive_import_summary: core::option::Option<ratatoskr_ai_archive_contracts::snapshot::AiArchiveOperationSummary>
 pub ratatoskr_operation_contracts::OperationResultRef::blob: core::option::Option<ratatoskr_identifiers::blob::BlobRef>
 pub ratatoskr_operation_contracts::OperationResultRef::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_operation_contracts::OperationResultRef::result_kind: ratatoskr_operation_contracts::OperationResultKind

@@ -126,6 +126,40 @@ pub struct AiCompletenessReport {
     pub gaps: Vec<AiGap>,
 }
 
+/// The privacy-safe import outcome that an operation result may expose to a client.
+///
+/// It carries only the immutable archive identity, provider, exact completeness classification,
+/// and aggregate counts; gap and warning details remain on the owning archive report.
+#[derive(
+    Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize, schemars::JsonSchema,
+)]
+#[serde(deny_unknown_fields)]
+pub struct AiArchiveOperationSummary {
+    /// The immutable archive import produced by the operation.
+    pub ai_archive_id: AiArchiveId,
+
+    /// The provider whose export the archive represents.
+    pub provider: AiProvider,
+
+    /// The producer's exact evidence-based import completeness classification.
+    pub completeness: AiArchiveCompleteness,
+
+    /// Number of normalized conversations in this import.
+    pub conversation_count: u32,
+
+    /// Number of normalized messages in this import.
+    pub message_count: u32,
+
+    /// Number of stored asset references in this import.
+    pub asset_count: u32,
+
+    /// Number of known archive-level gaps in this import.
+    pub gap_count: u32,
+
+    /// Number of non-gap warnings produced while importing this archive.
+    pub warning_count: u32,
+}
+
 /// The head of one import: identity, owner, immutable evidence, timing, stamps, completeness.
 ///
 /// This type is both the head member of [`AiArchiveSnapshot`] and the payload of
@@ -195,6 +229,21 @@ impl AiArchiveImport {
             return Err(AiArchiveContractError::IncompleteWithoutGap);
         }
         Ok(())
+    }
+}
+
+impl From<&AiArchiveImport> for AiArchiveOperationSummary {
+    fn from(import: &AiArchiveImport) -> Self {
+        Self {
+            ai_archive_id: import.ai_archive_id,
+            provider: import.provider.clone(),
+            completeness: import.completeness_report.completeness,
+            conversation_count: import.completeness_report.conversation_count,
+            message_count: import.completeness_report.message_count,
+            asset_count: import.completeness_report.asset_count,
+            gap_count: import.completeness_report.gap_count,
+            warning_count: u32::try_from(import.warnings.len()).unwrap_or(u32::MAX),
+        }
     }
 }
 

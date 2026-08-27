@@ -38,8 +38,8 @@ pub use crate::error::AiArchiveContractError;
 pub use crate::events::{AiConversationAdded, AiConversationUpdated};
 pub use crate::graph::{AiAuthorRole, AiConversation, AiMessage, AiModelName, AiProject};
 pub use crate::snapshot::{
-    AiArchiveCompleteness, AiArchiveImport, AiArchiveSnapshot, AiCompletenessReport, AiGap,
-    AiGapKind,
+    AiArchiveCompleteness, AiArchiveImport, AiArchiveOperationSummary, AiArchiveSnapshot,
+    AiCompletenessReport, AiGap, AiGapKind,
 };
 pub use crate::tokens::{AiProvider, ParserName, ParserVersion};
 pub use crate::values::{AiFileName, AiText, AiTitle};

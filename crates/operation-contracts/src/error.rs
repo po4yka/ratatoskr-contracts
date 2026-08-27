@@ -52,6 +52,24 @@ pub enum OperationContractError {
         accepted_at: String,
     },
 
+    /// An AI archive summary was attached to a result of another kind.
+    #[error("ai_archive_import_summary requires result_kind `ai_archive.import`; got `{actual}`")]
+    AiArchiveSummaryUnexpectedResultKind {
+        /// The result kind carried by the invalid result.
+        actual: String,
+    },
+
+    /// An AI archive summary identifies a different archive from the result target.
+    #[error(
+        "ai_archive_import_summary archive id must match target; expected `{expected}`, got `{actual}`"
+    )]
+    AiArchiveSummaryTargetMismatch {
+        /// The archive reference derived from the typed summary.
+        expected: String,
+        /// The target reference supplied by the result.
+        actual: String,
+    },
+
     /// An identifier inside an operation contract failed to parse.
     #[error(transparent)]
     Identifier(#[from] ratatoskr_identifiers::IdentifierError),

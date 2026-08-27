@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:08fa940ab410a50c6f5e68f4224fe739d29ad23e93365968121486c22ebfd725
+ * source_digest: sha256:f99802b19592c880e9b8dbf9cfeaa4876ab0aaa062ef112986d78b9e1cfba24b
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -36,6 +36,7 @@
  * - **I3** `succeeded` forbids errors.
  * - **I4** `partially_succeeded` requires at least one warning or error.
  * - **I5** `status_changed_at` and `terminated_at` are never earlier than `accepted_at`.
+ * - **I6** every result satisfies its own typed-field association constraints.
  */
 export interface OperationSnapshot {
  /**
@@ -106,6 +107,85 @@ export interface OperationSnapshot {
  warnings?: WarningEnvelope[];
  [key: string]: unknown;
 }
+
+/**
+ * Whether one import obtained the whole export, stated per `docs/ARCHITECTURE.md` S8.3.
+ *
+ * **Closed on purpose**: indexing depth, retention and re-import scheduling hang off this
+ * state, so an unrecognized value must stop processing rather than be read as "whole enough".
+ * Completeness is evidence-based: a parser may not mark an import `complete` merely because it
+ * parsed every file it knows about.
+ */
+export type AiArchiveCompleteness = "complete" | "conversations_complete" | "structurally_partial" | "assets_partial" | "unknown" | "failed_validation";
+
+/**
+ * Identity of one import of a provider AI account export. Bare canonical lowercase hyphenated UUID; not namespaced.
+ *
+ * Format: uuid.
+ */
+export type AiArchiveId = string;
+
+/**
+ * The privacy-safe import outcome that an operation result may expose to a client.
+ *
+ * It carries only the immutable archive identity, provider, exact completeness classification,
+ * and aggregate counts; gap and warning details remain on the owning archive report.
+ */
+export interface AiArchiveOperationSummary {
+ /**
+  * The immutable archive import produced by the operation.
+  */
+ ai_archive_id: AiArchiveId;
+ /**
+  * Number of stored asset references in this import.
+  *
+  * Format: uint32.
+  */
+ asset_count: number;
+ /**
+  * The producer's exact evidence-based import completeness classification.
+  */
+ completeness: AiArchiveCompleteness;
+ /**
+  * Number of normalized conversations in this import.
+  *
+  * Format: uint32.
+  */
+ conversation_count: number;
+ /**
+  * Number of known archive-level gaps in this import.
+  *
+  * Format: uint32.
+  */
+ gap_count: number;
+ /**
+  * Number of normalized messages in this import.
+  *
+  * Format: uint32.
+  */
+ message_count: number;
+ /**
+  * The provider whose export the archive represents.
+  */
+ provider: AiProvider;
+ /**
+  * Number of non-gap warnings produced while importing this archive.
+  *
+  * Format: uint32.
+  */
+ warning_count: number;
+}
+
+/**
+ * The AI provider an archive came from, e.g. `chatgpt`, `claude`.
+ *
+ * **Open on purpose.** A validated token, not an enum: a provider added by a later milestone
+ * must not break a running consumer, and no consumer may assume the vocabulary is
+ * exhaustive. Branch on equality with known tokens; treat everything else generically. The
+ * grammar is the event-type segment grammar (`EventType::SEGMENT_PATTERN`), so one
+ * snake_case alphabet covers both.
+ */
+export type AiProvider = string;
 
 /**
  * Deployment identity of the service that owns and resolves a blob.
@@ -286,6 +366,10 @@ export type OperationResultKind = string;
  * omit it.
  */
 export interface OperationResultRef {
+ /**
+  * Privacy-safe summary of an imported AI archive when this result is `ai_archive.import`.
+  */
+ ai_archive_import_summary?: AiArchiveOperationSummary | null;
  /**
   * Content-addressed handle when the result is stored bytes rather than a modelled entity.
   */

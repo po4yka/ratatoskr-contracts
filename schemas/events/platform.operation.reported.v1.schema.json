@@ -74,11 +74,126 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:de732a412253009b158ca4b7e2c6bf5793fa030ec4a71020c5c8eff9341478cc",
+    "source_digest": "sha256:ac1b1de624931176e9f52d395b8ae267b8a746d4e83d27d512ea635733380150",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
   "$defs": {
+    "AiArchiveCompleteness": {
+      "description": "Whether one import obtained the whole export, stated per `docs/ARCHITECTURE.md` S8.3.\n\n**Closed on purpose**: indexing depth, retention and re-import scheduling hang off this\nstate, so an unrecognized value must stop processing rather than be read as \"whole enough\".\nCompleteness is evidence-based: a parser may not mark an import `complete` merely because it\nparsed every file it knows about.",
+      "oneOf": [
+        {
+          "description": "Every record parsed and every referenced asset was stored.",
+          "type": "string",
+          "const": "complete"
+        },
+        {
+          "description": "Every conversation record parsed; some assets are missing or were refused.",
+          "type": "string",
+          "const": "conversations_complete"
+        },
+        {
+          "description": "Some records did not parse or were not present; the gaps say which.",
+          "type": "string",
+          "const": "structurally_partial"
+        },
+        {
+          "description": "Records parsed but asset storage was incomplete.",
+          "type": "string",
+          "const": "assets_partial"
+        },
+        {
+          "description": "The parser could not determine what the export contained at all.",
+          "type": "string",
+          "const": "unknown"
+        },
+        {
+          "description": "The export failed an integrity check before parsing could be trusted.",
+          "type": "string",
+          "const": "failed_validation"
+        }
+      ]
+    },
+    "AiArchiveId": {
+      "title": "AiArchiveId",
+      "description": "Identity of one import of a provider AI account export. Bare canonical lowercase hyphenated UUID; not namespaced.",
+      "type": "string",
+      "format": "uuid",
+      "examples": [
+        "018f0000-0000-7000-8000-000000000001"
+      ],
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "AiArchiveOperationSummary": {
+      "description": "The privacy-safe import outcome that an operation result may expose to a client.\n\nIt carries only the immutable archive identity, provider, exact completeness classification,\nand aggregate counts; gap and warning details remain on the owning archive report.",
+      "type": "object",
+      "properties": {
+        "ai_archive_id": {
+          "description": "The immutable archive import produced by the operation.",
+          "$ref": "#/$defs/AiArchiveId"
+        },
+        "asset_count": {
+          "description": "Number of stored asset references in this import.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "completeness": {
+          "description": "The producer's exact evidence-based import completeness classification.",
+          "$ref": "#/$defs/AiArchiveCompleteness"
+        },
+        "conversation_count": {
+          "description": "Number of normalized conversations in this import.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "gap_count": {
+          "description": "Number of known archive-level gaps in this import.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "message_count": {
+          "description": "Number of normalized messages in this import.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "provider": {
+          "description": "The provider whose export the archive represents.",
+          "$ref": "#/$defs/AiProvider"
+        },
+        "warning_count": {
+          "description": "Number of non-gap warnings produced while importing this archive.",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ai_archive_id",
+        "asset_count",
+        "completeness",
+        "conversation_count",
+        "gap_count",
+        "message_count",
+        "provider",
+        "warning_count"
+      ]
+    },
+    "AiProvider": {
+      "title": "AiProvider",
+      "description": "The AI provider an archive came from, e.g. `chatgpt`, `claude`.\n\n**Open on purpose.** A validated token, not an enum: a provider added by a later milestone\nmust not break a running consumer, and no consumer may assume the vocabulary is\nexhaustive. Branch on equality with known tokens; treat everything else generically. The\ngrammar is the event-type segment grammar (`EventType::SEGMENT_PATTERN`), so one\nsnake_case alphabet covers both.",
+      "type": "string",
+      "examples": [
+        "chatgpt",
+        "claude"
+      ],
+      "maxLength": 32,
+      "pattern": "^[a-z][a-z0-9_]{0,31}$"
+    },
     "BlobOwner": {
       "title": "BlobOwner",
       "description": "Deployment identity of the service that owns and resolves a blob.",
@@ -307,6 +422,17 @@
       "description": "A typed pointer to something the operation produced.\n\nA pointer, never inlined content: an operation may produce megabytes, and\n`ARCHITECTURE.md` S14 requires user content to be separable from metadata so telemetry can\nomit it.",
       "type": "object",
       "properties": {
+        "ai_archive_import_summary": {
+          "description": "Privacy-safe summary of an imported AI archive when this result is `ai_archive.import`.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AiArchiveOperationSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "blob": {
           "description": "Content-addressed handle when the result is stored bytes rather than a modelled entity.",
           "anyOf": [

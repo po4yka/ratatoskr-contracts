@@ -1,0 +1,26 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000132",
+  "kind": "content.document.extract",
+  "status": "succeeded",
+  "results": [
+    {
+      "result_kind": "content.document",
+      "target": "document:018f0000-0000-7000-8000-000000000133",
+      "ai_archive_import_summary": {
+        "ai_archive_id": "018f0000-0000-7000-8000-000000000131",
+        "provider": "chatgpt",
+        "completeness": "complete",
+        "conversation_count": 12,
+        "message_count": 48,
+        "asset_count": 3,
+        "gap_count": 0,
+        "warning_count": 1
+      }
+    }
+  ],
+  "retryable": false,
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000132",
+  "accepted_at": "2026-08-27T10:00:00Z",
+  "status_changed_at": "2026-08-27T10:00:15Z",
+  "terminated_at": "2026-08-27T10:00:15Z"
+}

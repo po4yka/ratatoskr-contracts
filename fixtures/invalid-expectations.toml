@@ -217,6 +217,16 @@ rejected_by    = ["serde"]
 error_contains = 'status `partially_succeeded` requires at least one warning or error'
 reason         = "Invariant I4. Partial success must say which effects were not produced. Cross-field."
 
+["platform/operation-snapshot/invalid/ai-archive-summary-on-document-result.json"]
+rejected_by    = ["serde"]
+error_contains = 'ai_archive_import_summary requires result_kind `ai_archive.import`'
+reason         = "A typed archive-import summary belongs only to an archive-import result; JSON Schema cannot express this sibling-field association without coupling generic operation results to each result family."
+
+["platform/operation-snapshot/invalid/ai-archive-summary-target-mismatch.json"]
+rejected_by    = ["serde"]
+error_contains = 'ai_archive_import_summary archive id must match target'
+reason         = "The result target is the operation's archive identity. A differing typed summary would let a producer report evidence for another archive."
+
 ["platform/operation-snapshot/invalid/status-changed-before-accepted.json"]
 rejected_by    = ["serde"]
 error_contains = 'is earlier than accepted_at'

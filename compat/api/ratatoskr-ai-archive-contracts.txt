@@ -3,6 +3,7 @@
 # Regenerate with: cargo contracts api-write
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiAsset
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -30,6 +31,7 @@ impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiToolResult
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::ParserName
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAsset
 impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAssetKind
 impl core::cmp::Eq for ratatoskr_ai_archive_contracts::AiAuthorRole
@@ -69,6 +71,7 @@ impl core::cmp::Ord for ratatoskr_ai_archive_contracts::ParserName
 impl core::cmp::Ord for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiAsset
 impl core::cmp::PartialEq for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -113,6 +116,7 @@ impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolOutcome
 impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::AiToolResult
 impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::ParserName
 impl core::cmp::PartialOrd for ratatoskr_ai_archive_contracts::ParserVersion
+impl core::convert::From<&ratatoskr_ai_archive_contracts::AiArchiveImport> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::convert::From<ratatoskr_ai_archive_contracts::AiAssetKind> for alloc::string::String
 impl core::convert::From<ratatoskr_ai_archive_contracts::AiFileName> for alloc::string::String
 impl core::convert::From<ratatoskr_ai_archive_contracts::AiGapKind> for alloc::string::String
@@ -139,6 +143,7 @@ impl core::error::Error for ratatoskr_ai_archive_contracts::AiArchiveContractErr
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiAsset
 impl core::fmt::Debug for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -201,6 +206,7 @@ impl core::marker::Copy for ratatoskr_ai_archive_contracts::AiToolOutcome
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::Freeze for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -230,6 +236,7 @@ impl core::marker::Freeze for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::Send for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -258,6 +265,7 @@ impl core::marker::Send for ratatoskr_ai_archive_contracts::ParserName
 impl core::marker::Send for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -287,6 +295,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_ai_archive_contracts::Parse
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::Sync for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -316,6 +325,7 @@ impl core::marker::Sync for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::Unpin for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -345,6 +355,7 @@ impl core::marker::Unpin for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiAsset
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -374,6 +385,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiAsset
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -403,6 +415,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts:
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiAsset
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -461,6 +474,7 @@ impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_ai_archive_c
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_ai_archive_contracts::AiConversationUpdated
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiAsset
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -489,6 +503,7 @@ impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::ParserName
 impl schemars::JsonSchema for ratatoskr_ai_archive_contracts::ParserVersion
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiAsset
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -517,6 +532,7 @@ impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::ParserName
 impl serde_core::ser::Serialize for ratatoskr_ai_archive_contracts::ParserVersion
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiAsset
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -546,6 +562,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_ai_archive_contracts::P
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::From<T>
@@ -575,6 +592,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_ai_archive_contracts::ParserVers
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::Into<T>
@@ -604,6 +622,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_ai_archive_contracts::ParserV
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveImport where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiAsset where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::AiAssetKind where U: core::convert::TryFrom<T>
@@ -632,6 +651,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::ParserN
 impl<T, U> core::convert::TryInto<U> for ratatoskr_ai_archive_contracts::ParserVersion where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
@@ -673,6 +693,7 @@ impl<T> alloc::string::ToString for ratatoskr_ai_archive_contracts::ParserVersio
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveImport where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiAsset where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_ai_archive_contracts::AiAssetKind where T: 'static + ?core::marker::Sized
@@ -702,6 +723,7 @@ impl<T> core::any::Any for ratatoskr_ai_archive_contracts::ParserVersion where T
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveImport where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiAsset where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::AiAssetKind where T: ?core::marker::Sized
@@ -731,6 +753,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_ai_archive_contracts::ParserVersio
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveImport where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiAsset where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::AiAssetKind where T: ?core::marker::Sized
@@ -759,6 +782,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::ParserNam
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_ai_archive_contracts::ParserVersion where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
@@ -788,6 +812,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_ai_archive_contracts::ParserVer
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiAsset
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::AiAssetKind
@@ -816,6 +841,7 @@ impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::ParserName
 impl<T> core::convert::From<T> for ratatoskr_ai_archive_contracts::ParserVersion
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveImport where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiAsset where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::AiAssetKind where T: core::clone::Clone
@@ -844,6 +870,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::ParserName where
 impl<T> dyn_clone::DynClone for ratatoskr_ai_archive_contracts::ParserVersion where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveCompleteness where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveImport where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiArchiveSnapshot where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiAsset where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiAssetKind where T: for<'de> serde_core::de::Deserialize<'de>
@@ -970,6 +997,26 @@ pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::try_from(U) -> core::res
 pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_ai_archive_contracts::AiArchiveImport::validate(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::borrow(&self) -> &T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::clone(&self) -> ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::eq(&self, &ratatoskr_ai_archive_contracts::AiArchiveOperationSummary) -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::from(&ratatoskr_ai_archive_contracts::AiArchiveImport) -> Self
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::from(T) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::inline_schema() -> bool
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::to_owned(&self) -> T
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::archive_id(&self) -> &ratatoskr_identifiers::uuid_ids::AiArchiveId
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::borrow(&self) -> &T
@@ -1588,6 +1635,14 @@ pub ratatoskr_ai_archive_contracts::AiArchiveImport::parser_version: ratatoskr_a
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::provider: ratatoskr_ai_archive_contracts::AiProvider
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::source_export: ratatoskr_identifiers::blob::BlobRef
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::asset_count: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::completeness: ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::conversation_count: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::gap_count: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::message_count: u32
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::provider: ratatoskr_ai_archive_contracts::AiProvider
+pub ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::warning_count: u32
 pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::conversations: alloc::vec::Vec<ratatoskr_ai_archive_contracts::AiConversation>
 pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_ai_archive_contracts::AiArchiveSnapshot::import: ratatoskr_ai_archive_contracts::AiArchiveImport
@@ -1676,6 +1731,7 @@ pub ratatoskr_ai_archive_contracts::AiToolResult::outcome: ratatoskr_ai_archive_
 pub ratatoskr_ai_archive_contracts::AiToolResult::output_text: core::option::Option<ratatoskr_ai_archive_contracts::AiText>
 pub ratatoskr_ai_archive_contracts::AiToolResult::tool_call_id: core::option::Option<ratatoskr_identifiers::entity::EntityLocalId>
 pub struct ratatoskr_ai_archive_contracts::AiArchiveImport
+pub struct ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 pub struct ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 pub struct ratatoskr_ai_archive_contracts::AiAsset
 pub struct ratatoskr_ai_archive_contracts::AiAssetKind(_)
@@ -1707,6 +1763,9 @@ pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Error = core::c
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Owned = T
+pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Owned = T
@@ -1809,6 +1868,7 @@ pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = ratatoskr_identi
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Owned = T
 pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveImport::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_ai_archive_contracts::AiAsset::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_ai_archive_contracts::AiAssetKind::clone_to_uninit(&self, *mut u8)

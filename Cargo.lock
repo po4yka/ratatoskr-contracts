@@ -1508,6 +1508,7 @@ version = "0.1.0"
 dependencies = [
  "jiff",
  "jsonschema",
+ "ratatoskr-ai-archive-contracts",
  "ratatoskr-error-contracts",
  "ratatoskr-event-envelope",
  "ratatoskr-identifiers",
