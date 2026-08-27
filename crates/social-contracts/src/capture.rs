@@ -30,6 +30,18 @@ pub enum SocialCaptureProvider {
     Threads,
 }
 
+impl SocialCaptureProvider {
+    /// The provider-specific command subject suffix used for broker routing.
+    #[must_use]
+    pub const fn command_subject(self) -> &'static str {
+        match self {
+            Self::X => "x.capture.requested.v1",
+            Self::Instagram => "instagram.capture.requested.v1",
+            Self::Threads => "threads.capture.requested.v1",
+        }
+    }
+}
+
 /// Payload for a Platform-to-social-owner explicit public-permalink capture.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct SocialCaptureRequested {

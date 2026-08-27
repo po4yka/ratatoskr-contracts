@@ -98,3 +98,19 @@ fn refuses_an_unknown_social_provider() {
         "a provider outside the closed social routing vocabulary must be refused"
     );
 }
+
+#[test]
+fn maps_each_social_owner_to_its_own_command_subject() {
+    assert_eq!(
+        SocialCaptureProvider::X.command_subject(),
+        "x.capture.requested.v1"
+    );
+    assert_eq!(
+        SocialCaptureProvider::Instagram.command_subject(),
+        "instagram.capture.requested.v1"
+    );
+    assert_eq!(
+        SocialCaptureProvider::Threads.command_subject(),
+        "threads.capture.requested.v1"
+    );
+}
