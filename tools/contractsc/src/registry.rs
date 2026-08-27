@@ -67,12 +67,18 @@ macro_rules! root_types {
 }
 
 root_types! {
+    "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted"
+        => ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted,
     "ratatoskr_ai_archive_contracts::AiArchiveImport"
         => ratatoskr_ai_archive_contracts::AiArchiveImport,
     "ratatoskr_ai_archive_contracts::AiArchiveSnapshot"
         => ratatoskr_ai_archive_contracts::AiArchiveSnapshot,
     "ratatoskr_ai_archive_contracts::AiArchiveTombstone"
         => ratatoskr_ai_archive_contracts::AiArchiveTombstone,
+    "ratatoskr_ai_archive_contracts::AiArtifactAdded"
+        => ratatoskr_ai_archive_contracts::AiArtifactAdded,
+    "ratatoskr_ai_archive_contracts::AiArtifactUpdated"
+        => ratatoskr_ai_archive_contracts::AiArtifactUpdated,
     "ratatoskr_ai_archive_contracts::AiConversation"
         => ratatoskr_ai_archive_contracts::AiConversation,
     "ratatoskr_ai_archive_contracts::AiConversationAdded"
@@ -81,6 +87,10 @@ root_types! {
         => ratatoskr_ai_archive_contracts::AiConversationUpdated,
     "ratatoskr_ai_archive_contracts::AiMessage"  => ratatoskr_ai_archive_contracts::AiMessage,
     "ratatoskr_ai_archive_contracts::AiProject"  => ratatoskr_ai_archive_contracts::AiProject,
+    "ratatoskr_ai_archive_contracts::AiProjectAdded"
+        => ratatoskr_ai_archive_contracts::AiProjectAdded,
+    "ratatoskr_ai_archive_contracts::AiProjectUpdated"
+        => ratatoskr_ai_archive_contracts::AiProjectUpdated,
     "ratatoskr_backup_contracts::DesiredBackupPolicy"
         => ratatoskr_backup_contracts::DesiredBackupPolicy,
     "ratatoskr_backup_contracts::PolicyAcknowledged"
@@ -136,6 +146,10 @@ root_types! {
 pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     let mut declared = BTreeMap::new();
     declared.insert(
+        "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted",
+        <ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
         "ratatoskr_ai_archive_contracts::AiArchiveImport",
         <ratatoskr_ai_archive_contracts::AiArchiveImport as EventPayload>::EVENT_TYPE,
     );
@@ -150,6 +164,22 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_ai_archive_contracts::AiConversationUpdated",
         <ratatoskr_ai_archive_contracts::AiConversationUpdated as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiArtifactAdded",
+        <ratatoskr_ai_archive_contracts::AiArtifactAdded as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiArtifactUpdated",
+        <ratatoskr_ai_archive_contracts::AiArtifactUpdated as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiProjectAdded",
+        <ratatoskr_ai_archive_contracts::AiProjectAdded as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiProjectUpdated",
+        <ratatoskr_ai_archive_contracts::AiProjectUpdated as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
         "ratatoskr_backup_contracts::PolicyAcknowledged",

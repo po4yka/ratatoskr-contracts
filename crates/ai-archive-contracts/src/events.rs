@@ -2,13 +2,15 @@
 
 use ratatoskr_event_envelope::EventPayload;
 
+use crate::asset::AiAssetKind;
 use crate::error::AiArchiveContractError;
-use crate::graph::AiConversation;
+use crate::graph::{AiConversation, AiProject};
 use crate::snapshot::AiArchiveImport;
 use crate::tokens::{AiProvider, ParserName, ParserVersion};
+use crate::values::AiTitle;
 use ratatoskr_identifiers::{
-    AiArchiveId, AiConversationId, BlobRef, Extensions, TenantRef, WireTimestamp,
-    wire_string_newtype,
+    AiArchiveId, AiConversationId, AiProjectId, BlobRef, ContentDigest, EntityLocalId, EntityRef,
+    Extensions, TenantRef, WireTimestamp, wire_string_newtype,
 };
 
 wire_string_newtype! {
@@ -32,6 +34,16 @@ pub enum AiArchiveTombstoneSubject {
     Conversation {
         /// Ratatoskr identity of the tombstoned conversation.
         ai_conversation_id: AiConversationId,
+    },
+    /// One project belonging to the enclosing archive import.
+    Project {
+        /// Ratatoskr identity of the tombstoned project.
+        ai_project_id: AiProjectId,
+    },
+    /// One provider Artifact belonging to the enclosing archive import.
+    Artifact {
+        /// Provider-minted identity of the tombstoned Artifact.
+        external_artifact_id: EntityLocalId,
     },
 }
 
@@ -226,4 +238,144 @@ pub struct AiArchiveTombstone {
 
 impl EventPayload for AiArchiveTombstone {
     const EVENT_TYPE: &'static str = "ai_archive.subject.tombstoned.v1";
+}
+
+/// One first-class provider Artifact, carried by reference rather than executable content.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArtifact {
+    /// Provider-minted artifact identity, opaque and case-sensitive.
+    pub external_artifact_id: EntityLocalId,
+    /// Provider that emitted this Artifact.
+    pub provider: AiProvider,
+    /// User whose archive contains the Artifact.
+    pub owner: TenantRef,
+    /// Artifact title when the provider supplied one.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub title: Option<AiTitle>,
+    /// Provider-defined Artifact kind, such as `artifact` or `canvas`.
+    pub artifact_kind: AiAssetKind,
+    /// Content-addressed stored Artifact bytes; bytes never travel in the event.
+    pub content_blob: BlobRef,
+    /// Digest of the immutable Artifact content represented by `content_blob`.
+    pub content_digest: ContentDigest,
+    /// Owning project when the provider recorded one.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub project_ref: Option<EntityRef>,
+    /// Owning conversation when the provider recorded one.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub conversation_ref: Option<EntityRef>,
+    /// Parser that normalized this Artifact.
+    pub parser_name: ParserName,
+    /// Version of [`Self::parser_name`].
+    pub parser_version: ParserVersion,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+/// One typed identity that can be removed from the archive search corpus.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+#[serde(tag = "subject_kind", rename_all = "snake_case")]
+pub enum AiArchiveSubject {
+    /// A project and every search document that depends on it.
+    Project {
+        /// Ratatoskr-side project identity.
+        ai_project_id: AiProjectId,
+    },
+    /// A conversation and every search document that depends on it.
+    Conversation {
+        /// Ratatoskr-side conversation identity.
+        ai_conversation_id: AiConversationId,
+    },
+    /// A provider Artifact belonging to this archive.
+    Artifact {
+        /// Provider-minted Artifact identity.
+        external_artifact_id: EntityLocalId,
+    },
+}
+
+/// State-carried payload of `ai_archive.project.added.v1`.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiProjectAdded {
+    /// Immutable evidence for the import that normalized `project`.
+    pub import_provenance: AiArchiveProvenance,
+    /// Current complete project record.
+    pub project: AiProject,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiProjectAdded {
+    const EVENT_TYPE: &'static str = "ai_archive.project.added.v1";
+}
+
+/// State-carried payload of `ai_archive.project.updated.v1`.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiProjectUpdated {
+    /// Immutable evidence for the import that normalized `project`.
+    pub import_provenance: AiArchiveProvenance,
+    /// Current complete project record.
+    pub project: AiProject,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiProjectUpdated {
+    const EVENT_TYPE: &'static str = "ai_archive.project.updated.v1";
+}
+
+/// State-carried payload of `ai_archive.artifact.added.v1`.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArtifactAdded {
+    /// Immutable evidence for the import that normalized `artifact`.
+    pub import_provenance: AiArchiveProvenance,
+    /// Current complete Artifact record.
+    pub artifact: AiArtifact,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiArtifactAdded {
+    const EVENT_TYPE: &'static str = "ai_archive.artifact.added.v1";
+}
+
+/// State-carried payload of `ai_archive.artifact.updated.v1`.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArtifactUpdated {
+    /// Immutable evidence for the import that normalized `artifact`.
+    pub import_provenance: AiArchiveProvenance,
+    /// Current complete Artifact record.
+    pub artifact: AiArtifact,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiArtifactUpdated {
+    const EVENT_TYPE: &'static str = "ai_archive.artifact.updated.v1";
+}
+
+/// Payload of `knowledge.ai_archive_analysis.completed.v1`: Knowledge accepted one revision.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArchiveAnalysisCompleted {
+    /// Import that supplied the analysed state.
+    pub ai_archive_id: AiArchiveId,
+    /// User whose record was analysed.
+    pub owner: TenantRef,
+    /// Exact record whose state was accepted by Knowledge.
+    pub subject: AiArchiveSubject,
+    /// Immutable normalized revision that was analysed.
+    pub content_digest: ContentDigest,
+    /// Instant Knowledge accepted the completed analysis.
+    pub completed_at: WireTimestamp,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiArchiveAnalysisCompleted {
+    const EVENT_TYPE: &'static str = "knowledge.ai_archive_analysis.completed.v1";
 }

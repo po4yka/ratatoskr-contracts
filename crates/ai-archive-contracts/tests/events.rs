@@ -199,6 +199,31 @@ fn tombstone_fixture_carries_authoritative_evidence() {
     assert!(value.get("missing_from_latest_snapshot").is_none());
 }
 
+/// The published event family covers every state-carrying record and the two terminal facts
+/// Knowledge and archive services need to converge after an import or tombstone.
+#[test]
+fn project_artifact_tombstone_and_linkage_event_schemas_exist() {
+    let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .ancestors()
+        .nth(2)
+        .expect("the crate sits two levels below the repository root");
+    for event in [
+        "ai_archive.project.added.v1",
+        "ai_archive.project.updated.v1",
+        "ai_archive.artifact.added.v1",
+        "ai_archive.artifact.updated.v1",
+        "ai_archive.subject.tombstoned.v1",
+        "knowledge.ai_archive_analysis.completed.v1",
+    ] {
+        assert!(
+            root.join("schemas/events")
+                .join(format!("{event}.schema.json"))
+                .is_file(),
+            "the generated schema for {event} must be published"
+        );
+    }
+}
+
 /// A consumer that asks for an archive payload from an unrelated envelope is refused.
 #[test]
 fn mismatched_or_unrelated_envelopes_are_refused() {

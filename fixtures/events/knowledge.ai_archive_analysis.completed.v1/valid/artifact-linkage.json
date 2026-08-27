@@ -1,0 +1,13 @@
+{
+  "ai_archive_id": "018f0000-0000-7000-8000-000000000401",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": {
+    "subject_kind": "artifact",
+    "external_artifact_id": "artifact-001"
+  },
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "completed_at": "2026-08-27T08:01:00Z"
+}

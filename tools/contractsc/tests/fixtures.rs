@@ -168,11 +168,20 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_ai_archive_contracts::AiArchiveImport" => {
             render!(ratatoskr_ai_archive_contracts::AiArchiveImport)
         }
+        "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted" => {
+            render!(ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted)
+        }
         "ratatoskr_ai_archive_contracts::AiArchiveSnapshot" => {
             render!(ratatoskr_ai_archive_contracts::AiArchiveSnapshot)
         }
         "ratatoskr_ai_archive_contracts::AiArchiveTombstone" => {
             render!(ratatoskr_ai_archive_contracts::AiArchiveTombstone)
+        }
+        "ratatoskr_ai_archive_contracts::AiArtifactAdded" => {
+            render!(ratatoskr_ai_archive_contracts::AiArtifactAdded)
+        }
+        "ratatoskr_ai_archive_contracts::AiArtifactUpdated" => {
+            render!(ratatoskr_ai_archive_contracts::AiArtifactUpdated)
         }
         "ratatoskr_ai_archive_contracts::AiConversation" => {
             render!(ratatoskr_ai_archive_contracts::AiConversation)
@@ -188,6 +197,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_ai_archive_contracts::AiProject" => {
             render!(ratatoskr_ai_archive_contracts::AiProject)
+        }
+        "ratatoskr_ai_archive_contracts::AiProjectAdded" => {
+            render!(ratatoskr_ai_archive_contracts::AiProjectAdded)
+        }
+        "ratatoskr_ai_archive_contracts::AiProjectUpdated" => {
+            render!(ratatoskr_ai_archive_contracts::AiProjectUpdated)
         }
         "ratatoskr_backup_contracts::DesiredBackupPolicy" => {
             render!(ratatoskr_backup_contracts::DesiredBackupPolicy)

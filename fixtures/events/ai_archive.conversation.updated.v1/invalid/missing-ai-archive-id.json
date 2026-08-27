@@ -1,4 +1,5 @@
 {
+  "provenance": {"source_export_digest": {"algorithm": "sha256", "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"}, "parser_name": "claude_export", "parser_version": "1.4.2"},
   "conversation": {
     "ai_conversation_id": "018f0000-0000-7000-8000-000000000403",
     "provider": "claude",

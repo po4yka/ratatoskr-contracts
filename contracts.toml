@@ -756,12 +756,12 @@ major_version  = 1
 lifecycle      = "proposed"
 classification = "internal"
 owner          = "ratatoskr-chatgpt"
-producers      = ["ratatoskr-chatgpt"]
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
 consumers      = ["ratatoskr-knowledge"]
 crate_name     = "ratatoskr-ai-archive-contracts"
 canonical_path = "crates/ai-archive-contracts/src/events.rs"
 fixtures_dir   = "fixtures/events/ai_archive.subject.tombstoned.v1"
-summary        = "Fact: authoritative deletion evidence made an AI archive or conversation unavailable."
+summary        = "Fact: authoritative deletion evidence made an AI archive subject unavailable."
 
 [[contract.root_type]]
 rust_path      = "ratatoskr_ai_archive_contracts::AiArchiveTombstone"
@@ -780,6 +780,143 @@ note        = "Instant the producing service observed authoritative deletion evi
 [contract.event]
 event_type   = "ai_archive.subject.tombstoned.v1"
 payload_type = "ratatoskr_ai_archive_contracts::AiArchiveTombstone"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.project_added"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.project.added.v1"
+summary        = "Fact: a normalized AI project entered the search index with immutable import provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiProjectAdded"
+output         = "schemas/events/ai_archive.project.added.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiProjectAdded"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.project.added.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiProjectAdded"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.project_updated"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-chatgpt"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.project.updated.v1"
+summary        = "Fact: a normalized AI project changed with immutable import provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiProjectUpdated"
+output         = "schemas/events/ai_archive.project.updated.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiProjectUpdated"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.project.updated.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiProjectUpdated"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.artifact_added"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-claude"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.artifact.added.v1"
+summary        = "Fact: a first-class AI Artifact entered the search index with immutable import provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiArtifactAdded"
+output         = "schemas/events/ai_archive.artifact.added.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiArtifactAdded"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.artifact.added.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiArtifactAdded"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "ai_archive.artifact_updated"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-claude"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/ai_archive.artifact.updated.v1"
+summary        = "Fact: a first-class AI Artifact changed with immutable import provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiArtifactUpdated"
+output         = "schemas/events/ai_archive.artifact.updated.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiArtifactUpdated"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "ai_archive.artifact.updated.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiArtifactUpdated"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.ai_archive_analysis_completed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+crate_name     = "ratatoskr-ai-archive-contracts"
+canonical_path = "crates/ai-archive-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/knowledge.ai_archive_analysis.completed.v1"
+summary        = "Fact: Knowledge accepted analysis of one immutable AI archive subject revision."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted"
+output         = "schemas/events/knowledge.ai_archive_analysis.completed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AiArchiveAnalysisCompleted"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/completed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge accepted the analysis, according to the Knowledge clock."
+
+[contract.event]
+event_type   = "knowledge.ai_archive_analysis.completed.v1"
+payload_type = "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted"
 
 # ---------------------------------------------------------------------------
 [[contract]]
