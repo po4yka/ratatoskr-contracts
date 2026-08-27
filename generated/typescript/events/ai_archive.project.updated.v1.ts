@@ -7,13 +7,17 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:ff9864052b882b6d6a421d4197f9ef98671c53cd03239e60e187e5d91e58f611
+ * source_digest: sha256:4d846a65af3050002d0042cf48f220adca00821665f23d1a0d1e1681635121e4
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * State-carried payload of `ai_archive.project.updated.v1`.
  */
 export interface AiProjectUpdated {
+ /**
+  * Digest of the canonical normalized project representation.
+  */
+ content_digest: ContentDigest;
  /**
   * Immutable evidence for the import that normalized `project`.
   */

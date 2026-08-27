@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:fadfb7e8a64a812174ef774efd099e0512784bc5658fabbf253f1fa6e0fba7bc
+ * source_digest: sha256:5f48f373af1d2904642fa6b5a5bb47d085ed5984d2792d0c2617e8d12e6fc14f
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -47,7 +47,7 @@ export interface AiArchiveTombstone {
   */
  reason: AiArchiveTombstoneReason;
  /**
-  * The exact archive or conversation made unavailable.
+  * The exact archive subject made unavailable.
   */
  subject: AiArchiveTombstoneSubject;
  [key: string]: unknown;

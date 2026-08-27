@@ -41,7 +41,7 @@
       "$ref": "#/$defs/AiArchiveTombstoneReason"
     },
     "subject": {
-      "description": "The exact archive or conversation made unavailable.",
+      "description": "The exact archive subject made unavailable.",
       "$ref": "#/$defs/AiArchiveTombstoneSubject"
     }
   },
@@ -63,7 +63,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:c59babb3656877442c8debe3537b03f3afe7f7d15d8e772acd13917de87117a2",
+    "source_digest": "sha256:5f2a960751194d1cb8144f387a24987046fd9ebaaac0f7a084a2e669273a1200",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",

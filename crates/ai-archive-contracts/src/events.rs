@@ -120,6 +120,23 @@ impl AiArchiveProvenance {
         }
         Ok(())
     }
+
+    /// Verifies that the project was normalized by this import's provider and parser revision.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ProjectProvenanceMismatch`] when the
+    /// project's provider or parser identity disagrees with this immutable
+    /// import provenance.
+    pub fn validate_project(&self, project: &AiProject) -> Result<(), AiArchiveContractError> {
+        if self.provider != project.provider
+            || self.parser_name != project.parser_name
+            || self.parser_version != project.parser_version
+        {
+            return Err(AiArchiveContractError::ProjectProvenanceMismatch);
+        }
+        Ok(())
+    }
 }
 
 /// Payload of `ai_archive.archive.imported.v1`: one provider export finished importing as
@@ -220,7 +237,7 @@ pub struct AiArchiveTombstone {
     pub provider: AiProvider,
     /// Tenant that owned the archive subject.
     pub owner: TenantRef,
-    /// The exact archive or conversation made unavailable.
+    /// The exact archive subject made unavailable.
     pub subject: AiArchiveTombstoneSubject,
     /// Authoritative source of the deletion decision.
     pub reason: AiArchiveTombstoneReason,
@@ -301,9 +318,23 @@ pub struct AiProjectAdded {
     pub import_provenance: AiArchiveProvenance,
     /// Current complete project record.
     pub project: AiProject,
+    /// Digest of the canonical normalized project representation.
+    pub content_digest: ContentDigest,
     /// Unknown-but-preserved additive fields.
     #[serde(flatten)]
     pub extensions: Extensions,
+}
+
+impl AiProjectAdded {
+    /// Verifies that the embedded project agrees with its import evidence.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ProjectProvenanceMismatch`] when the
+    /// project and its immutable import provenance disagree.
+    pub fn validate(&self) -> Result<(), AiArchiveContractError> {
+        self.import_provenance.validate_project(&self.project)
+    }
 }
 
 impl EventPayload for AiProjectAdded {
@@ -317,9 +348,23 @@ pub struct AiProjectUpdated {
     pub import_provenance: AiArchiveProvenance,
     /// Current complete project record.
     pub project: AiProject,
+    /// Digest of the canonical normalized project representation.
+    pub content_digest: ContentDigest,
     /// Unknown-but-preserved additive fields.
     #[serde(flatten)]
     pub extensions: Extensions,
+}
+
+impl AiProjectUpdated {
+    /// Verifies that the embedded project agrees with its import evidence.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ProjectProvenanceMismatch`] when the
+    /// project and its immutable import provenance disagree.
+    pub fn validate(&self) -> Result<(), AiArchiveContractError> {
+        self.import_provenance.validate_project(&self.project)
+    }
 }
 
 impl EventPayload for AiProjectUpdated {

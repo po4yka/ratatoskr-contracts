@@ -33,4 +33,8 @@ pub enum AiArchiveContractError {
     /// carried beside it.
     #[error("conversation and import provenance disagree")]
     ConversationProvenanceMismatch,
+    /// A project fact disagreed with the immutable import provenance carried
+    /// beside it.
+    #[error("project and import provenance disagree")]
+    ProjectProvenanceMismatch,
 }

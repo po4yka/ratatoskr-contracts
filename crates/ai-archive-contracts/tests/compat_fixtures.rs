@@ -10,7 +10,7 @@
 
 use ratatoskr_ai_archive_contracts::{
     AiArchiveImport, AiArchiveSnapshot, AiArchiveTombstone, AiConversation, AiConversationAdded,
-    AiConversationUpdated, AiMessage, AiProject,
+    AiConversationUpdated, AiMessage, AiProject, AiProjectAdded, AiProjectUpdated,
 };
 use ratatoskr_identifiers::dropped_field_pointers;
 
@@ -67,6 +67,14 @@ fn families() -> Vec<Family> {
         Family {
             dir: "events/ai_archive.conversation.updated.v1",
             roundtrip: root_case!(AiConversationUpdated),
+        },
+        Family {
+            dir: "events/ai_archive.project.added.v1",
+            roundtrip: root_case!(AiProjectAdded),
+        },
+        Family {
+            dir: "events/ai_archive.project.updated.v1",
+            roundtrip: root_case!(AiProjectUpdated),
         },
         Family {
             dir: "events/ai_archive.subject.tombstoned.v1",

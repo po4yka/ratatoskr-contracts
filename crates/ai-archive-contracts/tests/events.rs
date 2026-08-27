@@ -11,7 +11,7 @@ mod common;
 
 use ratatoskr_ai_archive_contracts::{
     AiArchiveCompleteness, AiArchiveImport, AiArchiveProvenance, AiArchiveTombstone,
-    AiConversationAdded, AiConversationUpdated,
+    AiConversationAdded, AiConversationUpdated, AiProjectAdded, AiProjectUpdated,
 };
 use ratatoskr_event_envelope::{EventEnvelope, EventPayload};
 use ratatoskr_identifiers::{Extensions, dropped_field_pointers};
@@ -33,6 +33,11 @@ fn event_type_constants_are_the_registered_names() {
         AiConversationUpdated::EVENT_TYPE,
         "ai_archive.conversation.updated.v1"
     );
+    assert_eq!(AiProjectAdded::EVENT_TYPE, "ai_archive.project.added.v1");
+    assert_eq!(
+        AiProjectUpdated::EVENT_TYPE,
+        "ai_archive.project.updated.v1"
+    );
     assert_eq!(
         AiArchiveTombstone::EVENT_TYPE,
         "ai_archive.subject.tombstoned.v1"
@@ -50,6 +55,8 @@ fn event_type_constants_are_the_registered_names() {
             "conversation",
             "updated",
         ),
+        (AiProjectAdded::event_type(), "project", "added"),
+        (AiProjectUpdated::event_type(), "project", "updated"),
         (AiArchiveTombstone::event_type(), "subject", "tombstoned"),
     ] {
         assert_eq!(payload_type.bounded_context(), "ai_archive");
@@ -57,6 +64,47 @@ fn event_type_constants_are_the_registered_names() {
         assert_eq!(payload_type.action(), action);
         assert_eq!(payload_type.major(), 1);
         assert!(payload_type.action_looks_past_tense());
+    }
+}
+
+/// Added and updated events each carry one whole project plus its immutable import evidence.
+#[test]
+fn project_events_carry_the_whole_project() {
+    let project = common::minimal_project();
+    for payload in [
+        AiProjectPayload::Added(AiProjectAdded {
+            import_provenance: provenance(),
+            project: project.clone(),
+            content_digest: common::digest(),
+            extensions: Extensions::new(),
+        }),
+        AiProjectPayload::Updated(AiProjectUpdated {
+            import_provenance: provenance(),
+            project: project.clone(),
+            content_digest: common::digest(),
+            extensions: Extensions::new(),
+        }),
+    ] {
+        let mut envelope = EventEnvelope::from_json(MINIMAL_ENVELOPE.as_bytes())
+            .expect("the minimal envelope parses");
+        match &payload {
+            AiProjectPayload::Added(added) => {
+                envelope.set_payload(added).expect("a JSON object body");
+                assert_eq!(envelope.event_type, AiProjectAdded::event_type());
+                let decoded = envelope.payload_as::<AiProjectAdded>().expect("typed read");
+                assert_eq!(decoded.project, project);
+                assert!(decoded.validate().is_ok(), "the imported linkage agrees");
+            }
+            AiProjectPayload::Updated(updated) => {
+                envelope.set_payload(updated).expect("a JSON object body");
+                assert_eq!(envelope.event_type, AiProjectUpdated::event_type());
+                let decoded = envelope
+                    .payload_as::<AiProjectUpdated>()
+                    .expect("typed read");
+                assert_eq!(decoded.project, project);
+                assert!(decoded.validate().is_ok(), "the imported linkage agrees");
+            }
+        }
     }
 }
 
@@ -146,6 +194,42 @@ fn conversation_events_carry_the_whole_conversation() {
             Vec::<String>::new()
         );
     }
+}
+
+/// Project facts must be independently linked to the immutable export that normalized them.
+#[test]
+fn project_event_fixture_carries_immutable_provenance() {
+    let fixture_path = concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../fixtures/events/ai_archive.project.added.v1/valid/project-added.json"
+    );
+    let fixture = std::fs::read_to_string(fixture_path).expect("the project fixture exists");
+    let payload: serde_json::Value =
+        serde_json::from_str(&fixture).expect("the project fixture parses");
+
+    assert!(payload.get("import_provenance").is_some());
+    assert!(payload.get("project").is_some());
+    assert!(payload.get("content_digest").is_some());
+}
+
+/// A project tombstone is a valid authoritative deletion subject, never an absence observation.
+#[test]
+fn project_tombstone_fixture_roundtrips_authoritative_evidence() {
+    let fixture_path = concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../fixtures/events/ai_archive.subject.tombstoned.v1/valid/project-tombstoned.json"
+    );
+    let fixture =
+        std::fs::read_to_string(fixture_path).expect("the project tombstone fixture exists");
+    let tombstone: AiArchiveTombstone =
+        serde_json::from_str(&fixture).expect("a project tombstone fixture is valid");
+    assert_eq!(
+        serde_json::to_value(tombstone)
+            .expect("tombstone serializes")
+            .pointer("/subject/subject_kind")
+            .and_then(serde_json::Value::as_str),
+        Some("project")
+    );
 }
 
 /// A conversation fact must stand on its own when a consumer has not retained
@@ -273,4 +357,9 @@ fn provenance() -> AiArchiveProvenance {
 enum AiConversationPayload {
     Added(AiConversationAdded),
     Updated(AiConversationUpdated),
+}
+
+enum AiProjectPayload {
+    Added(AiProjectAdded),
+    Updated(AiProjectUpdated),
 }

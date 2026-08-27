@@ -22,5 +22,9 @@
     "title": "Archive project",
     "parser_name": "claude_export",
     "parser_version": "2026.08.1"
+  },
+  "content_digest": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
   }
 }

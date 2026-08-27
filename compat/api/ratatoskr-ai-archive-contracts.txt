@@ -607,6 +607,8 @@ impl ratatoskr_ai_archive_contracts::AiFileName
 impl ratatoskr_ai_archive_contracts::AiGapKind
 impl ratatoskr_ai_archive_contracts::AiMessage
 impl ratatoskr_ai_archive_contracts::AiModelName
+impl ratatoskr_ai_archive_contracts::AiProjectAdded
+impl ratatoskr_ai_archive_contracts::AiProjectUpdated
 impl ratatoskr_ai_archive_contracts::AiProvider
 impl ratatoskr_ai_archive_contracts::AiSourceUrl
 impl ratatoskr_ai_archive_contracts::AiText
@@ -1389,6 +1391,7 @@ pub fn ratatoskr_ai_archive_contracts::AiArchiveProvenance::try_from(U) -> core:
 pub fn ratatoskr_ai_archive_contracts::AiArchiveProvenance::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiArchiveProvenance::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_ai_archive_contracts::AiArchiveProvenance::validate_conversation(&self, &ratatoskr_ai_archive_contracts::AiConversation) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
+pub fn ratatoskr_ai_archive_contracts::AiArchiveProvenance::validate_project(&self, &ratatoskr_ai_archive_contracts::AiProject) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::archive_id(&self) -> &ratatoskr_identifiers::uuid_ids::AiArchiveId
 pub fn ratatoskr_ai_archive_contracts::AiArchiveSnapshot::borrow(&self) -> &T
@@ -1915,6 +1918,7 @@ pub fn ratatoskr_ai_archive_contracts::AiProjectAdded::to_owned(&self) -> T
 pub fn ratatoskr_ai_archive_contracts::AiProjectAdded::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiProjectAdded::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiProjectAdded::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiProjectAdded::validate(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::borrow(&self) -> &T
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::borrow_mut(&mut self) -> &mut T
@@ -1934,6 +1938,7 @@ pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::to_owned(&self) -> T
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiProjectUpdated::validate(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
 pub fn ratatoskr_ai_archive_contracts::AiProvider::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_ai_archive_contracts::AiProvider::as_str(&self) -> &str
 pub fn ratatoskr_ai_archive_contracts::AiProvider::borrow(&self) -> &T
@@ -2203,6 +2208,7 @@ pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch::actual: u32
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::GapCountMismatch::declared: u32
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::IncompleteWithoutGap
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ProjectProvenanceMismatch
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::completeness_report: ratatoskr_ai_archive_contracts::AiCompletenessReport
 pub ratatoskr_ai_archive_contracts::AiArchiveImport::extensions: ratatoskr_identifiers::wire::Extensions
@@ -2352,9 +2358,11 @@ pub ratatoskr_ai_archive_contracts::AiProject::provider: ratatoskr_ai_archive_co
 pub ratatoskr_ai_archive_contracts::AiProject::provider_created_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
 pub ratatoskr_ai_archive_contracts::AiProject::provider_updated_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
 pub ratatoskr_ai_archive_contracts::AiProject::title: ratatoskr_ai_archive_contracts::AiTitle
+pub ratatoskr_ai_archive_contracts::AiProjectAdded::content_digest: ratatoskr_identifiers::blob::ContentDigest
 pub ratatoskr_ai_archive_contracts::AiProjectAdded::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_ai_archive_contracts::AiProjectAdded::import_provenance: ratatoskr_ai_archive_contracts::AiArchiveProvenance
 pub ratatoskr_ai_archive_contracts::AiProjectAdded::project: ratatoskr_ai_archive_contracts::AiProject
+pub ratatoskr_ai_archive_contracts::AiProjectUpdated::content_digest: ratatoskr_identifiers::blob::ContentDigest
 pub ratatoskr_ai_archive_contracts::AiProjectUpdated::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_ai_archive_contracts::AiProjectUpdated::import_provenance: ratatoskr_ai_archive_contracts::AiArchiveProvenance
 pub ratatoskr_ai_archive_contracts::AiProjectUpdated::project: ratatoskr_ai_archive_contracts::AiProject

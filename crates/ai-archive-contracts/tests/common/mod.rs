@@ -11,8 +11,8 @@
 )]
 
 use ratatoskr_ai_archive_contracts::{
-    AiAssetKind, AiAuthorRole, AiContentPart, AiConversation, AiFileName, AiMessage, AiText,
-    AiTitle, ParserName, ParserVersion,
+    AiAssetKind, AiAuthorRole, AiContentPart, AiConversation, AiFileName, AiMessage, AiProject,
+    AiText, AiTitle, ParserName, ParserVersion,
 };
 use ratatoskr_identifiers::{
     AiConversationId, AiProjectId, BlobOwner, BlobRef, ContentDigest, DigestAlgorithm, DigestHex,
@@ -126,6 +126,23 @@ pub(crate) fn minimal_conversation() -> AiConversation {
         parser_name: parser_name("chatgpt_export"),
         parser_version: parser_version("2026.08.1"),
         warnings: Vec::new(),
+        extensions: Extensions::new(),
+    }
+}
+
+/// A project with only required fields.
+pub(crate) fn minimal_project() -> AiProject {
+    AiProject {
+        ai_project_id: project_id(),
+        provider: provider("chatgpt"),
+        external_project_id: None,
+        title: title("Archive project"),
+        description: None,
+        instructions: None,
+        provider_created_at: None,
+        provider_updated_at: None,
+        parser_name: parser_name("chatgpt_export"),
+        parser_version: parser_version("2026.08.1"),
         extensions: Extensions::new(),
     }
 }
