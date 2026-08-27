@@ -23,10 +23,14 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+mod command;
+mod command_type;
 mod envelope;
 mod event_type;
 mod producer;
 
+pub use crate::command::{CommandEnvelope, CommandError, CommandPayload};
+pub use crate::command_type::CommandType;
 pub use crate::envelope::{EnvelopeError, EnvelopeSchemaVersion, EventEnvelope, EventPayload};
 pub use crate::event_type::{EventType, EventTypeError};
 pub use crate::producer::ProducerName;

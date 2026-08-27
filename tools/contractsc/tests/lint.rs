@@ -298,7 +298,7 @@ fn reserves_schema_version_for_the_envelope() {
         !lint_hits(&metadata, &generated)
             .iter()
             .any(|(rule, _)| rule == "L8"),
-        "only EventEnvelope declares schema_version today"
+        "only recognized envelope roots declare schema_version"
     );
 
     let colliding = probe_schemas(&serde_json::json!({

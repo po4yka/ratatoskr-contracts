@@ -24,15 +24,17 @@ use crate::registry;
 /// Justifications that are not justifications (L7), compared case-insensitively after trimming.
 pub const PLACEHOLDER_JUSTIFICATIONS: &[&str] = &["todo", "n/a", "na", "none", "see above", "-"];
 
-/// L8: the property name that means "envelope major", and the one type allowed to declare it.
+/// L8: the property name that means "envelope major", and the envelope types allowed to declare
+/// it.
 ///
 /// ADR-0002 gives the repository two version axes: `event_type`'s `.v<major>` is the payload
 /// major, and `schema_version` is the envelope major. They describe different objects, so a second
 /// property with the same name anywhere else — most concretely the `schema_version: u32` that
 /// `ARCHITECTURE.md` S6.1 puts inside `Document` — would put two same-named integers in one
 /// message that look like they must agree and do not. The two axes are kept apart by a name that
-/// only the envelope may use, checked here rather than asked for in prose.
-pub const ENVELOPE_MAJOR_PROPERTY: (&str, &str) = ("schema_version", "EventEnvelope");
+/// only an envelope may use, checked here rather than asked for in prose.
+pub const ENVELOPE_MAJOR_PROPERTY: (&str, &[&str]) =
+    ("schema_version", &["CommandEnvelope", "EventEnvelope"]);
 
 /// The waiver / governance key of a property: `TypeName#/properties/name`.
 #[must_use]
@@ -206,13 +208,13 @@ fn lint_type(
             });
         }
 
-        let (reserved_name, reserved_owner) = ENVELOPE_MAJOR_PROPERTY;
-        if name == reserved_name && type_name != reserved_owner {
+        let (reserved_name, reserved_owners) = ENVELOPE_MAJOR_PROPERTY;
+        if name == reserved_name && !reserved_owners.contains(&type_name) {
             findings.push(Finding::Lint {
                 rule: "L8",
                 pointer: identity.clone(),
                 detail: format!(
-                    "{name:?} is reserved for the envelope major on {reserved_owner} (ADR-0002); \
+                    "{name:?} is reserved for the envelope major on {reserved_owners:?} (ADR-0002); \
                      a payload that needs its own version names it after what it versions, e.g. \
                      `document_ir_version`"
                 ),

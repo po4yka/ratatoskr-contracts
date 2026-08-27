@@ -217,6 +217,17 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one asynchronous command delivery. A consumer uses it to deduplicate the same
+    /// delivery; a command payload carries any separate domain idempotency key.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID.
+    pub struct CommandId,
+    kind = "command",
+    description = "Identity of one asynchronous command delivery. Bare canonical lowercase \
+                   hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// Identity of a Ratatoskr end user. Producer-asserted.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. Inside an owner field it appears

@@ -10,7 +10,7 @@
 
 use std::collections::BTreeMap;
 
-use ratatoskr_event_envelope::EventPayload;
+use ratatoskr_event_envelope::{CommandPayload, EventPayload};
 
 /// One publishable root type.
 pub struct RootType {
@@ -109,6 +109,7 @@ root_types! {
         => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
+    "ratatoskr_event_envelope::CommandEnvelope"        => ratatoskr_event_envelope::CommandEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
     "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
         => ratatoskr_github_contracts::RepositoryAnalysisCompleted,
@@ -125,6 +126,8 @@ root_types! {
         => ratatoskr_operation_contracts::OperationReported,
     "ratatoskr_operation_contracts::OperationSnapshot"
         => ratatoskr_operation_contracts::OperationSnapshot,
+    "ratatoskr_social_contracts::SocialCaptureRequested"
+        => ratatoskr_social_contracts::SocialCaptureRequested,
     "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
         => ratatoskr_social_contracts::SocialSourceAnalysisCompleted,
     "ratatoskr_social_contracts::SocialSourceCaptured"
@@ -224,6 +227,21 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_social_contracts::SocialSourceUpdated",
         <ratatoskr_social_contracts::SocialSourceUpdated as EventPayload>::EVENT_TYPE,
+    );
+    declared
+}
+
+/// `CommandPayload::COMMAND_TYPE` for every registered root type that is a command payload.
+///
+/// Kept beside [`root_types`] rather than inside [`RootType`] because only command payloads have
+/// this static type. Metadata rule R10 compares `[contract.command].command_type` against this
+/// map, so a declaration cannot claim a command name the payload does not declare.
+#[must_use]
+pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
+    let mut declared = BTreeMap::new();
+    declared.insert(
+        "ratatoskr_social_contracts::SocialCaptureRequested",
+        <ratatoskr_social_contracts::SocialCaptureRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared
 }

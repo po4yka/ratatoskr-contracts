@@ -11,6 +11,10 @@ impl core::clone::Clone for ratatoskr_social_contracts::PostText
 impl core::clone::Clone for ratatoskr_social_contracts::RemovalReason
 impl core::clone::Clone for ratatoskr_social_contracts::SavedAuthority
 impl core::clone::Clone for ratatoskr_social_contracts::SocialAuthor
+impl core::clone::Clone for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::clone::Clone for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::clone::Clone for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::clone::Clone for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::clone::Clone for ratatoskr_social_contracts::SocialFolderMembership
 impl core::clone::Clone for ratatoskr_social_contracts::SocialMediaItem
 impl core::clone::Clone for ratatoskr_social_contracts::SocialMediaKind
@@ -33,6 +37,9 @@ impl core::cmp::Eq for ratatoskr_social_contracts::PostText
 impl core::cmp::Eq for ratatoskr_social_contracts::RemovalReason
 impl core::cmp::Eq for ratatoskr_social_contracts::SavedAuthority
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialAuthor
+impl core::cmp::Eq for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::cmp::Eq for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::cmp::Eq for ratatoskr_social_contracts::SocialCaptureProvider
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialFolderMembership
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialMediaKind
@@ -50,6 +57,8 @@ impl core::cmp::Ord for ratatoskr_social_contracts::PostText
 impl core::cmp::Ord for ratatoskr_social_contracts::RemovalReason
 impl core::cmp::Ord for ratatoskr_social_contracts::SavedAuthority
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialAuthor
+impl core::cmp::Ord for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::cmp::Ord for ratatoskr_social_contracts::SocialCaptureProvider
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialFolderMembership
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialMediaKind
@@ -67,6 +76,10 @@ impl core::cmp::PartialEq for ratatoskr_social_contracts::PostText
 impl core::cmp::PartialEq for ratatoskr_social_contracts::RemovalReason
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SavedAuthority
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialAuthor
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialFolderMembership
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialMediaKind
@@ -89,6 +102,8 @@ impl core::cmp::PartialOrd for ratatoskr_social_contracts::PostText
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::RemovalReason
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SavedAuthority
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialAuthor
+impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialCaptureProvider
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialFolderMembership
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialMediaKind
@@ -101,6 +116,7 @@ impl core::convert::From<ratatoskr_social_contracts::DisplayName> for alloc::str
 impl core::convert::From<ratatoskr_social_contracts::Platform> for alloc::string::String
 impl core::convert::From<ratatoskr_social_contracts::PostPermalink> for alloc::string::String
 impl core::convert::From<ratatoskr_social_contracts::PostText> for alloc::string::String
+impl core::convert::From<ratatoskr_social_contracts::SocialCaptureOutcomeCode> for alloc::string::String
 impl core::convert::From<ratatoskr_social_contracts::SocialMediaKind> for alloc::string::String
 impl core::convert::From<ratatoskr_social_contracts::SocialRelationKind> for alloc::string::String
 impl core::convert::From<ratatoskr_social_contracts::SyncCheckpointCursor> for alloc::string::String
@@ -109,9 +125,11 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contract
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::Platform
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::PostPermalink
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::PostText
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::SocialCaptureOutcomeCode
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::SocialMediaKind
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::SocialRelationKind
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_social_contracts::SyncCheckpointCursor
+impl core::error::Error for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
 impl core::error::Error for ratatoskr_social_contracts::SocialContractError
 impl core::fmt::Debug for ratatoskr_social_contracts::AcquisitionMethod
 impl core::fmt::Debug for ratatoskr_social_contracts::AuthorHandle
@@ -123,6 +141,10 @@ impl core::fmt::Debug for ratatoskr_social_contracts::PostText
 impl core::fmt::Debug for ratatoskr_social_contracts::RemovalReason
 impl core::fmt::Debug for ratatoskr_social_contracts::SavedAuthority
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialAuthor
+impl core::fmt::Debug for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::fmt::Debug for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::fmt::Debug for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::fmt::Debug for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialContractError
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialFolderMembership
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialMediaItem
@@ -141,6 +163,7 @@ impl core::fmt::Display for ratatoskr_social_contracts::DisplayName
 impl core::fmt::Display for ratatoskr_social_contracts::Platform
 impl core::fmt::Display for ratatoskr_social_contracts::PostPermalink
 impl core::fmt::Display for ratatoskr_social_contracts::PostText
+impl core::fmt::Display for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
 impl core::fmt::Display for ratatoskr_social_contracts::SocialContractError
 impl core::fmt::Display for ratatoskr_social_contracts::SocialMediaKind
 impl core::fmt::Display for ratatoskr_social_contracts::SocialRelationKind
@@ -155,6 +178,8 @@ impl core::hash::Hash for ratatoskr_social_contracts::PostText
 impl core::hash::Hash for ratatoskr_social_contracts::RemovalReason
 impl core::hash::Hash for ratatoskr_social_contracts::SavedAuthority
 impl core::hash::Hash for ratatoskr_social_contracts::SocialAuthor
+impl core::hash::Hash for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::hash::Hash for ratatoskr_social_contracts::SocialCaptureProvider
 impl core::hash::Hash for ratatoskr_social_contracts::SocialFolderMembership
 impl core::hash::Hash for ratatoskr_social_contracts::SocialMediaItem
 impl core::hash::Hash for ratatoskr_social_contracts::SocialMediaKind
@@ -166,6 +191,8 @@ impl core::marker::Copy for ratatoskr_social_contracts::AcquisitionMethod
 impl core::marker::Copy for ratatoskr_social_contracts::CaptureCompleteness
 impl core::marker::Copy for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Copy for ratatoskr_social_contracts::SavedAuthority
+impl core::marker::Copy for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::Copy for ratatoskr_social_contracts::SocialCaptureProvider
 impl core::marker::Copy for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Freeze for ratatoskr_social_contracts::AcquisitionMethod
 impl core::marker::Freeze for ratatoskr_social_contracts::AuthorHandle
@@ -177,6 +204,10 @@ impl core::marker::Freeze for ratatoskr_social_contracts::PostText
 impl core::marker::Freeze for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Freeze for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::Freeze for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::Freeze for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::Freeze for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::Freeze for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialContractError
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialMediaItem
@@ -200,6 +231,10 @@ impl core::marker::Send for ratatoskr_social_contracts::PostText
 impl core::marker::Send for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Send for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::Send for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::Send for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::Send for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::Send for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::Send for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::Send for ratatoskr_social_contracts::SocialContractError
 impl core::marker::Send for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::Send for ratatoskr_social_contracts::SocialMediaItem
@@ -223,6 +258,10 @@ impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::PostText
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::RemovalReason
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialMediaItem
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialMediaKind
@@ -245,6 +284,10 @@ impl core::marker::Sync for ratatoskr_social_contracts::PostText
 impl core::marker::Sync for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Sync for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::Sync for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::Sync for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::Sync for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::Sync for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::Sync for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::Sync for ratatoskr_social_contracts::SocialContractError
 impl core::marker::Sync for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::Sync for ratatoskr_social_contracts::SocialMediaItem
@@ -268,6 +311,10 @@ impl core::marker::Unpin for ratatoskr_social_contracts::PostText
 impl core::marker::Unpin for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Unpin for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::Unpin for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::Unpin for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::Unpin for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::Unpin for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialContractError
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialMediaItem
@@ -291,6 +338,10 @@ impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::PostText
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::RemovalReason
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialAuthor
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialContractError
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialFolderMembership
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialMediaItem
@@ -314,6 +365,10 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::Pos
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::RemovalReason
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SavedAuthority
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialAuthor
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialFolderMembership
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialMediaItem
@@ -337,6 +392,10 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::PostTe
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::RemovalReason
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SavedAuthority
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialAuthor
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialCaptureRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialFolderMembership
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialMediaItem
@@ -358,6 +417,7 @@ impl core::str::traits::FromStr for ratatoskr_social_contracts::PostText
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SocialMediaKind
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SocialRelationKind
 impl core::str::traits::FromStr for ratatoskr_social_contracts::SyncCheckpointCursor
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_social_contracts::SocialCaptureRequested
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceCaptured
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_social_contracts::SocialSourceRemoved
@@ -367,6 +427,7 @@ impl ratatoskr_social_contracts::DisplayName
 impl ratatoskr_social_contracts::Platform
 impl ratatoskr_social_contracts::PostPermalink
 impl ratatoskr_social_contracts::PostText
+impl ratatoskr_social_contracts::SocialCaptureOutcomeCode
 impl ratatoskr_social_contracts::SocialMediaKind
 impl ratatoskr_social_contracts::SocialRelationKind
 impl ratatoskr_social_contracts::SocialSourceSnapshot
@@ -381,6 +442,9 @@ impl schemars::JsonSchema for ratatoskr_social_contracts::PostText
 impl schemars::JsonSchema for ratatoskr_social_contracts::RemovalReason
 impl schemars::JsonSchema for ratatoskr_social_contracts::SavedAuthority
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialAuthor
+impl schemars::JsonSchema for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl schemars::JsonSchema for ratatoskr_social_contracts::SocialCaptureProvider
+impl schemars::JsonSchema for ratatoskr_social_contracts::SocialCaptureRequested
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialFolderMembership
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialMediaItem
 impl schemars::JsonSchema for ratatoskr_social_contracts::SocialMediaKind
@@ -403,6 +467,9 @@ impl serde_core::ser::Serialize for ratatoskr_social_contracts::PostText
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::RemovalReason
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SavedAuthority
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialAuthor
+impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialCaptureProvider
+impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialCaptureRequested
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialFolderMembership
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialMediaItem
 impl serde_core::ser::Serialize for ratatoskr_social_contracts::SocialMediaKind
@@ -425,6 +492,9 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::PostT
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::RemovalReason
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SavedAuthority
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialAuthor
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialCaptureProvider
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialCaptureRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialFolderMembership
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialMediaItem
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_social_contracts::SocialMediaKind
@@ -447,6 +517,10 @@ impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::PostText where
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::RemovalReason where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SavedAuthority where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialAuthor where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialCaptureProvider where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialCaptureRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialFolderMembership where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialMediaItem where U: core::convert::From<T>
@@ -470,6 +544,10 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::PostText wh
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::RemovalReason where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SavedAuthority where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialAuthor where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialCaptureProvider where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialCaptureRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialFolderMembership where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialMediaItem where U: core::convert::Into<T>
@@ -493,6 +571,10 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::PostText wh
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::RemovalReason where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SavedAuthority where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialAuthor where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialCaptureProvider where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialCaptureRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialFolderMembership where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialMediaItem where U: core::convert::TryFrom<T>
@@ -516,6 +598,10 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::PostText where T:
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::RemovalReason where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SavedAuthority where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialAuthor where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialCaptureProvider where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialCaptureRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialFolderMembership where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialMediaItem where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
@@ -533,6 +619,7 @@ impl<T> alloc::string::ToString for ratatoskr_social_contracts::DisplayName wher
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::Platform where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::PostPermalink where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::PostText where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::SocialContractError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::SocialMediaKind where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::SocialRelationKind where T: core::fmt::Display + ?core::marker::Sized
@@ -547,6 +634,10 @@ impl<T> core::any::Any for ratatoskr_social_contracts::PostText where T: 'static
 impl<T> core::any::Any for ratatoskr_social_contracts::RemovalReason where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SavedAuthority where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialAuthor where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SocialCaptureProvider where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SocialCaptureRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialFolderMembership where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialMediaItem where T: 'static + ?core::marker::Sized
@@ -570,6 +661,10 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::PostText where T
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::RemovalReason where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SavedAuthority where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialAuthor where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialCaptureProvider where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialCaptureRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialFolderMembership where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialMediaItem where T: ?core::marker::Sized
@@ -593,6 +688,10 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::PostText wher
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::RemovalReason where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SavedAuthority where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialAuthor where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialCaptureProvider where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialCaptureRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialFolderMembership where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialMediaItem where T: ?core::marker::Sized
@@ -616,6 +715,10 @@ impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::PostText wher
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::RemovalReason where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SavedAuthority where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialAuthor where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialCaptureProvider where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialCaptureRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialFolderMembership where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialMediaItem where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
@@ -638,6 +741,10 @@ impl<T> core::convert::From<T> for ratatoskr_social_contracts::PostText
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::RemovalReason
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SavedAuthority
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialAuthor
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialCaptureProvider
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialCaptureRequested
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialContractError
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialFolderMembership
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialMediaItem
@@ -661,6 +768,10 @@ impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::PostText where T: co
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::RemovalReason where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SavedAuthority where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialAuthor where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialCaptureProvider where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialCaptureRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialFolderMembership where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialMediaItem where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialMediaKind where T: core::clone::Clone
@@ -683,6 +794,9 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::PostTex
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::RemovalReason where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SavedAuthority where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialAuthor where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialCaptureOutcomeCode where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialCaptureProvider where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialCaptureRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialFolderMembership where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialMediaItem where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialMediaKind where T: for<'de> serde_core::de::Deserialize<'de>
@@ -695,6 +809,8 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialS
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceUpdated where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SyncCheckpointCursor where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::UpstreamAvailability where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::as_str(self) -> &'static str
+pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::is_terminal_source_failure(self) -> bool
 pub const ratatoskr_social_contracts::AuthorHandle::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::AuthorHandle::MAX_LEN: usize
 pub const ratatoskr_social_contracts::AuthorHandle::PATTERN: &'static str
@@ -710,6 +826,7 @@ pub const ratatoskr_social_contracts::PostPermalink::PATTERN: &'static str
 pub const ratatoskr_social_contracts::PostText::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::PostText::MAX_LEN: usize
 pub const ratatoskr_social_contracts::PostText::PATTERN: &'static str
+pub const ratatoskr_social_contracts::SocialCaptureRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_social_contracts::SocialMediaKind::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::SocialMediaKind::MAX_LEN: usize
 pub const ratatoskr_social_contracts::SocialMediaKind::PATTERN: &'static str
@@ -728,6 +845,7 @@ pub fn alloc::string::String::from(ratatoskr_social_contracts::DisplayName) -> S
 pub fn alloc::string::String::from(ratatoskr_social_contracts::Platform) -> Self
 pub fn alloc::string::String::from(ratatoskr_social_contracts::PostPermalink) -> Self
 pub fn alloc::string::String::from(ratatoskr_social_contracts::PostText) -> Self
+pub fn alloc::string::String::from(ratatoskr_social_contracts::SocialCaptureOutcomeCode) -> Self
 pub fn alloc::string::String::from(ratatoskr_social_contracts::SocialMediaKind) -> Self
 pub fn alloc::string::String::from(ratatoskr_social_contracts::SocialRelationKind) -> Self
 pub fn alloc::string::String::from(ratatoskr_social_contracts::SyncCheckpointCursor) -> Self
@@ -971,6 +1089,86 @@ pub fn ratatoskr_social_contracts::SocialAuthor::to_owned(&self) -> T
 pub fn ratatoskr_social_contracts::SocialAuthor::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_social_contracts::SocialAuthor::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_social_contracts::SocialAuthor::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::clone(&self) -> ratatoskr_social_contracts::SocialCaptureOutcomeCode
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::cmp(&self, &ratatoskr_social_contracts::SocialCaptureOutcomeCode) -> core::cmp::Ordering
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::eq(&self, &ratatoskr_social_contracts::SocialCaptureOutcomeCode) -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::error_code(self) -> ratatoskr_error_contracts::code::ErrorCode
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::from(T) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::inline_schema() -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::into(self) -> U
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::parse(&str) -> core::result::Result<Self, ratatoskr_social_contracts::SocialCaptureOutcomeCodeError>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::partial_cmp(&self, &ratatoskr_social_contracts::SocialCaptureOutcomeCode) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::clone(&self) -> ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::eq(&self, &ratatoskr_social_contracts::SocialCaptureOutcomeCodeError) -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::from(T) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::into(self) -> U
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::clone(&self) -> ratatoskr_social_contracts::SocialCaptureProvider
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::cmp(&self, &ratatoskr_social_contracts::SocialCaptureProvider) -> core::cmp::Ordering
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::eq(&self, &ratatoskr_social_contracts::SocialCaptureProvider) -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::from(T) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::inline_schema() -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::into(self) -> U
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::partial_cmp(&self, &ratatoskr_social_contracts::SocialCaptureProvider) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureProvider::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::clone(&self) -> ratatoskr_social_contracts::SocialCaptureRequested
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::eq(&self, &ratatoskr_social_contracts::SocialCaptureRequested) -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::from(T) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::inline_schema() -> bool
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::into(self) -> U
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SocialCaptureRequested::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_social_contracts::SocialContractError::borrow(&self) -> &T
 pub fn ratatoskr_social_contracts::SocialContractError::borrow_mut(&mut self) -> &mut T
 pub fn ratatoskr_social_contracts::SocialContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
@@ -1261,6 +1459,21 @@ pub ratatoskr_social_contracts::SocialAuthor::display_name: core::option::Option
 pub ratatoskr_social_contracts::SocialAuthor::external_author_id: ratatoskr_identifiers::entity::EntityLocalId
 pub ratatoskr_social_contracts::SocialAuthor::handle: core::option::Option<ratatoskr_social_contracts::AuthorHandle>
 pub ratatoskr_social_contracts::SocialAuthor::platform: ratatoskr_social_contracts::Platform
+pub ratatoskr_social_contracts::SocialCaptureOutcomeCode::LinkedArticleExtractionFailed
+pub ratatoskr_social_contracts::SocialCaptureOutcomeCode::SourceDeleted
+pub ratatoskr_social_contracts::SocialCaptureOutcomeCode::SourceUnavailable
+pub ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::input: alloc::string::String
+pub ratatoskr_social_contracts::SocialCaptureProvider::Instagram
+pub ratatoskr_social_contracts::SocialCaptureProvider::Threads
+pub ratatoskr_social_contracts::SocialCaptureProvider::X
+pub ratatoskr_social_contracts::SocialCaptureRequested::acquisition: ratatoskr_social_contracts::AcquisitionMethod
+pub ratatoskr_social_contracts::SocialCaptureRequested::captured_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_social_contracts::SocialCaptureRequested::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_social_contracts::SocialCaptureRequested::idempotency_key: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_social_contracts::SocialCaptureRequested::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_social_contracts::SocialCaptureRequested::original_permalink: ratatoskr_social_contracts::PostPermalink
+pub ratatoskr_social_contracts::SocialCaptureRequested::provider: ratatoskr_social_contracts::SocialCaptureProvider
+pub ratatoskr_social_contracts::SocialCaptureRequested::saved_authority: ratatoskr_social_contracts::SavedAuthority
 pub ratatoskr_social_contracts::SocialContractError::PartialWithoutWarning
 pub ratatoskr_social_contracts::SocialFolderMembership::folder_id: ratatoskr_identifiers::entity::EntityLocalId
 pub ratatoskr_social_contracts::SocialFolderMembership::folder_name: core::option::Option<ratatoskr_social_contracts::DisplayName>
@@ -1313,6 +1526,8 @@ pub struct ratatoskr_social_contracts::Platform(_)
 pub struct ratatoskr_social_contracts::PostPermalink(_)
 pub struct ratatoskr_social_contracts::PostText(_)
 pub struct ratatoskr_social_contracts::SocialAuthor
+pub struct ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+pub struct ratatoskr_social_contracts::SocialCaptureRequested
 pub struct ratatoskr_social_contracts::SocialFolderMembership
 pub struct ratatoskr_social_contracts::SocialMediaItem
 pub struct ratatoskr_social_contracts::SocialMediaKind(_)
@@ -1364,6 +1579,19 @@ pub type ratatoskr_social_contracts::SavedAuthority::Owned = T
 pub type ratatoskr_social_contracts::SocialAuthor::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialAuthor::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialAuthor::Owned = T
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Owned = T
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Owned = T
+pub type ratatoskr_social_contracts::SocialCaptureProvider::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SocialCaptureProvider::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureProvider::Owned = T
+pub type ratatoskr_social_contracts::SocialCaptureRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SocialCaptureRequested::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureRequested::Owned = T
 pub type ratatoskr_social_contracts::SocialContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialContractError::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialFolderMembership::Error = <U as core::convert::TryFrom<T>>::Error
@@ -1418,6 +1646,10 @@ pub unsafe fn ratatoskr_social_contracts::PostText::clone_to_uninit(&self, *mut 
 pub unsafe fn ratatoskr_social_contracts::RemovalReason::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SavedAuthority::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialAuthor::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SocialCaptureProvider::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SocialCaptureRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialFolderMembership::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialMediaItem::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialMediaKind::clone_to_uninit(&self, *mut u8)

@@ -92,9 +92,10 @@ fn fixture_uuids_are_from_the_reserved_synthetic_range() {
     );
 }
 
-/// S-3. No fixture carries personal data or a storage location (`ARCHITECTURE.md` S14).
+/// S-3. No fixture carries personal data, a real URL, or a storage location (`ARCHITECTURE.md`
+/// S14). Reserved `.test` permalink values are the one synthetic URL exception.
 #[test]
-fn fixtures_contain_no_email_addresses_phone_numbers_urls_or_paths() {
+fn fixtures_contain_no_email_addresses_phone_numbers_real_urls_or_paths() {
     let hits = hits_for(&[
         "email-address",
         "e164-phone-number",
@@ -112,6 +113,21 @@ fn fixtures_contain_no_email_addresses_phone_numbers_urls_or_paths() {
     assert_fires("\"blob\": \"s3://bucket/key\"", "object-store-url");
     assert_fires("\"blob\": \"/var/lib/blob/x\"", "absolute-path");
     assert_fires("\"blob\": \"C:\\\\data\"", "windows-path");
+}
+
+/// A synthetic `.test` permalink is safe fixture data when a public-permalink contract needs a
+/// concrete value. Real provider URLs remain prohibited.
+#[test]
+fn synthetic_test_permalinks_are_not_reported_as_personal_urls() {
+    assert!(
+        !ratatoskr_contractsc::secrets::scan_text(
+            "fixtures/commands/social.capture.requested.v1/valid/x-browser-capture.json",
+            r#"{\"original_permalink\": \"https://x.test/ratatoskr/status/1\"}"#,
+        )
+        .iter()
+        .any(|finding| finding.to_string().contains("matches url")),
+        "a reserved test-domain permalink is synthetic fixture data"
+    );
 }
 
 /// S-4. No acceptable fixture carries a floating-point number, which extends the byte-stability

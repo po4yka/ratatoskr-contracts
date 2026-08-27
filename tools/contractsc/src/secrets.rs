@@ -57,6 +57,10 @@ pattern!(EMAIL, r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}");
 pattern!(PHONE, r"\+[1-9]\d{7,14}\b");
 pattern!(HANDLE, r#"(?:^|[\s"(])@[A-Za-z0-9_]{2,}"#);
 pattern!(URL, r"https?://");
+// `.test` is a reserved special-use domain. A concrete public-permalink contract needs a
+// renderable synthetic URL, so permit HTTPS URLs on that domain while continuing to reject any
+// provider or user URL in fixtures.
+pattern!(SYNTHETIC_TEST_URL, r"https://[A-Za-z0-9.-]+\.test");
 pattern!(OBJECT_STORE_URL, r"(?:s3|gs)://");
 // A JSON string whose first segment is a filesystem root, e.g. `"/var/lib/blob"` or
 // `"/Users/…"`. **Not** every leading-slash string: an RFC 6901 JSON Pointer starts with `/`
@@ -157,9 +161,16 @@ pub fn rules() -> Vec<Rule> {
 /// Scans one fixture's text and reports every rule it trips.
 #[must_use]
 pub fn scan_text(display: &str, text: &str) -> Vec<Finding> {
+    let without_synthetic_test_urls = SYNTHETIC_TEST_URL.replace_all(text, "");
     let mut findings: Vec<Finding> = rules()
         .iter()
-        .filter(|rule| rule.matcher.is_match(text))
+        .filter(|rule| {
+            if rule.name == "url" {
+                rule.matcher.is_match(&without_synthetic_test_urls)
+            } else {
+                rule.matcher.is_match(text)
+            }
+        })
         .map(|rule| Finding::Secret {
             path: display.to_owned(),
             pattern: rule.name,

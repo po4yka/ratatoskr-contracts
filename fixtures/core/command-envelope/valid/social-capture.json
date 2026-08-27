@@ -1,0 +1,12 @@
+{
+  "command_id": "018f0000-0000-7000-8000-000000000701",
+  "command_type": "social.capture.requested.v1",
+  "issued_at": "2026-08-27T09:30:00Z",
+  "producer": "ratatoskr-platform",
+  "aggregate_id": "operation:018f0000-0000-7000-8000-000000000702",
+  "correlation_id": "operation:018f0000-0000-7000-8000-000000000703",
+  "schema_version": 1,
+  "payload": {
+    "operation_id": "018f0000-0000-7000-8000-000000000702"
+  }
+}

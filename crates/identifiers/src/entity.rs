@@ -43,6 +43,8 @@ pub enum EntityKind {
     Operation,
     /// A domain event. Wire token `event`.
     Event,
+    /// An asynchronous command. Wire token `command`.
+    Command,
     /// A normalized document. Wire token `document`.
     Document,
     /// Stored bytes addressed by content hash. Wire token `blob`.
@@ -59,7 +61,8 @@ impl EntityKind {
     pub const MAX_LEN: usize = 32;
 
     /// The tokens this build maps to a named variant, sorted for stable review diffs.
-    pub const KNOWN: &'static [&'static str] = &["blob", "document", "event", "operation", "user"];
+    pub const KNOWN: &'static [&'static str] =
+        &["blob", "command", "document", "event", "operation", "user"];
 
     /// The published `PATTERN`, compiled once.
     #[allow(
@@ -97,6 +100,7 @@ impl EntityKind {
             "blob" => Self::Blob,
             "document" => Self::Document,
             "event" => Self::Event,
+            "command" => Self::Command,
             "operation" => Self::Operation,
             "user" => Self::User,
             other => Self::Other(other.to_owned()),
@@ -110,6 +114,7 @@ impl EntityKind {
             Self::User => "user",
             Self::Operation => "operation",
             Self::Event => "event",
+            Self::Command => "command",
             Self::Document => "document",
             Self::Blob => "blob",
             Self::Other(token) => token,

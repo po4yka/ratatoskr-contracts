@@ -1,0 +1,12 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000702",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  },
+  "original_permalink": "https://x.test/ratatoskr/status/1",
+  "captured_at": "2026-08-27T09:30:00Z",
+  "provider": "x",
+  "acquisition": "browser_extension",
+  "saved_authority": "explicit_user_capture"
+}

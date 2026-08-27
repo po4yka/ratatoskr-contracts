@@ -53,7 +53,7 @@ known = [
 [entity_kinds]
 known = [
   "ai_archive", "ai_conversation", "ai_project", "analysis", "backup_policy",
-  "blob", "document", "event", "notification", "operation", "user",
+  "blob", "command", "document", "event", "notification", "operation", "user",
   "repository", "social_source", "x-post",
 ]
 
@@ -73,7 +73,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -116,6 +116,39 @@ note        = "Instant at which the fact became true in the producing bounded co
 [[contract.vague_field_waiver]]
 pointer       = "/properties/payload"
 justification = "Name fixed by the normative wire example in ARCHITECTURE S5.2. Constrained to a JSON object; its shape is selected by event_type, whose registered schema is the precise contract."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "core.command_envelope"
+family         = "core"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+crate_name     = "ratatoskr-event-envelope"
+canonical_path = "crates/event-envelope/src/command.rs"
+fixtures_dir   = "fixtures/core/command-envelope"
+summary        = "Canonical envelope for a user-initiated Platform command."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_event_envelope::CommandEnvelope"
+output         = "schemas/json-schema/core/command-envelope.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:core:v1:CommandEnvelope"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/issued_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant at which Platform issued the command, according to Platform's clock."
+
+[[contract.vague_field_waiver]]
+pointer       = "/properties/payload"
+justification = "The typed command payload is selected by command_type and constrained by the registered command payload schema; the envelope preserves it as a JSON object."
 
 # ---------------------------------------------------------------------------
 [[contract]]
@@ -286,6 +319,39 @@ justification = "The closed OperationStatus enum defines the exact lifecycle voc
 [contract.event]
 event_type   = "platform.operation.reported.v1"
 payload_type = "ratatoskr_operation_contracts::OperationReported"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "social.capture_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-x"]
+crate_name     = "ratatoskr-social-contracts"
+canonical_path = "crates/social-contracts/src/capture.rs"
+fixtures_dir   = "fixtures/commands/social.capture.requested.v1"
+summary        = "Explicit browser social-permalink capture request routed by source provenance."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_social_contracts::SocialCaptureRequested"
+output         = "schemas/json-schema/commands/capture-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:SocialCaptureRequested"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "/properties/captured_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the Browser Extension recorded the user's explicit capture, according to the extension clock."
+
+[contract.command]
+command_type = "social.capture.requested.v1"
+payload_type = "ratatoskr_social_contracts::SocialCaptureRequested"
 
 # ---------------------------------------------------------------------------
 [[contract]]

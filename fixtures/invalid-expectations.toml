@@ -259,6 +259,16 @@ reason         = "A report without the lifecycle status reached gives Platform n
 # social/social-source-snapshot
 # ---------------------------------------------------------------------------
 
+["core/command-envelope/invalid/future-schema-version.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "unsupported envelope schema_version 2"
+reason = "Command envelopes reject future schema versions rather than guessing their meaning."
+
+["commands/social.capture.requested.v1/invalid/unknown-provider.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "unknown variant `mastodon`"
+reason = "Browser social capture provenance is closed to providers with an owning social service."
+
 ["social/social-source-snapshot/invalid/unknown-acquisition-method.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'unknown variant `carrier_pigeon`'

@@ -95,6 +95,8 @@ pub struct Contract {
     pub vague_field_waivers: Vec<VagueFieldWaiver>,
     /// Event registration. Legal only when `family = "events"` (R9).
     pub event: Option<EventDecl>,
+    /// Command registration. Legal only when `family = "commands"` (R10).
+    pub command: Option<CommandDecl>,
 }
 
 /// One generated root type.
@@ -148,6 +150,16 @@ pub struct EventDecl {
     /// `<bounded_context>.<aggregate>.<action>.v<major>`.
     pub event_type: String,
     /// Rust path of the payload type; must equal the declared root type (R9).
+    pub payload_type: String,
+}
+
+/// The registration of a command type.
+#[derive(Debug, Clone, serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct CommandDecl {
+    /// `<bounded_context>.<aggregate>.<action>.v<major>`.
+    pub command_type: String,
+    /// Rust path of the payload type; must equal the declared root type (R10).
     pub payload_type: String,
 }
 
@@ -267,7 +279,7 @@ pub fn kebab(token: &str) -> String {
     token.replace('_', "-")
 }
 
-/// Runs metadata rules R1–R9, R12–R14 against the repository.
+/// Runs metadata rules R1–R10, R12–R14 against the repository.
 ///
 /// `generated` is the in-memory output of [`crate::generate`]; it supplies the set of paths the
 /// registry actually produces, which is one half of R2 and R6.
@@ -285,6 +297,7 @@ pub fn validate(
         rule_r5(contract, root, &mut findings);
         rule_r7(contract, metadata, &mut findings);
         rule_r9(contract, &mut findings);
+        rule_r10(contract, &mut findings);
     }
     rule_r6(metadata, generated, &mut findings);
     rule_r8(metadata, root, &mut findings);
@@ -593,6 +606,79 @@ fn rule_r9(contract: &Contract, findings: &mut Vec<Finding>) {
             detail: format!(
                 "{}: payload_type {} does not implement EventPayload in this build",
                 contract.id, event.payload_type
+            ),
+        }),
+    }
+}
+
+/// R10 — command registration is present exactly for the commands family and agrees with the
+/// payload type, including the major version and `CommandPayload::COMMAND_TYPE`.
+fn rule_r10(contract: &Contract, findings: &mut Vec<Finding>) {
+    let is_commands_family = contract.family == "commands";
+    let Some(command) = contract.command.as_ref() else {
+        if is_commands_family {
+            findings.push(Finding::Metadata {
+                rule: "R10",
+                detail: format!(
+                    "{}: family is `commands` but [contract.command] is absent",
+                    contract.id
+                ),
+            });
+        }
+        return;
+    };
+    if !is_commands_family {
+        findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!(
+                "{}: [contract.command] is legal only when family = `commands`",
+                contract.id
+            ),
+        });
+    }
+    match ratatoskr_event_envelope::CommandType::parse(&command.command_type) {
+        Ok(parsed) if parsed.major() == contract.major_version => {}
+        Ok(parsed) => findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!(
+                "{}: command_type major {} disagrees with major_version {}",
+                contract.id,
+                parsed.major(),
+                contract.major_version
+            ),
+        }),
+        Err(error) => findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!("{}: command_type does not parse: {error}", contract.id),
+        }),
+    }
+    let declares_payload = contract
+        .root_types
+        .iter()
+        .any(|root_type| root_type.rust_path == command.payload_type);
+    if !declares_payload {
+        findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!(
+                "{}: payload_type {} is not one of this contract's root types",
+                contract.id, command.payload_type
+            ),
+        });
+    }
+    match registry::command_payload_types().get(command.payload_type.as_str()) {
+        Some(declared) if *declared == command.command_type => {}
+        Some(declared) => findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!(
+                "{}: command_type {} disagrees with CommandPayload::COMMAND_TYPE {declared}",
+                contract.id, command.command_type
+            ),
+        }),
+        None => findings.push(Finding::Metadata {
+            rule: "R10",
+            detail: format!(
+                "{}: payload_type {} does not implement CommandPayload in this build",
+                contract.id, command.payload_type
             ),
         }),
     }

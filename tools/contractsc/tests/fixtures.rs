@@ -237,6 +237,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_event_envelope::EventEnvelope" => {
             render!(ratatoskr_event_envelope::EventEnvelope)
         }
+        "ratatoskr_event_envelope::CommandEnvelope" => {
+            render!(ratatoskr_event_envelope::CommandEnvelope)
+        }
         "ratatoskr_github_contracts::RepositoryAnalysisCompleted" => {
             render!(ratatoskr_github_contracts::RepositoryAnalysisCompleted)
         }
@@ -261,6 +264,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_social_contracts::SocialSourceCaptured" => {
             render!(ratatoskr_social_contracts::SocialSourceCaptured)
+        }
+        "ratatoskr_social_contracts::SocialCaptureRequested" => {
+            render!(ratatoskr_social_contracts::SocialCaptureRequested)
         }
         "ratatoskr_social_contracts::SocialSourceAnalysisCompleted" => {
             render!(ratatoskr_social_contracts::SocialSourceAnalysisCompleted)

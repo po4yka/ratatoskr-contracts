@@ -24,10 +24,12 @@
 #![deny(missing_docs)]
 
 mod author;
+mod capture;
 mod collection;
 mod error;
 mod events;
 mod media;
+mod outcome;
 mod relation;
 mod snapshot;
 mod tokens;
@@ -35,12 +37,14 @@ mod values;
 mod vocabulary;
 
 pub use crate::author::SocialAuthor;
+pub use crate::capture::{SocialCaptureProvider, SocialCaptureRequested};
 pub use crate::collection::SocialFolderMembership;
 pub use crate::error::SocialContractError;
 pub use crate::events::{
     SocialSourceAnalysisCompleted, SocialSourceCaptured, SocialSourceRemoved, SocialSourceUpdated,
 };
 pub use crate::media::{SocialMediaItem, SocialMediaKind};
+pub use crate::outcome::{SocialCaptureOutcomeCode, SocialCaptureOutcomeCodeError};
 pub use crate::relation::{SocialRelation, SocialRelationKind};
 pub use crate::snapshot::{SocialSourceSnapshot, SyncCheckpointCursor};
 pub use crate::tokens::Platform;

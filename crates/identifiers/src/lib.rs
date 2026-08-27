@@ -44,7 +44,8 @@ pub use crate::macros::doc_description;
 pub use crate::text::SafeMessage;
 pub use crate::timestamp::WireTimestamp;
 pub use crate::uuid_ids::{
-    AiArchiveId, AiConversationId, AiProjectId, BlockId, CorrelationId, DocumentId, EventId,
-    NotificationId, OperationId, RepositoryAnalysisRequestId, RepositoryId, SocialSourceId, UserId,
+    AiArchiveId, AiConversationId, AiProjectId, BlockId, CommandId, CorrelationId, DocumentId,
+    EventId, NotificationId, OperationId, RepositoryAnalysisRequestId, RepositoryId,
+    SocialSourceId, UserId,
 };
 pub use crate::wire::{Extensions, canonical_json, dropped_field_pointers};
