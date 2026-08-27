@@ -389,8 +389,8 @@ reason         = "State-carried transfer is the replay-safety stance: an added e
 
 ["events/ai_archive.conversation.updated.v1/invalid/missing-ai-archive-id.json"]
 rejected_by    = ["json_schema", "serde"]
-error_contains = "missing field `ai_archive_id`"
-reason         = "The owning import ties a conversation to its evidence and completeness report; without it a consumer cannot trace the record back to the export it was parsed from."
+error_contains = "missing field `import_provenance`"
+reason         = "The immutable import provenance ties a conversation to raw export evidence and parser identity; without it a consumer cannot independently verify the event."
 
 # ---------------------------------------------------------------------------
 # backup/desired-backup-policy

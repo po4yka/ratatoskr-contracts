@@ -1,5 +1,21 @@
 {
-  "ai_archive_id": "018f0000-0000-7000-8000-000000000402",
+  "import_provenance": {
+    "ai_archive_id": "018f0000-0000-7000-8000-000000000402",
+    "provider": "chatgpt",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "source_export": {
+      "owner_service": "ratatoskr-chatgpt",
+      "digest": {
+        "algorithm": "sha256",
+        "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      },
+      "media_type": "application/zip",
+      "length_bytes": 2097152
+    },
+    "imported_at": "2026-08-18T11:30:00Z",
+    "parser_name": "chatgpt_export",
+    "parser_version": "2026.08.1"
+  },
   "conversation": {
     "ai_conversation_id": "018f0000-0000-7000-8000-000000000403",
     "provider": "chatgpt",

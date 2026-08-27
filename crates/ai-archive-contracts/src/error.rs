@@ -29,4 +29,8 @@ pub enum AiArchiveContractError {
         /// The count computable from the payload.
         actual: u32,
     },
+    /// A conversation fact disagreed with the immutable import provenance
+    /// carried beside it.
+    #[error("conversation and import provenance disagree")]
+    ConversationProvenanceMismatch,
 }

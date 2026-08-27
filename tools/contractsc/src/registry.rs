@@ -71,6 +71,8 @@ root_types! {
         => ratatoskr_ai_archive_contracts::AiArchiveImport,
     "ratatoskr_ai_archive_contracts::AiArchiveSnapshot"
         => ratatoskr_ai_archive_contracts::AiArchiveSnapshot,
+    "ratatoskr_ai_archive_contracts::AiArchiveTombstone"
+        => ratatoskr_ai_archive_contracts::AiArchiveTombstone,
     "ratatoskr_ai_archive_contracts::AiConversation"
         => ratatoskr_ai_archive_contracts::AiConversation,
     "ratatoskr_ai_archive_contracts::AiConversationAdded"
@@ -136,6 +138,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_ai_archive_contracts::AiArchiveImport",
         <ratatoskr_ai_archive_contracts::AiArchiveImport as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_ai_archive_contracts::AiArchiveTombstone",
+        <ratatoskr_ai_archive_contracts::AiArchiveTombstone as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
         "ratatoskr_ai_archive_contracts::AiConversationAdded",

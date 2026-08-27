@@ -35,7 +35,10 @@ pub use crate::asset::{
 };
 pub use crate::content_part::AiContentPart;
 pub use crate::error::AiArchiveContractError;
-pub use crate::events::{AiConversationAdded, AiConversationUpdated};
+pub use crate::events::{
+    AiArchiveProvenance, AiArchiveTombstone, AiArchiveTombstoneParser, AiArchiveTombstoneReason,
+    AiArchiveTombstoneSubject, AiConversationAdded, AiConversationUpdated,
+};
 pub use crate::graph::{AiAuthorRole, AiConversation, AiMessage, AiModelName, AiProject};
 pub use crate::snapshot::{
     AiArchiveCompleteness, AiArchiveImport, AiArchiveOperationSummary, AiArchiveSnapshot,

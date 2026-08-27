@@ -124,7 +124,7 @@ pub(crate) fn minimal_conversation() -> AiConversation {
         messages: vec![minimal_message()],
         content_digest: digest(),
         parser_name: parser_name("chatgpt_export"),
-        parser_version: parser_version("1.0.0"),
+        parser_version: parser_version("2026.08.1"),
         warnings: Vec::new(),
         extensions: Extensions::new(),
     }
@@ -140,7 +140,7 @@ pub(crate) fn minimal_message() -> AiMessage {
         model: None,
         provider_created_at: None,
         parser_name: parser_name("chatgpt_export"),
-        parser_version: parser_version("1.0.0"),
+        parser_version: parser_version("2026.08.1"),
         extensions: Extensions::new(),
     }
 }

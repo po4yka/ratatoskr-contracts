@@ -1,5 +1,18 @@
 {
-  "ai_archive_id": "018f0000-0000-7000-8000-000000000401",
+  "import_provenance": {
+    "ai_archive_id": "018f0000-0000-7000-8000-000000000401",
+    "provider": "claude",
+    "owner": "user:018f0000-0000-7000-8000-000000000005",
+    "source_export": {
+      "owner_service": "ratatoskr-claude",
+      "digest": { "algorithm": "sha256", "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef" },
+      "media_type": "application/zip",
+      "length_bytes": 1048576
+    },
+    "imported_at": "2026-08-17T10:00:00Z",
+    "parser_name": "claude_export",
+    "parser_version": "1.4.2"
+  },
   "conversation": {
     "ai_conversation_id": "018f0000-0000-7000-8000-000000000403",
     "provider": "claude",

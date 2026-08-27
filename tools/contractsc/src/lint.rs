@@ -40,6 +40,19 @@ pub fn key(type_name: &str, pointer: &str) -> String {
     format!("{type_name}#{pointer}")
 }
 
+/// Resolves a governance pointer to the identity used by the lint.
+///
+/// Most entries are relative to their contract root. A reusable nested type instead names its
+/// declaring type explicitly, for example `AiArchiveProvenance#/properties/imported_at`, so one
+/// declaration governs the property wherever the type appears.
+fn governance_key(root_type: &str, pointer: &str) -> String {
+    if pointer.contains('#') {
+        pointer.to_owned()
+    } else {
+        key(root_type, pointer)
+    }
+}
+
 /// Runs L1–L8 over the in-memory generated schemas.
 #[must_use]
 pub fn run(metadata: &Metadata, generated: &BTreeMap<PathBuf, String>) -> Vec<Finding> {
@@ -54,7 +67,7 @@ pub fn run(metadata: &Metadata, generated: &BTreeMap<PathBuf, String>) -> Vec<Fi
         let type_name = registry::short_name(&declared.rust_path);
         for waiver in &contract.vague_field_waivers {
             waivers.insert(
-                key(type_name, &waiver.pointer),
+                governance_key(type_name, &waiver.pointer),
                 waiver.justification.as_str(),
             );
             let trimmed = waiver.justification.trim();
@@ -65,7 +78,7 @@ pub fn run(metadata: &Metadata, generated: &BTreeMap<PathBuf, String>) -> Vec<Fi
             {
                 findings.push(Finding::Lint {
                     rule: "L7",
-                    pointer: key(type_name, &waiver.pointer),
+                    pointer: governance_key(type_name, &waiver.pointer),
                     detail: format!(
                         "justification must be a real one of at least {} characters",
                         metadata.lint.min_waiver_justification_chars
@@ -74,7 +87,7 @@ pub fn run(metadata: &Metadata, generated: &BTreeMap<PathBuf, String>) -> Vec<Fi
             }
         }
         for field in &contract.fields {
-            governed.insert(key(type_name, &field.pointer));
+            governed.insert(governance_key(type_name, &field.pointer));
         }
         if let Some(event) = contract.event.as_ref()
             && let Ok(parsed) = ratatoskr_event_envelope::EventType::parse(&event.event_type)

@@ -171,6 +171,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_ai_archive_contracts::AiArchiveSnapshot" => {
             render!(ratatoskr_ai_archive_contracts::AiArchiveSnapshot)
         }
+        "ratatoskr_ai_archive_contracts::AiArchiveTombstone" => {
+            render!(ratatoskr_ai_archive_contracts::AiArchiveTombstone)
+        }
         "ratatoskr_ai_archive_contracts::AiConversation" => {
             render!(ratatoskr_ai_archive_contracts::AiConversation)
         }

@@ -47,7 +47,7 @@ known = ["user"]
 [lint]
 banned_property_names = ["data", "metadata", "status", "timestamp"]
 required_numeric_suffixes = ["_bytes", "_count"]
-timestamp_property_names = ["status_changed_at"]
+timestamp_property_names = ["status_changed_at", "imported_at"]
 min_waiver_justification_chars = 40
 
 [[contract]]
@@ -216,6 +216,46 @@ fn rejects_unknown_timestamp_authority() {
         "{:?}",
         lint_hits(&governed, &named)
     );
+}
+
+/// Nested types are governed by the type that declares their property, even when they appear
+/// below an event root. Repeating the governance on every root would let one declaration drift.
+#[test]
+fn accepts_governance_for_a_nested_declaring_type() {
+    let instant = serde_json::json!({
+        "type": "string",
+        "format": "date-time",
+        "description": "The instant the archive import completed.",
+    });
+    let document = serde_json::json!({
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Probe",
+        "type": "object",
+        "properties": {
+            "provenance": {
+                "$ref": "#/$defs/Provenance",
+                "description": "Immutable evidence for the normalized record."
+            }
+        },
+        "$defs": {
+            "Provenance": {
+                "type": "object",
+                "properties": { "imported_at": instant }
+            }
+        }
+    });
+    let body = serde_json::to_string_pretty(&document).expect("a probe document serializes");
+    let schemas = BTreeMap::from([(PathBuf::from(PROBE_OUTPUT), body)]);
+    let metadata = probe_metadata(
+        "\n[[contract.field]]\n\
+         pointer     = \"Provenance#/properties/imported_at\"\n\
+         authority   = \"observed\"\n\
+         nullability = \"required\"\n\
+         unit        = \"instant_rfc3339_utc_canonical\"\n\
+         note        = \"Instant the archive importer completed normalized processing.\"\n",
+    );
+
+    assert!(lint_hits(&metadata, &schemas).is_empty());
 }
 
 /// L-5. A floating-point property is rejected outright: it is not waivable, because float

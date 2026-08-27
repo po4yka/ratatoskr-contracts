@@ -1,4 +1,4 @@
-//! The three AI-archive event payloads and their envelope composition.
+//! The AI-archive event payloads and their envelope composition.
 
 #![allow(
     clippy::expect_used,
@@ -10,7 +10,8 @@
 mod common;
 
 use ratatoskr_ai_archive_contracts::{
-    AiArchiveCompleteness, AiArchiveImport, AiConversationAdded, AiConversationUpdated,
+    AiArchiveCompleteness, AiArchiveImport, AiArchiveProvenance, AiArchiveTombstone,
+    AiConversationAdded, AiConversationUpdated,
 };
 use ratatoskr_event_envelope::{EventEnvelope, EventPayload};
 use ratatoskr_identifiers::{Extensions, dropped_field_pointers};
@@ -32,6 +33,10 @@ fn event_type_constants_are_the_registered_names() {
         AiConversationUpdated::EVENT_TYPE,
         "ai_archive.conversation.updated.v1"
     );
+    assert_eq!(
+        AiArchiveTombstone::EVENT_TYPE,
+        "ai_archive.subject.tombstoned.v1"
+    );
 
     for (payload_type, aggregate, action) in [
         (
@@ -45,6 +50,7 @@ fn event_type_constants_are_the_registered_names() {
             "conversation",
             "updated",
         ),
+        (AiArchiveTombstone::event_type(), "subject", "tombstoned"),
     ] {
         assert_eq!(payload_type.bounded_context(), "ai_archive");
         assert_eq!(payload_type.aggregate(), aggregate);
@@ -92,12 +98,12 @@ fn conversation_events_carry_the_whole_conversation() {
     let conversation = common::minimal_conversation();
     for payload in [
         AiConversationPayload::Added(AiConversationAdded {
-            ai_archive_id: common::archive_id(),
+            import_provenance: provenance(),
             conversation: conversation.clone(),
             extensions: Extensions::new(),
         }),
         AiConversationPayload::Updated(AiConversationUpdated {
-            ai_archive_id: common::archive_id(),
+            import_provenance: provenance(),
             conversation: conversation.clone(),
             extensions: Extensions::new(),
         }),
@@ -113,10 +119,11 @@ fn conversation_events_carry_the_whole_conversation() {
                     .expect("typed read");
                 assert_eq!(decoded.conversation, conversation);
                 assert_eq!(
-                    decoded.ai_archive_id,
+                    decoded.import_provenance.ai_archive_id,
                     common::archive_id(),
                     "the owning import travels beside the record"
                 );
+                assert!(decoded.validate().is_ok(), "the imported linkage agrees");
             }
             AiConversationPayload::Updated(updated) => {
                 envelope.set_payload(updated).expect("a JSON object body");
@@ -125,6 +132,7 @@ fn conversation_events_carry_the_whole_conversation() {
                     .payload_as::<AiConversationUpdated>()
                     .expect("typed read");
                 assert_eq!(decoded.conversation, conversation);
+                assert!(decoded.validate().is_ok(), "the imported linkage agrees");
             }
         }
 
@@ -140,11 +148,62 @@ fn conversation_events_carry_the_whole_conversation() {
     }
 }
 
+/// A conversation fact must stand on its own when a consumer has not retained
+/// the corresponding import event.
+#[test]
+fn conversation_event_requires_self_contained_import_provenance() {
+    let fixture = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../../fixtures/events/ai_archive.conversation.added.v1/valid/claude-added.json");
+    let body = std::fs::read_to_string(&fixture)
+        .unwrap_or_else(|error| panic!("{} is unreadable: {error}", fixture.display()));
+    let mut payload: serde_json::Value = serde_json::from_str(&body).expect("the fixture is JSON");
+    let removed = payload
+        .as_object_mut()
+        .expect("the fixture is an object")
+        .remove("import_provenance");
+    assert!(removed.is_some(), "the valid fixture carries provenance");
+
+    let parsed = serde_json::from_value::<AiConversationAdded>(payload);
+    assert!(
+        parsed.is_err(),
+        "a conversation event without immutable import provenance must be rejected"
+    );
+}
+
+/// An authoritative tombstone must retain the exact deletion evidence and
+/// cannot be represented by a missing-snapshot observation.
+#[test]
+fn tombstone_fixture_carries_authoritative_evidence() {
+    let fixture = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join(
+        "../../fixtures/events/ai_archive.subject.tombstoned.v1/valid/conversation-tombstoned.json",
+    );
+    let body = std::fs::read_to_string(&fixture)
+        .unwrap_or_else(|error| panic!("{} is unreadable: {error}", fixture.display()));
+    let value: serde_json::Value = serde_json::from_str(&body).expect("the fixture is JSON");
+
+    assert_eq!(
+        value
+            .pointer("/subject/subject_kind")
+            .and_then(serde_json::Value::as_str),
+        Some("conversation")
+    );
+    assert_eq!(
+        value.pointer("/reason").and_then(serde_json::Value::as_str),
+        Some("provider_deletion_event")
+    );
+    assert!(
+        value
+            .pointer("/evidence_ref/digest/hex")
+            .is_some_and(serde_json::Value::is_string)
+    );
+    assert!(value.get("missing_from_latest_snapshot").is_none());
+}
+
 /// A consumer that asks for an archive payload from an unrelated envelope is refused.
 #[test]
 fn mismatched_or_unrelated_envelopes_are_refused() {
     let payload = AiConversationAdded {
-        ai_archive_id: common::archive_id(),
+        import_provenance: provenance(),
         conversation: common::minimal_conversation(),
         extensions: Extensions::new(),
     };
@@ -176,6 +235,14 @@ fn mismatched_or_unrelated_envelopes_are_refused() {
             .contains("platform.operation.progressed.v1"),
         "unexpected error: {error}"
     );
+}
+
+fn provenance() -> AiArchiveProvenance {
+    AiArchiveProvenance::from_import(&common::import_with_report(common::report(
+        AiArchiveCompleteness::Complete,
+        1,
+        0,
+    )))
 }
 
 enum AiConversationPayload {

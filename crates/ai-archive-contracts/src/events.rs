@@ -2,9 +2,113 @@
 
 use ratatoskr_event_envelope::EventPayload;
 
+use crate::error::AiArchiveContractError;
 use crate::graph::AiConversation;
 use crate::snapshot::AiArchiveImport;
-use ratatoskr_identifiers::{AiArchiveId, Extensions};
+use crate::tokens::{AiProvider, ParserName, ParserVersion};
+use ratatoskr_identifiers::{
+    AiArchiveId, AiConversationId, BlobRef, Extensions, TenantRef, WireTimestamp,
+    wire_string_newtype,
+};
+
+wire_string_newtype! {
+    /// An authoritative reason why an AI-archive subject was tombstoned.
+    pub struct AiArchiveTombstoneReason {
+        pattern = r"^(provider_deletion_event|compliance_event|reconciliation_policy)$",
+        max_len = 32,
+        examples = ["provider_deletion_event", "compliance_event", "reconciliation_policy"],
+    }
+}
+
+/// The archive record made unavailable by an authoritative tombstone fact.
+#[derive(
+    Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize, schemars::JsonSchema,
+)]
+#[serde(tag = "subject_kind", rename_all = "snake_case")]
+pub enum AiArchiveTombstoneSubject {
+    /// The entire archive import named by the enclosing `ai_archive_id`.
+    Archive,
+    /// One conversation belonging to the enclosing archive import.
+    Conversation {
+        /// Ratatoskr identity of the tombstoned conversation.
+        ai_conversation_id: AiConversationId,
+    },
+}
+
+/// Optional parser identity for a tombstone created during parser-driven reconciliation.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArchiveTombstoneParser {
+    /// Parser that created the tombstone record.
+    pub parser_name: ParserName,
+    /// Version of the parser that created the tombstone record.
+    pub parser_version: ParserVersion,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+/// Immutable import evidence repeated beside one conversation fact.
+///
+/// A retained or replayed conversation fact can therefore be checked without
+/// requiring a retained earlier import event or access to a producer database.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArchiveProvenance {
+    /// Ratatoskr identity of the import that normalized this conversation.
+    pub ai_archive_id: AiArchiveId,
+    /// Provider whose export produced the import.
+    pub provider: AiProvider,
+    /// Tenant that owns the import and conversation.
+    pub owner: TenantRef,
+    /// Immutable raw export backing the import, including its content digest.
+    pub source_export: BlobRef,
+    /// Instant the producer completed the normalized import on its own clock.
+    pub imported_at: WireTimestamp,
+    /// Parser that normalized the import.
+    pub parser_name: ParserName,
+    /// Version of the parser that normalized the import.
+    pub parser_version: ParserVersion,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl AiArchiveProvenance {
+    /// Makes provenance from the immutable import head.
+    #[must_use]
+    pub fn from_import(import: &AiArchiveImport) -> Self {
+        Self {
+            ai_archive_id: import.ai_archive_id,
+            provider: import.provider.clone(),
+            owner: import.owner,
+            source_export: import.source_export.clone(),
+            imported_at: import.imported_at,
+            parser_name: import.parser_name.clone(),
+            parser_version: import.parser_version.clone(),
+            extensions: Extensions::new(),
+        }
+    }
+
+    /// Verifies that the conversation belongs to this import and parser revision.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ConversationProvenanceMismatch`] when
+    /// the conversation's provider, owner, parser name, or parser version does
+    /// not agree with this immutable import provenance.
+    pub fn validate_conversation(
+        &self,
+        conversation: &AiConversation,
+    ) -> Result<(), AiArchiveContractError> {
+        if self.provider != conversation.provider
+            || self.owner != conversation.owner
+            || self.parser_name != conversation.parser_name
+            || self.parser_version != conversation.parser_version
+        {
+            return Err(AiArchiveContractError::ConversationProvenanceMismatch);
+        }
+        Ok(())
+    }
+}
 
 /// Payload of `ai_archive.archive.imported.v1`: one provider export finished importing as
 /// immutable evidence and normalized nodes.
@@ -28,8 +132,8 @@ impl EventPayload for AiArchiveImport {
 /// needed to interpret this one.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AiConversationAdded {
-    /// The import this conversation was parsed by.
-    pub ai_archive_id: AiArchiveId,
+    /// Immutable evidence for the import that normalized this conversation.
+    pub import_provenance: AiArchiveProvenance,
 
     /// The conversation's record as it now stands.
     pub conversation: AiConversation,
@@ -37,6 +141,19 @@ pub struct AiConversationAdded {
     /// Unknown-but-preserved additive fields.
     #[serde(flatten)]
     pub extensions: Extensions,
+}
+
+impl AiConversationAdded {
+    /// Verifies that the embedded conversation agrees with its import evidence.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ConversationProvenanceMismatch`] when
+    /// the conversation and its immutable import provenance disagree.
+    pub fn validate(&self) -> Result<(), AiArchiveContractError> {
+        self.import_provenance
+            .validate_conversation(&self.conversation)
+    }
 }
 
 impl EventPayload for AiConversationAdded {
@@ -50,8 +167,8 @@ impl EventPayload for AiConversationAdded {
 /// of replaying every intermediate one.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AiConversationUpdated {
-    /// The import this conversation was parsed by.
-    pub ai_archive_id: AiArchiveId,
+    /// Immutable evidence for the import that normalized this conversation.
+    pub import_provenance: AiArchiveProvenance,
 
     /// The conversation's record as it now stands.
     pub conversation: AiConversation,
@@ -61,6 +178,52 @@ pub struct AiConversationUpdated {
     pub extensions: Extensions,
 }
 
+impl AiConversationUpdated {
+    /// Verifies that the embedded conversation agrees with its import evidence.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AiArchiveContractError::ConversationProvenanceMismatch`] when
+    /// the conversation and its immutable import provenance disagree.
+    pub fn validate(&self) -> Result<(), AiArchiveContractError> {
+        self.import_provenance
+            .validate_conversation(&self.conversation)
+    }
+}
+
 impl EventPayload for AiConversationUpdated {
     const EVENT_TYPE: &'static str = "ai_archive.conversation.updated.v1";
+}
+
+/// Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.
+///
+/// The fact is emitted only from provider deletion, compliance deletion, or an
+/// approved reconciliation policy.  It never represents an object merely
+/// missing from one snapshot.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+pub struct AiArchiveTombstone {
+    /// Archive import that contained the subject when the evidence was recorded.
+    pub ai_archive_id: AiArchiveId,
+    /// Provider that owned the archive subject.
+    pub provider: AiProvider,
+    /// Tenant that owned the archive subject.
+    pub owner: TenantRef,
+    /// The exact archive or conversation made unavailable.
+    pub subject: AiArchiveTombstoneSubject,
+    /// Authoritative source of the deletion decision.
+    pub reason: AiArchiveTombstoneReason,
+    /// Immutable raw evidence for the deletion decision.
+    pub evidence_ref: BlobRef,
+    /// Instant the producer observed the authoritative deletion evidence.
+    pub observed_at: WireTimestamp,
+    /// Parser identity when a parser created the tombstone during reconciliation.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub parser: Option<AiArchiveTombstoneParser>,
+    /// Unknown-but-preserved additive fields.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl EventPayload for AiArchiveTombstone {
+    const EVENT_TYPE: &'static str = "ai_archive.subject.tombstoned.v1";
 }

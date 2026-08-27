@@ -117,7 +117,8 @@ pub struct RootTypeDecl {
 #[derive(Debug, Clone, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct FieldGovernance {
-    /// JSON pointer to the property, relative to the declaring root type.
+    /// JSON pointer to the property, relative to the contract root, or a `TypeName#/...` key
+    /// when the property belongs to a reusable nested type.
     pub pointer: String,
     /// Which clock or actor the value comes from.
     pub authority: Authority,
@@ -133,7 +134,8 @@ pub struct FieldGovernance {
 #[derive(Debug, Clone, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct VagueFieldWaiver {
-    /// JSON pointer to the property, relative to the declaring root type.
+    /// JSON pointer to the property, relative to the contract root, or a `TypeName#/...` key
+    /// when the property belongs to a reusable nested type.
     pub pointer: String,
     /// Why the banned name is nonetheless a precise contract.
     pub justification: String,

@@ -5,19 +5,19 @@
   "description": "Payload of `ai_archive.conversation.added.v1`: a conversation entered the index.\n\nCarries the whole conversation graph plus the owning import's identity (state-carried\ntransfer), so at-least-once redelivery is idempotent on `event_id` and no earlier event is\nneeded to interpret this one.",
   "type": "object",
   "properties": {
-    "ai_archive_id": {
-      "description": "The import this conversation was parsed by.",
-      "$ref": "#/$defs/AiArchiveId"
-    },
     "conversation": {
       "description": "The conversation's record as it now stands.",
       "$ref": "#/$defs/AiConversation"
+    },
+    "import_provenance": {
+      "description": "Immutable evidence for the import that normalized this conversation.",
+      "$ref": "#/$defs/AiArchiveProvenance"
     }
   },
   "additionalProperties": true,
   "required": [
-    "ai_archive_id",
-    "conversation"
+    "conversation",
+    "import_provenance"
   ],
   "x-ratatoskr-provenance": {
     "canonical_source": "ratatoskr_ai_archive_contracts::AiConversationAdded",
@@ -27,7 +27,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:e771af39b8d1fcded4cdca95653f1573afe3472ee60cbbc2583738df8606b73e",
+    "source_digest": "sha256:7a265c426065811d9a624cef7427d8518271c7633ee4aba3920f7173a3570c71",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -41,6 +41,51 @@
         "018f0000-0000-7000-8000-000000000001"
       ],
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "AiArchiveProvenance": {
+      "description": "Immutable import evidence repeated beside one conversation fact.\n\nA retained or replayed conversation fact can therefore be checked without\nrequiring a retained earlier import event or access to a producer database.",
+      "type": "object",
+      "properties": {
+        "ai_archive_id": {
+          "description": "Ratatoskr identity of the import that normalized this conversation.",
+          "$ref": "#/$defs/AiArchiveId"
+        },
+        "imported_at": {
+          "description": "Instant the producer completed the normalized import on its own clock.",
+          "$ref": "#/$defs/WireTimestamp"
+        },
+        "owner": {
+          "description": "Tenant that owns the import and conversation.",
+          "$ref": "#/$defs/TenantRef"
+        },
+        "parser_name": {
+          "description": "Parser that normalized the import.",
+          "$ref": "#/$defs/ParserName"
+        },
+        "parser_version": {
+          "description": "Version of the parser that normalized the import.",
+          "$ref": "#/$defs/ParserVersion"
+        },
+        "provider": {
+          "description": "Provider whose export produced the import.",
+          "$ref": "#/$defs/AiProvider"
+        },
+        "source_export": {
+          "description": "Immutable raw export backing the import, including its content digest.",
+          "$ref": "#/$defs/BlobRef"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "ai_archive_id",
+        "imported_at",
+        "owner",
+        "parser_name",
+        "parser_version",
+        "provider",
+        "source_export"
+      ],
+      "x-ratatoskr-unknown-policy": "preserve"
     },
     "AiAsset": {
       "description": "One stored asset of an AI conversation: a file, artifact or canvas-like object.\n\nA reference, never bytes. `asset_kind` says what the provider called it; the [`BlobRef`]\nnames where the bytes live and lets a reader verify them.\n\n[`BlobRef`]: ratatoskr_identifiers::BlobRef",

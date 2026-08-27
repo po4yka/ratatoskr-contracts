@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:19c1b5551ccfc085576d39c4f9642392e7d35f18b586c35179907196bb41df1e
+ * source_digest: sha256:11e70ed07b2fe0d096bab26fae203b28d785ede0a5a0a150f3b80503bfb8d3f2
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -19,13 +19,13 @@
  */
 export interface AiConversationAdded {
  /**
-  * The import this conversation was parsed by.
-  */
- ai_archive_id: AiArchiveId;
- /**
   * The conversation's record as it now stands.
   */
  conversation: AiConversation;
+ /**
+  * Immutable evidence for the import that normalized this conversation.
+  */
+ import_provenance: AiArchiveProvenance;
  [key: string]: unknown;
 }
 
@@ -35,6 +35,44 @@ export interface AiConversationAdded {
  * Format: uuid.
  */
 export type AiArchiveId = string;
+
+/**
+ * Immutable import evidence repeated beside one conversation fact.
+ *
+ * A retained or replayed conversation fact can therefore be checked without
+ * requiring a retained earlier import event or access to a producer database.
+ */
+export interface AiArchiveProvenance {
+ /**
+  * Ratatoskr identity of the import that normalized this conversation.
+  */
+ ai_archive_id: AiArchiveId;
+ /**
+  * Instant the producer completed the normalized import on its own clock.
+  */
+ imported_at: WireTimestamp;
+ /**
+  * Tenant that owns the import and conversation.
+  */
+ owner: TenantRef;
+ /**
+  * Parser that normalized the import.
+  */
+ parser_name: ParserName;
+ /**
+  * Version of the parser that normalized the import.
+  */
+ parser_version: ParserVersion;
+ /**
+  * Provider whose export produced the import.
+  */
+ provider: AiProvider;
+ /**
+  * Immutable raw export backing the import, including its content digest.
+  */
+ source_export: BlobRef;
+ [key: string]: unknown;
+}
 
 /**
  * One stored asset of an AI conversation: a file, artifact or canvas-like object.
