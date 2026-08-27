@@ -181,6 +181,18 @@ macro_rules! uuid_newtype {
 }
 
 uuid_newtype! {
+    /// Identity of one typed block within one immutable Document IR revision.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. The producer derives the value
+    /// deterministically from the immutable revision and block position; it is not a standalone
+    /// domain record identity.
+    pub struct BlockId,
+    kind = "block",
+    description = "Identity of one typed block within one immutable Document IR revision. Bare \
+                   canonical lowercase hyphenated UUID; stable only within that revision."
+}
+
+uuid_newtype! {
     /// Identity of one normalized document.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID.

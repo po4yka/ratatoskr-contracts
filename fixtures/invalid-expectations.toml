@@ -163,6 +163,11 @@ reason         = "The newline ban is what makes a stack trace and a forged log l
 # content/document
 # ---------------------------------------------------------------------------
 
+["content/document/invalid/duplicate-block-id.json"]
+rejected_by    = ["serde"]
+error_contains = 'duplicate block identifier'
+reason         = "Block identifiers are unique within one immutable Document IR revision; JSON Schema cannot express the cross-array uniqueness invariant."
+
 ["content/document/invalid/missing-provenance.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `provenance`'

@@ -10,11 +10,13 @@
   "blocks": [
     {
       "kind": "heading",
+      "block_id": "018f0000-0000-7000-8000-000000000051",
       "level": 1,
       "text": "An example"
     },
     {
       "kind": "table",
+      "block_id": "018f0000-0000-7000-8000-000000000052",
       "caption": "A kind this build does not know",
       "cells": []
     }

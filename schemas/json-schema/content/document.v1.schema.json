@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:content:v1:Document",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Document",
-  "description": "Canonical Document IR version one.\n\nThe shape is the shared intersection between Extractor and Knowledge. Rendered Markdown,\nquality-scoring diagnostics and service-private storage fields are deliberately absent.\n\n# Content hashing\n\n`content_digest` is SHA-256 over the UTF-8 bytes of the repository's canonical JSON rendering\nof `blocks` alone. Block order, discriminants and text are significant; identity, source\naddress, title, language and provenance are not. A producer does not rewrite extracted text\nafter it enters a block.",
+  "description": "Canonical Document IR version one.\n\nThe shape is the shared intersection between Extractor and Knowledge. Rendered Markdown,\nquality-scoring diagnostics and service-private storage fields are deliberately absent.\n\n# Content hashing\n\n`content_digest` is SHA-256 over the UTF-8 bytes of the repository's canonical JSON rendering\nof blocks with their identifiers omitted. Block order, discriminants and text are significant;\nidentity, source address, title, language, block identifiers and provenance are not. A producer\ndoes not rewrite extracted text after it enters a block.",
   "type": "object",
   "properties": {
     "blocks": {
@@ -66,7 +66,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:bf2025befc51764f548809c92466a8e6e2110cc4e5ea71034375df8a54bbd392",
+    "source_digest": "sha256:45661ae651855ac2188e14af80ba11bb53d5116c5ff588a68fcb9f50cd08c99d",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -111,6 +111,16 @@
         "media_type",
         "owner_service"
       ]
+    },
+    "BlockId": {
+      "title": "BlockId",
+      "description": "Identity of one typed block within one immutable Document IR revision. Bare canonical lowercase hyphenated UUID; stable only within that revision.",
+      "type": "string",
+      "format": "uuid",
+      "examples": [
+        "018f0000-0000-7000-8000-000000000001"
+      ],
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
     },
     "ContentDigest": {
       "description": "A content digest with an explicit algorithm.",
@@ -168,6 +178,10 @@
           "description": "A section heading.",
           "type": "object",
           "properties": {
+            "block_id": {
+              "description": "Stable typed identity within this immutable document revision.",
+              "$ref": "#/$defs/BlockId"
+            },
             "kind": {
               "type": "string",
               "const": "heading"
@@ -186,6 +200,7 @@
           },
           "additionalProperties": false,
           "required": [
+            "block_id",
             "kind",
             "level",
             "text"
@@ -195,6 +210,10 @@
           "description": "A paragraph of prose.",
           "type": "object",
           "properties": {
+            "block_id": {
+              "description": "Stable typed identity within this immutable document revision.",
+              "$ref": "#/$defs/BlockId"
+            },
             "kind": {
               "type": "string",
               "const": "paragraph"
@@ -206,6 +225,7 @@
           },
           "additionalProperties": false,
           "required": [
+            "block_id",
             "kind",
             "text"
           ]

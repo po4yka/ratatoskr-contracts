@@ -1,6 +1,9 @@
 //! Document IR version one.
 
-use ratatoskr_identifiers::{BlobRef, ContentDigest, DocumentId, wire_string_newtype};
+use std::collections::BTreeSet;
+use std::fmt;
+
+use ratatoskr_identifiers::{BlobRef, BlockId, ContentDigest, DocumentId, wire_string_newtype};
 
 wire_string_newtype! {
     /// URI from which the document was extracted.
@@ -37,10 +40,10 @@ wire_string_newtype! {
 /// # Content hashing
 ///
 /// `content_digest` is SHA-256 over the UTF-8 bytes of the repository's canonical JSON rendering
-/// of `blocks` alone. Block order, discriminants and text are significant; identity, source
-/// address, title, language and provenance are not. A producer does not rewrite extracted text
-/// after it enters a block.
-#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
+/// of blocks with their identifiers omitted. Block order, discriminants and text are significant;
+/// identity, source address, title, language, block identifiers and provenance are not. A producer
+/// does not rewrite extracted text after it enters a block.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, schemars::JsonSchema)]
 #[serde(deny_unknown_fields)]
 pub struct Document {
     /// Stable identity assigned to the normalized document.
@@ -67,6 +70,87 @@ pub struct Document {
     pub provenance: Vec<DocumentProvenance>,
 }
 
+impl Document {
+    /// Verifies cross-block invariants of this immutable Document IR revision.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`DocumentValidationError::DuplicateBlockIdentifier`] when two blocks use the same
+    /// stable identifier.
+    pub fn validate(&self) -> Result<(), DocumentValidationError> {
+        let mut identifiers = BTreeSet::new();
+        for block in &self.blocks {
+            let block_id = match block {
+                DocumentBlock::Heading { block_id, .. }
+                | DocumentBlock::Paragraph { block_id, .. } => *block_id,
+            };
+            if !identifiers.insert(block_id) {
+                return Err(DocumentValidationError::DuplicateBlockIdentifier(block_id));
+            }
+        }
+        Ok(())
+    }
+}
+
+impl<'de> serde::Deserialize<'de> for Document {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let document: Self = DocumentWire::deserialize(deserializer).map(Into::into)?;
+        document.validate().map_err(serde::de::Error::custom)?;
+        Ok(document)
+    }
+}
+
+/// The wire shape validated before it becomes a [`Document`].
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct DocumentWire {
+    document_id: DocumentId,
+    source_address: DocumentAddress,
+    content_digest: ContentDigest,
+    #[serde(default)]
+    title: Option<String>,
+    #[serde(default)]
+    language: Option<LanguageTag>,
+    blocks: Vec<DocumentBlock>,
+    provenance: Vec<DocumentProvenance>,
+}
+
+impl From<DocumentWire> for Document {
+    fn from(value: DocumentWire) -> Self {
+        Self {
+            document_id: value.document_id,
+            source_address: value.source_address,
+            content_digest: value.content_digest,
+            title: value.title,
+            language: value.language,
+            blocks: value.blocks,
+            provenance: value.provenance,
+        }
+    }
+}
+
+/// A cross-block invariant failure in immutable Document IR.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum DocumentValidationError {
+    /// Two blocks in one immutable document revision have the same identifier.
+    DuplicateBlockIdentifier(BlockId),
+}
+
+impl fmt::Display for DocumentValidationError {
+    fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::DuplicateBlockIdentifier(block_id) => {
+                write!(formatter, "duplicate block identifier: {block_id}")
+            }
+        }
+    }
+}
+
+impl std::error::Error for DocumentValidationError {}
+
 /// One typed block in document reading order.
 ///
 /// The variant set and its fields grow only through the block-kind extension procedure
@@ -79,6 +163,8 @@ pub struct Document {
 pub enum DocumentBlock {
     /// A section heading.
     Heading {
+        /// Stable typed identity within this immutable document revision.
+        block_id: BlockId,
         /// Source heading level.
         level: u8,
         /// Heading text.
@@ -86,6 +172,8 @@ pub enum DocumentBlock {
     },
     /// A paragraph of prose.
     Paragraph {
+        /// Stable typed identity within this immutable document revision.
+        block_id: BlockId,
         /// Paragraph text.
         text: String,
     },

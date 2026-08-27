@@ -6,6 +6,7 @@ impl core::clone::Clone for ratatoskr_identifiers::AiConversationId
 impl core::clone::Clone for ratatoskr_identifiers::AiProjectId
 impl core::clone::Clone for ratatoskr_identifiers::BlobOwner
 impl core::clone::Clone for ratatoskr_identifiers::BlobRef
+impl core::clone::Clone for ratatoskr_identifiers::BlockId
 impl core::clone::Clone for ratatoskr_identifiers::ContentDigest
 impl core::clone::Clone for ratatoskr_identifiers::CorrelationId
 impl core::clone::Clone for ratatoskr_identifiers::DigestAlgorithm
@@ -32,6 +33,7 @@ impl core::cmp::Eq for ratatoskr_identifiers::AiConversationId
 impl core::cmp::Eq for ratatoskr_identifiers::AiProjectId
 impl core::cmp::Eq for ratatoskr_identifiers::BlobOwner
 impl core::cmp::Eq for ratatoskr_identifiers::BlobRef
+impl core::cmp::Eq for ratatoskr_identifiers::BlockId
 impl core::cmp::Eq for ratatoskr_identifiers::ContentDigest
 impl core::cmp::Eq for ratatoskr_identifiers::CorrelationId
 impl core::cmp::Eq for ratatoskr_identifiers::DigestAlgorithm
@@ -58,6 +60,7 @@ impl core::cmp::Ord for ratatoskr_identifiers::AiConversationId
 impl core::cmp::Ord for ratatoskr_identifiers::AiProjectId
 impl core::cmp::Ord for ratatoskr_identifiers::BlobOwner
 impl core::cmp::Ord for ratatoskr_identifiers::BlobRef
+impl core::cmp::Ord for ratatoskr_identifiers::BlockId
 impl core::cmp::Ord for ratatoskr_identifiers::ContentDigest
 impl core::cmp::Ord for ratatoskr_identifiers::CorrelationId
 impl core::cmp::Ord for ratatoskr_identifiers::DigestAlgorithm
@@ -82,6 +85,7 @@ impl core::cmp::PartialEq for ratatoskr_identifiers::AiConversationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::AiProjectId
 impl core::cmp::PartialEq for ratatoskr_identifiers::BlobOwner
 impl core::cmp::PartialEq for ratatoskr_identifiers::BlobRef
+impl core::cmp::PartialEq for ratatoskr_identifiers::BlockId
 impl core::cmp::PartialEq for ratatoskr_identifiers::ContentDigest
 impl core::cmp::PartialEq for ratatoskr_identifiers::CorrelationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::DigestAlgorithm
@@ -108,6 +112,7 @@ impl core::cmp::PartialOrd for ratatoskr_identifiers::AiConversationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::AiProjectId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::BlobOwner
 impl core::cmp::PartialOrd for ratatoskr_identifiers::BlobRef
+impl core::cmp::PartialOrd for ratatoskr_identifiers::BlockId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::ContentDigest
 impl core::cmp::PartialOrd for ratatoskr_identifiers::CorrelationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::DigestAlgorithm
@@ -134,6 +139,8 @@ impl core::convert::From<ratatoskr_identifiers::AiConversationId> for ratatoskr_
 impl core::convert::From<ratatoskr_identifiers::AiProjectId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::AiProjectId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::BlobOwner> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::BlockId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::BlockId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::CorrelationId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::CorrelationId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::DigestHex> for alloc::string::String
@@ -162,6 +169,7 @@ impl core::convert::From<ratatoskr_identifiers::WireTimestamp> for alloc::string
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiArchiveId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiConversationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::AiProjectId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::BlockId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::CorrelationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::DocumentId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::EventId
@@ -175,6 +183,7 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::Ai
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiConversationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::AiProjectId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::BlobOwner
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::BlockId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::CorrelationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::DigestHex
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::DocumentId
@@ -198,6 +207,7 @@ impl core::fmt::Debug for ratatoskr_identifiers::AiConversationId
 impl core::fmt::Debug for ratatoskr_identifiers::AiProjectId
 impl core::fmt::Debug for ratatoskr_identifiers::BlobOwner
 impl core::fmt::Debug for ratatoskr_identifiers::BlobRef
+impl core::fmt::Debug for ratatoskr_identifiers::BlockId
 impl core::fmt::Debug for ratatoskr_identifiers::ContentDigest
 impl core::fmt::Debug for ratatoskr_identifiers::CorrelationId
 impl core::fmt::Debug for ratatoskr_identifiers::DigestAlgorithm
@@ -223,6 +233,7 @@ impl core::fmt::Display for ratatoskr_identifiers::AiArchiveId
 impl core::fmt::Display for ratatoskr_identifiers::AiConversationId
 impl core::fmt::Display for ratatoskr_identifiers::AiProjectId
 impl core::fmt::Display for ratatoskr_identifiers::BlobOwner
+impl core::fmt::Display for ratatoskr_identifiers::BlockId
 impl core::fmt::Display for ratatoskr_identifiers::CorrelationId
 impl core::fmt::Display for ratatoskr_identifiers::DigestHex
 impl core::fmt::Display for ratatoskr_identifiers::DocumentId
@@ -246,6 +257,7 @@ impl core::hash::Hash for ratatoskr_identifiers::AiConversationId
 impl core::hash::Hash for ratatoskr_identifiers::AiProjectId
 impl core::hash::Hash for ratatoskr_identifiers::BlobOwner
 impl core::hash::Hash for ratatoskr_identifiers::BlobRef
+impl core::hash::Hash for ratatoskr_identifiers::BlockId
 impl core::hash::Hash for ratatoskr_identifiers::ContentDigest
 impl core::hash::Hash for ratatoskr_identifiers::CorrelationId
 impl core::hash::Hash for ratatoskr_identifiers::DigestAlgorithm
@@ -268,6 +280,7 @@ impl core::hash::Hash for ratatoskr_identifiers::WireTimestamp
 impl core::marker::Copy for ratatoskr_identifiers::AiArchiveId
 impl core::marker::Copy for ratatoskr_identifiers::AiConversationId
 impl core::marker::Copy for ratatoskr_identifiers::AiProjectId
+impl core::marker::Copy for ratatoskr_identifiers::BlockId
 impl core::marker::Copy for ratatoskr_identifiers::CorrelationId
 impl core::marker::Copy for ratatoskr_identifiers::DigestAlgorithm
 impl core::marker::Copy for ratatoskr_identifiers::DocumentId
@@ -285,6 +298,7 @@ impl core::marker::Freeze for ratatoskr_identifiers::AiConversationId
 impl core::marker::Freeze for ratatoskr_identifiers::AiProjectId
 impl core::marker::Freeze for ratatoskr_identifiers::BlobOwner
 impl core::marker::Freeze for ratatoskr_identifiers::BlobRef
+impl core::marker::Freeze for ratatoskr_identifiers::BlockId
 impl core::marker::Freeze for ratatoskr_identifiers::ContentDigest
 impl core::marker::Freeze for ratatoskr_identifiers::CorrelationId
 impl core::marker::Freeze for ratatoskr_identifiers::DigestAlgorithm
@@ -311,6 +325,7 @@ impl core::marker::Send for ratatoskr_identifiers::AiConversationId
 impl core::marker::Send for ratatoskr_identifiers::AiProjectId
 impl core::marker::Send for ratatoskr_identifiers::BlobOwner
 impl core::marker::Send for ratatoskr_identifiers::BlobRef
+impl core::marker::Send for ratatoskr_identifiers::BlockId
 impl core::marker::Send for ratatoskr_identifiers::ContentDigest
 impl core::marker::Send for ratatoskr_identifiers::CorrelationId
 impl core::marker::Send for ratatoskr_identifiers::DigestAlgorithm
@@ -337,6 +352,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_identifiers::AiConversation
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::AiProjectId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::BlobOwner
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::BlobRef
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::BlockId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::ContentDigest
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::CorrelationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::DigestAlgorithm
@@ -363,6 +379,7 @@ impl core::marker::Sync for ratatoskr_identifiers::AiConversationId
 impl core::marker::Sync for ratatoskr_identifiers::AiProjectId
 impl core::marker::Sync for ratatoskr_identifiers::BlobOwner
 impl core::marker::Sync for ratatoskr_identifiers::BlobRef
+impl core::marker::Sync for ratatoskr_identifiers::BlockId
 impl core::marker::Sync for ratatoskr_identifiers::ContentDigest
 impl core::marker::Sync for ratatoskr_identifiers::CorrelationId
 impl core::marker::Sync for ratatoskr_identifiers::DigestAlgorithm
@@ -389,6 +406,7 @@ impl core::marker::Unpin for ratatoskr_identifiers::AiConversationId
 impl core::marker::Unpin for ratatoskr_identifiers::AiProjectId
 impl core::marker::Unpin for ratatoskr_identifiers::BlobOwner
 impl core::marker::Unpin for ratatoskr_identifiers::BlobRef
+impl core::marker::Unpin for ratatoskr_identifiers::BlockId
 impl core::marker::Unpin for ratatoskr_identifiers::ContentDigest
 impl core::marker::Unpin for ratatoskr_identifiers::CorrelationId
 impl core::marker::Unpin for ratatoskr_identifiers::DigestAlgorithm
@@ -415,6 +433,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_identifiers::AiConversationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::AiProjectId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::BlobOwner
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::BlobRef
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::BlockId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::ContentDigest
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::CorrelationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::DigestAlgorithm
@@ -441,6 +460,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::AiConver
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::AiProjectId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::BlobOwner
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::BlobRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::BlockId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::ContentDigest
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::CorrelationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::DigestAlgorithm
@@ -467,6 +487,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::AiConversat
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::AiProjectId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::BlobOwner
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::BlobRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::BlockId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::ContentDigest
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::CorrelationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::DigestAlgorithm
@@ -492,6 +513,7 @@ impl core::str::traits::FromStr for ratatoskr_identifiers::AiArchiveId
 impl core::str::traits::FromStr for ratatoskr_identifiers::AiConversationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::AiProjectId
 impl core::str::traits::FromStr for ratatoskr_identifiers::BlobOwner
+impl core::str::traits::FromStr for ratatoskr_identifiers::BlockId
 impl core::str::traits::FromStr for ratatoskr_identifiers::CorrelationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::DigestHex
 impl core::str::traits::FromStr for ratatoskr_identifiers::DocumentId
@@ -513,6 +535,7 @@ impl ratatoskr_identifiers::AiArchiveId
 impl ratatoskr_identifiers::AiConversationId
 impl ratatoskr_identifiers::AiProjectId
 impl ratatoskr_identifiers::BlobOwner
+impl ratatoskr_identifiers::BlockId
 impl ratatoskr_identifiers::CorrelationId
 impl ratatoskr_identifiers::DigestHex
 impl ratatoskr_identifiers::DocumentId
@@ -536,6 +559,7 @@ impl schemars::JsonSchema for ratatoskr_identifiers::AiConversationId
 impl schemars::JsonSchema for ratatoskr_identifiers::AiProjectId
 impl schemars::JsonSchema for ratatoskr_identifiers::BlobOwner
 impl schemars::JsonSchema for ratatoskr_identifiers::BlobRef
+impl schemars::JsonSchema for ratatoskr_identifiers::BlockId
 impl schemars::JsonSchema for ratatoskr_identifiers::ContentDigest
 impl schemars::JsonSchema for ratatoskr_identifiers::CorrelationId
 impl schemars::JsonSchema for ratatoskr_identifiers::DigestAlgorithm
@@ -560,6 +584,7 @@ impl serde_core::ser::Serialize for ratatoskr_identifiers::AiConversationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::AiProjectId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::BlobOwner
 impl serde_core::ser::Serialize for ratatoskr_identifiers::BlobRef
+impl serde_core::ser::Serialize for ratatoskr_identifiers::BlockId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::ContentDigest
 impl serde_core::ser::Serialize for ratatoskr_identifiers::CorrelationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::DigestAlgorithm
@@ -584,6 +609,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::AiConversa
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::AiProjectId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::BlobOwner
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::BlobRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::BlockId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::ContentDigest
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::CorrelationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::DigestAlgorithm
@@ -608,6 +634,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::AiConversationId wh
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::BlobRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::BlockId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::From<T>
@@ -634,6 +661,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::AiConversationId
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::BlobRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::BlockId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::Into<T>
@@ -660,6 +688,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::AiConversationId
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::AiProjectId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::BlobOwner where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::BlobRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::BlockId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::ContentDigest where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::CorrelationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::DigestAlgorithm where U: core::convert::TryFrom<T>
@@ -686,6 +715,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::AiConversationId where
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::BlockId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
@@ -711,6 +741,7 @@ impl<T> alloc::string::ToString for ratatoskr_identifiers::AiArchiveId where T: 
 impl<T> alloc::string::ToString for ratatoskr_identifiers::AiConversationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::AiProjectId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::BlobOwner where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::BlockId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::CorrelationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::DigestHex where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::DocumentId where T: core::fmt::Display + ?core::marker::Sized
@@ -734,6 +765,7 @@ impl<T> core::any::Any for ratatoskr_identifiers::AiConversationId where T: 'sta
 impl<T> core::any::Any for ratatoskr_identifiers::AiProjectId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::BlobOwner where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::BlobRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::BlockId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::ContentDigest where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::CorrelationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::DigestAlgorithm where T: 'static + ?core::marker::Sized
@@ -760,6 +792,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::AiConversationId wher
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::AiProjectId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::BlobOwner where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::BlobRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::BlockId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::ContentDigest where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::CorrelationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::DigestAlgorithm where T: ?core::marker::Sized
@@ -786,6 +819,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::AiConversationId w
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::AiProjectId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::BlobOwner where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::BlobRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::BlockId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::ContentDigest where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::CorrelationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::DigestAlgorithm where T: ?core::marker::Sized
@@ -812,6 +846,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::AiConversationId w
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::BlockId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
@@ -838,6 +873,7 @@ impl<T> core::convert::From<T> for ratatoskr_identifiers::AiConversationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::AiProjectId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::BlobOwner
 impl<T> core::convert::From<T> for ratatoskr_identifiers::BlobRef
+impl<T> core::convert::From<T> for ratatoskr_identifiers::BlockId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::ContentDigest
 impl<T> core::convert::From<T> for ratatoskr_identifiers::CorrelationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::DigestAlgorithm
@@ -864,6 +900,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_identifiers::AiConversationId where T:
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::AiProjectId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::BlobOwner where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::BlobRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::BlockId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::ContentDigest where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::CorrelationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::DigestAlgorithm where T: core::clone::Clone
@@ -890,6 +927,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::AiConversati
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::AiProjectId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::BlobOwner where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::BlobRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::BlockId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::ContentDigest where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::CorrelationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::DigestAlgorithm where T: for<'de> serde_core::de::Deserialize<'de>
@@ -922,6 +960,8 @@ pub const ratatoskr_identifiers::AiProjectId::PATTERN: &'static str
 pub const ratatoskr_identifiers::BlobOwner::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_identifiers::BlobOwner::MAX_LEN: usize
 pub const ratatoskr_identifiers::BlobOwner::PATTERN: &'static str
+pub const ratatoskr_identifiers::BlockId::KIND: &'static str
+pub const ratatoskr_identifiers::BlockId::PATTERN: &'static str
 pub const ratatoskr_identifiers::CorrelationId::KIND: &'static str
 pub const ratatoskr_identifiers::CorrelationId::PATTERN: &'static str
 pub const ratatoskr_identifiers::DigestHex::EXAMPLES: &'static [&'static str]
@@ -963,6 +1003,7 @@ pub fn alloc::string::String::from(ratatoskr_identifiers::AiArchiveId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::AiConversationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::AiProjectId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::BlobOwner) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::BlockId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::CorrelationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::DigestHex) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::DocumentId) -> Self
@@ -1114,6 +1155,35 @@ pub fn ratatoskr_identifiers::BlobRef::to_owned(&self) -> T
 pub fn ratatoskr_identifiers::BlobRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_identifiers::BlobRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_identifiers::BlobRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::BlockId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::BlockId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::BlockId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::BlockId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::BlockId::clone(&self) -> ratatoskr_identifiers::BlockId
+pub fn ratatoskr_identifiers::BlockId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::BlockId::cmp(&self, &ratatoskr_identifiers::BlockId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::BlockId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::BlockId::eq(&self, &ratatoskr_identifiers::BlockId) -> bool
+pub fn ratatoskr_identifiers::BlockId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::BlockId::from(T) -> T
+pub fn ratatoskr_identifiers::BlockId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::BlockId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::BlockId::into(self) -> U
+pub fn ratatoskr_identifiers::BlockId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::BlockId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::BlockId::new_v7() -> Self
+pub fn ratatoskr_identifiers::BlockId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::BlockId::partial_cmp(&self, &ratatoskr_identifiers::BlockId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::BlockId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlockId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::BlockId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::BlockId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::BlockId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::BlockId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::BlockId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::BlockId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::BlockId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::BlockId::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_identifiers::ContentDigest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_identifiers::ContentDigest::borrow(&self) -> &T
 pub fn ratatoskr_identifiers::ContentDigest::borrow_mut(&mut self) -> &mut T
@@ -1303,6 +1373,7 @@ pub fn ratatoskr_identifiers::EntityRef::from(T) -> T
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiArchiveId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiConversationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::AiProjectId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::BlockId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::CorrelationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::DocumentId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::EventId) -> Self
@@ -1727,6 +1798,7 @@ pub struct ratatoskr_identifiers::AiConversationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::AiProjectId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::BlobOwner(_)
 pub struct ratatoskr_identifiers::BlobRef
+pub struct ratatoskr_identifiers::BlockId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::ContentDigest
 pub struct ratatoskr_identifiers::CorrelationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::DigestHex(_)
@@ -1768,6 +1840,11 @@ pub type ratatoskr_identifiers::BlobOwner::Owned = T
 pub type ratatoskr_identifiers::BlobRef::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_identifiers::BlobRef::Error = core::convert::Infallible
 pub type ratatoskr_identifiers::BlobRef::Owned = T
+pub type ratatoskr_identifiers::BlockId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::BlockId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::BlockId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::BlockId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::BlockId::Owned = T
 pub type ratatoskr_identifiers::ContentDigest::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_identifiers::ContentDigest::Error = core::convert::Infallible
 pub type ratatoskr_identifiers::ContentDigest::Owned = T
@@ -1869,6 +1946,7 @@ pub unsafe fn ratatoskr_identifiers::AiConversationId::clone_to_uninit(&self, *m
 pub unsafe fn ratatoskr_identifiers::AiProjectId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::BlobOwner::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::BlobRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::BlockId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::ContentDigest::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::CorrelationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::DigestAlgorithm::clone_to_uninit(&self, *mut u8)

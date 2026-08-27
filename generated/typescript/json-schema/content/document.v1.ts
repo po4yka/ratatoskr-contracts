@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:3d1126b233b73fb41f55b9c36ea86e7d3e43b439c148babe2d0e27bec8b6521f
+ * source_digest: sha256:abfc762cb87d8e7180c996ccd63ed817fd7da31579a7acf3df016c2073828ac2
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -19,9 +19,9 @@
  * # Content hashing
  *
  * `content_digest` is SHA-256 over the UTF-8 bytes of the repository's canonical JSON rendering
- * of `blocks` alone. Block order, discriminants and text are significant; identity, source
- * address, title, language and provenance are not. A producer does not rewrite extracted text
- * after it enters a block.
+ * of blocks with their identifiers omitted. Block order, discriminants and text are significant;
+ * identity, source address, title, language, block identifiers and provenance are not. A producer
+ * does not rewrite extracted text after it enters a block.
  */
 export interface Document {
  /**
@@ -88,6 +88,13 @@ export interface BlobRef {
 }
 
 /**
+ * Identity of one typed block within one immutable Document IR revision. Bare canonical lowercase hyphenated UUID; stable only within that revision.
+ *
+ * Format: uuid.
+ */
+export type BlockId = string;
+
+/**
  * A content digest with an explicit algorithm.
  */
 export interface ContentDigest {
@@ -124,7 +131,7 @@ export type DocumentAddress = string;
  * the producer proposes with a landed extraction path, the consumer accepts by naming a
  * consumption site, and readers reject kinds they do not know at both layers.
  */
-export type DocumentBlock = { kind: "heading"; /** * Source heading level. * * Format: uint8. */ level: number; /** * Heading text. */ text: string; } | { kind: "paragraph"; /** * Paragraph text. */ text: string; };
+export type DocumentBlock = { /** * Stable typed identity within this immutable document revision. */ block_id: BlockId; kind: "heading"; /** * Source heading level. * * Format: uint8. */ level: number; /** * Heading text. */ text: string; } | { /** * Stable typed identity within this immutable document revision. */ block_id: BlockId; kind: "paragraph"; /** * Paragraph text. */ text: string; };
 
 /**
  * Identity of one normalized document. Bare canonical lowercase hyphenated UUID; not namespaced.

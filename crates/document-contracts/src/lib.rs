@@ -5,5 +5,6 @@
 mod document;
 
 pub use crate::document::{
-    Document, DocumentAddress, DocumentBlock, DocumentProvenance, ExtractionStrategy, LanguageTag,
+    Document, DocumentAddress, DocumentBlock, DocumentProvenance, DocumentValidationError,
+    ExtractionStrategy, LanguageTag,
 };

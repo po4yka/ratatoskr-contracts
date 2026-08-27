@@ -10,10 +10,62 @@ use ratatoskr_document_contracts::{
     Document, DocumentAddress, DocumentBlock, DocumentProvenance, ExtractionStrategy, LanguageTag,
 };
 use ratatoskr_identifiers::{
-    BlobOwner, BlobRef, ContentDigest, DigestAlgorithm, DigestHex, DocumentId, MediaType,
+    BlobOwner, BlobRef, BlockId, ContentDigest, DigestAlgorithm, DigestHex, DocumentId, MediaType,
 };
 
 const DIGEST: &str = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
+
+#[test]
+fn document_blocks_round_trip_with_distinct_stable_identifiers() {
+    let fixture = include_str!("../../../fixtures/content/document/valid/two-blocks.json");
+    let decoded: Document = serde_json::from_str(fixture)
+        .expect("a document block id must be accepted by the current Document IR contract");
+    let wire = serde_json::to_value(&decoded).expect("the document serializes");
+    let blocks = wire
+        .get("blocks")
+        .and_then(serde_json::Value::as_array)
+        .expect("blocks are an array");
+    let first_id = blocks
+        .first()
+        .and_then(|block| block.get("block_id"))
+        .expect("the first block has an identifier");
+    let second_id = blocks
+        .get(1)
+        .and_then(|block| block.get("block_id"))
+        .expect("the second block has an identifier");
+
+    assert_ne!(
+        first_id, second_id,
+        "distinct blocks require distinct stable identifiers"
+    );
+}
+
+#[test]
+fn duplicate_block_identifiers_are_rejected() {
+    let fixture = include_str!("../../../fixtures/content/document/valid/two-blocks.json");
+    let mut value: serde_json::Value = serde_json::from_str(fixture).expect("the fixture is JSON");
+    let blocks = value
+        .get_mut("blocks")
+        .and_then(serde_json::Value::as_array_mut)
+        .expect("blocks are an array");
+    let first_id = blocks
+        .first()
+        .and_then(|block| block.get("block_id"))
+        .cloned()
+        .expect("the first block has an identifier");
+    let second = blocks
+        .get_mut(1)
+        .and_then(serde_json::Value::as_object_mut)
+        .expect("the second block is an object");
+    second.insert("block_id".to_owned(), first_id);
+
+    let error = serde_json::from_value::<Document>(value)
+        .expect_err("a document revision cannot contain duplicate block identifiers");
+    assert!(
+        error.to_string().contains("duplicate block identifier"),
+        "the rejection names the broken invariant: {error}"
+    );
+}
 
 #[test]
 fn a_document_with_two_block_kinds_and_provenance_round_trips() {
@@ -31,10 +83,14 @@ fn a_document_with_two_block_kinds_and_provenance_round_trips() {
         language: Some(LanguageTag::parse("en").expect("a language tag")),
         blocks: vec![
             DocumentBlock::Heading {
+                block_id: BlockId::parse("018f0000-0000-7000-8000-000000000041")
+                    .expect("a block id"),
                 level: 1,
                 text: "An example".to_owned(),
             },
             DocumentBlock::Paragraph {
+                block_id: BlockId::parse("018f0000-0000-7000-8000-000000000042")
+                    .expect("a block id"),
                 text: "The first paragraph.".to_owned(),
             },
         ],
