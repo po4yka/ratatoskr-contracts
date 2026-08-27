@@ -45,6 +45,8 @@ known = [
 #                 notification itself: `notification:<uuid>`.
 #   analysis      the knowledge-analysis side of a notification's `analysis_ref`
 #                 correlation; the kind stays opaque to the notification contract.
+#   github-account the credential-free connected-account reference exposed by repository preview.
+#   telegram-confirmation opaque evidence that Telegram completed one owner-bound confirmation.
 # Adding a token here is a review decision: it widens what a fixture may contain,
 # never what the wire type understands. `ratatoskr-mobile` and
 # `ratatoskr-export-agent` are upload-capable clients; they appear as transfer
@@ -54,7 +56,7 @@ known = [
 known = [
   "ai_archive", "ai_conversation", "ai_project", "analysis", "backup_policy",
   "blob", "command", "document", "event", "notification", "operation", "user",
-  "repository", "social_source", "x-post",
+  "github-account", "repository", "social_source", "telegram-confirmation", "x-post",
 ]
 
 # ---------------------------------------------------------------------------
@@ -473,6 +475,98 @@ note        = "Instant Knowledge accepted the completed analysis. Observed from 
 [contract.event]
 event_type   = "knowledge.analysis.completed.v1"
 payload_type = "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "github.repository_preview_request"
+family         = "github"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-telegram"]
+consumers      = ["ratatoskr-github"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/interactions.rs"
+fixtures_dir   = "fixtures/github/repository-preview-request"
+summary        = "Read-only request for bounded metadata about one canonical GitHub repository URL."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryPreviewRequest"
+output         = "schemas/json-schema/github/repository-preview-request.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:github:v1:RepositoryPreviewRequest"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "github.repository_preview_response"
+family         = "github"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-github"]
+consumers      = ["ratatoskr-telegram"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/interactions.rs"
+fixtures_dir   = "fixtures/github/repository-preview-response"
+summary        = "Stable repository identity, bounded display metadata, and available explicit actions."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryPreviewResponse"
+output         = "schemas/json-schema/github/repository-preview-response.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:github:v1:RepositoryPreviewResponse"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "github.repository_action_request"
+family         = "github"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-telegram"]
+consumers      = ["ratatoskr-github"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/interactions.rs"
+fixtures_dir   = "fixtures/github/repository-action-request"
+summary        = "Confirmed idempotent request for metadata, tracking, or provider-star behavior."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryActionRequest"
+output         = "schemas/json-schema/github/repository-action-request.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:github:v1:RepositoryActionRequest"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "github.repository_action_result"
+family         = "github"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-github"
+producers      = ["ratatoskr-github"]
+consumers      = ["ratatoskr-telegram"]
+crate_name     = "ratatoskr-github-contracts"
+canonical_path = "crates/github-contracts/src/interactions.rs"
+fixtures_dir   = "fixtures/github/repository-action-result"
+summary        = "Truthful aggregate plus metadata, provider-star, and desired-backup component outcomes."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_github_contracts::RepositoryActionResult"
+output         = "schemas/json-schema/github/repository-action-result.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:github:v1:RepositoryActionResult"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.vague_field_waiver]]
+pointer       = "/properties/metadata"
+justification = "This is the precise named outcome of the metadata component beside provider_star and desired_backup; its closed tagged enum defines every legal state and safe reason."
 
 # ---------------------------------------------------------------------------
 [[contract]]

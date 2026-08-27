@@ -61,6 +61,13 @@ pattern!(URL, r"https?://");
 // renderable synthetic URL, so permit HTTPS URLs on that domain while continuing to reject any
 // provider or user URL in fixtures.
 pattern!(SYNTHETIC_TEST_URL, r"https://[A-Za-z0-9.-]+\.test");
+// The GitHub repository-interaction grammar itself requires github.com. Permit only the exact
+// synthetic owner/repository placeholder used by that contract's fixtures; every other GitHub URL
+// remains personal/provider URL material and is reported by `URL`.
+pattern!(
+    SYNTHETIC_GITHUB_REPOSITORY_URL,
+    r"https://github\.com/owner/repository"
+);
 pattern!(OBJECT_STORE_URL, r"(?:s3|gs)://");
 // A JSON string whose first segment is a filesystem root, e.g. `"/var/lib/blob"` or
 // `"/Users/…"`. **Not** every leading-slash string: an RFC 6901 JSON Pointer starts with `/`
@@ -162,11 +169,13 @@ pub fn rules() -> Vec<Rule> {
 #[must_use]
 pub fn scan_text(display: &str, text: &str) -> Vec<Finding> {
     let without_synthetic_test_urls = SYNTHETIC_TEST_URL.replace_all(text, "");
+    let without_synthetic_urls =
+        SYNTHETIC_GITHUB_REPOSITORY_URL.replace_all(&without_synthetic_test_urls, "");
     let mut findings: Vec<Finding> = rules()
         .iter()
         .filter(|rule| {
             if rule.name == "url" {
-                rule.matcher.is_match(&without_synthetic_test_urls)
+                rule.matcher.is_match(&without_synthetic_urls)
             } else {
                 rule.matcher.is_match(text)
             }

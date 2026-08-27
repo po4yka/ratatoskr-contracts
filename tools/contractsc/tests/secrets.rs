@@ -130,6 +130,29 @@ fn synthetic_test_permalinks_are_not_reported_as_personal_urls() {
     );
 }
 
+/// The canonical GitHub interaction contract needs one exact synthetic repository URL fixture;
+/// the exception must not make arbitrary GitHub URLs safe fixture data.
+#[test]
+fn synthetic_github_repository_fixture_url_is_safe_but_other_github_urls_are_reported() {
+    let synthetic = ratatoskr_contractsc::secrets::scan_text(
+        "fixtures/github/repository-preview-request/valid/repository.json",
+        r#"{"repository_url":"https://github.com/owner/repository"}"#,
+    );
+    assert!(
+        !synthetic
+            .iter()
+            .any(|finding| finding.to_string().contains("matches url")),
+        "the contract's exact owner/repository placeholder is synthetic: {synthetic:?}"
+    );
+
+    assert_fires(
+        r#"{"repository_url":"https://github.com/alice/private"}"#,
+        "url",
+    );
+    assert_fires(r#"{"token":"synthetic"}"#, "credential-shaped-key");
+    assert_fires("ghp_synthetic", "github-token");
+}
+
 /// S-4. No acceptable fixture carries a floating-point number, which extends the byte-stability
 /// rule from the generated schemas to the fixtures.
 ///

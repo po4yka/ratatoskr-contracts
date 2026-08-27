@@ -15,6 +15,40 @@
 # (single quotes) are used throughout so a published `pattern` can be quoted verbatim.
 
 # ---------------------------------------------------------------------------
+# github/repository-interaction
+# ---------------------------------------------------------------------------
+
+["github/repository-preview-request/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'future_field'
+reason         = "Preview input is a strict first-version shape; silently discarding a new member would hide contract drift."
+
+["github/repository-preview-response/invalid/zero-repository-id.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'GitHub repository numeric identity must be positive'
+reason         = "Provider repository identity is stable and positive; zero cannot identify a GitHub repository."
+
+["github/repository-action-request/invalid/empty-idempotency-key.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'RepositoryActionIdempotencyKey'
+reason         = "A confirmed write needs a non-empty stable identity so uncertain responses never mint a second mutation."
+
+["github/repository-action-request/invalid/credential-like-member.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'provider_access'
+reason         = "The action carrier contains only stable references; provider access material must stay inside GitHub Catalog."
+
+["github/repository-action-result/invalid/inconsistent-aggregate.json"]
+rejected_by    = ["serde"]
+error_contains = 'aggregate contradicts component outcomes'
+reason         = "An aggregate success beside a failed component would fabricate atomic success; only the canonical Rust validation derives the cross-field truth."
+
+["github/repository-action-result/invalid/metadata-accepted.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'accepted'
+reason         = "Accepted is reserved for desired backup policy publication and cannot be reported as metadata success."
+
+# ---------------------------------------------------------------------------
 # events/knowledge.analysis.completed.v1
 # ---------------------------------------------------------------------------
 

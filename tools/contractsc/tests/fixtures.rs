@@ -240,6 +240,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_event_envelope::CommandEnvelope" => {
             render!(ratatoskr_event_envelope::CommandEnvelope)
         }
+        "ratatoskr_github_contracts::RepositoryActionRequest" => {
+            render!(ratatoskr_github_contracts::RepositoryActionRequest)
+        }
+        "ratatoskr_github_contracts::RepositoryActionResult" => {
+            render!(ratatoskr_github_contracts::RepositoryActionResult)
+        }
         "ratatoskr_github_contracts::RepositoryAnalysisCompleted" => {
             render!(ratatoskr_github_contracts::RepositoryAnalysisCompleted)
         }
@@ -248,6 +254,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_github_contracts::RepositoryAnalysisRequested" => {
             render!(ratatoskr_github_contracts::RepositoryAnalysisRequested)
+        }
+        "ratatoskr_github_contracts::RepositoryPreviewRequest" => {
+            render!(ratatoskr_github_contracts::RepositoryPreviewRequest)
+        }
+        "ratatoskr_github_contracts::RepositoryPreviewResponse" => {
+            render!(ratatoskr_github_contracts::RepositoryPreviewResponse)
         }
         "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
         "ratatoskr_notification_contracts::NotificationRaised" => {

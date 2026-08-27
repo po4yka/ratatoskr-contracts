@@ -111,12 +111,20 @@ root_types! {
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::CommandEnvelope"        => ratatoskr_event_envelope::CommandEnvelope,
     "ratatoskr_event_envelope::EventEnvelope"          => ratatoskr_event_envelope::EventEnvelope,
+    "ratatoskr_github_contracts::RepositoryActionRequest"
+        => ratatoskr_github_contracts::RepositoryActionRequest,
+    "ratatoskr_github_contracts::RepositoryActionResult"
+        => ratatoskr_github_contracts::RepositoryActionResult,
     "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
         => ratatoskr_github_contracts::RepositoryAnalysisCompleted,
     "ratatoskr_github_contracts::RepositoryAnalysisFailed"
         => ratatoskr_github_contracts::RepositoryAnalysisFailed,
     "ratatoskr_github_contracts::RepositoryAnalysisRequested"
         => ratatoskr_github_contracts::RepositoryAnalysisRequested,
+    "ratatoskr_github_contracts::RepositoryPreviewRequest"
+        => ratatoskr_github_contracts::RepositoryPreviewRequest,
+    "ratatoskr_github_contracts::RepositoryPreviewResponse"
+        => ratatoskr_github_contracts::RepositoryPreviewResponse,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
     "ratatoskr_notification_contracts::NotificationRaised"
         => ratatoskr_notification_contracts::NotificationRaised,

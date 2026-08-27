@@ -2,8 +2,20 @@
 # Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
 # Regenerate with: cargo contracts api-write
 impl core::clone::Clone for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::clone::Clone for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::clone::Clone for ratatoskr_github_contracts::GitHubAccountRef
+impl core::clone::Clone for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::clone::Clone for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::clone::Clone for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::clone::Clone for ratatoskr_github_contracts::ReadmeRevision
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionResult
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -11,23 +23,71 @@ impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisFailed
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryDescription
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryFullName
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::clone::Clone for ratatoskr_github_contracts::RepositoryLanguage
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::clone::Clone for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::cmp::Eq for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::cmp::Eq for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::cmp::Eq for ratatoskr_github_contracts::GitHubAccountRef
+impl core::cmp::Eq for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::cmp::Eq for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::cmp::Eq for ratatoskr_github_contracts::ReadmeAbsenceReason
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionResult
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryAnalysisContract
 impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryDescription
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryFullName
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryLanguage
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::cmp::Eq for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::cmp::Ord for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::cmp::Ord for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::cmp::Ord for ratatoskr_github_contracts::GitHubAccountRef
+impl core::cmp::Ord for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::cmp::Ord for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::cmp::Ord for ratatoskr_github_contracts::ReadmeAbsenceReason
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryAnalysisContract
 impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryDescription
 impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryFullName
 impl core::cmp::Ord for ratatoskr_github_contracts::RepositoryLanguage
 impl core::cmp::PartialEq for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::cmp::PartialEq for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::cmp::PartialEq for ratatoskr_github_contracts::GitHubAccountRef
+impl core::cmp::PartialEq for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::cmp::PartialEq for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::cmp::PartialEq for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::cmp::PartialEq for ratatoskr_github_contracts::ReadmeRevision
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionResult
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -35,23 +95,63 @@ impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisFail
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryDescription
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryFullName
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryLanguage
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::cmp::PartialEq for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::GitHubAccountRef
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::ReadmeAbsenceReason
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryAnalysisContract
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryDescription
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryFullName
 impl core::cmp::PartialOrd for ratatoskr_github_contracts::RepositoryLanguage
+impl core::convert::From<ratatoskr_github_contracts::ConfirmationEvidenceRef> for alloc::string::String
+impl core::convert::From<ratatoskr_github_contracts::GitHubAccountRef> for alloc::string::String
+impl core::convert::From<ratatoskr_github_contracts::GitHubRepositoryNumericId> for u64
+impl core::convert::From<ratatoskr_github_contracts::GitHubRepositoryUrl> for alloc::string::String
+impl core::convert::From<ratatoskr_github_contracts::RepositoryActionIdempotencyKey> for alloc::string::String
 impl core::convert::From<ratatoskr_github_contracts::RepositoryDescription> for alloc::string::String
 impl core::convert::From<ratatoskr_github_contracts::RepositoryFullName> for alloc::string::String
 impl core::convert::From<ratatoskr_github_contracts::RepositoryLanguage> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::GitHubAccountRef
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::GitHubRepositoryUrl
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::RepositoryDescription
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::RepositoryFullName
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_github_contracts::RepositoryLanguage
+impl core::convert::TryFrom<u64> for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::error::Error for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::fmt::Debug for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::fmt::Debug for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::fmt::Debug for ratatoskr_github_contracts::GitHubAccountRef
+impl core::fmt::Debug for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::fmt::Debug for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::fmt::Debug for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::fmt::Debug for ratatoskr_github_contracts::ReadmeRevision
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionResult
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -59,23 +159,64 @@ impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisFailed
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryDescription
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryFullName
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryLanguage
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::fmt::Debug for ratatoskr_github_contracts::RepositoryProviderStarOutcome
+impl core::fmt::Display for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::fmt::Display for ratatoskr_github_contracts::GitHubAccountRef
+impl core::fmt::Display for ratatoskr_github_contracts::GitHubRepositoryUrl
+impl core::fmt::Display for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
 impl core::fmt::Display for ratatoskr_github_contracts::RepositoryDescription
 impl core::fmt::Display for ratatoskr_github_contracts::RepositoryFullName
+impl core::fmt::Display for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::fmt::Display for ratatoskr_github_contracts::RepositoryLanguage
 impl core::hash::Hash for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::hash::Hash for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::hash::Hash for ratatoskr_github_contracts::GitHubAccountRef
+impl core::hash::Hash for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::hash::Hash for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::hash::Hash for ratatoskr_github_contracts::ReadmeAbsenceReason
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::hash::Hash for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::hash::Hash for ratatoskr_github_contracts::RepositoryAnalysisContract
 impl core::hash::Hash for ratatoskr_github_contracts::RepositoryDescription
 impl core::hash::Hash for ratatoskr_github_contracts::RepositoryFullName
 impl core::hash::Hash for ratatoskr_github_contracts::RepositoryLanguage
 impl core::marker::Copy for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::Copy for ratatoskr_github_contracts::GitHubRepositoryNumericId
 impl core::marker::Copy for ratatoskr_github_contracts::ReadmeAbsenceReason
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::Copy for ratatoskr_github_contracts::RepositoryAnalysisContract
+impl core::marker::Copy for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::Freeze for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::Freeze for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::Freeze for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::Freeze for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::Freeze for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::Freeze for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::Freeze for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -83,11 +224,30 @@ impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisFail
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::Freeze for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::marker::Send for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::Send for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::Send for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::Send for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::Send for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::Send for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::Send for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -95,11 +255,30 @@ impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisFailed
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::Send for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::Send for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -107,11 +286,30 @@ impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::Repositor
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::StructuralPartialEq for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::marker::Sync for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::Sync for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::Sync for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::Sync for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::Sync for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::Sync for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::Sync for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -119,11 +317,30 @@ impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisFailed
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::Sync for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::Sync for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::marker::Unpin for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::Unpin for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::Unpin for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::Unpin for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::Unpin for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::Unpin for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::Unpin for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -131,11 +348,30 @@ impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisFaile
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::Unpin for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::GitHubAccountRef
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::ReadmeRevision
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionResult
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -143,11 +379,30 @@ impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysi
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryDescription
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryFullName
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryLanguage
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::marker::UnsafeUnpin for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::GitHubAccountRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::ReadmeRevision
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionResult
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -155,11 +410,30 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::Rep
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryDescription
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryFullName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryLanguage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::AnalysisFailureCode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::GitHubAccountRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::ReadmeRevision
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionAggregate
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionCapability
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionRequest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionResult
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -167,20 +441,50 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::Reposi
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryDescription
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryFullName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryLanguage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_github_contracts::RepositoryProviderStarOutcome
+impl core::str::traits::FromStr for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl core::str::traits::FromStr for ratatoskr_github_contracts::GitHubAccountRef
+impl core::str::traits::FromStr for ratatoskr_github_contracts::GitHubRepositoryUrl
+impl core::str::traits::FromStr for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
 impl core::str::traits::FromStr for ratatoskr_github_contracts::RepositoryDescription
 impl core::str::traits::FromStr for ratatoskr_github_contracts::RepositoryFullName
 impl core::str::traits::FromStr for ratatoskr_github_contracts::RepositoryLanguage
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_github_contracts::RepositoryAnalysisFailed
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_github_contracts::RepositoryAnalysisRequested
+impl ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl ratatoskr_github_contracts::GitHubAccountRef
+impl ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl ratatoskr_github_contracts::GitHubRepositoryUrl
+impl ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl ratatoskr_github_contracts::RepositoryActionRequest
+impl ratatoskr_github_contracts::RepositoryActionResult
 impl ratatoskr_github_contracts::RepositoryDescription
 impl ratatoskr_github_contracts::RepositoryFullName
 impl ratatoskr_github_contracts::RepositoryLanguage
 impl schemars::JsonSchema for ratatoskr_github_contracts::AnalysisFailureCode
+impl schemars::JsonSchema for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl schemars::JsonSchema for ratatoskr_github_contracts::GitHubAccountRef
+impl schemars::JsonSchema for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl schemars::JsonSchema for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl schemars::JsonSchema for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl schemars::JsonSchema for ratatoskr_github_contracts::ReadmeRevision
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionAggregate
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionCapability
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionRequest
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionResult
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -188,11 +492,29 @@ impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisFail
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryDescription
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryFullName
 impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryLanguage
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl schemars::JsonSchema for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::AnalysisFailureCode
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::GitHubAccountRef
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::ReadmeRevision
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionAggregate
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionCapability
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionRequest
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionResult
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -200,11 +522,29 @@ impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalys
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryDescription
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryFullName
 impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryLanguage
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl serde_core::ser::Serialize for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::AnalysisFailureCode
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::GitHubAccountRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::ReadmeRevision
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionAggregate
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionCapability
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionRequest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionResult
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -212,11 +552,29 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::Repos
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryDescription
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryFullName
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryLanguage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::AnalysisFailureCode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::ConfirmationEvidenceRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::GitHubAccountRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::GitHubRepositoryNumericId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::GitHubRepositoryUrl where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::ReadmeAbsenceReason where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::ReadmeRevision where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionAggregate where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionCapability where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionFailureReason where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionRefusalReason where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionRequest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionResult where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryActionSkipReason where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnalysisAttributes where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnalysisCompleted where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnalysisContract where U: core::convert::From<T>
@@ -224,11 +582,30 @@ impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnal
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnalysisRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryAnalysisRevision where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryDescription where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryFullName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryInteractionContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryLanguage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryMetadataOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryPreviewRequest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryPreviewResponse where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryPreviewTarget where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_github_contracts::RepositoryProviderStarOutcome where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::AnalysisFailureCode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::ConfirmationEvidenceRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::GitHubAccountRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::GitHubRepositoryNumericId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::GitHubRepositoryUrl where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::ReadmeAbsenceReason where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::ReadmeRevision where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionAggregate where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionCapability where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionFailureReason where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionRefusalReason where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionRequest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionResult where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryActionSkipReason where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryAnalysisAttributes where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryAnalysisCompleted where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryAnalysisContract where U: core::convert::Into<T>
@@ -236,11 +613,30 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryA
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryAnalysisRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryAnalysisRevision where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryDescription where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryFullName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryInteractionContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryLanguage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryMetadataOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryPreviewRequest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryPreviewResponse where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryPreviewTarget where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_github_contracts::RepositoryProviderStarOutcome where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::AnalysisFailureCode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::ConfirmationEvidenceRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::GitHubAccountRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::GitHubRepositoryNumericId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::GitHubRepositoryUrl where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::ReadmeAbsenceReason where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::ReadmeRevision where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionAggregate where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionCapability where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionFailureReason where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionRefusalReason where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionRequest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionResult where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryActionSkipReason where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryAnalysisAttributes where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryAnalysisCompleted where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryAnalysisContract where U: core::convert::TryFrom<T>
@@ -248,11 +644,30 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryA
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryAnalysisRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryAnalysisRevision where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryDescription where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryFullName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryInteractionContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryLanguage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryMetadataOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryPreviewRequest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryPreviewResponse where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryPreviewTarget where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_github_contracts::RepositoryProviderStarOutcome where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::AnalysisFailureCode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::GitHubAccountRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::GitHubRepositoryUrl where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::ReadmeAbsenceReason where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::ReadmeRevision where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionAggregate where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionCapability where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionFailureReason where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionRequest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionResult where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryActionSkipReason where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysisContract where T: core::clone::Clone
@@ -260,14 +675,38 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysi
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryDescription where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryFullName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryInteractionContractError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryLanguage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryPreviewRequest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryPreviewResponse where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryPreviewTarget where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_github_contracts::GitHubAccountRef where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_github_contracts::GitHubRepositoryUrl where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_github_contracts::RepositoryDescription where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_github_contracts::RepositoryFullName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_github_contracts::RepositoryInteractionContractError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_github_contracts::RepositoryLanguage where T: core::fmt::Display + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::AnalysisFailureCode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::GitHubAccountRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::GitHubRepositoryUrl where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::ReadmeAbsenceReason where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::ReadmeRevision where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionAggregate where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionCapability where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionFailureReason where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionRequest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionResult where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryActionSkipReason where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisContract where T: 'static + ?core::marker::Sized
@@ -275,11 +714,30 @@ impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisFailed 
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryDescription where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryFullName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryInteractionContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryLanguage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryPreviewRequest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryPreviewResponse where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryPreviewTarget where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::AnalysisFailureCode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::GitHubAccountRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::GitHubRepositoryUrl where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::ReadmeAbsenceReason where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::ReadmeRevision where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionAggregate where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionCapability where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionFailureReason where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionRequest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionResult where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryActionSkipReason where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalysisContract where T: ?core::marker::Sized
@@ -287,11 +745,30 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalys
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryDescription where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryFullName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryInteractionContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryLanguage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryPreviewRequest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryPreviewResponse where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryPreviewTarget where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::AnalysisFailureCode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::GitHubAccountRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::GitHubRepositoryUrl where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::ReadmeAbsenceReason where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::ReadmeRevision where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionAggregate where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionCapability where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionFailureReason where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionRequest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionResult where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryActionSkipReason where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAnalysisContract where T: ?core::marker::Sized
@@ -299,11 +776,30 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAna
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryDescription where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryFullName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryInteractionContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryLanguage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryPreviewRequest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryPreviewResponse where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryPreviewTarget where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::AnalysisFailureCode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::GitHubAccountRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::GitHubRepositoryUrl where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::ReadmeAbsenceReason where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::ReadmeRevision where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionAggregate where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionCapability where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionFailureReason where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionRequest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionResult where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryActionSkipReason where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAnalysisContract where T: core::clone::Clone
@@ -311,11 +807,30 @@ impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAna
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryDescription where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryFullName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryInteractionContractError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryLanguage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryPreviewRequest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryPreviewResponse where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryPreviewTarget where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::AnalysisFailureCode
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::ConfirmationEvidenceRef
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::GitHubAccountRef
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::GitHubRepositoryNumericId
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::GitHubRepositoryUrl
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::ReadmeAbsenceReason
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::ReadmeRevision
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionAggregate
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionCapability
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionFailureReason
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionRefusalReason
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionRequest
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionResult
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryActionSkipReason
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysisAttributes
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysisCompleted
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysisContract
@@ -323,11 +838,30 @@ impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysi
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysisRequested
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryAnalysisRevision
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryDescription
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryFullName
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryInteractionContractError
 impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryLanguage
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryMetadataOutcome
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryPreviewRequest
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryPreviewResponse
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryPreviewTarget
+impl<T> core::convert::From<T> for ratatoskr_github_contracts::RepositoryProviderStarOutcome
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::AnalysisFailureCode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::GitHubAccountRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::GitHubRepositoryUrl where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::ReadmeAbsenceReason where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::ReadmeRevision where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionAggregate where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionCapability where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionFailureReason where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionRequest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionResult where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryActionSkipReason where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisContract where T: core::clone::Clone
@@ -335,11 +869,30 @@ impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisFa
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryDescription where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryFullName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryInteractionContractError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryLanguage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryPreviewRequest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryPreviewResponse where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryPreviewTarget where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::AnalysisFailureCode where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::ConfirmationEvidenceRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::GitHubAccountRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::GitHubRepositoryNumericId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::GitHubRepositoryUrl where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::ReadmeAbsenceReason where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::ReadmeRevision where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionAggregate where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionCapability where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionFailureReason where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionIdempotencyKey where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionRefusalReason where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionRequest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionResult where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryActionSkipReason where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryAnalysisAttributes where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryAnalysisCompleted where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryAnalysisContract where T: for<'de> serde_core::de::Deserialize<'de>
@@ -347,8 +900,27 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::Reposit
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryAnalysisRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryAnalysisRevision where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryDescription where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryDesiredBackupOutcome where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryFullName where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryLanguage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryMetadataOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryPreviewRequest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryPreviewResponse where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryPreviewTarget where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_github_contracts::RepositoryProviderStarOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+pub const fn ratatoskr_github_contracts::GitHubRepositoryNumericId::get(self) -> u64
+pub const ratatoskr_github_contracts::ConfirmationEvidenceRef::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_github_contracts::ConfirmationEvidenceRef::MAX_LEN: usize
+pub const ratatoskr_github_contracts::ConfirmationEvidenceRef::PATTERN: &'static str
+pub const ratatoskr_github_contracts::GitHubAccountRef::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_github_contracts::GitHubAccountRef::MAX_LEN: usize
+pub const ratatoskr_github_contracts::GitHubAccountRef::PATTERN: &'static str
+pub const ratatoskr_github_contracts::GitHubRepositoryUrl::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_github_contracts::GitHubRepositoryUrl::MAX_LEN: usize
+pub const ratatoskr_github_contracts::GitHubRepositoryUrl::PATTERN: &'static str
+pub const ratatoskr_github_contracts::RepositoryActionIdempotencyKey::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_github_contracts::RepositoryActionIdempotencyKey::MAX_LEN: usize
+pub const ratatoskr_github_contracts::RepositoryActionIdempotencyKey::PATTERN: &'static str
 pub const ratatoskr_github_contracts::RepositoryAnalysisCompleted::EVENT_TYPE: &'static str
 pub const ratatoskr_github_contracts::RepositoryAnalysisFailed::EVENT_TYPE: &'static str
 pub const ratatoskr_github_contracts::RepositoryAnalysisRequested::EVENT_TYPE: &'static str
@@ -361,6 +933,11 @@ pub const ratatoskr_github_contracts::RepositoryFullName::PATTERN: &'static str
 pub const ratatoskr_github_contracts::RepositoryLanguage::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_github_contracts::RepositoryLanguage::MAX_LEN: usize
 pub const ratatoskr_github_contracts::RepositoryLanguage::PATTERN: &'static str
+pub enum ratatoskr_github_contracts::RepositoryInteractionContractError
+pub fn alloc::string::String::from(ratatoskr_github_contracts::ConfirmationEvidenceRef) -> Self
+pub fn alloc::string::String::from(ratatoskr_github_contracts::GitHubAccountRef) -> Self
+pub fn alloc::string::String::from(ratatoskr_github_contracts::GitHubRepositoryUrl) -> Self
+pub fn alloc::string::String::from(ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> Self
 pub fn alloc::string::String::from(ratatoskr_github_contracts::RepositoryDescription) -> Self
 pub fn alloc::string::String::from(ratatoskr_github_contracts::RepositoryFullName) -> Self
 pub fn alloc::string::String::from(ratatoskr_github_contracts::RepositoryLanguage) -> Self
@@ -386,6 +963,107 @@ pub fn ratatoskr_github_contracts::AnalysisFailureCode::to_owned(&self) -> T
 pub fn ratatoskr_github_contracts::AnalysisFailureCode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_github_contracts::AnalysisFailureCode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_github_contracts::AnalysisFailureCode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::as_str(&self) -> &str
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::clone(&self) -> ratatoskr_github_contracts::ConfirmationEvidenceRef
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::cmp(&self, &ratatoskr_github_contracts::ConfirmationEvidenceRef) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::eq(&self, &ratatoskr_github_contracts::ConfirmationEvidenceRef) -> bool
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::from(T) -> T
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::into(self) -> U
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::partial_cmp(&self, &ratatoskr_github_contracts::ConfirmationEvidenceRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::ConfirmationEvidenceRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::GitHubAccountRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::GitHubAccountRef::as_str(&self) -> &str
+pub fn ratatoskr_github_contracts::GitHubAccountRef::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::GitHubAccountRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::GitHubAccountRef::clone(&self) -> ratatoskr_github_contracts::GitHubAccountRef
+pub fn ratatoskr_github_contracts::GitHubAccountRef::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::GitHubAccountRef::cmp(&self, &ratatoskr_github_contracts::GitHubAccountRef) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::GitHubAccountRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::eq(&self, &ratatoskr_github_contracts::GitHubAccountRef) -> bool
+pub fn ratatoskr_github_contracts::GitHubAccountRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::GitHubAccountRef::from(T) -> T
+pub fn ratatoskr_github_contracts::GitHubAccountRef::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::GitHubAccountRef::into(self) -> U
+pub fn ratatoskr_github_contracts::GitHubAccountRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::GitHubAccountRef::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::partial_cmp(&self, &ratatoskr_github_contracts::GitHubAccountRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::GitHubAccountRef::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::GitHubAccountRef::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_github_contracts::GitHubAccountRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::GitHubAccountRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::clone(&self) -> ratatoskr_github_contracts::GitHubRepositoryNumericId
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::cmp(&self, &ratatoskr_github_contracts::GitHubRepositoryNumericId) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::eq(&self, &ratatoskr_github_contracts::GitHubRepositoryNumericId) -> bool
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::from(T) -> T
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::into(self) -> U
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::new(u64) -> core::result::Result<Self, ratatoskr_github_contracts::RepositoryInteractionContractError>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::partial_cmp(&self, &ratatoskr_github_contracts::GitHubRepositoryNumericId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::try_from(u64) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryNumericId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::as_str(&self) -> &str
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::clone(&self) -> ratatoskr_github_contracts::GitHubRepositoryUrl
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::cmp(&self, &ratatoskr_github_contracts::GitHubRepositoryUrl) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::eq(&self, &ratatoskr_github_contracts::GitHubRepositoryUrl) -> bool
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::from(T) -> T
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::into(self) -> U
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::partial_cmp(&self, &ratatoskr_github_contracts::GitHubRepositoryUrl) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::GitHubRepositoryUrl::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_github_contracts::ReadmeAbsenceReason::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_github_contracts::ReadmeAbsenceReason::borrow(&self) -> &T
 pub fn ratatoskr_github_contracts::ReadmeAbsenceReason::borrow_mut(&mut self) -> &mut T
@@ -427,6 +1105,182 @@ pub fn ratatoskr_github_contracts::ReadmeRevision::to_owned(&self) -> T
 pub fn ratatoskr_github_contracts::ReadmeRevision::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_github_contracts::ReadmeRevision::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_github_contracts::ReadmeRevision::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::clone(&self) -> ratatoskr_github_contracts::RepositoryActionAggregate
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::cmp(&self, &ratatoskr_github_contracts::RepositoryActionAggregate) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::eq(&self, &ratatoskr_github_contracts::RepositoryActionAggregate) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionAggregate) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionAggregate::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::clone(&self) -> ratatoskr_github_contracts::RepositoryActionCapability
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::cmp(&self, &ratatoskr_github_contracts::RepositoryActionCapability) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::eq(&self, &ratatoskr_github_contracts::RepositoryActionCapability) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionCapability) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionCapability::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::clone(&self) -> ratatoskr_github_contracts::RepositoryActionFailureReason
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::cmp(&self, &ratatoskr_github_contracts::RepositoryActionFailureReason) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::eq(&self, &ratatoskr_github_contracts::RepositoryActionFailureReason) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionFailureReason) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionFailureReason::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::as_str(&self) -> &str
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::clone(&self) -> ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::cmp(&self, &ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::eq(&self, &ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::clone(&self) -> ratatoskr_github_contracts::RepositoryActionRefusalReason
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::cmp(&self, &ratatoskr_github_contracts::RepositoryActionRefusalReason) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::eq(&self, &ratatoskr_github_contracts::RepositoryActionRefusalReason) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionRefusalReason) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionRefusalReason::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::clone(&self) -> ratatoskr_github_contracts::RepositoryActionRequest
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::eq(&self, &ratatoskr_github_contracts::RepositoryActionRequest) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::new(ratatoskr_github_contracts::RepositoryActionCapability, ratatoskr_github_contracts::RepositoryPreviewTarget, core::option::Option<ratatoskr_github_contracts::GitHubAccountRef>, ratatoskr_github_contracts::ConfirmationEvidenceRef, ratatoskr_github_contracts::RepositoryActionIdempotencyKey) -> core::result::Result<Self, ratatoskr_github_contracts::RepositoryInteractionContractError>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionRequest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionResult::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionResult::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionResult::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionResult::clone(&self) -> ratatoskr_github_contracts::RepositoryActionResult
+pub fn ratatoskr_github_contracts::RepositoryActionResult::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionResult::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionResult::eq(&self, &ratatoskr_github_contracts::RepositoryActionResult) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionResult::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionResult::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionResult::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionResult::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionResult::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionResult::new(ratatoskr_github_contracts::RepositoryMetadataOutcome, ratatoskr_github_contracts::RepositoryProviderStarOutcome, ratatoskr_github_contracts::RepositoryDesiredBackupOutcome) -> Self
+pub fn ratatoskr_github_contracts::RepositoryActionResult::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionResult::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionResult::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionResult::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionResult::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionResult::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionResult::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::clone(&self) -> ratatoskr_github_contracts::RepositoryActionSkipReason
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::cmp(&self, &ratatoskr_github_contracts::RepositoryActionSkipReason) -> core::cmp::Ordering
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::eq(&self, &ratatoskr_github_contracts::RepositoryActionSkipReason) -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::partial_cmp(&self, &ratatoskr_github_contracts::RepositoryActionSkipReason) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryActionSkipReason::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_github_contracts::RepositoryAnalysisAttributes::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_github_contracts::RepositoryAnalysisAttributes::borrow(&self) -> &T
 pub fn ratatoskr_github_contracts::RepositoryAnalysisAttributes::borrow_mut(&mut self) -> &mut T
@@ -570,6 +1424,25 @@ pub fn ratatoskr_github_contracts::RepositoryDescription::try_from(U) -> core::r
 pub fn ratatoskr_github_contracts::RepositoryDescription::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_github_contracts::RepositoryDescription::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_github_contracts::RepositoryDescription::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::clone(&self) -> ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::eq(&self, &ratatoskr_github_contracts::RepositoryDesiredBackupOutcome) -> bool
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_github_contracts::RepositoryFullName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_github_contracts::RepositoryFullName::as_str(&self) -> &str
 pub fn ratatoskr_github_contracts::RepositoryFullName::borrow(&self) -> &T
@@ -596,6 +1469,20 @@ pub fn ratatoskr_github_contracts::RepositoryFullName::try_from(U) -> core::resu
 pub fn ratatoskr_github_contracts::RepositoryFullName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_github_contracts::RepositoryFullName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_github_contracts::RepositoryFullName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::clone(&self) -> ratatoskr_github_contracts::RepositoryInteractionContractError
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::eq(&self, &ratatoskr_github_contracts::RepositoryInteractionContractError) -> bool
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryInteractionContractError::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_github_contracts::RepositoryLanguage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_github_contracts::RepositoryLanguage::as_str(&self) -> &str
 pub fn ratatoskr_github_contracts::RepositoryLanguage::borrow(&self) -> &T
@@ -622,6 +1509,102 @@ pub fn ratatoskr_github_contracts::RepositoryLanguage::try_from(U) -> core::resu
 pub fn ratatoskr_github_contracts::RepositoryLanguage::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_github_contracts::RepositoryLanguage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_github_contracts::RepositoryLanguage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::clone(&self) -> ratatoskr_github_contracts::RepositoryMetadataOutcome
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::eq(&self, &ratatoskr_github_contracts::RepositoryMetadataOutcome) -> bool
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryMetadataOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::clone(&self) -> ratatoskr_github_contracts::RepositoryPreviewRequest
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::eq(&self, &ratatoskr_github_contracts::RepositoryPreviewRequest) -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewRequest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::clone(&self) -> ratatoskr_github_contracts::RepositoryPreviewResponse
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::eq(&self, &ratatoskr_github_contracts::RepositoryPreviewResponse) -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewResponse::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::clone(&self) -> ratatoskr_github_contracts::RepositoryPreviewTarget
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::eq(&self, &ratatoskr_github_contracts::RepositoryPreviewTarget) -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryPreviewTarget::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::borrow(&self) -> &T
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::clone(&self) -> ratatoskr_github_contracts::RepositoryProviderStarOutcome
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::eq(&self, &ratatoskr_github_contracts::RepositoryProviderStarOutcome) -> bool
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::from(T) -> T
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::inline_schema() -> bool
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::into(self) -> U
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::to_owned(&self) -> T
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::type_id(&self) -> core::any::TypeId
+pub fn u64::from(ratatoskr_github_contracts::GitHubRepositoryNumericId) -> Self
 pub mod ratatoskr_github_contracts
 pub ratatoskr_github_contracts::AnalysisFailureCode::ContractInvalid
 pub ratatoskr_github_contracts::AnalysisFailureCode::DependencyUnavailable
@@ -634,6 +1617,33 @@ pub ratatoskr_github_contracts::ReadmeRevision::Absent
 pub ratatoskr_github_contracts::ReadmeRevision::Absent::reason: ratatoskr_github_contracts::ReadmeAbsenceReason
 pub ratatoskr_github_contracts::ReadmeRevision::Present
 pub ratatoskr_github_contracts::ReadmeRevision::Present::content_ref: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_github_contracts::RepositoryActionAggregate::Failed
+pub ratatoskr_github_contracts::RepositoryActionAggregate::Partial
+pub ratatoskr_github_contracts::RepositoryActionAggregate::Succeeded
+pub ratatoskr_github_contracts::RepositoryActionCapability::Metadata
+pub ratatoskr_github_contracts::RepositoryActionCapability::Star
+pub ratatoskr_github_contracts::RepositoryActionCapability::Track
+pub ratatoskr_github_contracts::RepositoryActionFailureReason::CatalogPersistenceFailed
+pub ratatoskr_github_contracts::RepositoryActionFailureReason::DependencyUnavailable
+pub ratatoskr_github_contracts::RepositoryActionFailureReason::OutcomeUnknown
+pub ratatoskr_github_contracts::RepositoryActionFailureReason::PolicyPublicationFailed
+pub ratatoskr_github_contracts::RepositoryActionFailureReason::ProviderUnavailable
+pub ratatoskr_github_contracts::RepositoryActionRefusalReason::AccountRequired
+pub ratatoskr_github_contracts::RepositoryActionRefusalReason::AccountSelectionRequired
+pub ratatoskr_github_contracts::RepositoryActionRefusalReason::NotAuthorized
+pub ratatoskr_github_contracts::RepositoryActionRefusalReason::ScopeMissing
+pub ratatoskr_github_contracts::RepositoryActionRefusalReason::TargetChanged
+pub ratatoskr_github_contracts::RepositoryActionRequest::account_ref: core::option::Option<ratatoskr_github_contracts::GitHubAccountRef>
+pub ratatoskr_github_contracts::RepositoryActionRequest::confirmation_evidence_ref: ratatoskr_github_contracts::ConfirmationEvidenceRef
+pub ratatoskr_github_contracts::RepositoryActionRequest::idempotency_key: ratatoskr_github_contracts::RepositoryActionIdempotencyKey
+pub ratatoskr_github_contracts::RepositoryActionRequest::mode: ratatoskr_github_contracts::RepositoryActionCapability
+pub ratatoskr_github_contracts::RepositoryActionRequest::target: ratatoskr_github_contracts::RepositoryPreviewTarget
+pub ratatoskr_github_contracts::RepositoryActionResult::aggregate: ratatoskr_github_contracts::RepositoryActionAggregate
+pub ratatoskr_github_contracts::RepositoryActionResult::desired_backup: ratatoskr_github_contracts::RepositoryDesiredBackupOutcome
+pub ratatoskr_github_contracts::RepositoryActionResult::metadata: ratatoskr_github_contracts::RepositoryMetadataOutcome
+pub ratatoskr_github_contracts::RepositoryActionResult::provider_star: ratatoskr_github_contracts::RepositoryProviderStarOutcome
+pub ratatoskr_github_contracts::RepositoryActionSkipReason::NotApplicable
+pub ratatoskr_github_contracts::RepositoryActionSkipReason::PrerequisiteFailed
 pub ratatoskr_github_contracts::RepositoryAnalysisAttributes::description: core::option::Option<ratatoskr_github_contracts::RepositoryDescription>
 pub ratatoskr_github_contracts::RepositoryAnalysisAttributes::primary_language: core::option::Option<ratatoskr_github_contracts::RepositoryLanguage>
 pub ratatoskr_github_contracts::RepositoryAnalysisAttributes::repository_full_name: ratatoskr_github_contracts::RepositoryFullName
@@ -666,6 +1676,51 @@ pub ratatoskr_github_contracts::RepositoryAnalysisRequested::requested_contract:
 pub ratatoskr_github_contracts::RepositoryAnalysisRequested::source_revision: ratatoskr_github_contracts::RepositoryAnalysisRevision
 pub ratatoskr_github_contracts::RepositoryAnalysisRevision::attributes_digest: ratatoskr_identifiers::blob::ContentDigest
 pub ratatoskr_github_contracts::RepositoryAnalysisRevision::readme: ratatoskr_github_contracts::ReadmeRevision
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Accepted
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::AlreadyApplied
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Failed
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Failed::reason: ratatoskr_github_contracts::RepositoryActionFailureReason
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Refused
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Refused::reason: ratatoskr_github_contracts::RepositoryActionRefusalReason
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Skipped
+pub ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Skipped::reason: ratatoskr_github_contracts::RepositoryActionSkipReason
+pub ratatoskr_github_contracts::RepositoryInteractionContractError::InconsistentAggregate
+pub ratatoskr_github_contracts::RepositoryInteractionContractError::MissingStarAccount
+pub ratatoskr_github_contracts::RepositoryInteractionContractError::UnexpectedAccount
+pub ratatoskr_github_contracts::RepositoryInteractionContractError::ZeroRepositoryNumericId
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::AlreadyApplied
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Failed
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Failed::reason: ratatoskr_github_contracts::RepositoryActionFailureReason
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Refused
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Refused::reason: ratatoskr_github_contracts::RepositoryActionRefusalReason
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Skipped
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Skipped::reason: ratatoskr_github_contracts::RepositoryActionSkipReason
+pub ratatoskr_github_contracts::RepositoryMetadataOutcome::Succeeded
+pub ratatoskr_github_contracts::RepositoryPreviewRequest::repository_url: ratatoskr_github_contracts::GitHubRepositoryUrl
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::account_ref: core::option::Option<ratatoskr_github_contracts::GitHubAccountRef>
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::available_actions: alloc::vec::Vec<ratatoskr_github_contracts::RepositoryActionCapability>
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::description: core::option::Option<ratatoskr_github_contracts::RepositoryDescription>
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::primary_language: core::option::Option<ratatoskr_github_contracts::RepositoryLanguage>
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::stargazer_count: u64
+pub ratatoskr_github_contracts::RepositoryPreviewResponse::target: ratatoskr_github_contracts::RepositoryPreviewTarget
+pub ratatoskr_github_contracts::RepositoryPreviewTarget::canonical_url: ratatoskr_github_contracts::GitHubRepositoryUrl
+pub ratatoskr_github_contracts::RepositoryPreviewTarget::github_repository_numeric_id: ratatoskr_github_contracts::GitHubRepositoryNumericId
+pub ratatoskr_github_contracts::RepositoryPreviewTarget::repository_full_name: ratatoskr_github_contracts::RepositoryFullName
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::AlreadyApplied
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Failed
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Failed::reason: ratatoskr_github_contracts::RepositoryActionFailureReason
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Refused
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Refused::reason: ratatoskr_github_contracts::RepositoryActionRefusalReason
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Skipped
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Skipped::reason: ratatoskr_github_contracts::RepositoryActionSkipReason
+pub ratatoskr_github_contracts::RepositoryProviderStarOutcome::Succeeded
+pub struct ratatoskr_github_contracts::ConfirmationEvidenceRef(_)
+pub struct ratatoskr_github_contracts::GitHubAccountRef(_)
+pub struct ratatoskr_github_contracts::GitHubRepositoryNumericId(_)
+pub struct ratatoskr_github_contracts::GitHubRepositoryUrl(_)
+pub struct ratatoskr_github_contracts::RepositoryActionIdempotencyKey(_)
+pub struct ratatoskr_github_contracts::RepositoryActionRequest
+pub struct ratatoskr_github_contracts::RepositoryActionResult
 pub struct ratatoskr_github_contracts::RepositoryAnalysisAttributes
 pub struct ratatoskr_github_contracts::RepositoryAnalysisCompleted
 pub struct ratatoskr_github_contracts::RepositoryAnalysisFailed
@@ -674,15 +1729,63 @@ pub struct ratatoskr_github_contracts::RepositoryAnalysisRevision
 pub struct ratatoskr_github_contracts::RepositoryDescription(_)
 pub struct ratatoskr_github_contracts::RepositoryFullName(_)
 pub struct ratatoskr_github_contracts::RepositoryLanguage(_)
+pub struct ratatoskr_github_contracts::RepositoryPreviewRequest
+pub struct ratatoskr_github_contracts::RepositoryPreviewResponse
+pub struct ratatoskr_github_contracts::RepositoryPreviewTarget
 pub type ratatoskr_github_contracts::AnalysisFailureCode::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::AnalysisFailureCode::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::AnalysisFailureCode::Owned = T
+pub type ratatoskr_github_contracts::ConfirmationEvidenceRef::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::ConfirmationEvidenceRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::ConfirmationEvidenceRef::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::ConfirmationEvidenceRef::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::ConfirmationEvidenceRef::Owned = T
+pub type ratatoskr_github_contracts::GitHubAccountRef::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::GitHubAccountRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::GitHubAccountRef::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::GitHubAccountRef::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::GitHubAccountRef::Owned = T
+pub type ratatoskr_github_contracts::GitHubRepositoryNumericId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::GitHubRepositoryNumericId::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::GitHubRepositoryNumericId::Error = ratatoskr_github_contracts::RepositoryInteractionContractError
+pub type ratatoskr_github_contracts::GitHubRepositoryNumericId::Owned = T
+pub type ratatoskr_github_contracts::GitHubRepositoryUrl::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::GitHubRepositoryUrl::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::GitHubRepositoryUrl::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::GitHubRepositoryUrl::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::GitHubRepositoryUrl::Owned = T
 pub type ratatoskr_github_contracts::ReadmeAbsenceReason::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::ReadmeAbsenceReason::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::ReadmeAbsenceReason::Owned = T
 pub type ratatoskr_github_contracts::ReadmeRevision::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::ReadmeRevision::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::ReadmeRevision::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionAggregate::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionAggregate::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionAggregate::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionCapability::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionCapability::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionCapability::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionFailureReason::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionFailureReason::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionFailureReason::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionIdempotencyKey::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::RepositoryActionIdempotencyKey::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionIdempotencyKey::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionIdempotencyKey::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_github_contracts::RepositoryActionIdempotencyKey::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionRefusalReason::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionRefusalReason::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionRefusalReason::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionRequest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionRequest::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionRequest::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionResult::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionResult::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionResult::Owned = T
+pub type ratatoskr_github_contracts::RepositoryActionSkipReason::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryActionSkipReason::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryActionSkipReason::Owned = T
 pub type ratatoskr_github_contracts::RepositoryAnalysisAttributes::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::RepositoryAnalysisAttributes::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::RepositoryAnalysisAttributes::Owned = T
@@ -706,19 +1809,52 @@ pub type ratatoskr_github_contracts::RepositoryDescription::Error = <U as core::
 pub type ratatoskr_github_contracts::RepositoryDescription::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::RepositoryDescription::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_github_contracts::RepositoryDescription::Owned = T
+pub type ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::Owned = T
 pub type ratatoskr_github_contracts::RepositoryFullName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_github_contracts::RepositoryFullName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::RepositoryFullName::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::RepositoryFullName::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_github_contracts::RepositoryFullName::Owned = T
+pub type ratatoskr_github_contracts::RepositoryInteractionContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryInteractionContractError::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryInteractionContractError::Owned = T
 pub type ratatoskr_github_contracts::RepositoryLanguage::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_github_contracts::RepositoryLanguage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_github_contracts::RepositoryLanguage::Error = core::convert::Infallible
 pub type ratatoskr_github_contracts::RepositoryLanguage::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_github_contracts::RepositoryLanguage::Owned = T
+pub type ratatoskr_github_contracts::RepositoryMetadataOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryMetadataOutcome::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryMetadataOutcome::Owned = T
+pub type ratatoskr_github_contracts::RepositoryPreviewRequest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryPreviewRequest::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryPreviewRequest::Owned = T
+pub type ratatoskr_github_contracts::RepositoryPreviewResponse::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryPreviewResponse::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryPreviewResponse::Owned = T
+pub type ratatoskr_github_contracts::RepositoryPreviewTarget::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryPreviewTarget::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryPreviewTarget::Owned = T
+pub type ratatoskr_github_contracts::RepositoryProviderStarOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_github_contracts::RepositoryProviderStarOutcome::Error = core::convert::Infallible
+pub type ratatoskr_github_contracts::RepositoryProviderStarOutcome::Owned = T
 pub unsafe fn ratatoskr_github_contracts::AnalysisFailureCode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::ConfirmationEvidenceRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::GitHubAccountRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::GitHubRepositoryNumericId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::GitHubRepositoryUrl::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::ReadmeAbsenceReason::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::ReadmeRevision::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionAggregate::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionCapability::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionFailureReason::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionIdempotencyKey::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionRefusalReason::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionRequest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionResult::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryActionSkipReason::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisAttributes::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisCompleted::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisContract::clone_to_uninit(&self, *mut u8)
@@ -726,5 +1862,12 @@ pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisFailed::clone_to_uni
 pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryAnalysisRevision::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryDescription::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryDesiredBackupOutcome::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryFullName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryInteractionContractError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_github_contracts::RepositoryLanguage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryMetadataOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryPreviewRequest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryPreviewResponse::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryPreviewTarget::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_github_contracts::RepositoryProviderStarOutcome::clone_to_uninit(&self, *mut u8)
