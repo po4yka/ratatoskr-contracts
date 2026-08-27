@@ -232,6 +232,34 @@ fn project_tombstone_fixture_roundtrips_authoritative_evidence() {
     );
 }
 
+/// An authenticated owner privacy request is authoritative deletion evidence without
+/// pretending that the provider or a reconciliation policy initiated it.
+#[test]
+fn user_requested_tombstone_roundtrips_authoritative_evidence() {
+    let fixture_path = concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../fixtures/events/ai_archive.subject.tombstoned.v1/valid/user-requested-conversation.json"
+    );
+    let fixture =
+        std::fs::read_to_string(fixture_path).expect("the user-requested tombstone fixture exists");
+    let parsed = serde_json::from_str::<AiArchiveTombstone>(&fixture);
+
+    assert!(
+        parsed.is_ok(),
+        "user_requested must be accepted as authoritative evidence: {parsed:?}"
+    );
+    let tombstone = parsed.expect("the preceding assertion proves the tombstone parsed");
+    let reemitted = serde_json::to_value(tombstone).expect("the tombstone serializes");
+    assert_eq!(
+        reemitted.get("reason").and_then(serde_json::Value::as_str),
+        Some("user_requested")
+    );
+    assert_eq!(
+        AiArchiveTombstone::EVENT_TYPE,
+        "ai_archive.subject.tombstoned.v1"
+    );
+}
+
 /// A conversation fact must stand on its own when a consumer has not retained
 /// the corresponding import event.
 #[test]

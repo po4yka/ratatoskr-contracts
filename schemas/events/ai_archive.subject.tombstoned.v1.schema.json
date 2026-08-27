@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:events:v1:AiArchiveTombstone",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AiArchiveTombstone",
-  "description": "Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.\n\nThe fact is emitted only from provider deletion, compliance deletion, or an\napproved reconciliation policy.  It never represents an object merely\nmissing from one snapshot.",
+  "description": "Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.\n\nThe fact is emitted only from provider deletion, compliance deletion, an\napproved reconciliation policy, or an authenticated owner privacy request.\nIt never represents an object merely missing from one snapshot.",
   "type": "object",
   "properties": {
     "ai_archive_id": {
@@ -63,7 +63,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:5f2a960751194d1cb8144f387a24987046fd9ebaaac0f7a084a2e669273a1200",
+    "source_digest": "sha256:394e7ac32041e762ec430ea87e444bdadc6c02f51d0f6d44cbbc150436c54191",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -105,10 +105,11 @@
       "examples": [
         "provider_deletion_event",
         "compliance_event",
-        "reconciliation_policy"
+        "reconciliation_policy",
+        "user_requested"
       ],
       "maxLength": 32,
-      "pattern": "^(provider_deletion_event|compliance_event|reconciliation_policy)$"
+      "pattern": "^(provider_deletion_event|compliance_event|reconciliation_policy|user_requested)$"
     },
     "AiArchiveTombstoneSubject": {
       "description": "The archive record made unavailable by an authoritative tombstone fact.",

@@ -16,9 +16,14 @@ use ratatoskr_identifiers::{
 wire_string_newtype! {
     /// An authoritative reason why an AI-archive subject was tombstoned.
     pub struct AiArchiveTombstoneReason {
-        pattern = r"^(provider_deletion_event|compliance_event|reconciliation_policy)$",
+        pattern = r"^(provider_deletion_event|compliance_event|reconciliation_policy|user_requested)$",
         max_len = 32,
-        examples = ["provider_deletion_event", "compliance_event", "reconciliation_policy"],
+        examples = [
+            "provider_deletion_event",
+            "compliance_event",
+            "reconciliation_policy",
+            "user_requested",
+        ],
     }
 }
 
@@ -226,9 +231,9 @@ impl EventPayload for AiConversationUpdated {
 
 /// Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.
 ///
-/// The fact is emitted only from provider deletion, compliance deletion, or an
-/// approved reconciliation policy.  It never represents an object merely
-/// missing from one snapshot.
+/// The fact is emitted only from provider deletion, compliance deletion, an
+/// approved reconciliation policy, or an authenticated owner privacy request.
+/// It never represents an object merely missing from one snapshot.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AiArchiveTombstone {
     /// Archive import that contained the subject when the evidence was recorded.

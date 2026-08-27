@@ -7,15 +7,15 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:5f48f373af1d2904642fa6b5a5bb47d085ed5984d2792d0c2617e8d12e6fc14f
+ * source_digest: sha256:6db023f013d12cd3d96213ac01722ee618c9ba70284520d7d662eb38ac739f5d
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
  * Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.
  *
- * The fact is emitted only from provider deletion, compliance deletion, or an
- * approved reconciliation policy.  It never represents an object merely
- * missing from one snapshot.
+ * The fact is emitted only from provider deletion, compliance deletion, an
+ * approved reconciliation policy, or an authenticated owner privacy request.
+ * It never represents an object merely missing from one snapshot.
  */
 export interface AiArchiveTombstone {
  /**
