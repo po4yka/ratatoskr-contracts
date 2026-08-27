@@ -21,4 +21,4 @@
 ## 5. Validation and Delivery
 
 - [x] 5.1 Run the exact fenced gate from `DEVELOPMENT.md` through `build-gate` for compiler-backed commands, run `openspec validate add-github-repository-interaction-contracts --type change --strict`, and review `git diff --check` plus the complete intended diff
-- [ ] 5.2 After network access is restored, fetch/rebase on current `origin/main`, rerun the full gate, commit only this change, integrate it into contracts `main`, push `main`, and record the immutable merged SHA for downstream pins
+- [x] 5.2 After network access is restored, fetch/rebase on current `origin/main`, rerun the full gate, commit only this change, integrate it into contracts `main`, push `main`, and record the immutable merged SHA for downstream pins (`f3de4f977335194712946b7c7f18d24ea6038c04`)
