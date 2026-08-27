@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-27T10:00:00Z",
+  "state": "degraded",
+  "components": [
+    {
+      "id": "api",
+      "state": "operational",
+      "observed_at": "2026-08-27T10:00:00Z",
+      "stale": false
+    },
+    {
+      "id": "storage",
+      "state": "operational",
+      "observed_at": "2026-08-27T09:59:59Z",
+      "stale": false
+    },
+    {
+      "id": "command_delivery",
+      "state": "degraded",
+      "observed_at": "2026-08-27T09:58:00Z",
+      "stale": true
+    },
+    {
+      "id": "connected_services",
+      "state": "unknown",
+      "stale": false
+    }
+  ]
+}

@@ -280,6 +280,18 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_operation_contracts::OperationSnapshot" => {
             render!(ratatoskr_operation_contracts::OperationSnapshot)
         }
+        "ratatoskr_operational_contracts::AuditEventPage" => {
+            render!(ratatoskr_operational_contracts::AuditEventPage)
+        }
+        "ratatoskr_operational_contracts::OperationInspectionPage" => {
+            render!(ratatoskr_operational_contracts::OperationInspectionPage)
+        }
+        "ratatoskr_operational_contracts::PublicStatusDocument" => {
+            render!(ratatoskr_operational_contracts::PublicStatusDocument)
+        }
+        "ratatoskr_operational_contracts::ScheduleInspectionPage" => {
+            render!(ratatoskr_operational_contracts::ScheduleInspectionPage)
+        }
         "ratatoskr_social_contracts::SocialSourceCaptured" => {
             render!(ratatoskr_social_contracts::SocialSourceCaptured)
         }

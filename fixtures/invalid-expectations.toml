@@ -603,3 +603,27 @@ reason         = "Finalize answers exactly two terminal truths - stored or misma
 rejected_by    = ["json_schema", "serde"]
 error_contains = '-1'
 reason         = "Chunk addressing is zero-based index arithmetic: a negative index names no derived chunk and would corrupt the received-set arithmetic both sides compute from the declaration."
+
+# ---------------------------------------------------------------------------
+# operational status and inspection projections
+# ---------------------------------------------------------------------------
+
+["operational/public-status-document/invalid/diagnostic-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `diagnostic`'
+reason         = "The anonymous document is deliberately closed over four sanitized facts; internal addresses and diagnostic prose would reveal private deployment topology."
+
+["operational/operation-inspection-page/invalid/request-payload.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `request_payload`'
+reason         = "Owner inspection exposes stable lifecycle and safe failure codes only; copying submitted content into an operational list would turn administration into a private-data export."
+
+["operational/schedule-inspection-page/invalid/service-name-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[a-z][a-z0-9_-]{0,63}$'
+reason         = "Service labels are stable product identifiers rather than display text or addresses, so canonical lowercase spelling prevents duplicate logical schedules under case variants."
+
+["operational/audit-event-page/invalid/diagnostic-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `diagnostic`'
+reason         = "The audit projection is intentionally content-free; a free diagnostic field is an unbounded path for credentials, provider responses, URLs, and user content."

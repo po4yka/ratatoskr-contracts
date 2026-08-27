@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "schedule_id": "018f0000-0000-7000-8000-000000000003",
+      "service_name": "Telegram",
+      "name": "daily_sync",
+      "owner_user_id": "018f0000-0000-7000-8000-000000000002",
+      "next_due_at": "2026-08-28T09:00:00Z",
+      "enabled": true
+    }
+  ]
+}

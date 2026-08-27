@@ -1,0 +1,1134 @@
+# Public API baseline of ratatoskr-operational-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_operational_contracts::AuditAction
+impl core::clone::Clone for ratatoskr_operational_contracts::AuditEventPage
+impl core::clone::Clone for ratatoskr_operational_contracts::AuditEventSummary
+impl core::clone::Clone for ratatoskr_operational_contracts::AuditOutcome
+impl core::clone::Clone for ratatoskr_operational_contracts::AuditTargetKind
+impl core::clone::Clone for ratatoskr_operational_contracts::InspectionContractError
+impl core::clone::Clone for ratatoskr_operational_contracts::InspectionCursor
+impl core::clone::Clone for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::clone::Clone for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::clone::Clone for ratatoskr_operational_contracts::PublicComponentId
+impl core::clone::Clone for ratatoskr_operational_contracts::PublicComponentState
+impl core::clone::Clone for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::clone::Clone for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::clone::Clone for ratatoskr_operational_contracts::PublicStatusState
+impl core::clone::Clone for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::clone::Clone for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::clone::Clone for ratatoskr_operational_contracts::ScheduleName
+impl core::clone::Clone for ratatoskr_operational_contracts::ServiceName
+impl core::clone::Clone for ratatoskr_operational_contracts::StatusContractError
+impl core::cmp::Eq for ratatoskr_operational_contracts::AuditAction
+impl core::cmp::Eq for ratatoskr_operational_contracts::AuditEventPage
+impl core::cmp::Eq for ratatoskr_operational_contracts::AuditEventSummary
+impl core::cmp::Eq for ratatoskr_operational_contracts::AuditOutcome
+impl core::cmp::Eq for ratatoskr_operational_contracts::AuditTargetKind
+impl core::cmp::Eq for ratatoskr_operational_contracts::InspectionContractError
+impl core::cmp::Eq for ratatoskr_operational_contracts::InspectionCursor
+impl core::cmp::Eq for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::cmp::Eq for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::cmp::Eq for ratatoskr_operational_contracts::PublicComponentId
+impl core::cmp::Eq for ratatoskr_operational_contracts::PublicComponentState
+impl core::cmp::Eq for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::cmp::Eq for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::cmp::Eq for ratatoskr_operational_contracts::PublicStatusState
+impl core::cmp::Eq for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::cmp::Eq for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::cmp::Eq for ratatoskr_operational_contracts::ScheduleName
+impl core::cmp::Eq for ratatoskr_operational_contracts::ServiceName
+impl core::cmp::Eq for ratatoskr_operational_contracts::StatusContractError
+impl core::cmp::Ord for ratatoskr_operational_contracts::AuditAction
+impl core::cmp::Ord for ratatoskr_operational_contracts::AuditTargetKind
+impl core::cmp::Ord for ratatoskr_operational_contracts::InspectionCursor
+impl core::cmp::Ord for ratatoskr_operational_contracts::ScheduleName
+impl core::cmp::Ord for ratatoskr_operational_contracts::ServiceName
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::AuditAction
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::AuditEventPage
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::AuditEventSummary
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::AuditOutcome
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::AuditTargetKind
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::InspectionContractError
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::InspectionCursor
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::PublicComponentId
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::PublicComponentState
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::PublicStatusState
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::ScheduleName
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::ServiceName
+impl core::cmp::PartialEq for ratatoskr_operational_contracts::StatusContractError
+impl core::cmp::PartialOrd for ratatoskr_operational_contracts::AuditAction
+impl core::cmp::PartialOrd for ratatoskr_operational_contracts::AuditTargetKind
+impl core::cmp::PartialOrd for ratatoskr_operational_contracts::InspectionCursor
+impl core::cmp::PartialOrd for ratatoskr_operational_contracts::ScheduleName
+impl core::cmp::PartialOrd for ratatoskr_operational_contracts::ServiceName
+impl core::convert::From<ratatoskr_operational_contracts::AuditAction> for alloc::string::String
+impl core::convert::From<ratatoskr_operational_contracts::AuditTargetKind> for alloc::string::String
+impl core::convert::From<ratatoskr_operational_contracts::InspectionCursor> for alloc::string::String
+impl core::convert::From<ratatoskr_operational_contracts::ScheduleName> for alloc::string::String
+impl core::convert::From<ratatoskr_operational_contracts::ServiceName> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operational_contracts::AuditAction
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operational_contracts::AuditTargetKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operational_contracts::InspectionCursor
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operational_contracts::ScheduleName
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operational_contracts::ServiceName
+impl core::error::Error for ratatoskr_operational_contracts::InspectionContractError
+impl core::error::Error for ratatoskr_operational_contracts::StatusContractError
+impl core::fmt::Debug for ratatoskr_operational_contracts::AuditAction
+impl core::fmt::Debug for ratatoskr_operational_contracts::AuditEventPage
+impl core::fmt::Debug for ratatoskr_operational_contracts::AuditEventSummary
+impl core::fmt::Debug for ratatoskr_operational_contracts::AuditOutcome
+impl core::fmt::Debug for ratatoskr_operational_contracts::AuditTargetKind
+impl core::fmt::Debug for ratatoskr_operational_contracts::InspectionContractError
+impl core::fmt::Debug for ratatoskr_operational_contracts::InspectionCursor
+impl core::fmt::Debug for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::fmt::Debug for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::fmt::Debug for ratatoskr_operational_contracts::PublicComponentId
+impl core::fmt::Debug for ratatoskr_operational_contracts::PublicComponentState
+impl core::fmt::Debug for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::fmt::Debug for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::fmt::Debug for ratatoskr_operational_contracts::PublicStatusState
+impl core::fmt::Debug for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::fmt::Debug for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::fmt::Debug for ratatoskr_operational_contracts::ScheduleName
+impl core::fmt::Debug for ratatoskr_operational_contracts::ServiceName
+impl core::fmt::Debug for ratatoskr_operational_contracts::StatusContractError
+impl core::fmt::Display for ratatoskr_operational_contracts::AuditAction
+impl core::fmt::Display for ratatoskr_operational_contracts::AuditTargetKind
+impl core::fmt::Display for ratatoskr_operational_contracts::InspectionContractError
+impl core::fmt::Display for ratatoskr_operational_contracts::InspectionCursor
+impl core::fmt::Display for ratatoskr_operational_contracts::ScheduleName
+impl core::fmt::Display for ratatoskr_operational_contracts::ServiceName
+impl core::fmt::Display for ratatoskr_operational_contracts::StatusContractError
+impl core::hash::Hash for ratatoskr_operational_contracts::AuditAction
+impl core::hash::Hash for ratatoskr_operational_contracts::AuditTargetKind
+impl core::hash::Hash for ratatoskr_operational_contracts::InspectionCursor
+impl core::hash::Hash for ratatoskr_operational_contracts::ScheduleName
+impl core::hash::Hash for ratatoskr_operational_contracts::ServiceName
+impl core::marker::Copy for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::Copy for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::Copy for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::Copy for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::Copy for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::Copy for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::Freeze for ratatoskr_operational_contracts::AuditAction
+impl core::marker::Freeze for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::Freeze for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::Freeze for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::Freeze for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::Freeze for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::Freeze for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::Freeze for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::Freeze for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::Freeze for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::Freeze for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::Freeze for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::Freeze for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::Freeze for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::Freeze for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::Freeze for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::Freeze for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::Freeze for ratatoskr_operational_contracts::ServiceName
+impl core::marker::Freeze for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::Send for ratatoskr_operational_contracts::AuditAction
+impl core::marker::Send for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::Send for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::Send for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::Send for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::Send for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::Send for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::Send for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::Send for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::Send for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::Send for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::Send for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::Send for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::Send for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::Send for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::Send for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::Send for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::Send for ratatoskr_operational_contracts::ServiceName
+impl core::marker::Send for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::AuditAction
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::ServiceName
+impl core::marker::StructuralPartialEq for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::Sync for ratatoskr_operational_contracts::AuditAction
+impl core::marker::Sync for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::Sync for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::Sync for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::Sync for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::Sync for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::Sync for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::Sync for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::Sync for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::Sync for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::Sync for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::Sync for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::Sync for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::Sync for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::Sync for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::Sync for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::Sync for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::Sync for ratatoskr_operational_contracts::ServiceName
+impl core::marker::Sync for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::Unpin for ratatoskr_operational_contracts::AuditAction
+impl core::marker::Unpin for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::Unpin for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::Unpin for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::Unpin for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::Unpin for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::Unpin for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::Unpin for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::Unpin for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::Unpin for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::Unpin for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::Unpin for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::Unpin for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::Unpin for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::Unpin for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::Unpin for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::Unpin for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::Unpin for ratatoskr_operational_contracts::ServiceName
+impl core::marker::Unpin for ratatoskr_operational_contracts::StatusContractError
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::AuditAction
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::AuditEventPage
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::AuditEventSummary
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::AuditOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::AuditTargetKind
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::InspectionContractError
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::InspectionCursor
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::PublicComponentId
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::PublicComponentState
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::PublicStatusState
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::ScheduleName
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::ServiceName
+impl core::marker::UnsafeUnpin for ratatoskr_operational_contracts::StatusContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::AuditAction
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::AuditEventPage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::AuditEventSummary
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::AuditOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::AuditTargetKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::InspectionContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::InspectionCursor
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::PublicComponentId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::PublicComponentState
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::PublicStatusState
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::ScheduleName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::ServiceName
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operational_contracts::StatusContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::AuditAction
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::AuditEventPage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::AuditEventSummary
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::AuditOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::AuditTargetKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::InspectionContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::InspectionCursor
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::OperationInspectionPage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::OperationInspectionSummary
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::PublicComponentId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::PublicComponentState
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::PublicStatusComponent
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::PublicStatusDocument
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::PublicStatusState
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::ScheduleName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::ServiceName
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operational_contracts::StatusContractError
+impl core::str::traits::FromStr for ratatoskr_operational_contracts::AuditAction
+impl core::str::traits::FromStr for ratatoskr_operational_contracts::AuditTargetKind
+impl core::str::traits::FromStr for ratatoskr_operational_contracts::InspectionCursor
+impl core::str::traits::FromStr for ratatoskr_operational_contracts::ScheduleName
+impl core::str::traits::FromStr for ratatoskr_operational_contracts::ServiceName
+impl ratatoskr_operational_contracts::AuditAction
+impl ratatoskr_operational_contracts::AuditEventPage
+impl ratatoskr_operational_contracts::AuditTargetKind
+impl ratatoskr_operational_contracts::InspectionCursor
+impl ratatoskr_operational_contracts::OperationInspectionPage
+impl ratatoskr_operational_contracts::PublicStatusDocument
+impl ratatoskr_operational_contracts::ScheduleInspectionPage
+impl ratatoskr_operational_contracts::ScheduleName
+impl ratatoskr_operational_contracts::ServiceName
+impl schemars::JsonSchema for ratatoskr_operational_contracts::AuditAction
+impl schemars::JsonSchema for ratatoskr_operational_contracts::AuditEventPage
+impl schemars::JsonSchema for ratatoskr_operational_contracts::AuditEventSummary
+impl schemars::JsonSchema for ratatoskr_operational_contracts::AuditOutcome
+impl schemars::JsonSchema for ratatoskr_operational_contracts::AuditTargetKind
+impl schemars::JsonSchema for ratatoskr_operational_contracts::InspectionCursor
+impl schemars::JsonSchema for ratatoskr_operational_contracts::OperationInspectionPage
+impl schemars::JsonSchema for ratatoskr_operational_contracts::OperationInspectionSummary
+impl schemars::JsonSchema for ratatoskr_operational_contracts::PublicComponentId
+impl schemars::JsonSchema for ratatoskr_operational_contracts::PublicComponentState
+impl schemars::JsonSchema for ratatoskr_operational_contracts::PublicStatusComponent
+impl schemars::JsonSchema for ratatoskr_operational_contracts::PublicStatusDocument
+impl schemars::JsonSchema for ratatoskr_operational_contracts::PublicStatusState
+impl schemars::JsonSchema for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl schemars::JsonSchema for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl schemars::JsonSchema for ratatoskr_operational_contracts::ScheduleName
+impl schemars::JsonSchema for ratatoskr_operational_contracts::ServiceName
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::AuditAction
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::AuditEventPage
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::AuditEventSummary
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::AuditOutcome
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::AuditTargetKind
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::InspectionCursor
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::OperationInspectionPage
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::OperationInspectionSummary
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::PublicComponentId
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::PublicComponentState
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::PublicStatusComponent
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::PublicStatusDocument
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::PublicStatusState
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::ScheduleName
+impl serde_core::ser::Serialize for ratatoskr_operational_contracts::ServiceName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::AuditAction
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::AuditEventPage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::AuditEventSummary
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::AuditOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::AuditTargetKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::InspectionCursor
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::OperationInspectionPage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::OperationInspectionSummary
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::PublicComponentId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::PublicComponentState
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::PublicStatusComponent
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::PublicStatusDocument
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::PublicStatusState
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::ScheduleName
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operational_contracts::ServiceName
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::AuditAction where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::AuditEventPage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::AuditEventSummary where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::AuditOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::AuditTargetKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::InspectionContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::InspectionCursor where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::OperationInspectionPage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::OperationInspectionSummary where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::PublicComponentId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::PublicComponentState where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::PublicStatusComponent where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::PublicStatusDocument where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::PublicStatusState where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::ScheduleInspectionPage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::ScheduleInspectionSummary where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::ScheduleName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::ServiceName where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operational_contracts::StatusContractError where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::AuditAction where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::AuditEventPage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::AuditEventSummary where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::AuditOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::AuditTargetKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::InspectionContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::InspectionCursor where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::OperationInspectionPage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::OperationInspectionSummary where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::PublicComponentId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::PublicComponentState where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::PublicStatusComponent where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::PublicStatusDocument where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::PublicStatusState where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::ScheduleInspectionPage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::ScheduleInspectionSummary where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::ScheduleName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::ServiceName where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operational_contracts::StatusContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::AuditAction where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::AuditEventPage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::AuditEventSummary where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::AuditOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::AuditTargetKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::InspectionContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::InspectionCursor where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::OperationInspectionPage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::OperationInspectionSummary where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::PublicComponentId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::PublicComponentState where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::PublicStatusComponent where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::PublicStatusDocument where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::PublicStatusState where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::ScheduleInspectionPage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::ScheduleInspectionSummary where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::ScheduleName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::ServiceName where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operational_contracts::StatusContractError where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::AuditAction where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::AuditEventPage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::AuditEventSummary where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::AuditOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::AuditTargetKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::InspectionContractError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::InspectionCursor where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::OperationInspectionPage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::OperationInspectionSummary where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::PublicComponentId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::PublicComponentState where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::PublicStatusComponent where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::PublicStatusDocument where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::PublicStatusState where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::ScheduleInspectionPage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::ScheduleName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::ServiceName where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operational_contracts::StatusContractError where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::AuditAction where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::AuditTargetKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::InspectionContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::InspectionCursor where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::ScheduleName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::ServiceName where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operational_contracts::StatusContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::AuditAction where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::AuditEventPage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::AuditEventSummary where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::AuditOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::AuditTargetKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::InspectionContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::InspectionCursor where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::OperationInspectionPage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::OperationInspectionSummary where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::PublicComponentId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::PublicComponentState where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::PublicStatusComponent where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::PublicStatusDocument where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::PublicStatusState where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::ScheduleInspectionPage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::ScheduleName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::ServiceName where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operational_contracts::StatusContractError where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::AuditAction where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::AuditEventPage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::AuditEventSummary where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::AuditOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::AuditTargetKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::InspectionContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::InspectionCursor where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::OperationInspectionPage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::OperationInspectionSummary where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::PublicComponentId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::PublicComponentState where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::PublicStatusComponent where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::PublicStatusDocument where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::PublicStatusState where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::ScheduleInspectionPage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::ScheduleName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::ServiceName where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operational_contracts::StatusContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::AuditAction where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::AuditEventPage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::AuditEventSummary where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::AuditOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::AuditTargetKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::InspectionContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::InspectionCursor where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::OperationInspectionPage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::OperationInspectionSummary where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::PublicComponentId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::PublicComponentState where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::PublicStatusComponent where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::PublicStatusDocument where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::PublicStatusState where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::ScheduleInspectionPage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::ScheduleName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::ServiceName where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operational_contracts::StatusContractError where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::AuditAction where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::AuditEventPage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::AuditEventSummary where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::AuditOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::AuditTargetKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::InspectionContractError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::InspectionCursor where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::OperationInspectionPage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::OperationInspectionSummary where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::PublicComponentId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::PublicComponentState where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::PublicStatusComponent where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::PublicStatusDocument where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::PublicStatusState where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::ScheduleInspectionPage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::ScheduleName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::ServiceName where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operational_contracts::StatusContractError where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::AuditAction
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::AuditEventPage
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::AuditEventSummary
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::AuditOutcome
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::AuditTargetKind
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::InspectionContractError
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::InspectionCursor
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::OperationInspectionPage
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::OperationInspectionSummary
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::PublicComponentId
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::PublicComponentState
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::PublicStatusComponent
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::PublicStatusDocument
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::PublicStatusState
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::ScheduleName
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::ServiceName
+impl<T> core::convert::From<T> for ratatoskr_operational_contracts::StatusContractError
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::AuditAction where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::AuditEventPage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::AuditEventSummary where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::AuditOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::AuditTargetKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::InspectionContractError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::InspectionCursor where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::OperationInspectionPage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::OperationInspectionSummary where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::PublicComponentId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::PublicComponentState where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::PublicStatusComponent where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::PublicStatusDocument where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::PublicStatusState where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::ScheduleInspectionPage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::ScheduleName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::ServiceName where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operational_contracts::StatusContractError where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::AuditAction where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::AuditEventPage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::AuditEventSummary where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::AuditOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::AuditTargetKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::InspectionCursor where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::OperationInspectionPage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::OperationInspectionSummary where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::PublicComponentId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::PublicComponentState where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::PublicStatusComponent where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::PublicStatusDocument where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::PublicStatusState where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ScheduleInspectionPage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ScheduleName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ServiceName where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_operational_contracts::AUDIT_INSPECT_CAPABILITY: &str
+pub const ratatoskr_operational_contracts::AuditAction::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operational_contracts::AuditAction::MAX_LEN: usize
+pub const ratatoskr_operational_contracts::AuditAction::PATTERN: &'static str
+pub const ratatoskr_operational_contracts::AuditTargetKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operational_contracts::AuditTargetKind::MAX_LEN: usize
+pub const ratatoskr_operational_contracts::AuditTargetKind::PATTERN: &'static str
+pub const ratatoskr_operational_contracts::InspectionCursor::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operational_contracts::InspectionCursor::MAX_LEN: usize
+pub const ratatoskr_operational_contracts::InspectionCursor::PATTERN: &'static str
+pub const ratatoskr_operational_contracts::MAX_PAGE_ITEMS: usize
+pub const ratatoskr_operational_contracts::OPERATIONS_INSPECT_CAPABILITY: &str
+pub const ratatoskr_operational_contracts::PLATFORM_OWNER_GRANT: &str
+pub const ratatoskr_operational_contracts::PublicStatusDocument::COMPONENT_ORDER: [ratatoskr_operational_contracts::PublicComponentId; 4]
+pub const ratatoskr_operational_contracts::SCHEDULES_INSPECT_CAPABILITY: &str
+pub const ratatoskr_operational_contracts::ScheduleName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operational_contracts::ScheduleName::MAX_LEN: usize
+pub const ratatoskr_operational_contracts::ScheduleName::PATTERN: &'static str
+pub const ratatoskr_operational_contracts::ServiceName::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operational_contracts::ServiceName::MAX_LEN: usize
+pub const ratatoskr_operational_contracts::ServiceName::PATTERN: &'static str
+pub enum ratatoskr_operational_contracts::AuditOutcome
+pub enum ratatoskr_operational_contracts::InspectionContractError
+pub enum ratatoskr_operational_contracts::PublicComponentId
+pub enum ratatoskr_operational_contracts::PublicComponentState
+pub enum ratatoskr_operational_contracts::PublicStatusState
+pub enum ratatoskr_operational_contracts::StatusContractError
+pub fn alloc::string::String::from(ratatoskr_operational_contracts::AuditAction) -> Self
+pub fn alloc::string::String::from(ratatoskr_operational_contracts::AuditTargetKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_operational_contracts::InspectionCursor) -> Self
+pub fn alloc::string::String::from(ratatoskr_operational_contracts::ScheduleName) -> Self
+pub fn alloc::string::String::from(ratatoskr_operational_contracts::ServiceName) -> Self
+pub fn ratatoskr_operational_contracts::AuditAction::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::AuditAction::as_str(&self) -> &str
+pub fn ratatoskr_operational_contracts::AuditAction::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::AuditAction::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::AuditAction::clone(&self) -> ratatoskr_operational_contracts::AuditAction
+pub fn ratatoskr_operational_contracts::AuditAction::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::AuditAction::cmp(&self, &ratatoskr_operational_contracts::AuditAction) -> core::cmp::Ordering
+pub fn ratatoskr_operational_contracts::AuditAction::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::AuditAction::eq(&self, &ratatoskr_operational_contracts::AuditAction) -> bool
+pub fn ratatoskr_operational_contracts::AuditAction::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::AuditAction::from(T) -> T
+pub fn ratatoskr_operational_contracts::AuditAction::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operational_contracts::AuditAction::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operational_contracts::AuditAction::into(self) -> U
+pub fn ratatoskr_operational_contracts::AuditAction::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::AuditAction::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operational_contracts::AuditAction::partial_cmp(&self, &ratatoskr_operational_contracts::AuditAction) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operational_contracts::AuditAction::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditAction::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditAction::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::AuditAction::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::AuditAction::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::AuditAction::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::AuditAction::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operational_contracts::AuditAction::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::AuditAction::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::AuditEventPage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::AuditEventPage::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::AuditEventPage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::AuditEventPage::clone(&self) -> ratatoskr_operational_contracts::AuditEventPage
+pub fn ratatoskr_operational_contracts::AuditEventPage::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::AuditEventPage::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::AuditEventPage::eq(&self, &ratatoskr_operational_contracts::AuditEventPage) -> bool
+pub fn ratatoskr_operational_contracts::AuditEventPage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::AuditEventPage::from(T) -> T
+pub fn ratatoskr_operational_contracts::AuditEventPage::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::AuditEventPage::into(self) -> U
+pub fn ratatoskr_operational_contracts::AuditEventPage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::AuditEventPage::new(alloc::vec::Vec<ratatoskr_operational_contracts::AuditEventSummary>, core::option::Option<ratatoskr_operational_contracts::InspectionCursor>) -> core::result::Result<Self, ratatoskr_operational_contracts::InspectionContractError>
+pub fn ratatoskr_operational_contracts::AuditEventPage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditEventPage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditEventPage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::AuditEventPage::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::AuditEventPage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::AuditEventPage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::AuditEventPage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::AuditEventSummary::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::AuditEventSummary::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::AuditEventSummary::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::AuditEventSummary::clone(&self) -> ratatoskr_operational_contracts::AuditEventSummary
+pub fn ratatoskr_operational_contracts::AuditEventSummary::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::AuditEventSummary::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::AuditEventSummary::eq(&self, &ratatoskr_operational_contracts::AuditEventSummary) -> bool
+pub fn ratatoskr_operational_contracts::AuditEventSummary::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::AuditEventSummary::from(T) -> T
+pub fn ratatoskr_operational_contracts::AuditEventSummary::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::AuditEventSummary::into(self) -> U
+pub fn ratatoskr_operational_contracts::AuditEventSummary::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::AuditEventSummary::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditEventSummary::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditEventSummary::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::AuditEventSummary::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::AuditEventSummary::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::AuditEventSummary::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::AuditEventSummary::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::AuditOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::AuditOutcome::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::AuditOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::AuditOutcome::clone(&self) -> ratatoskr_operational_contracts::AuditOutcome
+pub fn ratatoskr_operational_contracts::AuditOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::AuditOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::AuditOutcome::eq(&self, &ratatoskr_operational_contracts::AuditOutcome) -> bool
+pub fn ratatoskr_operational_contracts::AuditOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::AuditOutcome::from(T) -> T
+pub fn ratatoskr_operational_contracts::AuditOutcome::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::AuditOutcome::into(self) -> U
+pub fn ratatoskr_operational_contracts::AuditOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::AuditOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::AuditOutcome::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::AuditOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::AuditOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::AuditOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::AuditTargetKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::AuditTargetKind::as_str(&self) -> &str
+pub fn ratatoskr_operational_contracts::AuditTargetKind::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::AuditTargetKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::AuditTargetKind::clone(&self) -> ratatoskr_operational_contracts::AuditTargetKind
+pub fn ratatoskr_operational_contracts::AuditTargetKind::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::AuditTargetKind::cmp(&self, &ratatoskr_operational_contracts::AuditTargetKind) -> core::cmp::Ordering
+pub fn ratatoskr_operational_contracts::AuditTargetKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::eq(&self, &ratatoskr_operational_contracts::AuditTargetKind) -> bool
+pub fn ratatoskr_operational_contracts::AuditTargetKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::AuditTargetKind::from(T) -> T
+pub fn ratatoskr_operational_contracts::AuditTargetKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operational_contracts::AuditTargetKind::into(self) -> U
+pub fn ratatoskr_operational_contracts::AuditTargetKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::AuditTargetKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::partial_cmp(&self, &ratatoskr_operational_contracts::AuditTargetKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::AuditTargetKind::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::AuditTargetKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::AuditTargetKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::AuditTargetKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::InspectionContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::InspectionContractError::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::InspectionContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::InspectionContractError::clone(&self) -> ratatoskr_operational_contracts::InspectionContractError
+pub fn ratatoskr_operational_contracts::InspectionContractError::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::InspectionContractError::eq(&self, &ratatoskr_operational_contracts::InspectionContractError) -> bool
+pub fn ratatoskr_operational_contracts::InspectionContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::InspectionContractError::from(T) -> T
+pub fn ratatoskr_operational_contracts::InspectionContractError::into(self) -> U
+pub fn ratatoskr_operational_contracts::InspectionContractError::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::InspectionContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::InspectionContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::InspectionContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::InspectionContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::InspectionCursor::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::InspectionCursor::as_str(&self) -> &str
+pub fn ratatoskr_operational_contracts::InspectionCursor::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::InspectionCursor::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::InspectionCursor::clone(&self) -> ratatoskr_operational_contracts::InspectionCursor
+pub fn ratatoskr_operational_contracts::InspectionCursor::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::InspectionCursor::cmp(&self, &ratatoskr_operational_contracts::InspectionCursor) -> core::cmp::Ordering
+pub fn ratatoskr_operational_contracts::InspectionCursor::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::InspectionCursor::eq(&self, &ratatoskr_operational_contracts::InspectionCursor) -> bool
+pub fn ratatoskr_operational_contracts::InspectionCursor::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::InspectionCursor::from(T) -> T
+pub fn ratatoskr_operational_contracts::InspectionCursor::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operational_contracts::InspectionCursor::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operational_contracts::InspectionCursor::into(self) -> U
+pub fn ratatoskr_operational_contracts::InspectionCursor::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::InspectionCursor::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operational_contracts::InspectionCursor::partial_cmp(&self, &ratatoskr_operational_contracts::InspectionCursor) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operational_contracts::InspectionCursor::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::InspectionCursor::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::InspectionCursor::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::InspectionCursor::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::InspectionCursor::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::InspectionCursor::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::InspectionCursor::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operational_contracts::InspectionCursor::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::InspectionCursor::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::clone(&self) -> ratatoskr_operational_contracts::OperationInspectionPage
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::eq(&self, &ratatoskr_operational_contracts::OperationInspectionPage) -> bool
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::from(T) -> T
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::into(self) -> U
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::new(alloc::vec::Vec<ratatoskr_operational_contracts::OperationInspectionSummary>, core::option::Option<ratatoskr_operational_contracts::InspectionCursor>) -> core::result::Result<Self, ratatoskr_operational_contracts::InspectionContractError>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::OperationInspectionPage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::clone(&self) -> ratatoskr_operational_contracts::OperationInspectionSummary
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::eq(&self, &ratatoskr_operational_contracts::OperationInspectionSummary) -> bool
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::from(T) -> T
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::into(self) -> U
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::OperationInspectionSummary::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::PublicComponentId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::PublicComponentId::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::PublicComponentId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::PublicComponentId::clone(&self) -> ratatoskr_operational_contracts::PublicComponentId
+pub fn ratatoskr_operational_contracts::PublicComponentId::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::PublicComponentId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::PublicComponentId::eq(&self, &ratatoskr_operational_contracts::PublicComponentId) -> bool
+pub fn ratatoskr_operational_contracts::PublicComponentId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::PublicComponentId::from(T) -> T
+pub fn ratatoskr_operational_contracts::PublicComponentId::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::PublicComponentId::into(self) -> U
+pub fn ratatoskr_operational_contracts::PublicComponentId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::PublicComponentId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicComponentId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicComponentId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::PublicComponentId::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::PublicComponentId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::PublicComponentId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::PublicComponentId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::PublicComponentState::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::PublicComponentState::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::PublicComponentState::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::PublicComponentState::clone(&self) -> ratatoskr_operational_contracts::PublicComponentState
+pub fn ratatoskr_operational_contracts::PublicComponentState::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::PublicComponentState::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::PublicComponentState::eq(&self, &ratatoskr_operational_contracts::PublicComponentState) -> bool
+pub fn ratatoskr_operational_contracts::PublicComponentState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::PublicComponentState::from(T) -> T
+pub fn ratatoskr_operational_contracts::PublicComponentState::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::PublicComponentState::into(self) -> U
+pub fn ratatoskr_operational_contracts::PublicComponentState::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::PublicComponentState::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicComponentState::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicComponentState::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::PublicComponentState::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::PublicComponentState::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::PublicComponentState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::PublicComponentState::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::clone(&self) -> ratatoskr_operational_contracts::PublicStatusComponent
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::eq(&self, &ratatoskr_operational_contracts::PublicStatusComponent) -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::from(T) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::into(self) -> U
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusComponent::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::clone(&self) -> ratatoskr_operational_contracts::PublicStatusDocument
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::eq(&self, &ratatoskr_operational_contracts::PublicStatusDocument) -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::from(T) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::into(self) -> U
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::new(ratatoskr_identifiers::timestamp::WireTimestamp, ratatoskr_operational_contracts::PublicStatusState, alloc::vec::Vec<ratatoskr_operational_contracts::PublicStatusComponent>) -> core::result::Result<Self, ratatoskr_operational_contracts::StatusContractError>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::PublicStatusDocument::validate(&self) -> core::result::Result<(), ratatoskr_operational_contracts::StatusContractError>
+pub fn ratatoskr_operational_contracts::PublicStatusState::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::PublicStatusState::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::PublicStatusState::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::PublicStatusState::clone(&self) -> ratatoskr_operational_contracts::PublicStatusState
+pub fn ratatoskr_operational_contracts::PublicStatusState::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::PublicStatusState::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::PublicStatusState::eq(&self, &ratatoskr_operational_contracts::PublicStatusState) -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::PublicStatusState::from(T) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusState::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::PublicStatusState::into(self) -> U
+pub fn ratatoskr_operational_contracts::PublicStatusState::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::PublicStatusState::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusState::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::PublicStatusState::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::PublicStatusState::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::PublicStatusState::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::PublicStatusState::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::clone(&self) -> ratatoskr_operational_contracts::ScheduleInspectionPage
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::eq(&self, &ratatoskr_operational_contracts::ScheduleInspectionPage) -> bool
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::from(T) -> T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::into(self) -> U
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::new(alloc::vec::Vec<ratatoskr_operational_contracts::ScheduleInspectionSummary>, core::option::Option<ratatoskr_operational_contracts::InspectionCursor>) -> core::result::Result<Self, ratatoskr_operational_contracts::InspectionContractError>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionPage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::clone(&self) -> ratatoskr_operational_contracts::ScheduleInspectionSummary
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::eq(&self, &ratatoskr_operational_contracts::ScheduleInspectionSummary) -> bool
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::from(T) -> T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::inline_schema() -> bool
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::into(self) -> U
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleInspectionSummary::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::ScheduleName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::ScheduleName::as_str(&self) -> &str
+pub fn ratatoskr_operational_contracts::ScheduleName::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::ScheduleName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::ScheduleName::clone(&self) -> ratatoskr_operational_contracts::ScheduleName
+pub fn ratatoskr_operational_contracts::ScheduleName::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::ScheduleName::cmp(&self, &ratatoskr_operational_contracts::ScheduleName) -> core::cmp::Ordering
+pub fn ratatoskr_operational_contracts::ScheduleName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::ScheduleName::eq(&self, &ratatoskr_operational_contracts::ScheduleName) -> bool
+pub fn ratatoskr_operational_contracts::ScheduleName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::ScheduleName::from(T) -> T
+pub fn ratatoskr_operational_contracts::ScheduleName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operational_contracts::ScheduleName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operational_contracts::ScheduleName::into(self) -> U
+pub fn ratatoskr_operational_contracts::ScheduleName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::ScheduleName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operational_contracts::ScheduleName::partial_cmp(&self, &ratatoskr_operational_contracts::ScheduleName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operational_contracts::ScheduleName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ScheduleName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::ScheduleName::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::ScheduleName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::ScheduleName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operational_contracts::ScheduleName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::ScheduleName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::ServiceName::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::ServiceName::as_str(&self) -> &str
+pub fn ratatoskr_operational_contracts::ServiceName::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::ServiceName::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::ServiceName::clone(&self) -> ratatoskr_operational_contracts::ServiceName
+pub fn ratatoskr_operational_contracts::ServiceName::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::ServiceName::cmp(&self, &ratatoskr_operational_contracts::ServiceName) -> core::cmp::Ordering
+pub fn ratatoskr_operational_contracts::ServiceName::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operational_contracts::ServiceName::eq(&self, &ratatoskr_operational_contracts::ServiceName) -> bool
+pub fn ratatoskr_operational_contracts::ServiceName::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::ServiceName::from(T) -> T
+pub fn ratatoskr_operational_contracts::ServiceName::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operational_contracts::ServiceName::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operational_contracts::ServiceName::into(self) -> U
+pub fn ratatoskr_operational_contracts::ServiceName::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operational_contracts::ServiceName::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operational_contracts::ServiceName::partial_cmp(&self, &ratatoskr_operational_contracts::ServiceName) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operational_contracts::ServiceName::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ServiceName::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operational_contracts::ServiceName::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operational_contracts::ServiceName::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::ServiceName::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::ServiceName::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::ServiceName::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operational_contracts::ServiceName::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::ServiceName::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operational_contracts::StatusContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operational_contracts::StatusContractError::borrow(&self) -> &T
+pub fn ratatoskr_operational_contracts::StatusContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operational_contracts::StatusContractError::clone(&self) -> ratatoskr_operational_contracts::StatusContractError
+pub fn ratatoskr_operational_contracts::StatusContractError::clone_into(&self, &mut T)
+pub fn ratatoskr_operational_contracts::StatusContractError::eq(&self, &ratatoskr_operational_contracts::StatusContractError) -> bool
+pub fn ratatoskr_operational_contracts::StatusContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operational_contracts::StatusContractError::from(T) -> T
+pub fn ratatoskr_operational_contracts::StatusContractError::into(self) -> U
+pub fn ratatoskr_operational_contracts::StatusContractError::to_owned(&self) -> T
+pub fn ratatoskr_operational_contracts::StatusContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operational_contracts::StatusContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operational_contracts::StatusContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operational_contracts::StatusContractError::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_operational_contracts
+pub ratatoskr_operational_contracts::AuditEventPage::items: alloc::vec::Vec<ratatoskr_operational_contracts::AuditEventSummary>
+pub ratatoskr_operational_contracts::AuditEventPage::next_cursor: core::option::Option<ratatoskr_operational_contracts::InspectionCursor>
+pub ratatoskr_operational_contracts::AuditEventSummary::action: ratatoskr_operational_contracts::AuditAction
+pub ratatoskr_operational_contracts::AuditEventSummary::actor_session_id: core::option::Option<uuid::Uuid>
+pub ratatoskr_operational_contracts::AuditEventSummary::actor_user_id: core::option::Option<ratatoskr_identifiers::uuid_ids::UserId>
+pub ratatoskr_operational_contracts::AuditEventSummary::audit_event_id: uuid::Uuid
+pub ratatoskr_operational_contracts::AuditEventSummary::correlation_id: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_operational_contracts::AuditEventSummary::occurred_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operational_contracts::AuditEventSummary::outcome: ratatoskr_operational_contracts::AuditOutcome
+pub ratatoskr_operational_contracts::AuditEventSummary::target_id: core::option::Option<uuid::Uuid>
+pub ratatoskr_operational_contracts::AuditEventSummary::target_kind: ratatoskr_operational_contracts::AuditTargetKind
+pub ratatoskr_operational_contracts::AuditOutcome::Allowed
+pub ratatoskr_operational_contracts::AuditOutcome::Denied
+pub ratatoskr_operational_contracts::AuditOutcome::Failed
+pub ratatoskr_operational_contracts::InspectionContractError::PageTooLarge
+pub ratatoskr_operational_contracts::InspectionContractError::PageTooLarge::got: usize
+pub ratatoskr_operational_contracts::InspectionContractError::PageTooLarge::max: usize
+pub ratatoskr_operational_contracts::OperationInspectionPage::items: alloc::vec::Vec<ratatoskr_operational_contracts::OperationInspectionSummary>
+pub ratatoskr_operational_contracts::OperationInspectionPage::next_cursor: core::option::Option<ratatoskr_operational_contracts::InspectionCursor>
+pub ratatoskr_operational_contracts::OperationInspectionSummary::accepted_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operational_contracts::OperationInspectionSummary::failure_code: core::option::Option<ratatoskr_error_contracts::code::ErrorCode>
+pub ratatoskr_operational_contracts::OperationInspectionSummary::kind: ratatoskr_operation_contracts::kind::OperationKind
+pub ratatoskr_operational_contracts::OperationInspectionSummary::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_operational_contracts::OperationInspectionSummary::owner_user_id: ratatoskr_identifiers::uuid_ids::UserId
+pub ratatoskr_operational_contracts::OperationInspectionSummary::status: ratatoskr_operation_contracts::status::OperationStatus
+pub ratatoskr_operational_contracts::OperationInspectionSummary::status_changed_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operational_contracts::PublicComponentId::Api
+pub ratatoskr_operational_contracts::PublicComponentId::CommandDelivery
+pub ratatoskr_operational_contracts::PublicComponentId::ConnectedServices
+pub ratatoskr_operational_contracts::PublicComponentId::Storage
+pub ratatoskr_operational_contracts::PublicComponentState::Degraded
+pub ratatoskr_operational_contracts::PublicComponentState::Operational
+pub ratatoskr_operational_contracts::PublicComponentState::Unavailable
+pub ratatoskr_operational_contracts::PublicComponentState::Unknown
+pub ratatoskr_operational_contracts::PublicStatusComponent::id: ratatoskr_operational_contracts::PublicComponentId
+pub ratatoskr_operational_contracts::PublicStatusComponent::observed_at: core::option::Option<ratatoskr_identifiers::timestamp::WireTimestamp>
+pub ratatoskr_operational_contracts::PublicStatusComponent::stale: bool
+pub ratatoskr_operational_contracts::PublicStatusComponent::state: ratatoskr_operational_contracts::PublicComponentState
+pub ratatoskr_operational_contracts::PublicStatusDocument::components: alloc::vec::Vec<ratatoskr_operational_contracts::PublicStatusComponent>
+pub ratatoskr_operational_contracts::PublicStatusDocument::generated_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operational_contracts::PublicStatusDocument::state: ratatoskr_operational_contracts::PublicStatusState
+pub ratatoskr_operational_contracts::PublicStatusState::Degraded
+pub ratatoskr_operational_contracts::PublicStatusState::Operational
+pub ratatoskr_operational_contracts::PublicStatusState::Unavailable
+pub ratatoskr_operational_contracts::ScheduleInspectionPage::items: alloc::vec::Vec<ratatoskr_operational_contracts::ScheduleInspectionSummary>
+pub ratatoskr_operational_contracts::ScheduleInspectionPage::next_cursor: core::option::Option<ratatoskr_operational_contracts::InspectionCursor>
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::enabled: bool
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::last_outcome: core::option::Option<ratatoskr_operation_contracts::status::OperationStatus>
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::name: ratatoskr_operational_contracts::ScheduleName
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::next_due_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::owner_user_id: ratatoskr_identifiers::uuid_ids::UserId
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::schedule_id: uuid::Uuid
+pub ratatoskr_operational_contracts::ScheduleInspectionSummary::service_name: ratatoskr_operational_contracts::ServiceName
+pub ratatoskr_operational_contracts::StatusContractError::AggregateMismatch
+pub ratatoskr_operational_contracts::StatusContractError::AggregateMismatch::declared: ratatoskr_operational_contracts::PublicStatusState
+pub ratatoskr_operational_contracts::StatusContractError::AggregateMismatch::expected: ratatoskr_operational_contracts::PublicStatusState
+pub ratatoskr_operational_contracts::StatusContractError::ComponentOrder
+pub ratatoskr_operational_contracts::StatusContractError::OperationalIsStale
+pub ratatoskr_operational_contracts::StatusContractError::OperationalIsStale::id: ratatoskr_operational_contracts::PublicComponentId
+pub ratatoskr_operational_contracts::StatusContractError::UnknownWasObserved
+pub ratatoskr_operational_contracts::StatusContractError::UnknownWasObserved::id: ratatoskr_operational_contracts::PublicComponentId
+pub struct ratatoskr_operational_contracts::AuditAction(_)
+pub struct ratatoskr_operational_contracts::AuditEventPage
+pub struct ratatoskr_operational_contracts::AuditEventSummary
+pub struct ratatoskr_operational_contracts::AuditTargetKind(_)
+pub struct ratatoskr_operational_contracts::InspectionCursor(_)
+pub struct ratatoskr_operational_contracts::OperationInspectionPage
+pub struct ratatoskr_operational_contracts::OperationInspectionSummary
+pub struct ratatoskr_operational_contracts::PublicStatusComponent
+pub struct ratatoskr_operational_contracts::PublicStatusDocument
+pub struct ratatoskr_operational_contracts::ScheduleInspectionPage
+pub struct ratatoskr_operational_contracts::ScheduleInspectionSummary
+pub struct ratatoskr_operational_contracts::ScheduleName(_)
+pub struct ratatoskr_operational_contracts::ServiceName(_)
+pub type ratatoskr_operational_contracts::AuditAction::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditAction::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::AuditAction::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditAction::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditAction::Owned = T
+pub type ratatoskr_operational_contracts::AuditEventPage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::AuditEventPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditEventPage::Owned = T
+pub type ratatoskr_operational_contracts::AuditEventSummary::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::AuditEventSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditEventSummary::Owned = T
+pub type ratatoskr_operational_contracts::AuditOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::AuditOutcome::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditOutcome::Owned = T
+pub type ratatoskr_operational_contracts::AuditTargetKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditTargetKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::AuditTargetKind::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditTargetKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditTargetKind::Owned = T
+pub type ratatoskr_operational_contracts::InspectionContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::InspectionContractError::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::InspectionContractError::Owned = T
+pub type ratatoskr_operational_contracts::InspectionCursor::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::InspectionCursor::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::InspectionCursor::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::InspectionCursor::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::InspectionCursor::Owned = T
+pub type ratatoskr_operational_contracts::OperationInspectionPage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::OperationInspectionPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::OperationInspectionPage::Owned = T
+pub type ratatoskr_operational_contracts::OperationInspectionSummary::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::OperationInspectionSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::OperationInspectionSummary::Owned = T
+pub type ratatoskr_operational_contracts::PublicComponentId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::PublicComponentId::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicComponentId::Owned = T
+pub type ratatoskr_operational_contracts::PublicComponentState::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::PublicComponentState::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicComponentState::Owned = T
+pub type ratatoskr_operational_contracts::PublicStatusComponent::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::PublicStatusComponent::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusComponent::Owned = T
+pub type ratatoskr_operational_contracts::PublicStatusDocument::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::PublicStatusDocument::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusDocument::Owned = T
+pub type ratatoskr_operational_contracts::PublicStatusState::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::PublicStatusState::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusState::Owned = T
+pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Owned = T
+pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Owned = T
+pub type ratatoskr_operational_contracts::ScheduleName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ScheduleName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::ScheduleName::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ScheduleName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ScheduleName::Owned = T
+pub type ratatoskr_operational_contracts::ServiceName::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ServiceName::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::ServiceName::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ServiceName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ServiceName::Owned = T
+pub type ratatoskr_operational_contracts::StatusContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operational_contracts::StatusContractError::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::StatusContractError::Owned = T
+pub unsafe fn ratatoskr_operational_contracts::AuditAction::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::AuditEventPage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::AuditEventSummary::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::AuditOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::AuditTargetKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::InspectionContractError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::InspectionCursor::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::OperationInspectionPage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::OperationInspectionSummary::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::PublicComponentId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::PublicComponentState::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::PublicStatusComponent::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::PublicStatusDocument::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::PublicStatusState::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::ScheduleInspectionPage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::ScheduleInspectionSummary::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::ScheduleName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::ServiceName::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operational_contracts::StatusContractError::clone_to_uninit(&self, *mut u8)

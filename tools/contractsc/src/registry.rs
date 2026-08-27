@@ -138,6 +138,14 @@ root_types! {
         => ratatoskr_operation_contracts::OperationReported,
     "ratatoskr_operation_contracts::OperationSnapshot"
         => ratatoskr_operation_contracts::OperationSnapshot,
+    "ratatoskr_operational_contracts::AuditEventPage"
+        => ratatoskr_operational_contracts::AuditEventPage,
+    "ratatoskr_operational_contracts::OperationInspectionPage"
+        => ratatoskr_operational_contracts::OperationInspectionPage,
+    "ratatoskr_operational_contracts::PublicStatusDocument"
+        => ratatoskr_operational_contracts::PublicStatusDocument,
+    "ratatoskr_operational_contracts::ScheduleInspectionPage"
+        => ratatoskr_operational_contracts::ScheduleInspectionPage,
     "ratatoskr_social_contracts::SocialCaptureRequested"
         => ratatoskr_social_contracts::SocialCaptureRequested,
     "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"

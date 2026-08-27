@@ -5,6 +5,7 @@ members = [
     "crates/event-envelope",
     "crates/error-contracts",
     "crates/operation-contracts",
+    "crates/operational-contracts",
     "crates/document-contracts",
     "crates/social-contracts",
     "crates/ai-archive-contracts",
@@ -28,6 +29,7 @@ ratatoskr-identifiers         = { version = "0.1.0", path = "crates/identifiers"
 ratatoskr-event-envelope      = { version = "0.1.0", path = "crates/event-envelope" }
 ratatoskr-error-contracts     = { version = "0.1.0", path = "crates/error-contracts" }
 ratatoskr-operation-contracts = { version = "0.1.0", path = "crates/operation-contracts" }
+ratatoskr-operational-contracts = { version = "0.1.0", path = "crates/operational-contracts" }
 ratatoskr-document-contracts  = { version = "0.1.0", path = "crates/document-contracts" }
 ratatoskr-social-contracts    = { version = "0.1.0", path = "crates/social-contracts" }
 ratatoskr-ai-archive-contracts = { version = "0.1.0", path = "crates/ai-archive-contracts" }

@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "audit_event_id": "018f0000-0000-7000-8000-000000000004",
+      "occurred_at": "2026-08-27T09:02:00Z",
+      "action": "operation.read",
+      "target_kind": "operation",
+      "outcome": "allowed",
+      "correlation_id": "operation:018f0000-0000-7000-8000-000000000001",
+      "diagnostic": "bearer secret"
+    }
+  ]
+}

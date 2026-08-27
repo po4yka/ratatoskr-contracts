@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "operation_id": "018f0000-0000-7000-8000-000000000001",
+      "owner_user_id": "018f0000-0000-7000-8000-000000000002",
+      "kind": "content.document.extract",
+      "status": "failed",
+      "accepted_at": "2026-08-27T09:00:00Z",
+      "status_changed_at": "2026-08-27T09:01:00Z",
+      "request_payload": { "document_id": "private-user-content" }
+    }
+  ]
+}

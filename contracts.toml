@@ -23,6 +23,7 @@ known = [
   "ratatoskr-telegram",
   "ratatoskr-mobile",
   "ratatoskr-export-agent",
+  "ratatoskr-web",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -75,7 +76,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -567,6 +568,140 @@ privacy        = "boundary_metadata"
 [[contract.vague_field_waiver]]
 pointer       = "/properties/metadata"
 justification = "This is the precise named outcome of the metadata component beside provider_star and desired_backup; its closed tagged enum defines every legal state and safe reason."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "operational.public_status_document"
+family         = "operational"
+major_version  = 1
+lifecycle      = "accepted"
+classification = "public"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-operational-contracts"
+canonical_path = "crates/operational-contracts/src/status.rs"
+fixtures_dir   = "fixtures/operational/public-status-document"
+summary        = "Anonymous sanitized status of four stable Ratatoskr component groups."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operational_contracts::PublicStatusDocument"
+output         = "schemas/json-schema/operational/public-status-document.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:operational:v1:PublicStatusDocument"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/generated_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Platform clock instant at which the sanitized projection was generated."
+
+[[contract.field]]
+pointer     = "PublicStatusComponent#/properties/observed_at"
+authority   = "observed"
+nullability = "omitted_when_absent"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Latest successful readiness observation retained by Platform; absent before any success."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "operational.operation_inspection_page"
+family         = "operational"
+major_version  = 1
+lifecycle      = "accepted"
+classification = "privileged"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-operational-contracts"
+canonical_path = "crates/operational-contracts/src/inspection.rs"
+fixtures_dir   = "fixtures/operational/operation-inspection-page"
+summary        = "Bounded redacted deployment-wide operation summaries for an authorized owner."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operational_contracts::OperationInspectionPage"
+output         = "schemas/json-schema/operational/operation-inspection-page.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:operational:v1:OperationInspectionPage"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "OperationInspectionSummary#/properties/accepted_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Platform durably accepted the inspected operation."
+
+[[contract.field]]
+pointer     = "OperationInspectionSummary#/properties/status_changed_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Platform last observed a lifecycle-state change for the operation."
+
+[[contract.vague_field_waiver]]
+pointer       = "OperationInspectionSummary#/properties/status"
+justification = "This is the exact closed OperationStatus lifecycle vocabulary; clients branch on its seven documented states and never on an unbounded label."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "operational.schedule_inspection_page"
+family         = "operational"
+major_version  = 1
+lifecycle      = "accepted"
+classification = "privileged"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-operational-contracts"
+canonical_path = "crates/operational-contracts/src/inspection.rs"
+fixtures_dir   = "fixtures/operational/schedule-inspection-page"
+summary        = "Bounded schedule status projections without command payloads or configuration."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operational_contracts::ScheduleInspectionPage"
+output         = "schemas/json-schema/operational/schedule-inspection-page.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:operational:v1:ScheduleInspectionPage"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "ScheduleInspectionSummary#/properties/next_due_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Next due instant stored by the authoritative Platform scheduler."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "operational.audit_event_page"
+family         = "operational"
+major_version  = 1
+lifecycle      = "accepted"
+classification = "privileged"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-operational-contracts"
+canonical_path = "crates/operational-contracts/src/inspection.rs"
+fixtures_dir   = "fixtures/operational/audit-event-page"
+summary        = "Bounded redacted audit history with nullable actor attribution."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operational_contracts::AuditEventPage"
+output         = "schemas/json-schema/operational/audit-event-page.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:operational:v1:AuditEventPage"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "AuditEventSummary#/properties/occurred_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Platform recorded the audited action."
 
 # ---------------------------------------------------------------------------
 [[contract]]
