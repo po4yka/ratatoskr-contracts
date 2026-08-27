@@ -21,6 +21,7 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+mod account_erasure;
 mod error;
 mod events;
 mod kind;
@@ -29,6 +30,9 @@ mod result_ref;
 mod snapshot;
 mod status;
 
+pub use crate::account_erasure::{
+    AccountErasureAcknowledged, AccountErasureOutcome, AccountErasureRequested,
+};
 pub use crate::error::OperationContractError;
 pub use crate::events::{OperationProgressed, OperationReported};
 pub use crate::kind::{OperationKind, OperationResultKind, OperationStage};

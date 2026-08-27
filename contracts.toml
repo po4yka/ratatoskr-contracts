@@ -152,6 +152,58 @@ justification = "The typed command payload is selected by command_type and const
 
 # ---------------------------------------------------------------------------
 [[contract]]
+id             = "identity.account_erasure_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-chatgpt", "ratatoskr-claude", "ratatoskr-extractor", "ratatoskr-github", "ratatoskr-instagram", "ratatoskr-knowledge", "ratatoskr-telegram", "ratatoskr-threads", "ratatoskr-vault", "ratatoskr-x"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/account_erasure.rs"
+fixtures_dir   = "fixtures/commands/identity.account.erasure_requested.v1"
+summary        = "Command: Platform requests one owner erase its Ratatoskr-held account data."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::AccountErasureRequested"
+output         = "schemas/json-schema/commands/account-erasure-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:AccountErasureRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[contract.command]
+command_type = "identity.account.erasure_requested.v1"
+payload_type = "ratatoskr_operation_contracts::AccountErasureRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "identity.account_erasure_acknowledged"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude", "ratatoskr-extractor", "ratatoskr-github", "ratatoskr-instagram", "ratatoskr-knowledge", "ratatoskr-telegram", "ratatoskr-threads", "ratatoskr-vault", "ratatoskr-x"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/account_erasure.rs"
+fixtures_dir   = "fixtures/events/identity.account.erasure_acknowledged.v1"
+summary        = "Fact: one owner verified local account erasure or reports incomplete provider grant revocation."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::AccountErasureAcknowledged"
+output         = "schemas/events/identity.account.erasure_acknowledged.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:AccountErasureAcknowledged"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "identity.account.erasure_acknowledged.v1"
+payload_type = "ratatoskr_operation_contracts::AccountErasureAcknowledged"
+
+# ---------------------------------------------------------------------------
+[[contract]]
 id             = "core.blob_ref"
 family         = "core"
 major_version  = 1

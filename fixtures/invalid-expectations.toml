@@ -247,6 +247,24 @@ error_contains = 'missing field `operation_id`'
 reason         = "A progress fact that does not say which operation progressed is unroutable. `operation_id` is required in both layers."
 
 # ---------------------------------------------------------------------------
+# commands/identity.account.erasure_requested.v1
+# ---------------------------------------------------------------------------
+
+["commands/identity.account.erasure_requested.v1/invalid/missing-operation-id.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `operation_id`'
+reason         = "An erasure command without its durable operation identity cannot be deduplicated or acknowledged."
+
+# ---------------------------------------------------------------------------
+# events/identity.account.erasure_acknowledged.v1
+# ---------------------------------------------------------------------------
+
+["events/identity.account.erasure_acknowledged.v1/invalid/missing-outcome.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `outcome`'
+reason         = "An erasure acknowledgement without a terminal outcome cannot be aggregated truthfully."
+
+# ---------------------------------------------------------------------------
 # events/platform.operation.reported.v1
 # ---------------------------------------------------------------------------
 

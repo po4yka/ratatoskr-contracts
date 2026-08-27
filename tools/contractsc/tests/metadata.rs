@@ -170,8 +170,8 @@ fn event_metadata_matches_the_payload_type() {
         checked += 1;
     }
     assert_eq!(
-        checked, 20,
-        "twenty event contracts are registered; update this pin when the registry changes"
+        checked, 21,
+        "twenty-one event contracts are registered; update this pin when the registry changes"
     );
 }
 

@@ -120,6 +120,10 @@ root_types! {
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
     "ratatoskr_notification_contracts::NotificationRaised"
         => ratatoskr_notification_contracts::NotificationRaised,
+    "ratatoskr_operation_contracts::AccountErasureAcknowledged"
+        => ratatoskr_operation_contracts::AccountErasureAcknowledged,
+    "ratatoskr_operation_contracts::AccountErasureRequested"
+        => ratatoskr_operation_contracts::AccountErasureRequested,
     "ratatoskr_operation_contracts::OperationProgressed"
         => ratatoskr_operation_contracts::OperationProgressed,
     "ratatoskr_operation_contracts::OperationReported"
@@ -205,6 +209,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
         <ratatoskr_notification_contracts::NotificationRaised as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
+        "ratatoskr_operation_contracts::AccountErasureAcknowledged",
+        <ratatoskr_operation_contracts::AccountErasureAcknowledged as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
         "ratatoskr_operation_contracts::OperationProgressed",
         <ratatoskr_operation_contracts::OperationProgressed as EventPayload>::EVENT_TYPE,
     );
@@ -239,6 +247,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
 #[must_use]
 pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     let mut declared = BTreeMap::new();
+    declared.insert(
+        "ratatoskr_operation_contracts::AccountErasureRequested",
+        <ratatoskr_operation_contracts::AccountErasureRequested as CommandPayload>::COMMAND_TYPE,
+    );
     declared.insert(
         "ratatoskr_social_contracts::SocialCaptureRequested",
         <ratatoskr_social_contracts::SocialCaptureRequested as CommandPayload>::COMMAND_TYPE,

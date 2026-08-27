@@ -253,6 +253,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_notification_contracts::NotificationRaised" => {
             render!(ratatoskr_notification_contracts::NotificationRaised)
         }
+        "ratatoskr_operation_contracts::AccountErasureAcknowledged" => {
+            render!(ratatoskr_operation_contracts::AccountErasureAcknowledged)
+        }
+        "ratatoskr_operation_contracts::AccountErasureRequested" => {
+            render!(ratatoskr_operation_contracts::AccountErasureRequested)
+        }
         "ratatoskr_operation_contracts::OperationProgressed" => {
             render!(ratatoskr_operation_contracts::OperationProgressed)
         }
