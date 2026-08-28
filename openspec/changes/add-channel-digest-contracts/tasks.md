@@ -30,4 +30,4 @@
 
 - [x] 5.1 Update contract README/API documentation and the consumer pin instructions; no failing test applies to prose, so verify every named subject/type/path against generated artifacts and run `git diff --check`.
 - [x] 5.2 Run the exact `DEVELOPMENT.md` gate through the machine build gate where compiler-backed, plus `openspec validate add-channel-digest-contracts --strict`; inspect public API and generated diffs and record the observed results before publication.
-- [ ] 5.3 Publish/merge Contracts before any consumer or producer pin changes, then verify the remote commit and hosted checks; this is rollout evidence, not a substitute for the local gate.
+- [x] 5.3 Publish/merge Contracts before any consumer or producer pin changes, then verify the remote commit and hosted checks; this is rollout evidence, not a substitute for the local gate.
