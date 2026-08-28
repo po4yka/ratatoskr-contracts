@@ -1,0 +1,7 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000101",
+  "owner": "user:018f0000-0000-7000-8000-000000000102",
+  "idempotency_key": "telegram.subscribe.018f0000-0000-7000-8000-000000000103",
+  "channel_username": "Example_Channel",
+  "desired_state": "active"
+}

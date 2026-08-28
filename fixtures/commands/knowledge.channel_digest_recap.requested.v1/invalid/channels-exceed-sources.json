@@ -1,0 +1,19 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000201",
+  "owner": "user:018f0000-0000-7000-8000-000000000202",
+  "digest_run_id": "018f0000-0000-7000-8000-000000000203",
+  "window": {
+    "start_at": "2026-08-20T10:00:00Z",
+    "end_at": "2026-08-21T10:00:00Z"
+  },
+  "output_language": "ru",
+  "source_count": 2,
+  "channel_count": 3,
+  "manifest_ref": "channel-digest-manifest:018f0000-0000-7000-8000-000000000204",
+  "manifest_digest": {
+    "algorithm": "sha256",
+    "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "analysis_family": "channel_digest_recap",
+  "analysis_contract": "channel_digest_recap.v1"
+}

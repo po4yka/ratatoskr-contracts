@@ -2,7 +2,7 @@
 
 `ratatoskr-contracts` is the wire-contract repository for Ratatoskr. It defines the versioned structures exchanged between independently deployed services and the public API artifacts consumed by Ratatoskr clients.
 
-> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the notification contracts, the blob-transfer protocol contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
+> **Status:** milestones 1–9 implemented. Shared identifiers, the event envelope, error contracts, operation contracts, Document IR, the social-source contracts, the AI-archive contracts, the backup-policy contracts, the notification contracts, the channel-digest contracts, the blob-transfer protocol contracts and the deterministic generator (`cargo contracts`) exist, together with generated JSON Schema, the matching TypeScript declarations under `generated/typescript/`, the fixture suite, frozen public-API baselines under `compat/api/`, and CI that runs the documented gate plus the compatibility, determinism and packaging jobs of `.github/workflows/contracts.yml`. OpenAPI and package publication do **not** exist yet.
 
 > [!IMPORTANT]
 > **Ratatoskr is in development.** No database holds data that has to survive a schema change.
@@ -26,7 +26,7 @@ It is intended to provide:
 - public OpenAPI specifications;
 - shared opaque identifiers and timestamps used on the wire;
 - standard error and pagination envelopes;
-- document, social-source, AI-archive, backup-policy, user-facing-notification interchange contracts, and the shared upload transfer protocol;
+- document, social-source, AI-archive, backup-policy, user-facing-notification, and public-channel-digest interchange contracts, plus the shared upload transfer protocol;
 - generated client/server artifacts for supported languages;
 - compatibility checks used by child repositories and the workspace CI.
 
@@ -40,6 +40,7 @@ The full contract surface is expected to include the tree below. `(now)` marks w
 crates/
 ├── identifiers/               (now)
 ├── event-envelope/            (now)
+├── channel-digest-contracts/  (now)
 ├── operation-contracts/       (now)
 ├── error-contracts/           (now)
 ├── document-contracts/        (now)
@@ -180,6 +181,24 @@ The legacy monolith notified in-process; the fleet cannot. `ratatoskr-notificati
 
 A raised notification carries its own identity (`NotificationId`, also the aggregate as `notification:<uuid>` and the logical key for suppressing re-raises), a class from a versioned taxonomy whose unknown tokens are preserved rather than rejected — six classes at registry version 1: `operation_completed`, `operation_failed`, `analysis_ready`, `backup_outcome`, `watch_triggered`, `archive_imported` — the recipient in the closed tenancy grammar, carrier-safe title and optional message text, opaque correlation references (`operation_ref`, `analysis_ref`), and advisory delivery hints (a priority level and a daily quiet-hours window in seconds from UTC midnight) whose enforcement is nobody's job but the consumer's. Delivery guarantees are the bus's own at-least-once; nothing stronger is promised here.
 
+### Channel digests
+
+`ratatoskr-channel-digest-contracts` is the credential-free boundary between Platform,
+`ratatoskr-channel-digests`, and Knowledge. Platform emits
+`channel_digest.subscription.set_requested.v1` and `channel_digest.run.requested.v1`; the digest
+service consumes those commands, acquires public-channel source evidence under its own provider
+session, and emits `knowledge.channel_digest_recap.requested.v1` with only an owner-bound immutable
+manifest reference, its SHA-256 digest, bounded counts, window, and language. Knowledge answers with
+exactly one of `knowledge.channel_digest_recap.completed.v1` or
+`knowledge.channel_digest_recap.failed.v1`.
+
+The completion contains stable analysis/result references, content digests, completion time, and
+exact selected/included/omitted coverage — never recap narrative or post bodies. The failure carries
+one closed safe code and no provider diagnostic. Public-channel usernames, MTProto sessions,
+Telegram destinations, prompts, model selectors, URLs, source bodies, and credentials are absent
+from the cross-service messages. Consumers preserve additive fields for compatibility; producers
+must call each payload's `validate_for_publish` and author an empty extension map.
+
 ### Blob transfers
 
 The legacy monolith accepted uploads synchronously in one process; the fleet cannot. `ratatoskr-blob-transfer-contracts` is one chunked, resumable, digest-first transfer discipline for every upload-capable client delivering bytes to a receiving service's blob store — mobile and export-agent on the sending side, extractor and the AI-archive services receiving — so no receiver invents its own wire dialect.
@@ -208,6 +227,7 @@ Until milestone 10 publishes the first tagged packages, a consumer depends on a 
 
 ```toml
 ratatoskr-event-envelope = { git = "https://github.com/po4yka/ratatoskr-contracts.git", rev = "216924f1420c179ad2e87ffda6cf2135befb461e" }
+ratatoskr-channel-digest-contracts = { git = "https://github.com/po4yka/ratatoskr-contracts.git", rev = "<published-full-commit-sha>" }
 ```
 
 This is the only sanctioned interim form. It satisfies the rule above because it is not a path dependency and it resolves identically from a clean checkout. A branch or a tag reference is not sufficient, because neither pins: a branch moves, and a tag can be moved. When milestone 10 lands, the `git`/`rev` pair is replaced by a version requirement against the published package, and the workspace lock records the version instead of the SHA.
