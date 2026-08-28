@@ -24,6 +24,7 @@ known = [
   "ratatoskr-mobile",
   "ratatoskr-export-agent",
   "ratatoskr-web",
+  "ratatoskr-channel-digests",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -57,7 +58,8 @@ known = [
 known = [
   "ai_archive", "ai_conversation", "ai_project", "analysis", "backup_policy",
   "blob", "command", "document", "event", "notification", "operation", "user",
-  "github-account", "repository", "social_source", "telegram-confirmation", "x-post",
+  "channel-digest-manifest", "channel-digest-result", "github-account", "repository",
+  "schedule", "schedule-occurrence", "social_source", "telegram-confirmation", "x-post",
 ]
 
 # ---------------------------------------------------------------------------
@@ -76,7 +78,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "start_at", "end_at", "due_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -1490,3 +1492,192 @@ output         = "schemas/json-schema/transfer/upload-completion-outcome.v1.sche
 schema_id      = "urn:ratatoskr:contracts:transfer:v1:UploadCompletionOutcome"
 unknown_policy = "preserve"
 privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+# Public-channel digest command and terminal-fact contracts.
+# ---------------------------------------------------------------------------
+
+[[contract]]
+id             = "channel_digest.subscription_set_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-channel-digests"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/commands.rs"
+fixtures_dir   = "fixtures/commands/channel_digest.subscription.set_requested.v1"
+summary        = "Command: Platform sets one owner's desired public-channel subscription state."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
+output         = "schemas/json-schema/commands/subscription-set-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:ChannelDigestSubscriptionSetRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[contract.command]
+command_type = "channel_digest.subscription.set_requested.v1"
+payload_type = "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "channel_digest.run_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-channel-digests"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/commands.rs"
+fixtures_dir   = "fixtures/commands/channel_digest.run.requested.v1"
+summary        = "Command: Platform requests one bounded on-demand or scheduled channel-digest run."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
+output         = "schemas/json-schema/commands/run-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:ChannelDigestRunRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/start_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Inclusive source-window lower bound selected by Platform for this run."
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/end_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Exclusive source-window upper bound selected by Platform for this run."
+
+[[contract.field]]
+pointer     = "/properties/trigger/accepted_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Platform acceptance instant for an on-demand run; semantically equal to the window end."
+
+[[contract.field]]
+pointer     = "/properties/trigger/due_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Platform due instant for a scheduled occurrence; semantically equal to the window end."
+
+[contract.command]
+command_type = "channel_digest.run.requested.v1"
+payload_type = "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.channel_digest_recap_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/recap.rs"
+fixtures_dir   = "fixtures/commands/knowledge.channel_digest_recap.requested.v1"
+summary        = "Command: the digest service asks Knowledge to recap one verified immutable manifest."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested"
+output         = "schemas/json-schema/commands/channel-digest-recap-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:KnowledgeChannelDigestRecapRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/start_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Inclusive verified-source lower bound copied from the accepted digest run."
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/end_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Exclusive verified-source upper bound copied from the accepted digest run."
+
+[contract.command]
+command_type = "knowledge.channel_digest_recap.requested.v1"
+payload_type = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.channel_digest_recap_completed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-channel-digests"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/recap.rs"
+fixtures_dir   = "fixtures/events/knowledge.channel_digest_recap.completed.v1"
+summary        = "Fact: Knowledge durably stored one grounded channel recap result."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"
+output         = "schemas/events/knowledge.channel_digest_recap.completed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:KnowledgeChannelDigestRecapCompleted"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/completed_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge durably committed the typed result before publishing this fact."
+
+[contract.event]
+event_type   = "knowledge.channel_digest_recap.completed.v1"
+payload_type = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.channel_digest_recap_failed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-channel-digests"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/recap.rs"
+fixtures_dir   = "fixtures/events/knowledge.channel_digest_recap.failed.v1"
+summary        = "Fact: Knowledge terminally failed one channel recap with a safe closed reason."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed"
+output         = "schemas/events/knowledge.channel_digest_recap.failed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:KnowledgeChannelDigestRecapFailed"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/failed_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge committed the safe terminal failure before publishing this fact."
+
+[contract.event]
+event_type   = "knowledge.channel_digest_recap.failed.v1"
+payload_type = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed"

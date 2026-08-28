@@ -3,6 +3,7 @@ resolver = "3"
 members = [
     "crates/identifiers",
     "crates/event-envelope",
+    "crates/channel-digest-contracts",
     "crates/error-contracts",
     "crates/operation-contracts",
     "crates/operational-contracts",
@@ -27,6 +28,7 @@ repository   = "https://github.com/po4yka/ratatoskr-contracts"
 # ---- in-repo ----
 ratatoskr-identifiers         = { version = "0.1.0", path = "crates/identifiers" }
 ratatoskr-event-envelope      = { version = "0.1.0", path = "crates/event-envelope" }
+ratatoskr-channel-digest-contracts = { version = "0.1.0", path = "crates/channel-digest-contracts" }
 ratatoskr-error-contracts     = { version = "0.1.0", path = "crates/error-contracts" }
 ratatoskr-operation-contracts = { version = "0.1.0", path = "crates/operation-contracts" }
 ratatoskr-operational-contracts = { version = "0.1.0", path = "crates/operational-contracts" }

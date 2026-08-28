@@ -1,0 +1,23 @@
+{
+  "owner": "user:018f0000-0000-7000-8000-000000000202",
+  "operation_id": "018f0000-0000-7000-8000-000000000201",
+  "digest_run_id": "018f0000-0000-7000-8000-000000000203",
+  "manifest_digest": {
+    "algorithm": "sha256",
+    "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "analysis_ref": "analysis:018f0000-0000-7000-8000-000000000205",
+  "digest_result_id": "018f0000-0000-7000-8000-000000000206",
+  "result_ref": "channel-digest-result:018f0000-0000-7000-8000-000000000206",
+  "result_digest": {
+    "algorithm": "sha256",
+    "hex": "1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "completed_at": "2026-08-21T10:01:00Z",
+  "coverage": {
+    "selected_count": 12,
+    "included_count": 10,
+    "omitted_count": 2,
+    "channel_count": 3
+  }
+}

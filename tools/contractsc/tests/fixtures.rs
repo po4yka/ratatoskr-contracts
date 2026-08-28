@@ -228,6 +228,21 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_blob_transfer_contracts::UploadStatusResponse" => {
             render!(ratatoskr_blob_transfer_contracts::UploadStatusResponse)
         }
+        "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested" => {
+            render!(ratatoskr_channel_digest_contracts::ChannelDigestRunRequested)
+        }
+        "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested" => {
+            render!(ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested)
+        }
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted" => {
+            render!(ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted)
+        }
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed" => {
+            render!(ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed)
+        }
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested" => {
+            render!(ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested)
+        }
         "ratatoskr_document_contracts::Document" => {
             render!(ratatoskr_document_contracts::Document)
         }

@@ -107,6 +107,16 @@ root_types! {
         => ratatoskr_blob_transfer_contracts::UploadSessionRequest,
     "ratatoskr_blob_transfer_contracts::UploadStatusResponse"
         => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
+    "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
+        => ratatoskr_channel_digest_contracts::ChannelDigestRunRequested,
+    "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
+        => ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested,
+    "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"
+        => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted,
+    "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed"
+        => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed,
+    "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested"
+        => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested,
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::CommandEnvelope"        => ratatoskr_event_envelope::CommandEnvelope,
@@ -209,6 +219,14 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
         <ratatoskr_backup_contracts::PolicyAcknowledged as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted",
+        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed",
+        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
         "ratatoskr_github_contracts::RepositoryAnalysisCompleted",
         <ratatoskr_github_contracts::RepositoryAnalysisCompleted as EventPayload>::EVENT_TYPE,
     );
@@ -263,6 +281,18 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
 #[must_use]
 pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     let mut declared = BTreeMap::new();
+    declared.insert(
+        "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested",
+        <ratatoskr_channel_digest_contracts::ChannelDigestRunRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested",
+        <ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested",
+        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested as CommandPayload>::COMMAND_TYPE,
+    );
     declared.insert(
         "ratatoskr_operation_contracts::AccountErasureRequested",
         <ratatoskr_operation_contracts::AccountErasureRequested as CommandPayload>::COMMAND_TYPE,

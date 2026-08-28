@@ -15,6 +15,35 @@
 # (single quotes) are used throughout so a published `pattern` can be quoted verbatim.
 
 # ---------------------------------------------------------------------------
+# channel-digest commands and recap facts
+# ---------------------------------------------------------------------------
+
+["commands/channel_digest.subscription.set_requested.v1/invalid/mixed-case-channel.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'channel username is not canonical'
+reason         = "Channel usernames are signed and hashed in their canonical lowercase spelling; mixed case is never silently normalized."
+
+["commands/channel_digest.run.requested.v1/invalid/trigger-window-mismatch.json"]
+rejected_by    = ["serde"]
+error_contains = 'digest run trigger instant must equal the window end'
+reason         = "Platform trigger authority and the closed-open source window must identify one exact occurrence; schema cannot express the cross-field instant equality."
+
+["commands/knowledge.channel_digest_recap.requested.v1/invalid/channels-exceed-sources.json"]
+rejected_by    = ["serde"]
+error_contains = 'digest channel count cannot exceed source count'
+reason         = "A manifest cannot represent more distinct channels than selected immutable source revisions; schema cannot compare the two bounded counters."
+
+["events/knowledge.channel_digest_recap.completed.v1/invalid/inconsistent-coverage.json"]
+rejected_by    = ["serde"]
+error_contains = 'digest coverage counts are inconsistent'
+reason         = "Included plus omitted source counts must equal selected coverage so a terminal fact never fabricates completeness."
+
+["events/knowledge.channel_digest_recap.failed.v1/invalid/unknown-failure-code.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `provider_dump`'
+reason         = "Failures carry a closed content-free operational class; arbitrary provider diagnostics cannot become a published reason."
+
+# ---------------------------------------------------------------------------
 # github/repository-interaction
 # ---------------------------------------------------------------------------
 
