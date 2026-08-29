@@ -1,8 +1,9 @@
-## Purpose
+# channel-digest-contracts Specification
 
+## Purpose
 Defines the canonical first-version wire values and replay-safe messages exchanged when Platform, the channel-digest owner, and Knowledge create subscriptions and grounded public-channel recaps.
 
-## ADDED Requirements
+## Requirements
 
 ### Requirement: Channel-digest identifiers and values have one wire grammar
 
@@ -51,6 +52,20 @@ The command SHALL contain no client-selected model/provider, prompt, source body
 
 - **WHEN** a producer authors an additional model/provider field instead of leaving extensions empty
 - **THEN** contract construction or linting rejects the producer-authored extension
+
+### Requirement: Deployment schedule occurrence delegates owner fan-out
+
+`channel_digest.schedule.occurrence_requested.v1` SHALL carry only the stable Platform schedule
+reference, stable occurrence reference, previous UTC grid point, and current due instant. It SHALL
+contain no owner selector, owner source window, language/model choice, provider state, post content,
+or Telegram destination. The previous grid point SHALL be earlier than the due instant and no more
+than seven days apart. The digest service SHALL use the occurrence identity as its replay authority
+and compute owner-specific windows from its own subscription state.
+
+#### Scenario: One occurrence is safe for every active owner
+
+- **WHEN** Platform publishes one valid occurrence command
+- **THEN** the payload contains no owner/window selector and the digest service can fan it out idempotently
 
 ### Requirement: Recap request references immutable source evidence without bodies
 

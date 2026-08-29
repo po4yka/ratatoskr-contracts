@@ -78,7 +78,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "start_at", "end_at", "due_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "previous_due_at", "start_at", "end_at", "due_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -1575,6 +1575,46 @@ note        = "Platform due instant for a scheduled occurrence; semantically equ
 [contract.command]
 command_type = "channel_digest.run.requested.v1"
 payload_type = "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "channel_digest.schedule_occurrence_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-channel-digests"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/commands.rs"
+fixtures_dir   = "fixtures/commands/channel_digest.schedule.occurrence_requested.v1"
+summary        = "Command: Platform emits one deployment schedule occurrence for digest-service fan-out."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"
+output         = "schemas/json-schema/commands/schedule-occurrence-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:ChannelDigestScheduleOccurrenceRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/previous_due_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Previous deployment schedule grid point; not an owner-selected source window."
+
+[[contract.field]]
+pointer     = "/properties/due_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Current authoritative deployment schedule grid point."
+
+[contract.command]
+command_type = "channel_digest.schedule.occurrence_requested.v1"
+payload_type = "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"
 
 # ---------------------------------------------------------------------------
 [[contract]]

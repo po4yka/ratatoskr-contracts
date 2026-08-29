@@ -35,7 +35,9 @@ or dependency boundary.
 ### Reuse envelopes and keep payload identities explicit
 
 `ChannelDigestSubscriptionSetRequested`, `ChannelDigestRunRequested`, and
-`KnowledgeChannelDigestRecapRequested` implement the existing command payload trait. `Completed` and
+`ChannelDigestScheduleOccurrenceRequested`, and `KnowledgeChannelDigestRecapRequested` implement the
+existing command payload trait. The schedule occurrence carries only deployment grid authority so
+the digest owner, not Platform, fans out owners and clips source windows. `Completed` and
 `Failed` implement the event payload trait. Payloads repeat only the domain identities needed for idempotent handling: internal
 owner, operation/run, manifest/result reference, content digest, trigger, window, language, and bounded
 counts. Provider IDs, post bodies, session bytes, prompts, model output, and provider errors are

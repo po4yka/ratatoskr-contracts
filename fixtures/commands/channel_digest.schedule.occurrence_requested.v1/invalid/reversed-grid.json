@@ -1,0 +1,6 @@
+{
+  "schedule_ref": "schedule:018f0000-0000-7000-8000-000000000104",
+  "occurrence_ref": "schedule-occurrence:018f0000-0000-7000-8000-000000000105",
+  "previous_due_at": "2026-08-21T10:00:00Z",
+  "due_at": "2026-08-20T10:00:00Z"
+}

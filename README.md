@@ -185,7 +185,8 @@ A raised notification carries its own identity (`NotificationId`, also the aggre
 
 `ratatoskr-channel-digest-contracts` is the credential-free boundary between Platform,
 `ratatoskr-channel-digests`, and Knowledge. Platform emits
-`channel_digest.subscription.set_requested.v1` and `channel_digest.run.requested.v1`; the digest
+`channel_digest.subscription.set_requested.v1`, `channel_digest.run.requested.v1`, and the
+deployment-wide `channel_digest.schedule.occurrence_requested.v1`; the digest
 service consumes those commands, acquires public-channel source evidence under its own provider
 session, and emits `knowledge.channel_digest_recap.requested.v1` with only an owner-bound immutable
 manifest reference, its SHA-256 digest, bounded counts, window, and language. Knowledge answers with

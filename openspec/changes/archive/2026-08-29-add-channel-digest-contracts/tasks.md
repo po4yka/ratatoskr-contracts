@@ -11,6 +11,8 @@
 - [x] 2.2 GREEN: implement `ChannelDigestSubscriptionSetRequested` on the canonical command envelope and make the focused command test pass.
 - [x] 2.3 RED: add `commands.rs::run_command_encodes_exact_trigger_and_window_semantics`; cover on-demand and scheduled valid examples plus missing/foreign occurrence and unbounded selector failures, then run it and confirm the payload is absent or accepts an invalid case.
 - [x] 2.4 GREEN: implement `ChannelDigestRunRequested` and its closed trigger/window invariants; rerun the focused command tests and confirm they pass.
+- [x] 2.5 RED: add a schedule-occurrence command test and registry closure expectation for one deployment-wide trigger without owner/window fields; run them and confirm the command type and registry entry are absent.
+- [x] 2.6 GREEN: implement and register `ChannelDigestScheduleOccurrenceRequested`, its UTC-grid validation, fixtures, and generated artifacts; rerun the focused command and registry tests.
 
 ## 3. Knowledge recap facts
 

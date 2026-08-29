@@ -13,6 +13,7 @@ impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestRes
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::clone::Clone for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -39,6 +40,7 @@ impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestResultRe
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::cmp::Eq for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -77,6 +79,7 @@ impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestR
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::cmp::PartialEq for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -132,6 +135,7 @@ impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestResul
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::fmt::Debug for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -194,6 +198,7 @@ impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestR
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::Freeze for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -220,6 +225,7 @@ impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestRes
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::Send for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -246,6 +252,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::C
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::StructuralPartialEq for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -272,6 +279,7 @@ impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestRes
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::Sync for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -298,6 +306,7 @@ impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestRe
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::Unpin for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -324,6 +333,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDi
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::marker::UnsafeUnpin for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -350,6 +360,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contra
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -376,6 +387,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -407,6 +419,7 @@ impl ratatoskr_channel_digest_contracts::ChannelDigestResultId
 impl ratatoskr_channel_digest_contracts::ChannelDigestResultRef
 impl ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
+impl ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl ratatoskr_channel_digest_contracts::ChannelUsername
@@ -420,6 +433,7 @@ impl ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted
 impl ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed
 impl ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted
@@ -435,6 +449,7 @@ impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestR
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl schemars::JsonSchema for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -460,6 +475,7 @@ impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelD
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl serde_core::ser::Serialize for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -485,6 +501,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contract
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -511,6 +528,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::Channe
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_channel_digest_contracts::ChannelUsername where U: core::convert::From<T>
@@ -537,6 +555,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::Cha
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_channel_digest_contracts::ChannelUsername where U: core::convert::Into<T>
@@ -563,6 +582,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::Cha
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_channel_digest_contracts::ChannelUsername where U: core::convert::TryFrom<T>
@@ -589,6 +609,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDi
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_channel_digest_contracts::ChannelUsername where T: core::clone::Clone
@@ -626,6 +647,7 @@ impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestResu
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_channel_digest_contracts::ChannelUsername where T: 'static + ?core::marker::Sized
@@ -652,6 +674,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelD
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_channel_digest_contracts::ChannelUsername where T: ?core::marker::Sized
@@ -678,6 +701,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::Chann
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_channel_digest_contracts::ChannelUsername where T: ?core::marker::Sized
@@ -704,6 +728,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::Chann
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_channel_digest_contracts::ChannelUsername where T: core::clone::Clone
@@ -730,6 +755,7 @@ impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDi
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunId
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger
+impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 impl<T> core::convert::From<T> for ratatoskr_channel_digest_contracts::ChannelUsername
@@ -756,6 +782,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDiges
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_channel_digest_contracts::ChannelUsername where T: core::clone::Clone
@@ -781,6 +808,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts:
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_channel_digest_contracts::ChannelUsername where T: for<'de> serde_core::de::Deserialize<'de>
@@ -812,6 +840,7 @@ pub const ratatoskr_channel_digest_contracts::ChannelDigestResultRef::MAX_LEN: u
 pub const ratatoskr_channel_digest_contracts::ChannelDigestResultRef::PATTERN: &'static str
 pub const ratatoskr_channel_digest_contracts::ChannelDigestRunId::PATTERN: &'static str
 pub const ratatoskr_channel_digest_contracts::ChannelDigestRunRequested::COMMAND_TYPE: &'static str
+pub const ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::PATTERN: &'static str
 pub const ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_channel_digest_contracts::ChannelUsername::PATTERN: &'static str
@@ -1096,6 +1125,26 @@ pub fn ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::to_owned(&se
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::borrow(&self) -> &T
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::clone(&self) -> ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::eq(&self, &ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested) -> bool
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::from(T) -> T
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::inline_schema() -> bool
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::into(self) -> U
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::to_owned(&self) -> T
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::validate_for_publish(&self) -> core::result::Result<(), ratatoskr_channel_digest_contracts::ChannelDigestContractError>
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::borrow(&self) -> &T
 pub fn ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::borrow_mut(&mut self) -> &mut T
@@ -1449,6 +1498,11 @@ pub ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Scheduled
 pub ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Scheduled::due_at: ratatoskr_identifiers::timestamp::WireTimestamp
 pub ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Scheduled::occurrence_ref: ratatoskr_channel_digest_contracts::DigestOccurrenceRef
 pub ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Scheduled::schedule_ref: ratatoskr_channel_digest_contracts::DigestScheduleRef
+pub ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::due_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::occurrence_ref: ratatoskr_channel_digest_contracts::DigestOccurrenceRef
+pub ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::previous_due_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::schedule_ref: ratatoskr_channel_digest_contracts::DigestScheduleRef
 pub ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested::channel_username: ratatoskr_channel_digest_contracts::ChannelUsername
 pub ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested::desired_state: ratatoskr_channel_digest_contracts::SubscriptionDesiredState
 pub ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested::extensions: ratatoskr_identifiers::wire::Extensions
@@ -1498,6 +1552,7 @@ pub struct ratatoskr_channel_digest_contracts::ChannelDigestResultId(_)
 pub struct ratatoskr_channel_digest_contracts::ChannelDigestResultRef(_)
 pub struct ratatoskr_channel_digest_contracts::ChannelDigestRunId(_)
 pub struct ratatoskr_channel_digest_contracts::ChannelDigestRunRequested
+pub struct ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested
 pub struct ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId(_)
 pub struct ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested
 pub struct ratatoskr_channel_digest_contracts::ChannelUsername(_)
@@ -1554,6 +1609,9 @@ pub type ratatoskr_channel_digest_contracts::ChannelDigestRunRequested::Owned = 
 pub type ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Error = core::convert::Infallible
 pub type ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::Owned = T
+pub type ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::Error = core::convert::Infallible
+pub type ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::Owned = T
 pub type ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::Err = ratatoskr_channel_digest_contracts::ChannelDigestContractError
 pub type ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::Error = core::convert::Infallible
@@ -1618,6 +1676,7 @@ pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestResultRef::clone_
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestRunId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestRunRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestRunTrigger::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_channel_digest_contracts::ChannelUsername::clone_to_uninit(&self, *mut u8)
