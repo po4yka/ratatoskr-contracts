@@ -109,6 +109,8 @@ root_types! {
         => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
     "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestRunRequested,
+    "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"
+        => ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested,
     "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested,
     "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"
@@ -284,6 +286,10 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested",
         <ratatoskr_channel_digest_contracts::ChannelDigestRunRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested",
+        <ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared.insert(
         "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested",

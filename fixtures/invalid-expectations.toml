@@ -28,6 +28,11 @@ rejected_by    = ["serde"]
 error_contains = 'digest run trigger instant must equal the window end'
 reason         = "Platform trigger authority and the closed-open source window must identify one exact occurrence; schema cannot express the cross-field instant equality."
 
+["commands/channel_digest.schedule.occurrence_requested.v1/invalid/reversed-grid.json"]
+rejected_by    = ["serde"]
+error_contains = 'digest window must have an exclusive end after its start'
+reason         = "A deployment occurrence must move forward from the previous UTC grid point; schema cannot compare the two instants."
+
 ["commands/knowledge.channel_digest_recap.requested.v1/invalid/channels-exceed-sources.json"]
 rejected_by    = ["serde"]
 error_contains = 'digest channel count cannot exceed source count'

@@ -2,7 +2,8 @@
 #![allow(clippy::expect_used, clippy::panic, reason = "test diagnostics")]
 
 use ratatoskr_channel_digest_contracts::{
-    ChannelDigestRunRequested, ChannelDigestSubscriptionSetRequested,
+    ChannelDigestRunRequested, ChannelDigestScheduleOccurrenceRequested,
+    ChannelDigestSubscriptionSetRequested,
 };
 use ratatoskr_event_envelope::CommandPayload;
 
@@ -139,4 +140,32 @@ fn run_command_rejects_trigger_window_contradictions_and_producer_extensions() {
     let preserved: ChannelDigestRunRequested =
         serde_json::from_value(with_selector).expect("consumer preserves additive members");
     assert!(preserved.validate_for_publish().is_err());
+}
+
+#[test]
+fn schedule_occurrence_command_carries_only_global_occurrence_authority() {
+    let raw = serde_json::json!({
+        "schedule_ref": "schedule:018f0000-0000-7000-8000-000000000104",
+        "occurrence_ref": "schedule-occurrence:018f0000-0000-7000-8000-000000000105",
+        "previous_due_at": "2026-08-20T10:00:00Z",
+        "due_at": "2026-08-21T10:00:00Z"
+    });
+    let payload: ChannelDigestScheduleOccurrenceRequested =
+        serde_json::from_value(raw.clone()).expect("valid schedule occurrence command");
+    assert_eq!(
+        ChannelDigestScheduleOccurrenceRequested::COMMAND_TYPE,
+        "channel_digest.schedule.occurrence_requested.v1"
+    );
+    assert_eq!(serde_json::to_value(&payload).expect("serialize"), raw);
+    payload
+        .validate_for_publish()
+        .expect("canonical producer payload");
+
+    let members = serde_json::to_value(payload).expect("serialize");
+    for forbidden in ["owner", "window", "output_language", "post_content"] {
+        assert!(
+            members.get(forbidden).is_none(),
+            "published forbidden member {forbidden}"
+        );
+    }
 }

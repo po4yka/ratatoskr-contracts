@@ -231,6 +231,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested" => {
             render!(ratatoskr_channel_digest_contracts::ChannelDigestRunRequested)
         }
+        "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested" => {
+            render!(ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested)
+        }
         "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested" => {
             render!(ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested)
         }

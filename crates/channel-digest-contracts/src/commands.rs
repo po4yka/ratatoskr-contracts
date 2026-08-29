@@ -5,9 +5,70 @@ use ratatoskr_identifiers::{Extensions, OperationId, TenantRef};
 
 use crate::{
     ChannelDigestContractError, ChannelDigestIdempotencyKey, ChannelDigestRunId,
-    ChannelDigestRunTrigger, ChannelUsername, DigestWindow, OutputLanguage,
-    SubscriptionDesiredState,
+    ChannelDigestRunTrigger, ChannelUsername, DigestOccurrenceRef, DigestScheduleRef, DigestWindow,
+    OutputLanguage, SubscriptionDesiredState,
 };
+use ratatoskr_identifiers::WireTimestamp;
+
+/// Deployment-wide schedule occurrence which the digest service fans out to active owners.
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, schemars::JsonSchema)]
+pub struct ChannelDigestScheduleOccurrenceRequested {
+    /// Platform schedule authority.
+    pub schedule_ref: DigestScheduleRef,
+    /// Replay-safe identity of this due occurrence.
+    pub occurrence_ref: DigestOccurrenceRef,
+    /// Previous schedule grid point, used only as a global fan-out bound.
+    pub previous_due_at: WireTimestamp,
+    /// Current authoritative schedule grid point.
+    pub due_at: WireTimestamp,
+    /// Unknown additive fields preserved by consumers; producers leave this empty.
+    #[serde(flatten)]
+    pub extensions: Extensions,
+}
+
+impl CommandPayload for ChannelDigestScheduleOccurrenceRequested {
+    const COMMAND_TYPE: &'static str = "channel_digest.schedule.occurrence_requested.v1";
+}
+
+impl ChannelDigestScheduleOccurrenceRequested {
+    /// Validates the occurrence interval and refuses producer-authored extensions.
+    ///
+    /// # Errors
+    ///
+    /// Returns the digest-window validation error for an invalid grid interval or
+    /// [`ChannelDigestContractError::ProducerExtensionsNotEmpty`] for additive producer fields.
+    pub fn validate_for_publish(&self) -> Result<(), ChannelDigestContractError> {
+        DigestWindow::new(self.previous_due_at, self.due_at)?;
+        require_empty_extensions(&self.extensions)
+    }
+}
+
+#[derive(serde::Deserialize)]
+struct ChannelDigestScheduleOccurrenceRequestedWire {
+    schedule_ref: DigestScheduleRef,
+    occurrence_ref: DigestOccurrenceRef,
+    previous_due_at: WireTimestamp,
+    due_at: WireTimestamp,
+    #[serde(flatten)]
+    extensions: Extensions,
+}
+
+impl<'de> serde::Deserialize<'de> for ChannelDigestScheduleOccurrenceRequested {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let wire = ChannelDigestScheduleOccurrenceRequestedWire::deserialize(deserializer)?;
+        DigestWindow::new(wire.previous_due_at, wire.due_at).map_err(serde::de::Error::custom)?;
+        Ok(Self {
+            schedule_ref: wire.schedule_ref,
+            occurrence_ref: wire.occurrence_ref,
+            previous_due_at: wire.previous_due_at,
+            due_at: wire.due_at,
+            extensions: wire.extensions,
+        })
+    }
+}
 
 /// Payload of `channel_digest.subscription.set_requested.v1`.
 #[derive(

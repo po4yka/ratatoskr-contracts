@@ -11,7 +11,10 @@ mod error;
 mod recap;
 mod values;
 
-pub use crate::commands::{ChannelDigestRunRequested, ChannelDigestSubscriptionSetRequested};
+pub use crate::commands::{
+    ChannelDigestRunRequested, ChannelDigestScheduleOccurrenceRequested,
+    ChannelDigestSubscriptionSetRequested,
+};
 pub use crate::error::ChannelDigestContractError;
 pub use crate::recap::{
     ChannelDigestAnalysisContract, ChannelDigestAnalysisFamily, ChannelDigestRecapCoverage,

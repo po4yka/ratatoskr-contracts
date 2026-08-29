@@ -36,6 +36,7 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         paths,
         [
             "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested",
+            "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested",
             "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested",
             "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted",
             "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed",
@@ -50,7 +51,7 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         .collect();
     assert_eq!(
         digest_contracts.len(),
-        5,
+        6,
         "one governed entry per payload root"
     );
 
@@ -62,7 +63,9 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         assert!(root.join(&contract.fixtures_dir).join("valid").is_dir());
         assert_eq!(format!("{:?}", declared.privacy), "BoundaryMetadata");
         match contract.id.as_str() {
-            "channel_digest.subscription_set_requested" | "channel_digest.run_requested" => {
+            "channel_digest.subscription_set_requested"
+            | "channel_digest.run_requested"
+            | "channel_digest.schedule_occurrence_requested" => {
                 assert_eq!(contract.producers, ["ratatoskr-platform"]);
                 assert_eq!(contract.consumers, ["ratatoskr-channel-digests"]);
                 assert!(contract.command.is_some());
