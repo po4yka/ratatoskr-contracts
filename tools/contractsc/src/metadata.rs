@@ -260,16 +260,23 @@ impl Metadata {
         toml::from_str(text).map_err(|error| error.to_string())
     }
 
-    /// The contract owning `rust_path`, if any.
+    /// Every contract declaration that publishes `rust_path`, in metadata order.
+    ///
+    /// One canonical wire type may have both a reusable schema identity and one or more event
+    /// schema identities. Each declaration gets its own generated output and fixture family while
+    /// sharing the same Rust serializer and validator.
     #[must_use]
-    pub fn contract_of(&self, rust_path: &str) -> Option<(&Contract, &RootTypeDecl)> {
-        self.contracts.iter().find_map(|contract| {
-            contract
-                .root_types
-                .iter()
-                .find(|declared| declared.rust_path == rust_path)
-                .map(|declared| (contract, declared))
-        })
+    pub fn declarations_of(&self, rust_path: &str) -> Vec<(&Contract, &RootTypeDecl)> {
+        self.contracts
+            .iter()
+            .flat_map(|contract| {
+                contract
+                    .root_types
+                    .iter()
+                    .filter(move |declared| declared.rust_path == rust_path)
+                    .map(move |declared| (contract, declared))
+            })
+            .collect()
     }
 }
 

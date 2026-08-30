@@ -3,6 +3,7 @@
 use std::collections::BTreeSet;
 use std::fmt;
 
+use ratatoskr_event_envelope::EventPayload;
 use ratatoskr_identifiers::{BlobRef, BlockId, ContentDigest, DocumentId, wire_string_newtype};
 
 wire_string_newtype! {
@@ -68,6 +69,10 @@ pub struct Document {
 
     /// Block-addressable evidence that identifies the stored source and extraction strategy.
     pub provenance: Vec<DocumentProvenance>,
+}
+
+impl EventPayload for Document {
+    const EVENT_TYPE: &'static str = "content.document.extracted.v1";
 }
 
 impl Document {

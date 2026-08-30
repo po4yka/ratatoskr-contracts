@@ -275,6 +275,32 @@ privacy        = "user_content"
 
 # ---------------------------------------------------------------------------
 [[contract]]
+id             = "content.document_extracted"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-extractor"
+producers      = ["ratatoskr-extractor"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-document-contracts"
+canonical_path = "crates/document-contracts/src/document.rs"
+fixtures_dir   = "fixtures/events/content.document.extracted.v1"
+summary        = "Fact: Extractor completed one immutable canonical Document IR revision."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_document_contracts::Document"
+output         = "schemas/events/content.document.extracted.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:Document"
+unknown_policy = "reject"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "content.document.extracted.v1"
+payload_type = "ratatoskr_document_contracts::Document"
+
+# ---------------------------------------------------------------------------
+[[contract]]
 id             = "platform.operation_snapshot"
 family         = "platform"
 major_version  = 1

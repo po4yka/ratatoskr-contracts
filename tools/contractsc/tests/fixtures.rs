@@ -64,6 +64,82 @@ fn social_source_analysis_completed_is_registered() {
     );
 }
 
+#[test]
+fn document_extracted_event_is_registered_with_existing_wire_payload() {
+    let rust_path = "ratatoskr_document_contracts::Document";
+    let event_type = "content.document.extracted.v1";
+    let declared = registry::event_payload_types();
+    assert_eq!(
+        declared.get(rust_path),
+        Some(&event_type),
+        "the canonical Document payload must declare the extracted-document event type"
+    );
+
+    let metadata = committed();
+    let contract = metadata
+        .contracts
+        .iter()
+        .find(|contract| contract.id == "content.document_extracted")
+        .expect("the extracted-document event must have contract metadata");
+    assert_eq!(contract.family, "events");
+    assert_eq!(contract.producers, ["ratatoskr-extractor"]);
+    assert_eq!(contract.consumers, ["ratatoskr-knowledge"]);
+    assert_eq!(
+        contract.fixtures_dir,
+        "fixtures/events/content.document.extracted.v1"
+    );
+    let root_type = contract
+        .root_types
+        .first()
+        .expect("the event contract declares its direct Document payload");
+    assert_eq!(root_type.rust_path, rust_path);
+    assert_eq!(
+        root_type.output,
+        "schemas/events/content.document.extracted.v1.schema.json"
+    );
+    let event = contract
+        .event
+        .as_ref()
+        .expect("the contract declares its event registration");
+    assert_eq!(event.event_type, event_type);
+    assert_eq!(event.payload_type, rust_path);
+
+    let existing: serde_json::Value = serde_json::from_str(include_str!(
+        "../../../fixtures/content/document/valid/two-blocks.json"
+    ))
+    .expect("the existing Document fixture is JSON");
+    let compatible_path = repo_root().join(
+        "fixtures/events/content.document.extracted.v1/compat/old-consumer-new-producer/existing-wire-document.json",
+    );
+    let compatible_text = std::fs::read_to_string(compatible_path)
+        .expect("the event compatibility fixture is committed");
+    let compatible: serde_json::Value =
+        serde_json::from_str(&compatible_text).expect("the event compatibility fixture is JSON");
+    assert_eq!(
+        compatible, existing,
+        "event registration must not add a payload wrapper or alter Document fields"
+    );
+
+    let schema_path = Path::new("schemas/events/content.document.extracted.v1.schema.json");
+    assert!(
+        generated().contains_key(schema_path),
+        "the event schema must be generated from the direct Document payload"
+    );
+
+    let invalid_path = repo_root()
+        .join("fixtures/events/content.document.extracted.v1/invalid/unknown-document-field.json");
+    let invalid_text =
+        std::fs::read_to_string(invalid_path).expect("the invalid event fixture is committed");
+    let invalid: serde_json::Value =
+        serde_json::from_str(&invalid_text).expect("the invalid event payload fixture is JSON");
+    let error = roundtrip(rust_path, &invalid)
+        .expect_err("an unknown Document field must be refused by the typed event payload");
+    assert!(
+        error.contains("unknown field"),
+        "the refusal must name the strict payload violation: {error}"
+    );
+}
+
 /// Every generated artifact, in memory. JSON-family only: the TypeScript family is not a JSON
 /// Schema document and is validated by the determinism suite instead.
 fn generated() -> BTreeMap<PathBuf, String> {

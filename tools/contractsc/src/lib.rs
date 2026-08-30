@@ -124,45 +124,46 @@ pub fn generate(
     let mut generated = BTreeMap::new();
     for root in registry::root_types() {
         // A root the metadata does not declare is reported by rule R2; it is not this function's
-        // job to guess an `$id` for it.
-        let Some((contract, declared)) = metadata.contract_of(root.rust_path) else {
-            continue;
-        };
+        // job to guess an `$id` for it. A root may deliberately have multiple declarations when
+        // the same direct wire payload is published both as a reusable schema and as an event.
+        for (contract, declared) in metadata.declarations_of(root.rust_path) {
+            let mut generator = render::generator();
+            let mut schema = (root.schema)(&mut generator);
+            normalize::sort_required(&mut schema);
+            normalize::assert_no_floats(&schema)?;
+            schema.insert("$id".to_owned(), serde_json::json!(declared.schema_id));
+            schema.insert("title".to_owned(), serde_json::json!(root.short_name()));
 
-        let mut generator = render::generator();
-        let mut schema = (root.schema)(&mut generator);
-        normalize::sort_required(&mut schema);
-        normalize::assert_no_floats(&schema)?;
-        schema.insert("$id".to_owned(), serde_json::json!(declared.schema_id));
-        schema.insert("title".to_owned(), serde_json::json!(root.short_name()));
+            // Steps 5–7 of §6.4 *are* the digest definition: the hash is taken over the fully
+            // rendered schema with the provenance member absent, so it is a pure function of
+            // contract shape and a `generator_version` bump moves no digest.
+            let provenance_free_body = render::render(&schema);
+            let digest = provenance::source_digest(&provenance_free_body);
+            schema.insert(
+                provenance::PROVENANCE_KEY.to_owned(),
+                provenance::block(
+                    root.rust_path,
+                    &contract.id,
+                    contract.major_version,
+                    generator_version,
+                    &digest,
+                ),
+            );
 
-        // Steps 5–7 of §6.4 *are* the digest definition: the hash is taken over the fully
-        // rendered schema with the provenance member absent, so it is a pure function of contract
-        // shape and a `generator_version` bump moves no digest.
-        let provenance_free_body = render::render(&schema);
-        let digest = provenance::source_digest(&provenance_free_body);
-        schema.insert(
-            provenance::PROVENANCE_KEY.to_owned(),
-            provenance::block(
-                root.rust_path,
-                &contract.id,
-                contract.major_version,
-                generator_version,
-                &digest,
-            ),
-        );
+            generated.insert(PathBuf::from(&declared.output), render::render(&schema));
 
-        generated.insert(PathBuf::from(&declared.output), render::render(&schema));
-
-        // The TypeScript family mirrors the JSON Schema family one-to-one (design D1): the path
-        // is derived mechanically from the same `output` field, and the emitter consumes the
-        // very value the JSON renderer serialized — provenance block included, so the `.ts`
-        // header can name the same contract identity (D2, D5).
-        let Some(typescript_output) = typescript::typescript_output_path(&declared.output) else {
-            continue;
-        };
-        let typescript_body = typescript::emit_typescript(&declared.schema_id, schema.as_value())?;
-        generated.insert(PathBuf::from(typescript_output), typescript_body);
+            // The TypeScript family mirrors the JSON Schema family one-to-one (design D1): the
+            // path is derived mechanically from the same `output` field, and the emitter consumes
+            // the very value the JSON renderer serialized — provenance block included, so the
+            // `.ts` header can name the same contract identity (D2, D5).
+            let Some(typescript_output) = typescript::typescript_output_path(&declared.output)
+            else {
+                continue;
+            };
+            let typescript_body =
+                typescript::emit_typescript(&declared.schema_id, schema.as_value())?;
+            generated.insert(PathBuf::from(typescript_output), typescript_body);
+        }
     }
     Ok(generated)
 }

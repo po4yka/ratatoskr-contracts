@@ -247,6 +247,15 @@ error_contains = 'unknown variant'
 reason         = "DocumentBlock major 1 is a closed two-variant set: readers reject a kind discriminant they do not know at both layers instead of preserving it. ADR-0010's procedure rests on this loud-rejection stance - a producer cannot emit a new kind ahead of consumer adoption, so every kind proposal must land in this repository first."
 
 # ---------------------------------------------------------------------------
+# events/content.document.extracted.v1
+# ---------------------------------------------------------------------------
+
+["events/content.document.extracted.v1/invalid/unknown-document-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `analysis_hint`'
+reason         = "The extracted-document event payload is the strict canonical Document IR directly; producer-authored analysis hints or wrappers are not part of the v1 wire fact."
+
+# ---------------------------------------------------------------------------
 # platform/operation-snapshot
 # ---------------------------------------------------------------------------
 

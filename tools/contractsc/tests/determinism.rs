@@ -50,9 +50,9 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        110,
-        "fifty-five registered roots produce fifty-five JSON Schema artifacts plus \
-         fifty-five TypeScript counterparts; update this pin when the registry changes"
+        112,
+        "fifty-six schema declarations produce fifty-six JSON Schema artifacts plus \
+         fifty-six TypeScript counterparts; update this pin when declarations change"
     );
 }
 
@@ -385,7 +385,8 @@ fn check_reports_orphaned_typescript_file() {
     assert_eq!(report.exit_code(), 1, "the gate must fail");
 }
 
-/// TS-1. After `generate()` every root type has exactly one `.ts` under `generated/typescript/`
+/// TS-1. After `generate()` every schema declaration has exactly one `.ts` under
+/// `generated/typescript/`
 /// mirroring its schema path one-to-one (D1), exporting the final schema-id segment as the root
 /// type followed by every `$defs` member in sorted order (D4), with no imports and no `any`.
 #[test]
@@ -394,8 +395,8 @@ fn generated_typescript_artifacts_mirror_the_schema_tree() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        55,
-        "fifty-five roots must yield fifty-five TypeScript files"
+        56,
+        "fifty-six schema declarations must yield fifty-six TypeScript files"
     );
 
     for (path, body) in &generated {
@@ -469,8 +470,8 @@ fn generated_typescript_is_byte_deterministic() {
     let first_typescript = typescript_subset(&first);
     assert_eq!(
         first_typescript.len(),
-        55,
-        "fifty-five roots must yield fifty-five TypeScript files"
+        56,
+        "fifty-six schema declarations must yield fifty-six TypeScript files"
     );
     assert_eq!(first_typescript, typescript_subset(&second));
 }
@@ -485,8 +486,8 @@ fn generated_typescript_contains_no_timestamps() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        55,
-        "fifty-five roots must yield fifty-five TypeScript files"
+        56,
+        "fifty-six schema declarations must yield fifty-six TypeScript files"
     );
     for (path, body) in &typescript {
         if let Some(position) = iso_date_positions(&strip_block_comments(body)).first() {

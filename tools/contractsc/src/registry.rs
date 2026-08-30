@@ -229,6 +229,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
         <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
+        "ratatoskr_document_contracts::Document",
+        <ratatoskr_document_contracts::Document as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
         "ratatoskr_github_contracts::RepositoryAnalysisCompleted",
         <ratatoskr_github_contracts::RepositoryAnalysisCompleted as EventPayload>::EVENT_TYPE,
     );

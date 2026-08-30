@@ -1443,6 +1443,7 @@ dependencies = [
 name = "ratatoskr-document-contracts"
 version = "0.1.0"
 dependencies = [
+ "ratatoskr-event-envelope",
  "ratatoskr-identifiers",
  "regex",
  "schemars",

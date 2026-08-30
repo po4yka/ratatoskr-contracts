@@ -109,6 +109,7 @@ impl ratatoskr_document_contracts::Document
 impl ratatoskr_document_contracts::DocumentAddress
 impl ratatoskr_document_contracts::ExtractionStrategy
 impl ratatoskr_document_contracts::LanguageTag
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_document_contracts::Document
 impl schemars::JsonSchema for ratatoskr_document_contracts::Document
 impl schemars::JsonSchema for ratatoskr_document_contracts::DocumentAddress
 impl schemars::JsonSchema for ratatoskr_document_contracts::DocumentBlock
@@ -207,6 +208,7 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::Docum
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::DocumentProvenance where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::ExtractionStrategy where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_document_contracts::LanguageTag where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_document_contracts::Document::EVENT_TYPE: &'static str
 pub const ratatoskr_document_contracts::DocumentAddress::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_document_contracts::DocumentAddress::MAX_LEN: usize
 pub const ratatoskr_document_contracts::DocumentAddress::PATTERN: &'static str
