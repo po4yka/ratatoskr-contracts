@@ -71,5 +71,6 @@ fn published_pattern_matches_every_canonical_rendering() {
 fn wraps_and_unwraps_a_jiff_instant() {
     let parsed = WireTimestamp::parse("2026-08-17T10:00:00Z").expect("canonical");
     assert_eq!(WireTimestamp::from_jiff(parsed.as_jiff()), parsed);
-    assert!(WireTimestamp::now().as_jiff() >= parsed.as_jiff());
+    // `parsed` is a fixed past instant, so this can never fail from calendar drift.
+    assert!(WireTimestamp::now().as_jiff() >= parsed.as_jiff()); // wall-clock: exercises now()
 }
