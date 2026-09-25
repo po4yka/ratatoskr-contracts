@@ -53,9 +53,6 @@ Gate, run by CI and before every commit:
 
 ```bash
 cargo fetch --locked
-cargo deny check                             # RustSec advisories, licences, duplicate versions,
-                                             #   and `unknown-git = "deny"`, which is what keeps this
-                                             #   graph publishable at milestone 10
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 git ls-files -z "*.rs" | xargs -0 -r wc -l | awk '$2 != "total" && $1 > 850 { print; bad = 1 } END { exit bad }'
@@ -63,6 +60,14 @@ cargo contracts check                        # read-only: schema validation + dr
                                              #   + field lint + fixtures + secret scan; one exit code
 cargo test --workspace --locked
 ```
+
+`cargo deny check` is not in this list: it runs in its own `deny` job in `.github/workflows/ci.yml`,
+separate from the gate, so a new RustSec advisory cannot hide a clippy or test failure behind it. It
+reads RustSec advisories, the licence set, duplicate versions and the source policy — nothing else in
+that job looks at any of them — and `[sources] unknown-git = "deny"` is what keeps this graph
+publishable: cargo refuses to publish a crate with a git dependency, so without this the failure would
+first appear at milestone 10. Run it locally with `cargo deny check` before a commit the same as the
+gate list above.
 
 **The gate does not run `cargo contracts generate`.** It used to, last, followed by `git diff
 --exit-code`, as a belt-and-braces proof of the write path. Both were removed because `cargo contracts
