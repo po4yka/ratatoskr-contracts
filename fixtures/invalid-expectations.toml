@@ -775,3 +775,8 @@ reason         = "A command that carries no policy asks Vault to apply nothing."
 rejected_by    = ["serde"]
 error_contains = 'policy_version must be greater than zero'
 reason         = "The embedded policy keeps its own invariant: versions are monotonic and start above zero. The bound lives in the Rust type alone, so JSON Schema accepts what it cannot express (the ADR-0001 lower-bound rule)."
+
+["commands/social.capture.requested.v1/invalid/captured-at-trailing-zero-fraction.json"]
+rejected_by    = ["serde"]
+error_contains = 'not in canonical form'
+reason         = "The extension wire carries one spelling per instant: a fraction never ends in 0, so .120Z is .12Z. Canonicality is a Rust-layer rule the published pattern permits (ADR-0001 lower-bound rule); this pins the behaviour the browser extension must meet."
