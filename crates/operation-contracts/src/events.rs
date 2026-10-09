@@ -4,6 +4,7 @@ use ratatoskr_error_contracts::{ErrorEnvelope, WarningEnvelope};
 use ratatoskr_event_envelope::EventPayload;
 use ratatoskr_identifiers::{Extensions, OperationId};
 
+use crate::error::OperationContractError;
 use crate::kind::OperationStage;
 use crate::percent::ProgressPercent;
 use crate::result_ref::OperationResultRef;
@@ -14,6 +15,11 @@ use crate::status::OperationStatus;
 ///
 /// A service reports only the operation progress facts it produced. Platform combines the report
 /// with the request facts it owns before clients observe an [`OperationSnapshot`].
+///
+/// A producer MUST NOT emit a report that breaks the status invariants, which mirror
+/// [`OperationSnapshot`] invariants I2 to I4: `failed` requires `error`, `succeeded` forbids
+/// `error`, and `partially_succeeded` requires at least one entry in `warnings` or an `error`.
+/// [`OperationReported::validate`] checks them and Platform rejects a report that fails.
 ///
 /// Snapshot-only request facts are absent on purpose: `kind` is chosen by the component that
 /// accepted the request, `accepted_at` is that component's clock, and `correlation_id` and
@@ -50,6 +56,34 @@ pub struct OperationReported {
     /// Unknown-but-preserved additive fields.
     #[serde(flatten)]
     pub extensions: Extensions,
+}
+
+impl OperationReported {
+    /// Re-checks the status invariants a producer owes before it emits a report.
+    ///
+    /// # Errors
+    ///
+    /// [`OperationContractError::FailedWithoutError`] for I2,
+    /// [`OperationContractError::SucceededWithError`] for I3,
+    /// [`OperationContractError::PartialWithoutDiagnostic`] for I4.
+    pub fn validate(&self) -> Result<(), OperationContractError> {
+        // I2
+        if self.status == OperationStatus::Failed && self.error.is_none() {
+            return Err(OperationContractError::FailedWithoutError);
+        }
+        // I3
+        if self.status == OperationStatus::Succeeded && self.error.is_some() {
+            return Err(OperationContractError::SucceededWithError { count: 1 });
+        }
+        // I4
+        if self.status == OperationStatus::PartiallySucceeded
+            && self.warnings.is_empty()
+            && self.error.is_none()
+        {
+            return Err(OperationContractError::PartialWithoutDiagnostic);
+        }
+        Ok(())
+    }
 }
 
 impl EventPayload for OperationReported {

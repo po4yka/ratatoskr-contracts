@@ -1,7 +1,7 @@
 ## 1. Operation report validation (S06 D3)
 
-- [ ] 1.1 Add `crates/operation-contracts/tests/reported.rs` tests `a_partially_succeeded_report_without_warning_or_error_fails_validation`, `a_failed_report_without_error_fails_validation`, `a_succeeded_report_with_error_fails_validation` and `a_partial_report_with_one_warning_validates` against a signature-only `validate` that returns `Ok(())`; the three rejection tests MUST fail on their assertions.
-- [ ] 1.2 Implement `OperationReported::validate` for invariants I2, I3 and I4 and document them on the type; the four tests pass.
+- [x] 1.1 Add `crates/operation-contracts/tests/reported.rs` tests `a_partially_succeeded_report_without_warning_or_error_fails_validation`, `a_failed_report_without_error_fails_validation`, `a_succeeded_report_with_error_fails_validation` and `a_partial_report_with_one_warning_validates` against a signature-only `validate` that returns `Ok(())`; the three rejection tests MUST fail on their assertions.
+- [x] 1.2 Implement `OperationReported::validate` for invariants I2, I3 and I4 and document them on the type; the four tests pass.
 
 ## 2. AI-archive receipt binding (S06 D1, D2, D3)
 

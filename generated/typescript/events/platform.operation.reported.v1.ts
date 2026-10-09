@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:3d49465763b2670dcc9727dd353c5ddccfffac8d45f6f411855653b04b90cdae
+ * source_digest: sha256:17411e4f39caa74dab8ccaabe51d339d528a71729b2ad2ad2ccf43050161955b
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -15,6 +15,11 @@
  *
  * A service reports only the operation progress facts it produced. Platform combines the report
  * with the request facts it owns before clients observe an [`OperationSnapshot`].
+ *
+ * A producer MUST NOT emit a report that breaks the status invariants, which mirror
+ * [`OperationSnapshot`] invariants I2 to I4: `failed` requires `error`, `succeeded` forbids
+ * `error`, and `partially_succeeded` requires at least one entry in `warnings` or an `error`.
+ * [`OperationReported::validate`] checks them and Platform rejects a report that fails.
  *
  * Snapshot-only request facts are absent on purpose: `kind` is chosen by the component that
  * accepted the request, `accepted_at` is that component's clock, and `correlation_id` and

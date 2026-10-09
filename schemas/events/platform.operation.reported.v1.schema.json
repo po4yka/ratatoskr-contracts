@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:events:v1:OperationReported",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OperationReported",
-  "description": "Payload of `platform.operation.reported.v1`.\n\nA service reports only the operation progress facts it produced. Platform combines the report\nwith the request facts it owns before clients observe an [`OperationSnapshot`].\n\nSnapshot-only request facts are absent on purpose: `kind` is chosen by the component that\naccepted the request, `accepted_at` is that component's clock, and `correlation_id` and\n`tenant_id` belong to the accepted request. Requiring them here would make every producer copy\nPlatform's operation record.",
+  "description": "Payload of `platform.operation.reported.v1`.\n\nA service reports only the operation progress facts it produced. Platform combines the report\nwith the request facts it owns before clients observe an [`OperationSnapshot`].\n\nA producer MUST NOT emit a report that breaks the status invariants, which mirror\n[`OperationSnapshot`] invariants I2 to I4: `failed` requires `error`, `succeeded` forbids\n`error`, and `partially_succeeded` requires at least one entry in `warnings` or an `error`.\n[`OperationReported::validate`] checks them and Platform rejects a report that fails.\n\nSnapshot-only request facts are absent on purpose: `kind` is chosen by the component that\naccepted the request, `accepted_at` is that component's clock, and `correlation_id` and\n`tenant_id` belong to the accepted request. Requiring them here would make every producer copy\nPlatform's operation record.",
   "type": "object",
   "properties": {
     "error": {
@@ -74,7 +74,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:ac1b1de624931176e9f52d395b8ae267b8a746d4e83d27d512ea635733380150",
+    "source_digest": "sha256:36083ae02f04af6e860827030860145a4697d616e10563ed97e99e4c01bd81bf",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
