@@ -8,6 +8,10 @@ use ratatoskr_identifiers::{Extensions, OperationId};
 /// The enclosing command envelope carries the owner scope, correlation, and
 /// delivery identity. This payload carries only the durable operation identity
 /// an owner needs to make at-least-once delivery safe.
+///
+/// Delivery is at least once, so an owner MUST answer a redelivery of the same `operation_id`
+/// with the identical recorded outcome (see [`AccountErasureAcknowledged`]) and MUST NOT
+/// recompute it from whatever state survives the first erasure.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AccountErasureRequested {
     /// Durable Platform operation that coordinates this account erasure.
@@ -50,6 +54,12 @@ pub enum AccountErasureOutcome {
 /// The enclosing event envelope carries the owner scope and at-least-once event
 /// identity. Platform aggregates these reports and alone determines whether the
 /// whole account erasure is complete.
+///
+/// An owner records its outcome durably, keyed by `operation_id`, in the same transaction that
+/// deletes the data. When the command is delivered again for the same `operation_id`, the owner
+/// MUST answer with the identical recorded outcome and MUST NOT recompute it from surviving
+/// state: after the first erasure there is nothing left to inspect, and a recomputed answer
+/// could differ from the one Platform already holds.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AccountErasureAcknowledged {
     /// Durable Platform operation this terminal report belongs to.

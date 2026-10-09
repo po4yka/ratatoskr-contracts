@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:events:v1:AiArchiveTombstone",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AiArchiveTombstone",
-  "description": "Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.\n\nThe fact is emitted only from provider deletion, compliance deletion, an\napproved reconciliation policy, or an authenticated owner privacy request.\nIt never represents an object merely missing from one snapshot.",
+  "description": "Payload of `ai_archive.subject.tombstoned.v1`: authoritative deletion evidence.\n\nThe fact is emitted only from provider deletion, compliance deletion, an\napproved reconciliation policy, or an authenticated owner privacy request.\nIt never represents an object merely missing from one snapshot.\n\n`owner` is the Platform tenant the data belongs to, `user:<platform user uuid>`, which is\nalso the tenant `ratatoskr-knowledge` indexes under. It is never an identity local to the\narchive service. `evidence_ref` names a producer-owned blob that carries no timestamp and no\ncontent, so repeating a deletion request yields the same reference. `subject` of kind\n`archive` means the whole `ai_archive_id`; the other kinds name one conversation, project or\nArtifact inside it. The publisher stores the complete event envelope and relays it unchanged,\nso a retry never mints a second payload.",
   "type": "object",
   "properties": {
     "ai_archive_id": {
@@ -63,7 +63,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:394e7ac32041e762ec430ea87e444bdadc6c02f51d0f6d44cbbc150436c54191",
+    "source_digest": "sha256:264677925a096557419fc53ff7a7678e573ecabe50e6d7ec83b7acda8f22c5a2",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",

@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:952f8cf4e0323217e37ea7b7133650e5d264ca1e9282af2ce98fbbf7fe00c8f2
+ * source_digest: sha256:8579da36508b16ab12002e748fbddec5acf538b83feb9e4bd233a9fb4a7f74cf
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -16,6 +16,12 @@
  * The enclosing event envelope carries the owner scope and at-least-once event
  * identity. Platform aggregates these reports and alone determines whether the
  * whole account erasure is complete.
+ *
+ * An owner records its outcome durably, keyed by `operation_id`, in the same transaction that
+ * deletes the data. When the command is delivered again for the same `operation_id`, the owner
+ * MUST answer with the identical recorded outcome and MUST NOT recompute it from surviving
+ * state: after the first erasure there is nothing left to inspect, and a recomputed answer
+ * could differ from the one Platform already holds.
  */
 export interface AccountErasureAcknowledged {
  /**

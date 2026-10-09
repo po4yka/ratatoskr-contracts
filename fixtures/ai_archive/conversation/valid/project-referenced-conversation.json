@@ -68,7 +68,7 @@
   ],
   "content_digest": {
     "algorithm": "sha256",
-    "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    "hex": "30556096d50fa3e26bdf6bee5bf811c9e21c8d9a8e7d14c377714d992f0757c6"
   },
   "parser_name": "chatgpt_export",
   "parser_version": "2026.08.1"

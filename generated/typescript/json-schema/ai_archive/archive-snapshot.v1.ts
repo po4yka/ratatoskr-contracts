@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:b834c7155df828c9f3f2f53a0566ec3861b68c69847e598837ce993554140b8e
+ * source_digest: sha256:89be23ba6a9bfdacbb621b47ed9bd0c85dec9c33eff8c94247e0d8cf3ab7e530
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -241,8 +241,9 @@ export interface AiConversation {
   */
  ai_conversation_id: AiConversationId;
  /**
-  * Digest of the normalized content computed by the producer over the canonical JSON of
-  * `messages`. Consumers treat a mismatch on recomputation as corruption, not change.
+  * SHA-256 of the canonical JSON of `messages`, computed by the producer with
+  * [`AiConversation::compute_content_digest`] and nowhere else. Consumers treat a mismatch
+  * on recomputation ([`AiConversation::verify_content_digest`]) as corruption, not change.
   */
  content_digest: ContentDigest;
  /**

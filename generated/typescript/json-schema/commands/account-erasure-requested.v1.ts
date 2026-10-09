@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:e551d54ec47ac7f912d5962105f4f7a0506d589aa2c3d5c2f5f6e71171167977
+ * source_digest: sha256:e1727fdef7b107562525060e1b94b40b2699b0d14e09df0be6eaec706bfe34c9
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -16,6 +16,10 @@
  * The enclosing command envelope carries the owner scope, correlation, and
  * delivery identity. This payload carries only the durable operation identity
  * an owner needs to make at-least-once delivery safe.
+ *
+ * Delivery is at least once, so an owner MUST answer a redelivery of the same `operation_id`
+ * with the identical recorded outcome (see [`AccountErasureAcknowledged`]) and MUST NOT
+ * recompute it from whatever state survives the first erasure.
  */
 export interface AccountErasureRequested {
  /**

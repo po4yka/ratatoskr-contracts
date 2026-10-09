@@ -1,0 +1,19 @@
+{
+  "ai_archive_id": "018f0000-0000-7000-8000-000000000412",
+  "provider": "claude",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": {
+    "subject_kind": "archive"
+  },
+  "reason": "user_requested",
+  "evidence_ref": {
+    "owner_service": "ratatoskr-claude",
+    "digest": {
+      "algorithm": "sha256",
+      "hex": "663b7ccb7312f86b8d2d62fe8d0bc22407ae3950cbc944429d99b9f2f6345379"
+    },
+    "media_type": "application/json",
+    "length_bytes": 98
+  },
+  "observed_at": "2026-08-27T07:30:00Z"
+}

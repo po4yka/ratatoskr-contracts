@@ -37,4 +37,13 @@ pub enum AiArchiveContractError {
     /// beside it.
     #[error("project and import provenance disagree")]
     ProjectProvenanceMismatch,
+    /// A conversation's `content_digest` is not the SHA-256 of the canonical JSON of its
+    /// current `messages`, so the content changed after the digest was computed or the digest
+    /// was computed by a divergent implementation.
+    #[error("conversation content_digest does not match its messages")]
+    ContentDigestMismatch,
+    /// The messages of a conversation could not be encoded as canonical JSON, so no digest can
+    /// be computed for them.
+    #[error("conversation messages could not be canonically encoded")]
+    ContentDigestEncoding(#[source] serde_json::Error),
 }

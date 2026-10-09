@@ -10,9 +10,9 @@
 
 ## 3. Conversation digest, tombstone and erasure documentation (S07, S12)
 
-- [ ] 3.1 Add `crates/ai-archive-contracts/tests/graph_nodes.rs::conversation_digest_is_sha256_of_canonical_messages_json` against stubs that return `Ok(())`; it MUST fail because an edited message is not detected.
-- [ ] 3.2 Implement `compute_content_digest`, `verify_content_digest` and `ContentDigestMismatch`, call them from the added and updated validators and correct stale fixture digests; the test passes.
-- [ ] 3.3 Document `AiArchiveTombstone`, `AccountErasureRequested` and `AccountErasureAcknowledged` and add the `user-requested-archive.json` fixture. This cannot start from a failing test (documentation and a fixture); `cargo contracts check` reports drift until `cargo contracts generate` runs, which is its red and green.
+- [x] 3.1 Add `crates/ai-archive-contracts/tests/graph_nodes.rs::conversation_digest_is_sha256_of_canonical_messages_json` against stubs that return `Ok(())`; it MUST fail because an edited message is not detected.
+- [x] 3.2 Implement `compute_content_digest`, `verify_content_digest` and `ContentDigestMismatch`, call them from the added and updated validators and correct stale fixture digests; the test passes.
+- [x] 3.3 Document `AiArchiveTombstone`, `AccountErasureRequested` and `AccountErasureAcknowledged` and add the `user-requested-archive.json` fixture. This cannot start from a failing test (documentation and a fixture); `cargo contracts check` reports drift until `cargo contracts generate` runs, which is its red and green.
 
 ## 4. Channel digest manifest (S08)
 

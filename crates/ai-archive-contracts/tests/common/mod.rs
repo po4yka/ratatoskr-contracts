@@ -112,6 +112,7 @@ pub(crate) fn parser_version(raw: &str) -> ParserVersion {
 
 /// A one-message conversation with every optional member omitted.
 pub(crate) fn minimal_conversation() -> AiConversation {
+    let messages = vec![minimal_message()];
     AiConversation {
         ai_conversation_id: conversation_id(),
         provider: provider("chatgpt"),
@@ -121,8 +122,9 @@ pub(crate) fn minimal_conversation() -> AiConversation {
         title: None,
         provider_created_at: None,
         provider_updated_at: None,
-        messages: vec![minimal_message()],
-        content_digest: digest(),
+        content_digest: AiConversation::compute_content_digest(&messages)
+            .expect("the minimal messages encode canonically"),
+        messages,
         parser_name: parser_name("chatgpt_export"),
         parser_version: parser_version("2026.08.1"),
         warnings: Vec::new(),

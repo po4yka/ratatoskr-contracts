@@ -11,9 +11,14 @@
 mod common;
 
 use ratatoskr_ai_archive_contracts::{
-    AiAssetKind, AiAuthorRole, AiContentPart, AiConversation, AiMessage, AiModelName, AiProject,
+    AiArchiveContractError, AiArchiveProvenance, AiAssetKind, AiAuthorRole, AiContentPart,
+    AiConversation, AiConversationAdded, AiConversationUpdated, AiMessage, AiModelName, AiProject,
 };
-use ratatoskr_identifiers::{AiProjectId, EntityLocalId, Extensions, TenantRef, WireTimestamp};
+use ratatoskr_identifiers::{
+    AiProjectId, DigestAlgorithm, EntityLocalId, Extensions, TenantRef, WireTimestamp,
+    canonical_json,
+};
+use sha2::{Digest as _, Sha256};
 
 /// A project carrying every field round-trips; optional members absent serialize as absent.
 #[test]
@@ -253,4 +258,88 @@ fn asset_kinds_stay_open() {
         "whiteboard_v9"
     );
     assert!(AiAssetKind::parse("Canvas").is_err());
+}
+
+/// The content digest has one implementation: SHA-256 over the canonical JSON of the messages
+/// array. An edited message is detected, and the added and updated events refuse it.
+#[test]
+fn conversation_digest_is_sha256_of_canonical_messages_json() {
+    let path = concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../fixtures/ai_archive/conversation/valid/chatgpt-branched-conversation.json"
+    );
+    let raw = std::fs::read_to_string(path).expect("the conversation fixture exists");
+    let conversation: AiConversation = serde_json::from_str(&raw).expect("the fixture parses");
+
+    // The rule documented on the field, recomputed independently of the implementation.
+    let canonical = canonical_json(&conversation.messages).expect("messages serialize");
+    let expected = hex::encode(Sha256::digest(canonical.as_bytes()));
+    let computed = AiConversation::compute_content_digest(&conversation.messages)
+        .expect("the fixture messages encode canonically");
+    assert_eq!(computed.algorithm, DigestAlgorithm::Sha256);
+    assert_eq!(computed.hex.as_str(), expected);
+    assert_eq!(
+        computed, conversation.content_digest,
+        "the fixture carries the computed digest"
+    );
+    conversation
+        .verify_content_digest()
+        .expect("an untampered conversation verifies");
+    assert_ne!(
+        AiConversation::compute_content_digest(&[]).expect("an empty array encodes"),
+        computed,
+        "the digest depends on the messages"
+    );
+
+    // Edit one message without recomputing the digest.
+    let mut tampered = conversation.clone();
+    tampered.messages[0].author_role = AiAuthorRole::System;
+    assert!(
+        matches!(
+            tampered.verify_content_digest(),
+            Err(AiArchiveContractError::ContentDigestMismatch)
+        ),
+        "an edited message must be detected"
+    );
+
+    let provenance = AiArchiveProvenance {
+        ai_archive_id: common::archive_id(),
+        provider: conversation.provider.clone(),
+        owner: conversation.owner,
+        source_export: common::blob_ref("application/zip"),
+        imported_at: common::instant("2026-08-02T10:10:00Z"),
+        parser_name: conversation.parser_name.clone(),
+        parser_version: conversation.parser_version.clone(),
+        extensions: Extensions::new(),
+    };
+    let added = |conversation: AiConversation| AiConversationAdded {
+        import_provenance: provenance.clone(),
+        conversation,
+        extensions: Extensions::new(),
+    };
+    let updated = |conversation: AiConversation| AiConversationUpdated {
+        import_provenance: provenance.clone(),
+        conversation,
+        extensions: Extensions::new(),
+    };
+    added(conversation.clone())
+        .validate()
+        .expect("an untampered added event validates");
+    updated(conversation)
+        .validate()
+        .expect("an untampered updated event validates");
+    assert!(
+        matches!(
+            added(tampered.clone()).validate(),
+            Err(AiArchiveContractError::ContentDigestMismatch)
+        ),
+        "the added event must reject an edited conversation"
+    );
+    assert!(
+        matches!(
+            updated(tampered).validate(),
+            Err(AiArchiveContractError::ContentDigestMismatch)
+        ),
+        "the updated event must reject an edited conversation"
+    );
 }

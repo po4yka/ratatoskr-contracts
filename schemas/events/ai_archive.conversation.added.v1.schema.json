@@ -27,7 +27,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:7a265c426065811d9a624cef7427d8518271c7633ee4aba3920f7173a3570c71",
+    "source_digest": "sha256:cf97d597c2200004eb8570c2eba502d772e7e36c499ea744481927aa3e00a2a8",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",
@@ -350,7 +350,7 @@
           "$ref": "#/$defs/AiConversationId"
         },
         "content_digest": {
-          "description": "Digest of the normalized content computed by the producer over the canonical JSON of\n`messages`. Consumers treat a mismatch on recomputation as corruption, not change.",
+          "description": "SHA-256 of the canonical JSON of `messages`, computed by the producer with\n[`AiConversation::compute_content_digest`] and nowhere else. Consumers treat a mismatch\non recomputation ([`AiConversation::verify_content_digest`]) as corruption, not change.",
           "$ref": "#/$defs/ContentDigest"
         },
         "external_conversation_id": {

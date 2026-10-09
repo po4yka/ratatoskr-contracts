@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:events:v1:AccountErasureAcknowledged",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AccountErasureAcknowledged",
-  "description": "An owner's terminal report for one account-erasure operation.\n\nThe enclosing event envelope carries the owner scope and at-least-once event\nidentity. Platform aggregates these reports and alone determines whether the\nwhole account erasure is complete.",
+  "description": "An owner's terminal report for one account-erasure operation.\n\nThe enclosing event envelope carries the owner scope and at-least-once event\nidentity. Platform aggregates these reports and alone determines whether the\nwhole account erasure is complete.\n\nAn owner records its outcome durably, keyed by `operation_id`, in the same transaction that\ndeletes the data. When the command is delivered again for the same `operation_id`, the owner\nMUST answer with the identical recorded outcome and MUST NOT recompute it from surviving\nstate: after the first erasure there is nothing left to inspect, and a recomputed answer\ncould differ from the one Platform already holds.",
   "type": "object",
   "properties": {
     "operation_id": {
@@ -27,7 +27,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:d4ff5149cdad5fc7a66c35b0f35f204811c818d402983a45b01d2fc3b0b36455",
+    "source_digest": "sha256:dd98b1d7c02e048bc0ae4b23564e684cf336149faf0c29002bd951f9eec6ec1f",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",

@@ -2,7 +2,7 @@
   "$id": "urn:ratatoskr:contracts:commands:v1:AccountErasureRequested",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AccountErasureRequested",
-  "description": "Platform's request for one owner to erase its Ratatoskr-held account data.\n\nThe enclosing command envelope carries the owner scope, correlation, and\ndelivery identity. This payload carries only the durable operation identity\nan owner needs to make at-least-once delivery safe.",
+  "description": "Platform's request for one owner to erase its Ratatoskr-held account data.\n\nThe enclosing command envelope carries the owner scope, correlation, and\ndelivery identity. This payload carries only the durable operation identity\nan owner needs to make at-least-once delivery safe.\n\nDelivery is at least once, so an owner MUST answer a redelivery of the same `operation_id`\nwith the identical recorded outcome (see [`AccountErasureAcknowledged`]) and MUST NOT\nrecompute it from whatever state survives the first erasure.",
   "type": "object",
   "properties": {
     "operation_id": {
@@ -22,7 +22,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:fa81baf0c9ceb7efb64aafe9ba2a2939fe37cb813287dfcf94fd04ba3ca06121",
+    "source_digest": "sha256:1415eac489067470bc73fd415facf10660b1db83d56e406934baa2f477bd9e21",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "x-ratatoskr-unknown-policy": "preserve",

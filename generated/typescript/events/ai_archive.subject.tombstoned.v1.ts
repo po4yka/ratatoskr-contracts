@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:6db023f013d12cd3d96213ac01722ee618c9ba70284520d7d662eb38ac739f5d
+ * source_digest: sha256:67ca1bffa851540aa1737b4f77b17509fdb4fed04e049ce91794ffa2fa209655
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -16,6 +16,14 @@
  * The fact is emitted only from provider deletion, compliance deletion, an
  * approved reconciliation policy, or an authenticated owner privacy request.
  * It never represents an object merely missing from one snapshot.
+ *
+ * `owner` is the Platform tenant the data belongs to, `user:<platform user uuid>`, which is
+ * also the tenant `ratatoskr-knowledge` indexes under. It is never an identity local to the
+ * archive service. `evidence_ref` names a producer-owned blob that carries no timestamp and no
+ * content, so repeating a deletion request yields the same reference. `subject` of kind
+ * `archive` means the whole `ai_archive_id`; the other kinds name one conversation, project or
+ * Artifact inside it. The publisher stores the complete event envelope and relays it unchanged,
+ * so a retry never mints a second payload.
  */
 export interface AiArchiveTombstone {
  /**

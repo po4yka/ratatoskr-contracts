@@ -73,7 +73,7 @@
     ],
     "content_digest": {
       "algorithm": "sha256",
-      "hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "hex": "e6253c131c9785f1ef7ea741448563b05137fe6074612dc89b91ac68011b66a1"
     },
     "parser_name": "claude_export",
     "parser_version": "1.4.2"

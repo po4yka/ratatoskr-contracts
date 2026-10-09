@@ -1356,6 +1356,7 @@ dependencies = [
 name = "ratatoskr-ai-archive-contracts"
 version = "0.1.0"
 dependencies = [
+ "hex",
  "jsonschema",
  "ratatoskr-error-contracts",
  "ratatoskr-event-envelope",
@@ -1364,6 +1365,7 @@ dependencies = [
  "schemars",
  "serde",
  "serde_json",
+ "sha2",
  "thiserror",
 ]
 

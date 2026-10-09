@@ -178,15 +178,19 @@ pub struct AiConversationAdded {
 }
 
 impl AiConversationAdded {
-    /// Verifies that the embedded conversation agrees with its import evidence.
+    /// Verifies that the embedded conversation agrees with its import evidence and that its
+    /// `content_digest` matches its messages.
     ///
     /// # Errors
     ///
     /// Returns [`AiArchiveContractError::ConversationProvenanceMismatch`] when
-    /// the conversation and its immutable import provenance disagree.
+    /// the conversation and its immutable import provenance disagree, and
+    /// [`AiArchiveContractError::ContentDigestMismatch`] when the digest is not the one
+    /// [`AiConversation::compute_content_digest`] gives the messages.
     pub fn validate(&self) -> Result<(), AiArchiveContractError> {
         self.import_provenance
-            .validate_conversation(&self.conversation)
+            .validate_conversation(&self.conversation)?;
+        self.conversation.verify_content_digest()
     }
 }
 
@@ -213,15 +217,19 @@ pub struct AiConversationUpdated {
 }
 
 impl AiConversationUpdated {
-    /// Verifies that the embedded conversation agrees with its import evidence.
+    /// Verifies that the embedded conversation agrees with its import evidence and that its
+    /// `content_digest` matches its messages.
     ///
     /// # Errors
     ///
     /// Returns [`AiArchiveContractError::ConversationProvenanceMismatch`] when
-    /// the conversation and its immutable import provenance disagree.
+    /// the conversation and its immutable import provenance disagree, and
+    /// [`AiArchiveContractError::ContentDigestMismatch`] when the digest is not the one
+    /// [`AiConversation::compute_content_digest`] gives the messages.
     pub fn validate(&self) -> Result<(), AiArchiveContractError> {
         self.import_provenance
-            .validate_conversation(&self.conversation)
+            .validate_conversation(&self.conversation)?;
+        self.conversation.verify_content_digest()
     }
 }
 
@@ -234,6 +242,14 @@ impl EventPayload for AiConversationUpdated {
 /// The fact is emitted only from provider deletion, compliance deletion, an
 /// approved reconciliation policy, or an authenticated owner privacy request.
 /// It never represents an object merely missing from one snapshot.
+///
+/// `owner` is the Platform tenant the data belongs to, `user:<platform user uuid>`, which is
+/// also the tenant `ratatoskr-knowledge` indexes under. It is never an identity local to the
+/// archive service. `evidence_ref` names a producer-owned blob that carries no timestamp and no
+/// content, so repeating a deletion request yields the same reference. `subject` of kind
+/// `archive` means the whole `ai_archive_id`; the other kinds name one conversation, project or
+/// Artifact inside it. The publisher stores the complete event envelope and relays it unchanged,
+/// so a retry never mints a second payload.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, schemars::JsonSchema)]
 pub struct AiArchiveTombstone {
     /// Archive import that contained the subject when the evidence was recorded.

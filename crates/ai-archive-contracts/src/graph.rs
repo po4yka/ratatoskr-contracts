@@ -7,11 +7,13 @@
 
 use ratatoskr_error_contracts::WarningEnvelope;
 use ratatoskr_identifiers::{
-    AiConversationId, AiProjectId, ContentDigest, EntityLocalId, EntityRef, Extensions, TenantRef,
-    WireTimestamp, wire_string_newtype,
+    AiConversationId, AiProjectId, ContentDigest, DigestAlgorithm, DigestHex, EntityLocalId,
+    EntityRef, Extensions, TenantRef, WireTimestamp, canonical_json, wire_string_newtype,
 };
+use sha2::{Digest as _, Sha256};
 
 use crate::content_part::AiContentPart;
+use crate::error::AiArchiveContractError;
 use crate::tokens::{AiProvider, ParserName, ParserVersion};
 use crate::values::{AiText, AiTitle};
 
@@ -154,8 +156,9 @@ pub struct AiConversation {
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub messages: Vec<AiMessage>,
 
-    /// Digest of the normalized content computed by the producer over the canonical JSON of
-    /// `messages`. Consumers treat a mismatch on recomputation as corruption, not change.
+    /// SHA-256 of the canonical JSON of `messages`, computed by the producer with
+    /// [`AiConversation::compute_content_digest`] and nowhere else. Consumers treat a mismatch
+    /// on recomputation ([`AiConversation::verify_content_digest`]) as corruption, not change.
     pub content_digest: ContentDigest,
 
     /// Which parser build normalized this node.
@@ -213,6 +216,49 @@ pub struct AiMessage {
     /// Unknown-but-preserved additive fields.
     #[serde(flatten)]
     pub extensions: Extensions,
+}
+
+impl AiConversation {
+    /// The content digest of `messages`: SHA-256 over the UTF-8 bytes of
+    /// [`canonical_json`] of the messages array.
+    ///
+    /// This is the one implementation of the rule documented on
+    /// [`AiConversation::content_digest`]. A producer sets `content_digest` only through this
+    /// function, and a consumer recomputes it through
+    /// [`AiConversation::verify_content_digest`]. The empty array is a legal input, so a
+    /// conversation without messages has a digest too.
+    ///
+    /// # Errors
+    ///
+    /// [`AiArchiveContractError::ContentDigestEncoding`] when the messages cannot be encoded as
+    /// JSON, which no well-formed [`AiMessage`] causes.
+    pub fn compute_content_digest(
+        messages: &[AiMessage],
+    ) -> Result<ContentDigest, AiArchiveContractError> {
+        let canonical =
+            canonical_json(&messages).map_err(AiArchiveContractError::ContentDigestEncoding)?;
+        let hex = DigestHex::parse(&hex::encode(Sha256::digest(canonical.as_bytes())))
+            .map_err(|_| AiArchiveContractError::ContentDigestMismatch)?;
+        Ok(ContentDigest {
+            algorithm: DigestAlgorithm::Sha256,
+            hex,
+        })
+    }
+
+    /// Recomputes the digest of the current `messages` and compares it with `content_digest`.
+    ///
+    /// # Errors
+    ///
+    /// [`AiArchiveContractError::ContentDigestMismatch`] when the messages changed after the
+    /// digest was computed, or the digest was computed by a divergent implementation, and
+    /// [`AiArchiveContractError::ContentDigestEncoding`] when the messages cannot be encoded.
+    pub fn verify_content_digest(&self) -> Result<(), AiArchiveContractError> {
+        if Self::compute_content_digest(&self.messages)? == self.content_digest {
+            Ok(())
+        } else {
+            Err(AiArchiveContractError::ContentDigestMismatch)
+        }
+    }
 }
 
 impl AiMessage {
