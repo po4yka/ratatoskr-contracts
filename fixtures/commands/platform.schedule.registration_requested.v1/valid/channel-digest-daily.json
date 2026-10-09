@@ -1,0 +1,10 @@
+{
+  "service_name": "ratatoskr-channel-digests",
+  "name": "daily-digest",
+  "owner_user_id": "018f0000-0000-7000-8000-000000000005",
+  "cron_expression": "0 6 * * *",
+  "command_type": "channel_digest.schedule.occurrence_requested.v1",
+  "operation_kind": "channel_digest.schedule.occurrence",
+  "payload": {},
+  "enabled": true
+}

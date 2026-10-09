@@ -704,3 +704,22 @@ reason         = "The outcome vocabulary is closed: a client branches on it to d
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `created_at`'
 reason         = "Every listed result carries the instant the digest service recorded it, because the listing is ordered by it."
+
+# ---------------------------------------------------------------------------
+# platform.schedule.registration_requested (XR-021 S08)
+# ---------------------------------------------------------------------------
+
+["commands/platform.schedule.registration_requested.v1/invalid/name-with-space.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[a-z][a-z0-9_-]{0,63}$'
+reason         = "Schedule labels are stable product identifiers rather than display text, so one logical schedule cannot exist under several spellings."
+
+["commands/platform.schedule.registration_requested.v1/invalid/payload-not-an-object.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected a map'
+reason         = "The payload is the template of a command payload, and every command payload is a JSON object."
+
+["commands/platform.schedule.registration_requested.v1/invalid/cron-not-five-fields.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^[^\x00-\x20\x7f]+([ \t]+[^\x00-\x20\x7f]+){4}$'
+reason         = "A schedule is a five-field UTC cron expression; Platform refuses to evaluate anything else."

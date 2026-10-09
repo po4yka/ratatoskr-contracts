@@ -27,6 +27,7 @@ mod events;
 mod kind;
 mod percent;
 mod result_ref;
+mod schedule_registration;
 mod snapshot;
 mod status;
 
@@ -38,5 +39,8 @@ pub use crate::events::{OperationProgressed, OperationReported};
 pub use crate::kind::{OperationKind, OperationResultKind, OperationStage};
 pub use crate::percent::ProgressPercent;
 pub use crate::result_ref::OperationResultRef;
+pub use crate::schedule_registration::{
+    PlatformScheduleRegistrationRequested, ScheduleCronExpression, ScheduleRegistrationLabel,
+};
 pub use crate::snapshot::OperationSnapshot;
 pub use crate::status::OperationStatus;

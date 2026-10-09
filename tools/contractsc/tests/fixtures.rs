@@ -340,6 +340,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage" => {
             render!(ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage)
         }
+        "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested" => {
+            render!(ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested)
+        }
         other => panic!("{other} is registered but has no canonical renderer in this test"),
     }
 }

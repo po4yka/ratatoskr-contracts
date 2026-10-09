@@ -1850,3 +1850,35 @@ authority   = "producer_asserted"
 nullability = "required"
 unit        = "instant_rfc3339_utc_canonical"
 note        = "Instant the digest service recorded the result, according to the digest service clock."
+
+# ---------------------------------------------------------------------------
+# Schedule registration (XR-021 CONTRACTS.md S08).
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.schedule_registration_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-channel-digests", "ratatoskr-github"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/schedule_registration.rs"
+fixtures_dir   = "fixtures/commands/platform.schedule.registration_requested.v1"
+summary        = "Command: a domain service asks Platform to create or update one of its recurring schedules."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
+output         = "schemas/json-schema/commands/schedule-registration-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:PlatformScheduleRegistrationRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.vague_field_waiver]]
+pointer       = "/properties/payload"
+justification = "The template of the command Platform publishes when the schedule is due. Its shape is selected by command_type, whose registered payload schema is the precise contract; here it is only constrained to a JSON object."
+
+[contract.command]
+command_type = "platform.schedule.registration_requested.v1"
+payload_type = "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"

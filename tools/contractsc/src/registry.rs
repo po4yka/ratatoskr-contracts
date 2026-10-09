@@ -158,6 +158,8 @@ root_types! {
         => ratatoskr_operation_contracts::OperationReported,
     "ratatoskr_operation_contracts::OperationSnapshot"
         => ratatoskr_operation_contracts::OperationSnapshot,
+    "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
+        => ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested,
     "ratatoskr_operational_contracts::AuditEventPage"
         => ratatoskr_operational_contracts::AuditEventPage,
     "ratatoskr_operational_contracts::OperationInspectionPage"
@@ -314,6 +316,10 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_social_contracts::SocialCaptureRequested",
         <ratatoskr_social_contracts::SocialCaptureRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested",
+        <ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared
 }

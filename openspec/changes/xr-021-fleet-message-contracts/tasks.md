@@ -26,8 +26,8 @@
 
 ## 6. Schedule registration command (S08)
 
-- [ ] 6.1 Add `crates/operation-contracts/tests/schedule_registration.rs` tests `registration_payload_round_trips_the_github_and_channel_digest_examples` and `registration_rejects_bad_label_and_non_object_payload` against a type whose validation accepts everything; the rejection test MUST fail on its assertion.
-- [ ] 6.2 Implement `schedule_registration.rs`, the row `platform.schedule_registration_requested` with its vague-field waiver, fixtures, generate and bless; the tests pass.
+- [x] 6.1 Add `crates/operation-contracts/tests/schedule_registration.rs` tests `registration_payload_round_trips_the_github_and_channel_digest_examples` and `registration_rejects_bad_label_and_non_object_payload` against a type whose validation accepts everything; the rejection test MUST fail on its assertion.
+- [x] 6.2 Implement `schedule_registration.rs`, the row `platform.schedule_registration_requested` with its vague-field waiver, fixtures, generate and bless; the tests pass.
 
 ## 7. Content capture command (S11)
 

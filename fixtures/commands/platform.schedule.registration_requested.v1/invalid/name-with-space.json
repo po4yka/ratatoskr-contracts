@@ -1,0 +1,10 @@
+{
+  "service_name": "ratatoskr-github",
+  "name": "nightly stars",
+  "owner_user_id": "018f0000-0000-7000-8000-000000000005",
+  "cron_expression": "0 3 * * *",
+  "command_type": "github.sync.requested.v1",
+  "operation_kind": "github.sync",
+  "payload": {},
+  "enabled": true
+}
