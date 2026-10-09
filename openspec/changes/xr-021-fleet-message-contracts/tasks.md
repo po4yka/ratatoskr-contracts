@@ -31,8 +31,8 @@
 
 ## 7. Content capture command (S11)
 
-- [ ] 7.1 Add `crates/document-contracts/tests/capture_command.rs` with the seven tests of the work order against an empty payload type so the assertions fail rather than the import.
-- [ ] 7.2 Implement `capture.rs`, the registry entry, the `contracts.toml` row and fixtures with their expectations, generate and bless; the tests pass.
+- [x] 7.1 Add `crates/document-contracts/tests/capture_command.rs` with the seven tests of the work order against an empty payload type so the assertions fail rather than the import.
+- [x] 7.2 Implement `capture.rs`, the registry entry, the `contracts.toml` row and fixtures with their expectations, generate and bless; the tests pass.
 
 ## 8. Document extracted event (S09)
 

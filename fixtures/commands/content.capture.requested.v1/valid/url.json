@@ -1,0 +1,8 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a11",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "1f39abea4267b2f2e026c72f605e53c9f0dc62e104fe317bf0c0471f3346de2e"
+  },
+  "url": "https://example.test/articles/borrow-checker"
+}

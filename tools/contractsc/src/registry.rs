@@ -127,6 +127,8 @@ root_types! {
         => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed,
     "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested"
         => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested,
+    "ratatoskr_document_contracts::ContentCaptureRequested"
+        => ratatoskr_document_contracts::ContentCaptureRequested,
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::CommandEnvelope"        => ratatoskr_event_envelope::CommandEnvelope,
@@ -320,6 +322,10 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested",
         <ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_document_contracts::ContentCaptureRequested",
+        <ratatoskr_document_contracts::ContentCaptureRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared
 }

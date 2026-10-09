@@ -1,0 +1,8 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a16",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "2c6f1423fc22daba4c926d3622eb589b03cb5486cb3c0ba87bf0febe16c80b32"
+  },
+  "url": "ftp://example.test/archive.pdf"
+}

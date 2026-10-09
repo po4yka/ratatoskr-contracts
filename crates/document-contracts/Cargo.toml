@@ -9,9 +9,13 @@ repository.workspace   = true
 
 [dependencies]
 ratatoskr-identifiers.workspace = true
+# `impl CommandPayload` / `impl EventPayload`: the orphan rule leaves this crate as the only legal
+# home for those impls.
+ratatoskr-event-envelope.workspace = true
 serde.workspace      = true
 schemars.workspace   = true
 regex.workspace      = true
+thiserror.workspace  = true
 
 [dev-dependencies]
 serde_json.workspace = true

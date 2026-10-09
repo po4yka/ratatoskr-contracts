@@ -345,24 +345,46 @@ fn rule_r2(metadata: &Metadata, findings: &mut Vec<Finding>) {
     }
 }
 
+/// The command type without its `.v<major>` suffix, spelled as one kebab-case file stem:
+/// `vault.backup_policy.apply_requested.v1` becomes `vault-backup-policy-apply-requested`.
+fn command_stem(command_type: &str) -> String {
+    let unversioned = command_type
+        .rsplit_once(".v")
+        .filter(|(_, major)| !major.is_empty() && major.bytes().all(|byte| byte.is_ascii_digit()))
+        .map_or(command_type, |(head, _)| head);
+    unversioned.replace(['.', '_'], "-")
+}
+
 /// R3 and R4 — output path and `$id` follow the one mechanical convention.
+///
+/// The convention names a non-event schema after the id with its first segment dropped. A command
+/// contract may instead name it after its command type, because two bounded contexts can own
+/// commands whose id suffixes are equal (`social.capture_requested` and
+/// `content.capture_requested`) and one file cannot be claimed twice (R6). A command type is
+/// unique by construction, so the second spelling never collides.
 fn rule_r3_r4(contract: &Contract, findings: &mut Vec<Finding>) {
     for root_type in &contract.root_types {
-        let expected_output = if contract.family == "events" {
+        let accepted_outputs: Vec<String> = if contract.family == "events" {
             match contract.event.as_ref() {
-                Some(event) => format!("schemas/events/{}.schema.json", event.event_type),
+                Some(event) => vec![format!("schemas/events/{}.schema.json", event.event_type)],
                 None => continue,
             }
         } else {
             let suffix = contract.id.split_once('.').map_or("", |(_, tail)| tail);
-            format!(
-                "schemas/json-schema/{}/{}.v{}.schema.json",
-                contract.family,
-                kebab(suffix),
-                contract.major_version
-            )
+            let named = |stem: &str| {
+                format!(
+                    "schemas/json-schema/{}/{stem}.v{}.schema.json",
+                    contract.family, contract.major_version
+                )
+            };
+            let mut accepted = vec![named(&kebab(suffix))];
+            if let Some(command) = contract.command.as_ref() {
+                accepted.push(named(&command_stem(&command.command_type)));
+            }
+            accepted
         };
-        if root_type.output != expected_output {
+        let expected_output = accepted_outputs.join(" or ");
+        if !accepted_outputs.contains(&root_type.output) {
             findings.push(Finding::Metadata {
                 rule: "R3",
                 detail: format!(

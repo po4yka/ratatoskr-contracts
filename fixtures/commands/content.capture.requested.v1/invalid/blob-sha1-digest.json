@@ -1,0 +1,16 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a15",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "411227439683a448424b440276b0baa2a7529dafaa236c22002820877625a0bc"
+  },
+  "blob": {
+    "owner_service": "ratatoskr-telegram",
+    "digest": {
+      "algorithm": "sha1",
+      "hex": "11f6ad8ec52a2984abaafd7c3b516503785c2072"
+    },
+    "media_type": "application/pdf",
+    "length_bytes": 13264
+  }
+}

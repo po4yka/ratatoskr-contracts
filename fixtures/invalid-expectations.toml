@@ -723,3 +723,32 @@ reason         = "The payload is the template of a command payload, and every co
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'does not match ^[^\x00-\x20\x7f]+([ \t]+[^\x00-\x20\x7f]+){4}$'
 reason         = "A schedule is a five-field UTC cron expression; Platform refuses to evaluate anything else."
+
+# ---------------------------------------------------------------------------
+# content.capture.requested (XR-021 S11)
+# ---------------------------------------------------------------------------
+
+["commands/content.capture.requested.v1/invalid/both-url-and-blob.json"]
+rejected_by    = ["serde"]
+error_contains = 'both were given'
+reason         = "A capture names exactly one source; two sources leave the extractor to guess which one the user meant. The rule lives in the Rust type alone: a root oneOf cannot be projected to TypeScript, so JSON Schema accepts what it cannot express (the ADR-0001 lower-bound rule)."
+
+["commands/content.capture.requested.v1/invalid/neither.json"]
+rejected_by    = ["serde"]
+error_contains = 'neither was given'
+reason         = "A capture without a source has nothing to extract. The rule lives in the Rust type alone, like the exclusivity of the two sources (the ADR-0001 lower-bound rule)."
+
+["commands/content.capture.requested.v1/invalid/blob-sha1-digest.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `sha1`'
+reason         = "Stored bytes are named by SHA-256 only; a weaker digest cannot prove which bytes the extractor read."
+
+["commands/content.capture.requested.v1/invalid/url-not-http.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'does not match ^https?://[^\x00-\x20\x7f]+$'
+reason         = "Only http and https addresses are captured; other schemes are never fetched."
+
+["commands/content.capture.requested.v1/invalid/url-oversized.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'the contract maximum is 2048'
+reason         = "A captured address is bounded to 2048 characters so a command stays small and loggable."

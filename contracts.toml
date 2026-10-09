@@ -1882,3 +1882,31 @@ justification = "The template of the command Platform publishes when the schedul
 [contract.command]
 command_type = "platform.schedule.registration_requested.v1"
 payload_type = "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
+
+# ---------------------------------------------------------------------------
+# Content capture and extraction (XR-021 CONTRACTS.md S09, S11).
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "content.capture_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-extractor"
+producers      = ["ratatoskr-platform", "ratatoskr-x"]
+consumers      = ["ratatoskr-extractor"]
+crate_name     = "ratatoskr-document-contracts"
+canonical_path = "crates/document-contracts/src/capture.rs"
+fixtures_dir   = "fixtures/commands/content.capture.requested.v1"
+summary        = "Command: capture one document, named by an http(s) url or by stored bytes, and extract it."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_document_contracts::ContentCaptureRequested"
+output         = "schemas/json-schema/commands/content-capture-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:ContentCaptureRequested"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.command]
+command_type = "content.capture.requested.v1"
+payload_type = "ratatoskr_document_contracts::ContentCaptureRequested"

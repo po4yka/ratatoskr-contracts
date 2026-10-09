@@ -108,6 +108,64 @@ fn output_paths_and_schema_ids_follow_convention() {
     assert_rule_clean("R4");
 }
 
+/// M-3b. A command schema is named after its id suffix or after its command type, and after
+/// nothing else. The second spelling exists because `social.capture_requested` and
+/// `content.capture_requested` have one suffix and cannot both claim one file.
+#[test]
+fn a_command_schema_is_named_by_its_id_suffix_or_its_command_type() {
+    let mut metadata = committed();
+    let generated = generated(&metadata);
+    let r3 = |metadata: &Metadata| -> Vec<String> {
+        metadata::validate(metadata, &repo_root(), &generated)
+            .into_iter()
+            .filter_map(|finding| match finding {
+                Finding::Metadata { rule: "R3", detail } => Some(detail),
+                _ => None,
+            })
+            .collect()
+    };
+    assert_eq!(
+        r3(&metadata),
+        Vec::<String>::new(),
+        "the committed names are accepted"
+    );
+
+    let content = metadata
+        .contracts
+        .iter_mut()
+        .find(|contract| contract.id == "content.capture_requested")
+        .expect("the content capture command is registered");
+    let root = content.root_types.first_mut().expect("one root type");
+    assert!(
+        root.output
+            .ends_with("/content-capture-requested.v1.schema.json"),
+        "the content command is named after its command type: {}",
+        root.output
+    );
+    root.output = "schemas/json-schema/commands/capture-requested.v1.schema.json".to_owned();
+    assert_eq!(
+        r3(&metadata).len(),
+        0,
+        "the id-suffix spelling stays valid for the same contract"
+    );
+
+    let root = metadata
+        .contracts
+        .iter_mut()
+        .find(|contract| contract.id == "content.capture_requested")
+        .and_then(|contract| contract.root_types.first_mut())
+        .expect("the content capture command is registered");
+    root.output = "schemas/json-schema/commands/content-capture.v1.schema.json".to_owned();
+    let refused = r3(&metadata);
+    assert_eq!(refused.len(), 1, "{refused:?}");
+    assert!(
+        refused
+            .iter()
+            .all(|detail| detail.contains("content.capture_requested")),
+        "{refused:?}"
+    );
+}
+
 /// M-4. R5 — every declared path exists and the canonical source names its own root type, which
 /// is what catches a file move.
 #[test]

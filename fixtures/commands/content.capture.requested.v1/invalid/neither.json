@@ -1,0 +1,7 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a14",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "8400ea36d677b33e465d5b3b4c77e2eabc82f1e24615dd81068224ba76c927b1"
+  }
+}
