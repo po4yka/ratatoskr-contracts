@@ -16,6 +16,9 @@
 //! - [`AiCompletenessReport`] — closed completeness vocabulary, verifiable counts, structured gaps.
 //! - [`AiConversationAdded`] / [`AiConversationUpdated`] — the per-conversation events, each
 //!   carrying the whole conversation so replay converges without earlier events.
+//! - [`platform_receipt`] — not a registered wire message: the literals of the loopback archive
+//!   receipt hop between Platform's Edge and the `ratatoskr-chatgpt` and `ratatoskr-claude` receivers, the capability
+//!   probe both sides spell, and the single warning of an incomplete import.
 
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
@@ -25,6 +28,7 @@ mod content_part;
 mod error;
 mod events;
 mod graph;
+pub mod platform_receipt;
 mod snapshot;
 mod tokens;
 mod values;

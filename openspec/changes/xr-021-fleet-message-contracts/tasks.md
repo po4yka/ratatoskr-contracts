@@ -5,8 +5,8 @@
 
 ## 2. AI-archive receipt binding (S06 D1, D2, D3)
 
-- [ ] 2.1 Add `crates/ai-archive-contracts/tests/platform_receipt.rs` tests `binding_constants_are_the_documented_literals`, `capability_document_round_trips_and_names_the_service`, `a_document_for_another_service_or_without_the_capability_is_rejected` and `incomplete_import_warning_is_a_valid_warning_envelope` against a scaffold with empty constants and stub bodies; each MUST fail on an assertion.
-- [ ] 2.2 Implement `platform_receipt` and the crate-doc section on the loopback binding; the four tests pass.
+- [x] 2.1 Add `crates/ai-archive-contracts/tests/platform_receipt.rs` tests `binding_constants_are_the_documented_literals`, `capability_document_round_trips_and_names_the_service`, `a_document_for_another_service_or_without_the_capability_is_rejected` and `incomplete_import_warning_is_a_valid_warning_envelope` against a scaffold with empty constants and stub bodies; each MUST fail on an assertion.
+- [x] 2.2 Implement `platform_receipt` and the crate-doc section on the loopback binding; the four tests pass.
 
 ## 3. Conversation digest, tombstone and erasure documentation (S07, S12)
 
