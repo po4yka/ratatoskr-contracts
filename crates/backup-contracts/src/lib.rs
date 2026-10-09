@@ -8,6 +8,8 @@
 //! - [`DesiredBackupPolicy`] — the versioned policy document: a monotonic `policy_version`,
 //!   per-repository entries carrying a repository reference, a mirror cadence class, priority
 //!   and size hints, and explicit exclusions.
+//! - [`VaultBackupPolicyApplyRequested`] — payload of `vault.backup_policy.apply_requested.v1`:
+//!   the command that carries one policy version from GitHub to Vault.
 //! - [`PolicyAcknowledged`] — payload of `vault.backup_policy.acknowledged.v1`: an accepted or
 //!   rejected outcome with stable, machine-actionable reason codes.
 //! - [`MirrorCadence`] / [`BackupPriorityHint`] / [`BackupExclusionScope`] /
@@ -26,10 +28,12 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+mod commands;
 mod error;
 mod events;
 mod policy;
 
+pub use crate::commands::VaultBackupPolicyApplyRequested;
 pub use crate::error::BackupContractError;
 pub use crate::events::{
     PolicyAcknowledged, PolicyOutcome, PolicyRejectionCode, PolicyRejectionReason,

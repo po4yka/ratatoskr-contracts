@@ -761,3 +761,17 @@ reason         = "A captured address is bounded to 2048 characters so a command 
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'missing field `document_blob`'
 reason         = "The event carries both the document and the extractor-owned blob that stores it; a consumer correlates the two by the blob reference."
+
+# ---------------------------------------------------------------------------
+# vault.backup_policy.apply_requested (XR-021 S09)
+# ---------------------------------------------------------------------------
+
+["commands/vault.backup_policy.apply_requested.v1/invalid/empty-payload.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `policy`'
+reason         = "A command that carries no policy asks Vault to apply nothing."
+
+["commands/vault.backup_policy.apply_requested.v1/invalid/zero-policy-version.json"]
+rejected_by    = ["serde"]
+error_contains = 'policy_version must be greater than zero'
+reason         = "The embedded policy keeps its own invariant: versions are monotonic and start above zero. The bound lives in the Rust type alone, so JSON Schema accepts what it cannot express (the ADR-0001 lower-bound rule)."

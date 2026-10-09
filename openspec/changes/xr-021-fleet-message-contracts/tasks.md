@@ -41,8 +41,8 @@
 
 ## 9. Vault backup policy command (S09)
 
-- [ ] 9.1 Add `crates/backup-contracts/tests/commands.rs::apply_requested_round_trips_a_desired_policy` and an invalid fixture against an empty payload; it MUST fail on an assertion.
-- [ ] 9.2 Implement `commands.rs`, the export, the registry entry and the row, generate and bless; the test passes.
+- [x] 9.1 Add `crates/backup-contracts/tests/commands.rs::apply_requested_round_trips_a_desired_policy` and an invalid fixture against an empty payload; it MUST fail on an assertion.
+- [x] 9.2 Implement `commands.rs`, the export, the registry entry and the row, generate and bless; the test passes.
 
 ## 10. Social capture reports and captured_at fixtures (S10 CD1, CD4)
 

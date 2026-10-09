@@ -1936,3 +1936,31 @@ privacy        = "user_content"
 [contract.event]
 event_type   = "content.document.extracted.v1"
 payload_type = "ratatoskr_document_contracts::ContentDocumentExtracted"
+
+# ---------------------------------------------------------------------------
+# Vault policy command (XR-021 CONTRACTS.md S09).
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "backup.policy_apply_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-vault"
+producers      = ["ratatoskr-github"]
+consumers      = ["ratatoskr-vault"]
+crate_name     = "ratatoskr-backup-contracts"
+canonical_path = "crates/backup-contracts/src/commands.rs"
+fixtures_dir   = "fixtures/commands/vault.backup_policy.apply_requested.v1"
+summary        = "Command: GitHub asks Vault to apply one version of the desired backup policy."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"
+output         = "schemas/json-schema/commands/vault-backup-policy-apply-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:VaultBackupPolicyApplyRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[contract.command]
+command_type = "vault.backup_policy.apply_requested.v1"
+payload_type = "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"

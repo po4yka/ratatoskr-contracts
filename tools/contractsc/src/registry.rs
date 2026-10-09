@@ -95,6 +95,8 @@ root_types! {
         => ratatoskr_backup_contracts::DesiredBackupPolicy,
     "ratatoskr_backup_contracts::PolicyAcknowledged"
         => ratatoskr_backup_contracts::PolicyAcknowledged,
+    "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"
+        => ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested,
     "ratatoskr_blob_transfer_contracts::UploadChunkReceipt"
         => ratatoskr_blob_transfer_contracts::UploadChunkReceipt,
     "ratatoskr_blob_transfer_contracts::UploadCompletionOutcome"
@@ -332,6 +334,10 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_document_contracts::ContentCaptureRequested",
         <ratatoskr_document_contracts::ContentCaptureRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested",
+        <ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared
 }
