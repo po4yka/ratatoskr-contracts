@@ -661,3 +661,27 @@ reason         = "Service labels are stable product identifiers rather than disp
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'unknown field `diagnostic`'
 reason         = "The audit projection is intentionally content-free; a free diagnostic field is an unbounded path for credentials, provider responses, URLs, and user content."
+
+# ---------------------------------------------------------------------------
+# channel_digest manifest (XR-021 S08)
+# ---------------------------------------------------------------------------
+
+["channel_digest/manifest/invalid/unsorted-sources.json"]
+rejected_by    = ["serde"]
+error_contains = 'cross-field rule'
+reason         = "Sources must be strictly ascending by publication instant, channel, message identity and revision so one selection has one canonical byte sequence. JSON Schema cannot express ordering, uniqueness, window containment or digest agreement across the sources of one manifest, so the Rust type alone refuses it (ADR-0001 lower-bound rule)."
+
+["channel_digest/manifest/invalid/source-outside-window.json"]
+rejected_by    = ["serde"]
+error_contains = 'cross-field rule'
+reason         = "Every source must be published inside the closed-open window of the run; the window end is exclusive. JSON Schema cannot express ordering, uniqueness, window containment or digest agreement across the sources of one manifest, so the Rust type alone refuses it (ADR-0001 lower-bound rule)."
+
+["channel_digest/manifest/invalid/duplicate-revision-ref.json"]
+rejected_by    = ["serde"]
+error_contains = 'cross-field rule'
+reason         = "A revision reference names exactly one immutable post revision, so two sources may not share one. JSON Schema cannot express ordering, uniqueness, window containment or digest agreement across the sources of one manifest, so the Rust type alone refuses it (ADR-0001 lower-bound rule)."
+
+["channel_digest/manifest/invalid/content-digest-mismatch.json"]
+rejected_by    = ["serde"]
+error_contains = 'cross-field rule'
+reason         = "content_digest is the SHA-256 of the exact content bytes; a manifest whose digest disagrees was corrupted or built by a divergent implementation. JSON Schema cannot express ordering, uniqueness, window containment or digest agreement across the sources of one manifest, so the Rust type alone refuses it (ADR-0001 lower-bound rule)."

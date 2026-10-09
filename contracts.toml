@@ -49,6 +49,8 @@ known = [
 #                 correlation; the kind stays opaque to the notification contract.
 #   github-account the credential-free connected-account reference exposed by repository preview.
 #   telegram-confirmation opaque evidence that Telegram completed one owner-bound confirmation.
+#   channel-post-revision, telegram-public-channel the immutable post revision and the public
+#                 channel a channel_digest.manifest source names; the digest service mints both.
 # Adding a token here is a review decision: it widens what a fixture may contain,
 # never what the wire type understands. `ratatoskr-mobile` and
 # `ratatoskr-export-agent` are upload-capable clients; they appear as transfer
@@ -60,6 +62,7 @@ known = [
   "blob", "command", "document", "event", "notification", "operation", "user",
   "channel-digest-manifest", "channel-digest-result", "github-account", "repository",
   "schedule", "schedule-occurrence", "social_source", "telegram-confirmation", "x-post",
+  "channel-post-revision", "telegram-public-channel",
 ]
 
 # ---------------------------------------------------------------------------
@@ -74,7 +77,10 @@ banned_property_names = [
   "result", "body", "payload",
 ]
 # AGENTS.md principle 6: "Money, sizes, durations, and counters have explicit units."
-required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version", "_numeric_id"]
+# `revision` is the 1-based ordinal of a post body among the observed revisions of one message
+# (channel_digest.manifest): a counter whose unit is the revision itself, so the whole property name
+# is the suffix.
+required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version", "_numeric_id", "revision"]
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
@@ -1721,3 +1727,53 @@ note        = "Instant Knowledge committed the safe terminal failure before publ
 [contract.event]
 event_type   = "knowledge.channel_digest_recap.failed.v1"
 payload_type = "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed"
+
+# ---------------------------------------------------------------------------
+# Public-channel digest manifest and owner read views (XR-021 CONTRACTS.md S08).
+# ---------------------------------------------------------------------------
+
+[[contract]]
+id             = "channel_digest.manifest"
+family         = "channel_digest"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/manifest.rs"
+fixtures_dir   = "fixtures/channel_digest/manifest"
+summary        = "Immutable source manifest of one digest run, stored and served as canonical bytes whose SHA-256 the recap request carries."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestManifest"
+output         = "schemas/json-schema/channel_digest/manifest.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:channel_digest:v1:ChannelDigestManifest"
+unknown_policy = "reject"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/start_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Inclusive source-window lower bound selected by Platform for the digest run."
+
+[[contract.field]]
+pointer     = "DigestWindow#/properties/end_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Exclusive source-window upper bound selected by Platform for the digest run."
+
+[[contract.field]]
+pointer     = "ChannelDigestManifestSource#/properties/published_at"
+authority   = "provider_authored"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Publication instant of the message according to Telegram; it must fall inside the manifest window."
+
+[[contract.vague_field_waiver]]
+pointer       = "ChannelDigestManifestSource#/properties/content"
+justification = "The complete normalized post body that the digest summarizes. Its length is bounded to 16384 UTF-8 bytes and content_digest is the SHA-256 of exactly these bytes, so the name states the single thing it holds."

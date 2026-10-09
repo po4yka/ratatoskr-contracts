@@ -10,8 +10,10 @@ repository.workspace = true
 [dependencies]
 ratatoskr-event-envelope.workspace = true
 ratatoskr-identifiers.workspace = true
+hex.workspace = true
 jiff.workspace = true
 regex.workspace = true
+sha2.workspace = true
 schemars.workspace = true
 serde.workspace = true
 serde_json.workspace = true

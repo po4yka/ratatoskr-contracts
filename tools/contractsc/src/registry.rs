@@ -107,6 +107,8 @@ root_types! {
         => ratatoskr_blob_transfer_contracts::UploadSessionRequest,
     "ratatoskr_blob_transfer_contracts::UploadStatusResponse"
         => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
+    "ratatoskr_channel_digest_contracts::ChannelDigestManifest"
+        => ratatoskr_channel_digest_contracts::ChannelDigestManifest,
     "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestRunRequested,
     "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"

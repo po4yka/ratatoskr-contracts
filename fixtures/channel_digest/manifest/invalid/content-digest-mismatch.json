@@ -1,0 +1,64 @@
+{
+  "schema": "channel_digest_manifest.v1",
+  "manifest_ref": "channel-digest-manifest:018f0000-0000-7000-8000-000000000a01",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "digest_run_id": "018f0000-0000-7000-8000-000000000a02",
+  "window": {
+    "start_at": "2026-08-27T00:00:00Z",
+    "end_at": "2026-08-28T00:00:00Z"
+  },
+  "sources": [
+    {
+      "revision_ref": "channel-post-revision:018f0000-0000-7000-8000-000000000b01",
+      "channel_ref": "telegram-public-channel:018f0000-0000-7000-8000-000000000c01",
+      "channel_label": "Rust Weekly",
+      "message_id": "101",
+      "published_at": "2026-08-27T06:00:00Z",
+      "content": "Release notes for the new compiler build.",
+      "content_digest": {
+        "algorithm": "sha256",
+        "hex": "8671ca086eaa4b1baeddc49d5371ed181cce6c3042833ee2de0afb2bf9fc3786"
+      },
+      "revision": 1
+    },
+    {
+      "revision_ref": "channel-post-revision:018f0000-0000-7000-8000-000000000b03",
+      "channel_ref": "telegram-public-channel:018f0000-0000-7000-8000-000000000c01",
+      "channel_label": "Rust Weekly",
+      "message_id": "101",
+      "published_at": "2026-08-27T06:00:00Z",
+      "content": "Release notes for the new compiler build (corrected).",
+      "content_digest": {
+        "algorithm": "sha256",
+        "hex": "b4f9eea6333c604dbfb9130e98695ea76662a48422ac6df833e7691fe170cc88"
+      },
+      "revision": 2
+    },
+    {
+      "revision_ref": "channel-post-revision:018f0000-0000-7000-8000-000000000b02",
+      "channel_ref": "telegram-public-channel:018f0000-0000-7000-8000-000000000c02",
+      "channel_label": "Новости дня",
+      "message_id": "7",
+      "published_at": "2026-08-27T07:30:00.5Z",
+      "content": "Сводка за утро: всё спокойно.",
+      "content_digest": {
+        "algorithm": "sha256",
+        "hex": "8336645c309544ee251dc7b2ef202faa3999e5c296c306841afd553773ee0e6e"
+      },
+      "revision": 1
+    },
+    {
+      "revision_ref": "channel-post-revision:018f0000-0000-7000-8000-000000000b04",
+      "channel_ref": "telegram-public-channel:018f0000-0000-7000-8000-000000000c01",
+      "channel_label": "Rust Weekly",
+      "message_id": "102",
+      "published_at": "2026-08-27T09:15:00Z",
+      "content": "Tooling update: a faster linker is now the default.",
+      "content_digest": {
+        "algorithm": "sha256",
+        "hex": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "revision": 1
+    }
+  ]
+}

@@ -16,8 +16,8 @@
 
 ## 4. Channel digest manifest (S08)
 
-- [ ] 4.1 Add `crates/channel-digest-contracts/tests/manifest.rs` tests `canonical_bytes_are_key_sorted_compact_and_stable`, `from_canonical_bytes_rejects_reordered_or_pretty_bytes_as_integrity`, `validate_rejects_unsorted_sources` and `manifest_path_and_header_constants_match_the_documented_values` against signature-only stubs; each MUST fail on an assertion.
-- [ ] 4.2 Implement `manifest.rs`, the error variants, the `sha2` dependency, the `contracts.toml` row and `docs/CHANNEL_DIGEST_MANIFEST.md`; generate and bless the API baseline; the tests pass.
+- [x] 4.1 Add `crates/channel-digest-contracts/tests/manifest.rs` tests `canonical_bytes_are_key_sorted_compact_and_stable`, `from_canonical_bytes_rejects_reordered_or_pretty_bytes_as_integrity`, `validate_rejects_unsorted_sources` and `manifest_path_and_header_constants_match_the_documented_values` against signature-only stubs; each MUST fail on an assertion.
+- [x] 4.2 Implement `manifest.rs`, the error variants, the `sha2` dependency, the `contracts.toml` row and `docs/CHANNEL_DIGEST_MANIFEST.md`; generate and bless the API baseline; the tests pass.
 
 ## 5. Read-API views (S08)
 

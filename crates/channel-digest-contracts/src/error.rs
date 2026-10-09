@@ -40,4 +40,13 @@ pub enum ChannelDigestContractError {
     /// A result pointer does not name the declared result identity.
     #[error("digest result reference contradicts result identity")]
     ResultReferenceMismatch,
+    /// Manifest bytes are not JSON of the closed canonical manifest shape.
+    #[error("the digest manifest encoding is invalid")]
+    ManifestEncoding,
+    /// Manifest bytes decode, but are not the canonical rendering of the value they contain.
+    #[error("the digest manifest is not in canonical form")]
+    ManifestIntegrity,
+    /// A manifest breaks one of its cross-field rules.
+    #[error("the digest manifest breaks a cross-field rule")]
+    ManifestInvalid,
 }
