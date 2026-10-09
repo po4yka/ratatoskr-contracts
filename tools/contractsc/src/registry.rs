@@ -109,10 +109,16 @@ root_types! {
         => ratatoskr_blob_transfer_contracts::UploadStatusResponse,
     "ratatoskr_channel_digest_contracts::ChannelDigestManifest"
         => ratatoskr_channel_digest_contracts::ChannelDigestManifest,
+    "ratatoskr_channel_digest_contracts::ChannelDigestResultPage"
+        => ratatoskr_channel_digest_contracts::ChannelDigestResultPage,
+    "ratatoskr_channel_digest_contracts::ChannelDigestResultView"
+        => ratatoskr_channel_digest_contracts::ChannelDigestResultView,
     "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestRunRequested,
     "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested,
+    "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage"
+        => ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage,
     "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
         => ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested,
     "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"

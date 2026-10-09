@@ -1,0 +1,16 @@
+{
+  "result_id": "018f0000-0000-7000-8000-000000000d01",
+  "run_id": "018f0000-0000-7000-8000-000000000a02",
+  "outcome": "completed",
+  "recap_id": "018f0000-0000-7000-8000-000000000e01",
+  "citation_count": 2,
+  "result_digest": {
+    "algorithm": "sha256",
+    "hex": "4c8b8766da59c453385cb50e5677bde62fcc7994f89418e79bb6d153e5438089"
+  },
+  "recap": {
+    "citations": [],
+    "summary": "A quiet morning in both channels.",
+    "title": "Morning digest"
+  }
+}

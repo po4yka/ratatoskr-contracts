@@ -11,6 +11,7 @@ mod error;
 mod manifest;
 mod recap;
 mod values;
+mod views;
 
 pub use crate::commands::{
     ChannelDigestRunRequested, ChannelDigestScheduleOccurrenceRequested,
@@ -33,4 +34,9 @@ pub use crate::values::{
     ChannelDigestSubscriptionId, ChannelUsername, DigestChannelCount, DigestOccurrenceRef,
     DigestScheduleRef, DigestSourceCount, DigestWindow, KnowledgeAnalysisRef, OutputLanguage,
     SubscriptionDesiredState,
+};
+pub use crate::views::{
+    ChannelDigestFailureClass, ChannelDigestOutcome, ChannelDigestRecapDocument,
+    ChannelDigestResultPage, ChannelDigestResultSummary, ChannelDigestResultView,
+    ChannelDigestSubscriptionPage, ChannelDigestSubscriptionView,
 };

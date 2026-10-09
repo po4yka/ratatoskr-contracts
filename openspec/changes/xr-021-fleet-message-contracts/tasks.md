@@ -21,8 +21,8 @@
 
 ## 5. Read-API views (S08)
 
-- [ ] 5.1 Add `crates/channel-digest-contracts/tests/views.rs` tests `result_view_round_trips_todays_completed_and_failed_json`, `result_summary_rejects_unknown_outcome` and `subscription_page_round_trips` against empty view types; each MUST fail on an assertion.
-- [ ] 5.2 Implement `views.rs`, the rows `channel_digest.subscription_view` and `channel_digest.result_view`, generate and bless; the tests pass.
+- [x] 5.1 Add `crates/channel-digest-contracts/tests/views.rs` tests `result_view_round_trips_todays_completed_and_failed_json`, `result_summary_rejects_unknown_outcome` and `subscription_page_round_trips` against empty view types; each MUST fail on an assertion.
+- [x] 5.2 Implement `views.rs`, the rows `channel_digest.subscription_view` and `channel_digest.result_view`, generate and bless; the tests pass.
 
 ## 6. Schedule registration command (S08)
 

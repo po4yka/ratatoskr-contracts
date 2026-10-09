@@ -35,3 +35,15 @@ The digest service stores the canonical bytes and answers every read with exactl
 ## Readiness
 
 `GET /ready` on the API listener requires the bearer only, with no owner header. It answers `200` when the database answers `select 1` and `503` otherwise, and carries `cache-control: no-store`. `GET /live` is not served on the API listener (`404`); the operator plane on ports 9469 and 9470 is unchanged.
+
+## Owner read API
+
+The same listener serves the owner views. Every request carries the bearer and `x-ratatoskr-owner-id`.
+
+| Route | Answers |
+| --- | --- |
+| `GET /v1/subscriptions?page_size=<1..100>` | `ChannelDigestSubscriptionPage`. `page_size` defaults to 50. |
+| `GET /v1/results?page_size=<1..100>` | `ChannelDigestResultPage`, newest first, summaries only, no recap content. |
+| `GET /v1/results/{result_id}` | `ChannelDigestResultView`. |
+
+A foreign or missing resource is `404`. A listing parameter is `page_size`, not `limit`.

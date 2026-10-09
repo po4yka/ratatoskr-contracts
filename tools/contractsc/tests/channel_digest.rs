@@ -36,8 +36,11 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         paths,
         [
             "ratatoskr_channel_digest_contracts::ChannelDigestManifest",
+            "ratatoskr_channel_digest_contracts::ChannelDigestResultPage",
+            "ratatoskr_channel_digest_contracts::ChannelDigestResultView",
             "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested",
             "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested",
+            "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage",
             "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested",
             "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted",
             "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed",
@@ -52,7 +55,7 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         .collect();
     assert_eq!(
         digest_contracts.len(),
-        7,
+        10,
         "one governed entry per payload root"
     );
 
@@ -63,7 +66,10 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
         assert!(generated.contains_key(Path::new(&declared.output)));
         assert!(root.join(&contract.fixtures_dir).join("valid").is_dir());
         let expected_privacy = match contract.id.as_str() {
-            "channel_digest.manifest" => "UserContent",
+            "channel_digest.manifest"
+            | "channel_digest.subscription_view"
+            | "channel_digest.result_view"
+            | "channel_digest.result_page" => "UserContent",
             _ => "BoundaryMetadata",
         };
         assert_eq!(format!("{:?}", declared.privacy), expected_privacy);
@@ -71,6 +77,13 @@ fn channel_digest_contracts_are_registered_with_exact_authority() {
             "channel_digest.manifest" => {
                 assert_eq!(contract.producers, ["ratatoskr-channel-digests"]);
                 assert_eq!(contract.consumers, ["ratatoskr-knowledge"]);
+                assert!(contract.command.is_none() && contract.event.is_none());
+            }
+            "channel_digest.subscription_view"
+            | "channel_digest.result_view"
+            | "channel_digest.result_page" => {
+                assert_eq!(contract.producers, ["ratatoskr-channel-digests"]);
+                assert_eq!(contract.consumers, ["ratatoskr-platform"]);
                 assert!(contract.command.is_none() && contract.event.is_none());
             }
             "channel_digest.subscription_set_requested"

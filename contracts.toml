@@ -84,7 +84,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "previous_due_at", "start_at", "end_at", "due_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "previous_due_at", "start_at", "end_at", "due_at", "created_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -1777,3 +1777,76 @@ note        = "Publication instant of the message according to Telegram; it must
 [[contract.vague_field_waiver]]
 pointer       = "ChannelDigestManifestSource#/properties/content"
 justification = "The complete normalized post body that the digest summarizes. Its length is bounded to 16384 UTF-8 bytes and content_digest is the SHA-256 of exactly these bytes, so the name states the single thing it holds."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "channel_digest.subscription_view"
+family         = "channel_digest"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/views.rs"
+fixtures_dir   = "fixtures/channel_digest/views/subscription-page"
+summary        = "Owner read view: one page of the caller's public-channel subscriptions."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionPage"
+output         = "schemas/json-schema/channel_digest/subscription-view.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:channel_digest:v1:ChannelDigestSubscriptionPage"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "channel_digest.result_view"
+family         = "channel_digest"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/views.rs"
+fixtures_dir   = "fixtures/channel_digest/views/result-view"
+summary        = "Owner read view: one digest result with its Knowledge-owned recap, or its minimized failure."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestResultView"
+output         = "schemas/json-schema/channel_digest/result-view.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:channel_digest:v1:ChannelDigestResultView"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "channel_digest.result_page"
+family         = "channel_digest"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-channel-digests"
+producers      = ["ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-channel-digest-contracts"
+canonical_path = "crates/channel-digest-contracts/src/views.rs"
+fixtures_dir   = "fixtures/channel_digest/views/result-page"
+summary        = "Owner read view: one page of the caller's digest result summaries, newest first, without recap content."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_channel_digest_contracts::ChannelDigestResultPage"
+output         = "schemas/json-schema/channel_digest/result-page.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:channel_digest:v1:ChannelDigestResultPage"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[[contract.field]]
+pointer     = "ChannelDigestResultSummary#/properties/created_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant the digest service recorded the result, according to the digest service clock."

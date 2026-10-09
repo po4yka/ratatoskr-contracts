@@ -1,0 +1,14 @@
+{
+  "subscriptions": [
+    {
+      "subscription_id": "018f0000-0000-7000-8000-000000000f01",
+      "channel_username": "rust_weekly",
+      "enabled": true
+    },
+    {
+      "subscription_id": "018f0000-0000-7000-8000-000000000f02",
+      "channel_username": "daily_news_ru",
+      "enabled": false
+    }
+  ]
+}

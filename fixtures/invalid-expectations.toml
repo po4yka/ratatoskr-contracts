@@ -685,3 +685,22 @@ reason         = "A revision reference names exactly one immutable post revision
 rejected_by    = ["serde"]
 error_contains = 'cross-field rule'
 reason         = "content_digest is the SHA-256 of the exact content bytes; a manifest whose digest disagrees was corrupted or built by a divergent implementation. JSON Schema cannot express ordering, uniqueness, window containment or digest agreement across the sources of one manifest, so the Rust type alone refuses it (ADR-0001 lower-bound rule)."
+
+# ---------------------------------------------------------------------------
+# channel_digest owner read views (XR-021 S08)
+# ---------------------------------------------------------------------------
+
+["channel_digest/views/subscription-page/invalid/mixed-case-username.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'channel username is not canonical'
+reason         = "Channel usernames are signed and hashed in their canonical lowercase spelling; a view never reports a mixed-case spelling."
+
+["channel_digest/views/result-view/invalid/unknown-outcome.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `cancelled`'
+reason         = "The outcome vocabulary is closed: a client branches on it to decide whether a recap exists, and an unknown value must stop processing instead of being read as success."
+
+["channel_digest/views/result-page/invalid/missing-created-at.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `created_at`'
+reason         = "Every listed result carries the instant the digest service recorded it, because the listing is ordered by it."
