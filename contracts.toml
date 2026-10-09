@@ -361,8 +361,8 @@ major_version  = 1
 lifecycle      = "proposed"
 classification = "internal"
 owner          = "ratatoskr-platform"
-producers      = ["ratatoskr-extractor", "ratatoskr-github", "ratatoskr-knowledge", "ratatoskr-vault", "ratatoskr-x"]
-consumers      = ["ratatoskr-platform"]
+producers      = ["ratatoskr-extractor", "ratatoskr-x", "ratatoskr-instagram", "ratatoskr-threads", "ratatoskr-chatgpt", "ratatoskr-claude", "ratatoskr-channel-digests"]
+consumers      = ["ratatoskr-platform", "ratatoskr-x"]
 crate_name     = "ratatoskr-operation-contracts"
 canonical_path = "crates/operation-contracts/src/events.rs"
 fixtures_dir   = "fixtures/events/platform.operation.reported.v1"
@@ -724,7 +724,7 @@ consumers      = ["ratatoskr-knowledge"]
 crate_name     = "ratatoskr-github-contracts"
 canonical_path = "crates/github-contracts/src/events.rs"
 fixtures_dir   = "fixtures/events/knowledge.repository_analysis.requested.v1"
-summary        = "Command: GitHub Catalog requests Knowledge analysis of one immutable repository revision."
+summary        = "Request fact: GitHub Catalog requests Knowledge analysis of one immutable repository revision."
 
 [[contract.root_type]]
 rust_path      = "ratatoskr_github_contracts::RepositoryAnalysisRequested"

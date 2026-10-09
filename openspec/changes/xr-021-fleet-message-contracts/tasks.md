@@ -52,8 +52,8 @@
 
 ## 11. Registry corrections (S01)
 
-- [ ] 11.1 Add `tools/contractsc/tests/live_message_types.rs` asserting the fleet table rows, the `platform.operation_reported` producers and the `Request fact:` summary prefix; it MUST fail on the producers list and the summary.
-- [ ] 11.2 Edit `contracts.toml` and regenerate; the test passes.
+- [x] 11.1 Add `tools/contractsc/tests/live_message_types.rs` asserting the fleet table rows, the `platform.operation_reported` producers and the `Request fact:` summary prefix; it MUST fail on the producers list and the summary.
+- [x] 11.2 Edit `contracts.toml` and regenerate; the test passes.
 
 ## 12. Final gate
 
