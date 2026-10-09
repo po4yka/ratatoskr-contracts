@@ -12,6 +12,7 @@ impl core::clone::Clone for ratatoskr_backup_contracts::PolicyOutcome
 impl core::clone::Clone for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::clone::Clone for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::clone::Clone for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::clone::Clone for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::cmp::Eq for ratatoskr_backup_contracts::BackupExclusion
 impl core::cmp::Eq for ratatoskr_backup_contracts::BackupExclusionScope
 impl core::cmp::Eq for ratatoskr_backup_contracts::BackupPriorityHint
@@ -38,6 +39,7 @@ impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyOutcome
 impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::cmp::PartialEq for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::cmp::PartialEq for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::cmp::PartialEq for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::cmp::PartialOrd for ratatoskr_backup_contracts::BackupExclusionScope
 impl core::cmp::PartialOrd for ratatoskr_backup_contracts::BackupPriorityHint
 impl core::cmp::PartialOrd for ratatoskr_backup_contracts::ExclusionExpression
@@ -59,6 +61,7 @@ impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyOutcome
 impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::fmt::Debug for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::fmt::Debug for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::fmt::Debug for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::fmt::Display for ratatoskr_backup_contracts::BackupContractError
 impl core::fmt::Display for ratatoskr_backup_contracts::ExclusionExpression
 impl core::hash::Hash for ratatoskr_backup_contracts::BackupExclusionScope
@@ -84,6 +87,7 @@ impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyOutcome
 impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::Freeze for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::Freeze for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Freeze for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::marker::Send for ratatoskr_backup_contracts::BackupContractError
 impl core::marker::Send for ratatoskr_backup_contracts::BackupExclusion
 impl core::marker::Send for ratatoskr_backup_contracts::BackupExclusionScope
@@ -96,6 +100,7 @@ impl core::marker::Send for ratatoskr_backup_contracts::PolicyOutcome
 impl core::marker::Send for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::Send for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::Send for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Send for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupExclusion
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupExclusionScope
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::BackupPriorityHint
@@ -107,6 +112,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyOut
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::StructuralPartialEq for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::marker::Sync for ratatoskr_backup_contracts::BackupContractError
 impl core::marker::Sync for ratatoskr_backup_contracts::BackupExclusion
 impl core::marker::Sync for ratatoskr_backup_contracts::BackupExclusionScope
@@ -119,6 +125,7 @@ impl core::marker::Sync for ratatoskr_backup_contracts::PolicyOutcome
 impl core::marker::Sync for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::Sync for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::Sync for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Sync for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::marker::Unpin for ratatoskr_backup_contracts::BackupContractError
 impl core::marker::Unpin for ratatoskr_backup_contracts::BackupExclusion
 impl core::marker::Unpin for ratatoskr_backup_contracts::BackupExclusionScope
@@ -131,6 +138,7 @@ impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyOutcome
 impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::Unpin for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::Unpin for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::Unpin for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupContractError
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupExclusion
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::BackupExclusionScope
@@ -143,6 +151,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyOutcome
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::marker::UnsafeUnpin for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupExclusion
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::BackupExclusionScope
@@ -155,6 +164,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::Pol
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupExclusion
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::BackupExclusionScope
@@ -167,11 +177,13 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::Policy
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyRejectionCode
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::PolicyRejectionReason
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl core::str::traits::FromStr for ratatoskr_backup_contracts::ExclusionExpression
 impl ratatoskr_backup_contracts::DesiredBackupPolicy
 impl ratatoskr_backup_contracts::ExclusionExpression
 impl ratatoskr_backup_contracts::PolicyAcknowledged
 impl ratatoskr_backup_contracts::PolicyRejectionCode
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_backup_contracts::PolicyAcknowledged
 impl schemars::JsonSchema for ratatoskr_backup_contracts::BackupExclusion
 impl schemars::JsonSchema for ratatoskr_backup_contracts::BackupExclusionScope
@@ -184,6 +196,7 @@ impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyOutcome
 impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyRejectionCode
 impl schemars::JsonSchema for ratatoskr_backup_contracts::PolicyRejectionReason
 impl schemars::JsonSchema for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl schemars::JsonSchema for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupExclusion
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupExclusionScope
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::BackupPriorityHint
@@ -195,6 +208,7 @@ impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyOutcome
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyRejectionCode
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::PolicyRejectionReason
 impl serde_core::ser::Serialize for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl serde_core::ser::Serialize for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupExclusion
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupExclusionScope
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::BackupPriorityHint
@@ -206,6 +220,7 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::Polic
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyRejectionCode
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::PolicyRejectionReason
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::From<T>
@@ -218,6 +233,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyOutcome 
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::Into<T>
@@ -230,6 +246,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyOutco
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupExclusion where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::BackupExclusionScope where U: core::convert::TryFrom<T>
@@ -242,6 +259,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyOutco
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyRejectionCode where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::PolicyRejectionReason where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::RepositoryBackupEntry where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
@@ -253,6 +271,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyOutcome whe
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: core::clone::Clone
 impl<T> alloc::string::ToString for ratatoskr_backup_contracts::BackupContractError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_backup_contracts::ExclusionExpression where T: core::fmt::Display + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_backup_contracts::BackupContractError where T: 'static + ?core::marker::Sized
@@ -267,6 +286,7 @@ impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyOutcome where T: 's
 impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyRejectionCode where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_backup_contracts::PolicyRejectionReason where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_backup_contracts::RepositoryBackupEntry where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupExclusion where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::BackupExclusionScope where T: ?core::marker::Sized
@@ -279,6 +299,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyOutcome wh
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyRejectionCode where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::PolicyRejectionReason where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::RepositoryBackupEntry where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupExclusion where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::BackupExclusionScope where T: ?core::marker::Sized
@@ -291,6 +312,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyOutcome
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyRejectionCode where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::PolicyRejectionReason where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::RepositoryBackupEntry where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
@@ -302,6 +324,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyOutcome
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupContractError
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupExclusion
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::BackupExclusionScope
@@ -314,6 +337,7 @@ impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyOutcome
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyRejectionCode
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::PolicyRejectionReason
 impl<T> core::convert::From<T> for ratatoskr_backup_contracts::RepositoryBackupEntry
+impl<T> core::convert::From<T> for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupExclusion where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupExclusionScope where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::BackupPriorityHint where T: core::clone::Clone
@@ -325,6 +349,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyOutcome where 
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyRejectionCode where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::PolicyRejectionReason where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::RepositoryBackupEntry where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupExclusion where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupExclusionScope where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::BackupPriorityHint where T: for<'de> serde_core::de::Deserialize<'de>
@@ -336,8 +361,10 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyO
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyRejectionCode where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::PolicyRejectionReason where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::RepositoryBackupEntry where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested where T: for<'de> serde_core::de::Deserialize<'de>
 pub const ratatoskr_backup_contracts::ExclusionExpression::MAX_LEN: usize
 pub const ratatoskr_backup_contracts::PolicyAcknowledged::EVENT_TYPE: &'static str
+pub const ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::COMMAND_TYPE: &'static str
 pub fn alloc::string::String::from(ratatoskr_backup_contracts::ExclusionExpression) -> Self
 pub fn ratatoskr_backup_contracts::BackupContractError::borrow(&self) -> &T
 pub fn ratatoskr_backup_contracts::BackupContractError::borrow_mut(&mut self) -> &mut T
@@ -582,6 +609,25 @@ pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::to_owned(&self) -> T
 pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_backup_contracts::RepositoryBackupEntry::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::borrow(&self) -> &T
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::clone(&self) -> ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::eq(&self, &ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested) -> bool
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::from(T) -> T
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::inline_schema() -> bool
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::into(self) -> U
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::to_owned(&self) -> T
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_backup_contracts::apply_exclusions<'a, T>(&'a [T], &[ratatoskr_backup_contracts::BackupExclusion], impl core::ops::function::FnMut(&T, &ratatoskr_backup_contracts::BackupExclusion) -> bool) -> alloc::vec::Vec<&'a T>
 pub fn ratatoskr_backup_contracts::entries_absent_from_catalog(&[ratatoskr_identifiers::entity::EntityRef], &[ratatoskr_backup_contracts::RepositoryBackupEntry]) -> alloc::vec::Vec<ratatoskr_identifiers::entity::EntityRef>
 pub fn ratatoskr_backup_contracts::uncovered_catalog_repositories(&[ratatoskr_identifiers::entity::EntityRef], &[ratatoskr_backup_contracts::RepositoryBackupEntry]) -> alloc::vec::Vec<ratatoskr_identifiers::entity::EntityRef>
@@ -639,12 +685,15 @@ pub ratatoskr_backup_contracts::RepositoryBackupEntry::mirror_cadence: ratatoskr
 pub ratatoskr_backup_contracts::RepositoryBackupEntry::priority_hint: ratatoskr_backup_contracts::BackupPriorityHint
 pub ratatoskr_backup_contracts::RepositoryBackupEntry::repository_ref: ratatoskr_identifiers::entity::EntityRef
 pub ratatoskr_backup_contracts::RepositoryBackupEntry::size_hint_bytes: core::option::Option<u64>
+pub ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::policy: ratatoskr_backup_contracts::DesiredBackupPolicy
 pub struct ratatoskr_backup_contracts::BackupExclusion
 pub struct ratatoskr_backup_contracts::DesiredBackupPolicy
 pub struct ratatoskr_backup_contracts::ExclusionExpression(_)
 pub struct ratatoskr_backup_contracts::PolicyAcknowledged
 pub struct ratatoskr_backup_contracts::PolicyRejectionReason
 pub struct ratatoskr_backup_contracts::RepositoryBackupEntry
+pub struct ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested
 pub type ratatoskr_backup_contracts::BackupContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_backup_contracts::BackupContractError::Error = core::convert::Infallible
 pub type ratatoskr_backup_contracts::BackupExclusion::Error = <U as core::convert::TryFrom<T>>::Error
@@ -682,6 +731,9 @@ pub type ratatoskr_backup_contracts::PolicyRejectionReason::Owned = T
 pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Error = core::convert::Infallible
 pub type ratatoskr_backup_contracts::RepositoryBackupEntry::Owned = T
+pub type ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::Error = core::convert::Infallible
+pub type ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::Owned = T
 pub unsafe fn ratatoskr_backup_contracts::BackupExclusion::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_backup_contracts::BackupExclusionScope::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_backup_contracts::BackupPriorityHint::clone_to_uninit(&self, *mut u8)
@@ -693,3 +745,4 @@ pub unsafe fn ratatoskr_backup_contracts::PolicyOutcome::clone_to_uninit(&self, 
 pub unsafe fn ratatoskr_backup_contracts::PolicyRejectionCode::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_backup_contracts::PolicyRejectionReason::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_backup_contracts::RepositoryBackupEntry::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested::clone_to_uninit(&self, *mut u8)

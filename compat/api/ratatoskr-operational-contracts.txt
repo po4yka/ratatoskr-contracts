@@ -548,6 +548,25 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::Sc
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ScheduleInspectionSummary where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ScheduleName where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operational_contracts::ServiceName where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::AuditAction
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::AuditEventPage
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::AuditEventSummary
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::AuditOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::AuditTargetKind
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::InspectionContractError
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::InspectionCursor
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::OperationInspectionPage
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::OperationInspectionSummary
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::PublicComponentId
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::PublicComponentState
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::PublicStatusComponent
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::PublicStatusDocument
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::PublicStatusState
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::ScheduleInspectionPage
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::ScheduleInspectionSummary
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::ScheduleName
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::ServiceName
+impl<T> typenum::type_operators::Same for ratatoskr_operational_contracts::StatusContractError
 pub const ratatoskr_operational_contracts::AUDIT_INSPECT_CAPABILITY: &str
 pub const ratatoskr_operational_contracts::AuditAction::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_operational_contracts::AuditAction::MAX_LEN: usize
@@ -1050,68 +1069,87 @@ pub type ratatoskr_operational_contracts::AuditAction::Err = ratatoskr_identifie
 pub type ratatoskr_operational_contracts::AuditAction::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::AuditAction::Error = core::convert::Infallible
 pub type ratatoskr_operational_contracts::AuditAction::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditAction::Output = T
 pub type ratatoskr_operational_contracts::AuditAction::Owned = T
 pub type ratatoskr_operational_contracts::AuditEventPage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::AuditEventPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditEventPage::Output = T
 pub type ratatoskr_operational_contracts::AuditEventPage::Owned = T
 pub type ratatoskr_operational_contracts::AuditEventSummary::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::AuditEventSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditEventSummary::Output = T
 pub type ratatoskr_operational_contracts::AuditEventSummary::Owned = T
 pub type ratatoskr_operational_contracts::AuditOutcome::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::AuditOutcome::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::AuditOutcome::Output = T
 pub type ratatoskr_operational_contracts::AuditOutcome::Owned = T
 pub type ratatoskr_operational_contracts::AuditTargetKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operational_contracts::AuditTargetKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::AuditTargetKind::Error = core::convert::Infallible
 pub type ratatoskr_operational_contracts::AuditTargetKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::AuditTargetKind::Output = T
 pub type ratatoskr_operational_contracts::AuditTargetKind::Owned = T
 pub type ratatoskr_operational_contracts::InspectionContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::InspectionContractError::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::InspectionContractError::Output = T
 pub type ratatoskr_operational_contracts::InspectionContractError::Owned = T
 pub type ratatoskr_operational_contracts::InspectionCursor::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operational_contracts::InspectionCursor::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::InspectionCursor::Error = core::convert::Infallible
 pub type ratatoskr_operational_contracts::InspectionCursor::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::InspectionCursor::Output = T
 pub type ratatoskr_operational_contracts::InspectionCursor::Owned = T
 pub type ratatoskr_operational_contracts::OperationInspectionPage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::OperationInspectionPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::OperationInspectionPage::Output = T
 pub type ratatoskr_operational_contracts::OperationInspectionPage::Owned = T
 pub type ratatoskr_operational_contracts::OperationInspectionSummary::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::OperationInspectionSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::OperationInspectionSummary::Output = T
 pub type ratatoskr_operational_contracts::OperationInspectionSummary::Owned = T
 pub type ratatoskr_operational_contracts::PublicComponentId::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::PublicComponentId::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicComponentId::Output = T
 pub type ratatoskr_operational_contracts::PublicComponentId::Owned = T
 pub type ratatoskr_operational_contracts::PublicComponentState::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::PublicComponentState::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicComponentState::Output = T
 pub type ratatoskr_operational_contracts::PublicComponentState::Owned = T
 pub type ratatoskr_operational_contracts::PublicStatusComponent::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::PublicStatusComponent::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusComponent::Output = T
 pub type ratatoskr_operational_contracts::PublicStatusComponent::Owned = T
 pub type ratatoskr_operational_contracts::PublicStatusDocument::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::PublicStatusDocument::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusDocument::Output = T
 pub type ratatoskr_operational_contracts::PublicStatusDocument::Owned = T
 pub type ratatoskr_operational_contracts::PublicStatusState::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::PublicStatusState::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::PublicStatusState::Output = T
 pub type ratatoskr_operational_contracts::PublicStatusState::Owned = T
 pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Output = T
 pub type ratatoskr_operational_contracts::ScheduleInspectionPage::Owned = T
 pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Output = T
 pub type ratatoskr_operational_contracts::ScheduleInspectionSummary::Owned = T
 pub type ratatoskr_operational_contracts::ScheduleName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operational_contracts::ScheduleName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::ScheduleName::Error = core::convert::Infallible
 pub type ratatoskr_operational_contracts::ScheduleName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ScheduleName::Output = T
 pub type ratatoskr_operational_contracts::ScheduleName::Owned = T
 pub type ratatoskr_operational_contracts::ServiceName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operational_contracts::ServiceName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::ServiceName::Error = core::convert::Infallible
 pub type ratatoskr_operational_contracts::ServiceName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operational_contracts::ServiceName::Output = T
 pub type ratatoskr_operational_contracts::ServiceName::Owned = T
 pub type ratatoskr_operational_contracts::StatusContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operational_contracts::StatusContractError::Error = core::convert::Infallible
+pub type ratatoskr_operational_contracts::StatusContractError::Output = T
 pub type ratatoskr_operational_contracts::StatusContractError::Owned = T
 pub unsafe fn ratatoskr_operational_contracts::AuditAction::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operational_contracts::AuditEventPage::clone_to_uninit(&self, *mut u8)

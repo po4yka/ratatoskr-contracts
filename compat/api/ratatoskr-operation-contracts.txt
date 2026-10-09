@@ -13,7 +13,10 @@ impl core::clone::Clone for ratatoskr_operation_contracts::OperationResultRef
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationSnapshot
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationStage
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationStatus
+impl core::clone::Clone for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::clone::Clone for ratatoskr_operation_contracts::ProgressPercent
+impl core::clone::Clone for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::clone::Clone for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::Eq for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationContractError
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationKind
@@ -21,12 +24,16 @@ impl core::cmp::Eq for ratatoskr_operation_contracts::OperationResultKind
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationStage
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationStatus
 impl core::cmp::Eq for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::Eq for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::cmp::Eq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::Ord for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationResultKind
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationStage
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationStatus
 impl core::cmp::Ord for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::Ord for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::cmp::Ord for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureRequested
@@ -39,21 +46,30 @@ impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationResultRef
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationSnapshot
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStage
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStatus
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationResultKind
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationStage
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationStatus
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::ProgressPercent
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::convert::From<ratatoskr_identifiers::error::IdentifierError> for ratatoskr_operation_contracts::OperationContractError
 impl core::convert::From<ratatoskr_operation_contracts::OperationKind> for alloc::string::String
 impl core::convert::From<ratatoskr_operation_contracts::OperationResultKind> for alloc::string::String
 impl core::convert::From<ratatoskr_operation_contracts::OperationStage> for alloc::string::String
 impl core::convert::From<ratatoskr_operation_contracts::ProgressPercent> for u8
+impl core::convert::From<ratatoskr_operation_contracts::ScheduleCronExpression> for alloc::string::String
+impl core::convert::From<ratatoskr_operation_contracts::ScheduleRegistrationLabel> for alloc::string::String
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationKind
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationResultKind
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::OperationStage
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::convert::TryFrom<u8> for ratatoskr_operation_contracts::ProgressPercent
 impl core::error::Error for ratatoskr_operation_contracts::OperationContractError
 impl core::fmt::Debug for ratatoskr_operation_contracts::AccountErasureAcknowledged
@@ -68,19 +84,26 @@ impl core::fmt::Debug for ratatoskr_operation_contracts::OperationResultRef
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationSnapshot
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStage
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStatus
+impl core::fmt::Debug for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::fmt::Debug for ratatoskr_operation_contracts::ProgressPercent
+impl core::fmt::Debug for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::fmt::Debug for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::fmt::Display for ratatoskr_operation_contracts::OperationContractError
 impl core::fmt::Display for ratatoskr_operation_contracts::OperationKind
 impl core::fmt::Display for ratatoskr_operation_contracts::OperationResultKind
 impl core::fmt::Display for ratatoskr_operation_contracts::OperationStage
 impl core::fmt::Display for ratatoskr_operation_contracts::OperationStatus
 impl core::fmt::Display for ratatoskr_operation_contracts::ProgressPercent
+impl core::fmt::Display for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::fmt::Display for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::hash::Hash for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationKind
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationResultKind
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationStage
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationStatus
 impl core::hash::Hash for ratatoskr_operation_contracts::ProgressPercent
+impl core::hash::Hash for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::hash::Hash for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Copy for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Copy for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Copy for ratatoskr_operation_contracts::ProgressPercent
@@ -96,7 +119,10 @@ impl core::marker::Freeze for ratatoskr_operation_contracts::OperationResultRef
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Freeze for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::Freeze for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Freeze for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::Freeze for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureRequested
@@ -109,7 +135,10 @@ impl core::marker::Send for ratatoskr_operation_contracts::OperationResultRef
 impl core::marker::Send for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Send for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Send for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Send for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::Send for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Send for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::Send for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureRequested
@@ -122,7 +151,10 @@ impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::Operat
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStage
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureRequested
@@ -135,7 +167,10 @@ impl core::marker::Sync for ratatoskr_operation_contracts::OperationResultRef
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Sync for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::Sync for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Sync for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::Sync for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureRequested
@@ -148,7 +183,10 @@ impl core::marker::Unpin for ratatoskr_operation_contracts::OperationResultRef
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::Unpin for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::Unpin for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::Unpin for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::Unpin for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureRequested
@@ -161,7 +199,10 @@ impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationResul
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStage
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStatus
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ProgressPercent
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureRequested
@@ -174,7 +215,10 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationSnapshot
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStage
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStatus
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ProgressPercent
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureRequested
@@ -187,21 +231,30 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::Ope
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationSnapshot
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStage
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStatus
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ProgressPercent
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationKind
 impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationResultKind
 impl core::str::traits::FromStr for ratatoskr_operation_contracts::OperationStage
+impl core::str::traits::FromStr for ratatoskr_operation_contracts::ScheduleCronExpression
+impl core::str::traits::FromStr for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_operation_contracts::AccountErasureRequested
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationProgressed
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationReported
 impl ratatoskr_operation_contracts::OperationKind
+impl ratatoskr_operation_contracts::OperationReported
 impl ratatoskr_operation_contracts::OperationResultKind
 impl ratatoskr_operation_contracts::OperationResultRef
 impl ratatoskr_operation_contracts::OperationSnapshot
 impl ratatoskr_operation_contracts::OperationStage
 impl ratatoskr_operation_contracts::OperationStatus
 impl ratatoskr_operation_contracts::ProgressPercent
+impl ratatoskr_operation_contracts::ScheduleCronExpression
+impl ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureOutcome
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureRequested
@@ -213,7 +266,10 @@ impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationResultRef
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationSnapshot
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStage
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStatus
+impl schemars::JsonSchema for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl schemars::JsonSchema for ratatoskr_operation_contracts::ProgressPercent
+impl schemars::JsonSchema for ratatoskr_operation_contracts::ScheduleCronExpression
+impl schemars::JsonSchema for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureOutcome
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureRequested
@@ -225,7 +281,10 @@ impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationResu
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationSnapshot
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStage
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStatus
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ProgressPercent
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ScheduleCronExpression
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureOutcome
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureRequested
@@ -237,7 +296,10 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::Op
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationSnapshot
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStage
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStatus
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ProgressPercent
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ScheduleCronExpression
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::From<T>
@@ -250,7 +312,10 @@ impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationRe
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::Into<T>
@@ -263,7 +328,10 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::Operatio
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::TryFrom<T>
@@ -276,7 +344,10 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::Operatio
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationSnapshot where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
@@ -289,13 +360,18 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationResul
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationContractError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationKind where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationResultKind where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationStage where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::OperationStatus where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_operation_contracts::ProgressPercent where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::fmt::Display + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureOutcome where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureRequested where T: 'static + ?core::marker::Sized
@@ -308,7 +384,10 @@ impl<T> core::any::Any for ratatoskr_operation_contracts::OperationResultRef whe
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationSnapshot where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStage where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStatus where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::ProgressPercent where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::ScheduleCronExpression where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureRequested where T: ?core::marker::Sized
@@ -321,7 +400,10 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationResu
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ScheduleCronExpression where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureRequested where T: ?core::marker::Sized
@@ -334,7 +416,10 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationR
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ScheduleCronExpression where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
@@ -347,7 +432,10 @@ impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationR
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureOutcome
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureRequested
@@ -360,7 +448,10 @@ impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationResul
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationSnapshot
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStage
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStatus
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ProgressPercent
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ScheduleCronExpression
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
@@ -373,7 +464,10 @@ impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationResultRe
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationSnapshot where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureOutcome where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureRequested where T: for<'de> serde_core::de::Deserialize<'de>
@@ -385,7 +479,26 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::Oper
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationSnapshot where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStage where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStatus where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ProgressPercent where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ScheduleCronExpression where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureAcknowledged
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureRequested
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationContractError
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationKind
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationProgressed
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationReported
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationResultKind
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationResultRef
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationSnapshot
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationStage
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationStatus
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ProgressPercent
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ScheduleCronExpression
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 pub const fn ratatoskr_operation_contracts::OperationStatus::as_str(self) -> &'static str
 pub const fn ratatoskr_operation_contracts::OperationStatus::is_terminal(self) -> bool
 pub const fn ratatoskr_operation_contracts::ProgressPercent::get(self) -> u8
@@ -403,10 +516,19 @@ pub const ratatoskr_operation_contracts::OperationStage::EXAMPLES: &'static [&'s
 pub const ratatoskr_operation_contracts::OperationStage::MAX_LEN: usize
 pub const ratatoskr_operation_contracts::OperationStage::PATTERN: &'static str
 pub const ratatoskr_operation_contracts::OperationStatus::ALL: [Self; 7]
+pub const ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_operation_contracts::ProgressPercent::MAX: u8
+pub const ratatoskr_operation_contracts::ScheduleCronExpression::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operation_contracts::ScheduleCronExpression::MAX_LEN: usize
+pub const ratatoskr_operation_contracts::ScheduleCronExpression::PATTERN: &'static str
+pub const ratatoskr_operation_contracts::ScheduleRegistrationLabel::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_operation_contracts::ScheduleRegistrationLabel::MAX_LEN: usize
+pub const ratatoskr_operation_contracts::ScheduleRegistrationLabel::PATTERN: &'static str
 pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationKind) -> Self
 pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationResultKind) -> Self
 pub fn alloc::string::String::from(ratatoskr_operation_contracts::OperationStage) -> Self
+pub fn alloc::string::String::from(ratatoskr_operation_contracts::ScheduleCronExpression) -> Self
+pub fn alloc::string::String::from(ratatoskr_operation_contracts::ScheduleRegistrationLabel) -> Self
 pub fn ratatoskr_operation_contracts::AccountErasureAcknowledged::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::AccountErasureAcknowledged::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::AccountErasureAcknowledged::borrow_mut(&mut self) -> &mut T
@@ -547,6 +669,7 @@ pub fn ratatoskr_operation_contracts::OperationReported::to_owned(&self) -> T
 pub fn ratatoskr_operation_contracts::OperationReported::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_operation_contracts::OperationReported::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::OperationReported::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::OperationReported::validate(&self) -> core::result::Result<(), ratatoskr_operation_contracts::OperationContractError>
 pub fn ratatoskr_operation_contracts::OperationResultKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::OperationResultKind::as_str(&self) -> &str
 pub fn ratatoskr_operation_contracts::OperationResultKind::borrow(&self) -> &T
@@ -662,6 +785,25 @@ pub fn ratatoskr_operation_contracts::OperationStatus::to_string(&self) -> alloc
 pub fn ratatoskr_operation_contracts::OperationStatus::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_operation_contracts::OperationStatus::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::OperationStatus::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::clone(&self) -> ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::eq(&self, &ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested) -> bool
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::from(T) -> T
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::into(self) -> U
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_operation_contracts::ProgressPercent::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::ProgressPercent::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::ProgressPercent::borrow_mut(&mut self) -> &mut T
@@ -686,6 +828,58 @@ pub fn ratatoskr_operation_contracts::ProgressPercent::try_from(U) -> core::resu
 pub fn ratatoskr_operation_contracts::ProgressPercent::try_from(u8) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_operation_contracts::ProgressPercent::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::ProgressPercent::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::as_str(&self) -> &str
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::clone(&self) -> ratatoskr_operation_contracts::ScheduleCronExpression
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::cmp(&self, &ratatoskr_operation_contracts::ScheduleCronExpression) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::eq(&self, &ratatoskr_operation_contracts::ScheduleCronExpression) -> bool
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::from(T) -> T
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::into(self) -> U
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::partial_cmp(&self, &ratatoskr_operation_contracts::ScheduleCronExpression) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::ScheduleCronExpression::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::as_str(&self) -> &str
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::clone(&self) -> ratatoskr_operation_contracts::ScheduleRegistrationLabel
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::cmp(&self, &ratatoskr_operation_contracts::ScheduleRegistrationLabel) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::eq(&self, &ratatoskr_operation_contracts::ScheduleRegistrationLabel) -> bool
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::from(T) -> T
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::into(self) -> U
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::partial_cmp(&self, &ratatoskr_operation_contracts::ScheduleRegistrationLabel) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::type_id(&self) -> core::any::TypeId
 pub fn u8::from(ratatoskr_operation_contracts::ProgressPercent) -> Self
 pub mod ratatoskr_operation_contracts
 pub ratatoskr_operation_contracts::AccountErasureAcknowledged::extensions: ratatoskr_identifiers::wire::Extensions
@@ -751,6 +945,15 @@ pub ratatoskr_operation_contracts::OperationStatus::PartiallySucceeded
 pub ratatoskr_operation_contracts::OperationStatus::Queued
 pub ratatoskr_operation_contracts::OperationStatus::Running
 pub ratatoskr_operation_contracts::OperationStatus::Succeeded
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::command_type: ratatoskr_event_envelope::command_type::CommandType
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::cron_expression: ratatoskr_operation_contracts::ScheduleCronExpression
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::enabled: bool
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::name: ratatoskr_operation_contracts::ScheduleRegistrationLabel
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::operation_kind: ratatoskr_operation_contracts::OperationKind
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::owner_user_id: ratatoskr_identifiers::uuid_ids::UserId
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::payload: serde_json::map::Map<alloc::string::String, serde_json::value::Value>
+pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::service_name: ratatoskr_operation_contracts::ScheduleRegistrationLabel
 pub struct ratatoskr_operation_contracts::AccountErasureAcknowledged
 pub struct ratatoskr_operation_contracts::AccountErasureRequested
 pub struct ratatoskr_operation_contracts::OperationKind(_)
@@ -760,53 +963,85 @@ pub struct ratatoskr_operation_contracts::OperationResultKind(_)
 pub struct ratatoskr_operation_contracts::OperationResultRef
 pub struct ratatoskr_operation_contracts::OperationSnapshot
 pub struct ratatoskr_operation_contracts::OperationStage(_)
+pub struct ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
 pub struct ratatoskr_operation_contracts::ProgressPercent(_)
+pub struct ratatoskr_operation_contracts::ScheduleCronExpression(_)
+pub struct ratatoskr_operation_contracts::ScheduleRegistrationLabel(_)
 pub type ratatoskr_operation_contracts::AccountErasureAcknowledged::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::AccountErasureAcknowledged::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::AccountErasureAcknowledged::Output = T
 pub type ratatoskr_operation_contracts::AccountErasureAcknowledged::Owned = T
 pub type ratatoskr_operation_contracts::AccountErasureOutcome::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::AccountErasureOutcome::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::AccountErasureOutcome::Output = T
 pub type ratatoskr_operation_contracts::AccountErasureOutcome::Owned = T
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::AccountErasureRequested::Output = T
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Owned = T
 pub type ratatoskr_operation_contracts::OperationContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationContractError::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationContractError::Output = T
 pub type ratatoskr_operation_contracts::OperationContractError::Owned = T
 pub type ratatoskr_operation_contracts::OperationKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operation_contracts::OperationKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationKind::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::OperationKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationKind::Output = T
 pub type ratatoskr_operation_contracts::OperationKind::Owned = T
 pub type ratatoskr_operation_contracts::OperationProgressed::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationProgressed::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationProgressed::Output = T
 pub type ratatoskr_operation_contracts::OperationProgressed::Owned = T
 pub type ratatoskr_operation_contracts::OperationReported::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationReported::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationReported::Output = T
 pub type ratatoskr_operation_contracts::OperationReported::Owned = T
 pub type ratatoskr_operation_contracts::OperationResultKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operation_contracts::OperationResultKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationResultKind::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::OperationResultKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationResultKind::Output = T
 pub type ratatoskr_operation_contracts::OperationResultKind::Owned = T
 pub type ratatoskr_operation_contracts::OperationResultRef::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationResultRef::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationResultRef::Output = T
 pub type ratatoskr_operation_contracts::OperationResultRef::Owned = T
 pub type ratatoskr_operation_contracts::OperationSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationSnapshot::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationSnapshot::Output = T
 pub type ratatoskr_operation_contracts::OperationSnapshot::Owned = T
 pub type ratatoskr_operation_contracts::OperationStage::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_operation_contracts::OperationStage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationStage::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::OperationStage::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::OperationStage::Output = T
 pub type ratatoskr_operation_contracts::OperationStage::Owned = T
 pub type ratatoskr_operation_contracts::OperationStatus::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationStatus::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::OperationStatus::Output = T
 pub type ratatoskr_operation_contracts::OperationStatus::Owned = T
+pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Output = T
+pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Owned = T
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = ratatoskr_operation_contracts::OperationContractError
+pub type ratatoskr_operation_contracts::ProgressPercent::Output = T
 pub type ratatoskr_operation_contracts::ProgressPercent::Owned = T
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Output = T
+pub type ratatoskr_operation_contracts::ScheduleCronExpression::Owned = T
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Output = T
+pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Owned = T
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureAcknowledged::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureOutcome::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureRequested::clone_to_uninit(&self, *mut u8)
@@ -819,4 +1054,7 @@ pub unsafe fn ratatoskr_operation_contracts::OperationResultRef::clone_to_uninit
 pub unsafe fn ratatoskr_operation_contracts::OperationSnapshot::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationStage::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationStatus::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::ProgressPercent::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::ScheduleCronExpression::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::clone_to_uninit(&self, *mut u8)

@@ -1,6 +1,8 @@
 # Public API baseline of ratatoskr-ai-archive-contracts, the frozen reference `api-check` diffs against.
 # Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
 # Regenerate with: cargo contracts api-write
+impl !core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl !core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
 impl core::clone::Clone for ratatoskr_ai_archive_contracts::AiArchiveImport
@@ -500,7 +502,6 @@ impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::ParserName
 impl core::marker::UnsafeUnpin for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
-impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveProvenance
@@ -542,7 +543,6 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts:
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_ai_archive_contracts::ParserVersion
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
-impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveImport
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_ai_archive_contracts::AiArchiveProvenance
@@ -601,6 +601,7 @@ impl ratatoskr_ai_archive_contracts::AiArchiveSnapshot
 impl ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason
 impl ratatoskr_ai_archive_contracts::AiAssetKind
 impl ratatoskr_ai_archive_contracts::AiContentPart
+impl ratatoskr_ai_archive_contracts::AiConversation
 impl ratatoskr_ai_archive_contracts::AiConversationAdded
 impl ratatoskr_ai_archive_contracts::AiConversationUpdated
 impl ratatoskr_ai_archive_contracts::AiFileName
@@ -1219,6 +1220,48 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiT
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::AiToolResult where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::ParserName where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_ai_archive_contracts::ParserVersion where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveCompleteness
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveContractError
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveImport
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveOperationSummary
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveProvenance
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveSnapshot
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveSubject
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveTombstone
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveTombstoneParser
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArtifact
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArtifactAdded
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiArtifactUpdated
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiAsset
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiAssetKind
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiAuthorRole
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiCitation
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiCompletenessReport
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiContentPart
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiConversation
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiConversationAdded
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiConversationUpdated
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiFileName
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiGap
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiGapKind
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiMessage
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiModelName
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiProject
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiProjectAdded
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiProjectUpdated
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiProvider
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiSourceUrl
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiText
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiTitle
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiToolCall
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiToolName
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiToolOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::AiToolResult
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::ParserName
+impl<T> typenum::type_operators::Same for ratatoskr_ai_archive_contracts::ParserVersion
 pub const ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::EVENT_TYPE: &'static str
 pub const ratatoskr_ai_archive_contracts::AiArchiveImport::EVENT_TYPE: &'static str
 pub const ratatoskr_ai_archive_contracts::AiArchiveTombstone::EVENT_TYPE: &'static str
@@ -1264,6 +1307,18 @@ pub const ratatoskr_ai_archive_contracts::ParserName::PATTERN: &'static str
 pub const ratatoskr_ai_archive_contracts::ParserVersion::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_ai_archive_contracts::ParserVersion::MAX_LEN: usize
 pub const ratatoskr_ai_archive_contracts::ParserVersion::PATTERN: &'static str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::ARCHIVE_MEDIA_TYPE: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::CAPABILITIES_PATH: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_ARCHIVE_BYTE_SIZE: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_ARCHIVE_SHA256: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_CORRELATION_ID: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_DEVICE_ID: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_OPERATION_ID: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::HEADER_USER_ID: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::INCOMPLETE_IMPORT_WARNING_CODE: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::INCOMPLETE_IMPORT_WARNING_MESSAGE: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::RECEIPT_CAPABILITY: &str
+pub const ratatoskr_ai_archive_contracts::platform_receipt::RECEIPT_PATH: &str
 pub enum ratatoskr_ai_archive_contracts::AiArchiveSubject
 pub enum ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject
 pub enum ratatoskr_ai_archive_contracts::AiContentPart
@@ -1326,6 +1381,7 @@ pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::borrow_mut(&mut s
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::from(T) -> T
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::into(self) -> U
+pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::source(&self) -> core::option::Option<&(dyn core::error::Error + 'static)>
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::to_string(&self) -> alloc::string::String
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiArchiveContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
@@ -1709,6 +1765,7 @@ pub fn ratatoskr_ai_archive_contracts::AiConversation::borrow(&self) -> &T
 pub fn ratatoskr_ai_archive_contracts::AiConversation::borrow_mut(&mut self) -> &mut T
 pub fn ratatoskr_ai_archive_contracts::AiConversation::clone(&self) -> ratatoskr_ai_archive_contracts::AiConversation
 pub fn ratatoskr_ai_archive_contracts::AiConversation::clone_into(&self, &mut T)
+pub fn ratatoskr_ai_archive_contracts::AiConversation::compute_content_digest(&[ratatoskr_ai_archive_contracts::AiMessage]) -> core::result::Result<ratatoskr_identifiers::blob::ContentDigest, ratatoskr_ai_archive_contracts::AiArchiveContractError>
 pub fn ratatoskr_ai_archive_contracts::AiConversation::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
 pub fn ratatoskr_ai_archive_contracts::AiConversation::eq(&self, &ratatoskr_ai_archive_contracts::AiConversation) -> bool
 pub fn ratatoskr_ai_archive_contracts::AiConversation::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
@@ -1723,6 +1780,7 @@ pub fn ratatoskr_ai_archive_contracts::AiConversation::to_owned(&self) -> T
 pub fn ratatoskr_ai_archive_contracts::AiConversation::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiConversation::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::AiConversation::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::AiConversation::verify_content_digest(&self) -> core::result::Result<(), ratatoskr_ai_archive_contracts::AiArchiveContractError>
 pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::borrow(&self) -> &T
 pub fn ratatoskr_ai_archive_contracts::AiConversationAdded::borrow_mut(&mut self) -> &mut T
@@ -2187,7 +2245,11 @@ pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_from(U) -> core::resul
 pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_ai_archive_contracts::ParserVersion::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_ai_archive_contracts::ParserVersion::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_ai_archive_contracts::platform_receipt::incomplete_import_warning() -> ratatoskr_error_contracts::envelope::WarningEnvelope
+pub fn ratatoskr_ai_archive_contracts::platform_receipt::is_receipt_capability_document(&serde_json::value::Value, &str) -> bool
+pub fn ratatoskr_ai_archive_contracts::platform_receipt::receipt_capability_document(&str) -> serde_json::value::Value
 pub mod ratatoskr_ai_archive_contracts
+pub mod ratatoskr_ai_archive_contracts::platform_receipt
 pub ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::ai_archive_id: ratatoskr_identifiers::uuid_ids::AiArchiveId
 pub ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::completed_at: ratatoskr_identifiers::timestamp::WireTimestamp
 pub ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::content_digest: ratatoskr_identifiers::blob::ContentDigest
@@ -2200,6 +2262,8 @@ pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::ConversationsComplete
 pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::FailedValidation
 pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::StructurallyPartial
 pub ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Unknown
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ContentDigestEncoding(serde_json::error::Error)
+pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ContentDigestMismatch
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch::actual: u32
 pub ratatoskr_ai_archive_contracts::AiArchiveContractError::ConversationCountMismatch::declared: u32
@@ -2410,152 +2474,194 @@ pub struct ratatoskr_ai_archive_contracts::ParserName(_)
 pub struct ratatoskr_ai_archive_contracts::ParserVersion(_)
 pub type ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveCompleteness::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveContractError::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveImport::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveOperationSummary::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveProvenance::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveProvenance::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveProvenance::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveProvenance::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveSnapshot::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveSubject::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveSubject::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveSubject::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveSubject::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstone::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstone::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveTombstone::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstone::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneParser::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneParser::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneParser::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneParser::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneReason::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArchiveTombstoneSubject::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArtifact::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArtifact::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArtifact::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArtifact::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArtifactAdded::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArtifactAdded::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArtifactAdded::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArtifactAdded::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiArtifactUpdated::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiArtifactUpdated::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiArtifactUpdated::Output = T
 pub type ratatoskr_ai_archive_contracts::AiArtifactUpdated::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiAsset::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiAsset::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiAsset::Output = T
 pub type ratatoskr_ai_archive_contracts::AiAsset::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiAssetKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiAssetKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiAssetKind::Output = T
 pub type ratatoskr_ai_archive_contracts::AiAssetKind::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Output = T
 pub type ratatoskr_ai_archive_contracts::AiAuthorRole::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiCitation::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiCitation::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiCitation::Output = T
 pub type ratatoskr_ai_archive_contracts::AiCitation::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Output = T
 pub type ratatoskr_ai_archive_contracts::AiCompletenessReport::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiContentPart::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiContentPart::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiContentPart::Output = T
 pub type ratatoskr_ai_archive_contracts::AiContentPart::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiConversation::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiConversation::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversation::Output = T
 pub type ratatoskr_ai_archive_contracts::AiConversation::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Output = T
 pub type ratatoskr_ai_archive_contracts::AiConversationAdded::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Output = T
 pub type ratatoskr_ai_archive_contracts::AiConversationUpdated::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiFileName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiFileName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiFileName::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiFileName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiFileName::Output = T
 pub type ratatoskr_ai_archive_contracts::AiFileName::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiGap::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiGap::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiGap::Output = T
 pub type ratatoskr_ai_archive_contracts::AiGap::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiGapKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiGapKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiGapKind::Output = T
 pub type ratatoskr_ai_archive_contracts::AiGapKind::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiMessage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiMessage::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiMessage::Output = T
 pub type ratatoskr_ai_archive_contracts::AiMessage::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiModelName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiModelName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiModelName::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiModelName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiModelName::Output = T
 pub type ratatoskr_ai_archive_contracts::AiModelName::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiProject::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiProject::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiProject::Output = T
 pub type ratatoskr_ai_archive_contracts::AiProject::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiProjectAdded::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiProjectAdded::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiProjectAdded::Output = T
 pub type ratatoskr_ai_archive_contracts::AiProjectAdded::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiProjectUpdated::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiProjectUpdated::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiProjectUpdated::Output = T
 pub type ratatoskr_ai_archive_contracts::AiProjectUpdated::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiProvider::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiProvider::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiProvider::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiProvider::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiProvider::Output = T
 pub type ratatoskr_ai_archive_contracts::AiProvider::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Output = T
 pub type ratatoskr_ai_archive_contracts::AiSourceUrl::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiText::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiText::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiText::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiText::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiText::Output = T
 pub type ratatoskr_ai_archive_contracts::AiText::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiTitle::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiTitle::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiTitle::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiTitle::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiTitle::Output = T
 pub type ratatoskr_ai_archive_contracts::AiTitle::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiToolCall::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiToolCall::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolCall::Output = T
 pub type ratatoskr_ai_archive_contracts::AiToolCall::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiToolName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::AiToolName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiToolName::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::AiToolName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::AiToolName::Output = T
 pub type ratatoskr_ai_archive_contracts::AiToolName::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Output = T
 pub type ratatoskr_ai_archive_contracts::AiToolOutcome::Owned = T
 pub type ratatoskr_ai_archive_contracts::AiToolResult::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::AiToolResult::Error = core::convert::Infallible
+pub type ratatoskr_ai_archive_contracts::AiToolResult::Output = T
 pub type ratatoskr_ai_archive_contracts::AiToolResult::Owned = T
 pub type ratatoskr_ai_archive_contracts::ParserName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::ParserName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::ParserName::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::ParserName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserName::Output = T
 pub type ratatoskr_ai_archive_contracts::ParserName::Owned = T
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = core::convert::Infallible
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_ai_archive_contracts::ParserVersion::Output = T
 pub type ratatoskr_ai_archive_contracts::ParserVersion::Owned = T
 pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_ai_archive_contracts::AiArchiveCompleteness::clone_to_uninit(&self, *mut u8)

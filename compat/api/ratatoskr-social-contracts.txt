@@ -25,6 +25,7 @@ impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::clone::Clone for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::clone::Clone for ratatoskr_social_contracts::SourceUnavailability
 impl core::clone::Clone for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::clone::Clone for ratatoskr_social_contracts::UpstreamAvailability
 impl core::cmp::Eq for ratatoskr_social_contracts::AcquisitionMethod
@@ -45,6 +46,7 @@ impl core::cmp::Eq for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialMediaKind
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialRelation
 impl core::cmp::Eq for ratatoskr_social_contracts::SocialRelationKind
+impl core::cmp::Eq for ratatoskr_social_contracts::SourceUnavailability
 impl core::cmp::Eq for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::cmp::Eq for ratatoskr_social_contracts::UpstreamAvailability
 impl core::cmp::Ord for ratatoskr_social_contracts::AcquisitionMethod
@@ -64,6 +66,7 @@ impl core::cmp::Ord for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialMediaKind
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialRelation
 impl core::cmp::Ord for ratatoskr_social_contracts::SocialRelationKind
+impl core::cmp::Ord for ratatoskr_social_contracts::SourceUnavailability
 impl core::cmp::Ord for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::cmp::Ord for ratatoskr_social_contracts::UpstreamAvailability
 impl core::cmp::PartialEq for ratatoskr_social_contracts::AcquisitionMethod
@@ -90,6 +93,7 @@ impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::cmp::PartialEq for ratatoskr_social_contracts::SourceUnavailability
 impl core::cmp::PartialEq for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::cmp::PartialEq for ratatoskr_social_contracts::UpstreamAvailability
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::AcquisitionMethod
@@ -109,6 +113,7 @@ impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialMediaItem
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialMediaKind
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialRelation
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SocialRelationKind
+impl core::cmp::PartialOrd for ratatoskr_social_contracts::SourceUnavailability
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::cmp::PartialOrd for ratatoskr_social_contracts::UpstreamAvailability
 impl core::convert::From<ratatoskr_social_contracts::AuthorHandle> for alloc::string::String
@@ -156,6 +161,7 @@ impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::fmt::Debug for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::fmt::Debug for ratatoskr_social_contracts::SourceUnavailability
 impl core::fmt::Debug for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::fmt::Debug for ratatoskr_social_contracts::UpstreamAvailability
 impl core::fmt::Display for ratatoskr_social_contracts::AuthorHandle
@@ -185,6 +191,7 @@ impl core::hash::Hash for ratatoskr_social_contracts::SocialMediaItem
 impl core::hash::Hash for ratatoskr_social_contracts::SocialMediaKind
 impl core::hash::Hash for ratatoskr_social_contracts::SocialRelation
 impl core::hash::Hash for ratatoskr_social_contracts::SocialRelationKind
+impl core::hash::Hash for ratatoskr_social_contracts::SourceUnavailability
 impl core::hash::Hash for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::hash::Hash for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Copy for ratatoskr_social_contracts::AcquisitionMethod
@@ -193,6 +200,7 @@ impl core::marker::Copy for ratatoskr_social_contracts::RemovalReason
 impl core::marker::Copy for ratatoskr_social_contracts::SavedAuthority
 impl core::marker::Copy for ratatoskr_social_contracts::SocialCaptureOutcomeCode
 impl core::marker::Copy for ratatoskr_social_contracts::SocialCaptureProvider
+impl core::marker::Copy for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::Copy for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Freeze for ratatoskr_social_contracts::AcquisitionMethod
 impl core::marker::Freeze for ratatoskr_social_contracts::AuthorHandle
@@ -219,6 +227,7 @@ impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::Freeze for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::Freeze for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::Freeze for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::Freeze for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Send for ratatoskr_social_contracts::AcquisitionMethod
@@ -246,6 +255,7 @@ impl core::marker::Send for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::Send for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::Send for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::Send for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::Send for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::AcquisitionMethod
@@ -272,6 +282,7 @@ impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSou
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::StructuralPartialEq for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Sync for ratatoskr_social_contracts::AcquisitionMethod
@@ -299,6 +310,7 @@ impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::Sync for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::Sync for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::Sync for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::Sync for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::Unpin for ratatoskr_social_contracts::AcquisitionMethod
@@ -326,6 +338,7 @@ impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceCaptured
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::Unpin for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::Unpin for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::Unpin for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::Unpin for ratatoskr_social_contracts::UpstreamAvailability
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::AcquisitionMethod
@@ -353,6 +366,7 @@ impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceCaptu
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SourceUnavailability
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::marker::UnsafeUnpin for ratatoskr_social_contracts::UpstreamAvailability
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::AcquisitionMethod
@@ -380,6 +394,7 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::Soc
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SourceUnavailability
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_social_contracts::UpstreamAvailability
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::AcquisitionMethod
@@ -407,6 +422,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::Social
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceRemoved
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceSnapshot
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SocialSourceUpdated
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SourceUnavailability
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::SyncCheckpointCursor
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_social_contracts::UpstreamAvailability
 impl core::str::traits::FromStr for ratatoskr_social_contracts::AuthorHandle
@@ -533,6 +549,7 @@ impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceCa
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SocialSourceUpdated where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SourceUnavailability where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::SyncCheckpointCursor where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_social_contracts::UpstreamAvailability where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::AcquisitionMethod where U: core::convert::Into<T>
@@ -560,6 +577,7 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourc
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SocialSourceUpdated where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SourceUnavailability where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::SyncCheckpointCursor where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_social_contracts::UpstreamAvailability where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::AcquisitionMethod where U: core::convert::TryFrom<T>
@@ -587,6 +605,7 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourc
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceRemoved where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceSnapshot where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SocialSourceUpdated where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SourceUnavailability where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::SyncCheckpointCursor where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_social_contracts::UpstreamAvailability where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::AcquisitionMethod where T: core::clone::Clone
@@ -613,6 +632,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceCaptu
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SocialSourceUpdated where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SourceUnavailability where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::SyncCheckpointCursor where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_social_contracts::UpstreamAvailability where T: core::clone::Clone
 impl<T> alloc::string::ToString for ratatoskr_social_contracts::AuthorHandle where T: core::fmt::Display + ?core::marker::Sized
@@ -650,6 +670,7 @@ impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceCaptured wher
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceRemoved where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceSnapshot where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SocialSourceUpdated where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_social_contracts::SourceUnavailability where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::SyncCheckpointCursor where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_social_contracts::UpstreamAvailability where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::AcquisitionMethod where T: ?core::marker::Sized
@@ -677,6 +698,7 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceCapt
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceRemoved where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SocialSourceUpdated where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SourceUnavailability where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::SyncCheckpointCursor where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_social_contracts::UpstreamAvailability where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::AcquisitionMethod where T: ?core::marker::Sized
@@ -704,6 +726,7 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceC
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceRemoved where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceSnapshot where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SocialSourceUpdated where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SourceUnavailability where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::SyncCheckpointCursor where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_social_contracts::UpstreamAvailability where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::AcquisitionMethod where T: core::clone::Clone
@@ -730,6 +753,7 @@ impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceC
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SocialSourceUpdated where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SourceUnavailability where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::SyncCheckpointCursor where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_social_contracts::UpstreamAvailability where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::AcquisitionMethod
@@ -757,6 +781,7 @@ impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceCaptu
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceRemoved
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceSnapshot
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SocialSourceUpdated
+impl<T> core::convert::From<T> for ratatoskr_social_contracts::SourceUnavailability
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::SyncCheckpointCursor
 impl<T> core::convert::From<T> for ratatoskr_social_contracts::UpstreamAvailability
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::AcquisitionMethod where T: core::clone::Clone
@@ -783,6 +808,7 @@ impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceCaptured
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceRemoved where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceSnapshot where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SocialSourceUpdated where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SourceUnavailability where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::SyncCheckpointCursor where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_social_contracts::UpstreamAvailability where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::AcquisitionMethod where T: for<'de> serde_core::de::Deserialize<'de>
@@ -810,6 +836,34 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialS
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SocialSourceUpdated where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::SyncCheckpointCursor where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_social_contracts::UpstreamAvailability where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::AcquisitionMethod
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::AuthorHandle
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::CaptureCompleteness
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::DisplayName
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::Platform
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::PostPermalink
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::PostText
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::RemovalReason
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SavedAuthority
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialAuthor
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialCaptureOutcomeCode
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialCaptureProvider
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialCaptureRequested
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialContractError
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialFolderMembership
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialMediaItem
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialMediaKind
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialRelation
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialRelationKind
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialSourceAnalysisCompleted
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialSourceCaptured
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialSourceRemoved
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialSourceSnapshot
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SocialSourceUpdated
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SourceUnavailability
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::SyncCheckpointCursor
+impl<T> typenum::type_operators::Same for ratatoskr_social_contracts::UpstreamAvailability
 pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::as_str(self) -> &'static str
 pub const fn ratatoskr_social_contracts::SocialCaptureOutcomeCode::is_terminal_source_failure(self) -> bool
 pub const fn ratatoskr_social_contracts::SocialCaptureProvider::command_subject(self) -> &'static str
@@ -828,6 +882,10 @@ pub const ratatoskr_social_contracts::PostPermalink::PATTERN: &'static str
 pub const ratatoskr_social_contracts::PostText::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::PostText::MAX_LEN: usize
 pub const ratatoskr_social_contracts::PostText::PATTERN: &'static str
+pub const ratatoskr_social_contracts::SOCIAL_POST_RESULT_KIND: &str
+pub const ratatoskr_social_contracts::STAGE_PRESERVED: &str
+pub const ratatoskr_social_contracts::STAGE_QUEUED: &str
+pub const ratatoskr_social_contracts::STAGE_UNAVAILABLE: &str
 pub const ratatoskr_social_contracts::SocialCaptureRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_social_contracts::SocialMediaKind::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_social_contracts::SocialMediaKind::MAX_LEN: usize
@@ -1394,6 +1452,22 @@ pub fn ratatoskr_social_contracts::SocialSourceUpdated::to_owned(&self) -> T
 pub fn ratatoskr_social_contracts::SocialSourceUpdated::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_social_contracts::SocialSourceUpdated::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_social_contracts::SocialSourceUpdated::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::SourceUnavailability::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_social_contracts::SourceUnavailability::borrow(&self) -> &T
+pub fn ratatoskr_social_contracts::SourceUnavailability::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_social_contracts::SourceUnavailability::clone(&self) -> ratatoskr_social_contracts::SourceUnavailability
+pub fn ratatoskr_social_contracts::SourceUnavailability::clone_into(&self, &mut T)
+pub fn ratatoskr_social_contracts::SourceUnavailability::cmp(&self, &ratatoskr_social_contracts::SourceUnavailability) -> core::cmp::Ordering
+pub fn ratatoskr_social_contracts::SourceUnavailability::eq(&self, &ratatoskr_social_contracts::SourceUnavailability) -> bool
+pub fn ratatoskr_social_contracts::SourceUnavailability::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_social_contracts::SourceUnavailability::from(T) -> T
+pub fn ratatoskr_social_contracts::SourceUnavailability::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_social_contracts::SourceUnavailability::into(self) -> U
+pub fn ratatoskr_social_contracts::SourceUnavailability::partial_cmp(&self, &ratatoskr_social_contracts::SourceUnavailability) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_social_contracts::SourceUnavailability::to_owned(&self) -> T
+pub fn ratatoskr_social_contracts::SourceUnavailability::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_social_contracts::SourceUnavailability::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_social_contracts::SourceUnavailability::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_social_contracts::SyncCheckpointCursor::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_social_contracts::SyncCheckpointCursor::as_str(&self) -> &str
 pub fn ratatoskr_social_contracts::SyncCheckpointCursor::borrow(&self) -> &T
@@ -1442,6 +1516,10 @@ pub fn ratatoskr_social_contracts::UpstreamAvailability::to_owned(&self) -> T
 pub fn ratatoskr_social_contracts::UpstreamAvailability::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_social_contracts::UpstreamAvailability::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_social_contracts::UpstreamAvailability::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_social_contracts::preserved_report(ratatoskr_identifiers::uuid_ids::OperationId, ratatoskr_identifiers::uuid_ids::SocialSourceId) -> core::result::Result<ratatoskr_operation_contracts::events::OperationReported, ratatoskr_social_contracts::SocialContractError>
+pub fn ratatoskr_social_contracts::queued_report(ratatoskr_identifiers::uuid_ids::OperationId) -> core::result::Result<ratatoskr_operation_contracts::events::OperationReported, ratatoskr_social_contracts::SocialContractError>
+pub fn ratatoskr_social_contracts::report_envelope(&str, ratatoskr_identifiers::uuid_ids::UserId, ratatoskr_identifiers::uuid_ids::OperationId, ratatoskr_identifiers::entity::EntityRef, ratatoskr_identifiers::uuid_ids::CommandId, ratatoskr_identifiers::uuid_ids::EventId, &ratatoskr_operation_contracts::events::OperationReported) -> core::result::Result<ratatoskr_event_envelope::envelope::EventEnvelope, ratatoskr_social_contracts::SocialContractError>
+pub fn ratatoskr_social_contracts::unavailable_report(ratatoskr_identifiers::uuid_ids::OperationId, ratatoskr_social_contracts::SourceUnavailability) -> core::result::Result<ratatoskr_operation_contracts::events::OperationReported, ratatoskr_social_contracts::SocialContractError>
 pub mod ratatoskr_social_contracts
 pub ratatoskr_social_contracts::AcquisitionMethod::BrowserExtension
 pub ratatoskr_social_contracts::AcquisitionMethod::DataExport
@@ -1477,6 +1555,7 @@ pub ratatoskr_social_contracts::SocialCaptureRequested::original_permalink: rata
 pub ratatoskr_social_contracts::SocialCaptureRequested::provider: ratatoskr_social_contracts::SocialCaptureProvider
 pub ratatoskr_social_contracts::SocialCaptureRequested::saved_authority: ratatoskr_social_contracts::SavedAuthority
 pub ratatoskr_social_contracts::SocialContractError::PartialWithoutWarning
+pub ratatoskr_social_contracts::SocialContractError::ReportConstruction(alloc::string::String)
 pub ratatoskr_social_contracts::SocialFolderMembership::folder_id: ratatoskr_identifiers::entity::EntityLocalId
 pub ratatoskr_social_contracts::SocialFolderMembership::folder_name: core::option::Option<ratatoskr_social_contracts::DisplayName>
 pub ratatoskr_social_contracts::SocialMediaItem::alt_text: core::option::Option<ratatoskr_social_contracts::PostText>
@@ -1519,6 +1598,9 @@ pub ratatoskr_social_contracts::SocialSourceSnapshot::upstream_availability: rat
 pub ratatoskr_social_contracts::SocialSourceSnapshot::warnings: alloc::vec::Vec<ratatoskr_error_contracts::envelope::WarningEnvelope>
 pub ratatoskr_social_contracts::SocialSourceUpdated::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_social_contracts::SocialSourceUpdated::source: ratatoskr_social_contracts::SocialSourceSnapshot
+pub ratatoskr_social_contracts::SourceUnavailability::Deleted
+pub ratatoskr_social_contracts::SourceUnavailability::Inaccessible
+pub ratatoskr_social_contracts::SourceUnavailability::Transient
 pub ratatoskr_social_contracts::UpstreamAvailability::Available
 pub ratatoskr_social_contracts::UpstreamAvailability::DeletedUpstream
 pub ratatoskr_social_contracts::UpstreamAvailability::Unavailable
@@ -1543,100 +1625,131 @@ pub struct ratatoskr_social_contracts::SocialSourceUpdated
 pub struct ratatoskr_social_contracts::SyncCheckpointCursor(_)
 pub type ratatoskr_social_contracts::AcquisitionMethod::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::AcquisitionMethod::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::AcquisitionMethod::Output = T
 pub type ratatoskr_social_contracts::AcquisitionMethod::Owned = T
 pub type ratatoskr_social_contracts::AuthorHandle::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::AuthorHandle::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::AuthorHandle::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::AuthorHandle::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::AuthorHandle::Output = T
 pub type ratatoskr_social_contracts::AuthorHandle::Owned = T
 pub type ratatoskr_social_contracts::CaptureCompleteness::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::CaptureCompleteness::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::CaptureCompleteness::Output = T
 pub type ratatoskr_social_contracts::CaptureCompleteness::Owned = T
 pub type ratatoskr_social_contracts::DisplayName::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::DisplayName::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::DisplayName::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::DisplayName::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::DisplayName::Output = T
 pub type ratatoskr_social_contracts::DisplayName::Owned = T
 pub type ratatoskr_social_contracts::Platform::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::Platform::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::Platform::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::Platform::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::Platform::Output = T
 pub type ratatoskr_social_contracts::Platform::Owned = T
 pub type ratatoskr_social_contracts::PostPermalink::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::PostPermalink::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::PostPermalink::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::PostPermalink::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::PostPermalink::Output = T
 pub type ratatoskr_social_contracts::PostPermalink::Owned = T
 pub type ratatoskr_social_contracts::PostText::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::PostText::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::PostText::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::PostText::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::PostText::Output = T
 pub type ratatoskr_social_contracts::PostText::Owned = T
 pub type ratatoskr_social_contracts::RemovalReason::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::RemovalReason::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::RemovalReason::Output = T
 pub type ratatoskr_social_contracts::RemovalReason::Owned = T
 pub type ratatoskr_social_contracts::SavedAuthority::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SavedAuthority::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SavedAuthority::Output = T
 pub type ratatoskr_social_contracts::SavedAuthority::Owned = T
 pub type ratatoskr_social_contracts::SocialAuthor::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialAuthor::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialAuthor::Output = T
 pub type ratatoskr_social_contracts::SocialAuthor::Owned = T
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Error = ratatoskr_social_contracts::SocialCaptureOutcomeCodeError
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Output = T
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCode::Owned = T
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Output = T
 pub type ratatoskr_social_contracts::SocialCaptureOutcomeCodeError::Owned = T
 pub type ratatoskr_social_contracts::SocialCaptureProvider::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialCaptureProvider::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureProvider::Output = T
 pub type ratatoskr_social_contracts::SocialCaptureProvider::Owned = T
 pub type ratatoskr_social_contracts::SocialCaptureRequested::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialCaptureRequested::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialCaptureRequested::Output = T
 pub type ratatoskr_social_contracts::SocialCaptureRequested::Owned = T
 pub type ratatoskr_social_contracts::SocialContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialContractError::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialContractError::Output = T
 pub type ratatoskr_social_contracts::SocialFolderMembership::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialFolderMembership::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialFolderMembership::Output = T
 pub type ratatoskr_social_contracts::SocialFolderMembership::Owned = T
 pub type ratatoskr_social_contracts::SocialMediaItem::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialMediaItem::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialMediaItem::Output = T
 pub type ratatoskr_social_contracts::SocialMediaItem::Owned = T
 pub type ratatoskr_social_contracts::SocialMediaKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::SocialMediaKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialMediaKind::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialMediaKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::SocialMediaKind::Output = T
 pub type ratatoskr_social_contracts::SocialMediaKind::Owned = T
 pub type ratatoskr_social_contracts::SocialRelation::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialRelation::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialRelation::Output = T
 pub type ratatoskr_social_contracts::SocialRelation::Owned = T
 pub type ratatoskr_social_contracts::SocialRelationKind::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::SocialRelationKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialRelationKind::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SocialRelationKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::SocialRelationKind::Output = T
 pub type ratatoskr_social_contracts::SocialRelationKind::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Output = T
 pub type ratatoskr_social_contracts::SocialSourceAnalysisCompleted::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceCaptured::Output = T
 pub type ratatoskr_social_contracts::SocialSourceCaptured::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceRemoved::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceRemoved::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceRemoved::Output = T
 pub type ratatoskr_social_contracts::SocialSourceRemoved::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceSnapshot::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceSnapshot::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceSnapshot::Output = T
 pub type ratatoskr_social_contracts::SocialSourceSnapshot::Owned = T
 pub type ratatoskr_social_contracts::SocialSourceUpdated::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SocialSourceUpdated::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SocialSourceUpdated::Output = T
 pub type ratatoskr_social_contracts::SocialSourceUpdated::Owned = T
+pub type ratatoskr_social_contracts::SourceUnavailability::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_social_contracts::SourceUnavailability::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::SourceUnavailability::Output = T
+pub type ratatoskr_social_contracts::SourceUnavailability::Owned = T
 pub type ratatoskr_social_contracts::SyncCheckpointCursor::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_social_contracts::SyncCheckpointCursor::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::SyncCheckpointCursor::Error = core::convert::Infallible
 pub type ratatoskr_social_contracts::SyncCheckpointCursor::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_social_contracts::SyncCheckpointCursor::Output = T
 pub type ratatoskr_social_contracts::SyncCheckpointCursor::Owned = T
 pub type ratatoskr_social_contracts::UpstreamAvailability::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_social_contracts::UpstreamAvailability::Error = core::convert::Infallible
+pub type ratatoskr_social_contracts::UpstreamAvailability::Output = T
 pub type ratatoskr_social_contracts::UpstreamAvailability::Owned = T
 pub unsafe fn ratatoskr_social_contracts::AcquisitionMethod::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::AuthorHandle::clone_to_uninit(&self, *mut u8)
@@ -1662,5 +1775,6 @@ pub unsafe fn ratatoskr_social_contracts::SocialSourceCaptured::clone_to_uninit(
 pub unsafe fn ratatoskr_social_contracts::SocialSourceRemoved::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialSourceSnapshot::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SocialSourceUpdated::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_social_contracts::SourceUnavailability::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::SyncCheckpointCursor::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_social_contracts::UpstreamAvailability::clone_to_uninit(&self, *mut u8)

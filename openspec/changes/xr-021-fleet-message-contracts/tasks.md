@@ -57,4 +57,4 @@
 
 ## 12. Final gate
 
-- [ ] 12.1 Run the full gate of `DEVELOPMENT.md`, `cargo deny check` and `openspec validate --all --strict`; every step passes on the committed tree. Verification only, no test to write.
+- [x] 12.1 Run the full gate of `DEVELOPMENT.md`, `cargo deny check` and `openspec validate --all --strict`; every step passes on the committed tree. Verification only, no test to write.
