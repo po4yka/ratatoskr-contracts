@@ -129,6 +129,8 @@ root_types! {
         => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested,
     "ratatoskr_document_contracts::ContentCaptureRequested"
         => ratatoskr_document_contracts::ContentCaptureRequested,
+    "ratatoskr_document_contracts::ContentDocumentExtracted"
+        => ratatoskr_document_contracts::ContentDocumentExtracted,
     "ratatoskr_document_contracts::Document"     => ratatoskr_document_contracts::Document,
     "ratatoskr_error_contracts::ErrorEnvelope"         => ratatoskr_error_contracts::ErrorEnvelope,
     "ratatoskr_event_envelope::CommandEnvelope"        => ratatoskr_event_envelope::CommandEnvelope,
@@ -283,6 +285,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_social_contracts::SocialSourceUpdated",
         <ratatoskr_social_contracts::SocialSourceUpdated as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_document_contracts::ContentDocumentExtracted",
+        <ratatoskr_document_contracts::ContentDocumentExtracted as EventPayload>::EVENT_TYPE,
     );
     declared
 }

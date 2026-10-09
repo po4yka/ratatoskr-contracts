@@ -1910,3 +1910,29 @@ privacy        = "user_content"
 [contract.command]
 command_type = "content.capture.requested.v1"
 payload_type = "ratatoskr_document_contracts::ContentCaptureRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "content.document_extracted"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-extractor"
+producers      = ["ratatoskr-extractor"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-document-contracts"
+canonical_path = "crates/document-contracts/src/events.rs"
+fixtures_dir   = "fixtures/events/content.document.extracted.v1"
+summary        = "Fact: the extractor finished extracting one document, which travels inline beside its stored IR blob."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_document_contracts::ContentDocumentExtracted"
+output         = "schemas/events/content.document.extracted.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:ContentDocumentExtracted"
+unknown_policy = "preserve"
+privacy        = "user_content"
+
+[contract.event]
+event_type   = "content.document.extracted.v1"
+payload_type = "ratatoskr_document_contracts::ContentDocumentExtracted"

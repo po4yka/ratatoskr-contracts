@@ -752,3 +752,12 @@ reason         = "Only http and https addresses are captured; other schemes are 
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'the contract maximum is 2048'
 reason         = "A captured address is bounded to 2048 characters so a command stays small and loggable."
+
+# ---------------------------------------------------------------------------
+# content.document.extracted (XR-021 S09)
+# ---------------------------------------------------------------------------
+
+["events/content.document.extracted.v1/invalid/missing-document-blob.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `document_blob`'
+reason         = "The event carries both the document and the extractor-owned blob that stores it; a consumer correlates the two by the blob reference."

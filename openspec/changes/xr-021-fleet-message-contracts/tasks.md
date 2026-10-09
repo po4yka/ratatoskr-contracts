@@ -36,8 +36,8 @@
 
 ## 8. Document extracted event (S09)
 
-- [ ] 8.1 Add `crates/document-contracts/tests/events.rs::document_extracted_round_trips_and_requires_extractor_owned_blob` and the envelope composition fixture case; the blob-owner assertion MUST fail against a `validate` that accepts any owner.
-- [ ] 8.2 Implement `ContentDocumentExtracted`, its registry entry and `contracts.toml` row, generate and bless; the test passes.
+- [x] 8.1 Add `crates/document-contracts/tests/events.rs::document_extracted_round_trips_and_requires_extractor_owned_blob` and the envelope composition fixture case; the blob-owner assertion MUST fail against a `validate` that accepts any owner.
+- [x] 8.2 Implement `ContentDocumentExtracted`, its registry entry and `contracts.toml` row, generate and bless; the test passes.
 
 ## 9. Vault backup policy command (S09)
 

@@ -346,6 +346,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_document_contracts::ContentCaptureRequested" => {
             render!(ratatoskr_document_contracts::ContentCaptureRequested)
         }
+        "ratatoskr_document_contracts::ContentDocumentExtracted" => {
+            render!(ratatoskr_document_contracts::ContentDocumentExtracted)
+        }
         other => panic!("{other} is registered but has no canonical renderer in this test"),
     }
 }
