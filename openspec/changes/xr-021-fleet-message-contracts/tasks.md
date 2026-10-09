@@ -46,8 +46,8 @@
 
 ## 10. Social capture reports and captured_at fixtures (S10 CD1, CD4)
 
-- [ ] 10.1 Add `crates/social-contracts/tests/capture_report.rs` comparing the builders with four golden fixtures byte for byte against builders that return a bare failed report; it MUST fail on an assertion.
-- [ ] 10.2 Implement `capture_report.rs`, the dependency, `ReportConstruction` and the four fixtures; regenerate the baseline; the test passes.
+- [x] 10.1 Add `crates/social-contracts/tests/capture_report.rs` comparing the builders with four golden fixtures byte for byte against builders that return a bare failed report; it MUST fail on an assertion.
+- [x] 10.2 Implement `capture_report.rs`, the dependency, `ReportConstruction` and the four fixtures; regenerate the baseline; the test passes.
 - [ ] 10.3 Add the two `captured_at` fixtures and their expectation row. These pin existing behaviour of the timestamp type, so no test can fail first.
 
 ## 11. Registry corrections (S01)

@@ -13,6 +13,10 @@ ratatoskr-error-contracts.workspace = true
 # Needed for `impl EventPayload for SocialSource{Captured,Updated}`; the orphan rule leaves
 # this crate as the only legal home for those impls.
 ratatoskr-event-envelope.workspace  = true
+# `capture_report` builds `OperationReported` payloads and their results. operation-contracts
+# depends only on identifiers, error-contracts, event-envelope and ai-archive-contracts, so this
+# edge cannot close a cycle.
+ratatoskr-operation-contracts.workspace = true
 serde.workspace      = true
 serde_json.workspace = true
 schemars.workspace   = true

@@ -11,4 +11,8 @@ pub enum SocialContractError {
     /// which leaves the consumer unable to act on the gap.
     #[error("completeness `partial` requires at least one warning")]
     PartialWithoutWarning,
+    /// A capture report or its envelope could not be built, because a member failed its grammar
+    /// or the report broke an operation-status invariant. Carries a content-free description.
+    #[error("capture report construction failed: {0}")]
+    ReportConstruction(String),
 }

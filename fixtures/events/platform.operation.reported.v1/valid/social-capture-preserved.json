@@ -1,0 +1,11 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a21",
+  "status": "succeeded",
+  "stage": "capture_preserved",
+  "results": [
+    {
+      "result_kind": "social.post",
+      "target": "social_source:018f0000-0000-7000-8000-000000000a31"
+    }
+  ]
+}

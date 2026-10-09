@@ -1566,6 +1566,7 @@ dependencies = [
  "ratatoskr-error-contracts",
  "ratatoskr-event-envelope",
  "ratatoskr-identifiers",
+ "ratatoskr-operation-contracts",
  "regex",
  "schemars",
  "serde",

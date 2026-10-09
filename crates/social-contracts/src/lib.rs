@@ -25,6 +25,7 @@
 
 mod author;
 mod capture;
+mod capture_report;
 mod collection;
 mod error;
 mod events;
@@ -38,6 +39,10 @@ mod vocabulary;
 
 pub use crate::author::SocialAuthor;
 pub use crate::capture::{SocialCaptureProvider, SocialCaptureRequested};
+pub use crate::capture_report::{
+    SOCIAL_POST_RESULT_KIND, STAGE_PRESERVED, STAGE_QUEUED, STAGE_UNAVAILABLE,
+    SourceUnavailability, preserved_report, queued_report, report_envelope, unavailable_report,
+};
 pub use crate::collection::SocialFolderMembership;
 pub use crate::error::SocialContractError;
 pub use crate::events::{

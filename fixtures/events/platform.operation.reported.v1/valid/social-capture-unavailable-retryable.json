@@ -1,0 +1,10 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000a21",
+  "status": "failed",
+  "stage": "capture_unavailable",
+  "error": {
+    "code": "social.source.unavailable",
+    "message": "The post could not be retrieved. Try again later.",
+    "retryable": true
+  }
+}
