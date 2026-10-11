@@ -113,6 +113,8 @@ The `check-typescript` verb resolves its compiler through the `CONTRACTSC_TSC` e
 
 Package build and publish do not exist yet; that is milestone 10. What exists since milestone 9 is the packaging *artifact*: the `package` job tars `generated/typescript/` from the committed tree (already proven equal to freshly generated output by `check` and by the `determinism` job) and uploads it, so a consumer can trial the declarations before any registry exists.
 
+A `producers` or `consumers` entry in `contracts.toml` is a declaration of the audience a contract was designed for, not evidence that a service publishes or reads it: rule R7 forbids an empty list, so a row keeps its declared audience even when nothing is wired. The bus table of XR-021 CONTRACTS.md S01 says which audiences are wired, and the `UNWIRED` table in `tools/contractsc/tests/live_message_types.rs` names every declared audience that is not, with the reason. Wiring one means deleting its `UNWIRED` entry in the same commit that adds the service to the wired list of the pinned row.
+
 ## Rules
 
 No service-private domain models, ORM entities, credentials, or real private data belong here. Generated artifacts are reviewed but not hand-edited. Cross-repository contract work must use `ratatoskr-workspace`.

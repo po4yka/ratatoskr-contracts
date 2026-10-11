@@ -1,5 +1,6 @@
 //! The live-message registry: every message on the fleet bus has the producers and consumers
-//! the single bus table of XR-021 CONTRACTS.md S01 gives it.
+//! the single bus table of XR-021 CONTRACTS.md S01 gives it, and every audience the registry
+//! declares that nothing wires is listed in [`UNWIRED`] with the reason (XR-021 round 2, R2-19).
 
 #![allow(clippy::expect_used, clippy::panic, reason = "test diagnostics")]
 
@@ -80,7 +81,86 @@ fn names(values: &[&str]) -> Vec<String> {
     values.iter().map(|value| (*value).to_owned()).collect()
 }
 
-/// One row of the S01 table: (message type, kind, producers, consumers).
+/// Which list of a registry row an [`UNWIRED`] entry belongs to.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Side {
+    Producer,
+    Consumer,
+}
+
+impl Side {
+    fn of(self, contract: &Contract) -> &[String] {
+        match self {
+            Self::Producer => &contract.producers,
+            Self::Consumer => &contract.consumers,
+        }
+    }
+}
+
+/// Registry audiences that are a declaration only: (contract id, side, service, reason).
+///
+/// Rule R7 forbids an empty producers or consumers list, so a row keeps the audience it was
+/// designed for even when no service publishes or reads the message today. [`ROWS`] says which
+/// audience is wired; this table says which declared audience is not, so the two together account
+/// for every entry of every pinned row.
+const UNWIRED: &[(&str, Side, &str, &str)] = &[
+    (
+        "knowledge.social_source_analysis_completed",
+        Side::Consumer,
+        "ratatoskr-instagram",
+        "S01 and R2-19: published with no consumer; a feedback link no flow depends on needs an Edge durable and an ACL stanza",
+    ),
+    (
+        "knowledge.ai_archive_analysis_completed",
+        Side::Consumer,
+        "ratatoskr-chatgpt",
+        "S01 and R2-19: published with no consumer; a feedback link no flow depends on needs an Edge durable and an ACL stanza",
+    ),
+    (
+        "knowledge.ai_archive_analysis_completed",
+        Side::Consumer,
+        "ratatoskr-claude",
+        "S01 and R2-19: published with no consumer; a feedback link no flow depends on needs an Edge durable and an ACL stanza",
+    ),
+    (
+        "platform.notification_raised",
+        Side::Producer,
+        "ratatoskr-knowledge",
+        "R2-19: nothing in the fleet publishes evt.platform.notification.raised.v1; what raises a notification is a feature decision outside XR-021",
+    ),
+    (
+        "platform.notification_raised",
+        Side::Producer,
+        "ratatoskr-github",
+        "R2-19: nothing in the fleet publishes evt.platform.notification.raised.v1; what raises a notification is a feature decision outside XR-021",
+    ),
+    (
+        "platform.notification_raised",
+        Side::Producer,
+        "ratatoskr-vault",
+        "R2-19: nothing in the fleet publishes evt.platform.notification.raised.v1; what raises a notification is a feature decision outside XR-021",
+    ),
+    (
+        "platform.notification_raised",
+        Side::Producer,
+        "ratatoskr-x",
+        "R2-19: nothing in the fleet publishes evt.platform.notification.raised.v1; what raises a notification is a feature decision outside XR-021",
+    ),
+    (
+        "platform.operation_progressed",
+        Side::Producer,
+        "ratatoskr-platform",
+        "Platform does not publish evt.platform.operation.progressed.v1 on the bus today",
+    ),
+    (
+        "platform.operation_progressed",
+        Side::Consumer,
+        "ratatoskr-knowledge",
+        "Platform does not publish the event, so Knowledge has nothing to read",
+    ),
+];
+
+/// One row of the S01 table: (message type, kind, wired producers, wired consumers).
 type Row = (
     &'static str,
     Kind,
@@ -248,13 +328,48 @@ const ROWS: &[Row] = &[
         &["ratatoskr-knowledge"],
         &["ratatoskr-channel-digests"],
     ),
+    // Published or declared without a wired audience (S01 and R2-19); `UNWIRED` holds the rest.
+    (
+        "knowledge.analysis.completed.v1",
+        Kind::Event,
+        &["ratatoskr-knowledge"],
+        &[],
+    ),
+    (
+        "knowledge.ai_archive_analysis.completed.v1",
+        Kind::Event,
+        &["ratatoskr-knowledge"],
+        &[],
+    ),
+    (
+        "platform.notification.raised.v1",
+        Kind::Event,
+        &[],
+        &["ratatoskr-telegram"],
+    ),
+    ("platform.operation.progressed.v1", Kind::Event, &[], &[]),
 ];
 
-#[test]
-fn every_live_message_has_the_producers_and_consumers_of_the_bus_table() {
-    let metadata = metadata();
+/// The declared-but-unwired services of `contract_id` on `side`.
+fn unwired(contract_id: &str, side: Side) -> Vec<&'static str> {
+    UNWIRED
+        .iter()
+        .filter(|(id, entry_side, _, _)| *id == contract_id && *entry_side == side)
+        .map(|(_, _, service, _)| *service)
+        .collect()
+}
+
+fn with_unwired(wired: &[&str], contract_id: &str, side: Side) -> Vec<String> {
+    let mut all = names(wired);
+    all.extend(names(&unwired(contract_id, side)));
+    all.sort();
+    all
+}
+
+/// Every pinned row's registry audience equals its wired audience plus its `UNWIRED` entries.
+fn assert_audiences_are_wired_or_listed(metadata: &Metadata) {
     for (message_type, kind, producers, consumers) in ROWS {
-        let (registered_kind, contract) = registered(&metadata, message_type);
+        let (registered_kind, contract) = registered(metadata, message_type);
         assert_eq!(
             registered_kind,
             *kind,
@@ -263,13 +378,84 @@ fn every_live_message_has_the_producers_and_consumers_of_the_bus_table() {
         );
         assert_eq!(
             sorted(&contract.producers),
-            sorted(&names(producers)),
-            "{message_type}: producers"
+            with_unwired(producers, &contract.id, Side::Producer),
+            "{message_type}: producers are the wired ones plus the UNWIRED entries"
         );
         assert_eq!(
             sorted(&contract.consumers),
-            sorted(&names(consumers)),
-            "{message_type}: consumers"
+            with_unwired(consumers, &contract.id, Side::Consumer),
+            "{message_type}: consumers are the wired ones plus the UNWIRED entries"
+        );
+    }
+}
+
+#[test]
+fn every_live_message_has_the_producers_and_consumers_of_the_bus_table() {
+    assert_audiences_are_wired_or_listed(&metadata());
+}
+
+#[test]
+fn declared_audiences_that_nothing_wires_are_listed_and_nothing_else() {
+    let metadata = metadata();
+    let pinned: Vec<&str> = ROWS
+        .iter()
+        .map(|(message_type, ..)| registered(&metadata, message_type).1.id.as_str())
+        .collect();
+    let mut seen: Vec<(&str, &str, &str)> = Vec::new();
+    for (contract_id, side, service, reason) in UNWIRED {
+        let contract = metadata
+            .contracts
+            .iter()
+            .find(|contract| contract.id == *contract_id)
+            .unwrap_or_else(|| panic!("{contract_id}: no such contract in contracts.toml"));
+        assert!(
+            side.of(contract).iter().any(|name| name == service),
+            "{contract_id}: {service} is not on the {side:?} side of the registry row"
+        );
+        assert!(
+            pinned.contains(contract_id),
+            "{contract_id}: no ROWS entry pins this contract, so its UNWIRED entry would go unchecked"
+        );
+        assert!(
+            !reason.trim().is_empty(),
+            "{contract_id}: {service} needs a reason"
+        );
+        let key = (
+            *contract_id,
+            if matches!(side, Side::Producer) {
+                "producer"
+            } else {
+                "consumer"
+            },
+            *service,
+        );
+        assert!(
+            !seen.contains(&key),
+            "{contract_id}: {service} is listed twice"
+        );
+        seen.push(key);
+    }
+    // (b) a declared audience that is neither wired in ROWS nor listed in UNWIRED fails here.
+    assert_audiences_are_wired_or_listed(&metadata);
+}
+
+#[test]
+fn transfer_rows_are_http_counterparts_and_not_bus_messages() {
+    let metadata = metadata();
+    let transfer: Vec<&Contract> = metadata
+        .contracts
+        .iter()
+        .filter(|contract| contract.id.starts_with("transfer."))
+        .collect();
+    assert!(
+        !transfer.is_empty(),
+        "the registry carries the transfer rows"
+    );
+    for contract in transfer {
+        assert!(
+            contract.command.is_none() && contract.event.is_none(),
+            "{}: a transfer row is an HTTP body; its audience is an HTTP counterpart, not a bus subject",
+            contract.id
         );
     }
 }
