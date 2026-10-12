@@ -70,6 +70,63 @@ pub enum OperationContractError {
         actual: String,
     },
 
+    /// A deletion acknowledgement with `outcome` `refused` and no `refusal`.
+    #[error("a deletion acknowledgement with outcome `refused` requires a refusal")]
+    DeletionAckRefusedWithoutRefusal,
+
+    /// A deletion acknowledgement with `outcome` `applied` that carries a `refusal`.
+    #[error("a deletion acknowledgement with outcome `applied` forbids a refusal")]
+    DeletionAckAppliedWithRefusal,
+
+    /// A stream erasure request whose `request_ref` is not a `privacy_request`.
+    #[error("stream erasure request_ref must be of kind `privacy_request`; got `{actual}`")]
+    StreamErasureRequestKind {
+        /// The kind that was present.
+        actual: String,
+    },
+
+    /// A stream erasure request that names no sequence.
+    #[error("stream erasure requires at least one stream sequence")]
+    EmptyStreamSequences,
+
+    /// A stream erasure request that names more sequences than one command may carry.
+    #[error("stream erasure carries at most {max} stream sequences; got {got}")]
+    TooManyStreamSequences {
+        /// The most sequences one command may name.
+        max: usize,
+        /// How many sequences were present.
+        got: usize,
+    },
+
+    /// A stream sequence of zero; the broker numbers messages from 1.
+    #[error("stream sequences start at 1; got 0 at index {index}")]
+    ZeroStreamSequence {
+        /// Position of the offending entry.
+        index: usize,
+    },
+
+    /// A stream sequence a JSON consumer cannot read exactly.
+    #[error("stream sequence {got} at index {index} exceeds 2^53 - 1")]
+    StreamSequenceAboveJsonSafeRange {
+        /// Position of the offending entry.
+        index: usize,
+        /// The offending value.
+        got: u64,
+    },
+
+    /// Stream sequences that are not strictly ascending: a descending pair or a duplicate.
+    #[error(
+        "stream sequences must be strictly ascending; {next} follows {previous} at index {index}"
+    )]
+    StreamSequencesNotAscending {
+        /// Position of the entry that breaks the order.
+        index: usize,
+        /// The entry before it.
+        previous: u64,
+        /// The offending entry.
+        next: u64,
+    },
+
     /// An identifier inside an operation contract failed to parse.
     #[error(transparent)]
     Identifier(#[from] ratatoskr_identifiers::IdentifierError),

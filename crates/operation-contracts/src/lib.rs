@@ -22,6 +22,7 @@
 #![deny(missing_docs)]
 
 mod account_erasure;
+mod deletion_ack;
 mod error;
 mod events;
 mod kind;
@@ -30,9 +31,13 @@ mod result_ref;
 mod schedule_registration;
 mod snapshot;
 mod status;
+mod stream_erasure;
 
 pub use crate::account_erasure::{
     AccountErasureAcknowledged, AccountErasureOutcome, AccountErasureRequested,
+};
+pub use crate::deletion_ack::{
+    DeletionAckFamily, DeletionAckOutcome, DeletionAckRefusal, KnowledgeDeletionAcknowledged,
 };
 pub use crate::error::OperationContractError;
 pub use crate::events::{OperationProgressed, OperationReported};
@@ -44,3 +49,6 @@ pub use crate::schedule_registration::{
 };
 pub use crate::snapshot::OperationSnapshot;
 pub use crate::status::OperationStatus;
+pub use crate::stream_erasure::{
+    MAX_JSON_SAFE_SEQUENCE, MAX_STREAM_SEQUENCES, PlatformStreamErasureRequested,
+};
