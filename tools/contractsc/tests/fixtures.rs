@@ -292,6 +292,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_operation_contracts::OperationProgressed" => {
             render!(ratatoskr_operation_contracts::OperationProgressed)
         }
+        "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged" => {
+            render!(ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged)
+        }
+        "ratatoskr_operation_contracts::PlatformStreamErasureRequested" => {
+            render!(ratatoskr_operation_contracts::PlatformStreamErasureRequested)
+        }
         "ratatoskr_operation_contracts::OperationReported" => {
             render!(ratatoskr_operation_contracts::OperationReported)
         }

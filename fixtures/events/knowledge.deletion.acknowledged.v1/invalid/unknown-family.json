@@ -1,0 +1,8 @@
+{
+  "acknowledged_event_id": "018f0000-0000-7000-8000-000000000a01",
+  "family": "github",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": "repository:018f0000-0000-7000-8000-000000000601",
+  "outcome": "applied",
+  "acknowledged_at": "2026-10-12T08:00:00Z"
+}

@@ -158,6 +158,8 @@ root_types! {
         => ratatoskr_operation_contracts::AccountErasureAcknowledged,
     "ratatoskr_operation_contracts::AccountErasureRequested"
         => ratatoskr_operation_contracts::AccountErasureRequested,
+    "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged"
+        => ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged,
     "ratatoskr_operation_contracts::OperationProgressed"
         => ratatoskr_operation_contracts::OperationProgressed,
     "ratatoskr_operation_contracts::OperationReported"
@@ -166,6 +168,8 @@ root_types! {
         => ratatoskr_operation_contracts::OperationSnapshot,
     "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
         => ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested,
+    "ratatoskr_operation_contracts::PlatformStreamErasureRequested"
+        => ratatoskr_operation_contracts::PlatformStreamErasureRequested,
     "ratatoskr_operational_contracts::AuditEventPage"
         => ratatoskr_operational_contracts::AuditEventPage,
     "ratatoskr_operational_contracts::OperationInspectionPage"
@@ -265,6 +269,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
         <ratatoskr_operation_contracts::AccountErasureAcknowledged as EventPayload>::EVENT_TYPE,
     );
     declared.insert(
+        "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged",
+        <ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged as EventPayload>::EVENT_TYPE,
+    );
+    declared.insert(
         "ratatoskr_operation_contracts::OperationProgressed",
         <ratatoskr_operation_contracts::OperationProgressed as EventPayload>::EVENT_TYPE,
     );
@@ -330,6 +338,10 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
     declared.insert(
         "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested",
         <ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested as CommandPayload>::COMMAND_TYPE,
+    );
+    declared.insert(
+        "ratatoskr_operation_contracts::PlatformStreamErasureRequested",
+        <ratatoskr_operation_contracts::PlatformStreamErasureRequested as CommandPayload>::COMMAND_TYPE,
     );
     declared.insert(
         "ratatoskr_document_contracts::ContentCaptureRequested",

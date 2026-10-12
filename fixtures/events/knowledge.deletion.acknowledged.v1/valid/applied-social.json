@@ -1,0 +1,8 @@
+{
+  "acknowledged_event_id": "018f0000-0000-7000-8000-000000000a03",
+  "family": "social",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": "social_source:018f0000-0000-7000-8000-000000000202",
+  "outcome": "applied",
+  "acknowledged_at": "2026-10-12T08:00:02Z"
+}

@@ -725,6 +725,49 @@ error_contains = 'does not match ^[^\x00-\x20\x7f]+([ \t]+[^\x00-\x20\x7f]+){4}$
 reason         = "A schedule is a five-field UTC cron expression; Platform refuses to evaluate anything else."
 
 # ---------------------------------------------------------------------------
+# knowledge.deletion.acknowledged (XR-021 R5-11)
+# ---------------------------------------------------------------------------
+
+["events/knowledge.deletion.acknowledged.v1/invalid/refused-without-refusal.json"]
+rejected_by    = ["serde"]
+error_contains = 'outcome `refused` requires a refusal'
+reason         = "A refused deletion that names no reason leaves an operator with nothing to look at; schema cannot make one member depend on the value of another."
+
+["events/knowledge.deletion.acknowledged.v1/invalid/applied-with-refusal.json"]
+rejected_by    = ["serde"]
+error_contains = 'outcome `applied` forbids a refusal'
+reason         = "An applied deletion with a refusal contradicts itself, and a producer would not know whether to stop re-sending the tombstone; schema cannot compare the two members."
+
+["events/knowledge.deletion.acknowledged.v1/invalid/unknown-family.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown variant `github`'
+reason         = "Only the AI-archive tombstone and the social removal are acknowledged; a producer must not read a family it does not send as an answer."
+
+# ---------------------------------------------------------------------------
+# platform.stream_erasure.requested (XR-021 R5-12)
+# ---------------------------------------------------------------------------
+
+["commands/platform.stream_erasure.requested.v1/invalid/empty-sequences.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'requires at least one stream sequence'
+reason         = "A command that names no message erases nothing and would still be audited; the producer sends none instead."
+
+["commands/platform.stream_erasure.requested.v1/invalid/descending-sequences.json"]
+rejected_by    = ["serde"]
+error_contains = 'must be strictly ascending'
+reason         = "Ascending order makes the list unique and lets Edge walk the stream once; schema cannot compare neighbouring items."
+
+["commands/platform.stream_erasure.requested.v1/invalid/zero-sequence.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'stream sequences start at 1'
+reason         = "The broker numbers stream messages from 1, so a zero names no message."
+
+["commands/platform.stream_erasure.requested.v1/invalid/wrong-request-kind.json"]
+rejected_by    = ["serde"]
+error_contains = 'must be of kind `privacy_request`'
+reason         = "Edge audits every erasure against the deletion request that caused it; a reference of another kind cannot be matched to one, and the entity-reference pattern accepts any kind."
+
+# ---------------------------------------------------------------------------
 # content.capture.requested (XR-021 S11)
 # ---------------------------------------------------------------------------
 

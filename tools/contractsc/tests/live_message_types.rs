@@ -195,6 +195,24 @@ const ROWS: &[Row] = &[
         &["ratatoskr-channel-digests", "ratatoskr-github"],
         &["ratatoskr-platform"],
     ),
+    (
+        "knowledge.deletion.acknowledged.v1",
+        Kind::Event,
+        &["ratatoskr-knowledge"],
+        &[
+            "ratatoskr-chatgpt",
+            "ratatoskr-claude",
+            "ratatoskr-x",
+            "ratatoskr-instagram",
+            "ratatoskr-threads",
+        ],
+    ),
+    (
+        "platform.stream_erasure.requested.v1",
+        Kind::Command,
+        &["ratatoskr-chatgpt", "ratatoskr-claude"],
+        &["ratatoskr-platform"],
+    ),
     // Registered before XR-021 and stated by S01.
     (
         "social.capture.requested.v1",

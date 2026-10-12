@@ -34,11 +34,11 @@ pub const MAX_JSON_SAFE_SEQUENCE: u64 = 9_007_199_254_740_991;
 ///
 /// The enclosing command envelope carries the requesting `producer` (`ratatoskr-chatgpt` or
 /// `ratatoskr-claude`), `command_id` (the outbox id), `aggregate_id` equal to
-/// [`request_ref`](Self::request_ref), the deletion request's `correlation_id` and `tenant_id`
-/// equal to [`owner`](Self::owner). Delivery is at least once and Edge deduplicates, so a replay
+/// `request_ref`, the deletion request's `correlation_id` and `tenant_id`
+/// equal to `owner`. Delivery is at least once and Edge deduplicates, so a replay
 /// erases nothing twice.
 ///
-/// [`validate`](Self::validate) runs on every deserialization.
+/// `validate()` runs on every deserialization.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, schemars::JsonSchema)]
 pub struct PlatformStreamErasureRequested {
     /// The deletion request this erasure belongs to. Its kind is `privacy_request`.

@@ -1,0 +1,8 @@
+{
+  "acknowledged_event_id": "018f0000-0000-7000-8000-000000000a01",
+  "family": "ai_archive",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": "ai_conversation:018f0000-0000-7000-8000-000000000403",
+  "outcome": "applied",
+  "acknowledged_at": "2026-10-12T08:00:00Z"
+}

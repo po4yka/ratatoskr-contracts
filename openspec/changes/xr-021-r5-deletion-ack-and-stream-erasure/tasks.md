@@ -10,8 +10,8 @@
 
 ## 3. Registry, schemas, TypeScript and fixtures
 
-- [ ] 3.1 Add the two `[[contract]]` rows to `contracts.toml`, the `privacy_request` entity kind, the fixtures and one `fixtures/invalid-expectations.toml` entry per invalid fixture, and extend `tools/contractsc/tests/live_message_types.rs` with the two S01 rows. `cargo contracts check` and `cargo test -p ratatoskr-contractsc` MUST fail because the generated schemas, TypeScript and the API baseline do not exist yet.
-- [ ] 3.2 Run `cargo contracts generate`, bless `compat/api/ratatoskr-operation-contracts.txt` with `cargo contracts api-write`, and commit the generated artifacts; `cargo contracts check`, `cargo contracts api-check` and `cargo test --workspace --locked` pass. Generated files cannot start from a failing test of their own.
+- [x] 3.1 Add the two `[[contract]]` rows to `contracts.toml`, the `privacy_request` entity kind, the fixtures and one `fixtures/invalid-expectations.toml` entry per invalid fixture, and extend `tools/contractsc/tests/live_message_types.rs` with the two S01 rows. `cargo contracts check` and `cargo test -p ratatoskr-contractsc` MUST fail because the generated schemas, TypeScript and the API baseline do not exist yet.
+- [x] 3.2 Run `cargo contracts generate`, bless `compat/api/ratatoskr-operation-contracts.txt` with `cargo contracts api-write`, and commit the generated artifacts; `cargo contracts check`, `cargo contracts api-check` and `cargo test --workspace --locked` pass. Generated files cannot start from a failing test of their own.
 
 ## 4. Documentation
 

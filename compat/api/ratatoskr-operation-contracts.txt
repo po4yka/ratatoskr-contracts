@@ -4,6 +4,10 @@
 impl core::clone::Clone for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::clone::Clone for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::clone::Clone for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::clone::Clone for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::clone::Clone for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::clone::Clone for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::clone::Clone for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationContractError
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationKind
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationProgressed
@@ -14,10 +18,14 @@ impl core::clone::Clone for ratatoskr_operation_contracts::OperationSnapshot
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationStage
 impl core::clone::Clone for ratatoskr_operation_contracts::OperationStatus
 impl core::clone::Clone for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::clone::Clone for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::clone::Clone for ratatoskr_operation_contracts::ProgressPercent
 impl core::clone::Clone for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::clone::Clone for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::Eq for ratatoskr_operation_contracts::AccountErasureOutcome
+impl core::cmp::Eq for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::cmp::Eq for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::cmp::Eq for ratatoskr_operation_contracts::DeletionAckRefusal
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationContractError
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::Eq for ratatoskr_operation_contracts::OperationResultKind
@@ -27,6 +35,9 @@ impl core::cmp::Eq for ratatoskr_operation_contracts::ProgressPercent
 impl core::cmp::Eq for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::cmp::Eq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::Ord for ratatoskr_operation_contracts::AccountErasureOutcome
+impl core::cmp::Ord for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::cmp::Ord for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::cmp::Ord for ratatoskr_operation_contracts::DeletionAckRefusal
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationResultKind
 impl core::cmp::Ord for ratatoskr_operation_contracts::OperationStage
@@ -37,6 +48,10 @@ impl core::cmp::Ord for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationContractError
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationProgressed
@@ -47,10 +62,14 @@ impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationSnapshot
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStage
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::OperationStatus
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::cmp::PartialEq for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::ProgressPercent
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::cmp::PartialEq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::AccountErasureOutcome
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::cmp::PartialOrd for ratatoskr_operation_contracts::DeletionAckRefusal
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationKind
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationResultKind
 impl core::cmp::PartialOrd for ratatoskr_operation_contracts::OperationStage
@@ -75,6 +94,10 @@ impl core::error::Error for ratatoskr_operation_contracts::OperationContractErro
 impl core::fmt::Debug for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::fmt::Debug for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::fmt::Debug for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::fmt::Debug for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::fmt::Debug for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::fmt::Debug for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::fmt::Debug for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationContractError
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationKind
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationProgressed
@@ -85,6 +108,7 @@ impl core::fmt::Debug for ratatoskr_operation_contracts::OperationSnapshot
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStage
 impl core::fmt::Debug for ratatoskr_operation_contracts::OperationStatus
 impl core::fmt::Debug for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::fmt::Debug for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::fmt::Debug for ratatoskr_operation_contracts::ProgressPercent
 impl core::fmt::Debug for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::fmt::Debug for ratatoskr_operation_contracts::ScheduleRegistrationLabel
@@ -97,6 +121,9 @@ impl core::fmt::Display for ratatoskr_operation_contracts::ProgressPercent
 impl core::fmt::Display for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::fmt::Display for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::hash::Hash for ratatoskr_operation_contracts::AccountErasureOutcome
+impl core::hash::Hash for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::hash::Hash for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::hash::Hash for ratatoskr_operation_contracts::DeletionAckRefusal
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationKind
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationResultKind
 impl core::hash::Hash for ratatoskr_operation_contracts::OperationStage
@@ -105,11 +132,18 @@ impl core::hash::Hash for ratatoskr_operation_contracts::ProgressPercent
 impl core::hash::Hash for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::hash::Hash for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Copy for ratatoskr_operation_contracts::AccountErasureOutcome
+impl core::marker::Copy for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::Copy for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::Copy for ratatoskr_operation_contracts::DeletionAckRefusal
 impl core::marker::Copy for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Copy for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::Freeze for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Freeze for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Freeze for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::Freeze for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::Freeze for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::Freeze for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::Freeze for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationKind
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationProgressed
@@ -120,12 +154,17 @@ impl core::marker::Freeze for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Freeze for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Freeze for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::Freeze for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::Freeze for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::Freeze for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::Freeze for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Send for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::Send for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::Send for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::Send for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::Send for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::Send for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::Send for ratatoskr_operation_contracts::OperationKind
 impl core::marker::Send for ratatoskr_operation_contracts::OperationProgressed
@@ -136,12 +175,17 @@ impl core::marker::Send for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Send for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Send for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Send for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::Send for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::Send for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::Send for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::Send for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationKind
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationProgressed
@@ -152,12 +196,17 @@ impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::Operat
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStage
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::StructuralPartialEq for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Sync for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::Sync for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::Sync for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::Sync for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::Sync for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationKind
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationProgressed
@@ -168,12 +217,17 @@ impl core::marker::Sync for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Sync for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Sync for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::Sync for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::Sync for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::Sync for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::Sync for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::Unpin for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::Unpin for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::Unpin for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::Unpin for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::Unpin for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationKind
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationProgressed
@@ -184,12 +238,17 @@ impl core::marker::Unpin for ratatoskr_operation_contracts::OperationSnapshot
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStage
 impl core::marker::Unpin for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::Unpin for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::Unpin for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::Unpin for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::Unpin for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::Unpin for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationContractError
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationKind
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationProgressed
@@ -200,12 +259,17 @@ impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationSnaps
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStage
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::OperationStatus
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ProgressPercent
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::marker::UnsafeUnpin for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationKind
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationProgressed
@@ -216,12 +280,17 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStage
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::OperationStatus
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ProgressPercent
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureOutcome
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::AccountErasureRequested
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::DeletionAckFamily
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::DeletionAckOutcome
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::DeletionAckRefusal
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationKind
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationProgressed
@@ -232,6 +301,7 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::Ope
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStage
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::OperationStatus
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ProgressPercent
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ScheduleCronExpression
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_operation_contracts::ScheduleRegistrationLabel
@@ -242,9 +312,12 @@ impl core::str::traits::FromStr for ratatoskr_operation_contracts::ScheduleCronE
 impl core::str::traits::FromStr for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_operation_contracts::AccountErasureRequested
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::AccountErasureAcknowledged
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationProgressed
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_operation_contracts::OperationReported
+impl ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl ratatoskr_operation_contracts::OperationKind
 impl ratatoskr_operation_contracts::OperationReported
 impl ratatoskr_operation_contracts::OperationResultKind
@@ -252,12 +325,17 @@ impl ratatoskr_operation_contracts::OperationResultRef
 impl ratatoskr_operation_contracts::OperationSnapshot
 impl ratatoskr_operation_contracts::OperationStage
 impl ratatoskr_operation_contracts::OperationStatus
+impl ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl ratatoskr_operation_contracts::ProgressPercent
 impl ratatoskr_operation_contracts::ScheduleCronExpression
 impl ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureOutcome
 impl schemars::JsonSchema for ratatoskr_operation_contracts::AccountErasureRequested
+impl schemars::JsonSchema for ratatoskr_operation_contracts::DeletionAckFamily
+impl schemars::JsonSchema for ratatoskr_operation_contracts::DeletionAckOutcome
+impl schemars::JsonSchema for ratatoskr_operation_contracts::DeletionAckRefusal
+impl schemars::JsonSchema for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationKind
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationProgressed
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationReported
@@ -267,12 +345,17 @@ impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationSnapshot
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStage
 impl schemars::JsonSchema for ratatoskr_operation_contracts::OperationStatus
 impl schemars::JsonSchema for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl schemars::JsonSchema for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl schemars::JsonSchema for ratatoskr_operation_contracts::ProgressPercent
 impl schemars::JsonSchema for ratatoskr_operation_contracts::ScheduleCronExpression
 impl schemars::JsonSchema for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureOutcome
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::AccountErasureRequested
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::DeletionAckFamily
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::DeletionAckOutcome
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::DeletionAckRefusal
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationKind
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationProgressed
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationReported
@@ -282,12 +365,17 @@ impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationSnap
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStage
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::OperationStatus
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl serde_core::ser::Serialize for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ProgressPercent
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ScheduleCronExpression
 impl serde_core::ser::Serialize for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureOutcome
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::AccountErasureRequested
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::DeletionAckFamily
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::DeletionAckOutcome
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::DeletionAckRefusal
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationKind
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationProgressed
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationReported
@@ -297,12 +385,17 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::Op
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStage
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::OperationStatus
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ProgressPercent
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ScheduleCronExpression
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::DeletionAckFamily where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::DeletionAckOutcome where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::DeletionAckRefusal where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::From<T>
@@ -313,12 +406,17 @@ impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationSn
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::PlatformStreamErasureRequested where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::DeletionAckFamily where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::DeletionAckOutcome where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::DeletionAckRefusal where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::Into<T>
@@ -329,12 +427,17 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::Operatio
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::PlatformStreamErasureRequested where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureAcknowledged where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureOutcome where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::AccountErasureRequested where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::DeletionAckFamily where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::DeletionAckOutcome where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::DeletionAckRefusal where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationKind where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationProgressed where U: core::convert::TryFrom<T>
@@ -345,12 +448,17 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::Operatio
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStage where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::OperationStatus where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::PlatformStreamErasureRequested where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ProgressPercent where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ScheduleCronExpression where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::DeletionAckFamily where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::DeletionAckOutcome where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::DeletionAckRefusal where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
@@ -361,6 +469,7 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationSnaps
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
@@ -375,6 +484,10 @@ impl<T> alloc::string::ToString for ratatoskr_operation_contracts::ScheduleRegis
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureOutcome where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::AccountErasureRequested where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::DeletionAckFamily where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::DeletionAckOutcome where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::DeletionAckRefusal where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationKind where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationProgressed where T: 'static + ?core::marker::Sized
@@ -385,12 +498,17 @@ impl<T> core::any::Any for ratatoskr_operation_contracts::OperationSnapshot wher
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStage where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::OperationStatus where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::ProgressPercent where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::ScheduleCronExpression where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::AccountErasureRequested where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::DeletionAckFamily where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::DeletionAckOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::DeletionAckRefusal where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationKind where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationProgressed where T: ?core::marker::Sized
@@ -401,12 +519,17 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationSnap
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ScheduleCronExpression where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureOutcome where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::AccountErasureRequested where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::DeletionAckFamily where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::DeletionAckOutcome where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::DeletionAckRefusal where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationKind where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationProgressed where T: ?core::marker::Sized
@@ -417,12 +540,17 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationS
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStage where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::OperationStatus where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ProgressPercent where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ScheduleCronExpression where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::DeletionAckFamily where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::DeletionAckOutcome where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::DeletionAckRefusal where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
@@ -433,12 +561,17 @@ impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationS
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureOutcome
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::AccountErasureRequested
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::DeletionAckFamily
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::DeletionAckOutcome
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::DeletionAckRefusal
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationContractError
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationKind
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationProgressed
@@ -449,12 +582,17 @@ impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationSnaps
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStage
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::OperationStatus
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl<T> core::convert::From<T> for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ProgressPercent
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ScheduleCronExpression
 impl<T> core::convert::From<T> for ratatoskr_operation_contracts::ScheduleRegistrationLabel
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureOutcome where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::AccountErasureRequested where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::DeletionAckFamily where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::DeletionAckOutcome where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::DeletionAckRefusal where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationContractError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationKind where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationProgressed where T: core::clone::Clone
@@ -465,12 +603,17 @@ impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationSnapshot
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStage where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::OperationStatus where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ProgressPercent where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ScheduleCronExpression where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureAcknowledged where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureOutcome where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::AccountErasureRequested where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::DeletionAckFamily where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::DeletionAckOutcome where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::DeletionAckRefusal where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationKind where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationProgressed where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationReported where T: for<'de> serde_core::de::Deserialize<'de>
@@ -480,12 +623,17 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::Oper
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStage where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::OperationStatus where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::PlatformStreamErasureRequested where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ProgressPercent where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ScheduleCronExpression where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_operation_contracts::ScheduleRegistrationLabel where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureAcknowledged
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureOutcome
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::AccountErasureRequested
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::DeletionAckFamily
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::DeletionAckOutcome
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::DeletionAckRefusal
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationContractError
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationKind
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationProgressed
@@ -496,6 +644,7 @@ impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::Operati
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationStage
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::OperationStatus
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::PlatformStreamErasureRequested
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ProgressPercent
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ScheduleCronExpression
 impl<T> typenum::type_operators::Same for ratatoskr_operation_contracts::ScheduleRegistrationLabel
@@ -504,6 +653,9 @@ pub const fn ratatoskr_operation_contracts::OperationStatus::is_terminal(self) -
 pub const fn ratatoskr_operation_contracts::ProgressPercent::get(self) -> u8
 pub const ratatoskr_operation_contracts::AccountErasureAcknowledged::EVENT_TYPE: &'static str
 pub const ratatoskr_operation_contracts::AccountErasureRequested::COMMAND_TYPE: &'static str
+pub const ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::EVENT_TYPE: &'static str
+pub const ratatoskr_operation_contracts::MAX_JSON_SAFE_SEQUENCE: u64
+pub const ratatoskr_operation_contracts::MAX_STREAM_SEQUENCES: usize
 pub const ratatoskr_operation_contracts::OperationKind::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_operation_contracts::OperationKind::MAX_LEN: usize
 pub const ratatoskr_operation_contracts::OperationKind::PATTERN: &'static str
@@ -517,6 +669,7 @@ pub const ratatoskr_operation_contracts::OperationStage::MAX_LEN: usize
 pub const ratatoskr_operation_contracts::OperationStage::PATTERN: &'static str
 pub const ratatoskr_operation_contracts::OperationStatus::ALL: [Self; 7]
 pub const ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::COMMAND_TYPE: &'static str
+pub const ratatoskr_operation_contracts::PlatformStreamErasureRequested::COMMAND_TYPE: &'static str
 pub const ratatoskr_operation_contracts::ProgressPercent::MAX: u8
 pub const ratatoskr_operation_contracts::ScheduleCronExpression::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_operation_contracts::ScheduleCronExpression::MAX_LEN: usize
@@ -589,6 +742,92 @@ pub fn ratatoskr_operation_contracts::AccountErasureRequested::to_owned(&self) -
 pub fn ratatoskr_operation_contracts::AccountErasureRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_operation_contracts::AccountErasureRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::AccountErasureRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::clone(&self) -> ratatoskr_operation_contracts::DeletionAckFamily
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::cmp(&self, &ratatoskr_operation_contracts::DeletionAckFamily) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::eq(&self, &ratatoskr_operation_contracts::DeletionAckFamily) -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::from(T) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::into(self) -> U
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::partial_cmp(&self, &ratatoskr_operation_contracts::DeletionAckFamily) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckFamily::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::clone(&self) -> ratatoskr_operation_contracts::DeletionAckOutcome
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::cmp(&self, &ratatoskr_operation_contracts::DeletionAckOutcome) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::eq(&self, &ratatoskr_operation_contracts::DeletionAckOutcome) -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::from(T) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::into(self) -> U
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::partial_cmp(&self, &ratatoskr_operation_contracts::DeletionAckOutcome) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckOutcome::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::clone(&self) -> ratatoskr_operation_contracts::DeletionAckRefusal
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::cmp(&self, &ratatoskr_operation_contracts::DeletionAckRefusal) -> core::cmp::Ordering
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::eq(&self, &ratatoskr_operation_contracts::DeletionAckRefusal) -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::from(T) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::into(self) -> U
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::partial_cmp(&self, &ratatoskr_operation_contracts::DeletionAckRefusal) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::DeletionAckRefusal::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::clone(&self) -> ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::eq(&self, &ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged) -> bool
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::from(T) -> T
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::into(self) -> U
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::validate(&self) -> core::result::Result<(), ratatoskr_operation_contracts::OperationContractError>
 pub fn ratatoskr_operation_contracts::OperationContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::OperationContractError::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::OperationContractError::borrow_mut(&mut self) -> &mut T
@@ -804,6 +1043,26 @@ pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::to_
 pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::borrow(&self) -> &T
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::clone(&self) -> ratatoskr_operation_contracts::PlatformStreamErasureRequested
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::eq(&self, &ratatoskr_operation_contracts::PlatformStreamErasureRequested) -> bool
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::from(T) -> T
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::inline_schema() -> bool
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::into(self) -> U
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::to_owned(&self) -> T
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::validate(&self) -> core::result::Result<(), ratatoskr_operation_contracts::OperationContractError>
 pub fn ratatoskr_operation_contracts::ProgressPercent::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_operation_contracts::ProgressPercent::borrow(&self) -> &T
 pub fn ratatoskr_operation_contracts::ProgressPercent::borrow_mut(&mut self) -> &mut T
@@ -889,16 +1148,41 @@ pub ratatoskr_operation_contracts::AccountErasureOutcome::IncompleteExternalGran
 pub ratatoskr_operation_contracts::AccountErasureOutcome::Verified
 pub ratatoskr_operation_contracts::AccountErasureRequested::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_operation_contracts::AccountErasureRequested::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_operation_contracts::DeletionAckFamily::AiArchive
+pub ratatoskr_operation_contracts::DeletionAckFamily::Social
+pub ratatoskr_operation_contracts::DeletionAckOutcome::Applied
+pub ratatoskr_operation_contracts::DeletionAckOutcome::Refused
+pub ratatoskr_operation_contracts::DeletionAckRefusal::ForeignSubject
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::acknowledged_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::acknowledged_event_id: ratatoskr_identifiers::uuid_ids::EventId
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::family: ratatoskr_operation_contracts::DeletionAckFamily
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::outcome: ratatoskr_operation_contracts::DeletionAckOutcome
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::owner: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::refusal: core::option::Option<ratatoskr_operation_contracts::DeletionAckRefusal>
+pub ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::subject: ratatoskr_identifiers::entity::EntityRef
 pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch
 pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch::actual: alloc::string::String
 pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryTargetMismatch::expected: alloc::string::String
 pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryUnexpectedResultKind
 pub ratatoskr_operation_contracts::OperationContractError::AiArchiveSummaryUnexpectedResultKind::actual: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::DeletionAckAppliedWithRefusal
+pub ratatoskr_operation_contracts::OperationContractError::DeletionAckRefusedWithoutRefusal
+pub ratatoskr_operation_contracts::OperationContractError::EmptyStreamSequences
 pub ratatoskr_operation_contracts::OperationContractError::FailedWithoutError
 pub ratatoskr_operation_contracts::OperationContractError::Identifier(ratatoskr_identifiers::error::IdentifierError)
 pub ratatoskr_operation_contracts::OperationContractError::PartialWithoutDiagnostic
 pub ratatoskr_operation_contracts::OperationContractError::ProgressPercentOutOfRange
 pub ratatoskr_operation_contracts::OperationContractError::ProgressPercentOutOfRange::got: u8
+pub ratatoskr_operation_contracts::OperationContractError::StreamErasureRequestKind
+pub ratatoskr_operation_contracts::OperationContractError::StreamErasureRequestKind::actual: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequenceAboveJsonSafeRange
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequenceAboveJsonSafeRange::got: u64
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequenceAboveJsonSafeRange::index: usize
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequencesNotAscending
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequencesNotAscending::index: usize
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequencesNotAscending::next: u64
+pub ratatoskr_operation_contracts::OperationContractError::StreamSequencesNotAscending::previous: u64
 pub ratatoskr_operation_contracts::OperationContractError::SucceededWithError
 pub ratatoskr_operation_contracts::OperationContractError::SucceededWithError::count: usize
 pub ratatoskr_operation_contracts::OperationContractError::TerminationMismatch
@@ -908,6 +1192,11 @@ pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder
 pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::accepted_at: alloc::string::String
 pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::later: &'static str
 pub ratatoskr_operation_contracts::OperationContractError::TimestampsOutOfOrder::later_value: alloc::string::String
+pub ratatoskr_operation_contracts::OperationContractError::TooManyStreamSequences
+pub ratatoskr_operation_contracts::OperationContractError::TooManyStreamSequences::got: usize
+pub ratatoskr_operation_contracts::OperationContractError::TooManyStreamSequences::max: usize
+pub ratatoskr_operation_contracts::OperationContractError::ZeroStreamSequence
+pub ratatoskr_operation_contracts::OperationContractError::ZeroStreamSequence::index: usize
 pub ratatoskr_operation_contracts::OperationProgressed::extensions: ratatoskr_identifiers::wire::Extensions
 pub ratatoskr_operation_contracts::OperationProgressed::operation: ratatoskr_operation_contracts::OperationSnapshot
 pub ratatoskr_operation_contracts::OperationReported::error: core::option::Option<ratatoskr_error_contracts::envelope::ErrorEnvelope>
@@ -954,8 +1243,13 @@ pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::operat
 pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::owner_user_id: ratatoskr_identifiers::uuid_ids::UserId
 pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::payload: serde_json::map::Map<alloc::string::String, serde_json::value::Value>
 pub ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::service_name: ratatoskr_operation_contracts::ScheduleRegistrationLabel
+pub ratatoskr_operation_contracts::PlatformStreamErasureRequested::extensions: ratatoskr_identifiers::wire::Extensions
+pub ratatoskr_operation_contracts::PlatformStreamErasureRequested::owner: ratatoskr_identifiers::entity::TenantRef
+pub ratatoskr_operation_contracts::PlatformStreamErasureRequested::request_ref: ratatoskr_identifiers::entity::EntityRef
+pub ratatoskr_operation_contracts::PlatformStreamErasureRequested::stream_sequences: alloc::vec::Vec<u64>
 pub struct ratatoskr_operation_contracts::AccountErasureAcknowledged
 pub struct ratatoskr_operation_contracts::AccountErasureRequested
+pub struct ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged
 pub struct ratatoskr_operation_contracts::OperationKind(_)
 pub struct ratatoskr_operation_contracts::OperationProgressed
 pub struct ratatoskr_operation_contracts::OperationReported
@@ -964,6 +1258,7 @@ pub struct ratatoskr_operation_contracts::OperationResultRef
 pub struct ratatoskr_operation_contracts::OperationSnapshot
 pub struct ratatoskr_operation_contracts::OperationStage(_)
 pub struct ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested
+pub struct ratatoskr_operation_contracts::PlatformStreamErasureRequested
 pub struct ratatoskr_operation_contracts::ProgressPercent(_)
 pub struct ratatoskr_operation_contracts::ScheduleCronExpression(_)
 pub struct ratatoskr_operation_contracts::ScheduleRegistrationLabel(_)
@@ -979,6 +1274,22 @@ pub type ratatoskr_operation_contracts::AccountErasureRequested::Error = <U as c
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Output = T
 pub type ratatoskr_operation_contracts::AccountErasureRequested::Owned = T
+pub type ratatoskr_operation_contracts::DeletionAckFamily::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::DeletionAckFamily::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::DeletionAckFamily::Output = T
+pub type ratatoskr_operation_contracts::DeletionAckFamily::Owned = T
+pub type ratatoskr_operation_contracts::DeletionAckOutcome::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::DeletionAckOutcome::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::DeletionAckOutcome::Output = T
+pub type ratatoskr_operation_contracts::DeletionAckOutcome::Owned = T
+pub type ratatoskr_operation_contracts::DeletionAckRefusal::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::DeletionAckRefusal::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::DeletionAckRefusal::Output = T
+pub type ratatoskr_operation_contracts::DeletionAckRefusal::Owned = T
+pub type ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::Output = T
+pub type ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::Owned = T
 pub type ratatoskr_operation_contracts::OperationContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::OperationContractError::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::OperationContractError::Output = T
@@ -1025,6 +1336,10 @@ pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::E
 pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Output = T
 pub type ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::Owned = T
+pub type ratatoskr_operation_contracts::PlatformStreamErasureRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_operation_contracts::PlatformStreamErasureRequested::Error = core::convert::Infallible
+pub type ratatoskr_operation_contracts::PlatformStreamErasureRequested::Output = T
+pub type ratatoskr_operation_contracts::PlatformStreamErasureRequested::Owned = T
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = core::convert::Infallible
 pub type ratatoskr_operation_contracts::ProgressPercent::Error = ratatoskr_operation_contracts::OperationContractError
@@ -1045,6 +1360,10 @@ pub type ratatoskr_operation_contracts::ScheduleRegistrationLabel::Owned = T
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureAcknowledged::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureOutcome::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::AccountErasureRequested::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::DeletionAckFamily::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::DeletionAckOutcome::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::DeletionAckRefusal::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationContractError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationKind::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationProgressed::clone_to_uninit(&self, *mut u8)
@@ -1055,6 +1374,7 @@ pub unsafe fn ratatoskr_operation_contracts::OperationSnapshot::clone_to_uninit(
 pub unsafe fn ratatoskr_operation_contracts::OperationStage::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::OperationStatus::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_operation_contracts::PlatformStreamErasureRequested::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::ProgressPercent::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::ScheduleCronExpression::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_operation_contracts::ScheduleRegistrationLabel::clone_to_uninit(&self, *mut u8)

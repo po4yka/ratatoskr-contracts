@@ -1,0 +1,9 @@
+{
+  "acknowledged_event_id": "018f0000-0000-7000-8000-000000000a02",
+  "family": "ai_archive",
+  "owner": "user:018f0000-0000-7000-8000-000000000005",
+  "subject": "ai_archive:018f0000-0000-7000-8000-000000000402",
+  "outcome": "refused",
+  "refusal": "foreign_subject",
+  "acknowledged_at": "2026-10-12T08:00:01Z"
+}

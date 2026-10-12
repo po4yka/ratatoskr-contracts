@@ -62,7 +62,7 @@ known = [
   "blob", "command", "document", "event", "notification", "operation", "user",
   "channel-digest-manifest", "channel-digest-result", "github-account", "repository",
   "schedule", "schedule-occurrence", "social_source", "telegram-confirmation", "x-post",
-  "channel-post-revision", "telegram-public-channel",
+  "channel-post-revision", "telegram-public-channel", "privacy_request",
 ]
 
 # ---------------------------------------------------------------------------
@@ -84,7 +84,7 @@ required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", 
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
-timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "previous_due_at", "start_at", "end_at", "due_at", "created_at"]
+timestamp_property_names = ["occurred_at", "accepted_at", "status_changed_at", "terminated_at", "published_at", "captured_at", "issued_at", "imported_at", "observed_at", "produced_at", "completed_at", "failed_at", "provider_created_at", "provider_updated_at", "removed_at", "expires_at", "generated_at", "next_due_at", "previous_due_at", "start_at", "end_at", "due_at", "created_at", "acknowledged_at"]
 min_waiver_justification_chars = 40
 
 # ---------------------------------------------------------------------------
@@ -1882,6 +1882,74 @@ justification = "The template of the command Platform publishes when the schedul
 [contract.command]
 command_type = "platform.schedule.registration_requested.v1"
 payload_type = "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
+
+# ---------------------------------------------------------------------------
+# Deletion acknowledgement and stream erasure (XR-021 CONTRACTS.md R5-11, R5-12).
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "knowledge.deletion_acknowledged"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-knowledge"
+producers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-chatgpt", "ratatoskr-claude", "ratatoskr-x", "ratatoskr-instagram", "ratatoskr-threads"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/deletion_ack.rs"
+fixtures_dir   = "fixtures/events/knowledge.deletion.acknowledged.v1"
+summary        = "Fact: Knowledge applied, repeated or refused one deletion tombstone or social removal, naming ids and references only."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged"
+output         = "schemas/events/knowledge.deletion.acknowledged.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:KnowledgeDeletionAcknowledged"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/acknowledged_at"
+authority   = "observed"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant Knowledge decided the outcome of the deletion fact, according to the Knowledge clock."
+
+[contract.event]
+event_type   = "knowledge.deletion.acknowledged.v1"
+payload_type = "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.stream_erasure_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-chatgpt", "ratatoskr-claude"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-operation-contracts"
+canonical_path = "crates/operation-contracts/src/stream_erasure.rs"
+fixtures_dir   = "fixtures/commands/platform.stream_erasure.requested.v1"
+summary        = "Command: a producer asks Platform Edge to erase specific messages it published from the events stream."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_operation_contracts::PlatformStreamErasureRequested"
+output         = "schemas/json-schema/commands/platform-stream-erasure-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:PlatformStreamErasureRequested"
+unknown_policy = "preserve"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/stream_sequences"
+authority   = "observed"
+nullability = "required"
+unit        = "stream_sequence_numbers_strictly_ascending"
+note        = "Stream sequence numbers the broker returned in the publish acknowledgement of each message to erase: counts of messages since the stream began, not timestamps."
+
+[contract.command]
+command_type = "platform.stream_erasure.requested.v1"
+payload_type = "ratatoskr_operation_contracts::PlatformStreamErasureRequested"
 
 # ---------------------------------------------------------------------------
 # Content capture and extraction (XR-021 CONTRACTS.md S09, S11).

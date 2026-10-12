@@ -7,7 +7,7 @@
 //! deletion fact published at the broker acknowledgement. Without a reply a tombstone that
 //! Knowledge did not consume in time would be lost silently. Knowledge therefore answers every
 //! applied, duplicate or refused `ai_archive.subject.tombstoned.v1` and
-//! `social.source.removed.v1` with one [`KnowledgeDeletionAcknowledged`], and the producer
+//! `social.source.removed.v1` with one `KnowledgeDeletionAcknowledged`, and the producer
 //! re-sends the deletion fact until the acknowledgement arrives.
 //!
 //! # What it names
@@ -64,7 +64,7 @@ pub enum DeletionAckOutcome {
     /// The rows were deleted and the stored blobs were collected, or the fact repeated one that
     /// had been applied.
     Applied,
-    /// Knowledge did not delete anything. [`KnowledgeDeletionAcknowledged::refusal`] says why.
+    /// Knowledge did not delete anything. `KnowledgeDeletionAcknowledged::refusal` says why.
     Refused,
 }
 
@@ -94,17 +94,17 @@ pub enum DeletionAckRefusal {
 /// deletion facts was applied or refused.
 ///
 /// The enclosing event envelope is produced by `ratatoskr-knowledge`. Its `event_id` is the
-/// outbox id, `aggregate_id` equals [`subject`](Self::subject), `correlation_id` is copied from
+/// outbox id, `aggregate_id` equals `subject`, `correlation_id` is copied from
 /// the acknowledged envelope, `causation_id` is `event:<acknowledged_event_id>` and `tenant_id`
-/// equals [`owner`](Self::owner).
+/// equals `owner`.
 ///
 /// The acknowledgement names no content: only ids, the owner and a subject reference. A
 /// producer matches it to the outbox row whose `event_id` equals
-/// [`acknowledged_event_id`](Self::acknowledged_event_id) and whose tenant equals
-/// [`owner`](Self::owner), and ignores one that matches no row. A duplicate acknowledgement
+/// `acknowledged_event_id` and whose tenant equals
+/// `owner`, and ignores one that matches no row. A duplicate acknowledgement
 /// changes nothing.
 ///
-/// [`validate`](Self::validate) runs on every deserialization, so a payload that violates the
+/// `validate()` runs on every deserialization, so a payload that violates the
 /// outcome rule never reaches a consumer.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, schemars::JsonSchema)]
 pub struct KnowledgeDeletionAcknowledged {
