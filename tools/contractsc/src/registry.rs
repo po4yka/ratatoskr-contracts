@@ -192,6 +192,18 @@ root_types! {
         => ratatoskr_social_contracts::SocialSourceUpdated,
 }
 
+/// Builds the map from authored `rust_path` strings to a payload trait's wire type constant.
+///
+/// The paths are authored, not `stringify!`d, for the same reason as in [`root_types`]: rule R2
+/// compares two authored strings, so token spacing cannot defeat the cross-check.
+macro_rules! payload_types {
+    ($payload:ident::$constant:ident; $($path:literal => $ty:ty),+ $(,)?) => {{
+        let mut declared = BTreeMap::new();
+        $(declared.insert($path, <$ty as $payload>::$constant);)+
+        declared
+    }};
+}
+
 /// `EventPayload::EVENT_TYPE` for every registered root type that is an event payload.
 ///
 /// Kept beside [`root_types`] rather than inside [`RootType`] because only event payloads have
@@ -199,108 +211,59 @@ root_types! {
 /// `contracts.toml` entry cannot claim an event name the payload type does not declare.
 #[must_use]
 pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
-    let mut declared = BTreeMap::new();
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted",
-        <ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiArchiveImport",
-        <ratatoskr_ai_archive_contracts::AiArchiveImport as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiArchiveTombstone",
-        <ratatoskr_ai_archive_contracts::AiArchiveTombstone as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiConversationAdded",
-        <ratatoskr_ai_archive_contracts::AiConversationAdded as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiConversationUpdated",
-        <ratatoskr_ai_archive_contracts::AiConversationUpdated as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiArtifactAdded",
-        <ratatoskr_ai_archive_contracts::AiArtifactAdded as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiArtifactUpdated",
-        <ratatoskr_ai_archive_contracts::AiArtifactUpdated as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiProjectAdded",
-        <ratatoskr_ai_archive_contracts::AiProjectAdded as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_ai_archive_contracts::AiProjectUpdated",
-        <ratatoskr_ai_archive_contracts::AiProjectUpdated as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_backup_contracts::PolicyAcknowledged",
-        <ratatoskr_backup_contracts::PolicyAcknowledged as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted",
-        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed",
-        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_github_contracts::RepositoryAnalysisCompleted",
-        <ratatoskr_github_contracts::RepositoryAnalysisCompleted as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_github_contracts::RepositoryAnalysisFailed",
-        <ratatoskr_github_contracts::RepositoryAnalysisFailed as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_github_contracts::RepositoryAnalysisRequested",
-        <ratatoskr_github_contracts::RepositoryAnalysisRequested as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_notification_contracts::NotificationRaised",
-        <ratatoskr_notification_contracts::NotificationRaised as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::AccountErasureAcknowledged",
-        <ratatoskr_operation_contracts::AccountErasureAcknowledged as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged",
-        <ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::OperationProgressed",
-        <ratatoskr_operation_contracts::OperationProgressed as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::OperationReported",
-        <ratatoskr_operation_contracts::OperationReported as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_social_contracts::SocialSourceAnalysisCompleted",
-        <ratatoskr_social_contracts::SocialSourceAnalysisCompleted as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_social_contracts::SocialSourceCaptured",
-        <ratatoskr_social_contracts::SocialSourceCaptured as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_social_contracts::SocialSourceRemoved",
-        <ratatoskr_social_contracts::SocialSourceRemoved as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_social_contracts::SocialSourceUpdated",
-        <ratatoskr_social_contracts::SocialSourceUpdated as EventPayload>::EVENT_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_document_contracts::ContentDocumentExtracted",
-        <ratatoskr_document_contracts::ContentDocumentExtracted as EventPayload>::EVENT_TYPE,
-    );
-    declared
+    payload_types! {
+        EventPayload::EVENT_TYPE;
+        "ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted"
+            => ratatoskr_ai_archive_contracts::AiArchiveAnalysisCompleted,
+        "ratatoskr_ai_archive_contracts::AiArchiveImport"
+            => ratatoskr_ai_archive_contracts::AiArchiveImport,
+        "ratatoskr_ai_archive_contracts::AiArchiveTombstone"
+            => ratatoskr_ai_archive_contracts::AiArchiveTombstone,
+        "ratatoskr_ai_archive_contracts::AiConversationAdded"
+            => ratatoskr_ai_archive_contracts::AiConversationAdded,
+        "ratatoskr_ai_archive_contracts::AiConversationUpdated"
+            => ratatoskr_ai_archive_contracts::AiConversationUpdated,
+        "ratatoskr_ai_archive_contracts::AiArtifactAdded"
+            => ratatoskr_ai_archive_contracts::AiArtifactAdded,
+        "ratatoskr_ai_archive_contracts::AiArtifactUpdated"
+            => ratatoskr_ai_archive_contracts::AiArtifactUpdated,
+        "ratatoskr_ai_archive_contracts::AiProjectAdded"
+            => ratatoskr_ai_archive_contracts::AiProjectAdded,
+        "ratatoskr_ai_archive_contracts::AiProjectUpdated"
+            => ratatoskr_ai_archive_contracts::AiProjectUpdated,
+        "ratatoskr_backup_contracts::PolicyAcknowledged"
+            => ratatoskr_backup_contracts::PolicyAcknowledged,
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted"
+            => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapCompleted,
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed"
+            => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapFailed,
+        "ratatoskr_github_contracts::RepositoryAnalysisCompleted"
+            => ratatoskr_github_contracts::RepositoryAnalysisCompleted,
+        "ratatoskr_github_contracts::RepositoryAnalysisFailed"
+            => ratatoskr_github_contracts::RepositoryAnalysisFailed,
+        "ratatoskr_github_contracts::RepositoryAnalysisRequested"
+            => ratatoskr_github_contracts::RepositoryAnalysisRequested,
+        "ratatoskr_notification_contracts::NotificationRaised"
+            => ratatoskr_notification_contracts::NotificationRaised,
+        "ratatoskr_operation_contracts::AccountErasureAcknowledged"
+            => ratatoskr_operation_contracts::AccountErasureAcknowledged,
+        "ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged"
+            => ratatoskr_operation_contracts::KnowledgeDeletionAcknowledged,
+        "ratatoskr_operation_contracts::OperationProgressed"
+            => ratatoskr_operation_contracts::OperationProgressed,
+        "ratatoskr_operation_contracts::OperationReported"
+            => ratatoskr_operation_contracts::OperationReported,
+        "ratatoskr_social_contracts::SocialSourceAnalysisCompleted"
+            => ratatoskr_social_contracts::SocialSourceAnalysisCompleted,
+        "ratatoskr_social_contracts::SocialSourceCaptured"
+            => ratatoskr_social_contracts::SocialSourceCaptured,
+        "ratatoskr_social_contracts::SocialSourceRemoved"
+            => ratatoskr_social_contracts::SocialSourceRemoved,
+        "ratatoskr_social_contracts::SocialSourceUpdated"
+            => ratatoskr_social_contracts::SocialSourceUpdated,
+        "ratatoskr_document_contracts::ContentDocumentExtracted"
+            => ratatoskr_document_contracts::ContentDocumentExtracted,
+    }
 }
 
 /// `CommandPayload::COMMAND_TYPE` for every registered root type that is a command payload.
@@ -310,46 +273,27 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
 /// map, so a declaration cannot claim a command name the payload does not declare.
 #[must_use]
 pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
-    let mut declared = BTreeMap::new();
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested",
-        <ratatoskr_channel_digest_contracts::ChannelDigestRunRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested",
-        <ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested",
-        <ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested",
-        <ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::AccountErasureRequested",
-        <ratatoskr_operation_contracts::AccountErasureRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_social_contracts::SocialCaptureRequested",
-        <ratatoskr_social_contracts::SocialCaptureRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested",
-        <ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_operation_contracts::PlatformStreamErasureRequested",
-        <ratatoskr_operation_contracts::PlatformStreamErasureRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_document_contracts::ContentCaptureRequested",
-        <ratatoskr_document_contracts::ContentCaptureRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared.insert(
-        "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested",
-        <ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested as CommandPayload>::COMMAND_TYPE,
-    );
-    declared
+    payload_types! {
+        CommandPayload::COMMAND_TYPE;
+        "ratatoskr_channel_digest_contracts::ChannelDigestRunRequested"
+            => ratatoskr_channel_digest_contracts::ChannelDigestRunRequested,
+        "ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested"
+            => ratatoskr_channel_digest_contracts::ChannelDigestScheduleOccurrenceRequested,
+        "ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested"
+            => ratatoskr_channel_digest_contracts::ChannelDigestSubscriptionSetRequested,
+        "ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested"
+            => ratatoskr_channel_digest_contracts::KnowledgeChannelDigestRecapRequested,
+        "ratatoskr_operation_contracts::AccountErasureRequested"
+            => ratatoskr_operation_contracts::AccountErasureRequested,
+        "ratatoskr_social_contracts::SocialCaptureRequested"
+            => ratatoskr_social_contracts::SocialCaptureRequested,
+        "ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested"
+            => ratatoskr_operation_contracts::PlatformScheduleRegistrationRequested,
+        "ratatoskr_operation_contracts::PlatformStreamErasureRequested"
+            => ratatoskr_operation_contracts::PlatformStreamErasureRequested,
+        "ratatoskr_document_contracts::ContentCaptureRequested"
+            => ratatoskr_document_contracts::ContentCaptureRequested,
+        "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"
+            => ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested,
+    }
 }
