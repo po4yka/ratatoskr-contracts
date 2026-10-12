@@ -19,4 +19,4 @@
 
 ## 5. Final gate
 
-- [ ] 5.1 Run the full gate of `DEVELOPMENT.md`, `cargo deny check` and `openspec validate --all --strict`; `git diff --stat ad16855..HEAD -- schemas generated compat` shows only additions. Verification only, no test to write.
+- [x] 5.1 Run the full gate of `DEVELOPMENT.md`, `cargo deny check` and `openspec validate --all --strict`; `git diff --stat ad16855..HEAD -- schemas generated compat` shows only additions. Verification only, no test to write.
