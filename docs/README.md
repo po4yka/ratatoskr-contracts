@@ -11,6 +11,7 @@
 - `THREAT_MODEL.md` — schema, fixture, compatibility, and generator risks.
 - `TESTING.md` — validation, compatibility, generation, and round-trip tests.
 - `IMPLEMENTATION_PLAN.md` — ordered contract foundation.
+- `DELETION_ACK_AND_STREAM_ERASURE.md` — the Knowledge deletion acknowledgement and the producer-requested erasure of events-stream messages (XR-021 round 5).
 - `adr/README.md` — decision process.
 
 Root: `README.md`, `AGENTS.md`, `DEVELOPMENT.md`, `SECURITY.md`.

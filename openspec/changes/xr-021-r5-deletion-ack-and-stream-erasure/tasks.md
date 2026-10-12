@@ -15,7 +15,7 @@
 
 ## 4. Documentation
 
-- [ ] 4.1 Document both messages under `docs/` in the style of `docs/CHANNEL_DIGEST_MANIFEST.md`. This cannot start from a failing test (documentation).
+- [x] 4.1 Document both messages under `docs/` in the style of `docs/CHANNEL_DIGEST_MANIFEST.md`. This cannot start from a failing test (documentation).
 
 ## 5. Final gate
 
