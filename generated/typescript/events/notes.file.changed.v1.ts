@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:8e5e2344d1c31d36d71208483d666e019630f27f244883ce583d7d67a06955ec
+ * source_digest: sha256:5a01ea8df1ac3695f36b71d4e2340359cf9c3884d4cd077f5785b1e33d4274f8
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -28,7 +28,8 @@
 export interface FileChanged {
  /**
   * The stored bytes of this revision, owned by `ratatoskr-notes`; its SHA-256 digest equals
-  * `revision`. Present exactly when `change_kind` is not `deleted`.
+  * `revision` and its media type equals `media_type`. Present exactly when `change_kind` is
+  * not `deleted`.
   */
  blob?: BlobRef | null;
  /**

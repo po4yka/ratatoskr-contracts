@@ -117,7 +117,8 @@ pub struct FileChanged {
     pub media_type: MediaType,
 
     /// The stored bytes of this revision, owned by `ratatoskr-notes`; its SHA-256 digest equals
-    /// `revision`. Present exactly when `change_kind` is not `deleted`.
+    /// `revision` and its media type equals `media_type`. Present exactly when `change_kind` is
+    /// not `deleted`.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub blob: Option<BlobRef>,
 }
@@ -136,7 +137,8 @@ impl FileChanged {
     /// [`NotesContractError::RenameWithoutPreviousPath`],
     /// [`NotesContractError::PreviousPathWithoutRename`],
     /// [`NotesContractError::BlobOnDeletedFile`], [`NotesContractError::MissingBlob`],
-    /// [`NotesContractError::ForeignBlobOwner`], [`NotesContractError::BlobDigestMismatch`].
+    /// [`NotesContractError::ForeignBlobOwner`], [`NotesContractError::BlobDigestMismatch`],
+    /// [`NotesContractError::BlobMediaTypeMismatch`].
     pub fn validate(&self) -> Result<(), NotesContractError> {
         if self.connection_sequence == 0 {
             return Err(NotesContractError::ConnectionSequenceZero);
@@ -161,7 +163,8 @@ impl FileChanged {
         }
     }
 
-    /// The blob belongs to `ratatoskr-notes` and names exactly the bytes of `revision`.
+    /// The blob belongs to `ratatoskr-notes`, names exactly the bytes of `revision` and has the
+    /// media type of the file.
     fn check_blob(&self, blob: &BlobRef) -> Result<(), NotesContractError> {
         if blob.owner_service.as_str() != NOTES_BLOB_OWNER {
             return Err(NotesContractError::ForeignBlobOwner {
@@ -170,6 +173,9 @@ impl FileChanged {
         }
         if blob.digest.algorithm != DigestAlgorithm::Sha256 || blob.digest.hex != self.revision {
             return Err(NotesContractError::BlobDigestMismatch);
+        }
+        if blob.media_type != self.media_type {
+            return Err(NotesContractError::BlobMediaTypeMismatch);
         }
         Ok(())
     }

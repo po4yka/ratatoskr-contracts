@@ -2066,7 +2066,7 @@ rust_path      = "ratatoskr_notes_contracts::VaultConnected"
 output         = "schemas/events/notes.vault.connected.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:events:v1:VaultConnected"
 unknown_policy = "reject"
-privacy        = "boundary_metadata"
+privacy        = "user_content"
 
 [contract.event]
 event_type   = "notes.vault.connected.v1"
@@ -2092,7 +2092,7 @@ rust_path      = "ratatoskr_notes_contracts::VaultDisconnected"
 output         = "schemas/events/notes.vault.disconnected.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:events:v1:VaultDisconnected"
 unknown_policy = "reject"
-privacy        = "boundary_metadata"
+privacy        = "user_content"
 
 [contract.event]
 event_type   = "notes.vault.disconnected.v1"
@@ -2118,7 +2118,7 @@ rust_path      = "ratatoskr_notes_contracts::FileChanged"
 output         = "schemas/events/notes.file.changed.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:events:v1:FileChanged"
 unknown_policy = "reject"
-privacy        = "boundary_metadata"
+privacy        = "user_content"
 
 [contract.event]
 event_type   = "notes.file.changed.v1"

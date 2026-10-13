@@ -434,6 +434,7 @@ pub ratatoskr_notes_contracts::FileChanged::path: ratatoskr_notes_contracts::Vau
 pub ratatoskr_notes_contracts::FileChanged::previous_path: core::option::Option<ratatoskr_notes_contracts::VaultPath>
 pub ratatoskr_notes_contracts::FileChanged::revision: ratatoskr_identifiers::blob::DigestHex
 pub ratatoskr_notes_contracts::NotesContractError::BlobDigestMismatch
+pub ratatoskr_notes_contracts::NotesContractError::BlobMediaTypeMismatch
 pub ratatoskr_notes_contracts::NotesContractError::BlobOnDeletedFile
 pub ratatoskr_notes_contracts::NotesContractError::ConnectionSequenceZero
 pub ratatoskr_notes_contracts::NotesContractError::ForeignBlobOwner
