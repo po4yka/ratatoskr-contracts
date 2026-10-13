@@ -869,6 +869,11 @@ rejected_by    = ["serde"]
 error_contains = 'blob digest does not equal the revision'
 reason         = "The revision is the SHA-256 of the bytes and the BlobRef names those bytes, so the two digests are one value. The schema cannot compare two members."
 
+["events/notes.file.changed.v1/invalid/blob-media-type-differs.json"]
+rejected_by    = ["serde"]
+error_contains = 'blob media_type does not equal media_type'
+reason         = "The blob names the bytes of the revision, so its media type is the media type of the file. The schema cannot compare two members."
+
 ["events/notes.file.changed.v1/invalid/revision-uppercase.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'DigestHex "0A1B2C3D4E5F6071'

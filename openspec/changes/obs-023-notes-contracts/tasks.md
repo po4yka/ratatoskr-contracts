@@ -6,3 +6,10 @@
 ## 2. Documentation
 
 - [x] 2.1 Add the crate to the crate lists in `README.md`, `DEVELOPMENT.md`, `AGENTS.md` and `docs/ARCHITECTURE.md`. This cannot start from a failing test (documentation).
+
+## 3. Review corrections
+
+- [x] 3.1 RED: add `tools/contractsc/tests/notes_contracts.rs::notes_events_are_user_content`. It MUST fail with `left: "BoundaryMetadata"`, because the three entries declare the wrong privacy class.
+- [ ] 3.2 GREEN: set `privacy = "user_content"` on the three notes entries in `contracts.toml`. Paths and the vault display name are written by the owner.
+- [x] 3.3 RED: add the case `blob media type differs` to `inconsistent_file_changes_are_refused_at_parse`, the invalid fixture `blob-media-type-differs.json` and its expectation, and declare `NotesContractError::BlobMediaTypeMismatch`. It MUST fail because `validate()` returns `Ok(())` and serde accepts the fixture.
+- [ ] 3.4 GREEN: `FileChanged::validate` refuses a blob whose `media_type` differs from the event's `media_type`.

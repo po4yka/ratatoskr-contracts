@@ -30,6 +30,10 @@ pub enum NotesContractError {
     /// `revision` holds.
     #[error("blob digest does not equal the revision")]
     BlobDigestMismatch,
+    /// The blob names the bytes of the revision, so its media type is the media type of the file;
+    /// the two differed.
+    #[error("blob media_type does not equal media_type")]
+    BlobMediaTypeMismatch,
     /// The blob belongs to another service than `ratatoskr-notes`, which alone stores note bytes.
     #[error("blob owner_service must be `ratatoskr-notes`, found `{owner_service}`")]
     ForeignBlobOwner {

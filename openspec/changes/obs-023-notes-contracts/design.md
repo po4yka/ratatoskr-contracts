@@ -24,7 +24,8 @@ The behaviour is defined by the workspace store (change `add-notes-vault-connect
   `ratatoskr-notes`. `media_type` reuses `MediaType`.
 - **Cross-field rules** run in `validate()`, which the hand-written `Deserialize` calls:
   `previous_path` is present exactly when the kind is `renamed`; `blob` is present exactly when the
-  kind is not `deleted`; the blob digest equals the revision; `connection_sequence` is at least 1.
+  kind is not `deleted`; the blob digest equals the revision and the blob media type equals
+  `media_type`; `connection_sequence` is at least 1.
 - **Schema layer.** The schema publishes what it can state without a conditional keyword:
   `additionalProperties: false`, the path and digest patterns, and `minimum: 1` on the sequence. The
   TypeScript projection refuses `if`/`then` at an object root, so the cross-field rules are serde
@@ -32,7 +33,8 @@ The behaviour is defined by the workspace store (change `add-notes-vault-connect
 - **`connection_sequence`.** The field lint requires a unit suffix on every integer. `_sequence` is
   added to the vocabulary, with the same kind of justification as `revision`: a gapless
   per-connection counter whose unit is the event itself.
-- **Privacy class** is `boundary_metadata`, as for the other events of this kind.
+- **Privacy class** is `user_content`. `path`, `previous_path` and `vault_display_name` are written by
+  the owner, as the notification title is (`platform.notification_raised`).
 
 ## Risks / Trade-offs
 

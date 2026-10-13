@@ -145,6 +145,16 @@ fn inconsistent_file_changes_are_refused_at_parse() {
         },
     ));
 
+    let mut media_type_mismatch = base.clone();
+    let mut pdf_blob = blob(REVISION);
+    pdf_blob.media_type = "application/pdf".parse().expect("a media type");
+    media_type_mismatch.blob = Some(pdf_blob);
+    cases.push((
+        "blob media type differs",
+        media_type_mismatch,
+        NotesContractError::BlobMediaTypeMismatch,
+    ));
+
     let mut zero_sequence = base;
     zero_sequence.connection_sequence = 0;
     cases.push((
