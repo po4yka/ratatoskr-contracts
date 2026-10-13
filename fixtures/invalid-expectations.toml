@@ -823,3 +823,68 @@ reason         = "The embedded policy keeps its own invariant: versions are mono
 rejected_by    = ["serde"]
 error_contains = 'not in canonical form'
 reason         = "The extension wire carries one spelling per instant: a fraction never ends in 0, so .120Z is .12Z. Canonicality is a Rust-layer rule the published pattern permits (ADR-0001 lower-bound rule); this pins the behaviour the browser extension must meet."
+
+# ---------------------------------------------------------------------------
+# notes.vault.connected, notes.vault.disconnected and notes.file.changed (OBS-023)
+#
+# All three refuse unknown fields (`unknown_policy = "reject"`), so an unknown-field fixture is
+# rejected by both layers. The cross-field rules of notes.file.changed compare one member with the
+# value of another; the generator emits no conditional keyword (`if`/`then`) because the
+# TypeScript projection refuses one, so those fixtures are rejected by serde only (ADR-0001
+# lower-bound rule).
+# ---------------------------------------------------------------------------
+
+["events/notes.vault.connected.v1/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `vault_id`'
+reason         = "A connection event names the connection, the channel and the display name and nothing else about the vault; any other member is refused."
+
+["events/notes.vault.disconnected.v1/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `note_count`'
+reason         = "A disconnection event names the connection, the channel and the display name and nothing else about the vault; any other member is refused."
+
+["events/notes.file.changed.v1/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `text`'
+reason         = "A file change carries a BlobRef, never the file text; a member outside the schema is refused so vault content cannot ride along."
+
+["events/notes.file.changed.v1/invalid/deleted-with-blob.json"]
+rejected_by    = ["serde"]
+error_contains = 'change_kind `deleted` forbids a blob'
+reason         = "A deleted file has no bytes to point at; a blob on a deletion would let a consumer index content that no longer exists. The schema cannot make one member depend on the value of another."
+
+["events/notes.file.changed.v1/invalid/renamed-without-previous-path.json"]
+rejected_by    = ["serde"]
+error_contains = 'change_kind `renamed` requires previous_path'
+reason         = "A rename without the old path leaves a consumer unable to move what it indexed under that path. The schema cannot make one member depend on the value of another."
+
+["events/notes.file.changed.v1/invalid/created-without-blob.json"]
+rejected_by    = ["serde"]
+error_contains = 'change_kind `created` requires a blob'
+reason         = "Every change except a deletion names the bytes of the new revision through a BlobRef. The schema cannot make one member depend on the value of another."
+
+["events/notes.file.changed.v1/invalid/blob-digest-differs-from-revision.json"]
+rejected_by    = ["serde"]
+error_contains = 'blob digest does not equal the revision'
+reason         = "The revision is the SHA-256 of the bytes and the BlobRef names those bytes, so the two digests are one value. The schema cannot compare two members."
+
+["events/notes.file.changed.v1/invalid/revision-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'DigestHex "0A1B2C3D4E5F6071'
+reason         = "A revision is lowercase hex; one hash has one spelling, so an uppercase revision is refused rather than normalised."
+
+["events/notes.file.changed.v1/invalid/revision-short.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'DigestHex "0a1b2c3d4e5f6071'
+reason         = "A SHA-256 revision is exactly 64 hex characters; a truncated hash names no revision."
+
+["events/notes.file.changed.v1/invalid/path-parent-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultPath "Projects/../Plan.md" does not match'
+reason         = "A vault path is relative to the vault root and has no `.` or `..` segment, so it can never name a file outside the vault."
+
+["events/notes.file.changed.v1/invalid/connection-sequence-zero.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'connection_sequence must be at least 1'
+reason         = "The connection sequence starts at 1 for each connection, so a consumer that sees 0 cannot place the event in the gapless order."

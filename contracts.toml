@@ -25,6 +25,7 @@ known = [
   "ratatoskr-export-agent",
   "ratatoskr-web",
   "ratatoskr-channel-digests",
+  "ratatoskr-notes",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -51,6 +52,10 @@ known = [
 #   telegram-confirmation opaque evidence that Telegram completed one owner-bound confirmation.
 #   channel-post-revision, telegram-public-channel the immutable post revision and the public
 #                 channel a channel_digest.manifest source names; the digest service mints both.
+#   notes_connection the aggregate of notes.vault.connected.v1 and notes.vault.disconnected.v1:
+#                 `notes_connection:<uuid>` names one vault connection of ratatoskr-notes.
+#   notes_file    the aggregate of notes.file.changed.v1: `notes_file:<uuid>` names one file of a
+#                 connected vault, stable across renames.
 # Adding a token here is a review decision: it widens what a fixture may contain,
 # never what the wire type understands. `ratatoskr-mobile` and
 # `ratatoskr-export-agent` are upload-capable clients; they appear as transfer
@@ -63,6 +68,7 @@ known = [
   "channel-digest-manifest", "channel-digest-result", "github-account", "repository",
   "schedule", "schedule-occurrence", "social_source", "telegram-confirmation", "x-post",
   "channel-post-revision", "telegram-public-channel", "privacy_request",
+  "notes_connection", "notes_file",
 ]
 
 # ---------------------------------------------------------------------------
@@ -80,7 +86,10 @@ banned_property_names = [
 # `revision` is the 1-based ordinal of a post body among the observed revisions of one message
 # (channel_digest.manifest): a counter whose unit is the revision itself, so the whole property name
 # is the suffix.
-required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version", "_numeric_id", "revision"]
+# `_sequence` is a gapless per-scope counter whose unit is the message itself: notes.file.changed.v1
+# carries `connection_sequence`, which starts at 1 for each vault connection and grows by exactly one
+# per published event of that connection, so a consumer can detect a missing event.
+required_numeric_suffixes = ["_bytes", "_seconds", "_ms", "_count", "_percent", "_index", "_version", "_numeric_id", "revision", "_sequence"]
 # AGENTS.md principle 5: "Document whether a timestamp is provider-authored,
 # observed, received, or processed." Every `format: date-time` property must be
 # in this vocabulary.
@@ -2032,3 +2041,85 @@ privacy        = "boundary_metadata"
 [contract.command]
 command_type = "vault.backup_policy.apply_requested.v1"
 payload_type = "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"
+
+# ---------------------------------------------------------------------------
+# Notes vault connections and file changes (OBS-023, workspace specs notes-vault-connections and
+# notes-file-changes). unknown_policy = "reject": the workspace spec requires that a fixture with
+# any field outside the schema fails, so these events can never carry vault content.
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "notes.vault_connected"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-notes"
+producers      = ["ratatoskr-notes"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-notes-contracts"
+canonical_path = "crates/notes-contracts/src/vault.rs"
+fixtures_dir   = "fixtures/events/notes.vault.connected.v1"
+summary        = "Fact: one vault connection became active. Names the connection, the channel and the vault display name only; unknown fields are refused so no vault content can ride along."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_notes_contracts::VaultConnected"
+output         = "schemas/events/notes.vault.connected.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:VaultConnected"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "notes.vault.connected.v1"
+payload_type = "ratatoskr_notes_contracts::VaultConnected"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "notes.vault_disconnected"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-notes"
+producers      = ["ratatoskr-notes"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-notes-contracts"
+canonical_path = "crates/notes-contracts/src/vault.rs"
+fixtures_dir   = "fixtures/events/notes.vault.disconnected.v1"
+summary        = "Fact: one vault connection was removed. Names the connection, the channel and the vault display name only; unknown fields are refused so no vault content can ride along."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_notes_contracts::VaultDisconnected"
+output         = "schemas/events/notes.vault.disconnected.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:VaultDisconnected"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "notes.vault.disconnected.v1"
+payload_type = "ratatoskr_notes_contracts::VaultDisconnected"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "notes.file_changed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-notes"
+producers      = ["ratatoskr-notes"]
+consumers      = ["ratatoskr-knowledge"]
+crate_name     = "ratatoskr-notes-contracts"
+canonical_path = "crates/notes-contracts/src/file.rs"
+fixtures_dir   = "fixtures/events/notes.file.changed.v1"
+summary        = "Fact: one file of a connected vault was created, updated, renamed or deleted. Carries the path, the revision and a BlobRef, never the bytes; unknown fields are refused so no vault content can ride along."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_notes_contracts::FileChanged"
+output         = "schemas/events/notes.file.changed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:FileChanged"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "notes.file.changed.v1"
+payload_type = "ratatoskr_notes_contracts::FileChanged"

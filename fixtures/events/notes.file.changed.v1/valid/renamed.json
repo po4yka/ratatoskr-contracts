@@ -1,0 +1,19 @@
+{
+  "connection_id": "018f0000-0000-7000-8000-000000000b01",
+  "file_id": "018f0000-0000-7000-8000-000000000b11",
+  "connection_sequence": 3,
+  "change_kind": "renamed",
+  "path": "Archive/Café Plan.md",
+  "previous_path": "Projects/Plan.md",
+  "revision": "1f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a7081",
+  "media_type": "text/markdown",
+  "blob": {
+    "owner_service": "ratatoskr-notes",
+    "digest": {
+      "algorithm": "sha256",
+      "hex": "1f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a7081"
+    },
+    "media_type": "text/markdown",
+    "length_bytes": 2048
+  }
+}

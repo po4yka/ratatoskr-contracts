@@ -521,3 +521,60 @@ fn invalid_fixtures_are_rejected_for_the_declared_reason() {
         "every registration has exactly one fixture"
     );
 }
+
+/// The three notes event types of OBS-023, whose fixtures must refuse every unknown field.
+const NOTES_EVENT_TYPES: [&str; 3] = [
+    "notes.vault.connected.v1",
+    "notes.vault.disconnected.v1",
+    "notes.file.changed.v1",
+];
+
+/// Every invalid notes fixture is refused by serde and, where declared, by the published schema;
+/// and each of the three types has an `unknown-field` fixture that both layers refuse, because a
+/// notes event must never carry a member outside its schema (workspace spec
+/// `notes-vault-connections`, "Connection events name the connection and never its secrets").
+#[test]
+fn notes_vault_fixtures_refuse_unknown_fields() {
+    let expectations = load_expectations(&repo_root());
+    let subjects = subjects();
+    for event_type in NOTES_EVENT_TYPES {
+        let fixtures_dir = format!("fixtures/events/{event_type}");
+        let subject = subjects
+            .iter()
+            .find(|subject| subject.fixtures_dir == fixtures_dir)
+            .unwrap_or_else(|| panic!("{event_type} is not registered in contracts.toml"));
+        let validator = validator(&subject.schema);
+        let invalid = fixtures_in(&fixtures_dir, "invalid/");
+        assert!(!invalid.is_empty(), "{fixtures_dir} has no invalid fixture");
+
+        let mut unknown_field_seen = false;
+        for (tail, _, parsed) in invalid {
+            let key = expectation_key(&fixtures_dir, &tail);
+            let expectation = expectations.get(&key).unwrap_or_else(|| {
+                panic!("{key} has no entry in fixtures/invalid-expectations.toml")
+            });
+            assert!(
+                roundtrip(&subject.rust_path, &parsed).is_err(),
+                "{key} is accepted by serde"
+            );
+            let declares_schema = expectation.rejected_by.contains(&Layer::JsonSchema);
+            if declares_schema {
+                assert!(
+                    validator.validate(&parsed).is_err(),
+                    "{key} is accepted by the published schema"
+                );
+            }
+            if tail == "invalid/unknown-field.json" {
+                assert!(
+                    declares_schema && expectation.rejected_by.contains(&Layer::Serde),
+                    "{key} must be refused by both json_schema and serde"
+                );
+                unknown_field_seen = true;
+            }
+        }
+        assert!(
+            unknown_field_seen,
+            "{fixtures_dir} has no invalid/unknown-field.json fixture"
+        );
+    }
+}
