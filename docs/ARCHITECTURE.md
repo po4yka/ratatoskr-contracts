@@ -43,6 +43,7 @@ ratatoskr-contracts/
 │   ├── ai-archive-contracts/
 │   ├── backup-contracts/
 │   ├── notification-contracts/
+│   ├── notes-contracts/
 │   └── error-contracts/
 ├── schemas/
 │   ├── events/
@@ -291,6 +292,39 @@ Rules:
 - finalize verifies the receiver's streamed digest against the declaration and answers one of two terminal truths — `stored` carrying the full `BlobRef`, or explicit `digest_mismatch` carrying expected and computed hex; a premature finalize is refused with the retriable `blob_transfer.finalize_incomplete` while the session stays open;
 - failures speak stable codes in the `blob_transfer.` namespace mapped onto the shared error envelope; the mismatch is deliberately not an envelope fault but an anticipated outcome;
 - the canonical HTTP binding (`POST …/uploads`, `PUT …/chunks/{index}`, `GET …/status`, `POST …/finalize`) is normative prose beside transport-honest types, and receiving services keep ownership of storage placement, quarantine policy and their own announcement surfaces — this protocol ends where their receipt begins.
+
+### 5.9. Notes contracts
+
+`ratatoskr-notes` connects Obsidian vaults and tells Knowledge what changed (changeset OBS-023). The cross-repository behaviour is defined in the workspace store, specs `notes-vault-connections` and `notes-file-changes`; this section states only the wire shape.
+
+```rust
+pub struct VaultConnected {          // notes.vault.connected.v1; VaultDisconnected has the same fields
+    pub connection_id: NotesConnectionId,
+    pub channel: VaultChannel,       // sync | plugin | cli
+    pub vault_display_name: VaultDisplayName,
+}
+
+pub struct FileChanged {             // notes.file.changed.v1
+    pub connection_id: NotesConnectionId,
+    pub file_id: NotesFileId,
+    pub connection_sequence: u64,
+    pub change_kind: FileChangeKind, // created | updated | renamed | deleted
+    pub path: VaultPath,
+    pub previous_path: Option<VaultPath>,
+    pub revision: DigestHex,
+    pub media_type: MediaType,
+    pub blob: Option<BlobRef>,
+}
+```
+
+Rules:
+
+- the owner is the envelope's `tenant_id` (`user:<uuid>`) and no payload repeats it; the aggregate is `notes_connection:<uuid>` for the vault events and `notes_file:<uuid>` for a file change;
+- every payload refuses an unknown field (`unknown_policy = "reject"`), so no file text, vault secret or host path can ride along; the payloads have no `extensions` map;
+- a path is relative to the vault root, with no empty, `.` or `..` segment, no backslash and no control character, at most 1024 bytes, and in NFC; NFC is the producer's duty, because the workspace has no normalisation crate to check it;
+- `previous_path` is present exactly for `renamed`, `blob` exactly for every kind except `deleted`; the blob belongs to `ratatoskr-notes` and its SHA-256 digest equals `revision`;
+- `connection_sequence` starts at 1 per connection and grows by exactly one per published event, so a consumer can detect a gap;
+- the published schema carries the field rules and `additionalProperties: false`; the cross-field rules are enforced by the Rust type only, as `fixtures/invalid-expectations.toml` declares.
 
 ## 6. Document contracts
 

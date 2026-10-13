@@ -280,6 +280,15 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
             render!(ratatoskr_github_contracts::RepositoryPreviewResponse)
         }
         "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
+        "ratatoskr_notes_contracts::FileChanged" => {
+            render!(ratatoskr_notes_contracts::FileChanged)
+        }
+        "ratatoskr_notes_contracts::VaultConnected" => {
+            render!(ratatoskr_notes_contracts::VaultConnected)
+        }
+        "ratatoskr_notes_contracts::VaultDisconnected" => {
+            render!(ratatoskr_notes_contracts::VaultDisconnected)
+        }
         "ratatoskr_notification_contracts::NotificationRaised" => {
             render!(ratatoskr_notification_contracts::NotificationRaised)
         }

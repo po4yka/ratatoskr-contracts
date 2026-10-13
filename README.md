@@ -48,6 +48,7 @@ crates/
 ├── ai-archive-contracts/      (now)
 ├── backup-contracts/          (now)
 ├── notification-contracts/    (now)
+├── notes-contracts/           (now)
 └── blob-transfer-contracts/   (now)
 
 schemas/
@@ -205,6 +206,10 @@ must call each payload's `validate_for_publish` and author an empty extension ma
 The legacy monolith accepted uploads synchronously in one process; the fleet cannot. `ratatoskr-blob-transfer-contracts` is one chunked, resumable, digest-first transfer discipline for every upload-capable client delivering bytes to a receiving service's blob store — mobile and export-agent on the sending side, extractor and the AI-archive services receiving — so no receiver invents its own wire dialect.
 
 A session opens digest-first: the declaration carries total size, media type and the whole-payload SHA-256 before any byte moves, so a receiver refuses unwanted uploads for free. Chunks are addressed by zero-based index over a declared fixed chunk size (bounds are protocol constants), replay of identical bytes is idempotent, divergent bytes conflict without corrupting the record, and an interrupted client resumes from a status view naming exactly which indices survived. Finalize verifies the streamed digest and answers two terminal truths: `stored` carrying the complete `BlobRef` the workspace store spec `blob-references` defines, or explicit `digest_mismatch` with expected and computed digests. Failures speak stable `blob_transfer.` codes through the shared error envelope; the canonical HTTP binding is normative prose beside transport-honest types, per platform ADR-0015's transfer route class. Receiving services keep ownership of storage placement, quarantine policy and their own announcement surfaces.
+
+### Notes vaults
+
+`ratatoskr-notes-contracts` carries the three events `ratatoskr-notes` publishes for connected Obsidian vaults (changeset OBS-023): `notes.vault.connected.v1` and `notes.vault.disconnected.v1` name a connection, its channel (`sync`, `plugin` or `cli`) and the vault display name; `notes.file.changed.v1` names a file, its NFC path, the change kind, the old path of a rename, the SHA-256 revision, the media type, a `BlobRef` owned by `ratatoskr-notes` for every kind except `deleted`, and a gapless per-connection `connection_sequence`. The owner rides in the envelope's `tenant_id`, and the aggregate is `notes_connection:<uuid>` or `notes_file:<uuid>`. All three refuse unknown fields, so no vault content can ride along. The cross-repository behaviour is defined in the workspace store, specs `notes-vault-connections` and `notes-file-changes`.
 
 ## Proposed development workflow
 

@@ -20,6 +20,8 @@ impl core::clone::Clone for ratatoskr_identifiers::EventId
 impl core::clone::Clone for ratatoskr_identifiers::Extensions
 impl core::clone::Clone for ratatoskr_identifiers::IdentifierError
 impl core::clone::Clone for ratatoskr_identifiers::MediaType
+impl core::clone::Clone for ratatoskr_identifiers::NotesConnectionId
+impl core::clone::Clone for ratatoskr_identifiers::NotesFileId
 impl core::clone::Clone for ratatoskr_identifiers::NotificationId
 impl core::clone::Clone for ratatoskr_identifiers::OperationId
 impl core::clone::Clone for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -48,6 +50,8 @@ impl core::cmp::Eq for ratatoskr_identifiers::EventId
 impl core::cmp::Eq for ratatoskr_identifiers::Extensions
 impl core::cmp::Eq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::Eq for ratatoskr_identifiers::MediaType
+impl core::cmp::Eq for ratatoskr_identifiers::NotesConnectionId
+impl core::cmp::Eq for ratatoskr_identifiers::NotesFileId
 impl core::cmp::Eq for ratatoskr_identifiers::NotificationId
 impl core::cmp::Eq for ratatoskr_identifiers::OperationId
 impl core::cmp::Eq for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -74,6 +78,8 @@ impl core::cmp::Ord for ratatoskr_identifiers::EntityLocalId
 impl core::cmp::Ord for ratatoskr_identifiers::EntityRef
 impl core::cmp::Ord for ratatoskr_identifiers::EventId
 impl core::cmp::Ord for ratatoskr_identifiers::MediaType
+impl core::cmp::Ord for ratatoskr_identifiers::NotesConnectionId
+impl core::cmp::Ord for ratatoskr_identifiers::NotesFileId
 impl core::cmp::Ord for ratatoskr_identifiers::NotificationId
 impl core::cmp::Ord for ratatoskr_identifiers::OperationId
 impl core::cmp::Ord for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -102,6 +108,8 @@ impl core::cmp::PartialEq for ratatoskr_identifiers::EventId
 impl core::cmp::PartialEq for ratatoskr_identifiers::Extensions
 impl core::cmp::PartialEq for ratatoskr_identifiers::IdentifierError
 impl core::cmp::PartialEq for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialEq for ratatoskr_identifiers::NotesConnectionId
+impl core::cmp::PartialEq for ratatoskr_identifiers::NotesFileId
 impl core::cmp::PartialEq for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::OperationId
 impl core::cmp::PartialEq for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -128,6 +136,8 @@ impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityLocalId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::EntityRef
 impl core::cmp::PartialOrd for ratatoskr_identifiers::EventId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::MediaType
+impl core::cmp::PartialOrd for ratatoskr_identifiers::NotesConnectionId
+impl core::cmp::PartialOrd for ratatoskr_identifiers::NotesFileId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::NotificationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::OperationId
 impl core::cmp::PartialOrd for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -158,6 +168,10 @@ impl core::convert::From<ratatoskr_identifiers::EntityRef> for alloc::string::St
 impl core::convert::From<ratatoskr_identifiers::EventId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::EventId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::MediaType> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::NotesConnectionId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::NotesConnectionId> for ratatoskr_identifiers::EntityRef
+impl core::convert::From<ratatoskr_identifiers::NotesFileId> for alloc::string::String
+impl core::convert::From<ratatoskr_identifiers::NotesFileId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::NotificationId> for alloc::string::String
 impl core::convert::From<ratatoskr_identifiers::NotificationId> for ratatoskr_identifiers::EntityRef
 impl core::convert::From<ratatoskr_identifiers::OperationId> for alloc::string::String
@@ -181,6 +195,8 @@ impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_ide
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::CorrelationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::DocumentId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::EventId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::NotesConnectionId
+impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::NotesFileId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::OperationId
 impl core::convert::TryFrom<&ratatoskr_identifiers::EntityRef> for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -200,6 +216,8 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::En
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EntityRef
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::EventId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::MediaType
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::NotesConnectionId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::NotesFileId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::NotificationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::OperationId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -230,6 +248,8 @@ impl core::fmt::Debug for ratatoskr_identifiers::EventId
 impl core::fmt::Debug for ratatoskr_identifiers::Extensions
 impl core::fmt::Debug for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Debug for ratatoskr_identifiers::MediaType
+impl core::fmt::Debug for ratatoskr_identifiers::NotesConnectionId
+impl core::fmt::Debug for ratatoskr_identifiers::NotesFileId
 impl core::fmt::Debug for ratatoskr_identifiers::NotificationId
 impl core::fmt::Debug for ratatoskr_identifiers::OperationId
 impl core::fmt::Debug for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -254,6 +274,8 @@ impl core::fmt::Display for ratatoskr_identifiers::EntityRef
 impl core::fmt::Display for ratatoskr_identifiers::EventId
 impl core::fmt::Display for ratatoskr_identifiers::IdentifierError
 impl core::fmt::Display for ratatoskr_identifiers::MediaType
+impl core::fmt::Display for ratatoskr_identifiers::NotesConnectionId
+impl core::fmt::Display for ratatoskr_identifiers::NotesFileId
 impl core::fmt::Display for ratatoskr_identifiers::NotificationId
 impl core::fmt::Display for ratatoskr_identifiers::OperationId
 impl core::fmt::Display for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -280,6 +302,8 @@ impl core::hash::Hash for ratatoskr_identifiers::EntityLocalId
 impl core::hash::Hash for ratatoskr_identifiers::EntityRef
 impl core::hash::Hash for ratatoskr_identifiers::EventId
 impl core::hash::Hash for ratatoskr_identifiers::MediaType
+impl core::hash::Hash for ratatoskr_identifiers::NotesConnectionId
+impl core::hash::Hash for ratatoskr_identifiers::NotesFileId
 impl core::hash::Hash for ratatoskr_identifiers::NotificationId
 impl core::hash::Hash for ratatoskr_identifiers::OperationId
 impl core::hash::Hash for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -298,6 +322,8 @@ impl core::marker::Copy for ratatoskr_identifiers::CorrelationId
 impl core::marker::Copy for ratatoskr_identifiers::DigestAlgorithm
 impl core::marker::Copy for ratatoskr_identifiers::DocumentId
 impl core::marker::Copy for ratatoskr_identifiers::EventId
+impl core::marker::Copy for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::Copy for ratatoskr_identifiers::NotesFileId
 impl core::marker::Copy for ratatoskr_identifiers::NotificationId
 impl core::marker::Copy for ratatoskr_identifiers::OperationId
 impl core::marker::Copy for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -325,6 +351,8 @@ impl core::marker::Freeze for ratatoskr_identifiers::EventId
 impl core::marker::Freeze for ratatoskr_identifiers::Extensions
 impl core::marker::Freeze for ratatoskr_identifiers::IdentifierError
 impl core::marker::Freeze for ratatoskr_identifiers::MediaType
+impl core::marker::Freeze for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::Freeze for ratatoskr_identifiers::NotesFileId
 impl core::marker::Freeze for ratatoskr_identifiers::NotificationId
 impl core::marker::Freeze for ratatoskr_identifiers::OperationId
 impl core::marker::Freeze for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -353,6 +381,8 @@ impl core::marker::Send for ratatoskr_identifiers::EventId
 impl core::marker::Send for ratatoskr_identifiers::Extensions
 impl core::marker::Send for ratatoskr_identifiers::IdentifierError
 impl core::marker::Send for ratatoskr_identifiers::MediaType
+impl core::marker::Send for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::Send for ratatoskr_identifiers::NotesFileId
 impl core::marker::Send for ratatoskr_identifiers::NotificationId
 impl core::marker::Send for ratatoskr_identifiers::OperationId
 impl core::marker::Send for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -381,6 +411,8 @@ impl core::marker::StructuralPartialEq for ratatoskr_identifiers::EventId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::Extensions
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::IdentifierError
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::MediaType
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::StructuralPartialEq for ratatoskr_identifiers::NotesFileId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::NotificationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::OperationId
 impl core::marker::StructuralPartialEq for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -409,6 +441,8 @@ impl core::marker::Sync for ratatoskr_identifiers::EventId
 impl core::marker::Sync for ratatoskr_identifiers::Extensions
 impl core::marker::Sync for ratatoskr_identifiers::IdentifierError
 impl core::marker::Sync for ratatoskr_identifiers::MediaType
+impl core::marker::Sync for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::Sync for ratatoskr_identifiers::NotesFileId
 impl core::marker::Sync for ratatoskr_identifiers::NotificationId
 impl core::marker::Sync for ratatoskr_identifiers::OperationId
 impl core::marker::Sync for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -437,6 +471,8 @@ impl core::marker::Unpin for ratatoskr_identifiers::EventId
 impl core::marker::Unpin for ratatoskr_identifiers::Extensions
 impl core::marker::Unpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::Unpin for ratatoskr_identifiers::MediaType
+impl core::marker::Unpin for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::Unpin for ratatoskr_identifiers::NotesFileId
 impl core::marker::Unpin for ratatoskr_identifiers::NotificationId
 impl core::marker::Unpin for ratatoskr_identifiers::OperationId
 impl core::marker::Unpin for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -465,6 +501,8 @@ impl core::marker::UnsafeUnpin for ratatoskr_identifiers::EventId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::Extensions
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::IdentifierError
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::MediaType
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::NotesConnectionId
+impl core::marker::UnsafeUnpin for ratatoskr_identifiers::NotesFileId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::NotificationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::OperationId
 impl core::marker::UnsafeUnpin for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -493,6 +531,8 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::EventId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::Extensions
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::IdentifierError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::NotesConnectionId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::NotesFileId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::OperationId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -521,6 +561,8 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::EventId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::Extensions
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::IdentifierError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::MediaType
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::NotesConnectionId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::NotesFileId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::NotificationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::OperationId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -544,6 +586,8 @@ impl core::str::traits::FromStr for ratatoskr_identifiers::EntityLocalId
 impl core::str::traits::FromStr for ratatoskr_identifiers::EntityRef
 impl core::str::traits::FromStr for ratatoskr_identifiers::EventId
 impl core::str::traits::FromStr for ratatoskr_identifiers::MediaType
+impl core::str::traits::FromStr for ratatoskr_identifiers::NotesConnectionId
+impl core::str::traits::FromStr for ratatoskr_identifiers::NotesFileId
 impl core::str::traits::FromStr for ratatoskr_identifiers::NotificationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::OperationId
 impl core::str::traits::FromStr for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -568,6 +612,8 @@ impl ratatoskr_identifiers::EntityRef
 impl ratatoskr_identifiers::EventId
 impl ratatoskr_identifiers::Extensions
 impl ratatoskr_identifiers::MediaType
+impl ratatoskr_identifiers::NotesConnectionId
+impl ratatoskr_identifiers::NotesFileId
 impl ratatoskr_identifiers::NotificationId
 impl ratatoskr_identifiers::OperationId
 impl ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -594,6 +640,8 @@ impl schemars::JsonSchema for ratatoskr_identifiers::EntityRef
 impl schemars::JsonSchema for ratatoskr_identifiers::EventId
 impl schemars::JsonSchema for ratatoskr_identifiers::Extensions
 impl schemars::JsonSchema for ratatoskr_identifiers::MediaType
+impl schemars::JsonSchema for ratatoskr_identifiers::NotesConnectionId
+impl schemars::JsonSchema for ratatoskr_identifiers::NotesFileId
 impl schemars::JsonSchema for ratatoskr_identifiers::NotificationId
 impl schemars::JsonSchema for ratatoskr_identifiers::OperationId
 impl schemars::JsonSchema for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -620,6 +668,8 @@ impl serde_core::ser::Serialize for ratatoskr_identifiers::EntityRef
 impl serde_core::ser::Serialize for ratatoskr_identifiers::EventId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::Extensions
 impl serde_core::ser::Serialize for ratatoskr_identifiers::MediaType
+impl serde_core::ser::Serialize for ratatoskr_identifiers::NotesConnectionId
+impl serde_core::ser::Serialize for ratatoskr_identifiers::NotesFileId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::NotificationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::OperationId
 impl serde_core::ser::Serialize for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -646,6 +696,8 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EntityRef
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::EventId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::Extensions
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::MediaType
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::NotesConnectionId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::NotesFileId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::NotificationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::OperationId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -674,6 +726,8 @@ impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::EventId where U: co
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::Extensions where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::MediaType where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::NotesConnectionId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::NotesFileId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::NotificationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::OperationId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::From<T>
@@ -702,6 +756,8 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::EventId where U:
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::Extensions where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::MediaType where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::NotesConnectionId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::NotesFileId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::NotificationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::OperationId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::Into<T>
@@ -730,6 +786,8 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::EventId where U:
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::Extensions where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::IdentifierError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::MediaType where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::NotesConnectionId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::NotesFileId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::NotificationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::OperationId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_identifiers::RepositoryAnalysisRequestId where U: core::convert::TryFrom<T>
@@ -758,6 +816,8 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::EventId where T: core:
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::NotesConnectionId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::NotesFileId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
@@ -782,6 +842,8 @@ impl<T> alloc::string::ToString for ratatoskr_identifiers::EntityRef where T: co
 impl<T> alloc::string::ToString for ratatoskr_identifiers::EventId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::IdentifierError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::MediaType where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::NotesConnectionId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_identifiers::NotesFileId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::NotificationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::OperationId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::fmt::Display + ?core::marker::Sized
@@ -810,6 +872,8 @@ impl<T> core::any::Any for ratatoskr_identifiers::EventId where T: 'static + ?co
 impl<T> core::any::Any for ratatoskr_identifiers::Extensions where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::IdentifierError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::MediaType where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::NotesConnectionId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_identifiers::NotesFileId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::NotificationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::OperationId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: 'static + ?core::marker::Sized
@@ -838,6 +902,8 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::EventId where T: ?cor
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::NotesConnectionId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::NotesFileId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: ?core::marker::Sized
@@ -866,6 +932,8 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::EventId where T: ?
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::Extensions where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::IdentifierError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::MediaType where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::NotesConnectionId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::NotesFileId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::NotificationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::OperationId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: ?core::marker::Sized
@@ -894,6 +962,8 @@ impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::EventId where T: c
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::NotesConnectionId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::NotesFileId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
@@ -922,6 +992,8 @@ impl<T> core::convert::From<T> for ratatoskr_identifiers::EventId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::Extensions
 impl<T> core::convert::From<T> for ratatoskr_identifiers::IdentifierError
 impl<T> core::convert::From<T> for ratatoskr_identifiers::MediaType
+impl<T> core::convert::From<T> for ratatoskr_identifiers::NotesConnectionId
+impl<T> core::convert::From<T> for ratatoskr_identifiers::NotesFileId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::NotificationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::OperationId
 impl<T> core::convert::From<T> for ratatoskr_identifiers::RepositoryAnalysisRequestId
@@ -950,6 +1022,8 @@ impl<T> dyn_clone::DynClone for ratatoskr_identifiers::EventId where T: core::cl
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::Extensions where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::IdentifierError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::MediaType where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::NotesConnectionId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_identifiers::NotesFileId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::NotificationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::OperationId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: core::clone::Clone
@@ -976,6 +1050,8 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EntityRef wh
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::EventId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::Extensions where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::MediaType where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::NotesConnectionId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::NotesFileId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::NotificationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::OperationId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_identifiers::RepositoryAnalysisRequestId where T: for<'de> serde_core::de::Deserialize<'de>
@@ -1022,6 +1098,10 @@ pub const ratatoskr_identifiers::EventId::PATTERN: &'static str
 pub const ratatoskr_identifiers::MediaType::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_identifiers::MediaType::MAX_LEN: usize
 pub const ratatoskr_identifiers::MediaType::PATTERN: &'static str
+pub const ratatoskr_identifiers::NotesConnectionId::KIND: &'static str
+pub const ratatoskr_identifiers::NotesConnectionId::PATTERN: &'static str
+pub const ratatoskr_identifiers::NotesFileId::KIND: &'static str
+pub const ratatoskr_identifiers::NotesFileId::PATTERN: &'static str
 pub const ratatoskr_identifiers::NotificationId::KIND: &'static str
 pub const ratatoskr_identifiers::NotificationId::PATTERN: &'static str
 pub const ratatoskr_identifiers::OperationId::KIND: &'static str
@@ -1052,6 +1132,8 @@ pub fn alloc::string::String::from(ratatoskr_identifiers::EntityLocalId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::EntityRef) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::EventId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::MediaType) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::NotesConnectionId) -> Self
+pub fn alloc::string::String::from(ratatoskr_identifiers::NotesFileId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::OperationId) -> Self
 pub fn alloc::string::String::from(ratatoskr_identifiers::RepositoryAnalysisRequestId) -> Self
@@ -1448,6 +1530,8 @@ pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::CommandId) 
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::CorrelationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::DocumentId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::EventId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::NotesConnectionId) -> Self
+pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::NotesFileId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::NotificationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::OperationId) -> Self
 pub fn ratatoskr_identifiers::EntityRef::from(ratatoskr_identifiers::RepositoryAnalysisRequestId) -> Self
@@ -1568,6 +1652,64 @@ pub fn ratatoskr_identifiers::MediaType::try_from(U) -> core::result::Result<T, 
 pub fn ratatoskr_identifiers::MediaType::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_identifiers::MediaType::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_identifiers::MediaType::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::NotesConnectionId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::NotesConnectionId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::NotesConnectionId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::NotesConnectionId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::NotesConnectionId::clone(&self) -> ratatoskr_identifiers::NotesConnectionId
+pub fn ratatoskr_identifiers::NotesConnectionId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::NotesConnectionId::cmp(&self, &ratatoskr_identifiers::NotesConnectionId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::NotesConnectionId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::NotesConnectionId::eq(&self, &ratatoskr_identifiers::NotesConnectionId) -> bool
+pub fn ratatoskr_identifiers::NotesConnectionId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::NotesConnectionId::from(T) -> T
+pub fn ratatoskr_identifiers::NotesConnectionId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::NotesConnectionId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::NotesConnectionId::into(self) -> U
+pub fn ratatoskr_identifiers::NotesConnectionId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::NotesConnectionId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::NotesConnectionId::new_v7() -> Self
+pub fn ratatoskr_identifiers::NotesConnectionId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::NotesConnectionId::partial_cmp(&self, &ratatoskr_identifiers::NotesConnectionId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::NotesConnectionId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotesConnectionId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotesConnectionId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::NotesConnectionId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::NotesConnectionId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::NotesConnectionId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotesConnectionId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::NotesConnectionId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotesConnectionId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::NotesConnectionId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_identifiers::NotesFileId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_identifiers::NotesFileId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
+pub fn ratatoskr_identifiers::NotesFileId::borrow(&self) -> &T
+pub fn ratatoskr_identifiers::NotesFileId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_identifiers::NotesFileId::clone(&self) -> ratatoskr_identifiers::NotesFileId
+pub fn ratatoskr_identifiers::NotesFileId::clone_into(&self, &mut T)
+pub fn ratatoskr_identifiers::NotesFileId::cmp(&self, &ratatoskr_identifiers::NotesFileId) -> core::cmp::Ordering
+pub fn ratatoskr_identifiers::NotesFileId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_identifiers::NotesFileId::eq(&self, &ratatoskr_identifiers::NotesFileId) -> bool
+pub fn ratatoskr_identifiers::NotesFileId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_identifiers::NotesFileId::from(T) -> T
+pub fn ratatoskr_identifiers::NotesFileId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_identifiers::NotesFileId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_identifiers::NotesFileId::into(self) -> U
+pub fn ratatoskr_identifiers::NotesFileId::is_uuid_v7(&self) -> bool
+pub fn ratatoskr_identifiers::NotesFileId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_identifiers::NotesFileId::new_v7() -> Self
+pub fn ratatoskr_identifiers::NotesFileId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::IdentifierError>
+pub fn ratatoskr_identifiers::NotesFileId::partial_cmp(&self, &ratatoskr_identifiers::NotesFileId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_identifiers::NotesFileId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotesFileId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_identifiers::NotesFileId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_identifiers::NotesFileId::to_owned(&self) -> T
+pub fn ratatoskr_identifiers::NotesFileId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_identifiers::NotesFileId::try_from(&ratatoskr_identifiers::EntityRef) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotesFileId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_identifiers::NotesFileId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_identifiers::NotesFileId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_identifiers::NotesFileId::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_identifiers::NotificationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_identifiers::NotificationId::as_entity_ref(&self) -> ratatoskr_identifiers::EntityRef
 pub fn ratatoskr_identifiers::NotificationId::borrow(&self) -> &T
@@ -1881,6 +2023,8 @@ pub struct ratatoskr_identifiers::EntityRef
 pub struct ratatoskr_identifiers::EventId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::Extensions(_)
 pub struct ratatoskr_identifiers::MediaType(_)
+pub struct ratatoskr_identifiers::NotesConnectionId(pub uuid::Uuid)
+pub struct ratatoskr_identifiers::NotesFileId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::NotificationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::OperationId(pub uuid::Uuid)
 pub struct ratatoskr_identifiers::RepositoryAnalysisRequestId(pub uuid::Uuid)
@@ -1974,6 +2118,16 @@ pub type ratatoskr_identifiers::MediaType::Error = <U as core::convert::TryFrom<
 pub type ratatoskr_identifiers::MediaType::Error = core::convert::Infallible
 pub type ratatoskr_identifiers::MediaType::Error = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::MediaType::Owned = T
+pub type ratatoskr_identifiers::NotesConnectionId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotesConnectionId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::NotesConnectionId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::NotesConnectionId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotesConnectionId::Owned = T
+pub type ratatoskr_identifiers::NotesFileId::Err = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotesFileId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_identifiers::NotesFileId::Error = core::convert::Infallible
+pub type ratatoskr_identifiers::NotesFileId::Error = ratatoskr_identifiers::IdentifierError
+pub type ratatoskr_identifiers::NotesFileId::Owned = T
 pub type ratatoskr_identifiers::NotificationId::Err = ratatoskr_identifiers::IdentifierError
 pub type ratatoskr_identifiers::NotificationId::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_identifiers::NotificationId::Error = core::convert::Infallible
@@ -2038,6 +2192,8 @@ pub unsafe fn ratatoskr_identifiers::EventId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::Extensions::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::IdentifierError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::MediaType::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::NotesConnectionId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_identifiers::NotesFileId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::NotificationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::OperationId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_identifiers::RepositoryAnalysisRequestId::clone_to_uninit(&self, *mut u8)

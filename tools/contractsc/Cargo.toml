@@ -23,6 +23,7 @@ ratatoskr-social-contracts.workspace    = true
 ratatoskr-ai-archive-contracts.workspace = true
 ratatoskr-backup-contracts.workspace     = true
 ratatoskr-notification-contracts.workspace = true
+ratatoskr-notes-contracts.workspace = true
 ratatoskr-blob-transfer-contracts.workspace = true
 ratatoskr-channel-digest-contracts.workspace = true
 ratatoskr-github-contracts.workspace = true

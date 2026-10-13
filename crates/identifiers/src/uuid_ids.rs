@@ -337,6 +337,31 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one vault connection of `ratatoskr-notes`: one Obsidian vault of one owner,
+    /// reached through one channel. Minted by `ratatoskr-notes` when the connection is created and
+    /// never reused after the connection is removed.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. As an aggregate it appears namespaced
+    /// as `notes_connection:<uuid>`.
+    pub struct NotesConnectionId,
+    kind = "notes_connection",
+    description = "Identity of one vault connection of ratatoskr-notes. Bare canonical lowercase \
+                   hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
+    /// Identity of one file of a connected vault. Minted by `ratatoskr-notes` when it first
+    /// observes the file, and stable across updates and renames of that file.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. As an aggregate it appears namespaced
+    /// as `notes_file:<uuid>`.
+    pub struct NotesFileId,
+    kind = "notes_file",
+    description = "Identity of one file of a connected vault, stable across renames. Bare \
+                   canonical lowercase hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// A correlation identity minted by a producer for work not bound to an operation.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot

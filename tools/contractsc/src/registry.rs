@@ -152,6 +152,10 @@ root_types! {
     "ratatoskr_github_contracts::RepositoryPreviewResponse"
         => ratatoskr_github_contracts::RepositoryPreviewResponse,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
+    "ratatoskr_notes_contracts::FileChanged"     => ratatoskr_notes_contracts::FileChanged,
+    "ratatoskr_notes_contracts::VaultConnected"  => ratatoskr_notes_contracts::VaultConnected,
+    "ratatoskr_notes_contracts::VaultDisconnected"
+        => ratatoskr_notes_contracts::VaultDisconnected,
     "ratatoskr_notification_contracts::NotificationRaised"
         => ratatoskr_notification_contracts::NotificationRaised,
     "ratatoskr_operation_contracts::AccountErasureAcknowledged"
@@ -243,6 +247,10 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
             => ratatoskr_github_contracts::RepositoryAnalysisFailed,
         "ratatoskr_github_contracts::RepositoryAnalysisRequested"
             => ratatoskr_github_contracts::RepositoryAnalysisRequested,
+        "ratatoskr_notes_contracts::FileChanged" => ratatoskr_notes_contracts::FileChanged,
+        "ratatoskr_notes_contracts::VaultConnected" => ratatoskr_notes_contracts::VaultConnected,
+        "ratatoskr_notes_contracts::VaultDisconnected"
+            => ratatoskr_notes_contracts::VaultDisconnected,
         "ratatoskr_notification_contracts::NotificationRaised"
             => ratatoskr_notification_contracts::NotificationRaised,
         "ratatoskr_operation_contracts::AccountErasureAcknowledged"
