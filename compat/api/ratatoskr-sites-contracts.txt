@@ -882,6 +882,7 @@ pub const ratatoskr_sites_contracts::ImageUrl::PATTERN: &'static str
 pub const ratatoskr_sites_contracts::LinkUrl::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::LinkUrl::MAX_LEN: usize
 pub const ratatoskr_sites_contracts::LinkUrl::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::MAX_ASSET_SIZE_BYTES: u64
 pub const ratatoskr_sites_contracts::PageTitle::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::PageTitle::MAX_LEN: usize
 pub const ratatoskr_sites_contracts::PageTitle::PATTERN: &'static str
