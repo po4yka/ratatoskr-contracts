@@ -34,6 +34,12 @@ pub enum SitesContractError {
         /// The refused name.
         key: String,
     },
+    /// A bundle manifest named an entry document that is not one of its files.
+    #[error("entry_document `{path}` is not one of the files of the bundle")]
+    EntryDocumentNotListed {
+        /// The entry document the manifest named.
+        path: String,
+    },
     /// A navigation entry named a slug that no page of the release has.
     #[error("navigation names `{slug}`, which is not a page of the release")]
     NavigationSlugNotInRelease {

@@ -2369,3 +2369,25 @@ privacy        = "boundary_metadata"
 [contract.event]
 event_type   = "platform.site_approval.changed.v1"
 payload_type = "ratatoskr_sites_contracts::SiteApprovalChanged"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.bundle_manifest"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-site-sdk"]
+consumers      = ["ratatoskr-sites", "ratatoskr-site-sdk"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/bundle.rs"
+fixtures_dir   = "fixtures/sites/bundle-manifest"
+summary        = "Document: ratatoskr-bundle.json, the manifest of a static site bundle. Names the site, the repository, the commit, the entry document and every file with its size, SHA-256 and hashed flag; paths stay inside the bundle and never under _r/; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::BundleManifest"
+output         = "schemas/json-schema/sites/bundle-manifest.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:BundleManifest"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"

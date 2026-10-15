@@ -7,6 +7,10 @@
 //!
 //! - [`SiteManifest`] — contract `sites/site-manifest.v1`, the file `ratatoskr-site.toml`: the
 //!   site id, one hostname, the publications and the requested [`SiteCapability`] set.
+//! - [`BundleManifest`] — contract `sites/bundle-manifest.v1` (changeset SITE-026), the file
+//!   `ratatoskr-bundle.json` of a site bundle: the site, the repository, the commit, the entry
+//!   document, the entry fallback and every [`BundleFile`] with its size, SHA-256 and `hashed`
+//!   flag.
 //! - [`Release`] — contract `sites/release.v1`: one immutable release of a site, its pages by slug,
 //!   its assets by SHA-256 and its navigation. The release id is the SHA-256 of its RFC 8785 form.
 //! - [`Page`] — contract `sites/page.v1`: one page, with its body as an mdast-compatible tree
@@ -19,7 +23,8 @@
 //!   `platform/site-approval-changed.v1`): Platform approved or withdrew a manifest digest
 //!   ([`ApprovalState`]).
 //! - [`SiteId`] / [`PublicationId`] / [`Hostname`] / [`Slug`] / [`PageTitle`] / [`Anchor`] /
-//!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] — validated strings.
+//!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] / [`BundlePath`] /
+//!   [`RepositoryName`] / [`CommitSha`] — validated strings.
 //!
 //! # What is deliberately absent
 //!
@@ -29,12 +34,14 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+mod bundle;
 mod error;
 mod manifest;
 mod messages;
 mod page;
 mod release;
 
+pub use crate::bundle::{BundleFile, BundleManifest, BundlePath, CommitSha, RepositoryName};
 pub use crate::error::SitesContractError;
 pub use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, SiteManifest};
 pub use crate::messages::{

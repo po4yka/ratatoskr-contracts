@@ -1179,3 +1179,38 @@ reason         = "A link or image URL holds no U+2029 PARAGRAPH SEPARATOR, so it
 rejected_by    = ["json_schema", "serde"]
 error_contains = "size_bytes must be at most 9007199254740991"
 reason         = "An asset size is at most 2^53 - 1, the largest integer that a JavaScript number of the site SDK holds exactly."
+
+["sites/bundle-manifest/invalid/file-without-sha256.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `sha256`"
+reason         = "Every file of a bundle names its SHA-256, so the receipt and the deploy command can check each byte."
+
+["sites/bundle-manifest/invalid/parent-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path has no .. segment, so it never names a file outside the bundle directory."
+
+["sites/bundle-manifest/invalid/forwarding-prefix.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path never starts with _r/, which the gateway reserves for forwarding to Edge."
+
+["sites/bundle-manifest/invalid/leading-slash.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path is relative to the bundle root; an absolute path is refused."
+
+["sites/bundle-manifest/invalid/files-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "files must be in ascending order"
+reason         = "The files are sorted by path with each path once, so one bundle gives one manifest."
+
+["sites/bundle-manifest/invalid/entry-document-not-listed.json"]
+rejected_by    = ["serde"]
+error_contains = "is not one of the files of the bundle"
+reason         = "The entry document is a file of the bundle, or the gateway would have nothing to serve for /."
+
+["sites/bundle-manifest/invalid/commit-short.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "The commit is the full 40-hex commit id, which the OCI tag sha-<commit> and the attestation name."

@@ -187,6 +187,7 @@ root_types! {
         => ratatoskr_operational_contracts::PublicStatusDocument,
     "ratatoskr_operational_contracts::ScheduleInspectionPage"
         => ratatoskr_operational_contracts::ScheduleInspectionPage,
+    "ratatoskr_sites_contracts::BundleManifest" => ratatoskr_sites_contracts::BundleManifest,
     "ratatoskr_sites_contracts::Page"           => ratatoskr_sites_contracts::Page,
     "ratatoskr_sites_contracts::Release"        => ratatoskr_sites_contracts::Release,
     "ratatoskr_sites_contracts::ReleaseBuildRequested"

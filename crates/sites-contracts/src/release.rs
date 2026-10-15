@@ -123,8 +123,8 @@ pub struct NavigationEntry {
 /// The largest asset size, 2^53 - 1: the largest integer that a JavaScript number holds exactly.
 pub const MAX_ASSET_SIZE_BYTES: u64 = 9_007_199_254_740_991;
 
-/// Refuses an asset size above [`MAX_ASSET_SIZE_BYTES`].
-fn asset_size<'de, D>(deserializer: D) -> Result<u64, D::Error>
+/// Refuses an asset or bundle file size above [`MAX_ASSET_SIZE_BYTES`].
+pub(crate) fn asset_size<'de, D>(deserializer: D) -> Result<u64, D::Error>
 where
     D: serde::Deserializer<'de>,
 {
