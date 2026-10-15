@@ -1259,3 +1259,33 @@ reason         = "The event types are closed; a client that met another type wou
 rejected_by    = ["json_schema", "serde"]
 error_contains = "unknown field `path`"
 reason         = "A draft change names the note by its opaque source_ref; a vault path or any other member is refused."
+
+["sites/bundle-manifest/invalid/backslash.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path separates segments with / only; a backslash is refused, so no file system reads it as a separator."
+
+["sites/bundle-manifest/invalid/control-character.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path holds no C0 or DEL control character."
+
+["sites/bundle-manifest/invalid/dot-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path has no . segment, so each file has one spelling."
+
+["sites/bundle-manifest/invalid/bare-forwarding-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "The first segment of a bundle path is never _r, which the gateway reserves for forwarding; a root file named _r is refused too."
+
+["sites/bundle-manifest/invalid/trailing-slash.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A bundle path names a file, so it has no trailing / and no empty last segment."
+
+["sites/bundle-manifest/invalid/duplicate-path.json"]
+rejected_by    = ["serde"]
+error_contains = "files must be in ascending order"
+reason         = "Each path appears once in a bundle. JSON Schema cannot state uniqueness by one member of an object, so the Rust type alone refuses the repeat."

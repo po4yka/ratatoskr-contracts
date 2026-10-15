@@ -8,3 +8,8 @@
 
 - [x] 2.1 RED: add the fixtures under `fixtures/sites/deploy-stored/` and `fixtures/sites/deploy-activated/` and `sites_fixtures.rs::deploy_responses_round_trip`. It MUST fail because `sites/deploy-stored.v1` and `sites/deploy-activated.v1` do not exist.
 - [x] 2.2 GREEN: add `DeployStored` and `DeployActivated` (the commit is the deploy id), their rows, registry entries and renderers, regenerate, update the pinned counts, and document the manifest and the two routes in `README.md`. 2.1 passes.
+
+## 3. Review corrections (workspace SITE-026 tasks 3.5 and 3.6)
+
+- [x] 3.1 Add the invalid bundle-manifest fixtures `backslash`, `control-character`, `dot-segment`, `bare-forwarding-segment`, `trailing-slash` and `duplicate-path`, and the valid fixture `underscore-names` with `_redirects` and `a/_r/b`. No failing test first: the rules exist. Mutations of the path pattern and of the order rule make them fail.
+- [ ] 3.2 State the length unit of `BundlePath` in its rustdoc, add the boundary fixtures, and state in `README.md` that duplicate paths are refused by the Rust type only. No failing test first: the rules exist.
