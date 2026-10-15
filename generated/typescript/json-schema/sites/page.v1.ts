@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:cfda7343680616957adf124c06833fa27145d40545e87e40009a41a6803e62cd
+ * source_digest: sha256:633c3fde781895764441c6cbc601a22e47da9b26889fa46faf3cffc900d192c3
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -44,6 +44,10 @@ export interface Page {
  /**
   * The body rendered from the same tree and passed through the closed element and attribute
   * allowlist of the workspace spec `site-release-privacy`. An asset is `assets/<sha256>`.
+  *
+  * The producer, `ratatoskr-sites`, sanitises this markup; this contract does not check it. A
+  * consumer that has no sanitiser of its own inserts it only when the page came from the
+  * trusted delivery origin, and should prefer `ast`, which holds no markup.
   */
  html: string;
  /**

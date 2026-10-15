@@ -29,7 +29,7 @@
       "additionalProperties": true
     },
     "html": {
-      "description": "The body rendered from the same tree and passed through the closed element and attribute\nallowlist of the workspace spec `site-release-privacy`. An asset is `assets/<sha256>`.",
+      "description": "The body rendered from the same tree and passed through the closed element and attribute\nallowlist of the workspace spec `site-release-privacy`. An asset is `assets/<sha256>`.\n\nThe producer, `ratatoskr-sites`, sanitises this markup; this contract does not check it. A\nconsumer that has no sanitiser of its own inserts it only when the page came from the\ntrusted delivery origin, and should prefer `ast`, which holds no markup.",
       "type": "string"
     },
     "links": {
@@ -67,7 +67,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:7a09b96a9b79300b7fc0e44e0c5936a9179befeeecf5b7d7a9e8f16af946fd8d",
+    "source_digest": "sha256:02113bed4200be687315fdc50ec6664f3827f9942ac0b1afceee84136d5c39f4",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {

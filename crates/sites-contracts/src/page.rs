@@ -102,6 +102,10 @@ pub struct Page {
 
     /// The body rendered from the same tree and passed through the closed element and attribute
     /// allowlist of the workspace spec `site-release-privacy`. An asset is `assets/<sha256>`.
+    ///
+    /// The producer, `ratatoskr-sites`, sanitises this markup; this contract does not check it. A
+    /// consumer that has no sanitiser of its own inserts it only when the page came from the
+    /// trusted delivery origin, and should prefer `ast`, which holds no markup.
     pub html: String,
 
     /// The pages of the release that this page links to or embeds, in ascending order, each once.
