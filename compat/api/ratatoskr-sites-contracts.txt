@@ -10,6 +10,12 @@ impl core::clone::Clone for ratatoskr_sites_contracts::BundlePath
 impl core::clone::Clone for ratatoskr_sites_contracts::CalloutFold
 impl core::clone::Clone for ratatoskr_sites_contracts::CalloutKind
 impl core::clone::Clone for ratatoskr_sites_contracts::CommitSha
+impl core::clone::Clone for ratatoskr_sites_contracts::DeployActivated
+impl core::clone::Clone for ratatoskr_sites_contracts::DeployStored
+impl core::clone::Clone for ratatoskr_sites_contracts::DraftChanged
+impl core::clone::Clone for ratatoskr_sites_contracts::DraftNotice
+impl core::clone::Clone for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::clone::Clone for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::clone::Clone for ratatoskr_sites_contracts::EmbedTarget
 impl core::clone::Clone for ratatoskr_sites_contracts::FrontmatterKey
 impl core::clone::Clone for ratatoskr_sites_contracts::Hostname
@@ -25,15 +31,18 @@ impl core::clone::Clone for ratatoskr_sites_contracts::PublicationId
 impl core::clone::Clone for ratatoskr_sites_contracts::Release
 impl core::clone::Clone for ratatoskr_sites_contracts::ReleaseAsset
 impl core::clone::Clone for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::clone::Clone for ratatoskr_sites_contracts::ReleaseNotice
 impl core::clone::Clone for ratatoskr_sites_contracts::ReleasePage
 impl core::clone::Clone for ratatoskr_sites_contracts::ReleasePublished
 impl core::clone::Clone for ratatoskr_sites_contracts::RepositoryName
 impl core::clone::Clone for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::clone::Clone for ratatoskr_sites_contracts::SiteCapability
+impl core::clone::Clone for ratatoskr_sites_contracts::SiteEvent
 impl core::clone::Clone for ratatoskr_sites_contracts::SiteId
 impl core::clone::Clone for ratatoskr_sites_contracts::SiteManifest
 impl core::clone::Clone for ratatoskr_sites_contracts::SitesContractError
 impl core::clone::Clone for ratatoskr_sites_contracts::Slug
+impl core::clone::Clone for ratatoskr_sites_contracts::SourceRef
 impl core::clone::Clone for ratatoskr_sites_contracts::TableAlign
 impl core::cmp::Eq for ratatoskr_sites_contracts::Anchor
 impl core::cmp::Eq for ratatoskr_sites_contracts::ApprovalState
@@ -44,6 +53,12 @@ impl core::cmp::Eq for ratatoskr_sites_contracts::BundlePath
 impl core::cmp::Eq for ratatoskr_sites_contracts::CalloutFold
 impl core::cmp::Eq for ratatoskr_sites_contracts::CalloutKind
 impl core::cmp::Eq for ratatoskr_sites_contracts::CommitSha
+impl core::cmp::Eq for ratatoskr_sites_contracts::DeployActivated
+impl core::cmp::Eq for ratatoskr_sites_contracts::DeployStored
+impl core::cmp::Eq for ratatoskr_sites_contracts::DraftChanged
+impl core::cmp::Eq for ratatoskr_sites_contracts::DraftNotice
+impl core::cmp::Eq for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::cmp::Eq for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::cmp::Eq for ratatoskr_sites_contracts::EmbedTarget
 impl core::cmp::Eq for ratatoskr_sites_contracts::FrontmatterKey
 impl core::cmp::Eq for ratatoskr_sites_contracts::Hostname
@@ -59,15 +74,18 @@ impl core::cmp::Eq for ratatoskr_sites_contracts::PublicationId
 impl core::cmp::Eq for ratatoskr_sites_contracts::Release
 impl core::cmp::Eq for ratatoskr_sites_contracts::ReleaseAsset
 impl core::cmp::Eq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::cmp::Eq for ratatoskr_sites_contracts::ReleaseNotice
 impl core::cmp::Eq for ratatoskr_sites_contracts::ReleasePage
 impl core::cmp::Eq for ratatoskr_sites_contracts::ReleasePublished
 impl core::cmp::Eq for ratatoskr_sites_contracts::RepositoryName
 impl core::cmp::Eq for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::cmp::Eq for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::Eq for ratatoskr_sites_contracts::SiteEvent
 impl core::cmp::Eq for ratatoskr_sites_contracts::SiteId
 impl core::cmp::Eq for ratatoskr_sites_contracts::SiteManifest
 impl core::cmp::Eq for ratatoskr_sites_contracts::SitesContractError
 impl core::cmp::Eq for ratatoskr_sites_contracts::Slug
+impl core::cmp::Eq for ratatoskr_sites_contracts::SourceRef
 impl core::cmp::Eq for ratatoskr_sites_contracts::TableAlign
 impl core::cmp::Ord for ratatoskr_sites_contracts::Anchor
 impl core::cmp::Ord for ratatoskr_sites_contracts::ApprovalState
@@ -84,6 +102,7 @@ impl core::cmp::Ord for ratatoskr_sites_contracts::RepositoryName
 impl core::cmp::Ord for ratatoskr_sites_contracts::SiteCapability
 impl core::cmp::Ord for ratatoskr_sites_contracts::SiteId
 impl core::cmp::Ord for ratatoskr_sites_contracts::Slug
+impl core::cmp::Ord for ratatoskr_sites_contracts::SourceRef
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::Anchor
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::ApprovalState
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::AssetRef
@@ -93,6 +112,12 @@ impl core::cmp::PartialEq for ratatoskr_sites_contracts::BundlePath
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::CalloutFold
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::CalloutKind
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::CommitSha
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::DeployActivated
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::DeployStored
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::DraftChanged
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::DraftNotice
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::EmbedTarget
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::FrontmatterKey
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::Hostname
@@ -108,15 +133,18 @@ impl core::cmp::PartialEq for ratatoskr_sites_contracts::PublicationId
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::Release
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleaseAsset
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleaseNotice
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleasePage
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleasePublished
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::RepositoryName
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteEvent
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteId
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteManifest
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::SitesContractError
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::Slug
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SourceRef
 impl core::cmp::PartialEq for ratatoskr_sites_contracts::TableAlign
 impl core::cmp::PartialOrd for ratatoskr_sites_contracts::Anchor
 impl core::cmp::PartialOrd for ratatoskr_sites_contracts::ApprovalState
@@ -133,6 +161,7 @@ impl core::cmp::PartialOrd for ratatoskr_sites_contracts::RepositoryName
 impl core::cmp::PartialOrd for ratatoskr_sites_contracts::SiteCapability
 impl core::cmp::PartialOrd for ratatoskr_sites_contracts::SiteId
 impl core::cmp::PartialOrd for ratatoskr_sites_contracts::Slug
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::SourceRef
 impl core::convert::From<ratatoskr_sites_contracts::Anchor> for alloc::string::String
 impl core::convert::From<ratatoskr_sites_contracts::BundlePath> for alloc::string::String
 impl core::convert::From<ratatoskr_sites_contracts::CalloutKind> for alloc::string::String
@@ -146,6 +175,7 @@ impl core::convert::From<ratatoskr_sites_contracts::PublicationId> for alloc::st
 impl core::convert::From<ratatoskr_sites_contracts::RepositoryName> for alloc::string::String
 impl core::convert::From<ratatoskr_sites_contracts::SiteId> for alloc::string::String
 impl core::convert::From<ratatoskr_sites_contracts::Slug> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::SourceRef> for alloc::string::String
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::Anchor
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::BundlePath
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::CalloutKind
@@ -159,6 +189,7 @@ impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::RepositoryName
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::SiteId
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::Slug
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::SourceRef
 impl core::error::Error for ratatoskr_sites_contracts::SitesContractError
 impl core::fmt::Debug for ratatoskr_sites_contracts::Anchor
 impl core::fmt::Debug for ratatoskr_sites_contracts::ApprovalState
@@ -169,6 +200,12 @@ impl core::fmt::Debug for ratatoskr_sites_contracts::BundlePath
 impl core::fmt::Debug for ratatoskr_sites_contracts::CalloutFold
 impl core::fmt::Debug for ratatoskr_sites_contracts::CalloutKind
 impl core::fmt::Debug for ratatoskr_sites_contracts::CommitSha
+impl core::fmt::Debug for ratatoskr_sites_contracts::DeployActivated
+impl core::fmt::Debug for ratatoskr_sites_contracts::DeployStored
+impl core::fmt::Debug for ratatoskr_sites_contracts::DraftChanged
+impl core::fmt::Debug for ratatoskr_sites_contracts::DraftNotice
+impl core::fmt::Debug for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::fmt::Debug for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::fmt::Debug for ratatoskr_sites_contracts::EmbedTarget
 impl core::fmt::Debug for ratatoskr_sites_contracts::FrontmatterKey
 impl core::fmt::Debug for ratatoskr_sites_contracts::Hostname
@@ -184,15 +221,18 @@ impl core::fmt::Debug for ratatoskr_sites_contracts::PublicationId
 impl core::fmt::Debug for ratatoskr_sites_contracts::Release
 impl core::fmt::Debug for ratatoskr_sites_contracts::ReleaseAsset
 impl core::fmt::Debug for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::fmt::Debug for ratatoskr_sites_contracts::ReleaseNotice
 impl core::fmt::Debug for ratatoskr_sites_contracts::ReleasePage
 impl core::fmt::Debug for ratatoskr_sites_contracts::ReleasePublished
 impl core::fmt::Debug for ratatoskr_sites_contracts::RepositoryName
 impl core::fmt::Debug for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::fmt::Debug for ratatoskr_sites_contracts::SiteCapability
+impl core::fmt::Debug for ratatoskr_sites_contracts::SiteEvent
 impl core::fmt::Debug for ratatoskr_sites_contracts::SiteId
 impl core::fmt::Debug for ratatoskr_sites_contracts::SiteManifest
 impl core::fmt::Debug for ratatoskr_sites_contracts::SitesContractError
 impl core::fmt::Debug for ratatoskr_sites_contracts::Slug
+impl core::fmt::Debug for ratatoskr_sites_contracts::SourceRef
 impl core::fmt::Debug for ratatoskr_sites_contracts::TableAlign
 impl core::fmt::Display for ratatoskr_sites_contracts::Anchor
 impl core::fmt::Display for ratatoskr_sites_contracts::BundlePath
@@ -208,6 +248,7 @@ impl core::fmt::Display for ratatoskr_sites_contracts::RepositoryName
 impl core::fmt::Display for ratatoskr_sites_contracts::SiteId
 impl core::fmt::Display for ratatoskr_sites_contracts::SitesContractError
 impl core::fmt::Display for ratatoskr_sites_contracts::Slug
+impl core::fmt::Display for ratatoskr_sites_contracts::SourceRef
 impl core::hash::Hash for ratatoskr_sites_contracts::Anchor
 impl core::hash::Hash for ratatoskr_sites_contracts::ApprovalState
 impl core::hash::Hash for ratatoskr_sites_contracts::BundlePath
@@ -223,6 +264,7 @@ impl core::hash::Hash for ratatoskr_sites_contracts::RepositoryName
 impl core::hash::Hash for ratatoskr_sites_contracts::SiteCapability
 impl core::hash::Hash for ratatoskr_sites_contracts::SiteId
 impl core::hash::Hash for ratatoskr_sites_contracts::Slug
+impl core::hash::Hash for ratatoskr_sites_contracts::SourceRef
 impl core::marker::Copy for ratatoskr_sites_contracts::ApprovalState
 impl core::marker::Copy for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::Copy for ratatoskr_sites_contracts::PageRootType
@@ -237,6 +279,12 @@ impl core::marker::Freeze for ratatoskr_sites_contracts::BundlePath
 impl core::marker::Freeze for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::Freeze for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::Freeze for ratatoskr_sites_contracts::CommitSha
+impl core::marker::Freeze for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::Freeze for ratatoskr_sites_contracts::DeployStored
+impl core::marker::Freeze for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::Freeze for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::Freeze for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::Freeze for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::Freeze for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::Freeze for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::Freeze for ratatoskr_sites_contracts::Hostname
@@ -252,15 +300,18 @@ impl core::marker::Freeze for ratatoskr_sites_contracts::PublicationId
 impl core::marker::Freeze for ratatoskr_sites_contracts::Release
 impl core::marker::Freeze for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::Freeze for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Freeze for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::Freeze for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::Freeze for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::Freeze for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::Freeze for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::Freeze for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Freeze for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::Freeze for ratatoskr_sites_contracts::SiteId
 impl core::marker::Freeze for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::Freeze for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::Freeze for ratatoskr_sites_contracts::Slug
+impl core::marker::Freeze for ratatoskr_sites_contracts::SourceRef
 impl core::marker::Freeze for ratatoskr_sites_contracts::TableAlign
 impl core::marker::Send for ratatoskr_sites_contracts::Anchor
 impl core::marker::Send for ratatoskr_sites_contracts::ApprovalState
@@ -271,6 +322,12 @@ impl core::marker::Send for ratatoskr_sites_contracts::BundlePath
 impl core::marker::Send for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::Send for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::Send for ratatoskr_sites_contracts::CommitSha
+impl core::marker::Send for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::Send for ratatoskr_sites_contracts::DeployStored
+impl core::marker::Send for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::Send for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::Send for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::Send for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::Send for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::Send for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::Send for ratatoskr_sites_contracts::Hostname
@@ -286,15 +343,18 @@ impl core::marker::Send for ratatoskr_sites_contracts::PublicationId
 impl core::marker::Send for ratatoskr_sites_contracts::Release
 impl core::marker::Send for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::Send for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Send for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::Send for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::Send for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::Send for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::Send for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::Send for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Send for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::Send for ratatoskr_sites_contracts::SiteId
 impl core::marker::Send for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::Send for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::Send for ratatoskr_sites_contracts::Slug
+impl core::marker::Send for ratatoskr_sites_contracts::SourceRef
 impl core::marker::Send for ratatoskr_sites_contracts::TableAlign
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Anchor
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ApprovalState
@@ -305,6 +365,12 @@ impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::BundlePath
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::CommitSha
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::DeployStored
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Hostname
@@ -320,15 +386,18 @@ impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Publicatio
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Release
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteId
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Slug
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SourceRef
 impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::TableAlign
 impl core::marker::Sync for ratatoskr_sites_contracts::Anchor
 impl core::marker::Sync for ratatoskr_sites_contracts::ApprovalState
@@ -339,6 +408,12 @@ impl core::marker::Sync for ratatoskr_sites_contracts::BundlePath
 impl core::marker::Sync for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::Sync for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::Sync for ratatoskr_sites_contracts::CommitSha
+impl core::marker::Sync for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::Sync for ratatoskr_sites_contracts::DeployStored
+impl core::marker::Sync for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::Sync for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::Sync for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::Sync for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::Sync for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::Sync for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::Sync for ratatoskr_sites_contracts::Hostname
@@ -354,15 +429,18 @@ impl core::marker::Sync for ratatoskr_sites_contracts::PublicationId
 impl core::marker::Sync for ratatoskr_sites_contracts::Release
 impl core::marker::Sync for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::Sync for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Sync for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::Sync for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::Sync for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::Sync for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::Sync for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::Sync for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Sync for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::Sync for ratatoskr_sites_contracts::SiteId
 impl core::marker::Sync for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::Sync for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::Sync for ratatoskr_sites_contracts::Slug
+impl core::marker::Sync for ratatoskr_sites_contracts::SourceRef
 impl core::marker::Sync for ratatoskr_sites_contracts::TableAlign
 impl core::marker::Unpin for ratatoskr_sites_contracts::Anchor
 impl core::marker::Unpin for ratatoskr_sites_contracts::ApprovalState
@@ -373,6 +451,12 @@ impl core::marker::Unpin for ratatoskr_sites_contracts::BundlePath
 impl core::marker::Unpin for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::Unpin for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::Unpin for ratatoskr_sites_contracts::CommitSha
+impl core::marker::Unpin for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::Unpin for ratatoskr_sites_contracts::DeployStored
+impl core::marker::Unpin for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::Unpin for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::Unpin for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::Unpin for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::Unpin for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::Unpin for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::Unpin for ratatoskr_sites_contracts::Hostname
@@ -388,15 +472,18 @@ impl core::marker::Unpin for ratatoskr_sites_contracts::PublicationId
 impl core::marker::Unpin for ratatoskr_sites_contracts::Release
 impl core::marker::Unpin for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::Unpin for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Unpin for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::Unpin for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::Unpin for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::Unpin for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::Unpin for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::Unpin for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Unpin for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::Unpin for ratatoskr_sites_contracts::SiteId
 impl core::marker::Unpin for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::Unpin for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::Unpin for ratatoskr_sites_contracts::Slug
+impl core::marker::Unpin for ratatoskr_sites_contracts::SourceRef
 impl core::marker::Unpin for ratatoskr_sites_contracts::TableAlign
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Anchor
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ApprovalState
@@ -407,6 +494,12 @@ impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::BundlePath
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::CalloutFold
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::CalloutKind
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::CommitSha
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::DeployActivated
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::DeployStored
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::DraftChanged
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::DraftNotice
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::EmbedTarget
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::FrontmatterKey
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Hostname
@@ -422,15 +515,18 @@ impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PublicationId
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Release
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleaseAsset
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleaseNotice
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleasePage
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleasePublished
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::RepositoryName
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteEvent
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteId
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteManifest
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SitesContractError
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Slug
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SourceRef
 impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::TableAlign
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Anchor
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ApprovalState
@@ -441,6 +537,12 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Bund
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::CalloutFold
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::CalloutKind
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::CommitSha
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::DeployActivated
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::DeployStored
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::DraftChanged
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::DraftNotice
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::EmbedTarget
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::FrontmatterKey
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Hostname
@@ -456,15 +558,18 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Publ
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Release
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleaseAsset
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleaseNotice
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleasePage
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleasePublished
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::RepositoryName
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteCapability
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteEvent
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteId
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteManifest
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SitesContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Slug
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SourceRef
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::TableAlign
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Anchor
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ApprovalState
@@ -475,6 +580,12 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::BundleP
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::CalloutFold
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::CalloutKind
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::CommitSha
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::DeployActivated
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::DeployStored
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::DraftChanged
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::DraftNotice
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::EditCompletedNotice
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::EditConflictedNotice
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::EmbedTarget
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::FrontmatterKey
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Hostname
@@ -490,15 +601,18 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Publica
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Release
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleaseAsset
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleaseNotice
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleasePage
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleasePublished
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::RepositoryName
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteApprovalChanged
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteCapability
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteEvent
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteId
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteManifest
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SitesContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Slug
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SourceRef
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::TableAlign
 impl core::str::traits::FromStr for ratatoskr_sites_contracts::Anchor
 impl core::str::traits::FromStr for ratatoskr_sites_contracts::BundlePath
@@ -513,7 +627,9 @@ impl core::str::traits::FromStr for ratatoskr_sites_contracts::PublicationId
 impl core::str::traits::FromStr for ratatoskr_sites_contracts::RepositoryName
 impl core::str::traits::FromStr for ratatoskr_sites_contracts::SiteId
 impl core::str::traits::FromStr for ratatoskr_sites_contracts::Slug
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::SourceRef
 impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_sites_contracts::DraftChanged
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_sites_contracts::ReleasePublished
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_sites_contracts::SiteApprovalChanged
 impl ratatoskr_sites_contracts::Anchor
@@ -536,6 +652,7 @@ impl ratatoskr_sites_contracts::SiteCapability
 impl ratatoskr_sites_contracts::SiteId
 impl ratatoskr_sites_contracts::SiteManifest
 impl ratatoskr_sites_contracts::Slug
+impl ratatoskr_sites_contracts::SourceRef
 impl schemars::JsonSchema for ratatoskr_sites_contracts::Anchor
 impl schemars::JsonSchema for ratatoskr_sites_contracts::ApprovalState
 impl schemars::JsonSchema for ratatoskr_sites_contracts::AssetRef
@@ -545,6 +662,12 @@ impl schemars::JsonSchema for ratatoskr_sites_contracts::BundlePath
 impl schemars::JsonSchema for ratatoskr_sites_contracts::CalloutFold
 impl schemars::JsonSchema for ratatoskr_sites_contracts::CalloutKind
 impl schemars::JsonSchema for ratatoskr_sites_contracts::CommitSha
+impl schemars::JsonSchema for ratatoskr_sites_contracts::DeployActivated
+impl schemars::JsonSchema for ratatoskr_sites_contracts::DeployStored
+impl schemars::JsonSchema for ratatoskr_sites_contracts::DraftChanged
+impl schemars::JsonSchema for ratatoskr_sites_contracts::DraftNotice
+impl schemars::JsonSchema for ratatoskr_sites_contracts::EditCompletedNotice
+impl schemars::JsonSchema for ratatoskr_sites_contracts::EditConflictedNotice
 impl schemars::JsonSchema for ratatoskr_sites_contracts::EmbedTarget
 impl schemars::JsonSchema for ratatoskr_sites_contracts::FrontmatterKey
 impl schemars::JsonSchema for ratatoskr_sites_contracts::Hostname
@@ -560,14 +683,17 @@ impl schemars::JsonSchema for ratatoskr_sites_contracts::PublicationId
 impl schemars::JsonSchema for ratatoskr_sites_contracts::Release
 impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleaseAsset
 impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleaseNotice
 impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleasePage
 impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleasePublished
 impl schemars::JsonSchema for ratatoskr_sites_contracts::RepositoryName
 impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteApprovalChanged
 impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteCapability
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteEvent
 impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteId
 impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteManifest
 impl schemars::JsonSchema for ratatoskr_sites_contracts::Slug
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SourceRef
 impl schemars::JsonSchema for ratatoskr_sites_contracts::TableAlign
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Anchor
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ApprovalState
@@ -578,6 +704,12 @@ impl serde_core::ser::Serialize for ratatoskr_sites_contracts::BundlePath
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::CalloutFold
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::CalloutKind
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::CommitSha
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::DeployActivated
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::DeployStored
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::DraftChanged
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::DraftNotice
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::EditCompletedNotice
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::EditConflictedNotice
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::EmbedTarget
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::FrontmatterKey
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Hostname
@@ -593,14 +725,17 @@ impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PublicationId
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Release
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleaseAsset
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleaseNotice
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleasePage
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleasePublished
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::RepositoryName
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteApprovalChanged
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteCapability
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteEvent
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteId
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteManifest
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Slug
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SourceRef
 impl serde_core::ser::Serialize for ratatoskr_sites_contracts::TableAlign
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Anchor
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ApprovalState
@@ -611,6 +746,12 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Bundle
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::CalloutFold
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::CalloutKind
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::CommitSha
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::DeployActivated
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::DeployStored
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::DraftChanged
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::DraftNotice
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::EditCompletedNotice
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::EditConflictedNotice
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::EmbedTarget
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::FrontmatterKey
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Hostname
@@ -626,14 +767,17 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Public
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Release
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleaseAsset
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleaseNotice
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleasePage
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleasePublished
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::RepositoryName
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteApprovalChanged
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteCapability
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteEvent
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteId
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteManifest
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Slug
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SourceRef
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::TableAlign
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::From<T>
@@ -644,6 +788,12 @@ impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::BundlePath wher
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::CommitSha where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::DeployActivated where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::DeployStored where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::DraftChanged where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::DraftNotice where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::EditCompletedNotice where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::EditConflictedNotice where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::From<T>
@@ -659,15 +809,18 @@ impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PublicationId w
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Release where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleaseNotice where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::RepositoryName where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteEvent where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Slug where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SourceRef where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::From<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::Into<T>
@@ -678,6 +831,12 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::BundlePath w
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::CommitSha where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::DeployActivated where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::DeployStored where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::DraftChanged where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::DraftNotice where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::EditCompletedNotice where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::EditConflictedNotice where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::Into<T>
@@ -693,15 +852,18 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PublicationI
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Release where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleaseNotice where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::RepositoryName where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteEvent where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Slug where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SourceRef where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::Into<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::TryFrom<T>
@@ -712,6 +874,12 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::BundlePath w
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::CommitSha where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::DeployActivated where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::DeployStored where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::DraftChanged where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::DraftNotice where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::EditCompletedNotice where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::EditConflictedNotice where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::TryFrom<T>
@@ -727,15 +895,18 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PublicationI
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Release where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleaseNotice where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::RepositoryName where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteEvent where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Slug where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SourceRef where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::TryFrom<T>
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
@@ -746,6 +917,12 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::BundlePath where T
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::CommitSha where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::DeployActivated where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::DeployStored where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::DraftChanged where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::DraftNotice where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::EditCompletedNotice where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::EditConflictedNotice where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
@@ -761,15 +938,18 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PublicationId wher
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Release where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleaseNotice where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::RepositoryName where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteEvent where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SourceRef where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
 impl<T> alloc::string::ToString for ratatoskr_sites_contracts::Anchor where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_sites_contracts::BundlePath where T: core::fmt::Display + ?core::marker::Sized
@@ -785,6 +965,7 @@ impl<T> alloc::string::ToString for ratatoskr_sites_contracts::RepositoryName wh
 impl<T> alloc::string::ToString for ratatoskr_sites_contracts::SiteId where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_sites_contracts::SitesContractError where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_sites_contracts::Slug where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::SourceRef where T: core::fmt::Display + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::Anchor where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::ApprovalState where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::AssetRef where T: 'static + ?core::marker::Sized
@@ -794,6 +975,12 @@ impl<T> core::any::Any for ratatoskr_sites_contracts::BundlePath where T: 'stati
 impl<T> core::any::Any for ratatoskr_sites_contracts::CalloutFold where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::CalloutKind where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::CommitSha where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::DeployActivated where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::DeployStored where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::DraftChanged where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::DraftNotice where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::EditCompletedNotice where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::EditConflictedNotice where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::EmbedTarget where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::FrontmatterKey where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::Hostname where T: 'static + ?core::marker::Sized
@@ -809,15 +996,18 @@ impl<T> core::any::Any for ratatoskr_sites_contracts::PublicationId where T: 'st
 impl<T> core::any::Any for ratatoskr_sites_contracts::Release where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::ReleaseAsset where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::ReleaseBuildRequested where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ReleaseNotice where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::ReleasePage where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::ReleasePublished where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::RepositoryName where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::SiteApprovalChanged where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::SiteCapability where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SiteEvent where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::SiteId where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::SiteManifest where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::SitesContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::Slug where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SourceRef where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_sites_contracts::TableAlign where T: 'static + ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Anchor where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ApprovalState where T: ?core::marker::Sized
@@ -828,6 +1018,12 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::BundlePath where 
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::CalloutFold where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::CalloutKind where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::CommitSha where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::DeployActivated where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::DeployStored where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::DraftChanged where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::DraftNotice where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::EditCompletedNotice where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::EditConflictedNotice where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::EmbedTarget where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::FrontmatterKey where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Hostname where T: ?core::marker::Sized
@@ -843,15 +1039,18 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PublicationId whe
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Release where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleaseAsset where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleaseBuildRequested where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleaseNotice where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleasePage where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleasePublished where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::RepositoryName where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteApprovalChanged where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteCapability where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteEvent where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteId where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteManifest where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SitesContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Slug where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SourceRef where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::TableAlign where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Anchor where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ApprovalState where T: ?core::marker::Sized
@@ -862,6 +1061,12 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::BundlePath whe
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::CalloutFold where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::CalloutKind where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::CommitSha where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::DeployActivated where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::DeployStored where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::DraftChanged where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::DraftNotice where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::EditCompletedNotice where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::EditConflictedNotice where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::EmbedTarget where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::FrontmatterKey where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Hostname where T: ?core::marker::Sized
@@ -877,15 +1082,18 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PublicationId 
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Release where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleaseAsset where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleaseBuildRequested where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleaseNotice where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleasePage where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleasePublished where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::RepositoryName where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteApprovalChanged where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteCapability where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteEvent where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteId where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteManifest where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SitesContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Slug where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SourceRef where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::TableAlign where T: ?core::marker::Sized
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
@@ -896,6 +1104,12 @@ impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::BundlePath whe
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::CommitSha where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::DeployActivated where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::DeployStored where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::DraftChanged where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::DraftNotice where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::EditCompletedNotice where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::EditConflictedNotice where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
@@ -911,15 +1125,18 @@ impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PublicationId 
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Release where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleaseNotice where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::RepositoryName where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteEvent where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SourceRef where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Anchor
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ApprovalState
@@ -930,6 +1147,12 @@ impl<T> core::convert::From<T> for ratatoskr_sites_contracts::BundlePath
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::CalloutFold
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::CalloutKind
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::CommitSha
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::DeployActivated
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::DeployStored
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::DraftChanged
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::DraftNotice
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::EditCompletedNotice
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::EditConflictedNotice
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::EmbedTarget
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::FrontmatterKey
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Hostname
@@ -945,15 +1168,18 @@ impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PublicationId
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Release
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleaseAsset
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleaseNotice
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleasePage
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleasePublished
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::RepositoryName
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteApprovalChanged
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteCapability
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteEvent
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteId
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteManifest
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SitesContractError
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Slug
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SourceRef
 impl<T> core::convert::From<T> for ratatoskr_sites_contracts::TableAlign
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
@@ -964,6 +1190,12 @@ impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::BundlePath where T: c
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::CommitSha where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::DeployActivated where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::DeployStored where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::DraftChanged where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::DraftNotice where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::EditCompletedNotice where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::EditConflictedNotice where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
@@ -979,15 +1211,18 @@ impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PublicationId where T
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Release where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleaseNotice where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::RepositoryName where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteEvent where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SourceRef where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Anchor where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ApprovalState where T: for<'de> serde_core::de::Deserialize<'de>
@@ -998,6 +1233,12 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::BundlePa
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::CalloutFold where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::CalloutKind where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::CommitSha where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::DeployActivated where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::DeployStored where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::DraftChanged where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::DraftNotice where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::EditCompletedNotice where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::EditConflictedNotice where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::EmbedTarget where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::FrontmatterKey where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Hostname where T: for<'de> serde_core::de::Deserialize<'de>
@@ -1013,14 +1254,17 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Publicat
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Release where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleaseAsset where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleaseBuildRequested where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleaseNotice where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleasePage where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleasePublished where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::RepositoryName where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteApprovalChanged where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteCapability where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteEvent where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteId where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteManifest where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Slug where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SourceRef where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::TableAlign where T: for<'de> serde_core::de::Deserialize<'de>
 pub const ratatoskr_sites_contracts::Anchor::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::Anchor::MAX_LEN: usize
@@ -1034,6 +1278,7 @@ pub const ratatoskr_sites_contracts::CalloutKind::PATTERN: &'static str
 pub const ratatoskr_sites_contracts::CommitSha::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::CommitSha::MAX_LEN: usize
 pub const ratatoskr_sites_contracts::CommitSha::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::DraftChanged::EVENT_TYPE: &'static str
 pub const ratatoskr_sites_contracts::FrontmatterKey::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::FrontmatterKey::MAX_LEN: usize
 pub const ratatoskr_sites_contracts::FrontmatterKey::PATTERN: &'static str
@@ -1065,6 +1310,9 @@ pub const ratatoskr_sites_contracts::SiteId::PATTERN: &'static str
 pub const ratatoskr_sites_contracts::Slug::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_sites_contracts::Slug::MAX_LEN: usize
 pub const ratatoskr_sites_contracts::Slug::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::SourceRef::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::SourceRef::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::SourceRef::PATTERN: &'static str
 pub enum ratatoskr_sites_contracts::CalloutFold
 pub enum ratatoskr_sites_contracts::PageRootType
 pub enum ratatoskr_sites_contracts::TableAlign
@@ -1081,6 +1329,7 @@ pub fn alloc::string::String::from(ratatoskr_sites_contracts::PublicationId) -> 
 pub fn alloc::string::String::from(ratatoskr_sites_contracts::RepositoryName) -> Self
 pub fn alloc::string::String::from(ratatoskr_sites_contracts::SiteId) -> Self
 pub fn alloc::string::String::from(ratatoskr_sites_contracts::Slug) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::SourceRef) -> Self
 pub fn ratatoskr_sites_contracts::Anchor::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_sites_contracts::Anchor::as_str(&self) -> &str
 pub fn ratatoskr_sites_contracts::Anchor::borrow(&self) -> &T
@@ -1284,6 +1533,120 @@ pub fn ratatoskr_sites_contracts::CommitSha::try_from(U) -> core::result::Result
 pub fn ratatoskr_sites_contracts::CommitSha::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_sites_contracts::CommitSha::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_sites_contracts::CommitSha::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::DeployActivated::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::DeployActivated::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::DeployActivated::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::DeployActivated::clone(&self) -> ratatoskr_sites_contracts::DeployActivated
+pub fn ratatoskr_sites_contracts::DeployActivated::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::DeployActivated::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::DeployActivated::eq(&self, &ratatoskr_sites_contracts::DeployActivated) -> bool
+pub fn ratatoskr_sites_contracts::DeployActivated::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::DeployActivated::from(T) -> T
+pub fn ratatoskr_sites_contracts::DeployActivated::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::DeployActivated::into(self) -> U
+pub fn ratatoskr_sites_contracts::DeployActivated::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::DeployActivated::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DeployActivated::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DeployActivated::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::DeployActivated::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::DeployActivated::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::DeployActivated::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::DeployActivated::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::DeployStored::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::DeployStored::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::DeployStored::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::DeployStored::clone(&self) -> ratatoskr_sites_contracts::DeployStored
+pub fn ratatoskr_sites_contracts::DeployStored::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::DeployStored::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::DeployStored::eq(&self, &ratatoskr_sites_contracts::DeployStored) -> bool
+pub fn ratatoskr_sites_contracts::DeployStored::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::DeployStored::from(T) -> T
+pub fn ratatoskr_sites_contracts::DeployStored::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::DeployStored::into(self) -> U
+pub fn ratatoskr_sites_contracts::DeployStored::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::DeployStored::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DeployStored::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DeployStored::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::DeployStored::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::DeployStored::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::DeployStored::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::DeployStored::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::DraftChanged::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::DraftChanged::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::DraftChanged::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::DraftChanged::clone(&self) -> ratatoskr_sites_contracts::DraftChanged
+pub fn ratatoskr_sites_contracts::DraftChanged::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::DraftChanged::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::DraftChanged::eq(&self, &ratatoskr_sites_contracts::DraftChanged) -> bool
+pub fn ratatoskr_sites_contracts::DraftChanged::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::DraftChanged::from(T) -> T
+pub fn ratatoskr_sites_contracts::DraftChanged::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::DraftChanged::into(self) -> U
+pub fn ratatoskr_sites_contracts::DraftChanged::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::DraftChanged::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DraftChanged::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DraftChanged::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::DraftChanged::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::DraftChanged::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::DraftChanged::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::DraftChanged::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::DraftNotice::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::DraftNotice::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::DraftNotice::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::DraftNotice::clone(&self) -> ratatoskr_sites_contracts::DraftNotice
+pub fn ratatoskr_sites_contracts::DraftNotice::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::DraftNotice::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::DraftNotice::eq(&self, &ratatoskr_sites_contracts::DraftNotice) -> bool
+pub fn ratatoskr_sites_contracts::DraftNotice::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::DraftNotice::from(T) -> T
+pub fn ratatoskr_sites_contracts::DraftNotice::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::DraftNotice::into(self) -> U
+pub fn ratatoskr_sites_contracts::DraftNotice::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::DraftNotice::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DraftNotice::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::DraftNotice::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::DraftNotice::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::DraftNotice::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::DraftNotice::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::DraftNotice::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::clone(&self) -> ratatoskr_sites_contracts::EditCompletedNotice
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::eq(&self, &ratatoskr_sites_contracts::EditCompletedNotice) -> bool
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::from(T) -> T
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::into(self) -> U
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::EditCompletedNotice::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::clone(&self) -> ratatoskr_sites_contracts::EditConflictedNotice
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::eq(&self, &ratatoskr_sites_contracts::EditConflictedNotice) -> bool
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::from(T) -> T
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::into(self) -> U
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::EditConflictedNotice::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_sites_contracts::EmbedTarget::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_sites_contracts::EmbedTarget::borrow(&self) -> &T
 pub fn ratatoskr_sites_contracts::EmbedTarget::borrow_mut(&mut self) -> &mut T
@@ -1613,6 +1976,25 @@ pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::to_owned(&self) -> T
 pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ReleaseNotice::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ReleaseNotice::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ReleaseNotice::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ReleaseNotice::clone(&self) -> ratatoskr_sites_contracts::ReleaseNotice
+pub fn ratatoskr_sites_contracts::ReleaseNotice::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ReleaseNotice::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ReleaseNotice::eq(&self, &ratatoskr_sites_contracts::ReleaseNotice) -> bool
+pub fn ratatoskr_sites_contracts::ReleaseNotice::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ReleaseNotice::from(T) -> T
+pub fn ratatoskr_sites_contracts::ReleaseNotice::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ReleaseNotice::into(self) -> U
+pub fn ratatoskr_sites_contracts::ReleaseNotice::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ReleaseNotice::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseNotice::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseNotice::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ReleaseNotice::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ReleaseNotice::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseNotice::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseNotice::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_sites_contracts::ReleasePage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_sites_contracts::ReleasePage::borrow(&self) -> &T
 pub fn ratatoskr_sites_contracts::ReleasePage::borrow_mut(&mut self) -> &mut T
@@ -1722,6 +2104,25 @@ pub fn ratatoskr_sites_contracts::SiteCapability::to_owned(&self) -> T
 pub fn ratatoskr_sites_contracts::SiteCapability::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_sites_contracts::SiteCapability::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_sites_contracts::SiteCapability::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SiteEvent::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SiteEvent::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SiteEvent::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SiteEvent::clone(&self) -> ratatoskr_sites_contracts::SiteEvent
+pub fn ratatoskr_sites_contracts::SiteEvent::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SiteEvent::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SiteEvent::eq(&self, &ratatoskr_sites_contracts::SiteEvent) -> bool
+pub fn ratatoskr_sites_contracts::SiteEvent::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SiteEvent::from(T) -> T
+pub fn ratatoskr_sites_contracts::SiteEvent::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::SiteEvent::into(self) -> U
+pub fn ratatoskr_sites_contracts::SiteEvent::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SiteEvent::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteEvent::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteEvent::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SiteEvent::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SiteEvent::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SiteEvent::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SiteEvent::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_sites_contracts::SiteId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_sites_contracts::SiteId::as_str(&self) -> &str
 pub fn ratatoskr_sites_contracts::SiteId::borrow(&self) -> &T
@@ -1808,6 +2209,32 @@ pub fn ratatoskr_sites_contracts::Slug::try_from(U) -> core::result::Result<T, <
 pub fn ratatoskr_sites_contracts::Slug::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_sites_contracts::Slug::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_sites_contracts::Slug::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SourceRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SourceRef::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::SourceRef::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SourceRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SourceRef::clone(&self) -> ratatoskr_sites_contracts::SourceRef
+pub fn ratatoskr_sites_contracts::SourceRef::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SourceRef::cmp(&self, &ratatoskr_sites_contracts::SourceRef) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::SourceRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SourceRef::eq(&self, &ratatoskr_sites_contracts::SourceRef) -> bool
+pub fn ratatoskr_sites_contracts::SourceRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SourceRef::from(T) -> T
+pub fn ratatoskr_sites_contracts::SourceRef::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::SourceRef::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::SourceRef::into(self) -> U
+pub fn ratatoskr_sites_contracts::SourceRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SourceRef::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::SourceRef::partial_cmp(&self, &ratatoskr_sites_contracts::SourceRef) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::SourceRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SourceRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SourceRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SourceRef::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SourceRef::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::SourceRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SourceRef::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::SourceRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SourceRef::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_sites_contracts::TableAlign::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_sites_contracts::TableAlign::borrow(&self) -> &T
 pub fn ratatoskr_sites_contracts::TableAlign::borrow_mut(&mut self) -> &mut T
@@ -1844,6 +2271,27 @@ pub ratatoskr_sites_contracts::BundleManifest::repository: ratatoskr_sites_contr
 pub ratatoskr_sites_contracts::BundleManifest::site_id: ratatoskr_sites_contracts::SiteId
 pub ratatoskr_sites_contracts::CalloutFold::Closed
 pub ratatoskr_sites_contracts::CalloutFold::Open
+pub ratatoskr_sites_contracts::DeployActivated::current_commit: ratatoskr_sites_contracts::CommitSha
+pub ratatoskr_sites_contracts::DeployActivated::previous_commit: core::option::Option<ratatoskr_sites_contracts::CommitSha>
+pub ratatoskr_sites_contracts::DeployActivated::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::DeployStored::commit: ratatoskr_sites_contracts::CommitSha
+pub ratatoskr_sites_contracts::DeployStored::created: bool
+pub ratatoskr_sites_contracts::DeployStored::file_count: u32
+pub ratatoskr_sites_contracts::DeployStored::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::DeployStored::size_bytes: u64
+pub ratatoskr_sites_contracts::DraftChanged::revision: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::DraftChanged::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::DraftChanged::slug: core::option::Option<ratatoskr_sites_contracts::Slug>
+pub ratatoskr_sites_contracts::DraftChanged::source_ref: ratatoskr_sites_contracts::SourceRef
+pub ratatoskr_sites_contracts::DraftNotice::revision: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::DraftNotice::slug: core::option::Option<ratatoskr_sites_contracts::Slug>
+pub ratatoskr_sites_contracts::DraftNotice::source_ref: ratatoskr_sites_contracts::SourceRef
+pub ratatoskr_sites_contracts::EditCompletedNotice::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_sites_contracts::EditCompletedNotice::revision: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::EditCompletedNotice::source_ref: ratatoskr_sites_contracts::SourceRef
+pub ratatoskr_sites_contracts::EditConflictedNotice::conflict_id: ratatoskr_identifiers::uuid_ids::NotesConflictId
+pub ratatoskr_sites_contracts::EditConflictedNotice::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_sites_contracts::EditConflictedNotice::source_ref: ratatoskr_sites_contracts::SourceRef
 pub ratatoskr_sites_contracts::EmbedTarget::Asset
 pub ratatoskr_sites_contracts::EmbedTarget::Asset::alt: core::option::Option<alloc::string::String>
 pub ratatoskr_sites_contracts::EmbedTarget::Asset::media_type: ratatoskr_identifiers::blob::MediaType
@@ -1936,6 +2384,8 @@ pub ratatoskr_sites_contracts::ReleaseAsset::sha256: ratatoskr_identifiers::blob
 pub ratatoskr_sites_contracts::ReleaseAsset::size_bytes: u64
 pub ratatoskr_sites_contracts::ReleaseBuildRequested::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
 pub ratatoskr_sites_contracts::ReleaseBuildRequested::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::ReleaseNotice::published_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_sites_contracts::ReleaseNotice::release_id: ratatoskr_identifiers::blob::DigestHex
 pub ratatoskr_sites_contracts::ReleasePage::page_sha256: ratatoskr_identifiers::blob::DigestHex
 pub ratatoskr_sites_contracts::ReleasePage::slug: ratatoskr_sites_contracts::Slug
 pub ratatoskr_sites_contracts::ReleasePage::title: ratatoskr_sites_contracts::PageTitle
@@ -1957,6 +2407,11 @@ pub ratatoskr_sites_contracts::SiteCapability::LiveRelease
 pub ratatoskr_sites_contracts::SiteCapability::NotesEdit
 pub ratatoskr_sites_contracts::SiteCapability::PagesRead
 pub ratatoskr_sites_contracts::SiteCapability::SearchPublication
+pub ratatoskr_sites_contracts::SiteEvent::DraftChanged(ratatoskr_sites_contracts::DraftNotice)
+pub ratatoskr_sites_contracts::SiteEvent::EditCompleted(ratatoskr_sites_contracts::EditCompletedNotice)
+pub ratatoskr_sites_contracts::SiteEvent::EditConflicted(ratatoskr_sites_contracts::EditConflictedNotice)
+pub ratatoskr_sites_contracts::SiteEvent::ReleasePublished(ratatoskr_sites_contracts::ReleaseNotice)
+pub ratatoskr_sites_contracts::SiteEvent::Resync
 pub ratatoskr_sites_contracts::SiteManifest::capabilities: alloc::vec::Vec<ratatoskr_sites_contracts::SiteCapability>
 pub ratatoskr_sites_contracts::SiteManifest::hostname: ratatoskr_sites_contracts::Hostname
 pub ratatoskr_sites_contracts::SiteManifest::publications: alloc::vec::Vec<ratatoskr_sites_contracts::PublicationId>
@@ -1984,6 +2439,12 @@ pub struct ratatoskr_sites_contracts::BundleManifest
 pub struct ratatoskr_sites_contracts::BundlePath(_)
 pub struct ratatoskr_sites_contracts::CalloutKind(_)
 pub struct ratatoskr_sites_contracts::CommitSha(_)
+pub struct ratatoskr_sites_contracts::DeployActivated
+pub struct ratatoskr_sites_contracts::DeployStored
+pub struct ratatoskr_sites_contracts::DraftChanged
+pub struct ratatoskr_sites_contracts::DraftNotice
+pub struct ratatoskr_sites_contracts::EditCompletedNotice
+pub struct ratatoskr_sites_contracts::EditConflictedNotice
 pub struct ratatoskr_sites_contracts::FrontmatterKey(_)
 pub struct ratatoskr_sites_contracts::Hostname(_)
 pub struct ratatoskr_sites_contracts::ImageUrl(_)
@@ -1996,6 +2457,7 @@ pub struct ratatoskr_sites_contracts::PublicationId(_)
 pub struct ratatoskr_sites_contracts::Release
 pub struct ratatoskr_sites_contracts::ReleaseAsset
 pub struct ratatoskr_sites_contracts::ReleaseBuildRequested
+pub struct ratatoskr_sites_contracts::ReleaseNotice
 pub struct ratatoskr_sites_contracts::ReleasePage
 pub struct ratatoskr_sites_contracts::ReleasePublished
 pub struct ratatoskr_sites_contracts::RepositoryName(_)
@@ -2003,6 +2465,7 @@ pub struct ratatoskr_sites_contracts::SiteApprovalChanged
 pub struct ratatoskr_sites_contracts::SiteId(_)
 pub struct ratatoskr_sites_contracts::SiteManifest
 pub struct ratatoskr_sites_contracts::Slug(_)
+pub struct ratatoskr_sites_contracts::SourceRef(_)
 pub type ratatoskr_sites_contracts::Anchor::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_sites_contracts::Anchor::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::Anchor::Error = core::convert::Infallible
@@ -2038,6 +2501,24 @@ pub type ratatoskr_sites_contracts::CommitSha::Error = <U as core::convert::TryF
 pub type ratatoskr_sites_contracts::CommitSha::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::CommitSha::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_sites_contracts::CommitSha::Owned = T
+pub type ratatoskr_sites_contracts::DeployActivated::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::DeployActivated::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::DeployActivated::Owned = T
+pub type ratatoskr_sites_contracts::DeployStored::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::DeployStored::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::DeployStored::Owned = T
+pub type ratatoskr_sites_contracts::DraftChanged::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::DraftChanged::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::DraftChanged::Owned = T
+pub type ratatoskr_sites_contracts::DraftNotice::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::DraftNotice::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::DraftNotice::Owned = T
+pub type ratatoskr_sites_contracts::EditCompletedNotice::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::EditCompletedNotice::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::EditCompletedNotice::Owned = T
+pub type ratatoskr_sites_contracts::EditConflictedNotice::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::EditConflictedNotice::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::EditConflictedNotice::Owned = T
 pub type ratatoskr_sites_contracts::EmbedTarget::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::EmbedTarget::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::EmbedTarget::Owned = T
@@ -2095,6 +2576,9 @@ pub type ratatoskr_sites_contracts::ReleaseAsset::Owned = T
 pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Owned = T
+pub type ratatoskr_sites_contracts::ReleaseNotice::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ReleaseNotice::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ReleaseNotice::Owned = T
 pub type ratatoskr_sites_contracts::ReleasePage::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::ReleasePage::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::ReleasePage::Owned = T
@@ -2112,6 +2596,9 @@ pub type ratatoskr_sites_contracts::SiteApprovalChanged::Owned = T
 pub type ratatoskr_sites_contracts::SiteCapability::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::SiteCapability::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::SiteCapability::Owned = T
+pub type ratatoskr_sites_contracts::SiteEvent::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SiteEvent::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SiteEvent::Owned = T
 pub type ratatoskr_sites_contracts::SiteId::Err = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_sites_contracts::SiteId::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::SiteId::Error = core::convert::Infallible
@@ -2128,6 +2615,11 @@ pub type ratatoskr_sites_contracts::Slug::Error = <U as core::convert::TryFrom<T
 pub type ratatoskr_sites_contracts::Slug::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::Slug::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_sites_contracts::Slug::Owned = T
+pub type ratatoskr_sites_contracts::SourceRef::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::SourceRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SourceRef::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SourceRef::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::SourceRef::Owned = T
 pub type ratatoskr_sites_contracts::TableAlign::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_sites_contracts::TableAlign::Error = core::convert::Infallible
 pub type ratatoskr_sites_contracts::TableAlign::Owned = T
@@ -2140,6 +2632,12 @@ pub unsafe fn ratatoskr_sites_contracts::BundlePath::clone_to_uninit(&self, *mut
 pub unsafe fn ratatoskr_sites_contracts::CalloutFold::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::CalloutKind::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::CommitSha::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::DeployActivated::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::DeployStored::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::DraftChanged::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::DraftNotice::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::EditCompletedNotice::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::EditConflictedNotice::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::EmbedTarget::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::FrontmatterKey::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::Hostname::clone_to_uninit(&self, *mut u8)
@@ -2155,13 +2653,16 @@ pub unsafe fn ratatoskr_sites_contracts::PublicationId::clone_to_uninit(&self, *
 pub unsafe fn ratatoskr_sites_contracts::Release::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::ReleaseAsset::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::ReleaseBuildRequested::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ReleaseNotice::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::ReleasePage::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::ReleasePublished::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::RepositoryName::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::SiteApprovalChanged::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::SiteCapability::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SiteEvent::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::SiteId::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::SiteManifest::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::SitesContractError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::Slug::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SourceRef::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_sites_contracts::TableAlign::clone_to_uninit(&self, *mut u8)

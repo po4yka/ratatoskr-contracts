@@ -7,3 +7,7 @@
 
 - [x] 2.1 RED: add `live_message_types.rs::sites_draft_changed_is_registered`. It MUST fail because the type is not registered.
 - [x] 2.2 GREEN: add `DraftChanged`, its row and fixtures, regenerate, and update the pinned counts. 2.1 passes.
+
+## 3. Baseline
+
+- [x] 3.1 Bless the API baseline of `ratatoskr-sites-contracts` for the deploy responses of SITE-026 and the types of this change. No test: a generated baseline; `cargo contracts api-check` verifies it.
