@@ -1,0 +1,1836 @@
+# Public API baseline of ratatoskr-sites-contracts, the frozen reference `api-check` diffs against.
+# Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
+# Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_sites_contracts::Anchor
+impl core::clone::Clone for ratatoskr_sites_contracts::ApprovalState
+impl core::clone::Clone for ratatoskr_sites_contracts::AssetRef
+impl core::clone::Clone for ratatoskr_sites_contracts::CalloutFold
+impl core::clone::Clone for ratatoskr_sites_contracts::CalloutKind
+impl core::clone::Clone for ratatoskr_sites_contracts::EmbedTarget
+impl core::clone::Clone for ratatoskr_sites_contracts::FrontmatterKey
+impl core::clone::Clone for ratatoskr_sites_contracts::Hostname
+impl core::clone::Clone for ratatoskr_sites_contracts::ImageUrl
+impl core::clone::Clone for ratatoskr_sites_contracts::LinkUrl
+impl core::clone::Clone for ratatoskr_sites_contracts::NavigationEntry
+impl core::clone::Clone for ratatoskr_sites_contracts::Page
+impl core::clone::Clone for ratatoskr_sites_contracts::PageNode
+impl core::clone::Clone for ratatoskr_sites_contracts::PageRoot
+impl core::clone::Clone for ratatoskr_sites_contracts::PageRootType
+impl core::clone::Clone for ratatoskr_sites_contracts::PageTitle
+impl core::clone::Clone for ratatoskr_sites_contracts::PublicationId
+impl core::clone::Clone for ratatoskr_sites_contracts::Release
+impl core::clone::Clone for ratatoskr_sites_contracts::ReleaseAsset
+impl core::clone::Clone for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::clone::Clone for ratatoskr_sites_contracts::ReleasePage
+impl core::clone::Clone for ratatoskr_sites_contracts::ReleasePublished
+impl core::clone::Clone for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::clone::Clone for ratatoskr_sites_contracts::SiteCapability
+impl core::clone::Clone for ratatoskr_sites_contracts::SiteId
+impl core::clone::Clone for ratatoskr_sites_contracts::SiteManifest
+impl core::clone::Clone for ratatoskr_sites_contracts::SitesContractError
+impl core::clone::Clone for ratatoskr_sites_contracts::Slug
+impl core::clone::Clone for ratatoskr_sites_contracts::TableAlign
+impl core::cmp::Eq for ratatoskr_sites_contracts::Anchor
+impl core::cmp::Eq for ratatoskr_sites_contracts::ApprovalState
+impl core::cmp::Eq for ratatoskr_sites_contracts::AssetRef
+impl core::cmp::Eq for ratatoskr_sites_contracts::CalloutFold
+impl core::cmp::Eq for ratatoskr_sites_contracts::CalloutKind
+impl core::cmp::Eq for ratatoskr_sites_contracts::EmbedTarget
+impl core::cmp::Eq for ratatoskr_sites_contracts::FrontmatterKey
+impl core::cmp::Eq for ratatoskr_sites_contracts::Hostname
+impl core::cmp::Eq for ratatoskr_sites_contracts::ImageUrl
+impl core::cmp::Eq for ratatoskr_sites_contracts::LinkUrl
+impl core::cmp::Eq for ratatoskr_sites_contracts::NavigationEntry
+impl core::cmp::Eq for ratatoskr_sites_contracts::Page
+impl core::cmp::Eq for ratatoskr_sites_contracts::PageNode
+impl core::cmp::Eq for ratatoskr_sites_contracts::PageRoot
+impl core::cmp::Eq for ratatoskr_sites_contracts::PageRootType
+impl core::cmp::Eq for ratatoskr_sites_contracts::PageTitle
+impl core::cmp::Eq for ratatoskr_sites_contracts::PublicationId
+impl core::cmp::Eq for ratatoskr_sites_contracts::Release
+impl core::cmp::Eq for ratatoskr_sites_contracts::ReleaseAsset
+impl core::cmp::Eq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::cmp::Eq for ratatoskr_sites_contracts::ReleasePage
+impl core::cmp::Eq for ratatoskr_sites_contracts::ReleasePublished
+impl core::cmp::Eq for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::cmp::Eq for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::Eq for ratatoskr_sites_contracts::SiteId
+impl core::cmp::Eq for ratatoskr_sites_contracts::SiteManifest
+impl core::cmp::Eq for ratatoskr_sites_contracts::SitesContractError
+impl core::cmp::Eq for ratatoskr_sites_contracts::Slug
+impl core::cmp::Eq for ratatoskr_sites_contracts::TableAlign
+impl core::cmp::Ord for ratatoskr_sites_contracts::Anchor
+impl core::cmp::Ord for ratatoskr_sites_contracts::ApprovalState
+impl core::cmp::Ord for ratatoskr_sites_contracts::CalloutKind
+impl core::cmp::Ord for ratatoskr_sites_contracts::FrontmatterKey
+impl core::cmp::Ord for ratatoskr_sites_contracts::Hostname
+impl core::cmp::Ord for ratatoskr_sites_contracts::ImageUrl
+impl core::cmp::Ord for ratatoskr_sites_contracts::LinkUrl
+impl core::cmp::Ord for ratatoskr_sites_contracts::PageTitle
+impl core::cmp::Ord for ratatoskr_sites_contracts::PublicationId
+impl core::cmp::Ord for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::Ord for ratatoskr_sites_contracts::SiteId
+impl core::cmp::Ord for ratatoskr_sites_contracts::Slug
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::Anchor
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ApprovalState
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::AssetRef
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::CalloutFold
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::CalloutKind
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::EmbedTarget
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::FrontmatterKey
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::Hostname
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ImageUrl
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::LinkUrl
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::NavigationEntry
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::Page
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::PageNode
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::PageRoot
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::PageRootType
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::PageTitle
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::PublicationId
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::Release
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleaseAsset
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleasePage
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::ReleasePublished
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteId
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SiteManifest
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::SitesContractError
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::Slug
+impl core::cmp::PartialEq for ratatoskr_sites_contracts::TableAlign
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::Anchor
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::ApprovalState
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::CalloutKind
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::FrontmatterKey
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::Hostname
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::ImageUrl
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::LinkUrl
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::PageTitle
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::PublicationId
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::SiteCapability
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::SiteId
+impl core::cmp::PartialOrd for ratatoskr_sites_contracts::Slug
+impl core::convert::From<ratatoskr_sites_contracts::Anchor> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::CalloutKind> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::FrontmatterKey> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::Hostname> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::ImageUrl> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::LinkUrl> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::PageTitle> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::PublicationId> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::SiteId> for alloc::string::String
+impl core::convert::From<ratatoskr_sites_contracts::Slug> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::Anchor
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::CalloutKind
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::FrontmatterKey
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::Hostname
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::ImageUrl
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::LinkUrl
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::PageTitle
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::PublicationId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::SiteId
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_sites_contracts::Slug
+impl core::error::Error for ratatoskr_sites_contracts::SitesContractError
+impl core::fmt::Debug for ratatoskr_sites_contracts::Anchor
+impl core::fmt::Debug for ratatoskr_sites_contracts::ApprovalState
+impl core::fmt::Debug for ratatoskr_sites_contracts::AssetRef
+impl core::fmt::Debug for ratatoskr_sites_contracts::CalloutFold
+impl core::fmt::Debug for ratatoskr_sites_contracts::CalloutKind
+impl core::fmt::Debug for ratatoskr_sites_contracts::EmbedTarget
+impl core::fmt::Debug for ratatoskr_sites_contracts::FrontmatterKey
+impl core::fmt::Debug for ratatoskr_sites_contracts::Hostname
+impl core::fmt::Debug for ratatoskr_sites_contracts::ImageUrl
+impl core::fmt::Debug for ratatoskr_sites_contracts::LinkUrl
+impl core::fmt::Debug for ratatoskr_sites_contracts::NavigationEntry
+impl core::fmt::Debug for ratatoskr_sites_contracts::Page
+impl core::fmt::Debug for ratatoskr_sites_contracts::PageNode
+impl core::fmt::Debug for ratatoskr_sites_contracts::PageRoot
+impl core::fmt::Debug for ratatoskr_sites_contracts::PageRootType
+impl core::fmt::Debug for ratatoskr_sites_contracts::PageTitle
+impl core::fmt::Debug for ratatoskr_sites_contracts::PublicationId
+impl core::fmt::Debug for ratatoskr_sites_contracts::Release
+impl core::fmt::Debug for ratatoskr_sites_contracts::ReleaseAsset
+impl core::fmt::Debug for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::fmt::Debug for ratatoskr_sites_contracts::ReleasePage
+impl core::fmt::Debug for ratatoskr_sites_contracts::ReleasePublished
+impl core::fmt::Debug for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::fmt::Debug for ratatoskr_sites_contracts::SiteCapability
+impl core::fmt::Debug for ratatoskr_sites_contracts::SiteId
+impl core::fmt::Debug for ratatoskr_sites_contracts::SiteManifest
+impl core::fmt::Debug for ratatoskr_sites_contracts::SitesContractError
+impl core::fmt::Debug for ratatoskr_sites_contracts::Slug
+impl core::fmt::Debug for ratatoskr_sites_contracts::TableAlign
+impl core::fmt::Display for ratatoskr_sites_contracts::Anchor
+impl core::fmt::Display for ratatoskr_sites_contracts::CalloutKind
+impl core::fmt::Display for ratatoskr_sites_contracts::FrontmatterKey
+impl core::fmt::Display for ratatoskr_sites_contracts::Hostname
+impl core::fmt::Display for ratatoskr_sites_contracts::ImageUrl
+impl core::fmt::Display for ratatoskr_sites_contracts::LinkUrl
+impl core::fmt::Display for ratatoskr_sites_contracts::PageTitle
+impl core::fmt::Display for ratatoskr_sites_contracts::PublicationId
+impl core::fmt::Display for ratatoskr_sites_contracts::SiteId
+impl core::fmt::Display for ratatoskr_sites_contracts::SitesContractError
+impl core::fmt::Display for ratatoskr_sites_contracts::Slug
+impl core::hash::Hash for ratatoskr_sites_contracts::Anchor
+impl core::hash::Hash for ratatoskr_sites_contracts::ApprovalState
+impl core::hash::Hash for ratatoskr_sites_contracts::CalloutKind
+impl core::hash::Hash for ratatoskr_sites_contracts::FrontmatterKey
+impl core::hash::Hash for ratatoskr_sites_contracts::Hostname
+impl core::hash::Hash for ratatoskr_sites_contracts::ImageUrl
+impl core::hash::Hash for ratatoskr_sites_contracts::LinkUrl
+impl core::hash::Hash for ratatoskr_sites_contracts::PageTitle
+impl core::hash::Hash for ratatoskr_sites_contracts::PublicationId
+impl core::hash::Hash for ratatoskr_sites_contracts::SiteCapability
+impl core::hash::Hash for ratatoskr_sites_contracts::SiteId
+impl core::hash::Hash for ratatoskr_sites_contracts::Slug
+impl core::marker::Copy for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::Copy for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::Copy for ratatoskr_sites_contracts::PageRootType
+impl core::marker::Copy for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Copy for ratatoskr_sites_contracts::TableAlign
+impl core::marker::Freeze for ratatoskr_sites_contracts::Anchor
+impl core::marker::Freeze for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::Freeze for ratatoskr_sites_contracts::AssetRef
+impl core::marker::Freeze for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::Freeze for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::Freeze for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::Freeze for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::Freeze for ratatoskr_sites_contracts::Hostname
+impl core::marker::Freeze for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::Freeze for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::Freeze for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::Freeze for ratatoskr_sites_contracts::Page
+impl core::marker::Freeze for ratatoskr_sites_contracts::PageNode
+impl core::marker::Freeze for ratatoskr_sites_contracts::PageRoot
+impl core::marker::Freeze for ratatoskr_sites_contracts::PageRootType
+impl core::marker::Freeze for ratatoskr_sites_contracts::PageTitle
+impl core::marker::Freeze for ratatoskr_sites_contracts::PublicationId
+impl core::marker::Freeze for ratatoskr_sites_contracts::Release
+impl core::marker::Freeze for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::Freeze for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Freeze for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::Freeze for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::Freeze for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::Freeze for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Freeze for ratatoskr_sites_contracts::SiteId
+impl core::marker::Freeze for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::Freeze for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::Freeze for ratatoskr_sites_contracts::Slug
+impl core::marker::Freeze for ratatoskr_sites_contracts::TableAlign
+impl core::marker::Send for ratatoskr_sites_contracts::Anchor
+impl core::marker::Send for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::Send for ratatoskr_sites_contracts::AssetRef
+impl core::marker::Send for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::Send for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::Send for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::Send for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::Send for ratatoskr_sites_contracts::Hostname
+impl core::marker::Send for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::Send for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::Send for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::Send for ratatoskr_sites_contracts::Page
+impl core::marker::Send for ratatoskr_sites_contracts::PageNode
+impl core::marker::Send for ratatoskr_sites_contracts::PageRoot
+impl core::marker::Send for ratatoskr_sites_contracts::PageRootType
+impl core::marker::Send for ratatoskr_sites_contracts::PageTitle
+impl core::marker::Send for ratatoskr_sites_contracts::PublicationId
+impl core::marker::Send for ratatoskr_sites_contracts::Release
+impl core::marker::Send for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::Send for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Send for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::Send for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::Send for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::Send for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Send for ratatoskr_sites_contracts::SiteId
+impl core::marker::Send for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::Send for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::Send for ratatoskr_sites_contracts::Slug
+impl core::marker::Send for ratatoskr_sites_contracts::TableAlign
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Anchor
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::AssetRef
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Hostname
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Page
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::PageNode
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::PageRoot
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::PageRootType
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::PageTitle
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::PublicationId
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Release
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteId
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::Slug
+impl core::marker::StructuralPartialEq for ratatoskr_sites_contracts::TableAlign
+impl core::marker::Sync for ratatoskr_sites_contracts::Anchor
+impl core::marker::Sync for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::Sync for ratatoskr_sites_contracts::AssetRef
+impl core::marker::Sync for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::Sync for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::Sync for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::Sync for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::Sync for ratatoskr_sites_contracts::Hostname
+impl core::marker::Sync for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::Sync for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::Sync for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::Sync for ratatoskr_sites_contracts::Page
+impl core::marker::Sync for ratatoskr_sites_contracts::PageNode
+impl core::marker::Sync for ratatoskr_sites_contracts::PageRoot
+impl core::marker::Sync for ratatoskr_sites_contracts::PageRootType
+impl core::marker::Sync for ratatoskr_sites_contracts::PageTitle
+impl core::marker::Sync for ratatoskr_sites_contracts::PublicationId
+impl core::marker::Sync for ratatoskr_sites_contracts::Release
+impl core::marker::Sync for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::Sync for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Sync for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::Sync for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::Sync for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::Sync for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Sync for ratatoskr_sites_contracts::SiteId
+impl core::marker::Sync for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::Sync for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::Sync for ratatoskr_sites_contracts::Slug
+impl core::marker::Sync for ratatoskr_sites_contracts::TableAlign
+impl core::marker::Unpin for ratatoskr_sites_contracts::Anchor
+impl core::marker::Unpin for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::Unpin for ratatoskr_sites_contracts::AssetRef
+impl core::marker::Unpin for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::Unpin for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::Unpin for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::Unpin for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::Unpin for ratatoskr_sites_contracts::Hostname
+impl core::marker::Unpin for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::Unpin for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::Unpin for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::Unpin for ratatoskr_sites_contracts::Page
+impl core::marker::Unpin for ratatoskr_sites_contracts::PageNode
+impl core::marker::Unpin for ratatoskr_sites_contracts::PageRoot
+impl core::marker::Unpin for ratatoskr_sites_contracts::PageRootType
+impl core::marker::Unpin for ratatoskr_sites_contracts::PageTitle
+impl core::marker::Unpin for ratatoskr_sites_contracts::PublicationId
+impl core::marker::Unpin for ratatoskr_sites_contracts::Release
+impl core::marker::Unpin for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::Unpin for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::Unpin for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::Unpin for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::Unpin for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::Unpin for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::Unpin for ratatoskr_sites_contracts::SiteId
+impl core::marker::Unpin for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::Unpin for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::Unpin for ratatoskr_sites_contracts::Slug
+impl core::marker::Unpin for ratatoskr_sites_contracts::TableAlign
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Anchor
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ApprovalState
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::AssetRef
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::CalloutFold
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::CalloutKind
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::EmbedTarget
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::FrontmatterKey
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Hostname
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ImageUrl
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::LinkUrl
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::NavigationEntry
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Page
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PageNode
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PageRoot
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PageRootType
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PageTitle
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::PublicationId
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Release
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleaseAsset
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleasePage
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::ReleasePublished
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteCapability
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteId
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SiteManifest
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::SitesContractError
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::Slug
+impl core::marker::UnsafeUnpin for ratatoskr_sites_contracts::TableAlign
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Anchor
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ApprovalState
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::AssetRef
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::CalloutFold
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::CalloutKind
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::EmbedTarget
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::FrontmatterKey
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Hostname
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ImageUrl
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::LinkUrl
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::NavigationEntry
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Page
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::PageNode
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::PageRoot
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::PageRootType
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::PageTitle
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::PublicationId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Release
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleaseAsset
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleasePage
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::ReleasePublished
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteCapability
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteId
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SiteManifest
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::SitesContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::Slug
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_sites_contracts::TableAlign
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Anchor
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ApprovalState
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::AssetRef
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::CalloutFold
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::CalloutKind
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::EmbedTarget
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::FrontmatterKey
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Hostname
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ImageUrl
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::LinkUrl
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::NavigationEntry
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Page
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::PageNode
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::PageRoot
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::PageRootType
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::PageTitle
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::PublicationId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Release
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleaseAsset
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleasePage
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::ReleasePublished
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteApprovalChanged
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteCapability
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteId
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SiteManifest
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::SitesContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::Slug
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_sites_contracts::TableAlign
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::Anchor
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::CalloutKind
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::FrontmatterKey
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::Hostname
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::ImageUrl
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::LinkUrl
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::PageTitle
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::PublicationId
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::SiteId
+impl core::str::traits::FromStr for ratatoskr_sites_contracts::Slug
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_sites_contracts::ReleasePublished
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_sites_contracts::SiteApprovalChanged
+impl ratatoskr_sites_contracts::Anchor
+impl ratatoskr_sites_contracts::CalloutKind
+impl ratatoskr_sites_contracts::FrontmatterKey
+impl ratatoskr_sites_contracts::Hostname
+impl ratatoskr_sites_contracts::ImageUrl
+impl ratatoskr_sites_contracts::LinkUrl
+impl ratatoskr_sites_contracts::Page
+impl ratatoskr_sites_contracts::PageTitle
+impl ratatoskr_sites_contracts::PublicationId
+impl ratatoskr_sites_contracts::Release
+impl ratatoskr_sites_contracts::ReleasePublished
+impl ratatoskr_sites_contracts::SiteApprovalChanged
+impl ratatoskr_sites_contracts::SiteCapability
+impl ratatoskr_sites_contracts::SiteId
+impl ratatoskr_sites_contracts::SiteManifest
+impl ratatoskr_sites_contracts::Slug
+impl schemars::JsonSchema for ratatoskr_sites_contracts::Anchor
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ApprovalState
+impl schemars::JsonSchema for ratatoskr_sites_contracts::AssetRef
+impl schemars::JsonSchema for ratatoskr_sites_contracts::CalloutFold
+impl schemars::JsonSchema for ratatoskr_sites_contracts::CalloutKind
+impl schemars::JsonSchema for ratatoskr_sites_contracts::EmbedTarget
+impl schemars::JsonSchema for ratatoskr_sites_contracts::FrontmatterKey
+impl schemars::JsonSchema for ratatoskr_sites_contracts::Hostname
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ImageUrl
+impl schemars::JsonSchema for ratatoskr_sites_contracts::LinkUrl
+impl schemars::JsonSchema for ratatoskr_sites_contracts::NavigationEntry
+impl schemars::JsonSchema for ratatoskr_sites_contracts::Page
+impl schemars::JsonSchema for ratatoskr_sites_contracts::PageNode
+impl schemars::JsonSchema for ratatoskr_sites_contracts::PageRoot
+impl schemars::JsonSchema for ratatoskr_sites_contracts::PageRootType
+impl schemars::JsonSchema for ratatoskr_sites_contracts::PageTitle
+impl schemars::JsonSchema for ratatoskr_sites_contracts::PublicationId
+impl schemars::JsonSchema for ratatoskr_sites_contracts::Release
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleaseAsset
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleasePage
+impl schemars::JsonSchema for ratatoskr_sites_contracts::ReleasePublished
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteApprovalChanged
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteCapability
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteId
+impl schemars::JsonSchema for ratatoskr_sites_contracts::SiteManifest
+impl schemars::JsonSchema for ratatoskr_sites_contracts::Slug
+impl schemars::JsonSchema for ratatoskr_sites_contracts::TableAlign
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Anchor
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ApprovalState
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::AssetRef
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::CalloutFold
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::CalloutKind
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::EmbedTarget
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::FrontmatterKey
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Hostname
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ImageUrl
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::LinkUrl
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::NavigationEntry
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Page
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PageNode
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PageRoot
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PageRootType
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PageTitle
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::PublicationId
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Release
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleaseAsset
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleasePage
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::ReleasePublished
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteApprovalChanged
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteCapability
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteId
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::SiteManifest
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::Slug
+impl serde_core::ser::Serialize for ratatoskr_sites_contracts::TableAlign
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Anchor
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ApprovalState
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::AssetRef
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::CalloutFold
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::CalloutKind
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::EmbedTarget
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::FrontmatterKey
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Hostname
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ImageUrl
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::LinkUrl
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::NavigationEntry
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Page
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::PageNode
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::PageRoot
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::PageRootType
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::PageTitle
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::PublicationId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Release
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleaseAsset
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleasePage
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::ReleasePublished
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteApprovalChanged
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteCapability
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteId
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::SiteManifest
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::Slug
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_sites_contracts::TableAlign
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::AssetRef where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ImageUrl where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::LinkUrl where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::NavigationEntry where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Page where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PageNode where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PageRoot where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PageRootType where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PageTitle where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::PublicationId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Release where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::Slug where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::AssetRef where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ImageUrl where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::LinkUrl where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::NavigationEntry where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Page where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PageNode where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PageRoot where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PageRootType where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PageTitle where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::PublicationId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Release where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::Slug where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Anchor where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ApprovalState where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::AssetRef where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::CalloutFold where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::CalloutKind where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::EmbedTarget where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::FrontmatterKey where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Hostname where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ImageUrl where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::LinkUrl where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::NavigationEntry where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Page where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PageNode where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PageRoot where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PageRootType where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PageTitle where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::PublicationId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Release where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleaseAsset where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleaseBuildRequested where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleasePage where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::ReleasePublished where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteApprovalChanged where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteCapability where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteId where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SiteManifest where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::SitesContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::Slug where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_sites_contracts::TableAlign where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::AssetRef where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ImageUrl where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::LinkUrl where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::NavigationEntry where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Page where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PageNode where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PageRoot where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PageRootType where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PageTitle where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::PublicationId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Release where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::Anchor where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::CalloutKind where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::FrontmatterKey where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::Hostname where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::ImageUrl where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::LinkUrl where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::PageTitle where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::PublicationId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::SiteId where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::SitesContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_sites_contracts::Slug where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::Anchor where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ApprovalState where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::AssetRef where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::CalloutFold where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::CalloutKind where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::EmbedTarget where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::FrontmatterKey where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::Hostname where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ImageUrl where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::LinkUrl where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::NavigationEntry where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::Page where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::PageNode where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::PageRoot where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::PageRootType where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::PageTitle where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::PublicationId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::Release where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ReleaseAsset where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ReleaseBuildRequested where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ReleasePage where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::ReleasePublished where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SiteApprovalChanged where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SiteCapability where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SiteId where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SiteManifest where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::SitesContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::Slug where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_sites_contracts::TableAlign where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Anchor where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ApprovalState where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::AssetRef where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::CalloutFold where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::CalloutKind where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::EmbedTarget where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::FrontmatterKey where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Hostname where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ImageUrl where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::LinkUrl where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::NavigationEntry where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Page where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PageNode where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PageRoot where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PageRootType where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PageTitle where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::PublicationId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Release where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleaseAsset where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleaseBuildRequested where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleasePage where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::ReleasePublished where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteApprovalChanged where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteCapability where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteId where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SiteManifest where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::SitesContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::Slug where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_sites_contracts::TableAlign where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Anchor where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ApprovalState where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::AssetRef where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::CalloutFold where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::CalloutKind where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::EmbedTarget where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::FrontmatterKey where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Hostname where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ImageUrl where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::LinkUrl where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::NavigationEntry where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Page where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PageNode where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PageRoot where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PageRootType where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PageTitle where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::PublicationId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Release where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleaseAsset where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleaseBuildRequested where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleasePage where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::ReleasePublished where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteApprovalChanged where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteCapability where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteId where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SiteManifest where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::SitesContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::Slug where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_sites_contracts::TableAlign where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::AssetRef where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ImageUrl where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::LinkUrl where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::NavigationEntry where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Page where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PageNode where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PageRoot where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PageRootType where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PageTitle where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::PublicationId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Release where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Anchor
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ApprovalState
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::AssetRef
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::CalloutFold
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::CalloutKind
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::EmbedTarget
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::FrontmatterKey
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Hostname
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ImageUrl
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::LinkUrl
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::NavigationEntry
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Page
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PageNode
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PageRoot
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PageRootType
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PageTitle
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::PublicationId
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Release
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleaseAsset
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleaseBuildRequested
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleasePage
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::ReleasePublished
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteApprovalChanged
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteCapability
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteId
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SiteManifest
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::SitesContractError
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::Slug
+impl<T> core::convert::From<T> for ratatoskr_sites_contracts::TableAlign
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Anchor where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ApprovalState where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::AssetRef where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::CalloutFold where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::CalloutKind where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::EmbedTarget where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::FrontmatterKey where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Hostname where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ImageUrl where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::LinkUrl where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::NavigationEntry where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Page where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PageNode where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PageRoot where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PageRootType where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PageTitle where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::PublicationId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Release where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleaseAsset where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleaseBuildRequested where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleasePage where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::ReleasePublished where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteApprovalChanged where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteCapability where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteId where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SiteManifest where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::SitesContractError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::Slug where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_sites_contracts::TableAlign where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Anchor where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ApprovalState where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::AssetRef where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::CalloutFold where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::CalloutKind where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::EmbedTarget where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::FrontmatterKey where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Hostname where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ImageUrl where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::LinkUrl where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::NavigationEntry where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Page where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::PageNode where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::PageRoot where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::PageRootType where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::PageTitle where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::PublicationId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Release where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleaseAsset where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleaseBuildRequested where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleasePage where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::ReleasePublished where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteApprovalChanged where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteCapability where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteId where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::SiteManifest where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::Slug where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_sites_contracts::TableAlign where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_sites_contracts::Anchor::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::Anchor::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::Anchor::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::CalloutKind::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::CalloutKind::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::CalloutKind::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::FrontmatterKey::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::FrontmatterKey::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::FrontmatterKey::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::Hostname::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::Hostname::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::Hostname::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::ImageUrl::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::ImageUrl::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::ImageUrl::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::LinkUrl::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::LinkUrl::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::LinkUrl::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::PageTitle::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::PageTitle::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::PageTitle::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::PublicationId::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::PublicationId::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::PublicationId::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::ReleaseBuildRequested::COMMAND_TYPE: &'static str
+pub const ratatoskr_sites_contracts::ReleasePublished::EVENT_TYPE: &'static str
+pub const ratatoskr_sites_contracts::SiteApprovalChanged::EVENT_TYPE: &'static str
+pub const ratatoskr_sites_contracts::SiteId::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::SiteId::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::SiteId::PATTERN: &'static str
+pub const ratatoskr_sites_contracts::Slug::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_sites_contracts::Slug::MAX_LEN: usize
+pub const ratatoskr_sites_contracts::Slug::PATTERN: &'static str
+pub enum ratatoskr_sites_contracts::CalloutFold
+pub enum ratatoskr_sites_contracts::PageRootType
+pub enum ratatoskr_sites_contracts::TableAlign
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::Anchor) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::CalloutKind) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::FrontmatterKey) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::Hostname) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::ImageUrl) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::LinkUrl) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::PageTitle) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::PublicationId) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::SiteId) -> Self
+pub fn alloc::string::String::from(ratatoskr_sites_contracts::Slug) -> Self
+pub fn ratatoskr_sites_contracts::Anchor::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::Anchor::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::Anchor::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::Anchor::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::Anchor::clone(&self) -> ratatoskr_sites_contracts::Anchor
+pub fn ratatoskr_sites_contracts::Anchor::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::Anchor::cmp(&self, &ratatoskr_sites_contracts::Anchor) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::Anchor::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::Anchor::eq(&self, &ratatoskr_sites_contracts::Anchor) -> bool
+pub fn ratatoskr_sites_contracts::Anchor::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::Anchor::from(T) -> T
+pub fn ratatoskr_sites_contracts::Anchor::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::Anchor::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::Anchor::into(self) -> U
+pub fn ratatoskr_sites_contracts::Anchor::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::Anchor::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::Anchor::partial_cmp(&self, &ratatoskr_sites_contracts::Anchor) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::Anchor::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Anchor::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Anchor::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::Anchor::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::Anchor::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::Anchor::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::Anchor::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::Anchor::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::Anchor::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ApprovalState::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ApprovalState::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ApprovalState::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ApprovalState::clone(&self) -> ratatoskr_sites_contracts::ApprovalState
+pub fn ratatoskr_sites_contracts::ApprovalState::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ApprovalState::cmp(&self, &ratatoskr_sites_contracts::ApprovalState) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::ApprovalState::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ApprovalState::eq(&self, &ratatoskr_sites_contracts::ApprovalState) -> bool
+pub fn ratatoskr_sites_contracts::ApprovalState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ApprovalState::from(T) -> T
+pub fn ratatoskr_sites_contracts::ApprovalState::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::ApprovalState::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ApprovalState::into(self) -> U
+pub fn ratatoskr_sites_contracts::ApprovalState::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ApprovalState::partial_cmp(&self, &ratatoskr_sites_contracts::ApprovalState) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::ApprovalState::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ApprovalState::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ApprovalState::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ApprovalState::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ApprovalState::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ApprovalState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ApprovalState::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::AssetRef::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::AssetRef::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::AssetRef::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::AssetRef::clone(&self) -> ratatoskr_sites_contracts::AssetRef
+pub fn ratatoskr_sites_contracts::AssetRef::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::AssetRef::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::AssetRef::eq(&self, &ratatoskr_sites_contracts::AssetRef) -> bool
+pub fn ratatoskr_sites_contracts::AssetRef::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::AssetRef::from(T) -> T
+pub fn ratatoskr_sites_contracts::AssetRef::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::AssetRef::into(self) -> U
+pub fn ratatoskr_sites_contracts::AssetRef::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::AssetRef::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::AssetRef::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::AssetRef::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::AssetRef::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::AssetRef::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::AssetRef::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::AssetRef::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::CalloutFold::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::CalloutFold::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::CalloutFold::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::CalloutFold::clone(&self) -> ratatoskr_sites_contracts::CalloutFold
+pub fn ratatoskr_sites_contracts::CalloutFold::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::CalloutFold::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::CalloutFold::eq(&self, &ratatoskr_sites_contracts::CalloutFold) -> bool
+pub fn ratatoskr_sites_contracts::CalloutFold::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::CalloutFold::from(T) -> T
+pub fn ratatoskr_sites_contracts::CalloutFold::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::CalloutFold::into(self) -> U
+pub fn ratatoskr_sites_contracts::CalloutFold::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::CalloutFold::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::CalloutFold::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::CalloutFold::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::CalloutFold::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::CalloutFold::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::CalloutFold::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::CalloutFold::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::CalloutKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::CalloutKind::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::CalloutKind::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::CalloutKind::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::CalloutKind::clone(&self) -> ratatoskr_sites_contracts::CalloutKind
+pub fn ratatoskr_sites_contracts::CalloutKind::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::CalloutKind::cmp(&self, &ratatoskr_sites_contracts::CalloutKind) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::CalloutKind::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::CalloutKind::eq(&self, &ratatoskr_sites_contracts::CalloutKind) -> bool
+pub fn ratatoskr_sites_contracts::CalloutKind::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::CalloutKind::from(T) -> T
+pub fn ratatoskr_sites_contracts::CalloutKind::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::CalloutKind::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::CalloutKind::into(self) -> U
+pub fn ratatoskr_sites_contracts::CalloutKind::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::CalloutKind::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::CalloutKind::partial_cmp(&self, &ratatoskr_sites_contracts::CalloutKind) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::CalloutKind::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::CalloutKind::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::CalloutKind::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::CalloutKind::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::CalloutKind::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::CalloutKind::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::CalloutKind::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::CalloutKind::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::CalloutKind::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::EmbedTarget::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::EmbedTarget::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::EmbedTarget::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::EmbedTarget::clone(&self) -> ratatoskr_sites_contracts::EmbedTarget
+pub fn ratatoskr_sites_contracts::EmbedTarget::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::EmbedTarget::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::EmbedTarget::eq(&self, &ratatoskr_sites_contracts::EmbedTarget) -> bool
+pub fn ratatoskr_sites_contracts::EmbedTarget::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::EmbedTarget::from(T) -> T
+pub fn ratatoskr_sites_contracts::EmbedTarget::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::EmbedTarget::into(self) -> U
+pub fn ratatoskr_sites_contracts::EmbedTarget::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::EmbedTarget::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EmbedTarget::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::EmbedTarget::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::EmbedTarget::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::EmbedTarget::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::EmbedTarget::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::EmbedTarget::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::FrontmatterKey::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::FrontmatterKey::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::FrontmatterKey::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::FrontmatterKey::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::FrontmatterKey::clone(&self) -> ratatoskr_sites_contracts::FrontmatterKey
+pub fn ratatoskr_sites_contracts::FrontmatterKey::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::FrontmatterKey::cmp(&self, &ratatoskr_sites_contracts::FrontmatterKey) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::FrontmatterKey::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::eq(&self, &ratatoskr_sites_contracts::FrontmatterKey) -> bool
+pub fn ratatoskr_sites_contracts::FrontmatterKey::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::FrontmatterKey::from(T) -> T
+pub fn ratatoskr_sites_contracts::FrontmatterKey::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::FrontmatterKey::into(self) -> U
+pub fn ratatoskr_sites_contracts::FrontmatterKey::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::FrontmatterKey::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::partial_cmp(&self, &ratatoskr_sites_contracts::FrontmatterKey) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::FrontmatterKey::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::FrontmatterKey::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::FrontmatterKey::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::FrontmatterKey::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Hostname::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::Hostname::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::Hostname::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::Hostname::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::Hostname::clone(&self) -> ratatoskr_sites_contracts::Hostname
+pub fn ratatoskr_sites_contracts::Hostname::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::Hostname::cmp(&self, &ratatoskr_sites_contracts::Hostname) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::Hostname::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::Hostname::eq(&self, &ratatoskr_sites_contracts::Hostname) -> bool
+pub fn ratatoskr_sites_contracts::Hostname::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::Hostname::from(T) -> T
+pub fn ratatoskr_sites_contracts::Hostname::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::Hostname::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::Hostname::into(self) -> U
+pub fn ratatoskr_sites_contracts::Hostname::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::Hostname::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::Hostname::partial_cmp(&self, &ratatoskr_sites_contracts::Hostname) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::Hostname::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Hostname::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Hostname::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::Hostname::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::Hostname::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::Hostname::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::Hostname::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::Hostname::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::Hostname::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ImageUrl::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ImageUrl::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::ImageUrl::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ImageUrl::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ImageUrl::clone(&self) -> ratatoskr_sites_contracts::ImageUrl
+pub fn ratatoskr_sites_contracts::ImageUrl::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ImageUrl::cmp(&self, &ratatoskr_sites_contracts::ImageUrl) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::ImageUrl::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ImageUrl::eq(&self, &ratatoskr_sites_contracts::ImageUrl) -> bool
+pub fn ratatoskr_sites_contracts::ImageUrl::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ImageUrl::from(T) -> T
+pub fn ratatoskr_sites_contracts::ImageUrl::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::ImageUrl::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::ImageUrl::into(self) -> U
+pub fn ratatoskr_sites_contracts::ImageUrl::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ImageUrl::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::ImageUrl::partial_cmp(&self, &ratatoskr_sites_contracts::ImageUrl) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::ImageUrl::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ImageUrl::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ImageUrl::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ImageUrl::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ImageUrl::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::ImageUrl::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ImageUrl::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::ImageUrl::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ImageUrl::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::LinkUrl::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::LinkUrl::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::LinkUrl::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::LinkUrl::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::LinkUrl::clone(&self) -> ratatoskr_sites_contracts::LinkUrl
+pub fn ratatoskr_sites_contracts::LinkUrl::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::LinkUrl::cmp(&self, &ratatoskr_sites_contracts::LinkUrl) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::LinkUrl::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::LinkUrl::eq(&self, &ratatoskr_sites_contracts::LinkUrl) -> bool
+pub fn ratatoskr_sites_contracts::LinkUrl::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::LinkUrl::from(T) -> T
+pub fn ratatoskr_sites_contracts::LinkUrl::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::LinkUrl::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::LinkUrl::into(self) -> U
+pub fn ratatoskr_sites_contracts::LinkUrl::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::LinkUrl::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::LinkUrl::partial_cmp(&self, &ratatoskr_sites_contracts::LinkUrl) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::LinkUrl::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::LinkUrl::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::LinkUrl::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::LinkUrl::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::LinkUrl::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::LinkUrl::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::LinkUrl::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::LinkUrl::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::LinkUrl::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::NavigationEntry::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::NavigationEntry::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::NavigationEntry::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::NavigationEntry::clone(&self) -> ratatoskr_sites_contracts::NavigationEntry
+pub fn ratatoskr_sites_contracts::NavigationEntry::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::NavigationEntry::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::NavigationEntry::eq(&self, &ratatoskr_sites_contracts::NavigationEntry) -> bool
+pub fn ratatoskr_sites_contracts::NavigationEntry::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::NavigationEntry::from(T) -> T
+pub fn ratatoskr_sites_contracts::NavigationEntry::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::NavigationEntry::into(self) -> U
+pub fn ratatoskr_sites_contracts::NavigationEntry::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::NavigationEntry::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::NavigationEntry::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::NavigationEntry::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::NavigationEntry::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::NavigationEntry::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::NavigationEntry::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::NavigationEntry::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Page::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::Page::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::Page::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::Page::clone(&self) -> ratatoskr_sites_contracts::Page
+pub fn ratatoskr_sites_contracts::Page::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::Page::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::Page::eq(&self, &ratatoskr_sites_contracts::Page) -> bool
+pub fn ratatoskr_sites_contracts::Page::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::Page::from(T) -> T
+pub fn ratatoskr_sites_contracts::Page::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::Page::into(self) -> U
+pub fn ratatoskr_sites_contracts::Page::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::Page::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Page::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Page::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::Page::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::Page::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::Page::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::Page::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Page::validate(&self) -> core::result::Result<(), ratatoskr_sites_contracts::SitesContractError>
+pub fn ratatoskr_sites_contracts::PageNode::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::PageNode::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::PageNode::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::PageNode::clone(&self) -> ratatoskr_sites_contracts::PageNode
+pub fn ratatoskr_sites_contracts::PageNode::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::PageNode::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::PageNode::eq(&self, &ratatoskr_sites_contracts::PageNode) -> bool
+pub fn ratatoskr_sites_contracts::PageNode::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::PageNode::from(T) -> T
+pub fn ratatoskr_sites_contracts::PageNode::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::PageNode::into(self) -> U
+pub fn ratatoskr_sites_contracts::PageNode::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::PageNode::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageNode::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageNode::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::PageNode::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::PageNode::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::PageNode::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::PageNode::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::PageRoot::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::PageRoot::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::PageRoot::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::PageRoot::clone(&self) -> ratatoskr_sites_contracts::PageRoot
+pub fn ratatoskr_sites_contracts::PageRoot::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::PageRoot::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::PageRoot::eq(&self, &ratatoskr_sites_contracts::PageRoot) -> bool
+pub fn ratatoskr_sites_contracts::PageRoot::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::PageRoot::from(T) -> T
+pub fn ratatoskr_sites_contracts::PageRoot::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::PageRoot::into(self) -> U
+pub fn ratatoskr_sites_contracts::PageRoot::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::PageRoot::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageRoot::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageRoot::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::PageRoot::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::PageRoot::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::PageRoot::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::PageRoot::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::PageRootType::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::PageRootType::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::PageRootType::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::PageRootType::clone(&self) -> ratatoskr_sites_contracts::PageRootType
+pub fn ratatoskr_sites_contracts::PageRootType::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::PageRootType::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::PageRootType::eq(&self, &ratatoskr_sites_contracts::PageRootType) -> bool
+pub fn ratatoskr_sites_contracts::PageRootType::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::PageRootType::from(T) -> T
+pub fn ratatoskr_sites_contracts::PageRootType::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::PageRootType::into(self) -> U
+pub fn ratatoskr_sites_contracts::PageRootType::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::PageRootType::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageRootType::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageRootType::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::PageRootType::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::PageRootType::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::PageRootType::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::PageRootType::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::PageTitle::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::PageTitle::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::PageTitle::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::PageTitle::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::PageTitle::clone(&self) -> ratatoskr_sites_contracts::PageTitle
+pub fn ratatoskr_sites_contracts::PageTitle::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::PageTitle::cmp(&self, &ratatoskr_sites_contracts::PageTitle) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::PageTitle::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::PageTitle::eq(&self, &ratatoskr_sites_contracts::PageTitle) -> bool
+pub fn ratatoskr_sites_contracts::PageTitle::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::PageTitle::from(T) -> T
+pub fn ratatoskr_sites_contracts::PageTitle::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::PageTitle::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::PageTitle::into(self) -> U
+pub fn ratatoskr_sites_contracts::PageTitle::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::PageTitle::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::PageTitle::partial_cmp(&self, &ratatoskr_sites_contracts::PageTitle) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::PageTitle::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageTitle::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PageTitle::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::PageTitle::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::PageTitle::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::PageTitle::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::PageTitle::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::PageTitle::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::PageTitle::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::PublicationId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::PublicationId::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::PublicationId::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::PublicationId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::PublicationId::clone(&self) -> ratatoskr_sites_contracts::PublicationId
+pub fn ratatoskr_sites_contracts::PublicationId::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::PublicationId::cmp(&self, &ratatoskr_sites_contracts::PublicationId) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::PublicationId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::PublicationId::eq(&self, &ratatoskr_sites_contracts::PublicationId) -> bool
+pub fn ratatoskr_sites_contracts::PublicationId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::PublicationId::from(T) -> T
+pub fn ratatoskr_sites_contracts::PublicationId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::PublicationId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::PublicationId::into(self) -> U
+pub fn ratatoskr_sites_contracts::PublicationId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::PublicationId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::PublicationId::partial_cmp(&self, &ratatoskr_sites_contracts::PublicationId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::PublicationId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PublicationId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::PublicationId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::PublicationId::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::PublicationId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::PublicationId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::PublicationId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::PublicationId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::PublicationId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Release::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::Release::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::Release::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::Release::clone(&self) -> ratatoskr_sites_contracts::Release
+pub fn ratatoskr_sites_contracts::Release::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::Release::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::Release::eq(&self, &ratatoskr_sites_contracts::Release) -> bool
+pub fn ratatoskr_sites_contracts::Release::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::Release::from(T) -> T
+pub fn ratatoskr_sites_contracts::Release::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::Release::into(self) -> U
+pub fn ratatoskr_sites_contracts::Release::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::Release::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Release::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Release::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::Release::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::Release::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::Release::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::Release::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Release::validate(&self) -> core::result::Result<(), ratatoskr_sites_contracts::SitesContractError>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ReleaseAsset::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ReleaseAsset::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ReleaseAsset::clone(&self) -> ratatoskr_sites_contracts::ReleaseAsset
+pub fn ratatoskr_sites_contracts::ReleaseAsset::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ReleaseAsset::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::eq(&self, &ratatoskr_sites_contracts::ReleaseAsset) -> bool
+pub fn ratatoskr_sites_contracts::ReleaseAsset::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ReleaseAsset::from(T) -> T
+pub fn ratatoskr_sites_contracts::ReleaseAsset::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ReleaseAsset::into(self) -> U
+pub fn ratatoskr_sites_contracts::ReleaseAsset::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ReleaseAsset::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ReleaseAsset::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ReleaseAsset::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseAsset::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::clone(&self) -> ratatoskr_sites_contracts::ReleaseBuildRequested
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::eq(&self, &ratatoskr_sites_contracts::ReleaseBuildRequested) -> bool
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::from(T) -> T
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::into(self) -> U
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ReleaseBuildRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ReleasePage::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ReleasePage::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ReleasePage::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ReleasePage::clone(&self) -> ratatoskr_sites_contracts::ReleasePage
+pub fn ratatoskr_sites_contracts::ReleasePage::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ReleasePage::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ReleasePage::eq(&self, &ratatoskr_sites_contracts::ReleasePage) -> bool
+pub fn ratatoskr_sites_contracts::ReleasePage::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ReleasePage::from(T) -> T
+pub fn ratatoskr_sites_contracts::ReleasePage::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ReleasePage::into(self) -> U
+pub fn ratatoskr_sites_contracts::ReleasePage::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ReleasePage::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleasePage::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleasePage::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ReleasePage::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ReleasePage::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ReleasePage::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ReleasePage::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ReleasePublished::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::ReleasePublished::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::ReleasePublished::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::ReleasePublished::clone(&self) -> ratatoskr_sites_contracts::ReleasePublished
+pub fn ratatoskr_sites_contracts::ReleasePublished::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::ReleasePublished::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::ReleasePublished::eq(&self, &ratatoskr_sites_contracts::ReleasePublished) -> bool
+pub fn ratatoskr_sites_contracts::ReleasePublished::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::ReleasePublished::from(T) -> T
+pub fn ratatoskr_sites_contracts::ReleasePublished::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::ReleasePublished::into(self) -> U
+pub fn ratatoskr_sites_contracts::ReleasePublished::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::ReleasePublished::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleasePublished::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::ReleasePublished::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::ReleasePublished::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::ReleasePublished::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::ReleasePublished::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::ReleasePublished::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::ReleasePublished::validate(&self) -> core::result::Result<(), ratatoskr_sites_contracts::SitesContractError>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::clone(&self) -> ratatoskr_sites_contracts::SiteApprovalChanged
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::eq(&self, &ratatoskr_sites_contracts::SiteApprovalChanged) -> bool
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::from(T) -> T
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::into(self) -> U
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SiteApprovalChanged::validate(&self) -> core::result::Result<(), ratatoskr_sites_contracts::SitesContractError>
+pub fn ratatoskr_sites_contracts::SiteCapability::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SiteCapability::as_str(self) -> &'static str
+pub fn ratatoskr_sites_contracts::SiteCapability::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SiteCapability::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SiteCapability::clone(&self) -> ratatoskr_sites_contracts::SiteCapability
+pub fn ratatoskr_sites_contracts::SiteCapability::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SiteCapability::cmp(&self, &ratatoskr_sites_contracts::SiteCapability) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::SiteCapability::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SiteCapability::eq(&self, &ratatoskr_sites_contracts::SiteCapability) -> bool
+pub fn ratatoskr_sites_contracts::SiteCapability::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SiteCapability::from(T) -> T
+pub fn ratatoskr_sites_contracts::SiteCapability::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::SiteCapability::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::SiteCapability::into(self) -> U
+pub fn ratatoskr_sites_contracts::SiteCapability::is_public(self) -> bool
+pub fn ratatoskr_sites_contracts::SiteCapability::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SiteCapability::partial_cmp(&self, &ratatoskr_sites_contracts::SiteCapability) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::SiteCapability::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteCapability::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteCapability::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SiteCapability::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SiteCapability::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SiteCapability::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SiteCapability::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SiteId::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SiteId::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::SiteId::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SiteId::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SiteId::clone(&self) -> ratatoskr_sites_contracts::SiteId
+pub fn ratatoskr_sites_contracts::SiteId::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SiteId::cmp(&self, &ratatoskr_sites_contracts::SiteId) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::SiteId::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SiteId::eq(&self, &ratatoskr_sites_contracts::SiteId) -> bool
+pub fn ratatoskr_sites_contracts::SiteId::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SiteId::from(T) -> T
+pub fn ratatoskr_sites_contracts::SiteId::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::SiteId::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::SiteId::into(self) -> U
+pub fn ratatoskr_sites_contracts::SiteId::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SiteId::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::SiteId::partial_cmp(&self, &ratatoskr_sites_contracts::SiteId) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::SiteId::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteId::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteId::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SiteId::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SiteId::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::SiteId::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SiteId::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::SiteId::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SiteId::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SiteManifest::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SiteManifest::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SiteManifest::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SiteManifest::clone(&self) -> ratatoskr_sites_contracts::SiteManifest
+pub fn ratatoskr_sites_contracts::SiteManifest::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SiteManifest::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::SiteManifest::eq(&self, &ratatoskr_sites_contracts::SiteManifest) -> bool
+pub fn ratatoskr_sites_contracts::SiteManifest::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SiteManifest::from(T) -> T
+pub fn ratatoskr_sites_contracts::SiteManifest::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::SiteManifest::into(self) -> U
+pub fn ratatoskr_sites_contracts::SiteManifest::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::SiteManifest::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteManifest::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::SiteManifest::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::SiteManifest::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SiteManifest::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SiteManifest::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SiteManifest::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::SiteManifest::validate(&self) -> core::result::Result<(), ratatoskr_sites_contracts::SitesContractError>
+pub fn ratatoskr_sites_contracts::SitesContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::SitesContractError::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::SitesContractError::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::SitesContractError::clone(&self) -> ratatoskr_sites_contracts::SitesContractError
+pub fn ratatoskr_sites_contracts::SitesContractError::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::SitesContractError::eq(&self, &ratatoskr_sites_contracts::SitesContractError) -> bool
+pub fn ratatoskr_sites_contracts::SitesContractError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::SitesContractError::from(T) -> T
+pub fn ratatoskr_sites_contracts::SitesContractError::into(self) -> U
+pub fn ratatoskr_sites_contracts::SitesContractError::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::SitesContractError::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::SitesContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::SitesContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::SitesContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::Slug::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::Slug::as_str(&self) -> &str
+pub fn ratatoskr_sites_contracts::Slug::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::Slug::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::Slug::clone(&self) -> ratatoskr_sites_contracts::Slug
+pub fn ratatoskr_sites_contracts::Slug::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::Slug::cmp(&self, &ratatoskr_sites_contracts::Slug) -> core::cmp::Ordering
+pub fn ratatoskr_sites_contracts::Slug::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::Slug::eq(&self, &ratatoskr_sites_contracts::Slug) -> bool
+pub fn ratatoskr_sites_contracts::Slug::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::Slug::from(T) -> T
+pub fn ratatoskr_sites_contracts::Slug::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_sites_contracts::Slug::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_sites_contracts::Slug::into(self) -> U
+pub fn ratatoskr_sites_contracts::Slug::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::Slug::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_sites_contracts::Slug::partial_cmp(&self, &ratatoskr_sites_contracts::Slug) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_sites_contracts::Slug::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Slug::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::Slug::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::Slug::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::Slug::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_sites_contracts::Slug::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::Slug::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_sites_contracts::Slug::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::Slug::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_sites_contracts::TableAlign::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_sites_contracts::TableAlign::borrow(&self) -> &T
+pub fn ratatoskr_sites_contracts::TableAlign::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_sites_contracts::TableAlign::clone(&self) -> ratatoskr_sites_contracts::TableAlign
+pub fn ratatoskr_sites_contracts::TableAlign::clone_into(&self, &mut T)
+pub fn ratatoskr_sites_contracts::TableAlign::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_sites_contracts::TableAlign::eq(&self, &ratatoskr_sites_contracts::TableAlign) -> bool
+pub fn ratatoskr_sites_contracts::TableAlign::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_sites_contracts::TableAlign::from(T) -> T
+pub fn ratatoskr_sites_contracts::TableAlign::inline_schema() -> bool
+pub fn ratatoskr_sites_contracts::TableAlign::into(self) -> U
+pub fn ratatoskr_sites_contracts::TableAlign::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_sites_contracts::TableAlign::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::TableAlign::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_sites_contracts::TableAlign::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_sites_contracts::TableAlign::to_owned(&self) -> T
+pub fn ratatoskr_sites_contracts::TableAlign::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_sites_contracts::TableAlign::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_sites_contracts::TableAlign::type_id(&self) -> core::any::TypeId
+pub mod ratatoskr_sites_contracts
+pub ratatoskr_sites_contracts::ApprovalState::Approved
+pub ratatoskr_sites_contracts::ApprovalState::Withdrawn
+pub ratatoskr_sites_contracts::AssetRef::media_type: ratatoskr_identifiers::blob::MediaType
+pub ratatoskr_sites_contracts::AssetRef::sha256: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::CalloutFold::Closed
+pub ratatoskr_sites_contracts::CalloutFold::Open
+pub ratatoskr_sites_contracts::EmbedTarget::Asset
+pub ratatoskr_sites_contracts::EmbedTarget::Asset::alt: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::EmbedTarget::Asset::media_type: ratatoskr_identifiers::blob::MediaType
+pub ratatoskr_sites_contracts::EmbedTarget::Asset::sha256: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::EmbedTarget::Page
+pub ratatoskr_sites_contracts::EmbedTarget::Page::anchor: core::option::Option<ratatoskr_sites_contracts::Anchor>
+pub ratatoskr_sites_contracts::EmbedTarget::Page::slug: ratatoskr_sites_contracts::Slug
+pub ratatoskr_sites_contracts::NavigationEntry::children: alloc::vec::Vec<ratatoskr_sites_contracts::NavigationEntry>
+pub ratatoskr_sites_contracts::NavigationEntry::slug: core::option::Option<ratatoskr_sites_contracts::Slug>
+pub ratatoskr_sites_contracts::NavigationEntry::title: ratatoskr_sites_contracts::PageTitle
+pub ratatoskr_sites_contracts::Page::assets: alloc::vec::Vec<ratatoskr_sites_contracts::AssetRef>
+pub ratatoskr_sites_contracts::Page::ast: ratatoskr_sites_contracts::PageRoot
+pub ratatoskr_sites_contracts::Page::backlinks: alloc::vec::Vec<ratatoskr_sites_contracts::Slug>
+pub ratatoskr_sites_contracts::Page::frontmatter: alloc::collections::btree::map::BTreeMap<alloc::string::String, serde_json::value::Value>
+pub ratatoskr_sites_contracts::Page::html: alloc::string::String
+pub ratatoskr_sites_contracts::Page::links: alloc::vec::Vec<ratatoskr_sites_contracts::Slug>
+pub ratatoskr_sites_contracts::Page::slug: ratatoskr_sites_contracts::Slug
+pub ratatoskr_sites_contracts::Page::title: ratatoskr_sites_contracts::PageTitle
+pub ratatoskr_sites_contracts::PageNode::Blockquote
+pub ratatoskr_sites_contracts::PageNode::Blockquote::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Break
+pub ratatoskr_sites_contracts::PageNode::Callout
+pub ratatoskr_sites_contracts::PageNode::Callout::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Callout::fold: core::option::Option<ratatoskr_sites_contracts::CalloutFold>
+pub ratatoskr_sites_contracts::PageNode::Callout::kind: ratatoskr_sites_contracts::CalloutKind
+pub ratatoskr_sites_contracts::PageNode::Callout::title: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Code
+pub ratatoskr_sites_contracts::PageNode::Code::lang: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::PageNode::Code::meta: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::PageNode::Code::value: alloc::string::String
+pub ratatoskr_sites_contracts::PageNode::Delete
+pub ratatoskr_sites_contracts::PageNode::Delete::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Embed
+pub ratatoskr_sites_contracts::PageNode::Embed::target: ratatoskr_sites_contracts::EmbedTarget
+pub ratatoskr_sites_contracts::PageNode::Emphasis
+pub ratatoskr_sites_contracts::PageNode::Emphasis::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Heading
+pub ratatoskr_sites_contracts::PageNode::Heading::anchor: ratatoskr_sites_contracts::Anchor
+pub ratatoskr_sites_contracts::PageNode::Heading::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Heading::depth: u8
+pub ratatoskr_sites_contracts::PageNode::Highlight
+pub ratatoskr_sites_contracts::PageNode::Highlight::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Image
+pub ratatoskr_sites_contracts::PageNode::Image::alt: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::PageNode::Image::title: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::PageNode::Image::url: ratatoskr_sites_contracts::ImageUrl
+pub ratatoskr_sites_contracts::PageNode::InlineCode
+pub ratatoskr_sites_contracts::PageNode::InlineCode::value: alloc::string::String
+pub ratatoskr_sites_contracts::PageNode::Link
+pub ratatoskr_sites_contracts::PageNode::Link::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Link::title: core::option::Option<alloc::string::String>
+pub ratatoskr_sites_contracts::PageNode::Link::url: ratatoskr_sites_contracts::LinkUrl
+pub ratatoskr_sites_contracts::PageNode::List
+pub ratatoskr_sites_contracts::PageNode::List::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::List::ordered: bool
+pub ratatoskr_sites_contracts::PageNode::List::spread: bool
+pub ratatoskr_sites_contracts::PageNode::List::start: core::option::Option<u32>
+pub ratatoskr_sites_contracts::PageNode::ListItem
+pub ratatoskr_sites_contracts::PageNode::ListItem::checked: core::option::Option<bool>
+pub ratatoskr_sites_contracts::PageNode::ListItem::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::ListItem::spread: bool
+pub ratatoskr_sites_contracts::PageNode::Paragraph
+pub ratatoskr_sites_contracts::PageNode::Paragraph::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Strong
+pub ratatoskr_sites_contracts::PageNode::Strong::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Table
+pub ratatoskr_sites_contracts::PageNode::Table::align: alloc::vec::Vec<core::option::Option<ratatoskr_sites_contracts::TableAlign>>
+pub ratatoskr_sites_contracts::PageNode::Table::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::TableCell
+pub ratatoskr_sites_contracts::PageNode::TableCell::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::TableRow
+pub ratatoskr_sites_contracts::PageNode::TableRow::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::Text
+pub ratatoskr_sites_contracts::PageNode::Text::value: alloc::string::String
+pub ratatoskr_sites_contracts::PageNode::ThematicBreak
+pub ratatoskr_sites_contracts::PageNode::WikiLink
+pub ratatoskr_sites_contracts::PageNode::WikiLink::anchor: core::option::Option<ratatoskr_sites_contracts::Anchor>
+pub ratatoskr_sites_contracts::PageNode::WikiLink::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageNode::WikiLink::slug: ratatoskr_sites_contracts::Slug
+pub ratatoskr_sites_contracts::PageRoot::children: alloc::vec::Vec<ratatoskr_sites_contracts::PageNode>
+pub ratatoskr_sites_contracts::PageRoot::node_type: ratatoskr_sites_contracts::PageRootType
+pub ratatoskr_sites_contracts::PageRootType::Root
+pub ratatoskr_sites_contracts::Release::assets: alloc::vec::Vec<ratatoskr_sites_contracts::ReleaseAsset>
+pub ratatoskr_sites_contracts::Release::navigation: alloc::vec::Vec<ratatoskr_sites_contracts::NavigationEntry>
+pub ratatoskr_sites_contracts::Release::pages: alloc::vec::Vec<ratatoskr_sites_contracts::ReleasePage>
+pub ratatoskr_sites_contracts::Release::publication_ids: alloc::vec::Vec<ratatoskr_sites_contracts::PublicationId>
+pub ratatoskr_sites_contracts::Release::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::ReleaseAsset::media_type: ratatoskr_identifiers::blob::MediaType
+pub ratatoskr_sites_contracts::ReleaseAsset::sha256: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::ReleaseAsset::size_bytes: u64
+pub ratatoskr_sites_contracts::ReleaseBuildRequested::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_sites_contracts::ReleaseBuildRequested::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::ReleasePage::page_sha256: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::ReleasePage::slug: ratatoskr_sites_contracts::Slug
+pub ratatoskr_sites_contracts::ReleasePage::title: ratatoskr_sites_contracts::PageTitle
+pub ratatoskr_sites_contracts::ReleasePublished::page_count: u32
+pub ratatoskr_sites_contracts::ReleasePublished::publication_ids: alloc::vec::Vec<ratatoskr_sites_contracts::PublicationId>
+pub ratatoskr_sites_contracts::ReleasePublished::published_at: ratatoskr_identifiers::timestamp::WireTimestamp
+pub ratatoskr_sites_contracts::ReleasePublished::release_id: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::ReleasePublished::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::SiteApprovalChanged::capabilities: alloc::vec::Vec<ratatoskr_sites_contracts::SiteCapability>
+pub ratatoskr_sites_contracts::SiteApprovalChanged::hostname: ratatoskr_sites_contracts::Hostname
+pub ratatoskr_sites_contracts::SiteApprovalChanged::manifest_sha256: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_sites_contracts::SiteApprovalChanged::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::SiteApprovalChanged::state: ratatoskr_sites_contracts::ApprovalState
+pub ratatoskr_sites_contracts::SiteCapability::AssetsRead
+pub ratatoskr_sites_contracts::SiteCapability::DraftRead
+pub ratatoskr_sites_contracts::SiteCapability::KnowledgeSearch
+pub ratatoskr_sites_contracts::SiteCapability::LibraryRead
+pub ratatoskr_sites_contracts::SiteCapability::LiveRelease
+pub ratatoskr_sites_contracts::SiteCapability::NotesEdit
+pub ratatoskr_sites_contracts::SiteCapability::PagesRead
+pub ratatoskr_sites_contracts::SiteCapability::SearchPublication
+pub ratatoskr_sites_contracts::SiteManifest::capabilities: alloc::vec::Vec<ratatoskr_sites_contracts::SiteCapability>
+pub ratatoskr_sites_contracts::SiteManifest::hostname: ratatoskr_sites_contracts::Hostname
+pub ratatoskr_sites_contracts::SiteManifest::publications: alloc::vec::Vec<ratatoskr_sites_contracts::PublicationId>
+pub ratatoskr_sites_contracts::SiteManifest::site_id: ratatoskr_sites_contracts::SiteId
+pub ratatoskr_sites_contracts::SitesContractError::Duplicate
+pub ratatoskr_sites_contracts::SitesContractError::Duplicate::item: alloc::string::String
+pub ratatoskr_sites_contracts::SitesContractError::Duplicate::list: &'static str
+pub ratatoskr_sites_contracts::SitesContractError::FrontmatterKey
+pub ratatoskr_sites_contracts::SitesContractError::FrontmatterKey::key: alloc::string::String
+pub ratatoskr_sites_contracts::SitesContractError::NavigationSlugNotInRelease
+pub ratatoskr_sites_contracts::SitesContractError::NavigationSlugNotInRelease::slug: alloc::string::String
+pub ratatoskr_sites_contracts::SitesContractError::NoPublication
+pub ratatoskr_sites_contracts::SitesContractError::Unsorted
+pub ratatoskr_sites_contracts::SitesContractError::Unsorted::item: alloc::string::String
+pub ratatoskr_sites_contracts::SitesContractError::Unsorted::list: &'static str
+pub ratatoskr_sites_contracts::TableAlign::Center
+pub ratatoskr_sites_contracts::TableAlign::Left
+pub ratatoskr_sites_contracts::TableAlign::Right
+pub struct ratatoskr_sites_contracts::Anchor(_)
+pub struct ratatoskr_sites_contracts::AssetRef
+pub struct ratatoskr_sites_contracts::CalloutKind(_)
+pub struct ratatoskr_sites_contracts::FrontmatterKey(_)
+pub struct ratatoskr_sites_contracts::Hostname(_)
+pub struct ratatoskr_sites_contracts::ImageUrl(_)
+pub struct ratatoskr_sites_contracts::LinkUrl(_)
+pub struct ratatoskr_sites_contracts::NavigationEntry
+pub struct ratatoskr_sites_contracts::Page
+pub struct ratatoskr_sites_contracts::PageRoot
+pub struct ratatoskr_sites_contracts::PageTitle(_)
+pub struct ratatoskr_sites_contracts::PublicationId(_)
+pub struct ratatoskr_sites_contracts::Release
+pub struct ratatoskr_sites_contracts::ReleaseAsset
+pub struct ratatoskr_sites_contracts::ReleaseBuildRequested
+pub struct ratatoskr_sites_contracts::ReleasePage
+pub struct ratatoskr_sites_contracts::ReleasePublished
+pub struct ratatoskr_sites_contracts::SiteApprovalChanged
+pub struct ratatoskr_sites_contracts::SiteId(_)
+pub struct ratatoskr_sites_contracts::SiteManifest
+pub struct ratatoskr_sites_contracts::Slug(_)
+pub type ratatoskr_sites_contracts::Anchor::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Anchor::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::Anchor::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::Anchor::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Anchor::Owned = T
+pub type ratatoskr_sites_contracts::ApprovalState::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ApprovalState::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ApprovalState::Owned = T
+pub type ratatoskr_sites_contracts::AssetRef::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::AssetRef::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::AssetRef::Owned = T
+pub type ratatoskr_sites_contracts::CalloutFold::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::CalloutFold::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::CalloutFold::Owned = T
+pub type ratatoskr_sites_contracts::CalloutKind::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::CalloutKind::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::CalloutKind::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::CalloutKind::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::CalloutKind::Owned = T
+pub type ratatoskr_sites_contracts::EmbedTarget::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::EmbedTarget::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::EmbedTarget::Owned = T
+pub type ratatoskr_sites_contracts::FrontmatterKey::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::FrontmatterKey::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::FrontmatterKey::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::FrontmatterKey::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::FrontmatterKey::Owned = T
+pub type ratatoskr_sites_contracts::Hostname::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Hostname::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::Hostname::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::Hostname::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Hostname::Owned = T
+pub type ratatoskr_sites_contracts::ImageUrl::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::ImageUrl::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ImageUrl::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ImageUrl::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::ImageUrl::Owned = T
+pub type ratatoskr_sites_contracts::LinkUrl::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::LinkUrl::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::LinkUrl::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::LinkUrl::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::LinkUrl::Owned = T
+pub type ratatoskr_sites_contracts::NavigationEntry::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::NavigationEntry::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::NavigationEntry::Owned = T
+pub type ratatoskr_sites_contracts::Page::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::Page::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::Page::Owned = T
+pub type ratatoskr_sites_contracts::PageNode::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::PageNode::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::PageNode::Owned = T
+pub type ratatoskr_sites_contracts::PageRoot::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::PageRoot::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::PageRoot::Owned = T
+pub type ratatoskr_sites_contracts::PageRootType::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::PageRootType::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::PageRootType::Owned = T
+pub type ratatoskr_sites_contracts::PageTitle::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::PageTitle::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::PageTitle::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::PageTitle::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::PageTitle::Owned = T
+pub type ratatoskr_sites_contracts::PublicationId::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::PublicationId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::PublicationId::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::PublicationId::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::PublicationId::Owned = T
+pub type ratatoskr_sites_contracts::Release::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::Release::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::Release::Owned = T
+pub type ratatoskr_sites_contracts::ReleaseAsset::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ReleaseAsset::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ReleaseAsset::Owned = T
+pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ReleaseBuildRequested::Owned = T
+pub type ratatoskr_sites_contracts::ReleasePage::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ReleasePage::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ReleasePage::Owned = T
+pub type ratatoskr_sites_contracts::ReleasePublished::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::ReleasePublished::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::ReleasePublished::Owned = T
+pub type ratatoskr_sites_contracts::SiteApprovalChanged::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SiteApprovalChanged::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SiteApprovalChanged::Owned = T
+pub type ratatoskr_sites_contracts::SiteCapability::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SiteCapability::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SiteCapability::Owned = T
+pub type ratatoskr_sites_contracts::SiteId::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::SiteId::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SiteId::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SiteId::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::SiteId::Owned = T
+pub type ratatoskr_sites_contracts::SiteManifest::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SiteManifest::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SiteManifest::Owned = T
+pub type ratatoskr_sites_contracts::SitesContractError::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::SitesContractError::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::SitesContractError::Owned = T
+pub type ratatoskr_sites_contracts::Slug::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Slug::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::Slug::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::Slug::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_sites_contracts::Slug::Owned = T
+pub type ratatoskr_sites_contracts::TableAlign::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_sites_contracts::TableAlign::Error = core::convert::Infallible
+pub type ratatoskr_sites_contracts::TableAlign::Owned = T
+pub unsafe fn ratatoskr_sites_contracts::Anchor::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ApprovalState::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::AssetRef::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::CalloutFold::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::CalloutKind::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::EmbedTarget::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::FrontmatterKey::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::Hostname::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ImageUrl::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::LinkUrl::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::NavigationEntry::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::Page::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::PageNode::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::PageRoot::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::PageRootType::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::PageTitle::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::PublicationId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::Release::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ReleaseAsset::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ReleaseBuildRequested::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ReleasePage::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::ReleasePublished::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SiteApprovalChanged::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SiteCapability::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SiteId::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SiteManifest::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::SitesContractError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::Slug::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_sites_contracts::TableAlign::clone_to_uninit(&self, *mut u8)
