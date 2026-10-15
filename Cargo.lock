@@ -1579,6 +1579,7 @@ dependencies = [
 name = "ratatoskr-sites-contracts"
 version = "0.1.0"
 dependencies = [
+ "jsonschema",
  "ratatoskr-event-envelope",
  "ratatoskr-identifiers",
  "regex",

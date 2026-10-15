@@ -20,5 +20,9 @@ schemars.workspace   = true
 regex.workspace      = true
 thiserror.workspace  = true
 
+[dev-dependencies]
+# The bundle manifest tests check each fixture against the published schema.
+jsonschema.workspace = true
+
 [lints]
 workspace = true

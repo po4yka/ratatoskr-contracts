@@ -1,0 +1,26 @@
+{
+  "site_id": "docs",
+  "repository": "owner/docs-site",
+  "commit": "3f6c2a9e8b1d4c7f0a5e2b9d6c3f8a1e4b7d0c2f",
+  "entry_document": "index.html",
+  "entry_fallback": true,
+  "files": [
+    {
+      "path": ".ratatoskr/sign-in/index.html",
+      "size_bytes": 1024,
+      "sha256": "1a2b3c4d5e6f70811a2b3c4d5e6f70811a2b3c4d5e6f70811a2b3c4d5e6f7081",
+      "hashed": false
+    },
+    {
+      "path": "assets/index-4f2a9c.js",
+      "size_bytes": 20480,
+      "sha256": "2b3c4d5e6f70811a2b3c4d5e6f70811a2b3c4d5e6f70811a2b3c4d5e6f708112",
+      "hashed": true
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 2048,
+      "hashed": false
+    }
+  ]
+}
