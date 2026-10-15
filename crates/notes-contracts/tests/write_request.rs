@@ -64,6 +64,18 @@ fn paths_stay_inside_the_vault() {
     contract.assert_refused_by_both("config-folder.json");
 }
 
+/// `.obsidian` is refused as the first segment in any ASCII case and as a bare name, and a
+/// folder whose name only starts with `.obsidian` stays writable. A pin of the `VaultWritePath`
+/// pattern of task 3.2.
+#[test]
+fn config_folder_is_refused_in_any_case() {
+    let contract = write_request();
+    contract.assert_accepted_by_both("obsidian-like-folder.json");
+    contract.assert_refused_by_both("config-folder-uppercase.json");
+    contract.assert_refused_by_both("config-folder-mixed-case.json");
+    contract.assert_refused_by_both("config-folder-bare.json");
+}
+
 /// The content of a write is a `BlobRef` that the caller uploaded first, never inline text.
 #[test]
 fn content_is_a_blob_ref() {

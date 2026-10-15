@@ -947,6 +947,21 @@ rejected_by    = ["json_schema", "serde"]
 error_contains = 'VaultWritePath ".obsidian/app.json" does not match'
 reason         = "`.obsidian/` is the vault configuration, and Ratatoskr never writes it."
 
+["commands/notes.file.write_requested.v1/invalid/config-folder-uppercase.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath ".OBSIDIAN/app.json" does not match'
+reason         = "A case-insensitive file system (macOS, Windows) maps `.OBSIDIAN/` to the vault configuration, so the refusal ignores ASCII case."
+
+["commands/notes.file.write_requested.v1/invalid/config-folder-mixed-case.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath ".Obsidian/x" does not match'
+reason         = "A case-insensitive file system maps `.Obsidian/` to the vault configuration, so the refusal ignores ASCII case."
+
+["commands/notes.file.write_requested.v1/invalid/config-folder-bare.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath ".obsidian" does not match'
+reason         = "A file named `.obsidian` at the vault root would replace the configuration folder, so the bare name is refused as well."
+
 ["commands/notes.file.write_requested.v1/invalid/inline-property-value.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'expected struct ContentDigest'

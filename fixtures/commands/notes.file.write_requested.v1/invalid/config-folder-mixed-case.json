@@ -1,0 +1,24 @@
+{
+  "operation_id": "018f0000-0000-7000-8000-000000000d01",
+  "idempotency_key": {
+    "algorithm": "sha256",
+    "hex": "2a3b4c5d6e7f80912a3b4c5d6e7f80912a3b4c5d6e7f80912a3b4c5d6e7f8091"
+  },
+  "connection_id": "018f0000-0000-7000-8000-000000000b01",
+  "origin": "platform",
+  "operation": {
+    "update": {
+      "path": ".Obsidian/x",
+      "base_hash": "0a1b2c3d4e5f60710a1b2c3d4e5f60710a1b2c3d4e5f60710a1b2c3d4e5f6071",
+      "blob": {
+        "owner_service": "ratatoskr-notes",
+        "digest": {
+          "algorithm": "sha256",
+          "hex": "1f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a7081"
+        },
+        "media_type": "application/json",
+        "length_bytes": 2048
+      }
+    }
+  }
+}
