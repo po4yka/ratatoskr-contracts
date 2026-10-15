@@ -942,6 +942,16 @@ rejected_by    = ["json_schema", "serde"]
 error_contains = 'VaultWritePath ".obsidian/app.json" does not match'
 reason         = "`.obsidian/` is the vault configuration, and Ratatoskr never writes it."
 
+["commands/notes.file.write_requested.v1/invalid/inline-property-value.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected struct BlobRef'
+reason         = "A frontmatter value is note content; it is uploaded first and named by a BlobRef, so no byte of a note enters Edge's outbox or JetStream."
+
+["commands/notes.file.write_requested.v1/invalid/property-value-not-json.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'property_change blob media_type must be `application/json`, found `text/markdown`'
+reason         = "The uploaded bytes of a property value are one JSON value; notes parses them as JSON and refuses any other media type."
+
 ["commands/notes.file.write_requested.v1/invalid/inline-content.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'expected struct BlobRef'

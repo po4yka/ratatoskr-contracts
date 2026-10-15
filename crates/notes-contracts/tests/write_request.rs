@@ -72,3 +72,14 @@ fn content_is_a_blob_ref() {
     contract.assert_accepted_by_both("remove-property.json");
     contract.assert_refused_by_both("inline-content.json");
 }
+
+/// A frontmatter value is note content, so it travels like file content: uploaded to notes
+/// first as `application/json`, and named by a `BlobRef`. An inline JSON value is refused.
+#[test]
+fn property_value_is_a_blob_ref() {
+    let contract = write_request();
+    contract.assert_accepted_by_both("set-property.json");
+    contract.assert_accepted_by_both("remove-property.json");
+    contract.assert_refused_by_both("inline-property-value.json");
+    contract.assert_refused_by_both("property-value-not-json.json");
+}
