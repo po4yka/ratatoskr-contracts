@@ -304,3 +304,27 @@ fn release_fixture_names_each_page_fixture_by_its_sha256() {
         "the release fixture must name each page fixture by the SHA-256 of its bytes"
     );
 }
+
+/// Workspace spec `site-content-delivery`: the sites service serves the release and its pages,
+/// the site SDK reads them for every site, and the web client shows the release history. The rows
+/// name exactly these three readers.
+#[test]
+fn release_and_page_name_their_readers() {
+    let text = std::fs::read_to_string(repo_root().join(Metadata::FILE_NAME))
+        .expect("contracts.toml is committed");
+    let metadata = Metadata::parse(&text).expect("contracts.toml parses");
+    for id in ["sites.release", "sites.page"] {
+        let contract = metadata
+            .contracts
+            .iter()
+            .find(|contract| contract.id == id)
+            .unwrap_or_else(|| panic!("{id} is not registered"));
+        let mut consumers = contract.consumers.clone();
+        consumers.sort();
+        assert_eq!(
+            consumers,
+            ["ratatoskr-site-sdk", "ratatoskr-sites", "ratatoskr-web"],
+            "{id}: the readers are the sites service, the site SDK and the web client"
+        );
+    }
+}
