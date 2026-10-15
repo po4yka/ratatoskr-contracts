@@ -79,47 +79,78 @@ wire_string_newtype! {
     }
 }
 
-/// The new value of one frontmatter property: any JSON value, which `ratatoskr-notes` writes as
-/// YAML. It is owner-written note content.
-#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
-#[serde(transparent)]
-pub struct PropertyValue(pub serde_json::Value);
-
-impl schemars::JsonSchema for PropertyValue {
-    fn schema_name() -> Cow<'static, str> {
-        Cow::Borrowed("PropertyValue")
-    }
-
-    fn schema_id() -> Cow<'static, str> {
-        Cow::Borrowed(concat!(module_path!(), "::PropertyValue"))
-    }
-
-    fn json_schema(_generator: &mut schemars::SchemaGenerator) -> schemars::Schema {
-        schemars::json_schema!({
-            "description": "The new value of one frontmatter property: any JSON value, which \
-                            ratatoskr-notes writes as YAML. It is owner-written note content.",
-            "anyOf": [
-                { "not": { "type": "object" } },
-                { "type": "object", "additionalProperties": true },
-            ],
-        })
-    }
-}
+/// The media type of the uploaded bytes of a frontmatter value: one JSON value.
+const PROPERTY_VALUE_MEDIA_TYPE: &str = "application/json";
 
 /// What a `set_property` operation does to its property.
 ///
+/// A frontmatter value is note content, so it never travels in the command. The caller uploads
+/// the value as one JSON document (`application/json`) to `ratatoskr-notes` first, and `set`
+/// names the resulting [`BlobRef`]; `ratatoskr-notes` writes the value as YAML.
+///
 /// **Closed on purpose**: a consumer that does not know a change must refuse the write rather
 /// than guess.
-#[derive(
-    Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize, schemars::JsonSchema,
-)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "snake_case")]
 #[non_exhaustive]
 pub enum PropertyChange {
-    /// Set the property to this value, and add the property when the file has none.
-    Set(PropertyValue),
+    /// Set the property to the uploaded JSON value, and add the property when the file has none.
+    Set(BlobRef),
     /// Remove the property from the frontmatter.
     Remove,
+}
+
+impl schemars::JsonSchema for PropertyChange {
+    fn schema_name() -> Cow<'static, str> {
+        Cow::Borrowed("PropertyChange")
+    }
+
+    fn schema_id() -> Cow<'static, str> {
+        Cow::Borrowed(concat!(module_path!(), "::PropertyChange"))
+    }
+
+    fn json_schema(generator: &mut schemars::SchemaGenerator) -> schemars::Schema {
+        // The derived shape, plus the media type of the blob, which the shared `BlobRef` schema
+        // cannot state for one use. The blob owner stays a rule of the Rust type.
+        let blob = generator.subschema_for::<BlobRef>();
+        schemars::json_schema!({
+            "description": "What a `set_property` operation does to its property. A frontmatter \
+                            value is note content, so the caller uploads it as one JSON document \
+                            (`application/json`) to ratatoskr-notes first, and `set` names the \
+                            resulting BlobRef.",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Set the property to the uploaded JSON value, and add the \
+                                    property when the file has none.",
+                    "properties": {
+                        "set": {
+                            "allOf": [
+                                blob,
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "media_type": {
+                                            "type": "string",
+                                            "const": PROPERTY_VALUE_MEDIA_TYPE,
+                                        },
+                                    },
+                                    "required": ["media_type"],
+                                },
+                            ],
+                        },
+                    },
+                    "required": ["set"],
+                    "additionalProperties": false,
+                },
+                {
+                    "type": "string",
+                    "const": "remove",
+                    "description": "Remove the property from the frontmatter.",
+                },
+            ],
+        })
+    }
 }
 
 /// How the owner resolves a conflict.
@@ -238,7 +269,8 @@ pub struct SetFileProperty {
     /// The frontmatter property to change.
     pub property_key: PropertyKey,
 
-    /// `{"set": <JSON value>}` to set the property, or `"remove"` to remove it.
+    /// `{"set": <BlobRef of an application/json value>}` to set the property, or `"remove"` to
+    /// remove it.
     pub property_change: PropertyChange,
 }
 
@@ -423,16 +455,21 @@ impl FileWriteRequested {
     /// # Errors
     ///
     /// [`NotesContractError::ForeignBlobOwner`] when a blob does not belong to
-    /// `ratatoskr-notes`, and the errors of [`ResolveConflict::validate`].
+    /// `ratatoskr-notes`, [`NotesContractError::PropertyBlobNotJson`] when the blob of a
+    /// frontmatter value is not `application/json`, and the errors of
+    /// [`ResolveConflict::validate`].
     pub fn validate(&self) -> Result<(), NotesContractError> {
         match &self.operation {
             WriteOperation::Create(create) => check_write_blob(&create.blob),
             WriteOperation::Update(update) => check_write_blob(&update.blob),
+            WriteOperation::SetProperty(property) => match &property.property_change {
+                PropertyChange::Set(blob) => check_property_blob(blob),
+                PropertyChange::Remove => Ok(()),
+            },
             WriteOperation::ResolveConflict(resolution) => resolution.validate(),
-            WriteOperation::Rename(_)
-            | WriteOperation::Move(_)
-            | WriteOperation::Delete(_)
-            | WriteOperation::SetProperty(_) => Ok(()),
+            WriteOperation::Rename(_) | WriteOperation::Move(_) | WriteOperation::Delete(_) => {
+                Ok(())
+            }
         }
     }
 }
@@ -444,6 +481,18 @@ fn check_write_blob(blob: &BlobRef) -> Result<(), NotesContractError> {
     } else {
         Err(NotesContractError::ForeignBlobOwner {
             owner_service: blob.owner_service.as_str().to_owned(),
+        })
+    }
+}
+
+/// The blob of a frontmatter value belongs to `ratatoskr-notes` and holds one JSON value.
+fn check_property_blob(blob: &BlobRef) -> Result<(), NotesContractError> {
+    check_write_blob(blob)?;
+    if blob.media_type.as_str() == PROPERTY_VALUE_MEDIA_TYPE {
+        Ok(())
+    } else {
+        Err(NotesContractError::PropertyBlobNotJson {
+            media_type: blob.media_type.as_str().to_owned(),
         })
     }
 }

@@ -33,9 +33,8 @@
 //! # What is deliberately absent
 //!
 //! No file bytes, no file text, no vault secret, no device credential and no host path. A write
-//! names its content by a [`ratatoskr_identifiers::BlobRef`] that the caller uploaded first; the
-//! only owner-written value a write carries inline is the one frontmatter value of
-//! `set_property`, as the workspace spec asks. Every
+//! names its content, and the value of a frontmatter property, by a
+//! [`ratatoskr_identifiers::BlobRef`] that the caller uploaded first. Every
 //! payload refuses a member it does not declare (`unknown_policy = "reject"`), so none of these can
 //! ride along in an unknown field. That is a privacy rule, and it is why these payloads carry no
 //! `extensions` map.
@@ -53,7 +52,7 @@ pub use crate::error::NotesContractError;
 pub use crate::file::{FileChangeKind, FileChanged, VaultPath};
 pub use crate::vault::{VaultChannel, VaultConnected, VaultDisconnected, VaultDisplayName};
 pub use crate::write::{
-    CreateFile, DeleteFile, FileWriteRequested, PropertyChange, PropertyKey, PropertyValue,
-    RelocateFile, ResolutionChoice, ResolveConflict, SetFileProperty, UpdateFile, VaultWritePath,
-    WriteOperation, WriteOrigin,
+    CreateFile, DeleteFile, FileWriteRequested, PropertyChange, PropertyKey, RelocateFile,
+    ResolutionChoice, ResolveConflict, SetFileProperty, UpdateFile, VaultWritePath, WriteOperation,
+    WriteOrigin,
 };

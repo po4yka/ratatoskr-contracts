@@ -53,6 +53,12 @@ pub enum NotesContractError {
         /// The wire word of the choice that carried the blob.
         choice: &'static str,
     },
+    /// The blob of a frontmatter value held another media type than `application/json`.
+    #[error("property_change blob media_type must be `application/json`, found `{media_type}`")]
+    PropertyBlobNotJson {
+        /// The media type the blob named.
+        media_type: String,
+    },
     /// A conflict on a file that is not Markdown or plain text carried a merge proposal; notes
     /// merges text only.
     #[error(

@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:0caa0f1798897e0342b604a25ee7240d4d9fb9e7b653ec8702c41a6576bbd152
+ * source_digest: sha256:8c75fe59fbdee0bc1822638ae43563614fdd46fdd8fe951171b43e97e1f2616d
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -162,12 +162,9 @@ export type NotesConnectionId = string;
 export type OperationId = string;
 
 /**
- * What a `set_property` operation does to its property.
- *
- * **Closed on purpose**: a consumer that does not know a change must refuse the write rather
- * than guess.
+ * What a `set_property` operation does to its property. A frontmatter value is note content, so the caller uploads it as one JSON document (`application/json`) to ratatoskr-notes first, and `set` names the resulting BlobRef.
  */
-export type PropertyChange = { set: PropertyValue; } | "remove";
+export type PropertyChange = { set: BlobRef & { media_type: "application/json"; }; } | "remove";
 
 /**
  * The name of one frontmatter property of a Markdown file, as the owner wrote it.
@@ -177,11 +174,6 @@ export type PropertyChange = { set: PropertyValue; } | "remove";
  * take.
  */
 export type PropertyKey = string;
-
-/**
- * The new value of one frontmatter property: any JSON value, which ratatoskr-notes writes as YAML. It is owner-written note content.
- */
-export type PropertyValue = string | number | boolean | null | unknown[] | { [key: string]: unknown; };
 
 /**
  * `rename` and `move`: give a file a new path. Links to the file are rewritten.
@@ -219,7 +211,8 @@ export interface SetFileProperty {
   */
  path: VaultWritePath;
  /**
-  * `{"set": <JSON value>}` to set the property, or `"remove"` to remove it.
+  * `{"set": <BlobRef of an application/json value>}` to set the property, or `"remove"` to
+  * remove it.
   */
  property_change: PropertyChange;
  /**

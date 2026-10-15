@@ -944,8 +944,8 @@ reason         = "`.obsidian/` is the vault configuration, and Ratatoskr never w
 
 ["commands/notes.file.write_requested.v1/invalid/inline-property-value.json"]
 rejected_by    = ["json_schema", "serde"]
-error_contains = 'expected struct BlobRef'
-reason         = "A frontmatter value is note content; it is uploaded first and named by a BlobRef, so no byte of a note enters Edge's outbox or JetStream."
+error_contains = 'expected struct ContentDigest'
+reason         = "A frontmatter value is note content; it is uploaded first and named by a BlobRef, so no byte of a note enters Edge's outbox or JetStream. serde reads the inline array as the BlobRef members in order, so its error names the second member's type."
 
 ["commands/notes.file.write_requested.v1/invalid/property-value-not-json.json"]
 rejected_by    = ["json_schema", "serde"]

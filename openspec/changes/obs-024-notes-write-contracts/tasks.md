@@ -16,6 +16,6 @@
 ## 4. Review corrections (workspace OBS-024 tasks 3.7 to 3.10)
 
 - [x] 4.1 RED: add `crates/notes-contracts/tests/write_request.rs::property_value_is_a_blob_ref`, change `valid/set-property.json` to `{"set": <BlobRef, application/json>}`, and add the invalid fixtures `inline-property-value.json` and `property-value-not-json.json` with their expectations. It MUST fail with "the Rust type accepts invalid/inline-property-value.json", because `property_change.set` takes any JSON value.
-- [ ] 4.2 GREEN: `property_change` is `{"set": <BlobRef>}` or `"remove"`; the schema requires `media_type` `application/json`, and `validate()` also requires the owner `ratatoskr-notes`. Remove `PropertyValue`. 4.1 passes.
+- [x] 4.2 GREEN: `property_change` is `{"set": <BlobRef>}` or `"remove"`; the schema requires `media_type` `application/json`, and `validate()` also requires the owner `ratatoskr-notes`. Remove `PropertyValue`. 4.1 passes.
 - [ ] 4.3 RED: in `crates/notes-contracts/tests/conflict.rs`, make `attachment_conflict_with_proposal_is_refused` assert both layers, add `proposal_requires_three_hashes`, and declare `json_schema` for `attachment-with-proposal.json` and `proposal-without-base.json`. They MUST fail with "the generated schema accepts", because the merge-proposal rules are serde only.
 - [ ] 4.4 GREEN: the `ConflictRaised` schema is a `oneOf` of three closed shapes (text with a proposal and three hashes, text without a proposal, any other media type without a proposal). 4.3 passes, and the TypeScript projects the union.

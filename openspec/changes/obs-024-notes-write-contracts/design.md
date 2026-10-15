@@ -21,7 +21,11 @@ closed vocabularies, validated strings, unknown fields refused, cross-field rule
   `resolve_conflict`). Two members fail both layers.
 - **The content member is `blob`.** The lint bans the property names `content` and `value`, so the
   uploaded content is `blob` (as in `notes.file.changed.v1`) and the frontmatter change is
-  `property_change`: `{"set": <JSON value>}` or `"remove"`.
+  `property_change`: `{"set": <BlobRef>}` or `"remove"`.
+- **A frontmatter value is a blob.** The workspace keeps the stricter rule that no byte of a note
+  enters Edge's outbox or JetStream, so the value of `set_property` is uploaded first as one JSON
+  document and named by a `BlobRef` with `media_type` `application/json`. The schema states the
+  media type; the owner `ratatoskr-notes` is a rule of the Rust type, as for every blob of a write.
 - **A resolution has two shapes.** `resolve_conflict` is `{conflict_id, choice}` for `keep_current`,
   `keep_writer` and `accept_merge`, and `{conflict_id, choice: "custom", blob}` for `custom`. The
   hand-written schema is a `oneOf` of these two objects, so the JSON Schema also refuses `custom`
@@ -50,8 +54,8 @@ closed vocabularies, validated strings, unknown fields refused, cross-field rule
 - The JSON Schema accepts a conflict event that breaks a cross-field rule, and a write whose blob
   belongs to another service. A consumer that validates only with the schema must also run the Rust
   type, as for `notes.file.changed.v1`.
-- `property_change.set` carries a frontmatter value, which is note content, in the command. The
-  workspace spec asks for a JSON value there.
+- The workspace spec says "a JSON value" for `set_property`. This change carries it as an uploaded
+  JSON document instead, so a producer that sends the value inline is refused.
 
 ## Migration Plan
 
