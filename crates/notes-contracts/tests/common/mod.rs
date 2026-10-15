@@ -169,6 +169,21 @@ impl ContractUnderTest {
         );
     }
 
+    /// Asserts that the Rust type refuses `invalid/<name>` with an error that contains `reason`.
+    /// The schema layer is not asked: a cross-field rule is serde only.
+    pub(crate) fn assert_refused_by_type(&self, name: &str, reason: &str) {
+        let tail = format!("invalid/{name}");
+        let payload = self.fixture(&tail);
+        match (self.roundtrip)(&payload) {
+            Ok(_) => panic!("{}: the Rust type accepts {tail}", self.contract),
+            Err(error) => assert!(
+                error.contains(reason),
+                "{}: {tail} is refused for another reason: {error}",
+                self.contract
+            ),
+        }
+    }
+
     /// Asserts that the Rust type and the generated schema both accept `valid/<name>`, and that
     /// the Rust type gives back every member.
     pub(crate) fn assert_accepted_by_both(&self, name: &str) {

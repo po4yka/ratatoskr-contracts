@@ -1,0 +1,14 @@
+{
+  "conflict_id": "018f0000-0000-7000-8000-000000000e01",
+  "operation_id": "018f0000-0000-7000-8000-000000000d01",
+  "connection_id": "018f0000-0000-7000-8000-000000000b01",
+  "path": "Projects/Plan.md",
+  "origin": "platform",
+  "media_type": "text/markdown",
+  "current_hash": "3c4d5e6f708192a33c4d5e6f708192a33c4d5e6f708192a33c4d5e6f708192a3",
+  "writer_hash": "1f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a7081",
+  "merge_proposal": {
+    "merged_hash": "4d5e6f708192a3b44d5e6f708192a3b44d5e6f708192a3b44d5e6f708192a3b4",
+    "has_overlapping_hunks": false
+  }
+}

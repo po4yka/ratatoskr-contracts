@@ -1,0 +1,12 @@
+{
+  "conflict_id": "018f0000-0000-7000-8000-000000000e01",
+  "operation_id": "018f0000-0000-7000-8000-000000000d01",
+  "connection_id": "018f0000-0000-7000-8000-000000000b01",
+  "path": "Projects/Plan.md",
+  "origin": "platform",
+  "media_type": "text/markdown",
+  "base_hash": "0a1b2c3d4e5f60710a1b2c3d4e5f60710a1b2c3d4e5f60710a1b2c3d4e5f6071",
+  "current_hash": "3c4d5e6f708192a33c4d5e6f708192a33c4d5e6f708192a33c4d5e6f708192a3",
+  "writer_hash": "1f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a70811f2e3d4c5b6a7081",
+  "text": "# Plan\n\nShip the write path.\n"
+}
