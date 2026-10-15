@@ -13,7 +13,8 @@ fn raised() -> &'static ContractUnderTest {
 }
 
 /// Notes proposes a three-way merge only for Markdown and plain text. A conflict on a binary
-/// file that carries a merge proposal is refused.
+/// file that carries a merge proposal is refused by the Rust type and by the schema, so a
+/// schema-only consumer sees the rule too.
 #[test]
 fn attachment_conflict_with_proposal_is_refused() {
     let contract = raised();
@@ -22,6 +23,20 @@ fn attachment_conflict_with_proposal_is_refused() {
         "attachment-with-proposal.json",
         "merge_proposal is allowed only for text/markdown and text/plain",
     );
+    contract.assert_refused_by_both("attachment-with-proposal.json");
+}
+
+/// A three-way merge reads the base, the current revision and the writer's content, so a
+/// proposal without one of the three hashes is refused by both layers.
+#[test]
+fn proposal_requires_three_hashes() {
+    let contract = raised();
+    contract.assert_accepted_by_both("create-collision.json");
+    contract.assert_refused_by_type(
+        "proposal-without-base.json",
+        "merge_proposal requires base_hash, current_hash and writer_hash",
+    );
+    contract.assert_refused_by_both("proposal-without-base.json");
 }
 
 /// A text conflict with its merge proposal goes through the Rust type and the schema whole.

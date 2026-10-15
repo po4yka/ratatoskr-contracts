@@ -51,6 +51,7 @@ fn custom_resolution_requires_content() {
     contract.assert_accepted_by_both("resolve-conflict.json");
     contract.assert_accepted_by_both("resolve-conflict-custom.json");
     contract.assert_refused_by_both("custom-resolution-without-content.json");
+    contract.assert_refused_by_both("blob-without-custom-resolution.json");
 }
 
 /// A path is relative to the vault root, has no `..` segment and is outside `.obsidian/`.
