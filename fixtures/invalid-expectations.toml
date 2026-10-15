@@ -988,7 +988,7 @@ reason         = "Write content is uploaded first and named by a BlobRef; note t
 ["events/notes.conflict.raised.v1/invalid/attachment-with-proposal.json"]
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'merge_proposal is allowed only for text/markdown and text/plain, found `image/png`'
-reason         = "Notes merges text by lines only; a proposal for a binary file would offer accept_merge for bytes that no merge produced. The schema cannot make one member depend on the value of another."
+reason         = "Notes merges text by lines only; a proposal for a binary file would offer accept_merge for bytes that no merge produced. The schema refuses it too: its oneOf allows merge_proposal only in the shape whose media_type is text/markdown or text/plain."
 
 ["events/notes.conflict.raised.v1/invalid/proposal-without-base.json"]
 rejected_by    = ["json_schema", "serde"]
