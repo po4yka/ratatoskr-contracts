@@ -1144,3 +1144,33 @@ reason         = "A manifest names each publication once."
 rejected_by    = ["json_schema", "serde"]
 error_contains = "capabilities names `pages.read` twice"
 reason         = "A manifest requests each capability once."
+
+["sites/page/invalid/link-url-double-quote.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no a double quote, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
+
+["sites/page/invalid/link-url-angle-bracket.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no an angle bracket, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
+
+["sites/page/invalid/link-url-backtick.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no a backtick, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
+
+["sites/page/invalid/link-url-line-separator.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no U+2028 LINE SEPARATOR, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
+
+["sites/page/invalid/image-url-single-quote.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no a single quote, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
+
+["sites/page/invalid/image-url-paragraph-separator.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link or image URL holds no U+2029 PARAGRAPH SEPARATOR, so it cannot break out of an HTML attribute or a JavaScript string in a site that inserts it."
