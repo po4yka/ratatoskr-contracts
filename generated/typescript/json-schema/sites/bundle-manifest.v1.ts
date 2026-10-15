@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:4b7b0cf736cb267917e74490384fd5c9a72168d56a4eee3a44cb791aedefaa81
+ * source_digest: sha256:45b0e1705a0e61d39667284adefb52805311693a3f9f87a204ee77e22e371ab4
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -86,6 +86,11 @@ export interface BundleFile {
  * forwarding to Edge; `.ratatoskr/`, the reserved path for SDK pages, is accepted (workspace
  * spec `site-bundles`). The path is in Unicode NFC; this contract does not check NFC, and the
  * producer normalises every path.
+ *
+ * The length bound is 1024 UTF-8 bytes, because a file system limits a path in bytes. The Rust
+ * type checks bytes. The `maxLength` of this schema is the same number, but JSON Schema counts
+ * characters, so the schema accepts a path of at most 1024 characters whose UTF-8 form is
+ * longer than 1024 bytes, and the Rust type refuses it. A producer checks the byte length.
  */
 export type BundlePath = string;
 

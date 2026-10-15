@@ -15,6 +15,11 @@ wire_string_newtype! {
     /// forwarding to Edge; `.ratatoskr/`, the reserved path for SDK pages, is accepted (workspace
     /// spec `site-bundles`). The path is in Unicode NFC; this contract does not check NFC, and the
     /// producer normalises every path.
+    ///
+    /// The length bound is 1024 UTF-8 bytes, because a file system limits a path in bytes. The Rust
+    /// type checks bytes. The `maxLength` of this schema is the same number, but JSON Schema counts
+    /// characters, so the schema accepts a path of at most 1024 characters whose UTF-8 form is
+    /// longer than 1024 bytes, and the Rust type refuses it. A producer checks the byte length.
     pub struct BundlePath {
         pattern  = concat!(
             "^(?:",

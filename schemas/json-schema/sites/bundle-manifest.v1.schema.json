@@ -50,7 +50,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:506d925560a97aa92039e6134fa43f9bf1fb71084e892a929f8d46fab38bd8eb",
+    "source_digest": "sha256:aea4de0ed5cb7efe1013c344a8d709713f64a07ab6a87ecd44c7708ad88590f3",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -88,7 +88,7 @@
     },
     "BundlePath": {
       "title": "BundlePath",
-      "description": "The path of one file of a site bundle, relative to the bundle root.\n\nSegments separated by `/`, at most 1024 UTF-8 bytes, no leading or trailing `/`, no empty,\n`.` or `..` segment, no backslash and no C0 or DEL control character, so a path never names\na file outside the bundle. The first segment is never `_r`, which the gateway reserves for\nforwarding to Edge; `.ratatoskr/`, the reserved path for SDK pages, is accepted (workspace\nspec `site-bundles`). The path is in Unicode NFC; this contract does not check NFC, and the\nproducer normalises every path.",
+      "description": "The path of one file of a site bundle, relative to the bundle root.\n\nSegments separated by `/`, at most 1024 UTF-8 bytes, no leading or trailing `/`, no empty,\n`.` or `..` segment, no backslash and no C0 or DEL control character, so a path never names\na file outside the bundle. The first segment is never `_r`, which the gateway reserves for\nforwarding to Edge; `.ratatoskr/`, the reserved path for SDK pages, is accepted (workspace\nspec `site-bundles`). The path is in Unicode NFC; this contract does not check NFC, and the\nproducer normalises every path.\n\nThe length bound is 1024 UTF-8 bytes, because a file system limits a path in bytes. The Rust\ntype checks bytes. The `maxLength` of this schema is the same number, but JSON Schema counts\ncharacters, so the schema accepts a path of at most 1024 characters whose UTF-8 form is\nlonger than 1024 bytes, and the Rust type refuses it. A producer checks the byte length.",
       "type": "string",
       "examples": [
         "index.html",

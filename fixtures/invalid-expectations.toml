@@ -1289,3 +1289,8 @@ reason         = "A bundle path names a file, so it has no trailing / and no emp
 rejected_by    = ["serde"]
 error_contains = "files must be in ascending order"
 reason         = "Each path appears once in a bundle. JSON Schema cannot state uniqueness by one member of an object, so the Rust type alone refuses the repeat."
+
+["sites/bundle-manifest/invalid/path-over-byte-limit.json"]
+rejected_by    = ["serde"]
+error_contains = "is 1026 bytes; the contract maximum is 1024"
+reason         = "A bundle path is at most 1024 UTF-8 bytes. This path has 516 characters and 1026 bytes: the schema's maxLength counts characters and accepts it, and the Rust type, which counts bytes, refuses it."

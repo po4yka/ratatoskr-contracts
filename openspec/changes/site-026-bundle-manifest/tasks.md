@@ -12,4 +12,4 @@
 ## 3. Review corrections (workspace SITE-026 tasks 3.5 and 3.6)
 
 - [x] 3.1 Add the invalid bundle-manifest fixtures `backslash`, `control-character`, `dot-segment`, `bare-forwarding-segment`, `trailing-slash` and `duplicate-path`, and the valid fixture `underscore-names` with `_redirects` and `a/_r/b`. No failing test first: the rules exist. Mutations of the path pattern and of the order rule make them fail.
-- [ ] 3.2 State the length unit of `BundlePath` in its rustdoc, add the boundary fixtures, and state in `README.md` that duplicate paths are refused by the Rust type only. No failing test first: the rules exist.
+- [x] 3.2 State the length unit of `BundlePath` in its rustdoc, add the boundary fixtures, and state in `README.md` that duplicate paths are refused by the Rust type only. No failing test first: the rules exist.
