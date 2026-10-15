@@ -75,6 +75,116 @@ pub(crate) fn blob(revision: &str) -> BlobRef {
     }
 }
 
+/// One notes contract under test: the Rust type and the generated schema of one message type.
+pub(crate) struct ContractUnderTest {
+    /// The contract name in the workspace store, e.g. `notes/write-request.v1`.
+    pub(crate) contract: &'static str,
+    /// The message type that the payload travels as.
+    pub(crate) message_type: &'static str,
+    /// The generated JSON Schema, relative to the repository root.
+    pub(crate) schema: &'static str,
+    /// The fixture directory, relative to the repository root.
+    pub(crate) fixtures: &'static str,
+    /// Parses a payload with the Rust type and serializes the typed value again.
+    pub(crate) roundtrip: fn(&serde_json::Value) -> Result<serde_json::Value, String>,
+}
+
+/// Every notes contract whose Rust type and generated schema exist.
+pub(crate) const CONTRACTS: &[ContractUnderTest] = &[];
+
+/// Parses `value` as `T` and serializes the typed value again.
+fn roundtrip_as<T>(value: &serde_json::Value) -> Result<serde_json::Value, String>
+where
+    T: serde::Serialize + serde::de::DeserializeOwned,
+{
+    let typed: T = serde_json::from_value(value.clone()).map_err(|error| error.to_string())?;
+    serde_json::to_value(&typed).map_err(|error| error.to_string())
+}
+
+/// The contract `contract` of the message type `message_type`. Panics with both names when the
+/// Rust type or its generated schema does not exist yet.
+pub(crate) fn contract(contract: &str, message_type: &str) -> &'static ContractUnderTest {
+    CONTRACTS
+        .iter()
+        .find(|entry| entry.contract == contract && entry.message_type == message_type)
+        .unwrap_or_else(|| {
+            panic!("{contract} ({message_type}) is not found: no Rust type and no generated schema")
+        })
+}
+
+/// The repository root: `crates/notes-contracts` is two levels below it.
+fn repo_root() -> std::path::PathBuf {
+    std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .ancestors()
+        .nth(2)
+        .expect("the crate sits two levels below the repository root")
+        .to_path_buf()
+}
+
+impl ContractUnderTest {
+    /// The fixture `tail` (for example `invalid/two-operations.json`) as JSON.
+    pub(crate) fn fixture(&self, tail: &str) -> serde_json::Value {
+        let path = repo_root().join(self.fixtures).join(tail);
+        let text = std::fs::read_to_string(&path)
+            .unwrap_or_else(|error| panic!("{}: {error}", path.display()));
+        serde_json::from_str(&text).unwrap_or_else(|error| panic!("{tail} is not JSON: {error}"))
+    }
+
+    /// The generated schema, compiled as draft 2020-12 with format validation.
+    fn validator(&self) -> jsonschema::Validator {
+        let path = repo_root().join(self.schema);
+        let text = std::fs::read_to_string(&path).unwrap_or_else(|error| {
+            panic!(
+                "{}: no generated schema at {}: {error}",
+                self.contract,
+                path.display()
+            )
+        });
+        let schema: serde_json::Value = serde_json::from_str(&text).expect("a schema is JSON");
+        jsonschema::options()
+            .should_validate_formats(true)
+            .build(&schema)
+            .expect("the generated schema compiles")
+    }
+
+    /// Asserts that the Rust type and the generated schema both refuse `invalid/<name>`.
+    pub(crate) fn assert_refused_by_both(&self, name: &str) {
+        let tail = format!("invalid/{name}");
+        let payload = self.fixture(&tail);
+        assert!(
+            (self.roundtrip)(&payload).is_err(),
+            "{}: the Rust type accepts {tail}",
+            self.contract
+        );
+        assert!(
+            self.validator().validate(&payload).is_err(),
+            "{}: the generated schema accepts {tail}",
+            self.contract
+        );
+    }
+
+    /// Asserts that the Rust type and the generated schema both accept `valid/<name>`, and that
+    /// the Rust type gives back every member.
+    pub(crate) fn assert_accepted_by_both(&self, name: &str) {
+        let tail = format!("valid/{name}");
+        let payload = self.fixture(&tail);
+        let reemitted = (self.roundtrip)(&payload).unwrap_or_else(|error| {
+            panic!("{}: the Rust type refuses {tail}: {error}", self.contract)
+        });
+        assert_eq!(
+            reemitted, payload,
+            "{}: {tail} does not round-trip",
+            self.contract
+        );
+        if let Err(error) = self.validator().validate(&payload) {
+            panic!(
+                "{}: the generated schema refuses {tail}: {error}",
+                self.contract
+            );
+        }
+    }
+}
+
 /// A rename, which carries **every** member: the drift-guard partner of the private wire mirror.
 /// A field added to [`FileChanged`] and not to the mirror is refused as unknown on parse, and the
 /// composition test fails the moment that happens.

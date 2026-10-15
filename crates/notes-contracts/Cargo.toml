@@ -19,6 +19,8 @@ thiserror.workspace  = true
 
 [dev-dependencies]
 serde_json.workspace = true
+# The write and conflict tests check each fixture against the generated schema too.
+jsonschema.workspace = true
 
 [lints]
 workspace = true
