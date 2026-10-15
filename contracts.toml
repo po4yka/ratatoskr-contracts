@@ -2237,3 +2237,47 @@ output         = "schemas/json-schema/sites/site-manifest.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:sites:v1:SiteManifest"
 unknown_policy = "reject"
 privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.release"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "public"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/release.rs"
+fixtures_dir   = "fixtures/sites/release"
+summary        = "Document: one immutable release of a site, served anonymously by the Content Delivery API. Names pages by slug and assets by SHA-256, never a vault path; its id is the SHA-256 of its RFC 8785 form; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::Release"
+output         = "schemas/json-schema/sites/release.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:Release"
+unknown_policy = "reject"
+privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.page"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "public"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-web"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/page.rs"
+fixtures_dir   = "fixtures/sites/page"
+summary        = "Document: one page of a release, served anonymously by the Content Delivery API. The body is an mdast-compatible tree with callout, wikiLink and embed, and the same body as sanitised HTML; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::Page"
+output         = "schemas/json-schema/sites/page.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:Page"
+unknown_policy = "reject"
+privacy        = "user_content"

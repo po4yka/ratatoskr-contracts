@@ -5,8 +5,8 @@
 
 ## 2. Release and page (workspace SITE-025 tasks 3.3 and 3.4)
 
-- [ ] 2.1 RED: add `fixtures/sites/release/valid/minimal.json`, `fixtures/sites/page/valid/{with-callout,with-wikilink,with-embed}.json` and `sites_fixtures.rs::release_and_page_fixtures_round_trip`. It MUST fail because `sites/release.v1` and `sites/page.v1` do not exist.
-- [ ] 2.2 GREEN: add `Release` and `Page` with the tree nodes, their rows, registry entries and renderers, regenerate, and update the pinned counts. 2.1 passes, and `fixtures/content/document` does not change.
+- [x] 2.1 RED: add `fixtures/sites/release/valid/minimal.json`, `fixtures/sites/page/valid/{with-callout,with-wikilink,with-embed}.json` and `sites_fixtures.rs::release_and_page_fixtures_round_trip`. It MUST fail because `sites/release.v1` and `sites/page.v1` do not exist.
+- [x] 2.2 GREEN: add `Release` and `Page` with the tree nodes, their rows, registry entries and renderers, regenerate, and update the pinned counts. 2.1 passes, and `fixtures/content/document` does not change.
 
 ## 3. Messages (workspace SITE-025 tasks 3.5 and 3.6)
 

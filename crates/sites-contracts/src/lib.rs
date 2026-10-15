@@ -7,7 +7,12 @@
 //!
 //! - [`SiteManifest`] — contract `sites/site-manifest.v1`, the file `ratatoskr-site.toml`: the
 //!   site id, one hostname, the publications and the requested [`SiteCapability`] set.
-//! - [`SiteId`] / [`PublicationId`] / [`Hostname`] — validated strings.
+//! - [`Release`] — contract `sites/release.v1`: one immutable release of a site, its pages by slug,
+//!   its assets by SHA-256 and its navigation. The release id is the SHA-256 of its RFC 8785 form.
+//! - [`Page`] — contract `sites/page.v1`: one page, with its body as an mdast-compatible tree
+//!   ([`PageRoot`], [`PageNode`], with `callout`, `wikiLink` and `embed`) and as sanitised HTML.
+//! - [`SiteId`] / [`PublicationId`] / [`Hostname`] / [`Slug`] / [`PageTitle`] / [`Anchor`] /
+//!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] — validated strings.
 //!
 //! # What is deliberately absent
 //!
@@ -19,6 +24,13 @@
 
 mod error;
 mod manifest;
+mod page;
+mod release;
 
 pub use crate::error::SitesContractError;
 pub use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, SiteManifest};
+pub use crate::page::{
+    Anchor, AssetRef, CalloutFold, CalloutKind, EmbedTarget, FrontmatterKey, ImageUrl, LinkUrl,
+    Page, PageNode, PageRoot, PageRootType, TableAlign,
+};
+pub use crate::release::{NavigationEntry, PageTitle, Release, ReleaseAsset, ReleasePage, Slug};

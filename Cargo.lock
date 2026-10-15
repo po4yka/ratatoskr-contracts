@@ -1583,6 +1583,7 @@ dependencies = [
  "regex",
  "schemars",
  "serde",
+ "serde_json",
  "thiserror",
 ]
 

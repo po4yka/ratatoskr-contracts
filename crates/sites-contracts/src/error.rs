@@ -19,4 +19,25 @@ pub enum SitesContractError {
         /// The repeated item.
         item: String,
     },
+    /// A list that must be sorted and hold each item once did not.
+    #[error("{list} must be in ascending order with each item once, but `{item}` breaks it")]
+    Unsorted {
+        /// The member that holds the list.
+        list: &'static str,
+        /// The first item out of order or repeated.
+        item: String,
+    },
+    /// A frontmatter field name was empty, longer than 255 characters or held a control
+    /// character.
+    #[error("frontmatter field name {key:?} is not a valid field name")]
+    FrontmatterKey {
+        /// The refused name.
+        key: String,
+    },
+    /// A navigation entry named a slug that no page of the release has.
+    #[error("navigation names `{slug}`, which is not a page of the release")]
+    NavigationSlugNotInRelease {
+        /// The slug the entry named.
+        slug: String,
+    },
 }

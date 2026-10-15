@@ -10,6 +10,8 @@ repository.workspace   = true
 [dependencies]
 ratatoskr-identifiers.workspace = true
 serde.workspace      = true
+# The frontmatter values of a page are any JSON value the note gives them.
+serde_json.workspace = true
 schemars.workspace   = true
 # The validated strings of `wire_string_newtype!` compile their pattern with `regex`.
 regex.workspace      = true
