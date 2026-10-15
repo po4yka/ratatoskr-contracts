@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:2010bf0285199a04b0b5e28f9571a3fc57fd6a0ae6e0d49aaa75fd47792fc6a1
+ * source_digest: sha256:cfda7343680616957adf124c06833fa27145d40545e87e40009a41a6803e62cd
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -103,8 +103,9 @@ export type DigestHex = string;
 export type EmbedTarget = { /** * The heading or block of that page. Absent for the whole page. */ anchor?: Anchor | null; kind: "page"; /** * The embedded page. */ slug: Slug; } | { /** * The alternative text that the author wrote in the published page. Absent when the * author wrote none. */ alt?: string | null; kind: "asset"; /** * The media type of the asset bytes. */ media_type: MediaType; /** * The lowercase hex SHA-256 of the asset bytes; the asset URL is `assets/<sha256>`. */ sha256: DigestHex; };
 
 /**
- * The source of an external image: an `https` or `http` URL. No white space and no control
- * character.
+ * The source of an external image: an `https` or `http` URL. No space, no control
+ * character, no `"`, `'`, `<`, `>` or backtick, and no U+2028 or U+2029, as for
+ * [`LinkUrl`].
  */
 export type ImageUrl = string;
 
@@ -112,7 +113,9 @@ export type ImageUrl = string;
  * The target of an external link: an `https`, `http` or `mailto` URL.
  *
  * A link to a page of the release is a `wikiLink` and an asset is an `embed`, so this type
- * takes no relative reference. No white space and no control character.
+ * takes no relative reference. No space, no control character, no `"`, `'`, `<`, `>` or
+ * backtick, and no U+2028 or U+2029, so the URL cannot leave an HTML attribute or a
+ * JavaScript string.
  */
 export type LinkUrl = string;
 

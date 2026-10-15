@@ -67,7 +67,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:ce9db5054f551690112a7ceccb675de0f12e90322a4cf7989095c10616363dfd",
+    "source_digest": "sha256:7a09b96a9b79300b7fc0e44e0c5936a9179befeeecf5b7d7a9e8f16af946fd8d",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -205,23 +205,23 @@
     },
     "ImageUrl": {
       "title": "ImageUrl",
-      "description": "The source of an external image: an `https` or `http` URL. No white space and no control\ncharacter.",
+      "description": "The source of an external image: an `https` or `http` URL. No space, no control\ncharacter, no `\"`, `'`, `<`, `>` or backtick, and no U+2028 or U+2029, as for\n[`LinkUrl`].",
       "type": "string",
       "examples": [
         "https://example.test/logo.png"
       ],
       "maxLength": 2048,
-      "pattern": "^https?://[^ \\x00-\\x1f\\x7f]+$"
+      "pattern": "^https?://[^ \"'<>`  \\x00-\\x1f\\x7f]+$"
     },
     "LinkUrl": {
       "title": "LinkUrl",
-      "description": "The target of an external link: an `https`, `http` or `mailto` URL.\n\nA link to a page of the release is a `wikiLink` and an asset is an `embed`, so this type\ntakes no relative reference. No white space and no control character.",
+      "description": "The target of an external link: an `https`, `http` or `mailto` URL.\n\nA link to a page of the release is a `wikiLink` and an asset is an `embed`, so this type\ntakes no relative reference. No space, no control character, no `\"`, `'`, `<`, `>` or\nbacktick, and no U+2028 or U+2029, so the URL cannot leave an HTML attribute or a\nJavaScript string.",
       "type": "string",
       "examples": [
         "https://example.test/about"
       ],
       "maxLength": 2048,
-      "pattern": "^(?:https?://|mailto:)[^ \\x00-\\x1f\\x7f]+$"
+      "pattern": "^(?:https?://|mailto:)[^ \"'<>`  \\x00-\\x1f\\x7f]+$"
     },
     "MediaType": {
       "title": "MediaType",

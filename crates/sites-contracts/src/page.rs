@@ -44,19 +44,30 @@ wire_string_newtype! {
     /// The target of an external link: an `https`, `http` or `mailto` URL.
     ///
     /// A link to a page of the release is a `wikiLink` and an asset is an `embed`, so this type
-    /// takes no relative reference. No white space and no control character.
+    /// takes no relative reference. No space, no control character, no `"`, `'`, `<`, `>` or
+    /// backtick, and no U+2028 or U+2029, so the URL cannot leave an HTML attribute or a
+    /// JavaScript string.
     pub struct LinkUrl {
-        pattern  = r"^(?:https?://|mailto:)[^ \x00-\x1f\x7f]+$",
+        pattern  = concat!(
+            r"^(?:https?://|mailto:)[^ ",
+            "\"'<>`\u{2028}\u{2029}",
+            r"\x00-\x1f\x7f]+$",
+        ),
         max_len  = 2048,
         examples = ["https://example.test/about"],
     }
 }
 
 wire_string_newtype! {
-    /// The source of an external image: an `https` or `http` URL. No white space and no control
-    /// character.
+    /// The source of an external image: an `https` or `http` URL. No space, no control
+    /// character, no `"`, `'`, `<`, `>` or backtick, and no U+2028 or U+2029, as for
+    /// [`LinkUrl`].
     pub struct ImageUrl {
-        pattern  = r"^https?://[^ \x00-\x1f\x7f]+$",
+        pattern  = concat!(
+            r"^https?://[^ ",
+            "\"'<>`\u{2028}\u{2029}",
+            r"\x00-\x1f\x7f]+$",
+        ),
         max_len  = 2048,
         examples = ["https://example.test/logo.png"],
     }
