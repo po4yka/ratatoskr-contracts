@@ -14,3 +14,9 @@
 - [x] 3.2 GREEN: add `ReleaseBuildRequested`, `ReleasePublished` and `SiteApprovalChanged` with their rows and fixtures, add `ratatoskr-sites` to the consumers of `notes.file.changed.v1` and `notes.vault.disconnected.v1`, regenerate, and update the pinned counts. 3.1 passes and `cargo test --workspace` passes.
 - [x] 3.3 Document the three messages in the `README.md` subject table. No test: documentation.
 - [x] 3.4 Bless the public API baseline of `ratatoskr-sites-contracts` with `cargo contracts api-write`. No test: a generated baseline; `cargo contracts api-check` verifies it.
+
+## 4. Follow-ups (workspace SITE-025 tasks 3.8 to 3.10)
+
+- [x] 4.1 RED: `live_message_types.rs::operation_reports_list_exactly_the_services_that_emit_them` expects `ratatoskr-notes` and `ratatoskr-sites` among the producers. It MUST fail because the row does not name them.
+- [x] 4.2 GREEN: add `ratatoskr-notes` and `ratatoskr-sites` to the producers of `platform.operation_reported`. 4.1 passes.
+- [x] 4.3 Add `sites_fixtures.rs::release_fixture_names_each_page_fixture_by_its_sha256`. No failing test first: the fixtures already agree. A changed byte in a page fixture makes it fail.
