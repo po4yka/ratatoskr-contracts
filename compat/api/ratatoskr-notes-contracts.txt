@@ -12,7 +12,6 @@ impl core::clone::Clone for ratatoskr_notes_contracts::MergeProposal
 impl core::clone::Clone for ratatoskr_notes_contracts::NotesContractError
 impl core::clone::Clone for ratatoskr_notes_contracts::PropertyChange
 impl core::clone::Clone for ratatoskr_notes_contracts::PropertyKey
-impl core::clone::Clone for ratatoskr_notes_contracts::PropertyValue
 impl core::clone::Clone for ratatoskr_notes_contracts::RelocateFile
 impl core::clone::Clone for ratatoskr_notes_contracts::ResolutionChoice
 impl core::clone::Clone for ratatoskr_notes_contracts::ResolveConflict
@@ -37,7 +36,6 @@ impl core::cmp::Eq for ratatoskr_notes_contracts::MergeProposal
 impl core::cmp::Eq for ratatoskr_notes_contracts::NotesContractError
 impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyChange
 impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyKey
-impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyValue
 impl core::cmp::Eq for ratatoskr_notes_contracts::RelocateFile
 impl core::cmp::Eq for ratatoskr_notes_contracts::ResolutionChoice
 impl core::cmp::Eq for ratatoskr_notes_contracts::ResolveConflict
@@ -70,7 +68,6 @@ impl core::cmp::PartialEq for ratatoskr_notes_contracts::MergeProposal
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::NotesContractError
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyChange
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyKey
-impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyValue
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::RelocateFile
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::ResolutionChoice
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::ResolveConflict
@@ -114,7 +111,6 @@ impl core::fmt::Debug for ratatoskr_notes_contracts::MergeProposal
 impl core::fmt::Debug for ratatoskr_notes_contracts::NotesContractError
 impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyChange
 impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyKey
-impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyValue
 impl core::fmt::Debug for ratatoskr_notes_contracts::RelocateFile
 impl core::fmt::Debug for ratatoskr_notes_contracts::ResolutionChoice
 impl core::fmt::Debug for ratatoskr_notes_contracts::ResolveConflict
@@ -156,7 +152,6 @@ impl core::marker::Freeze for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Freeze for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::Freeze for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::Freeze for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::Freeze for ratatoskr_notes_contracts::ResolveConflict
@@ -181,7 +176,6 @@ impl core::marker::Send for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Send for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::Send for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::Send for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::Send for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::Send for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::Send for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::Send for ratatoskr_notes_contracts::ResolveConflict
@@ -206,7 +200,6 @@ impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::MergePropo
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ResolveConflict
@@ -231,7 +224,6 @@ impl core::marker::Sync for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Sync for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::Sync for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::Sync for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::Sync for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::Sync for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::Sync for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::Sync for ratatoskr_notes_contracts::ResolveConflict
@@ -256,7 +248,6 @@ impl core::marker::Unpin for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Unpin for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::Unpin for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::Unpin for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::Unpin for ratatoskr_notes_contracts::ResolveConflict
@@ -281,7 +272,6 @@ impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::NotesContractError
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyChange
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyKey
-impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyValue
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::RelocateFile
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ResolveConflict
@@ -306,7 +296,6 @@ impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::Merg
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::NotesContractError
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyChange
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyKey
-impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyValue
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::RelocateFile
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ResolutionChoice
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ResolveConflict
@@ -331,7 +320,6 @@ impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::MergePr
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::NotesContractError
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyChange
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyKey
-impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyValue
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::RelocateFile
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ResolutionChoice
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ResolveConflict
@@ -378,7 +366,6 @@ impl schemars::JsonSchema for ratatoskr_notes_contracts::FileWriteRequested
 impl schemars::JsonSchema for ratatoskr_notes_contracts::MergeProposal
 impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyChange
 impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyKey
-impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyValue
 impl schemars::JsonSchema for ratatoskr_notes_contracts::RelocateFile
 impl schemars::JsonSchema for ratatoskr_notes_contracts::ResolutionChoice
 impl schemars::JsonSchema for ratatoskr_notes_contracts::ResolveConflict
@@ -402,7 +389,6 @@ impl serde_core::ser::Serialize for ratatoskr_notes_contracts::FileWriteRequeste
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::MergeProposal
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyChange
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyKey
-impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyValue
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::RelocateFile
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ResolutionChoice
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ResolveConflict
@@ -426,7 +412,6 @@ impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::FileWr
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::MergeProposal
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyChange
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyKey
-impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyValue
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::RelocateFile
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ResolutionChoice
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ResolveConflict
@@ -451,7 +436,6 @@ impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::MergeProposal w
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::From<T>
-impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::From<T>
@@ -476,7 +460,6 @@ impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::MergeProposa
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::Into<T>
-impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::Into<T>
@@ -501,7 +484,6 @@ impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::MergeProposa
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::TryFrom<T>
-impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::TryFrom<T>
@@ -526,7 +508,6 @@ impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::MergeProposal wher
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
-impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
@@ -557,7 +538,6 @@ impl<T> core::any::Any for ratatoskr_notes_contracts::MergeProposal where T: 'st
 impl<T> core::any::Any for ratatoskr_notes_contracts::NotesContractError where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyChange where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyKey where T: 'static + ?core::marker::Sized
-impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyValue where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::RelocateFile where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::ResolutionChoice where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::ResolveConflict where T: 'static + ?core::marker::Sized
@@ -582,7 +562,6 @@ impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::MergeProposal whe
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::NotesContractError where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyChange where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyKey where T: ?core::marker::Sized
-impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyValue where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::RelocateFile where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ResolutionChoice where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ResolveConflict where T: ?core::marker::Sized
@@ -607,7 +586,6 @@ impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::MergeProposal 
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::NotesContractError where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyChange where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyKey where T: ?core::marker::Sized
-impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyValue where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::RelocateFile where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ResolutionChoice where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ResolveConflict where T: ?core::marker::Sized
@@ -632,7 +610,6 @@ impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::MergeProposal 
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
-impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
@@ -657,7 +634,6 @@ impl<T> core::convert::From<T> for ratatoskr_notes_contracts::MergeProposal
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::NotesContractError
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyChange
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyKey
-impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyValue
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::RelocateFile
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ResolutionChoice
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ResolveConflict
@@ -682,7 +658,6 @@ impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::MergeProposal where T
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
-impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
@@ -706,7 +681,6 @@ impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::FileWrit
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::MergeProposal where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyChange where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyKey where T: for<'de> serde_core::de::Deserialize<'de>
-impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyValue where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::RelocateFile where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ResolutionChoice where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ResolveConflict where T: for<'de> serde_core::de::Deserialize<'de>
@@ -928,7 +902,6 @@ pub fn ratatoskr_notes_contracts::PropertyChange::deserialize<__D>(__D) -> core:
 pub fn ratatoskr_notes_contracts::PropertyChange::eq(&self, &ratatoskr_notes_contracts::PropertyChange) -> bool
 pub fn ratatoskr_notes_contracts::PropertyChange::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
 pub fn ratatoskr_notes_contracts::PropertyChange::from(T) -> T
-pub fn ratatoskr_notes_contracts::PropertyChange::inline_schema() -> bool
 pub fn ratatoskr_notes_contracts::PropertyChange::into(self) -> U
 pub fn ratatoskr_notes_contracts::PropertyChange::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
 pub fn ratatoskr_notes_contracts::PropertyChange::schema_id() -> alloc::borrow::Cow<'static, str>
@@ -964,24 +937,6 @@ pub fn ratatoskr_notes_contracts::PropertyKey::try_from(U) -> core::result::Resu
 pub fn ratatoskr_notes_contracts::PropertyKey::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_notes_contracts::PropertyKey::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_notes_contracts::PropertyKey::type_id(&self) -> core::any::TypeId
-pub fn ratatoskr_notes_contracts::PropertyValue::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
-pub fn ratatoskr_notes_contracts::PropertyValue::borrow(&self) -> &T
-pub fn ratatoskr_notes_contracts::PropertyValue::borrow_mut(&mut self) -> &mut T
-pub fn ratatoskr_notes_contracts::PropertyValue::clone(&self) -> ratatoskr_notes_contracts::PropertyValue
-pub fn ratatoskr_notes_contracts::PropertyValue::clone_into(&self, &mut T)
-pub fn ratatoskr_notes_contracts::PropertyValue::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
-pub fn ratatoskr_notes_contracts::PropertyValue::eq(&self, &ratatoskr_notes_contracts::PropertyValue) -> bool
-pub fn ratatoskr_notes_contracts::PropertyValue::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
-pub fn ratatoskr_notes_contracts::PropertyValue::from(T) -> T
-pub fn ratatoskr_notes_contracts::PropertyValue::into(self) -> U
-pub fn ratatoskr_notes_contracts::PropertyValue::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
-pub fn ratatoskr_notes_contracts::PropertyValue::schema_id() -> alloc::borrow::Cow<'static, str>
-pub fn ratatoskr_notes_contracts::PropertyValue::schema_name() -> alloc::borrow::Cow<'static, str>
-pub fn ratatoskr_notes_contracts::PropertyValue::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
-pub fn ratatoskr_notes_contracts::PropertyValue::to_owned(&self) -> T
-pub fn ratatoskr_notes_contracts::PropertyValue::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
-pub fn ratatoskr_notes_contracts::PropertyValue::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
-pub fn ratatoskr_notes_contracts::PropertyValue::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_notes_contracts::RelocateFile::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_notes_contracts::RelocateFile::borrow(&self) -> &T
 pub fn ratatoskr_notes_contracts::RelocateFile::borrow_mut(&mut self) -> &mut T
@@ -1322,9 +1277,11 @@ pub ratatoskr_notes_contracts::NotesContractError::MissingBlob
 pub ratatoskr_notes_contracts::NotesContractError::MissingBlob::change_kind: &'static str
 pub ratatoskr_notes_contracts::NotesContractError::PreviousPathWithoutRename
 pub ratatoskr_notes_contracts::NotesContractError::PreviousPathWithoutRename::change_kind: &'static str
+pub ratatoskr_notes_contracts::NotesContractError::PropertyBlobNotJson
+pub ratatoskr_notes_contracts::NotesContractError::PropertyBlobNotJson::media_type: alloc::string::String
 pub ratatoskr_notes_contracts::NotesContractError::RenameWithoutPreviousPath
 pub ratatoskr_notes_contracts::PropertyChange::Remove
-pub ratatoskr_notes_contracts::PropertyChange::Set(ratatoskr_notes_contracts::PropertyValue)
+pub ratatoskr_notes_contracts::PropertyChange::Set(ratatoskr_identifiers::blob::BlobRef)
 pub ratatoskr_notes_contracts::RelocateFile::base_hash: ratatoskr_identifiers::blob::DigestHex
 pub ratatoskr_notes_contracts::RelocateFile::path: ratatoskr_notes_contracts::VaultWritePath
 pub ratatoskr_notes_contracts::RelocateFile::target_path: ratatoskr_notes_contracts::VaultWritePath
@@ -1366,7 +1323,6 @@ pub struct ratatoskr_notes_contracts::FileChanged
 pub struct ratatoskr_notes_contracts::FileWriteRequested
 pub struct ratatoskr_notes_contracts::MergeProposal
 pub struct ratatoskr_notes_contracts::PropertyKey(_)
-pub struct ratatoskr_notes_contracts::PropertyValue(pub serde_json::value::Value)
 pub struct ratatoskr_notes_contracts::RelocateFile
 pub struct ratatoskr_notes_contracts::ResolveConflict
 pub struct ratatoskr_notes_contracts::SetFileProperty
@@ -1412,9 +1368,6 @@ pub type ratatoskr_notes_contracts::PropertyKey::Error = <U as core::convert::Tr
 pub type ratatoskr_notes_contracts::PropertyKey::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::PropertyKey::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_notes_contracts::PropertyKey::Owned = T
-pub type ratatoskr_notes_contracts::PropertyValue::Error = <U as core::convert::TryFrom<T>>::Error
-pub type ratatoskr_notes_contracts::PropertyValue::Error = core::convert::Infallible
-pub type ratatoskr_notes_contracts::PropertyValue::Owned = T
 pub type ratatoskr_notes_contracts::RelocateFile::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_notes_contracts::RelocateFile::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::RelocateFile::Owned = T
@@ -1473,7 +1426,6 @@ pub unsafe fn ratatoskr_notes_contracts::MergeProposal::clone_to_uninit(&self, *
 pub unsafe fn ratatoskr_notes_contracts::NotesContractError::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::PropertyChange::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::PropertyKey::clone_to_uninit(&self, *mut u8)
-pub unsafe fn ratatoskr_notes_contracts::PropertyValue::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::RelocateFile::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::ResolutionChoice::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::ResolveConflict::clone_to_uninit(&self, *mut u8)
