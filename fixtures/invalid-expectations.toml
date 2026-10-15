@@ -1024,3 +1024,123 @@ reason         = "A thematicBreak node has no member but its type; any other mem
 rejected_by    = ["json_schema", "serde"]
 error_contains = "unknown field `note`"
 reason         = "A break node has no member but its type; any other member is refused, so no text can ride along in the tree."
+
+["sites/release/invalid/pages-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "pages must be in ascending order"
+reason         = "The release lists its pages in ascending order of slug, so one content gives one release id."
+
+["sites/release/invalid/pages-duplicate.json"]
+rejected_by    = ["serde"]
+error_contains = "pages must be in ascending order"
+reason         = "A slug is unique in its release; a second page with the same slug is refused."
+
+["sites/release/invalid/assets-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "assets must be in ascending order"
+reason         = "The release lists its assets in ascending order of SHA-256, so one content gives one release id."
+
+["sites/release/invalid/assets-duplicate.json"]
+rejected_by    = ["serde"]
+error_contains = "assets must be in ascending order"
+reason         = "An asset appears once in a release; a repeated SHA-256 is refused."
+
+["sites/release/invalid/publication-ids-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "publication_ids must be in ascending order"
+reason         = "The release lists its publications in ascending order, so one content gives one release id."
+
+["sites/release/invalid/publication-ids-duplicate.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "publication_ids must be in ascending order"
+reason         = "A publication appears once in a release; the schema states uniqueItems and the Rust type refuses the repeat."
+
+["sites/release/invalid/navigation-slug-not-a-page.json"]
+rejected_by    = ["serde"]
+error_contains = "which is not a page of the release"
+reason         = "A navigation entry may open only a page of the same release, so the tree cannot name a page that is not published."
+
+["sites/page/invalid/links-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "links must be in ascending order"
+reason         = "The links of a page are in ascending order, each once."
+
+["sites/page/invalid/backlinks-duplicate.json"]
+rejected_by    = ["serde"]
+error_contains = "backlinks must be in ascending order"
+reason         = "The backlinks of a page are in ascending order, each once; a repeat is refused."
+
+["sites/page/invalid/assets-unsorted.json"]
+rejected_by    = ["serde"]
+error_contains = "assets must be in ascending order"
+reason         = "The assets of a page are in ascending order of SHA-256, each once."
+
+["sites/page/invalid/frontmatter-key-control.json"]
+rejected_by    = ["serde"]
+error_contains = "is not a valid field name"
+reason         = "A frontmatter field name has no control character; the TypeScript projection has no form for a key pattern, so the Rust type alone checks it."
+
+["sites/page/invalid/node-raw-html.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown variant `html`"
+reason         = "The page tree has no raw HTML node; raw HTML reaches only the sanitised html field."
+
+["sites/page/invalid/node-unknown-type.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown variant `dataviewQuery`"
+reason         = "The node set is closed; a plugin block is a code node, never a node type of its own."
+
+["sites/page/invalid/link-javascript-url.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link URL is https, http or mailto; a javascript: URL is refused."
+
+["sites/page/invalid/link-data-url.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "A link URL is https, http or mailto; a data: URL is refused."
+
+["sites/page/invalid/image-javascript-url.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "An image URL is https or http; a javascript: URL is refused."
+
+["sites/page/invalid/image-data-url.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "An image URL is https or http; a data: URL is refused."
+
+["sites/page/invalid/embed-unknown-target-kind.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown variant `note`"
+reason         = "An embed shows a page or an asset of the release and nothing else."
+
+["sites/page/invalid/embed-asset-without-media-type.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `media_type`"
+reason         = "An asset embed names the media type of the asset bytes."
+
+["sites/page/invalid/text-unknown-member.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `html`"
+reason         = "A text node has only its value; any other member is refused, so no markup can ride along in the tree."
+
+["sites/page/invalid/heading-depth-seven.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "heading depth must be 1 to 6"
+reason         = "A heading level is 1 to 6, as in Markdown."
+
+["sites/site-manifest/invalid/publications-empty.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "publications must name at least one publication"
+reason         = "A manifest names at least one publication, or the site could read nothing."
+
+["sites/site-manifest/invalid/publications-duplicate.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "publications names `handbook` twice"
+reason         = "A manifest names each publication once."
+
+["sites/site-manifest/invalid/capabilities-duplicate.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "capabilities names `pages.read` twice"
+reason         = "A manifest requests each capability once."

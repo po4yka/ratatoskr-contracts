@@ -1,0 +1,52 @@
+{
+  "site_id": "docs",
+  "publication_ids": [
+    "handbook"
+  ],
+  "pages": [
+    {
+      "slug": "handbook/links",
+      "title": "Links",
+      "page_sha256": "4c75637c1694ae5558c22d6a76b03222ade803235f772ffa9f689e361437f011"
+    },
+    {
+      "slug": "handbook/diagram",
+      "title": "Diagram",
+      "page_sha256": "cf5dabf8b89670c2663b070a8e487b2ead301881b677bf2e0fde4fb82f323cb5"
+    },
+    {
+      "slug": "handbook/start",
+      "title": "Start here",
+      "page_sha256": "5482cddfc8034ec7ba287440aa6e1d752b0e17d3bab3001ba1b0d767c0ad22e6"
+    }
+  ],
+  "assets": [
+    {
+      "sha256": "ced0e0da2723c17bce89eac3ffc3107ca7753d95c6abc28ce29214a19667728d",
+      "media_type": "image/png",
+      "size_bytes": 23
+    }
+  ],
+  "navigation": [
+    {
+      "title": "Handbook",
+      "children": [
+        {
+          "title": "Start here",
+          "slug": "handbook/start",
+          "children": []
+        },
+        {
+          "title": "Links",
+          "slug": "handbook/links",
+          "children": []
+        },
+        {
+          "title": "Diagram",
+          "slug": "handbook/diagram",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

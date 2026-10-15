@@ -1,0 +1,25 @@
+{
+  "slug": "handbook/rules",
+  "title": "Rules",
+  "frontmatter": {},
+  "ast": {
+    "type": "root",
+    "children": [
+      {
+        "type": "heading",
+        "depth": 7,
+        "anchor": "rules",
+        "children": [
+          {
+            "type": "text",
+            "value": "Rules"
+          }
+        ]
+      }
+    ]
+  },
+  "html": "<p>Rules</p>\n",
+  "links": [],
+  "backlinks": [],
+  "assets": []
+}

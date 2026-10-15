@@ -1,0 +1,8 @@
+{
+  "site_id": "docs",
+  "hostname": "docs.example.test",
+  "publications": [],
+  "capabilities": [
+    "pages.read"
+  ]
+}
