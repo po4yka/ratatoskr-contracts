@@ -337,6 +337,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_sites_contracts::BundleManifest" => {
             render!(ratatoskr_sites_contracts::BundleManifest)
         }
+        "ratatoskr_sites_contracts::DeployActivated" => {
+            render!(ratatoskr_sites_contracts::DeployActivated)
+        }
+        "ratatoskr_sites_contracts::DeployStored" => {
+            render!(ratatoskr_sites_contracts::DeployStored)
+        }
         "ratatoskr_sites_contracts::Page" => render!(ratatoskr_sites_contracts::Page),
         "ratatoskr_sites_contracts::Release" => render!(ratatoskr_sites_contracts::Release),
         "ratatoskr_sites_contracts::ReleaseBuildRequested" => {

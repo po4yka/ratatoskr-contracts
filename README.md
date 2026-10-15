@@ -235,6 +235,17 @@ The crate also carries the write path of changeset OBS-024 (workspace spec `note
 
 The release event names the site, the release id, the publications, the page count and `published_at`, and never a title, slug, path or content. The approval event names the site, the manifest SHA-256, the approved capabilities, the hostname and the state, `approved` or `withdrawn`.
 
+### Site bundles and deploys
+
+Changeset SITE-026 (workspace change `add-site-gateway-hosting`, spec `site-bundles`) adds three shapes to `ratatoskr-sites-contracts`. `sites/bundle-manifest.v1` is `ratatoskr-bundle.json` at the root of a site bundle: the site id, the repository as `owner/name`, the full 40-hex commit, the entry document, whether the entry fallback is on, and every file, sorted by path, with its path, `size_bytes`, `sha256` and `hashed`. A path is relative, has no empty, `.` or `..` segment, and never starts with `_r/`, which the gateway reserves for forwarding; `.ratatoskr/` holds the SDK pages and is accepted. The entry document is one of the files.
+
+| Route | Request body | Response |
+|---|---|---|
+| `POST /v1/sites/{site}/deploys` | the bundle archive, `application/x-tar` | `sites/deploy-stored.v1`: `site_id`, `commit`, `file_count`, `size_bytes`, `created` |
+| `POST /v1/sites/{site}/deploys/{commit}/activate` | none | `sites/deploy-activated.v1`: `site_id`, `current_commit`, `previous_commit` when one exists |
+
+The commit is the deploy id: a deploy is idempotent on the site and the commit, and `created` is `false` when an earlier deploy of the commit is returned. Both routes are of the Edge route class `deploy`.
+
 ## Proposed development workflow
 
 The repository will publish versioned Rust crates and generated artifacts. A typical contract change will:

@@ -2391,3 +2391,47 @@ output         = "schemas/json-schema/sites/bundle-manifest.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:sites:v1:BundleManifest"
 unknown_policy = "reject"
 privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.deploy_stored"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-site-sdk"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/deploy.rs"
+fixtures_dir   = "fixtures/sites/deploy-stored"
+summary        = "Response: POST /v1/sites/{site}/deploys stored the bundle of one commit, the deploy id. Names the site, the commit, the file count, the size and whether this request created it; the request body is the bundle archive, application/x-tar; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::DeployStored"
+output         = "schemas/json-schema/sites/deploy-stored.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:DeployStored"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.deploy_activated"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-site-sdk"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/deploy.rs"
+fixtures_dir   = "fixtures/sites/deploy-activated"
+summary        = "Response: POST /v1/sites/{site}/deploys/{commit}/activate made the deploy of one commit current. Names the site and the current and previous commits; the request has no body; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::DeployActivated"
+output         = "schemas/json-schema/sites/deploy-activated.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:DeployActivated"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
