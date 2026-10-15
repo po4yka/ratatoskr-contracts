@@ -328,3 +328,51 @@ fn release_and_page_name_their_readers() {
         );
     }
 }
+
+/// The responses of the deploy routes: (contract name, generated schema, Rust type, fixture folder).
+const DEPLOY_RESPONSES: [(&str, &str, &str, &str); 2] = [
+    (
+        "sites/deploy-stored.v1",
+        "schemas/json-schema/sites/deploy-stored.v1.schema.json",
+        "ratatoskr_sites_contracts::DeployStored",
+        "fixtures/sites/deploy-stored/valid",
+    ),
+    (
+        "sites/deploy-activated.v1",
+        "schemas/json-schema/sites/deploy-activated.v1.schema.json",
+        "ratatoskr_sites_contracts::DeployActivated",
+        "fixtures/sites/deploy-activated/valid",
+    ),
+];
+
+/// Workspace spec `site-bundles`: `POST /v1/sites/{site}/deploys` answers `DeployStored` and
+/// `POST .../deploys/{commit}/activate` answers `DeployActivated`. Each valid fixture deserialises
+/// into its Rust type and serialises back to the same canonical bytes.
+#[test]
+fn deploy_responses_round_trip() {
+    let missing: Vec<&str> = DEPLOY_RESPONSES
+        .iter()
+        .filter(|(_, schema, ..)| generated_schema(schema).is_none())
+        .map(|(name, ..)| *name)
+        .collect();
+    assert!(
+        missing.is_empty(),
+        "{missing:?} do not exist: nothing generates their schemas"
+    );
+
+    for (name, _, rust_path, folder) in DEPLOY_RESPONSES {
+        let fixtures = json_fixtures(folder);
+        assert!(!fixtures.is_empty(), "{name} has no fixture under {folder}");
+        for (path, parsed) in fixtures {
+            let reemitted = roundtrip(rust_path, &parsed)
+                .unwrap_or_else(|| panic!("{rust_path} is not in the registry"))
+                .unwrap_or_else(|error| panic!("{path} is refused by {rust_path}: {error}"));
+            let before = ratatoskr_identifiers::canonical_json(&parsed).expect("JSON renders");
+            let after = ratatoskr_identifiers::canonical_json(&reemitted).expect("JSON renders");
+            assert_eq!(
+                after, before,
+                "{path} does not round-trip to the same bytes"
+            );
+        }
+    }
+}

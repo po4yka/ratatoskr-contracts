@@ -1214,3 +1214,23 @@ reason         = "The entry document is a file of the bundle, or the gateway wou
 rejected_by    = ["json_schema", "serde"]
 error_contains = "does not match"
 reason         = "The commit is the full 40-hex commit id, which the OCI tag sha-<commit> and the attestation name."
+
+["sites/deploy-stored/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `path`"
+reason         = "The deploy response names the site, the commit, the file count, the size and whether it was created; a host path or any other member is refused."
+
+["sites/deploy-stored/invalid/commit-short.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "does not match"
+reason         = "The commit is the deploy id, the full 40-hex commit id of the bundle manifest."
+
+["sites/deploy-activated/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `bundle_path`"
+reason         = "The activation response names the site and its current and previous commit; a host path or any other member is refused."
+
+["sites/deploy-activated/invalid/without-current-commit.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "missing field `current_commit`"
+reason         = "An activation always names the commit that is now current."
