@@ -2435,3 +2435,32 @@ output         = "schemas/json-schema/sites/deploy-activated.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:sites:v1:DeployActivated"
 unknown_policy = "reject"
 privacy        = "boundary_metadata"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.site_event"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "public"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-site-sdk"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/events.rs"
+fixtures_dir   = "fixtures/sites/site-event"
+summary        = "Document: the data of one server-sent event of GET /v1/sites/{site}/events, which Edge streams. A closed type (release.published, draft.changed, edit.completed, edit.conflicted, resync) and a closed payload per type; release.published holds only the release id and the publication time."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::SiteEvent"
+output         = "schemas/json-schema/sites/site-event.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:SiteEvent"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "ReleaseNotice#/properties/published_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant at which the release became current, copied by Edge from published_at of sites.release.published.v1, which the ratatoskr-sites clock sets."

@@ -1234,3 +1234,23 @@ reason         = "The activation response names the site and its current and pre
 rejected_by    = ["json_schema", "serde"]
 error_contains = "missing field `current_commit`"
 reason         = "An activation always names the commit that is now current."
+
+["sites/site-event/invalid/release-published-with-slugs.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `slugs`"
+reason         = "release.published holds only release_id and published_at; a list of changed slugs would tell an anonymous watcher which pages changed."
+
+["sites/site-event/invalid/release-published-with-source-ref.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `source_ref`"
+reason         = "A source reference reaches only an owner session; release.published goes to any caller and never carries one."
+
+["sites/site-event/invalid/resync-with-member.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'string "note", expected "type" or "payload"'
+reason         = "An event has only its type and its payload; resync has no payload, and any other member is refused."
+
+["sites/site-event/invalid/unknown-type.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown variant `page.changed`"
+reason         = "The event types are closed; a client that met another type would have to guess what it means."

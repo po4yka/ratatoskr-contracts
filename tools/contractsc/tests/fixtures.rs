@@ -354,6 +354,7 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_sites_contracts::SiteApprovalChanged" => {
             render!(ratatoskr_sites_contracts::SiteApprovalChanged)
         }
+        "ratatoskr_sites_contracts::SiteEvent" => render!(ratatoskr_sites_contracts::SiteEvent),
         "ratatoskr_sites_contracts::SiteManifest" => {
             render!(ratatoskr_sites_contracts::SiteManifest)
         }

@@ -15,6 +15,9 @@
 //!   `sites/deploy-activated.v1`, the answers of `POST /v1/sites/{site}/deploys` (body: the bundle
 //!   archive, `application/x-tar`) and `POST /v1/sites/{site}/deploys/{commit}/activate` (no
 //!   body). The commit is the deploy id.
+//! - [`SiteEvent`] — contract `sites/site-event.v1` (changeset SITE-027): the data of one event of
+//!   `GET /v1/sites/{site}/events`, with the payloads [`ReleaseNotice`], [`DraftNotice`],
+//!   [`EditCompletedNotice`] and [`EditConflictedNotice`].
 //! - [`Release`] — contract `sites/release.v1`: one immutable release of a site, its pages by slug,
 //!   its assets by SHA-256 and its navigation. The release id is the SHA-256 of its RFC 8785 form.
 //! - [`Page`] — contract `sites/page.v1`: one page, with its body as an mdast-compatible tree
@@ -28,7 +31,7 @@
 //!   ([`ApprovalState`]).
 //! - [`SiteId`] / [`PublicationId`] / [`Hostname`] / [`Slug`] / [`PageTitle`] / [`Anchor`] /
 //!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] / [`BundlePath`] /
-//!   [`RepositoryName`] / [`CommitSha`] — validated strings.
+//!   [`RepositoryName`] / [`CommitSha`] / [`SourceRef`] — validated strings.
 //!
 //! # What is deliberately absent
 //!
@@ -41,6 +44,7 @@
 mod bundle;
 mod deploy;
 mod error;
+mod events;
 mod manifest;
 mod messages;
 mod page;
@@ -49,6 +53,9 @@ mod release;
 pub use crate::bundle::{BundleFile, BundleManifest, BundlePath, CommitSha, RepositoryName};
 pub use crate::deploy::{DeployActivated, DeployStored};
 pub use crate::error::SitesContractError;
+pub use crate::events::{
+    DraftNotice, EditCompletedNotice, EditConflictedNotice, ReleaseNotice, SiteEvent, SourceRef,
+};
 pub use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, SiteManifest};
 pub use crate::messages::{
     ApprovalState, ReleaseBuildRequested, ReleasePublished, SiteApprovalChanged,

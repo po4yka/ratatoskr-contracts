@@ -199,6 +199,7 @@ root_types! {
         => ratatoskr_sites_contracts::ReleasePublished,
     "ratatoskr_sites_contracts::SiteApprovalChanged"
         => ratatoskr_sites_contracts::SiteApprovalChanged,
+    "ratatoskr_sites_contracts::SiteEvent"      => ratatoskr_sites_contracts::SiteEvent,
     "ratatoskr_sites_contracts::SiteManifest"   => ratatoskr_sites_contracts::SiteManifest,
     "ratatoskr_social_contracts::SocialCaptureRequested"
         => ratatoskr_social_contracts::SocialCaptureRequested,
