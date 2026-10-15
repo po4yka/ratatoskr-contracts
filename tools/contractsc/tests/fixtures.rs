@@ -280,6 +280,12 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
             render!(ratatoskr_github_contracts::RepositoryPreviewResponse)
         }
         "ratatoskr_identifiers::BlobRef" => render!(ratatoskr_identifiers::BlobRef),
+        "ratatoskr_notes_contracts::ConflictRaised" => {
+            render!(ratatoskr_notes_contracts::ConflictRaised)
+        }
+        "ratatoskr_notes_contracts::ConflictResolved" => {
+            render!(ratatoskr_notes_contracts::ConflictResolved)
+        }
         "ratatoskr_notes_contracts::FileChanged" => {
             render!(ratatoskr_notes_contracts::FileChanged)
         }

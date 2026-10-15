@@ -15,6 +15,9 @@
 //! - [`FileWriteRequested`] — payload of `notes.file.write_requested.v1` (contract
 //!   `notes/write-request.v1`): change one file of a connected vault with one
 //!   [`WriteOperation`].
+//! - [`ConflictRaised`] / [`ConflictResolved`] — payloads of `notes.conflict.raised.v1` and
+//!   `notes.conflict.resolved.v1` (contract `notes/conflict.v1`): a write met a revision that its
+//!   writer did not see, and the owner resolved it. Hashes only.
 //! - [`VaultChannel`] / [`FileChangeKind`] / [`ResolutionChoice`] / [`PropertyChange`] — closed
 //!   vocabularies.
 //! - [`VaultDisplayName`] / [`VaultPath`] / [`VaultWritePath`] / [`WriteOrigin`] /
@@ -24,7 +27,8 @@
 //!
 //! The owner is the envelope's `tenant_id`, `user:<id>`, and no payload repeats it. The aggregate
 //! is `notes_connection:<uuid>` for the two vault events, `notes_file:<uuid>` for
-//! `notes.file.changed.v1` and `operation:<uuid>` for `notes.file.write_requested.v1`.
+//! `notes.file.changed.v1`, `operation:<uuid>` for `notes.file.write_requested.v1` and
+//! `notes_conflict:<uuid>` for the two conflict events.
 //!
 //! # What is deliberately absent
 //!
@@ -38,11 +42,13 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+mod conflict;
 mod error;
 mod file;
 mod vault;
 mod write;
 
+pub use crate::conflict::{ConflictRaised, ConflictResolved, MergeProposal};
 pub use crate::error::NotesContractError;
 pub use crate::file::{FileChangeKind, FileChanged, VaultPath};
 pub use crate::vault::{VaultChannel, VaultConnected, VaultDisconnected, VaultDisplayName};

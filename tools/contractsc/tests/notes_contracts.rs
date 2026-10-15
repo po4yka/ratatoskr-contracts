@@ -1,4 +1,5 @@
-//! Registry facts of the notes events (OBS-023) and the write command (OBS-024).
+//! Registry facts of the notes events (OBS-023) and the write command and conflict events
+//! (OBS-024).
 #![allow(clippy::expect_used, clippy::panic, reason = "test diagnostics")]
 
 use std::path::{Path, PathBuf};
@@ -26,7 +27,7 @@ fn notes_events_are_user_content() {
         .iter()
         .filter(|contract| contract.crate_name == "ratatoskr-notes-contracts")
         .collect();
-    assert_eq!(notes.len(), 4, "one governed entry per notes message");
+    assert_eq!(notes.len(), 6, "one governed entry per notes message");
     for contract in notes {
         for root in &contract.root_types {
             assert_eq!(

@@ -946,3 +946,32 @@ reason         = "`.obsidian/` is the vault configuration, and Ratatoskr never w
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'expected struct BlobRef'
 reason         = "Write content is uploaded first and named by a BlobRef; note text in the command would enter Edge's outbox and JetStream."
+
+# ---------------------------------------------------------------------------
+# notes.conflict.raised.v1 and notes.conflict.resolved.v1 (OBS-024, contract notes/conflict.v1)
+#
+# Both refuse unknown fields, so an unknown-field fixture is rejected by both layers. The merge
+# proposal rules compare one member with the value of another; the TypeScript projection refuses a
+# conditional keyword at an object root, so those fixtures are rejected by serde only (ADR-0001
+# lower-bound rule).
+# ---------------------------------------------------------------------------
+
+["events/notes.conflict.raised.v1/invalid/attachment-with-proposal.json"]
+rejected_by    = ["serde"]
+error_contains = 'merge_proposal is allowed only for text/markdown and text/plain, found `image/png`'
+reason         = "Notes merges text by lines only; a proposal for a binary file would offer accept_merge for bytes that no merge produced. The schema cannot make one member depend on the value of another."
+
+["events/notes.conflict.raised.v1/invalid/proposal-without-base.json"]
+rejected_by    = ["serde"]
+error_contains = 'merge_proposal requires base_hash, current_hash and writer_hash'
+reason         = "A three-way merge reads the base, the current revision and the writer's content; a proposal without one of them names a merge that cannot exist."
+
+["events/notes.conflict.raised.v1/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `text`'
+reason         = "A conflict carries hashes, never the file text; a member outside the schema is refused so vault content cannot ride along."
+
+["events/notes.conflict.resolved.v1/invalid/unknown-field.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `text`'
+reason         = "A resolution carries the resulting revision hash, never the file text; a member outside the schema is refused so vault content cannot ride along."

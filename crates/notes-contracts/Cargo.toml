@@ -1,6 +1,6 @@
 [package]
 name        = "ratatoskr-notes-contracts"
-description = "Vault connection and file change events of ratatoskr-notes, and the write command it consumes, for connected Obsidian vaults."
+description = "Vault connection, file change and conflict events of ratatoskr-notes, and the write command it consumes, for connected Obsidian vaults."
 version.workspace      = true
 edition.workspace      = true
 rust-version.workspace = true

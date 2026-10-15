@@ -3,8 +3,8 @@
 /// Every way a cross-field rule of a notes event or command can fail.
 ///
 /// A *parse* error type: it is never serialized onto the wire. Field-level rejection happens in
-/// the identifier and string types; only the cross-field rules of [`crate::FileChanged`] and
-/// [`crate::FileWriteRequested`] surface here.
+/// the identifier and string types; only the cross-field rules of [`crate::FileChanged`],
+/// [`crate::FileWriteRequested`] and [`crate::ConflictRaised`] surface here.
 #[derive(Debug, Clone, PartialEq, Eq, thiserror::Error)]
 #[non_exhaustive]
 pub enum NotesContractError {
@@ -53,4 +53,17 @@ pub enum NotesContractError {
         /// The wire word of the choice that carried the blob.
         choice: &'static str,
     },
+    /// A conflict on a file that is not Markdown or plain text carried a merge proposal; notes
+    /// merges text only.
+    #[error(
+        "merge_proposal is allowed only for text/markdown and text/plain, found `{media_type}`"
+    )]
+    MergeProposalOnBinary {
+        /// The media type of the file.
+        media_type: String,
+    },
+    /// A conflict carried a merge proposal without one of the three sides that a three-way merge
+    /// reads.
+    #[error("merge_proposal requires base_hash, current_hash and writer_hash")]
+    MergeProposalWithoutThreeSides,
 }

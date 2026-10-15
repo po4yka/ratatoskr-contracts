@@ -152,6 +152,9 @@ root_types! {
     "ratatoskr_github_contracts::RepositoryPreviewResponse"
         => ratatoskr_github_contracts::RepositoryPreviewResponse,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
+    "ratatoskr_notes_contracts::ConflictRaised"  => ratatoskr_notes_contracts::ConflictRaised,
+    "ratatoskr_notes_contracts::ConflictResolved"
+        => ratatoskr_notes_contracts::ConflictResolved,
     "ratatoskr_notes_contracts::FileChanged"     => ratatoskr_notes_contracts::FileChanged,
     "ratatoskr_notes_contracts::FileWriteRequested"
         => ratatoskr_notes_contracts::FileWriteRequested,
@@ -249,6 +252,9 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
             => ratatoskr_github_contracts::RepositoryAnalysisFailed,
         "ratatoskr_github_contracts::RepositoryAnalysisRequested"
             => ratatoskr_github_contracts::RepositoryAnalysisRequested,
+        "ratatoskr_notes_contracts::ConflictRaised" => ratatoskr_notes_contracts::ConflictRaised,
+        "ratatoskr_notes_contracts::ConflictResolved"
+            => ratatoskr_notes_contracts::ConflictResolved,
         "ratatoskr_notes_contracts::FileChanged" => ratatoskr_notes_contracts::FileChanged,
         "ratatoskr_notes_contracts::VaultConnected" => ratatoskr_notes_contracts::VaultConnected,
         "ratatoskr_notes_contracts::VaultDisconnected"

@@ -5,8 +5,8 @@
 
 ## 2. Conflict events (workspace OBS-024 tasks 3.3 and 3.4)
 
-- [ ] 2.1 RED: add `crates/notes-contracts/tests/conflict.rs::attachment_conflict_with_proposal_is_refused` and `text_conflict_round_trips`, with the fixtures under `fixtures/events/notes.conflict.raised.v1` and `fixtures/events/notes.conflict.resolved.v1`. They MUST fail with "notes/conflict.v1 is not found".
-- [ ] 2.2 GREEN: add `ConflictRaised` and `ConflictResolved` (hashes only, with `origin`), their rows, expectations, registry entries and renderers, regenerate, and update the pinned counts. 2.1 passes.
+- [x] 2.1 RED: add `crates/notes-contracts/tests/conflict.rs::attachment_conflict_with_proposal_is_refused` and `text_conflict_round_trips`, with the fixtures under `fixtures/events/notes.conflict.raised.v1` and `fixtures/events/notes.conflict.resolved.v1`. They MUST fail with "notes/conflict.v1 is not found".
+- [x] 2.2 GREEN: add `ConflictRaised` and `ConflictResolved` (hashes only, with `origin`), their rows, expectations, registry entries and renderers, regenerate, and update the pinned counts. 2.1 passes.
 
 ## 3. Registry (workspace OBS-024 tasks 3.5 and 3.6)
 
