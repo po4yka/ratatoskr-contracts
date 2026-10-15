@@ -493,8 +493,11 @@ fn operation_reports_list_exactly_the_services_that_emit_them() {
             "ratatoskr-chatgpt",
             "ratatoskr-claude",
             "ratatoskr-channel-digests",
+            "ratatoskr-notes",
+            "ratatoskr-sites",
         ]),
-        "github, knowledge and vault do not emit operation reports"
+        "github, knowledge and vault do not emit operation reports; notes reports its connect and \
+         write operations (OBS-023, OBS-024) and sites its release builds (SITE-025)"
     );
     assert_eq!(
         sorted(&contract.consumers),
