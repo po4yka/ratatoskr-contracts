@@ -7,7 +7,7 @@
 use std::path::{Path, PathBuf};
 
 use ratatoskr_contractsc::metadata::Contract;
-use ratatoskr_contractsc::{Metadata, registry};
+use ratatoskr_contractsc::{GENERATOR_VERSION, Metadata, generate, registry};
 
 fn repo_root() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR"))
@@ -586,6 +586,118 @@ fn notes_write_request_has_one_producer() {
             contract.consumers,
             names(&[consumer]),
             "{message_type}: the only consumer is {consumer}, but the row names {:?}",
+            contract.consumers
+        );
+    }
+}
+
+/// Every property name declared anywhere in a schema document, `$defs` included.
+fn property_names(schema: &serde_json::Value, names: &mut Vec<String>) {
+    match schema {
+        serde_json::Value::Object(members) => {
+            if let Some(serde_json::Value::Object(properties)) = members.get("properties") {
+                names.extend(properties.keys().cloned());
+            }
+            for member in members.values() {
+                property_names(member, names);
+            }
+        }
+        serde_json::Value::Array(items) => {
+            for item in items {
+                property_names(item, names);
+            }
+        }
+        _ => {}
+    }
+}
+
+/// SITE-025, workspace specs `site-publications` and `site-manifest` and the bus table of
+/// `docs/NOTES_AND_SITES.md`: Edge alone asks for a release build and Platform alone announces an
+/// approval, both for the sites service; the sites service alone announces a release, and that
+/// event names no page; the sites service reads the two notes events it builds from.
+#[test]
+fn sites_message_types_are_registered() {
+    let metadata = metadata();
+    for (message_type, kind, producer, consumer) in [
+        (
+            "sites.release.build_requested.v1",
+            Kind::Command,
+            "ratatoskr-platform",
+            Some("ratatoskr-sites"),
+        ),
+        (
+            "sites.release.published.v1",
+            Kind::Event,
+            "ratatoskr-sites",
+            None,
+        ),
+        (
+            "platform.site_approval.changed.v1",
+            Kind::Event,
+            "ratatoskr-platform",
+            Some("ratatoskr-sites"),
+        ),
+    ] {
+        let (registered_kind, contract) = registered(&metadata, message_type);
+        assert_eq!(
+            registered_kind,
+            kind,
+            "{message_type}: the subject class `{}` follows the registration kind",
+            kind.class()
+        );
+        assert_eq!(
+            contract.producers,
+            names(&[producer]),
+            "{message_type}: the only producer is {producer}, but the row names {:?}",
+            contract.producers
+        );
+        if let Some(consumer) = consumer {
+            assert_eq!(
+                contract.consumers,
+                names(&[consumer]),
+                "{message_type}: the only consumer is {consumer}, but the row names {:?}",
+                contract.consumers
+            );
+        }
+    }
+
+    let (_, published) = registered(&metadata, "sites.release.published.v1");
+    let output = &published
+        .root_types
+        .first()
+        .expect("the release event declares its payload")
+        .output;
+    let generated =
+        generate(&metadata, GENERATOR_VERSION).expect("the committed contracts generate");
+    let schema: serde_json::Value = serde_json::from_str(
+        generated
+            .get(std::path::Path::new(output))
+            .unwrap_or_else(|| panic!("{output} is not generated")),
+    )
+    .expect("a generated schema is JSON");
+    let mut properties = Vec::new();
+    property_names(&schema, &mut properties);
+    let page_data: Vec<&String> = properties
+        .iter()
+        .filter(|name| {
+            ["title", "slug", "path"]
+                .iter()
+                .any(|banned| name.ends_with(banned))
+        })
+        .collect();
+    assert!(
+        page_data.is_empty(),
+        "sites.release.published.v1 must carry no page data, but its schema declares {page_data:?}"
+    );
+
+    for message_type in ["notes.file.changed.v1", "notes.vault.disconnected.v1"] {
+        let (_, contract) = registered(&metadata, message_type);
+        assert!(
+            contract
+                .consumers
+                .iter()
+                .any(|name| name == "ratatoskr-sites"),
+            "{message_type}: ratatoskr-sites is not a consumer, the row names {:?}",
             contract.consumers
         );
     }
