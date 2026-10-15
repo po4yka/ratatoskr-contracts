@@ -542,3 +542,51 @@ fn registry_maps_agree_with_the_metadata_for_the_new_payloads() {
         Some("content.document.extracted.v1")
     );
 }
+
+/// OBS-024, workspace spec `notes-write-command`: Edge is the only producer of the write command
+/// and notes its only consumer; notes publishes the two conflict events, and Edge alone reads
+/// them. An extra producer or consumer fails here, and the message names the registered list.
+#[test]
+fn notes_write_request_has_one_producer() {
+    let metadata = metadata();
+    for (message_type, kind, producer, consumer) in [
+        (
+            "notes.file.write_requested.v1",
+            Kind::Command,
+            "ratatoskr-platform",
+            "ratatoskr-notes",
+        ),
+        (
+            "notes.conflict.raised.v1",
+            Kind::Event,
+            "ratatoskr-notes",
+            "ratatoskr-platform",
+        ),
+        (
+            "notes.conflict.resolved.v1",
+            Kind::Event,
+            "ratatoskr-notes",
+            "ratatoskr-platform",
+        ),
+    ] {
+        let (registered_kind, contract) = registered(&metadata, message_type);
+        assert_eq!(
+            registered_kind,
+            kind,
+            "{message_type}: the subject class `{}` follows the registration kind",
+            kind.class()
+        );
+        assert_eq!(
+            contract.producers,
+            names(&[producer]),
+            "{message_type}: the only producer is {producer}, but the row names {:?}",
+            contract.producers
+        );
+        assert_eq!(
+            contract.consumers,
+            names(&[consumer]),
+            "{message_type}: the only consumer is {consumer}, but the row names {:?}",
+            contract.consumers
+        );
+    }
+}
