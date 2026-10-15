@@ -67,7 +67,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:a4fdcfd48443480c5709e9d1bfe2652dbffc61b71ad0de4a321a77bab2dbb92a",
+    "source_digest": "sha256:ce9db5054f551690112a7ceccb675de0f12e90322a4cf7989095c10616363dfd",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -295,7 +295,7 @@
           ]
         },
         {
-          "description": "mdast `thematicBreak`.",
+          "description": "mdast `thematicBreak`. A struct variant without members, not a unit variant: serde\nignores `deny_unknown_fields` on an internally tagged unit variant.",
           "type": "object",
           "properties": {
             "type": {
@@ -691,7 +691,7 @@
           ]
         },
         {
-          "description": "mdast `break`: a hard line break.",
+          "description": "mdast `break`: a hard line break. A struct variant without members, for the reason\n`thematicBreak` gives.",
           "type": "object",
           "properties": {
             "type": {

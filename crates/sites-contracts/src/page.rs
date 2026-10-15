@@ -170,8 +170,9 @@ pub enum PageNode {
         /// The inline nodes of the heading.
         children: Vec<PageNode>,
     },
-    /// mdast `thematicBreak`.
-    ThematicBreak,
+    /// mdast `thematicBreak`. A struct variant without members, not a unit variant: serde
+    /// ignores `deny_unknown_fields` on an internally tagged unit variant.
+    ThematicBreak {},
     /// mdast `blockquote`.
     Blockquote {
         /// The block nodes of the quote.
@@ -271,8 +272,9 @@ pub enum PageNode {
         /// The code, as written.
         value: String,
     },
-    /// mdast `break`: a hard line break.
-    Break,
+    /// mdast `break`: a hard line break. A struct variant without members, for the reason
+    /// `thematicBreak` gives.
+    Break {},
     /// mdast `link` to an external URL.
     Link {
         /// The target.
