@@ -238,3 +238,69 @@ fn release_and_page_fixtures_round_trip() {
         }
     }
 }
+
+/// The minimal release names each page fixture by the SHA-256 of that fixture's bytes, which are
+/// the bytes a stub delivery route serves for its slug, and it names every page fixture. An edit to
+/// a page fixture without a matching edit to the release fixture fails here.
+#[test]
+fn release_fixture_names_each_page_fixture_by_its_sha256() {
+    use sha2::Digest as _;
+
+    let release_path = repo_root().join("fixtures/sites/release/valid/minimal.json");
+    let release: serde_json::Value = serde_json::from_str(
+        &std::fs::read_to_string(&release_path).expect("the minimal release fixture exists"),
+    )
+    .expect("the minimal release fixture is JSON");
+    let mut listed: Vec<(String, String)> = release
+        .get("pages")
+        .unwrap_or_default()
+        .as_array()
+        .expect("the release lists its pages")
+        .iter()
+        .map(|page| {
+            (
+                page.get("slug")
+                    .unwrap_or_default()
+                    .as_str()
+                    .expect("a page has a slug")
+                    .to_owned(),
+                page.get("page_sha256")
+                    .unwrap_or_default()
+                    .as_str()
+                    .expect("a page has a page_sha256")
+                    .to_owned(),
+            )
+        })
+        .collect();
+    listed.sort();
+
+    let folder = repo_root().join("fixtures/sites/page/valid");
+    let mut served: Vec<(String, String)> = std::fs::read_dir(&folder)
+        .expect("the page fixture folder exists")
+        .flatten()
+        .map(|entry| entry.path())
+        .filter(|path| {
+            path.extension()
+                .is_some_and(|extension| extension == "json")
+        })
+        .map(|path| {
+            let bytes = std::fs::read(&path).expect("a page fixture is readable");
+            let page: serde_json::Value =
+                serde_json::from_slice(&bytes).expect("a page fixture is JSON");
+            (
+                page.get("slug")
+                    .unwrap_or_default()
+                    .as_str()
+                    .expect("a page has a slug")
+                    .to_owned(),
+                hex::encode(sha2::Sha256::digest(&bytes)),
+            )
+        })
+        .collect();
+    served.sort();
+
+    assert_eq!(
+        listed, served,
+        "the release fixture must name each page fixture by the SHA-256 of its bytes"
+    );
+}
