@@ -283,6 +283,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_notes_contracts::FileChanged" => {
             render!(ratatoskr_notes_contracts::FileChanged)
         }
+        "ratatoskr_notes_contracts::FileWriteRequested" => {
+            render!(ratatoskr_notes_contracts::FileWriteRequested)
+        }
         "ratatoskr_notes_contracts::VaultConnected" => {
             render!(ratatoskr_notes_contracts::VaultConnected)
         }

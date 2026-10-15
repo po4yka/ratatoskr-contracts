@@ -153,6 +153,8 @@ root_types! {
         => ratatoskr_github_contracts::RepositoryPreviewResponse,
     "ratatoskr_identifiers::BlobRef"                   => ratatoskr_identifiers::BlobRef,
     "ratatoskr_notes_contracts::FileChanged"     => ratatoskr_notes_contracts::FileChanged,
+    "ratatoskr_notes_contracts::FileWriteRequested"
+        => ratatoskr_notes_contracts::FileWriteRequested,
     "ratatoskr_notes_contracts::VaultConnected"  => ratatoskr_notes_contracts::VaultConnected,
     "ratatoskr_notes_contracts::VaultDisconnected"
         => ratatoskr_notes_contracts::VaultDisconnected,
@@ -303,5 +305,7 @@ pub fn command_payload_types() -> BTreeMap<&'static str, &'static str> {
             => ratatoskr_document_contracts::ContentCaptureRequested,
         "ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested"
             => ratatoskr_backup_contracts::VaultBackupPolicyApplyRequested,
+        "ratatoskr_notes_contracts::FileWriteRequested"
+            => ratatoskr_notes_contracts::FileWriteRequested,
     }
 }

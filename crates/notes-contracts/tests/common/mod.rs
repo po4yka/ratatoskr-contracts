@@ -90,7 +90,13 @@ pub(crate) struct ContractUnderTest {
 }
 
 /// Every notes contract whose Rust type and generated schema exist.
-pub(crate) const CONTRACTS: &[ContractUnderTest] = &[];
+pub(crate) const CONTRACTS: &[ContractUnderTest] = &[ContractUnderTest {
+    contract: "notes/write-request.v1",
+    message_type: "notes.file.write_requested.v1",
+    schema: "schemas/json-schema/commands/write-request.v1.schema.json",
+    fixtures: "fixtures/commands/notes.file.write_requested.v1",
+    roundtrip: roundtrip_as::<ratatoskr_notes_contracts::FileWriteRequested>,
+}];
 
 /// Parses `value` as `T` and serializes the typed value again.
 fn roundtrip_as<T>(value: &serde_json::Value) -> Result<serde_json::Value, String>

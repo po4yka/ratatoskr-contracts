@@ -9,7 +9,7 @@ use ratatoskr_identifiers::{
 use crate::error::NotesContractError;
 
 /// The only service that stores note bytes, and so the only legal `blob.owner_service`.
-const NOTES_BLOB_OWNER: &str = "ratatoskr-notes";
+pub(crate) const NOTES_BLOB_OWNER: &str = "ratatoskr-notes";
 
 wire_string_newtype! {
     /// A file path relative to the vault root, segments separated by `/`.

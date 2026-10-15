@@ -362,6 +362,19 @@ uuid_newtype! {
 }
 
 uuid_newtype! {
+    /// Identity of one conflict of a connected vault: a write whose base revision was not the
+    /// current revision when the write reached the head of its file's queue. Minted by
+    /// `ratatoskr-notes` when it raises the conflict, and never reused.
+    ///
+    /// Wire form: bare canonical lowercase hyphenated UUID. As an aggregate it appears namespaced
+    /// as `notes_conflict:<uuid>`.
+    pub struct NotesConflictId,
+    kind = "notes_conflict",
+    description = "Identity of one conflict of a connected vault. Bare canonical lowercase \
+                   hyphenated UUID; not namespaced."
+}
+
+uuid_newtype! {
     /// A correlation identity minted by a producer for work not bound to an operation.
     ///
     /// Wire form: bare canonical lowercase hyphenated UUID. The envelope's `correlation_id` slot

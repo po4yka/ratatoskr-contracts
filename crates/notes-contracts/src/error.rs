@@ -1,10 +1,10 @@
-//! [`NotesContractError`]: every way a notes event invariant can fail.
+//! [`NotesContractError`]: every way a notes event or command invariant can fail.
 
-/// Every way a cross-field rule of a notes event can fail.
+/// Every way a cross-field rule of a notes event or command can fail.
 ///
 /// A *parse* error type: it is never serialized onto the wire. Field-level rejection happens in
-/// the identifier and string types; only the cross-field rules of [`crate::FileChanged`] surface
-/// here.
+/// the identifier and string types; only the cross-field rules of [`crate::FileChanged`] and
+/// [`crate::FileWriteRequested`] surface here.
 #[derive(Debug, Clone, PartialEq, Eq, thiserror::Error)]
 #[non_exhaustive]
 pub enum NotesContractError {
@@ -43,4 +43,14 @@ pub enum NotesContractError {
     /// The connection sequence was zero; it starts at 1 for each connection.
     #[error("connection_sequence must be at least 1")]
     ConnectionSequenceZero,
+    /// A `custom` resolution named no blob, so there is no content to write.
+    #[error("choice `custom` requires a blob")]
+    CustomResolutionWithoutBlob,
+    /// A resolution other than `custom` named a blob, although its content comes from the
+    /// conflict.
+    #[error("choice `{choice}` forbids a blob; only `custom` carries one")]
+    BlobWithoutCustomResolution {
+        /// The wire word of the choice that carried the blob.
+        choice: &'static str,
+    },
 }

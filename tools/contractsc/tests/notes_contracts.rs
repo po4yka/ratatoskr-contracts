@@ -1,4 +1,4 @@
-//! Registry facts of the notes events (OBS-023).
+//! Registry facts of the notes events (OBS-023) and the write command (OBS-024).
 #![allow(clippy::expect_used, clippy::panic, reason = "test diagnostics")]
 
 use std::path::{Path, PathBuf};
@@ -13,8 +13,9 @@ fn repo_root() -> PathBuf {
         .to_path_buf()
 }
 
-/// File paths and the vault display name are written by the owner, so every notes event is
-/// `user_content`, like the notification title and the archived conversation events.
+/// File paths, the vault display name and frontmatter values are written by the owner, so every
+/// notes message is `user_content`, like the notification title and the archived conversation
+/// events.
 #[test]
 fn notes_events_are_user_content() {
     let text =
@@ -25,7 +26,7 @@ fn notes_events_are_user_content() {
         .iter()
         .filter(|contract| contract.crate_name == "ratatoskr-notes-contracts")
         .collect();
-    assert_eq!(notes.len(), 3, "one governed entry per notes event");
+    assert_eq!(notes.len(), 4, "one governed entry per notes message");
     for contract in notes {
         for root in &contract.root_types {
             assert_eq!(

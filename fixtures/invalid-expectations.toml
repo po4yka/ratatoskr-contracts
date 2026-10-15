@@ -893,3 +893,56 @@ reason         = "A vault path is relative to the vault root and has no `.` or `
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'connection_sequence must be at least 1'
 reason         = "The connection sequence starts at 1 for each connection, so a consumer that sees 0 cannot place the event in the gapless order."
+
+# ---------------------------------------------------------------------------
+# notes.file.write_requested.v1 (OBS-024, contract notes/write-request.v1)
+#
+# The command refuses unknown fields. Every fixture below is refused by both layers: the operation
+# is a one-member object, the origin and the paths are patterns, and the resolution is a oneOf of
+# two closed shapes.
+# ---------------------------------------------------------------------------
+
+["commands/notes.file.write_requested.v1/invalid/two-operations.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected map with a single key'
+reason         = "A write carries exactly one operation; a rename and a delete in one payload would leave the order of the two changes undefined."
+
+["commands/notes.file.write_requested.v1/invalid/empty-site-origin.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'WriteOrigin "site:" does not match'
+reason         = "A site origin names the site; `site:` without a site id cannot be recorded with the write or repeated in a conflict."
+
+["commands/notes.file.write_requested.v1/invalid/unknown-origin.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'WriteOrigin "web" does not match'
+reason         = "The origin is `platform` or `site:<site id>`; any other value is refused, so a new kind of writer needs a contract change."
+
+["commands/notes.file.write_requested.v1/invalid/update-without-base-hash.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'missing field `base_hash`'
+reason         = "An update names the revision that its writer read; without it notes cannot tell a stale write from a current one and would overwrite in silence."
+
+["commands/notes.file.write_requested.v1/invalid/custom-resolution-without-content.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'choice `custom` requires a blob'
+reason         = "A custom resolution writes content that the owner uploaded; without a blob there is nothing to write."
+
+["commands/notes.file.write_requested.v1/invalid/parent-segment.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath "../secrets.md" does not match'
+reason         = "A `..` segment names a file outside the vault."
+
+["commands/notes.file.write_requested.v1/invalid/absolute-path.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath "/Projects/Plan.md" does not match'
+reason         = "A path is relative to the vault root; a leading `/` names a host path."
+
+["commands/notes.file.write_requested.v1/invalid/config-folder.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'VaultWritePath ".obsidian/app.json" does not match'
+reason         = "`.obsidian/` is the vault configuration, and Ratatoskr never writes it."
+
+["commands/notes.file.write_requested.v1/invalid/inline-content.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'expected struct BlobRef'
+reason         = "Write content is uploaded first and named by a BlobRef; note text in the command would enter Edge's outbox and JetStream."
