@@ -2464,3 +2464,29 @@ authority   = "producer_asserted"
 nullability = "required"
 unit        = "instant_rfc3339_utc_canonical"
 note        = "Instant at which the release became current, copied by Edge from published_at of sites.release.published.v1, which the ratatoskr-sites clock sets."
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.draft_changed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/messages.rs"
+fixtures_dir   = "fixtures/events/sites.draft.changed.v1"
+summary        = "Fact: a note in the publications of a site changed in the vault. Names the site, the opaque source_ref, the new revision and the slug when the note is published, never content or a vault path; unknown fields are refused. Edge sends it to the owner sessions as draft.changed."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::DraftChanged"
+output         = "schemas/events/sites.draft.changed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:DraftChanged"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "sites.draft.changed.v1"
+payload_type = "ratatoskr_sites_contracts::DraftChanged"

@@ -26,6 +26,8 @@
 //!   asks `ratatoskr-sites` to build a release of one site.
 //! - [`ReleasePublished`] — payload of `sites.release.published.v1`: a new release became
 //!   current. No title, slug, path or content.
+//! - [`DraftChanged`] — payload of `sites.draft.changed.v1` (changeset SITE-027): a note in the
+//!   publications of a site changed. No content and no vault path.
 //! - [`SiteApprovalChanged`] — payload of `platform.site_approval.changed.v1` (contract
 //!   `platform/site-approval-changed.v1`): Platform approved or withdrew a manifest digest
 //!   ([`ApprovalState`]).
@@ -58,7 +60,7 @@ pub use crate::events::{
 };
 pub use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, SiteManifest};
 pub use crate::messages::{
-    ApprovalState, ReleaseBuildRequested, ReleasePublished, SiteApprovalChanged,
+    ApprovalState, DraftChanged, ReleaseBuildRequested, ReleasePublished, SiteApprovalChanged,
 };
 pub use crate::page::{
     Anchor, AssetRef, CalloutFold, CalloutKind, EmbedTarget, FrontmatterKey, ImageUrl, LinkUrl,

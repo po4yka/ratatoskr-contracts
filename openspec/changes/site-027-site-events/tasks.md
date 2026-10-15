@@ -6,4 +6,4 @@
 ## 2. Draft change message (workspace SITE-027 tasks 3.3 and 3.4)
 
 - [x] 2.1 RED: add `live_message_types.rs::sites_draft_changed_is_registered`. It MUST fail because the type is not registered.
-- [ ] 2.2 GREEN: add `DraftChanged`, its row and fixtures, regenerate, and update the pinned counts. 2.1 passes.
+- [x] 2.2 GREEN: add `DraftChanged`, its row and fixtures, regenerate, and update the pinned counts. 2.1 passes.

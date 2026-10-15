@@ -232,8 +232,11 @@ The crate also carries the write path of changeset OBS-024 (workspace spec `note
 | `cmd.sites.release.build_requested.v1` | `ratatoskr-platform` (Edge) | `ratatoskr-sites` |
 | `evt.sites.release.published.v1` | `ratatoskr-sites` | `ratatoskr-platform` (SSE relay of SITE-027) |
 | `evt.platform.site_approval.changed.v1` | `ratatoskr-platform` | `ratatoskr-sites` |
+| `evt.sites.draft.changed.v1` | `ratatoskr-sites` | `ratatoskr-platform` (Edge, for the owner stream; SITE-027) |
 
 The release event names the site, the release id, the publications, the page count and `published_at`, and never a title, slug, path or content. The approval event names the site, the manifest SHA-256, the approved capabilities, the hostname and the state, `approved` or `withdrawn`.
+
+`sites/site-event.v1` (SITE-027) is the data of one server-sent event of `GET /v1/sites/{site}/events`, which Edge streams: `{"type": ..., "payload": {...}}` with the closed types `release.published` (only `release_id` and `published_at`, for any caller with `live.release`), `draft.changed`, `edit.completed` and `edit.conflicted` (for a `site_owner` session only, naming a note by its opaque `source_ref`), and `resync` (no payload). `evt.sites.draft.changed.v1` names the site, the `source_ref`, the new revision and the slug when the note is published, never content or a vault path.
 
 ### Site bundles and deploys
 

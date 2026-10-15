@@ -4,8 +4,9 @@ use ratatoskr_event_envelope::{CommandPayload, EventPayload};
 use ratatoskr_identifiers::{DigestHex, OperationId, WireTimestamp};
 
 use crate::error::SitesContractError;
+use crate::events::SourceRef;
 use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, no_duplicate};
-use crate::release::strictly_ascending;
+use crate::release::{Slug, strictly_ascending};
 
 /// Payload of `sites.release.build_requested.v1`: build a release of one site.
 ///
@@ -76,6 +77,36 @@ impl ReleasePublished {
             self.publication_ids.iter().map(PublicationId::as_str),
         )
     }
+}
+
+/// Payload of `sites.draft.changed.v1`: a note in the publications of a site changed in the vault.
+///
+/// A fact. `ratatoskr-sites` publishes it when it consumes a `notes.file.changed.v1` for a note that
+/// a publication of the site selects, and Edge alone reads it to send `draft.changed` to the owner
+/// sessions of the site (workspace design D5). It carries no note content and no vault path; every
+/// other member is refused. The enclosing envelope carries the owner as `tenant_id` and the
+/// aggregate `site:<site_id>`.
+#[derive(
+    Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize, schemars::JsonSchema,
+)]
+#[serde(deny_unknown_fields)]
+pub struct DraftChanged {
+    /// The site whose publications hold the note.
+    pub site_id: SiteId,
+
+    /// The note that changed.
+    pub source_ref: SourceRef,
+
+    /// The lowercase hex SHA-256 of the new bytes of the note.
+    pub revision: DigestHex,
+
+    /// The slug of the note in the current release. Absent when the note is not published.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub slug: Option<Slug>,
+}
+
+impl EventPayload for DraftChanged {
+    const EVENT_TYPE: &'static str = "sites.draft.changed.v1";
 }
 
 /// Whether a site approval is in force.

@@ -191,6 +191,7 @@ root_types! {
     "ratatoskr_sites_contracts::DeployActivated"
         => ratatoskr_sites_contracts::DeployActivated,
     "ratatoskr_sites_contracts::DeployStored"   => ratatoskr_sites_contracts::DeployStored,
+    "ratatoskr_sites_contracts::DraftChanged"   => ratatoskr_sites_contracts::DraftChanged,
     "ratatoskr_sites_contracts::Page"           => ratatoskr_sites_contracts::Page,
     "ratatoskr_sites_contracts::Release"        => ratatoskr_sites_contracts::Release,
     "ratatoskr_sites_contracts::ReleaseBuildRequested"
@@ -283,6 +284,7 @@ pub fn event_payload_types() -> BTreeMap<&'static str, &'static str> {
             => ratatoskr_operation_contracts::OperationProgressed,
         "ratatoskr_operation_contracts::OperationReported"
             => ratatoskr_operation_contracts::OperationReported,
+        "ratatoskr_sites_contracts::DraftChanged" => ratatoskr_sites_contracts::DraftChanged,
         "ratatoskr_sites_contracts::ReleasePublished"
             => ratatoskr_sites_contracts::ReleasePublished,
         "ratatoskr_sites_contracts::SiteApprovalChanged"

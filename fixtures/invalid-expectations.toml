@@ -1254,3 +1254,8 @@ reason         = "An event has only its type and its payload; resync has no payl
 rejected_by    = ["json_schema", "serde"]
 error_contains = "unknown variant `page.changed`"
 reason         = "The event types are closed; a client that met another type would have to guess what it means."
+
+["events/sites.draft.changed.v1/invalid/with-path.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown field `path`"
+reason         = "A draft change names the note by its opaque source_ref; a vault path or any other member is refused."
