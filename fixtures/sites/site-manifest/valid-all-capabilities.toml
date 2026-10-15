@@ -1,0 +1,15 @@
+# Every capability of the closed set. The four owner-only capabilities grant nothing until the
+# owner session of SITE-027 exists, but a manifest can name them.
+site_id = "garden-2026"
+hostname = "garden.example.test"
+publications = ["essays", "garden-notes"]
+capabilities = [
+  "pages.read",
+  "assets.read",
+  "search.publication",
+  "live.release",
+  "draft.read",
+  "notes.edit",
+  "library.read",
+  "knowledge.search",
+]

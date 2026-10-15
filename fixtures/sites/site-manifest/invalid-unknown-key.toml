@@ -1,0 +1,6 @@
+# `theme` is not a key of sites/site-manifest.v1.
+site_id = "docs"
+hostname = "docs.example.test"
+publications = ["handbook"]
+capabilities = ["pages.read"]
+theme = "dark"

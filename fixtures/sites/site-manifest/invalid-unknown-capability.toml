@@ -1,0 +1,5 @@
+# `notes.delete` is not in the closed capability set.
+site_id = "docs"
+hostname = "docs.example.test"
+publications = ["handbook"]
+capabilities = ["pages.read", "notes.delete"]

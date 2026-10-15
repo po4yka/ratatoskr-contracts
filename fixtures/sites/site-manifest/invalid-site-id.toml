@@ -1,0 +1,5 @@
+# A site id has 3 to 40 lower-case ASCII letters, digits and `-`; upper case and `_` are refused.
+site_id = "Docs_Site"
+hostname = "docs.example.test"
+publications = ["handbook"]
+capabilities = ["pages.read"]

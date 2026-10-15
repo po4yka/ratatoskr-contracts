@@ -1,0 +1,5 @@
+# A manifest names exactly one hostname. TOML refuses a repeated key, so a second hostname is a list.
+site_id = "docs"
+hostname = ["docs.example.test", "www.docs.example.test"]
+publications = ["handbook"]
+capabilities = ["pages.read"]
