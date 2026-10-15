@@ -15,6 +15,11 @@
       "page_sha256": "4c75637c1694ae5558c22d6a76b03222ade803235f772ffa9f689e361437f011"
     },
     {
+      "slug": "handbook/references",
+      "title": "References",
+      "page_sha256": "ecdf36b30059f34a876040d77c68388df6eaa359e77ae28e05cffa223e9b90df"
+    },
+    {
       "slug": "handbook/start",
       "title": "Start here",
       "page_sha256": "5482cddfc8034ec7ba287440aa6e1d752b0e17d3bab3001ba1b0d767c0ad22e6"
@@ -44,6 +49,11 @@
         {
           "title": "Diagram",
           "slug": "handbook/diagram",
+          "children": []
+        },
+        {
+          "title": "References",
+          "slug": "handbook/references",
           "children": []
         }
       ]

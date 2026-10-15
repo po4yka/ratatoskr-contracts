@@ -1,0 +1,56 @@
+{
+  "slug": "handbook/references",
+  "title": "References",
+  "frontmatter": {
+    "title": "References"
+  },
+  "ast": {
+    "type": "root",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "value": "See "
+          },
+          {
+            "type": "link",
+            "url": "https://example.test/search?q=site%20release&page=2#results",
+            "title": "Search",
+            "children": [
+              {
+                "type": "text",
+                "value": "the search"
+              }
+            ]
+          },
+          {
+            "type": "break"
+          },
+          {
+            "type": "text",
+            "value": "and the logo."
+          }
+        ]
+      },
+      {
+        "type": "thematicBreak"
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "image",
+            "url": "https://example.test/img/logo%20v2.png?size=small#top",
+            "alt": "Logo"
+          }
+        ]
+      }
+    ]
+  },
+  "html": "<p>See <a href=\"https://example.test/search?q=site%20release&amp;page=2#results\" title=\"Search\">the search</a><br>\nand the logo.</p>\n<hr>\n<p><img src=\"https://example.test/img/logo%20v2.png?size=small#top\" alt=\"Logo\"></p>\n",
+  "links": [],
+  "backlinks": [],
+  "assets": []
+}
