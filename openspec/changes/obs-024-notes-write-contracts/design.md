@@ -42,8 +42,9 @@ closed vocabularies, validated strings, unknown fields refused, cross-field rule
 - **Conflict hashes.** `ConflictRaised` carries `base_hash` (absent for `create`), `current_hash`
   (absent when no live file holds the path) and `writer_hash` (absent for `rename`, `move` and
   `delete`, which carry no content). A `merge_proposal` (merged hash, overlapping hunks) is allowed
-  only for `text/markdown` and `text/plain`, and only when all three hashes are present. These rules
-  are serde only.
+  only for `text/markdown` and `text/plain`, and only when all three hashes are present. The schema
+  states these rules as a `oneOf` of three closed shapes at the root, written by a schemars
+  transform; a conditional keyword would say the same, but the TypeScript projection refuses one.
 - **The operation id.** Both conflict events carry `operation_id`, the write operation that raised
   or resolved the conflict, so that Edge's projection `platform_notes_conflict_projection` can put
   the conflict on that operation.
@@ -51,9 +52,10 @@ closed vocabularies, validated strings, unknown fields refused, cross-field rule
 
 ## Risks / Trade-offs
 
-- The JSON Schema accepts a conflict event that breaks a cross-field rule, and a write whose blob
-  belongs to another service. A consumer that validates only with the schema must also run the Rust
-  type, as for `notes.file.changed.v1`.
+- The JSON Schema accepts a write whose blob belongs to another service. A consumer that validates
+  only with the schema must check `owner_service` itself, as for `notes.file.changed.v1`.
+- The `ConflictRaised` root is a `oneOf`, so the field lint, which reads the `properties` of a type,
+  no longer reads its members. They passed the lint as one object before the transform.
 - The workspace spec says "a JSON value" for `set_property`. This change carries it as an uploaded
   JSON document instead, so a producer that sends the value inline is refused.
 

@@ -2,86 +2,248 @@
   "$id": "urn:ratatoskr:contracts:events:v1:ConflictRaised",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ConflictRaised",
-  "description": "Payload of `notes.conflict.raised.v1` (contract `notes/conflict.v1`): a write reached the head\nof its file's queue and its base revision was not the current revision, or a `create` met a\nlive file with the same case-folded path. The current revision did not change.\n\nA fact. The enclosing envelope carries the owner as `tenant_id` (`user:<id>`) and the\naggregate `notes_conflict:<conflict_id>`. The payload names the three sides by their hashes and\nnever carries file content; a client reads the sides and the proposal through\n`GET /v1/notes/conflicts/{conflict_id}`. Every member it does not declare is refused.\n\n`Deserialize` is hand-written because the rules are cross-field: a `merge_proposal` is present\nonly for `text/markdown` and `text/plain`, and only when all three hashes are present. It\nparses a private mirror struct and then calls [`ConflictRaised::validate`].",
-  "type": "object",
-  "properties": {
-    "base_hash": {
-      "description": "The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`,\nwhich names no base.",
-      "anyOf": [
-        {
+  "description": "Payload of `notes.conflict.raised.v1` (contract `notes/conflict.v1`): a write reached the head\nof its file's queue and its base revision was not the current revision, or a `create` met a\nlive file with the same case-folded path. The current revision did not change.\n\nA fact. The enclosing envelope carries the owner as `tenant_id` (`user:<id>`) and the\naggregate `notes_conflict:<conflict_id>`. The payload names the three sides by their hashes and\nnever carries file content; a client reads the sides and the proposal through\n`GET /v1/notes/conflicts/{conflict_id}`. Every member it does not declare is refused.\n\n`Deserialize` is hand-written because the rules are cross-field: a `merge_proposal` is present\nonly for `text/markdown` and `text/plain`, and only when all three hashes are present. It\nparses a private mirror struct and then calls [`ConflictRaised::validate`]. The published\nschema states the same rules as a `oneOf` of three closed shapes (see\n[`merge_rule_branches`]), so a schema-only consumer refuses the same payloads.",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "base_hash": {
+          "description": "The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`,\nwhich names no base.",
           "$ref": "#/$defs/DigestHex"
         },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "conflict_id": {
-      "description": "The conflict. It stays open until a `resolve_conflict` write names it.",
-      "$ref": "#/$defs/NotesConflictId"
-    },
-    "connection_id": {
-      "description": "The connection whose vault holds the file.",
-      "$ref": "#/$defs/NotesConnectionId"
-    },
-    "current_hash": {
-      "description": "The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent\nwhen no live file holds the path.",
-      "anyOf": [
-        {
+        "conflict_id": {
+          "description": "The conflict. It stays open until a `resolve_conflict` write names it.",
+          "$ref": "#/$defs/NotesConflictId"
+        },
+        "connection_id": {
+          "description": "The connection whose vault holds the file.",
+          "$ref": "#/$defs/NotesConnectionId"
+        },
+        "current_hash": {
+          "description": "The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent\nwhen no live file holds the path.",
           "$ref": "#/$defs/DigestHex"
         },
-        {
-          "type": "null"
-        }
-      ]
-    },
-    "media_type": {
-      "description": "The media type of the file at `path`.",
-      "$ref": "#/$defs/MediaType"
-    },
-    "merge_proposal": {
-      "description": "The three-way merge proposal. Present only for `text/markdown` and `text/plain` when the\nbase revision is still stored, and so only when all three hashes are present.",
-      "anyOf": [
-        {
+        "media_type": {
+          "description": "The media type of the file at `path`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/MediaType"
+            },
+            {
+              "enum": [
+                "text/markdown",
+                "text/plain"
+              ]
+            }
+          ]
+        },
+        "merge_proposal": {
+          "description": "The three-way merge proposal. Present only for `text/markdown` and `text/plain` when the\nbase revision is still stored, and so only when all three hashes are present.",
           "$ref": "#/$defs/MergeProposal"
         },
-        {
-          "type": "null"
+        "operation_id": {
+          "description": "The Platform operation of kind `notes.file.write` that ended in this conflict.",
+          "$ref": "#/$defs/OperationId"
+        },
+        "origin": {
+          "description": "Who asked for the write, repeated from the write: `platform` or `site:<site id>`.",
+          "$ref": "#/$defs/WriteOrigin"
+        },
+        "path": {
+          "description": "The path that the write named, relative to the vault root, in NFC.",
+          "$ref": "#/$defs/VaultPath"
+        },
+        "writer_hash": {
+          "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
+          "$ref": "#/$defs/DigestHex"
         }
+      },
+      "additionalProperties": false,
+      "required": [
+        "base_hash",
+        "conflict_id",
+        "connection_id",
+        "current_hash",
+        "media_type",
+        "merge_proposal",
+        "operation_id",
+        "origin",
+        "path",
+        "writer_hash"
       ]
     },
-    "operation_id": {
-      "description": "The Platform operation of kind `notes.file.write` that ended in this conflict.",
-      "$ref": "#/$defs/OperationId"
-    },
-    "origin": {
-      "description": "Who asked for the write, repeated from the write: `platform` or `site:<site id>`.",
-      "$ref": "#/$defs/WriteOrigin"
-    },
-    "path": {
-      "description": "The path that the write named, relative to the vault root, in NFC.",
-      "$ref": "#/$defs/VaultPath"
-    },
-    "writer_hash": {
-      "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
-      "anyOf": [
-        {
-          "$ref": "#/$defs/DigestHex"
+    {
+      "type": "object",
+      "properties": {
+        "base_hash": {
+          "description": "The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`,\nwhich names no base.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
-        {
+        "conflict_id": {
+          "description": "The conflict. It stays open until a `resolve_conflict` write names it.",
+          "$ref": "#/$defs/NotesConflictId"
+        },
+        "connection_id": {
+          "description": "The connection whose vault holds the file.",
+          "$ref": "#/$defs/NotesConnectionId"
+        },
+        "current_hash": {
+          "description": "The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent\nwhen no live file holds the path.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "media_type": {
+          "description": "The media type of the file at `path`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/MediaType"
+            },
+            {
+              "enum": [
+                "text/markdown",
+                "text/plain"
+              ]
+            }
+          ]
+        },
+        "merge_proposal": {
+          "description": "No merge proposal: the shape for a conflict without one.",
           "type": "null"
+        },
+        "operation_id": {
+          "description": "The Platform operation of kind `notes.file.write` that ended in this conflict.",
+          "$ref": "#/$defs/OperationId"
+        },
+        "origin": {
+          "description": "Who asked for the write, repeated from the write: `platform` or `site:<site id>`.",
+          "$ref": "#/$defs/WriteOrigin"
+        },
+        "path": {
+          "description": "The path that the write named, relative to the vault root, in NFC.",
+          "$ref": "#/$defs/VaultPath"
+        },
+        "writer_hash": {
+          "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
+      },
+      "additionalProperties": false,
+      "required": [
+        "conflict_id",
+        "connection_id",
+        "media_type",
+        "operation_id",
+        "origin",
+        "path"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "base_hash": {
+          "description": "The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`,\nwhich names no base.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "conflict_id": {
+          "description": "The conflict. It stays open until a `resolve_conflict` write names it.",
+          "$ref": "#/$defs/NotesConflictId"
+        },
+        "connection_id": {
+          "description": "The connection whose vault holds the file.",
+          "$ref": "#/$defs/NotesConnectionId"
+        },
+        "current_hash": {
+          "description": "The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent\nwhen no live file holds the path.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "media_type": {
+          "description": "The media type of the file at `path`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/MediaType"
+            },
+            {
+              "not": {
+                "enum": [
+                  "text/markdown",
+                  "text/plain"
+                ]
+              }
+            }
+          ]
+        },
+        "merge_proposal": {
+          "description": "No merge proposal: the shape for a conflict without one.",
+          "type": "null"
+        },
+        "operation_id": {
+          "description": "The Platform operation of kind `notes.file.write` that ended in this conflict.",
+          "$ref": "#/$defs/OperationId"
+        },
+        "origin": {
+          "description": "Who asked for the write, repeated from the write: `platform` or `site:<site id>`.",
+          "$ref": "#/$defs/WriteOrigin"
+        },
+        "path": {
+          "description": "The path that the write named, relative to the vault root, in NFC.",
+          "$ref": "#/$defs/VaultPath"
+        },
+        "writer_hash": {
+          "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DigestHex"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "conflict_id",
+        "connection_id",
+        "media_type",
+        "operation_id",
+        "origin",
+        "path"
       ]
     }
-  },
-  "additionalProperties": false,
-  "required": [
-    "conflict_id",
-    "connection_id",
-    "media_type",
-    "operation_id",
-    "origin",
-    "path"
   ],
   "x-ratatoskr-provenance": {
     "canonical_source": "ratatoskr_notes_contracts::ConflictRaised",
@@ -91,7 +253,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:1f1dfa8d99d1a25fe9be911838655518a22dd33ed234cf9eef08c8554100960c",
+    "source_digest": "sha256:15cd4e5c7a35dd2665f728c586f75fe03da415073c1e2d454fc5edc5594d299c",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {

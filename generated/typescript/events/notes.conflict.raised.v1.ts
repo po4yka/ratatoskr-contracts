@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:7c23cdd85d3e194f31d00ec45ec155400425a3fee7551c27102c6b0672977e28
+ * source_digest: sha256:7f6515a35b3f49d6c9c923eb8be5f3ead4d272f61c155dd01c9fc5b60a8f7eab
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -22,54 +22,11 @@
  *
  * `Deserialize` is hand-written because the rules are cross-field: a `merge_proposal` is present
  * only for `text/markdown` and `text/plain`, and only when all three hashes are present. It
- * parses a private mirror struct and then calls [`ConflictRaised::validate`].
+ * parses a private mirror struct and then calls [`ConflictRaised::validate`]. The published
+ * schema states the same rules as a `oneOf` of three closed shapes (see
+ * [`merge_rule_branches`]), so a schema-only consumer refuses the same payloads.
  */
-export interface ConflictRaised {
- /**
-  * The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`,
-  * which names no base.
-  */
- base_hash?: DigestHex | null;
- /**
-  * The conflict. It stays open until a `resolve_conflict` write names it.
-  */
- conflict_id: NotesConflictId;
- /**
-  * The connection whose vault holds the file.
-  */
- connection_id: NotesConnectionId;
- /**
-  * The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent
-  * when no live file holds the path.
-  */
- current_hash?: DigestHex | null;
- /**
-  * The media type of the file at `path`.
-  */
- media_type: MediaType;
- /**
-  * The three-way merge proposal. Present only for `text/markdown` and `text/plain` when the
-  * base revision is still stored, and so only when all three hashes are present.
-  */
- merge_proposal?: MergeProposal | null;
- /**
-  * The Platform operation of kind `notes.file.write` that ended in this conflict.
-  */
- operation_id: OperationId;
- /**
-  * Who asked for the write, repeated from the write: `platform` or `site:<site id>`.
-  */
- origin: WriteOrigin;
- /**
-  * The path that the write named, relative to the vault root, in NFC.
-  */
- path: VaultPath;
- /**
-  * The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`
-  * and `delete`, which carry no content.
-  */
- writer_hash?: DigestHex | null;
-}
+export type ConflictRaised = { /** * The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`, * which names no base. */ base_hash: DigestHex; /** * The conflict. It stays open until a `resolve_conflict` write names it. */ conflict_id: NotesConflictId; /** * The connection whose vault holds the file. */ connection_id: NotesConnectionId; /** * The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent * when no live file holds the path. */ current_hash: DigestHex; /** * The media type of the file at `path`. */ media_type: MediaType & "text/markdown" | "text/plain"; /** * The three-way merge proposal. Present only for `text/markdown` and `text/plain` when the * base revision is still stored, and so only when all three hashes are present. */ merge_proposal: MergeProposal; /** * The Platform operation of kind `notes.file.write` that ended in this conflict. */ operation_id: OperationId; /** * Who asked for the write, repeated from the write: `platform` or `site:<site id>`. */ origin: WriteOrigin; /** * The path that the write named, relative to the vault root, in NFC. */ path: VaultPath; /** * The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move` * and `delete`, which carry no content. */ writer_hash: DigestHex; } | { /** * The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`, * which names no base. */ base_hash?: DigestHex | null; /** * The conflict. It stays open until a `resolve_conflict` write names it. */ conflict_id: NotesConflictId; /** * The connection whose vault holds the file. */ connection_id: NotesConnectionId; /** * The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent * when no live file holds the path. */ current_hash?: DigestHex | null; /** * The media type of the file at `path`. */ media_type: MediaType & "text/markdown" | "text/plain"; /** * No merge proposal: the shape for a conflict without one. */ merge_proposal?: null; /** * The Platform operation of kind `notes.file.write` that ended in this conflict. */ operation_id: OperationId; /** * Who asked for the write, repeated from the write: `platform` or `site:<site id>`. */ origin: WriteOrigin; /** * The path that the write named, relative to the vault root, in NFC. */ path: VaultPath; /** * The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move` * and `delete`, which carry no content. */ writer_hash?: DigestHex | null; } | { /** * The lowercase hex SHA-256 of the revision that the writer read. Absent for `create`, * which names no base. */ base_hash?: DigestHex | null; /** * The conflict. It stays open until a `resolve_conflict` write names it. */ conflict_id: NotesConflictId; /** * The connection whose vault holds the file. */ connection_id: NotesConnectionId; /** * The lowercase hex SHA-256 of the current revision when the conflict was raised. Absent * when no live file holds the path. */ current_hash?: DigestHex | null; /** * The media type of the file at `path`. */ media_type: MediaType & string; /** * No merge proposal: the shape for a conflict without one. */ merge_proposal?: null; /** * The Platform operation of kind `notes.file.write` that ended in this conflict. */ operation_id: OperationId; /** * Who asked for the write, repeated from the write: `platform` or `site:<site id>`. */ origin: WriteOrigin; /** * The path that the write named, relative to the vault root, in NFC. */ path: VaultPath; /** * The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move` * and `delete`, which carry no content. */ writer_hash?: DigestHex | null; };
 
 /**
  * Lowercase hexadecimal bytes of a content digest.

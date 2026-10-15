@@ -13,12 +13,13 @@ ratatoskr-identifiers.workspace = true
 # this crate as the only legal home for those impls.
 ratatoskr-event-envelope.workspace = true
 serde.workspace      = true
+# The schema transform of `ConflictRaised` rewrites the derived JSON value.
+serde_json.workspace = true
 schemars.workspace   = true
 regex.workspace      = true
 thiserror.workspace  = true
 
 [dev-dependencies]
-serde_json.workspace = true
 # The write and conflict tests check each fixture against the generated schema too.
 jsonschema.workspace = true
 

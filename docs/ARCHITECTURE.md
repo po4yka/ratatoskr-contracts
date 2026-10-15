@@ -355,8 +355,9 @@ Rules:
 
 - the write command is a command, so its schema is `schemas/json-schema/commands/write-request.v1.schema.json` (R3); the envelope's aggregate is `operation:<uuid>`, and the conflict events aggregate on `notes_conflict:<uuid>`;
 - the operation kinds are `create` (path, blob), `update` (path, `base_hash`, blob), `rename` and `move` (path, `base_hash`, `target_path`), `delete` (path, `base_hash`), `set_property` (path, `base_hash`, `property_key`, `property_change`) and `resolve_conflict` (`conflict_id`, `choice`, and a blob exactly for `custom`); both layers refuse two kinds in one payload;
-- a write path follows the `VaultPath` rules and its first segment is not `.obsidian` in any ASCII case; every blob of a write belongs to `ratatoskr-notes`;
-- a conflict carries hashes, never content; a `merge_proposal` is present only for `text/markdown` and `text/plain` with all three hashes, a rule of the Rust type only.
+- a write path follows the `VaultPath` rules and its first segment is not `.obsidian` in any ASCII case; every blob of a write belongs to `ratatoskr-notes`, a rule of the Rust type only;
+- `property_change` is `{"set": <BlobRef>}` with `media_type` `application/json`, or `"remove"`: a frontmatter value is uploaded first, like file content;
+- a conflict carries hashes, never content; a `merge_proposal` is present only for `text/markdown` and `text/plain` with all three hashes; the schema states this as a `oneOf` of three closed shapes, so it projects to a TypeScript union.
 
 ## 6. Document contracts
 

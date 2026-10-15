@@ -42,9 +42,12 @@ pub struct MergeProposal {
 ///
 /// `Deserialize` is hand-written because the rules are cross-field: a `merge_proposal` is present
 /// only for `text/markdown` and `text/plain`, and only when all three hashes are present. It
-/// parses a private mirror struct and then calls [`ConflictRaised::validate`].
+/// parses a private mirror struct and then calls [`ConflictRaised::validate`]. The published
+/// schema states the same rules as a `oneOf` of three closed shapes (see
+/// [`merge_rule_branches`]), so a schema-only consumer refuses the same payloads.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, schemars::JsonSchema)]
 #[serde(deny_unknown_fields)]
+#[schemars(transform = merge_rule_branches)]
 pub struct ConflictRaised {
     /// The conflict. It stays open until a `resolve_conflict` write names it.
     pub conflict_id: NotesConflictId,
@@ -110,6 +113,103 @@ impl ConflictRaised {
             return Err(NotesContractError::MergeProposalWithoutThreeSides);
         }
         Ok(())
+    }
+}
+
+/// Rewrites the derived object schema of [`ConflictRaised`] as a `oneOf` of three closed shapes:
+///
+/// 1. `media_type` is mergeable text, `merge_proposal` is present, and the three hashes are
+///    present and not `null`;
+/// 2. `media_type` is mergeable text and `merge_proposal` is absent or `null`;
+/// 3. `media_type` is any other type and `merge_proposal` is absent or `null`.
+///
+/// A conditional keyword (`if`/`then`) would say the same thing, but the TypeScript projection
+/// refuses one at an object root; a `oneOf` of objects projects to a union. The shapes are
+/// exclusive: 1 and 2 differ on `merge_proposal`, and 3 differs from both on `media_type`.
+fn merge_rule_branches(schema: &mut schemars::Schema) {
+    let Some(root) = schema.as_object_mut() else {
+        return;
+    };
+    let Some(serde_json::Value::Object(properties)) = root.remove("properties") else {
+        return;
+    };
+    let required = root
+        .remove("required")
+        .unwrap_or_else(|| serde_json::json!([]));
+    let closed = root.remove("additionalProperties");
+    root.remove("type");
+
+    let mergeable: Vec<serde_json::Value> = MERGEABLE_MEDIA_TYPES
+        .iter()
+        .map(|media_type| serde_json::Value::from(*media_type))
+        .collect();
+    let restricted = |rule: serde_json::Value| {
+        let mut media_type = properties.get("media_type").cloned().unwrap_or_default();
+        let description = media_type
+            .as_object_mut()
+            .and_then(|member| member.remove("description"));
+        let mut member = serde_json::json!({ "allOf": [media_type, rule] });
+        if let (Some(text), Some(object)) = (description, member.as_object_mut()) {
+            object.insert("description".to_owned(), text);
+        }
+        member
+    };
+    let branch = |media_type: serde_json::Value, with_proposal: bool| {
+        let mut members = properties.clone();
+        members.insert("media_type".to_owned(), media_type);
+        let mut needed = required.clone();
+        if with_proposal {
+            for name in ["base_hash", "current_hash", "writer_hash", "merge_proposal"] {
+                if let Some(member) = members.get_mut(name) {
+                    drop_null_branch(member);
+                }
+                if let Some(list) = needed.as_array_mut() {
+                    list.push(serde_json::Value::from(name));
+                }
+            }
+        } else {
+            members.insert(
+                "merge_proposal".to_owned(),
+                serde_json::json!({
+                    "description": "No merge proposal: the shape for a conflict without one.",
+                    "type": "null",
+                }),
+            );
+        }
+        serde_json::json!({
+            "type": "object",
+            "properties": members,
+            "required": needed,
+            "additionalProperties": closed.clone().unwrap_or(serde_json::Value::Bool(false)),
+        })
+    };
+    let text = restricted(serde_json::json!({ "enum": mergeable }));
+    let other = restricted(serde_json::json!({ "not": { "enum": mergeable } }));
+    root.insert(
+        "oneOf".to_owned(),
+        serde_json::json!([
+            branch(text.clone(), true),
+            branch(text, false),
+            branch(other, false)
+        ]),
+    );
+}
+
+/// Turns `{"anyOf": [<schema>, {"type": "null"}]}` into `<schema>`, keeping the description.
+fn drop_null_branch(member: &mut serde_json::Value) {
+    let Some(object) = member.as_object_mut() else {
+        return;
+    };
+    let Some(serde_json::Value::Array(branches)) = object.remove("anyOf") else {
+        return;
+    };
+    for branch in branches {
+        if branch.get("type").and_then(serde_json::Value::as_str) == Some("null") {
+            continue;
+        }
+        if let serde_json::Value::Object(inner) = branch {
+            object.extend(inner);
+        }
     }
 }
 
