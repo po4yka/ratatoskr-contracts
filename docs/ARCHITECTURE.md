@@ -326,6 +326,38 @@ Rules:
 - `connection_sequence` starts at 1 per connection and grows by exactly one per published event, so a consumer can detect a gap;
 - the published schema carries the field rules and `additionalProperties: false`; the cross-field rules are enforced by the Rust type only, as `fixtures/invalid-expectations.toml` declares.
 
+Changeset OBS-024 adds the write path (workspace spec `notes-write-command`):
+
+```rust
+pub struct FileWriteRequested {      // notes.file.write_requested.v1, contract notes/write-request.v1
+    pub operation_id: OperationId,
+    pub idempotency_key: ContentDigest,
+    pub connection_id: NotesConnectionId,
+    pub origin: WriteOrigin,         // platform | site:<site id>
+    pub operation: WriteOperation,   // {"<kind>": {...}}, exactly one kind
+}
+
+pub struct ConflictRaised {          // notes.conflict.raised.v1, contract notes/conflict.v1
+    pub conflict_id: NotesConflictId,
+    pub operation_id: OperationId,
+    pub connection_id: NotesConnectionId,
+    pub path: VaultPath,
+    pub origin: WriteOrigin,
+    pub media_type: MediaType,
+    pub base_hash: Option<DigestHex>,
+    pub current_hash: Option<DigestHex>,
+    pub writer_hash: Option<DigestHex>,
+    pub merge_proposal: Option<MergeProposal>,
+}
+```
+
+Rules:
+
+- the write command is a command, so its schema is `schemas/json-schema/commands/write-request.v1.schema.json` (R3); the envelope's aggregate is `operation:<uuid>`, and the conflict events aggregate on `notes_conflict:<uuid>`;
+- the operation kinds are `create` (path, blob), `update` (path, `base_hash`, blob), `rename` and `move` (path, `base_hash`, `target_path`), `delete` (path, `base_hash`), `set_property` (path, `base_hash`, `property_key`, `property_change`) and `resolve_conflict` (`conflict_id`, `choice`, and a blob exactly for `custom`); both layers refuse two kinds in one payload;
+- a write path follows the `VaultPath` rules and its first segment is not `.obsidian` in any ASCII case; every blob of a write belongs to `ratatoskr-notes`;
+- a conflict carries hashes, never content; a `merge_proposal` is present only for `text/markdown` and `text/plain` with all three hashes, a rule of the Rust type only.
+
 ## 6. Document contracts
 
 ### 6.1. Canonical Document IR

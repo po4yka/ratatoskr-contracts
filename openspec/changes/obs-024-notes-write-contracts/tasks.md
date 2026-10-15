@@ -10,5 +10,5 @@
 
 ## 3. Registry (workspace OBS-024 tasks 3.5 and 3.6)
 
-- [ ] 3.1 Add `tools/contractsc/tests/live_message_types.rs::notes_write_request_has_one_producer`, asserting the producer and consumer of the three messages.
-- [ ] 3.2 Document the three messages in the `README.md` subject table.
+- [x] 3.1 Add `tools/contractsc/tests/live_message_types.rs::notes_write_request_has_one_producer`, asserting the producer and consumer of the three messages. This cannot start from a failing test: the rows land with the types in 1.2 and 2.2, because `cargo contracts generate` reads them. A second producer on the command row makes it fail and name the list.
+- [x] 3.2 Document the three messages in the `README.md` subject table.
