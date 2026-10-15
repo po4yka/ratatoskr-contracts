@@ -1,245 +1,732 @@
 # Public API baseline of ratatoskr-notes-contracts, the frozen reference `api-check` diffs against.
 # Produced by cargo-public-api 0.52.0, over rustc 1.98.0-nightly (b30f3df3b 2026-06-11).
 # Regenerate with: cargo contracts api-write
+impl core::clone::Clone for ratatoskr_notes_contracts::ConflictRaised
+impl core::clone::Clone for ratatoskr_notes_contracts::ConflictResolved
+impl core::clone::Clone for ratatoskr_notes_contracts::CreateFile
+impl core::clone::Clone for ratatoskr_notes_contracts::DeleteFile
 impl core::clone::Clone for ratatoskr_notes_contracts::FileChangeKind
 impl core::clone::Clone for ratatoskr_notes_contracts::FileChanged
+impl core::clone::Clone for ratatoskr_notes_contracts::FileWriteRequested
+impl core::clone::Clone for ratatoskr_notes_contracts::MergeProposal
 impl core::clone::Clone for ratatoskr_notes_contracts::NotesContractError
+impl core::clone::Clone for ratatoskr_notes_contracts::PropertyChange
+impl core::clone::Clone for ratatoskr_notes_contracts::PropertyKey
+impl core::clone::Clone for ratatoskr_notes_contracts::PropertyValue
+impl core::clone::Clone for ratatoskr_notes_contracts::RelocateFile
+impl core::clone::Clone for ratatoskr_notes_contracts::ResolutionChoice
+impl core::clone::Clone for ratatoskr_notes_contracts::ResolveConflict
+impl core::clone::Clone for ratatoskr_notes_contracts::SetFileProperty
+impl core::clone::Clone for ratatoskr_notes_contracts::UpdateFile
 impl core::clone::Clone for ratatoskr_notes_contracts::VaultChannel
 impl core::clone::Clone for ratatoskr_notes_contracts::VaultConnected
 impl core::clone::Clone for ratatoskr_notes_contracts::VaultDisconnected
 impl core::clone::Clone for ratatoskr_notes_contracts::VaultDisplayName
 impl core::clone::Clone for ratatoskr_notes_contracts::VaultPath
+impl core::clone::Clone for ratatoskr_notes_contracts::VaultWritePath
+impl core::clone::Clone for ratatoskr_notes_contracts::WriteOperation
+impl core::clone::Clone for ratatoskr_notes_contracts::WriteOrigin
+impl core::cmp::Eq for ratatoskr_notes_contracts::ConflictRaised
+impl core::cmp::Eq for ratatoskr_notes_contracts::ConflictResolved
+impl core::cmp::Eq for ratatoskr_notes_contracts::CreateFile
+impl core::cmp::Eq for ratatoskr_notes_contracts::DeleteFile
 impl core::cmp::Eq for ratatoskr_notes_contracts::FileChangeKind
 impl core::cmp::Eq for ratatoskr_notes_contracts::FileChanged
+impl core::cmp::Eq for ratatoskr_notes_contracts::FileWriteRequested
+impl core::cmp::Eq for ratatoskr_notes_contracts::MergeProposal
 impl core::cmp::Eq for ratatoskr_notes_contracts::NotesContractError
+impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyChange
+impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyKey
+impl core::cmp::Eq for ratatoskr_notes_contracts::PropertyValue
+impl core::cmp::Eq for ratatoskr_notes_contracts::RelocateFile
+impl core::cmp::Eq for ratatoskr_notes_contracts::ResolutionChoice
+impl core::cmp::Eq for ratatoskr_notes_contracts::ResolveConflict
+impl core::cmp::Eq for ratatoskr_notes_contracts::SetFileProperty
+impl core::cmp::Eq for ratatoskr_notes_contracts::UpdateFile
 impl core::cmp::Eq for ratatoskr_notes_contracts::VaultChannel
 impl core::cmp::Eq for ratatoskr_notes_contracts::VaultConnected
 impl core::cmp::Eq for ratatoskr_notes_contracts::VaultDisconnected
 impl core::cmp::Eq for ratatoskr_notes_contracts::VaultDisplayName
 impl core::cmp::Eq for ratatoskr_notes_contracts::VaultPath
+impl core::cmp::Eq for ratatoskr_notes_contracts::VaultWritePath
+impl core::cmp::Eq for ratatoskr_notes_contracts::WriteOperation
+impl core::cmp::Eq for ratatoskr_notes_contracts::WriteOrigin
 impl core::cmp::Ord for ratatoskr_notes_contracts::FileChangeKind
+impl core::cmp::Ord for ratatoskr_notes_contracts::PropertyKey
+impl core::cmp::Ord for ratatoskr_notes_contracts::ResolutionChoice
 impl core::cmp::Ord for ratatoskr_notes_contracts::VaultChannel
 impl core::cmp::Ord for ratatoskr_notes_contracts::VaultDisplayName
 impl core::cmp::Ord for ratatoskr_notes_contracts::VaultPath
+impl core::cmp::Ord for ratatoskr_notes_contracts::VaultWritePath
+impl core::cmp::Ord for ratatoskr_notes_contracts::WriteOrigin
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::ConflictRaised
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::ConflictResolved
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::CreateFile
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::DeleteFile
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::FileChangeKind
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::FileChanged
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::FileWriteRequested
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::MergeProposal
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::NotesContractError
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyChange
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyKey
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::PropertyValue
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::RelocateFile
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::ResolutionChoice
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::ResolveConflict
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::SetFileProperty
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::UpdateFile
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultChannel
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultConnected
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultDisconnected
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultDisplayName
 impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultPath
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::VaultWritePath
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::WriteOperation
+impl core::cmp::PartialEq for ratatoskr_notes_contracts::WriteOrigin
 impl core::cmp::PartialOrd for ratatoskr_notes_contracts::FileChangeKind
+impl core::cmp::PartialOrd for ratatoskr_notes_contracts::PropertyKey
+impl core::cmp::PartialOrd for ratatoskr_notes_contracts::ResolutionChoice
 impl core::cmp::PartialOrd for ratatoskr_notes_contracts::VaultChannel
 impl core::cmp::PartialOrd for ratatoskr_notes_contracts::VaultDisplayName
 impl core::cmp::PartialOrd for ratatoskr_notes_contracts::VaultPath
+impl core::cmp::PartialOrd for ratatoskr_notes_contracts::VaultWritePath
+impl core::cmp::PartialOrd for ratatoskr_notes_contracts::WriteOrigin
+impl core::convert::From<ratatoskr_notes_contracts::PropertyKey> for alloc::string::String
 impl core::convert::From<ratatoskr_notes_contracts::VaultDisplayName> for alloc::string::String
 impl core::convert::From<ratatoskr_notes_contracts::VaultPath> for alloc::string::String
+impl core::convert::From<ratatoskr_notes_contracts::VaultWritePath> for alloc::string::String
+impl core::convert::From<ratatoskr_notes_contracts::WriteOrigin> for alloc::string::String
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notes_contracts::PropertyKey
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notes_contracts::VaultDisplayName
 impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notes_contracts::VaultPath
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notes_contracts::VaultWritePath
+impl core::convert::TryFrom<alloc::string::String> for ratatoskr_notes_contracts::WriteOrigin
 impl core::error::Error for ratatoskr_notes_contracts::NotesContractError
+impl core::fmt::Debug for ratatoskr_notes_contracts::ConflictRaised
+impl core::fmt::Debug for ratatoskr_notes_contracts::ConflictResolved
+impl core::fmt::Debug for ratatoskr_notes_contracts::CreateFile
+impl core::fmt::Debug for ratatoskr_notes_contracts::DeleteFile
 impl core::fmt::Debug for ratatoskr_notes_contracts::FileChangeKind
 impl core::fmt::Debug for ratatoskr_notes_contracts::FileChanged
+impl core::fmt::Debug for ratatoskr_notes_contracts::FileWriteRequested
+impl core::fmt::Debug for ratatoskr_notes_contracts::MergeProposal
 impl core::fmt::Debug for ratatoskr_notes_contracts::NotesContractError
+impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyChange
+impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyKey
+impl core::fmt::Debug for ratatoskr_notes_contracts::PropertyValue
+impl core::fmt::Debug for ratatoskr_notes_contracts::RelocateFile
+impl core::fmt::Debug for ratatoskr_notes_contracts::ResolutionChoice
+impl core::fmt::Debug for ratatoskr_notes_contracts::ResolveConflict
+impl core::fmt::Debug for ratatoskr_notes_contracts::SetFileProperty
+impl core::fmt::Debug for ratatoskr_notes_contracts::UpdateFile
 impl core::fmt::Debug for ratatoskr_notes_contracts::VaultChannel
 impl core::fmt::Debug for ratatoskr_notes_contracts::VaultConnected
 impl core::fmt::Debug for ratatoskr_notes_contracts::VaultDisconnected
 impl core::fmt::Debug for ratatoskr_notes_contracts::VaultDisplayName
 impl core::fmt::Debug for ratatoskr_notes_contracts::VaultPath
+impl core::fmt::Debug for ratatoskr_notes_contracts::VaultWritePath
+impl core::fmt::Debug for ratatoskr_notes_contracts::WriteOperation
+impl core::fmt::Debug for ratatoskr_notes_contracts::WriteOrigin
 impl core::fmt::Display for ratatoskr_notes_contracts::NotesContractError
+impl core::fmt::Display for ratatoskr_notes_contracts::PropertyKey
 impl core::fmt::Display for ratatoskr_notes_contracts::VaultDisplayName
 impl core::fmt::Display for ratatoskr_notes_contracts::VaultPath
+impl core::fmt::Display for ratatoskr_notes_contracts::VaultWritePath
+impl core::fmt::Display for ratatoskr_notes_contracts::WriteOrigin
 impl core::hash::Hash for ratatoskr_notes_contracts::FileChangeKind
+impl core::hash::Hash for ratatoskr_notes_contracts::PropertyKey
+impl core::hash::Hash for ratatoskr_notes_contracts::ResolutionChoice
 impl core::hash::Hash for ratatoskr_notes_contracts::VaultChannel
 impl core::hash::Hash for ratatoskr_notes_contracts::VaultDisplayName
 impl core::hash::Hash for ratatoskr_notes_contracts::VaultPath
+impl core::hash::Hash for ratatoskr_notes_contracts::VaultWritePath
+impl core::hash::Hash for ratatoskr_notes_contracts::WriteOrigin
 impl core::marker::Copy for ratatoskr_notes_contracts::FileChangeKind
+impl core::marker::Copy for ratatoskr_notes_contracts::ResolutionChoice
 impl core::marker::Copy for ratatoskr_notes_contracts::VaultChannel
+impl core::marker::Freeze for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::Freeze for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::Freeze for ratatoskr_notes_contracts::CreateFile
+impl core::marker::Freeze for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::Freeze for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::Freeze for ratatoskr_notes_contracts::FileChanged
+impl core::marker::Freeze for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::Freeze for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Freeze for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::Freeze for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::Freeze for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::Freeze for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::Freeze for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::Freeze for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::Freeze for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::Freeze for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::Freeze for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::Freeze for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::Freeze for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::Freeze for ratatoskr_notes_contracts::VaultPath
+impl core::marker::Freeze for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::Freeze for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::Freeze for ratatoskr_notes_contracts::WriteOrigin
+impl core::marker::Send for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::Send for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::Send for ratatoskr_notes_contracts::CreateFile
+impl core::marker::Send for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::Send for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::Send for ratatoskr_notes_contracts::FileChanged
+impl core::marker::Send for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::Send for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Send for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::Send for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::Send for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::Send for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::Send for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::Send for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::Send for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::Send for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::Send for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::Send for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::Send for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::Send for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::Send for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::Send for ratatoskr_notes_contracts::VaultPath
+impl core::marker::Send for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::Send for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::Send for ratatoskr_notes_contracts::WriteOrigin
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::CreateFile
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::FileChanged
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultPath
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::StructuralPartialEq for ratatoskr_notes_contracts::WriteOrigin
+impl core::marker::Sync for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::Sync for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::Sync for ratatoskr_notes_contracts::CreateFile
+impl core::marker::Sync for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::Sync for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::Sync for ratatoskr_notes_contracts::FileChanged
+impl core::marker::Sync for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::Sync for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Sync for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::Sync for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::Sync for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::Sync for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::Sync for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::Sync for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::Sync for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::Sync for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::Sync for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::Sync for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::Sync for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::Sync for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::Sync for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::Sync for ratatoskr_notes_contracts::VaultPath
+impl core::marker::Sync for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::Sync for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::Sync for ratatoskr_notes_contracts::WriteOrigin
+impl core::marker::Unpin for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::Unpin for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::Unpin for ratatoskr_notes_contracts::CreateFile
+impl core::marker::Unpin for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::Unpin for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::Unpin for ratatoskr_notes_contracts::FileChanged
+impl core::marker::Unpin for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::Unpin for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::Unpin for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::Unpin for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::Unpin for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::Unpin for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::Unpin for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::Unpin for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::Unpin for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::Unpin for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::Unpin for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::Unpin for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::Unpin for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::Unpin for ratatoskr_notes_contracts::VaultPath
+impl core::marker::Unpin for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::Unpin for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::Unpin for ratatoskr_notes_contracts::WriteOrigin
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ConflictRaised
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ConflictResolved
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::CreateFile
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::DeleteFile
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::FileChangeKind
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::FileChanged
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::FileWriteRequested
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::MergeProposal
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::NotesContractError
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyChange
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyKey
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::PropertyValue
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::RelocateFile
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ResolutionChoice
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::ResolveConflict
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::SetFileProperty
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::UpdateFile
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultChannel
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultConnected
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultDisconnected
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultDisplayName
 impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultPath
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::VaultWritePath
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::WriteOperation
+impl core::marker::UnsafeUnpin for ratatoskr_notes_contracts::WriteOrigin
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ConflictRaised
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ConflictResolved
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::CreateFile
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::DeleteFile
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::FileChangeKind
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::FileChanged
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::FileWriteRequested
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::MergeProposal
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::NotesContractError
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyChange
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyKey
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::PropertyValue
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::RelocateFile
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ResolutionChoice
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::ResolveConflict
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::SetFileProperty
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::UpdateFile
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultChannel
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultConnected
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultDisconnected
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultDisplayName
 impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultPath
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::VaultWritePath
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::WriteOperation
+impl core::panic::unwind_safe::RefUnwindSafe for ratatoskr_notes_contracts::WriteOrigin
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ConflictRaised
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ConflictResolved
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::CreateFile
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::DeleteFile
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::FileChangeKind
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::FileChanged
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::FileWriteRequested
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::MergeProposal
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::NotesContractError
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyChange
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyKey
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::PropertyValue
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::RelocateFile
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ResolutionChoice
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::ResolveConflict
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::SetFileProperty
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::UpdateFile
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultChannel
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultConnected
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultDisconnected
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultDisplayName
 impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultPath
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::VaultWritePath
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::WriteOperation
+impl core::panic::unwind_safe::UnwindSafe for ratatoskr_notes_contracts::WriteOrigin
+impl core::str::traits::FromStr for ratatoskr_notes_contracts::PropertyKey
 impl core::str::traits::FromStr for ratatoskr_notes_contracts::VaultDisplayName
 impl core::str::traits::FromStr for ratatoskr_notes_contracts::VaultPath
+impl core::str::traits::FromStr for ratatoskr_notes_contracts::VaultWritePath
+impl core::str::traits::FromStr for ratatoskr_notes_contracts::WriteOrigin
+impl ratatoskr_event_envelope::command::CommandPayload for ratatoskr_notes_contracts::FileWriteRequested
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notes_contracts::ConflictRaised
+impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notes_contracts::ConflictResolved
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notes_contracts::FileChanged
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notes_contracts::VaultConnected
 impl ratatoskr_event_envelope::envelope::EventPayload for ratatoskr_notes_contracts::VaultDisconnected
+impl ratatoskr_notes_contracts::ConflictRaised
 impl ratatoskr_notes_contracts::FileChangeKind
 impl ratatoskr_notes_contracts::FileChanged
+impl ratatoskr_notes_contracts::FileWriteRequested
+impl ratatoskr_notes_contracts::PropertyKey
+impl ratatoskr_notes_contracts::ResolutionChoice
+impl ratatoskr_notes_contracts::ResolveConflict
 impl ratatoskr_notes_contracts::VaultDisplayName
 impl ratatoskr_notes_contracts::VaultPath
+impl ratatoskr_notes_contracts::VaultWritePath
+impl ratatoskr_notes_contracts::WriteOperation
+impl ratatoskr_notes_contracts::WriteOrigin
+impl schemars::JsonSchema for ratatoskr_notes_contracts::ConflictRaised
+impl schemars::JsonSchema for ratatoskr_notes_contracts::ConflictResolved
+impl schemars::JsonSchema for ratatoskr_notes_contracts::CreateFile
+impl schemars::JsonSchema for ratatoskr_notes_contracts::DeleteFile
 impl schemars::JsonSchema for ratatoskr_notes_contracts::FileChangeKind
 impl schemars::JsonSchema for ratatoskr_notes_contracts::FileChanged
+impl schemars::JsonSchema for ratatoskr_notes_contracts::FileWriteRequested
+impl schemars::JsonSchema for ratatoskr_notes_contracts::MergeProposal
+impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyChange
+impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyKey
+impl schemars::JsonSchema for ratatoskr_notes_contracts::PropertyValue
+impl schemars::JsonSchema for ratatoskr_notes_contracts::RelocateFile
+impl schemars::JsonSchema for ratatoskr_notes_contracts::ResolutionChoice
+impl schemars::JsonSchema for ratatoskr_notes_contracts::ResolveConflict
+impl schemars::JsonSchema for ratatoskr_notes_contracts::SetFileProperty
+impl schemars::JsonSchema for ratatoskr_notes_contracts::UpdateFile
 impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultChannel
 impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultConnected
 impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultDisconnected
 impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultDisplayName
 impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultPath
+impl schemars::JsonSchema for ratatoskr_notes_contracts::VaultWritePath
+impl schemars::JsonSchema for ratatoskr_notes_contracts::WriteOperation
+impl schemars::JsonSchema for ratatoskr_notes_contracts::WriteOrigin
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ConflictRaised
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ConflictResolved
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::CreateFile
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::DeleteFile
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::FileChangeKind
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::FileChanged
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::FileWriteRequested
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::MergeProposal
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyChange
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyKey
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::PropertyValue
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::RelocateFile
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ResolutionChoice
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::ResolveConflict
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::SetFileProperty
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::UpdateFile
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultChannel
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultConnected
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultDisconnected
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultDisplayName
 impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultPath
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::VaultWritePath
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::WriteOperation
+impl serde_core::ser::Serialize for ratatoskr_notes_contracts::WriteOrigin
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ConflictRaised
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ConflictResolved
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::CreateFile
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::DeleteFile
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::FileChangeKind
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::FileChanged
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::FileWriteRequested
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::MergeProposal
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyChange
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyKey
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::PropertyValue
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::RelocateFile
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ResolutionChoice
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::ResolveConflict
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::SetFileProperty
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::UpdateFile
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultChannel
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultConnected
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultDisconnected
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultDisplayName
 impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultPath
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::VaultWritePath
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::WriteOperation
+impl<'de> serde_core::de::Deserialize<'de> for ratatoskr_notes_contracts::WriteOrigin
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ConflictRaised where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ConflictResolved where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::CreateFile where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::DeleteFile where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::FileChangeKind where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::FileChanged where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::FileWriteRequested where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::MergeProposal where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::SetFileProperty where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::UpdateFile where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultChannel where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultConnected where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultDisconnected where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultDisplayName where U: core::convert::From<T>
 impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultPath where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::VaultWritePath where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::WriteOperation where U: core::convert::From<T>
+impl<T, U> core::convert::Into<U> for ratatoskr_notes_contracts::WriteOrigin where U: core::convert::From<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ConflictRaised where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ConflictResolved where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::CreateFile where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::DeleteFile where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::FileChangeKind where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::FileChanged where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::FileWriteRequested where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::MergeProposal where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::SetFileProperty where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::UpdateFile where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultChannel where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultConnected where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultDisconnected where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultDisplayName where U: core::convert::Into<T>
 impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultPath where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::VaultWritePath where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::WriteOperation where U: core::convert::Into<T>
+impl<T, U> core::convert::TryFrom<U> for ratatoskr_notes_contracts::WriteOrigin where U: core::convert::Into<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ConflictRaised where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ConflictResolved where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::CreateFile where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::DeleteFile where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::FileChangeKind where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::FileChanged where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::FileWriteRequested where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::MergeProposal where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::NotesContractError where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyChange where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyKey where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::PropertyValue where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::RelocateFile where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ResolutionChoice where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::ResolveConflict where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::SetFileProperty where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::UpdateFile where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultChannel where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultConnected where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultDisconnected where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultDisplayName where U: core::convert::TryFrom<T>
 impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultPath where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::VaultWritePath where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::WriteOperation where U: core::convert::TryFrom<T>
+impl<T, U> core::convert::TryInto<U> for ratatoskr_notes_contracts::WriteOrigin where U: core::convert::TryFrom<T>
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ConflictRaised where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ConflictResolved where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::CreateFile where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::DeleteFile where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::FileChangeKind where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::FileChanged where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::FileWriteRequested where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::MergeProposal where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::SetFileProperty where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::UpdateFile where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultChannel where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultConnected where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultDisconnected where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultDisplayName where T: core::clone::Clone
 impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultPath where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::VaultWritePath where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::WriteOperation where T: core::clone::Clone
+impl<T> alloc::borrow::ToOwned for ratatoskr_notes_contracts::WriteOrigin where T: core::clone::Clone
 impl<T> alloc::string::ToString for ratatoskr_notes_contracts::NotesContractError where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_notes_contracts::PropertyKey where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_notes_contracts::VaultDisplayName where T: core::fmt::Display + ?core::marker::Sized
 impl<T> alloc::string::ToString for ratatoskr_notes_contracts::VaultPath where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_notes_contracts::VaultWritePath where T: core::fmt::Display + ?core::marker::Sized
+impl<T> alloc::string::ToString for ratatoskr_notes_contracts::WriteOrigin where T: core::fmt::Display + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::ConflictRaised where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::ConflictResolved where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::CreateFile where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::DeleteFile where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::FileChangeKind where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::FileChanged where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::FileWriteRequested where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::MergeProposal where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::NotesContractError where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyChange where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyKey where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::PropertyValue where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::RelocateFile where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::ResolutionChoice where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::ResolveConflict where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::SetFileProperty where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::UpdateFile where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::VaultChannel where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::VaultConnected where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::VaultDisconnected where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::VaultDisplayName where T: 'static + ?core::marker::Sized
 impl<T> core::any::Any for ratatoskr_notes_contracts::VaultPath where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::VaultWritePath where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::WriteOperation where T: 'static + ?core::marker::Sized
+impl<T> core::any::Any for ratatoskr_notes_contracts::WriteOrigin where T: 'static + ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ConflictRaised where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ConflictResolved where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::CreateFile where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::DeleteFile where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::FileChangeKind where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::FileChanged where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::FileWriteRequested where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::MergeProposal where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::NotesContractError where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyChange where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyKey where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::PropertyValue where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::RelocateFile where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ResolutionChoice where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::ResolveConflict where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::SetFileProperty where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::UpdateFile where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultChannel where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultConnected where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultDisconnected where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultDisplayName where T: ?core::marker::Sized
 impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultPath where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::VaultWritePath where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::WriteOperation where T: ?core::marker::Sized
+impl<T> core::borrow::Borrow<T> for ratatoskr_notes_contracts::WriteOrigin where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ConflictRaised where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ConflictResolved where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::CreateFile where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::DeleteFile where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::FileChangeKind where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::FileChanged where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::FileWriteRequested where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::MergeProposal where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::NotesContractError where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyChange where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyKey where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::PropertyValue where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::RelocateFile where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ResolutionChoice where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::ResolveConflict where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::SetFileProperty where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::UpdateFile where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultChannel where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultConnected where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultDisconnected where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultDisplayName where T: ?core::marker::Sized
 impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultPath where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::VaultWritePath where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::WriteOperation where T: ?core::marker::Sized
+impl<T> core::borrow::BorrowMut<T> for ratatoskr_notes_contracts::WriteOrigin where T: ?core::marker::Sized
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ConflictRaised where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ConflictResolved where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::CreateFile where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::DeleteFile where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::FileChangeKind where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::FileChanged where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::FileWriteRequested where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::MergeProposal where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::SetFileProperty where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::UpdateFile where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultChannel where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultConnected where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultDisconnected where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultDisplayName where T: core::clone::Clone
 impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultPath where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::VaultWritePath where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::WriteOperation where T: core::clone::Clone
+impl<T> core::clone::CloneToUninit for ratatoskr_notes_contracts::WriteOrigin where T: core::clone::Clone
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ConflictRaised
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ConflictResolved
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::CreateFile
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::DeleteFile
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::FileChangeKind
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::FileChanged
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::FileWriteRequested
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::MergeProposal
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::NotesContractError
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyChange
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyKey
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::PropertyValue
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::RelocateFile
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ResolutionChoice
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::ResolveConflict
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::SetFileProperty
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::UpdateFile
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultChannel
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultConnected
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultDisconnected
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultDisplayName
 impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultPath
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::VaultWritePath
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::WriteOperation
+impl<T> core::convert::From<T> for ratatoskr_notes_contracts::WriteOrigin
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ConflictRaised where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ConflictResolved where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::CreateFile where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::DeleteFile where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::FileChangeKind where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::FileChanged where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::FileWriteRequested where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::MergeProposal where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::NotesContractError where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyChange where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyKey where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::PropertyValue where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::RelocateFile where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ResolutionChoice where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::ResolveConflict where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::SetFileProperty where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::UpdateFile where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultChannel where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultConnected where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultDisconnected where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultDisplayName where T: core::clone::Clone
 impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultPath where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::VaultWritePath where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::WriteOperation where T: core::clone::Clone
+impl<T> dyn_clone::DynClone for ratatoskr_notes_contracts::WriteOrigin where T: core::clone::Clone
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ConflictRaised where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ConflictResolved where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::CreateFile where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::DeleteFile where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::FileChangeKind where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::FileChanged where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::FileWriteRequested where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::MergeProposal where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyChange where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyKey where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::PropertyValue where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::RelocateFile where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ResolutionChoice where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::ResolveConflict where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::SetFileProperty where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::UpdateFile where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultChannel where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultConnected where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultDisconnected where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultDisplayName where T: for<'de> serde_core::de::Deserialize<'de>
 impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultPath where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::VaultWritePath where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::WriteOperation where T: for<'de> serde_core::de::Deserialize<'de>
+impl<T> serde_core::de::DeserializeOwned for ratatoskr_notes_contracts::WriteOrigin where T: for<'de> serde_core::de::Deserialize<'de>
+pub const ratatoskr_notes_contracts::ConflictRaised::EVENT_TYPE: &'static str
+pub const ratatoskr_notes_contracts::ConflictResolved::EVENT_TYPE: &'static str
 pub const ratatoskr_notes_contracts::FileChanged::EVENT_TYPE: &'static str
+pub const ratatoskr_notes_contracts::FileWriteRequested::COMMAND_TYPE: &'static str
+pub const ratatoskr_notes_contracts::PropertyKey::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_notes_contracts::PropertyKey::MAX_LEN: usize
+pub const ratatoskr_notes_contracts::PropertyKey::PATTERN: &'static str
 pub const ratatoskr_notes_contracts::VaultConnected::EVENT_TYPE: &'static str
 pub const ratatoskr_notes_contracts::VaultDisconnected::EVENT_TYPE: &'static str
 pub const ratatoskr_notes_contracts::VaultDisplayName::EXAMPLES: &'static [&'static str]
@@ -248,8 +735,94 @@ pub const ratatoskr_notes_contracts::VaultDisplayName::PATTERN: &'static str
 pub const ratatoskr_notes_contracts::VaultPath::EXAMPLES: &'static [&'static str]
 pub const ratatoskr_notes_contracts::VaultPath::MAX_LEN: usize
 pub const ratatoskr_notes_contracts::VaultPath::PATTERN: &'static str
+pub const ratatoskr_notes_contracts::VaultWritePath::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_notes_contracts::VaultWritePath::MAX_LEN: usize
+pub const ratatoskr_notes_contracts::VaultWritePath::PATTERN: &'static str
+pub const ratatoskr_notes_contracts::WriteOrigin::EXAMPLES: &'static [&'static str]
+pub const ratatoskr_notes_contracts::WriteOrigin::MAX_LEN: usize
+pub const ratatoskr_notes_contracts::WriteOrigin::PATTERN: &'static str
+pub fn alloc::string::String::from(ratatoskr_notes_contracts::PropertyKey) -> Self
 pub fn alloc::string::String::from(ratatoskr_notes_contracts::VaultDisplayName) -> Self
 pub fn alloc::string::String::from(ratatoskr_notes_contracts::VaultPath) -> Self
+pub fn alloc::string::String::from(ratatoskr_notes_contracts::VaultWritePath) -> Self
+pub fn alloc::string::String::from(ratatoskr_notes_contracts::WriteOrigin) -> Self
+pub fn ratatoskr_notes_contracts::ConflictRaised::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::ConflictRaised::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::ConflictRaised::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::ConflictRaised::clone(&self) -> ratatoskr_notes_contracts::ConflictRaised
+pub fn ratatoskr_notes_contracts::ConflictRaised::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::ConflictRaised::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::ConflictRaised::eq(&self, &ratatoskr_notes_contracts::ConflictRaised) -> bool
+pub fn ratatoskr_notes_contracts::ConflictRaised::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::ConflictRaised::from(T) -> T
+pub fn ratatoskr_notes_contracts::ConflictRaised::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::ConflictRaised::into(self) -> U
+pub fn ratatoskr_notes_contracts::ConflictRaised::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::ConflictRaised::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ConflictRaised::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ConflictRaised::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::ConflictRaised::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::ConflictRaised::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::ConflictRaised::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::ConflictRaised::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::ConflictRaised::validate(&self) -> core::result::Result<(), ratatoskr_notes_contracts::NotesContractError>
+pub fn ratatoskr_notes_contracts::ConflictResolved::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::ConflictResolved::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::ConflictResolved::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::ConflictResolved::clone(&self) -> ratatoskr_notes_contracts::ConflictResolved
+pub fn ratatoskr_notes_contracts::ConflictResolved::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::ConflictResolved::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::ConflictResolved::eq(&self, &ratatoskr_notes_contracts::ConflictResolved) -> bool
+pub fn ratatoskr_notes_contracts::ConflictResolved::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::ConflictResolved::from(T) -> T
+pub fn ratatoskr_notes_contracts::ConflictResolved::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::ConflictResolved::into(self) -> U
+pub fn ratatoskr_notes_contracts::ConflictResolved::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::ConflictResolved::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ConflictResolved::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ConflictResolved::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::ConflictResolved::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::ConflictResolved::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::ConflictResolved::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::ConflictResolved::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::CreateFile::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::CreateFile::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::CreateFile::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::CreateFile::clone(&self) -> ratatoskr_notes_contracts::CreateFile
+pub fn ratatoskr_notes_contracts::CreateFile::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::CreateFile::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::CreateFile::eq(&self, &ratatoskr_notes_contracts::CreateFile) -> bool
+pub fn ratatoskr_notes_contracts::CreateFile::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::CreateFile::from(T) -> T
+pub fn ratatoskr_notes_contracts::CreateFile::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::CreateFile::into(self) -> U
+pub fn ratatoskr_notes_contracts::CreateFile::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::CreateFile::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::CreateFile::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::CreateFile::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::CreateFile::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::CreateFile::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::CreateFile::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::CreateFile::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::DeleteFile::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::DeleteFile::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::DeleteFile::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::DeleteFile::clone(&self) -> ratatoskr_notes_contracts::DeleteFile
+pub fn ratatoskr_notes_contracts::DeleteFile::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::DeleteFile::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::DeleteFile::eq(&self, &ratatoskr_notes_contracts::DeleteFile) -> bool
+pub fn ratatoskr_notes_contracts::DeleteFile::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::DeleteFile::from(T) -> T
+pub fn ratatoskr_notes_contracts::DeleteFile::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::DeleteFile::into(self) -> U
+pub fn ratatoskr_notes_contracts::DeleteFile::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::DeleteFile::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::DeleteFile::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::DeleteFile::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::DeleteFile::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::DeleteFile::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::DeleteFile::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::DeleteFile::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_notes_contracts::FileChangeKind::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_notes_contracts::FileChangeKind::as_str(self) -> &'static str
 pub fn ratatoskr_notes_contracts::FileChangeKind::borrow(&self) -> &T
@@ -293,6 +866,45 @@ pub fn ratatoskr_notes_contracts::FileChanged::try_from(U) -> core::result::Resu
 pub fn ratatoskr_notes_contracts::FileChanged::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_notes_contracts::FileChanged::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_notes_contracts::FileChanged::validate(&self) -> core::result::Result<(), ratatoskr_notes_contracts::NotesContractError>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::FileWriteRequested::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::FileWriteRequested::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::FileWriteRequested::clone(&self) -> ratatoskr_notes_contracts::FileWriteRequested
+pub fn ratatoskr_notes_contracts::FileWriteRequested::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::FileWriteRequested::deserialize<D>(D) -> core::result::Result<Self, <D as serde_core::de::Deserializer>::Error> where D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::eq(&self, &ratatoskr_notes_contracts::FileWriteRequested) -> bool
+pub fn ratatoskr_notes_contracts::FileWriteRequested::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::FileWriteRequested::from(T) -> T
+pub fn ratatoskr_notes_contracts::FileWriteRequested::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::FileWriteRequested::into(self) -> U
+pub fn ratatoskr_notes_contracts::FileWriteRequested::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::FileWriteRequested::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::FileWriteRequested::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::FileWriteRequested::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::FileWriteRequested::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::FileWriteRequested::validate(&self) -> core::result::Result<(), ratatoskr_notes_contracts::NotesContractError>
+pub fn ratatoskr_notes_contracts::MergeProposal::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::MergeProposal::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::MergeProposal::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::MergeProposal::clone(&self) -> ratatoskr_notes_contracts::MergeProposal
+pub fn ratatoskr_notes_contracts::MergeProposal::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::MergeProposal::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::MergeProposal::eq(&self, &ratatoskr_notes_contracts::MergeProposal) -> bool
+pub fn ratatoskr_notes_contracts::MergeProposal::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::MergeProposal::from(T) -> T
+pub fn ratatoskr_notes_contracts::MergeProposal::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::MergeProposal::into(self) -> U
+pub fn ratatoskr_notes_contracts::MergeProposal::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::MergeProposal::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::MergeProposal::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::MergeProposal::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::MergeProposal::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::MergeProposal::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::MergeProposal::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::MergeProposal::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_notes_contracts::NotesContractError::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_notes_contracts::NotesContractError::borrow(&self) -> &T
 pub fn ratatoskr_notes_contracts::NotesContractError::borrow_mut(&mut self) -> &mut T
@@ -307,6 +919,168 @@ pub fn ratatoskr_notes_contracts::NotesContractError::to_string(&self) -> alloc:
 pub fn ratatoskr_notes_contracts::NotesContractError::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
 pub fn ratatoskr_notes_contracts::NotesContractError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_notes_contracts::NotesContractError::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::PropertyChange::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::PropertyChange::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::PropertyChange::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::PropertyChange::clone(&self) -> ratatoskr_notes_contracts::PropertyChange
+pub fn ratatoskr_notes_contracts::PropertyChange::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::PropertyChange::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::PropertyChange::eq(&self, &ratatoskr_notes_contracts::PropertyChange) -> bool
+pub fn ratatoskr_notes_contracts::PropertyChange::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::PropertyChange::from(T) -> T
+pub fn ratatoskr_notes_contracts::PropertyChange::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::PropertyChange::into(self) -> U
+pub fn ratatoskr_notes_contracts::PropertyChange::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::PropertyChange::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyChange::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyChange::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::PropertyChange::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::PropertyChange::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyChange::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyChange::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::PropertyKey::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::PropertyKey::as_str(&self) -> &str
+pub fn ratatoskr_notes_contracts::PropertyKey::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::PropertyKey::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::PropertyKey::clone(&self) -> ratatoskr_notes_contracts::PropertyKey
+pub fn ratatoskr_notes_contracts::PropertyKey::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::PropertyKey::cmp(&self, &ratatoskr_notes_contracts::PropertyKey) -> core::cmp::Ordering
+pub fn ratatoskr_notes_contracts::PropertyKey::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::PropertyKey::eq(&self, &ratatoskr_notes_contracts::PropertyKey) -> bool
+pub fn ratatoskr_notes_contracts::PropertyKey::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::PropertyKey::from(T) -> T
+pub fn ratatoskr_notes_contracts::PropertyKey::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_notes_contracts::PropertyKey::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notes_contracts::PropertyKey::into(self) -> U
+pub fn ratatoskr_notes_contracts::PropertyKey::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::PropertyKey::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_notes_contracts::PropertyKey::partial_cmp(&self, &ratatoskr_notes_contracts::PropertyKey) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notes_contracts::PropertyKey::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyKey::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyKey::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::PropertyKey::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::PropertyKey::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_notes_contracts::PropertyKey::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyKey::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_notes_contracts::PropertyKey::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyKey::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::PropertyValue::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::PropertyValue::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::PropertyValue::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::PropertyValue::clone(&self) -> ratatoskr_notes_contracts::PropertyValue
+pub fn ratatoskr_notes_contracts::PropertyValue::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::PropertyValue::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::PropertyValue::eq(&self, &ratatoskr_notes_contracts::PropertyValue) -> bool
+pub fn ratatoskr_notes_contracts::PropertyValue::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::PropertyValue::from(T) -> T
+pub fn ratatoskr_notes_contracts::PropertyValue::into(self) -> U
+pub fn ratatoskr_notes_contracts::PropertyValue::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::PropertyValue::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyValue::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::PropertyValue::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::PropertyValue::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::PropertyValue::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyValue::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::PropertyValue::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::RelocateFile::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::RelocateFile::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::RelocateFile::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::RelocateFile::clone(&self) -> ratatoskr_notes_contracts::RelocateFile
+pub fn ratatoskr_notes_contracts::RelocateFile::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::RelocateFile::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::RelocateFile::eq(&self, &ratatoskr_notes_contracts::RelocateFile) -> bool
+pub fn ratatoskr_notes_contracts::RelocateFile::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::RelocateFile::from(T) -> T
+pub fn ratatoskr_notes_contracts::RelocateFile::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::RelocateFile::into(self) -> U
+pub fn ratatoskr_notes_contracts::RelocateFile::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::RelocateFile::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::RelocateFile::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::RelocateFile::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::RelocateFile::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::RelocateFile::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::RelocateFile::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::RelocateFile::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::ResolutionChoice::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::ResolutionChoice::as_str(self) -> &'static str
+pub fn ratatoskr_notes_contracts::ResolutionChoice::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::ResolutionChoice::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::ResolutionChoice::clone(&self) -> ratatoskr_notes_contracts::ResolutionChoice
+pub fn ratatoskr_notes_contracts::ResolutionChoice::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::ResolutionChoice::cmp(&self, &ratatoskr_notes_contracts::ResolutionChoice) -> core::cmp::Ordering
+pub fn ratatoskr_notes_contracts::ResolutionChoice::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::eq(&self, &ratatoskr_notes_contracts::ResolutionChoice) -> bool
+pub fn ratatoskr_notes_contracts::ResolutionChoice::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::ResolutionChoice::from(T) -> T
+pub fn ratatoskr_notes_contracts::ResolutionChoice::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notes_contracts::ResolutionChoice::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::ResolutionChoice::into(self) -> U
+pub fn ratatoskr_notes_contracts::ResolutionChoice::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::ResolutionChoice::partial_cmp(&self, &ratatoskr_notes_contracts::ResolutionChoice) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::ResolutionChoice::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::ResolutionChoice::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::ResolutionChoice::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::ResolveConflict::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::ResolveConflict::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::ResolveConflict::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::ResolveConflict::clone(&self) -> ratatoskr_notes_contracts::ResolveConflict
+pub fn ratatoskr_notes_contracts::ResolveConflict::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::ResolveConflict::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::ResolveConflict::eq(&self, &ratatoskr_notes_contracts::ResolveConflict) -> bool
+pub fn ratatoskr_notes_contracts::ResolveConflict::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::ResolveConflict::from(T) -> T
+pub fn ratatoskr_notes_contracts::ResolveConflict::into(self) -> U
+pub fn ratatoskr_notes_contracts::ResolveConflict::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::ResolveConflict::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ResolveConflict::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::ResolveConflict::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::ResolveConflict::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::ResolveConflict::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::ResolveConflict::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::ResolveConflict::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::ResolveConflict::validate(&self) -> core::result::Result<(), ratatoskr_notes_contracts::NotesContractError>
+pub fn ratatoskr_notes_contracts::SetFileProperty::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::SetFileProperty::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::SetFileProperty::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::SetFileProperty::clone(&self) -> ratatoskr_notes_contracts::SetFileProperty
+pub fn ratatoskr_notes_contracts::SetFileProperty::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::SetFileProperty::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::SetFileProperty::eq(&self, &ratatoskr_notes_contracts::SetFileProperty) -> bool
+pub fn ratatoskr_notes_contracts::SetFileProperty::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::SetFileProperty::from(T) -> T
+pub fn ratatoskr_notes_contracts::SetFileProperty::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::SetFileProperty::into(self) -> U
+pub fn ratatoskr_notes_contracts::SetFileProperty::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::SetFileProperty::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::SetFileProperty::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::SetFileProperty::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::SetFileProperty::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::SetFileProperty::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::SetFileProperty::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::SetFileProperty::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::UpdateFile::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::UpdateFile::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::UpdateFile::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::UpdateFile::clone(&self) -> ratatoskr_notes_contracts::UpdateFile
+pub fn ratatoskr_notes_contracts::UpdateFile::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::UpdateFile::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::UpdateFile::eq(&self, &ratatoskr_notes_contracts::UpdateFile) -> bool
+pub fn ratatoskr_notes_contracts::UpdateFile::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::UpdateFile::from(T) -> T
+pub fn ratatoskr_notes_contracts::UpdateFile::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::UpdateFile::into(self) -> U
+pub fn ratatoskr_notes_contracts::UpdateFile::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::UpdateFile::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::UpdateFile::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::UpdateFile::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::UpdateFile::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::UpdateFile::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::UpdateFile::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::UpdateFile::type_id(&self) -> core::any::TypeId
 pub fn ratatoskr_notes_contracts::VaultChannel::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
 pub fn ratatoskr_notes_contracts::VaultChannel::borrow(&self) -> &T
 pub fn ratatoskr_notes_contracts::VaultChannel::borrow_mut(&mut self) -> &mut T
@@ -419,7 +1193,99 @@ pub fn ratatoskr_notes_contracts::VaultPath::try_from(U) -> core::result::Result
 pub fn ratatoskr_notes_contracts::VaultPath::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
 pub fn ratatoskr_notes_contracts::VaultPath::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
 pub fn ratatoskr_notes_contracts::VaultPath::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::VaultWritePath::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::VaultWritePath::as_str(&self) -> &str
+pub fn ratatoskr_notes_contracts::VaultWritePath::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::VaultWritePath::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::VaultWritePath::clone(&self) -> ratatoskr_notes_contracts::VaultWritePath
+pub fn ratatoskr_notes_contracts::VaultWritePath::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::VaultWritePath::cmp(&self, &ratatoskr_notes_contracts::VaultWritePath) -> core::cmp::Ordering
+pub fn ratatoskr_notes_contracts::VaultWritePath::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::VaultWritePath::eq(&self, &ratatoskr_notes_contracts::VaultWritePath) -> bool
+pub fn ratatoskr_notes_contracts::VaultWritePath::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::VaultWritePath::from(T) -> T
+pub fn ratatoskr_notes_contracts::VaultWritePath::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_notes_contracts::VaultWritePath::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notes_contracts::VaultWritePath::into(self) -> U
+pub fn ratatoskr_notes_contracts::VaultWritePath::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::VaultWritePath::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_notes_contracts::VaultWritePath::partial_cmp(&self, &ratatoskr_notes_contracts::VaultWritePath) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notes_contracts::VaultWritePath::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::VaultWritePath::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::VaultWritePath::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::VaultWritePath::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::VaultWritePath::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_notes_contracts::VaultWritePath::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::VaultWritePath::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_notes_contracts::VaultWritePath::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::VaultWritePath::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::WriteOperation::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::WriteOperation::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::WriteOperation::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::WriteOperation::clone(&self) -> ratatoskr_notes_contracts::WriteOperation
+pub fn ratatoskr_notes_contracts::WriteOperation::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::WriteOperation::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::WriteOperation::eq(&self, &ratatoskr_notes_contracts::WriteOperation) -> bool
+pub fn ratatoskr_notes_contracts::WriteOperation::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::WriteOperation::from(T) -> T
+pub fn ratatoskr_notes_contracts::WriteOperation::inline_schema() -> bool
+pub fn ratatoskr_notes_contracts::WriteOperation::into(self) -> U
+pub fn ratatoskr_notes_contracts::WriteOperation::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::WriteOperation::kind(&self) -> &'static str
+pub fn ratatoskr_notes_contracts::WriteOperation::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::WriteOperation::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::WriteOperation::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::WriteOperation::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::WriteOperation::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::WriteOperation::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::WriteOperation::type_id(&self) -> core::any::TypeId
+pub fn ratatoskr_notes_contracts::WriteOrigin::__clone_box(&self, dyn_clone::sealed::Private) -> *mut ()
+pub fn ratatoskr_notes_contracts::WriteOrigin::as_str(&self) -> &str
+pub fn ratatoskr_notes_contracts::WriteOrigin::borrow(&self) -> &T
+pub fn ratatoskr_notes_contracts::WriteOrigin::borrow_mut(&mut self) -> &mut T
+pub fn ratatoskr_notes_contracts::WriteOrigin::clone(&self) -> ratatoskr_notes_contracts::WriteOrigin
+pub fn ratatoskr_notes_contracts::WriteOrigin::clone_into(&self, &mut T)
+pub fn ratatoskr_notes_contracts::WriteOrigin::cmp(&self, &ratatoskr_notes_contracts::WriteOrigin) -> core::cmp::Ordering
+pub fn ratatoskr_notes_contracts::WriteOrigin::deserialize<__D>(__D) -> core::result::Result<Self, <__D as serde_core::de::Deserializer>::Error> where __D: serde_core::de::Deserializer<'de>
+pub fn ratatoskr_notes_contracts::WriteOrigin::eq(&self, &ratatoskr_notes_contracts::WriteOrigin) -> bool
+pub fn ratatoskr_notes_contracts::WriteOrigin::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+pub fn ratatoskr_notes_contracts::WriteOrigin::from(T) -> T
+pub fn ratatoskr_notes_contracts::WriteOrigin::from_str(&str) -> core::result::Result<Self, Self::Err>
+pub fn ratatoskr_notes_contracts::WriteOrigin::hash<__H: core::hash::Hasher>(&self, &mut __H)
+pub fn ratatoskr_notes_contracts::WriteOrigin::into(self) -> U
+pub fn ratatoskr_notes_contracts::WriteOrigin::json_schema(&mut schemars::generate::SchemaGenerator) -> schemars::schema::Schema
+pub fn ratatoskr_notes_contracts::WriteOrigin::parse(&str) -> core::result::Result<Self, ratatoskr_identifiers::error::IdentifierError>
+pub fn ratatoskr_notes_contracts::WriteOrigin::partial_cmp(&self, &ratatoskr_notes_contracts::WriteOrigin) -> core::option::Option<core::cmp::Ordering>
+pub fn ratatoskr_notes_contracts::WriteOrigin::schema_id() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::WriteOrigin::schema_name() -> alloc::borrow::Cow<'static, str>
+pub fn ratatoskr_notes_contracts::WriteOrigin::serialize<__S>(&self, __S) -> core::result::Result<<__S as serde_core::ser::Serializer>::Ok, <__S as serde_core::ser::Serializer>::Error> where __S: serde_core::ser::Serializer
+pub fn ratatoskr_notes_contracts::WriteOrigin::to_owned(&self) -> T
+pub fn ratatoskr_notes_contracts::WriteOrigin::to_string(&self) -> alloc::string::String
+pub fn ratatoskr_notes_contracts::WriteOrigin::try_from(U) -> core::result::Result<T, <T as core::convert::TryFrom<U>>::Error>
+pub fn ratatoskr_notes_contracts::WriteOrigin::try_from(alloc::string::String) -> core::result::Result<Self, Self::Error>
+pub fn ratatoskr_notes_contracts::WriteOrigin::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+pub fn ratatoskr_notes_contracts::WriteOrigin::type_id(&self) -> core::any::TypeId
 pub mod ratatoskr_notes_contracts
+pub ratatoskr_notes_contracts::ConflictRaised::base_hash: core::option::Option<ratatoskr_identifiers::blob::DigestHex>
+pub ratatoskr_notes_contracts::ConflictRaised::conflict_id: ratatoskr_identifiers::uuid_ids::NotesConflictId
+pub ratatoskr_notes_contracts::ConflictRaised::connection_id: ratatoskr_identifiers::uuid_ids::NotesConnectionId
+pub ratatoskr_notes_contracts::ConflictRaised::current_hash: core::option::Option<ratatoskr_identifiers::blob::DigestHex>
+pub ratatoskr_notes_contracts::ConflictRaised::media_type: ratatoskr_identifiers::blob::MediaType
+pub ratatoskr_notes_contracts::ConflictRaised::merge_proposal: core::option::Option<ratatoskr_notes_contracts::MergeProposal>
+pub ratatoskr_notes_contracts::ConflictRaised::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_notes_contracts::ConflictRaised::origin: ratatoskr_notes_contracts::WriteOrigin
+pub ratatoskr_notes_contracts::ConflictRaised::path: ratatoskr_notes_contracts::VaultPath
+pub ratatoskr_notes_contracts::ConflictRaised::writer_hash: core::option::Option<ratatoskr_identifiers::blob::DigestHex>
+pub ratatoskr_notes_contracts::ConflictResolved::conflict_id: ratatoskr_identifiers::uuid_ids::NotesConflictId
+pub ratatoskr_notes_contracts::ConflictResolved::connection_id: ratatoskr_identifiers::uuid_ids::NotesConnectionId
+pub ratatoskr_notes_contracts::ConflictResolved::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_notes_contracts::ConflictResolved::origin: ratatoskr_notes_contracts::WriteOrigin
+pub ratatoskr_notes_contracts::ConflictResolved::path: ratatoskr_notes_contracts::VaultPath
+pub ratatoskr_notes_contracts::ConflictResolved::revision: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::CreateFile::blob: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_notes_contracts::CreateFile::path: ratatoskr_notes_contracts::VaultWritePath
+pub ratatoskr_notes_contracts::DeleteFile::base_hash: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::DeleteFile::path: ratatoskr_notes_contracts::VaultWritePath
 pub ratatoskr_notes_contracts::FileChangeKind::Created
 pub ratatoskr_notes_contracts::FileChangeKind::Deleted
 pub ratatoskr_notes_contracts::FileChangeKind::Renamed
@@ -433,17 +1299,49 @@ pub ratatoskr_notes_contracts::FileChanged::media_type: ratatoskr_identifiers::b
 pub ratatoskr_notes_contracts::FileChanged::path: ratatoskr_notes_contracts::VaultPath
 pub ratatoskr_notes_contracts::FileChanged::previous_path: core::option::Option<ratatoskr_notes_contracts::VaultPath>
 pub ratatoskr_notes_contracts::FileChanged::revision: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::FileWriteRequested::connection_id: ratatoskr_identifiers::uuid_ids::NotesConnectionId
+pub ratatoskr_notes_contracts::FileWriteRequested::idempotency_key: ratatoskr_identifiers::blob::ContentDigest
+pub ratatoskr_notes_contracts::FileWriteRequested::operation: ratatoskr_notes_contracts::WriteOperation
+pub ratatoskr_notes_contracts::FileWriteRequested::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
+pub ratatoskr_notes_contracts::FileWriteRequested::origin: ratatoskr_notes_contracts::WriteOrigin
+pub ratatoskr_notes_contracts::MergeProposal::has_overlapping_hunks: bool
+pub ratatoskr_notes_contracts::MergeProposal::merged_hash: ratatoskr_identifiers::blob::DigestHex
 pub ratatoskr_notes_contracts::NotesContractError::BlobDigestMismatch
 pub ratatoskr_notes_contracts::NotesContractError::BlobMediaTypeMismatch
 pub ratatoskr_notes_contracts::NotesContractError::BlobOnDeletedFile
+pub ratatoskr_notes_contracts::NotesContractError::BlobWithoutCustomResolution
+pub ratatoskr_notes_contracts::NotesContractError::BlobWithoutCustomResolution::choice: &'static str
 pub ratatoskr_notes_contracts::NotesContractError::ConnectionSequenceZero
+pub ratatoskr_notes_contracts::NotesContractError::CustomResolutionWithoutBlob
 pub ratatoskr_notes_contracts::NotesContractError::ForeignBlobOwner
 pub ratatoskr_notes_contracts::NotesContractError::ForeignBlobOwner::owner_service: alloc::string::String
+pub ratatoskr_notes_contracts::NotesContractError::MergeProposalOnBinary
+pub ratatoskr_notes_contracts::NotesContractError::MergeProposalOnBinary::media_type: alloc::string::String
+pub ratatoskr_notes_contracts::NotesContractError::MergeProposalWithoutThreeSides
 pub ratatoskr_notes_contracts::NotesContractError::MissingBlob
 pub ratatoskr_notes_contracts::NotesContractError::MissingBlob::change_kind: &'static str
 pub ratatoskr_notes_contracts::NotesContractError::PreviousPathWithoutRename
 pub ratatoskr_notes_contracts::NotesContractError::PreviousPathWithoutRename::change_kind: &'static str
 pub ratatoskr_notes_contracts::NotesContractError::RenameWithoutPreviousPath
+pub ratatoskr_notes_contracts::PropertyChange::Remove
+pub ratatoskr_notes_contracts::PropertyChange::Set(ratatoskr_notes_contracts::PropertyValue)
+pub ratatoskr_notes_contracts::RelocateFile::base_hash: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::RelocateFile::path: ratatoskr_notes_contracts::VaultWritePath
+pub ratatoskr_notes_contracts::RelocateFile::target_path: ratatoskr_notes_contracts::VaultWritePath
+pub ratatoskr_notes_contracts::ResolutionChoice::AcceptMerge
+pub ratatoskr_notes_contracts::ResolutionChoice::Custom
+pub ratatoskr_notes_contracts::ResolutionChoice::KeepCurrent
+pub ratatoskr_notes_contracts::ResolutionChoice::KeepWriter
+pub ratatoskr_notes_contracts::ResolveConflict::blob: core::option::Option<ratatoskr_identifiers::blob::BlobRef>
+pub ratatoskr_notes_contracts::ResolveConflict::choice: ratatoskr_notes_contracts::ResolutionChoice
+pub ratatoskr_notes_contracts::ResolveConflict::conflict_id: ratatoskr_identifiers::uuid_ids::NotesConflictId
+pub ratatoskr_notes_contracts::SetFileProperty::base_hash: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::SetFileProperty::path: ratatoskr_notes_contracts::VaultWritePath
+pub ratatoskr_notes_contracts::SetFileProperty::property_change: ratatoskr_notes_contracts::PropertyChange
+pub ratatoskr_notes_contracts::SetFileProperty::property_key: ratatoskr_notes_contracts::PropertyKey
+pub ratatoskr_notes_contracts::UpdateFile::base_hash: ratatoskr_identifiers::blob::DigestHex
+pub ratatoskr_notes_contracts::UpdateFile::blob: ratatoskr_identifiers::blob::BlobRef
+pub ratatoskr_notes_contracts::UpdateFile::path: ratatoskr_notes_contracts::VaultWritePath
 pub ratatoskr_notes_contracts::VaultChannel::Cli
 pub ratatoskr_notes_contracts::VaultChannel::Plugin
 pub ratatoskr_notes_contracts::VaultChannel::Sync
@@ -453,20 +1351,85 @@ pub ratatoskr_notes_contracts::VaultConnected::vault_display_name: ratatoskr_not
 pub ratatoskr_notes_contracts::VaultDisconnected::channel: ratatoskr_notes_contracts::VaultChannel
 pub ratatoskr_notes_contracts::VaultDisconnected::connection_id: ratatoskr_identifiers::uuid_ids::NotesConnectionId
 pub ratatoskr_notes_contracts::VaultDisconnected::vault_display_name: ratatoskr_notes_contracts::VaultDisplayName
+pub ratatoskr_notes_contracts::WriteOperation::Create(ratatoskr_notes_contracts::CreateFile)
+pub ratatoskr_notes_contracts::WriteOperation::Delete(ratatoskr_notes_contracts::DeleteFile)
+pub ratatoskr_notes_contracts::WriteOperation::Move(ratatoskr_notes_contracts::RelocateFile)
+pub ratatoskr_notes_contracts::WriteOperation::Rename(ratatoskr_notes_contracts::RelocateFile)
+pub ratatoskr_notes_contracts::WriteOperation::ResolveConflict(ratatoskr_notes_contracts::ResolveConflict)
+pub ratatoskr_notes_contracts::WriteOperation::SetProperty(ratatoskr_notes_contracts::SetFileProperty)
+pub ratatoskr_notes_contracts::WriteOperation::Update(ratatoskr_notes_contracts::UpdateFile)
+pub struct ratatoskr_notes_contracts::ConflictRaised
+pub struct ratatoskr_notes_contracts::ConflictResolved
+pub struct ratatoskr_notes_contracts::CreateFile
+pub struct ratatoskr_notes_contracts::DeleteFile
 pub struct ratatoskr_notes_contracts::FileChanged
+pub struct ratatoskr_notes_contracts::FileWriteRequested
+pub struct ratatoskr_notes_contracts::MergeProposal
+pub struct ratatoskr_notes_contracts::PropertyKey(_)
+pub struct ratatoskr_notes_contracts::PropertyValue(pub serde_json::value::Value)
+pub struct ratatoskr_notes_contracts::RelocateFile
+pub struct ratatoskr_notes_contracts::ResolveConflict
+pub struct ratatoskr_notes_contracts::SetFileProperty
+pub struct ratatoskr_notes_contracts::UpdateFile
 pub struct ratatoskr_notes_contracts::VaultConnected
 pub struct ratatoskr_notes_contracts::VaultDisconnected
 pub struct ratatoskr_notes_contracts::VaultDisplayName(_)
 pub struct ratatoskr_notes_contracts::VaultPath(_)
+pub struct ratatoskr_notes_contracts::VaultWritePath(_)
+pub struct ratatoskr_notes_contracts::WriteOrigin(_)
+pub type ratatoskr_notes_contracts::ConflictRaised::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::ConflictRaised::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::ConflictRaised::Owned = T
+pub type ratatoskr_notes_contracts::ConflictResolved::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::ConflictResolved::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::ConflictResolved::Owned = T
+pub type ratatoskr_notes_contracts::CreateFile::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::CreateFile::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::CreateFile::Owned = T
+pub type ratatoskr_notes_contracts::DeleteFile::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::DeleteFile::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::DeleteFile::Owned = T
 pub type ratatoskr_notes_contracts::FileChangeKind::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_notes_contracts::FileChangeKind::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::FileChangeKind::Owned = T
 pub type ratatoskr_notes_contracts::FileChanged::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_notes_contracts::FileChanged::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::FileChanged::Owned = T
+pub type ratatoskr_notes_contracts::FileWriteRequested::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::FileWriteRequested::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::FileWriteRequested::Owned = T
+pub type ratatoskr_notes_contracts::MergeProposal::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::MergeProposal::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::MergeProposal::Owned = T
 pub type ratatoskr_notes_contracts::NotesContractError::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_notes_contracts::NotesContractError::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::NotesContractError::Owned = T
+pub type ratatoskr_notes_contracts::PropertyChange::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::PropertyChange::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::PropertyChange::Owned = T
+pub type ratatoskr_notes_contracts::PropertyKey::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::PropertyKey::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::PropertyKey::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::PropertyKey::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::PropertyKey::Owned = T
+pub type ratatoskr_notes_contracts::PropertyValue::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::PropertyValue::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::PropertyValue::Owned = T
+pub type ratatoskr_notes_contracts::RelocateFile::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::RelocateFile::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::RelocateFile::Owned = T
+pub type ratatoskr_notes_contracts::ResolutionChoice::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::ResolutionChoice::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::ResolutionChoice::Owned = T
+pub type ratatoskr_notes_contracts::ResolveConflict::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::ResolveConflict::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::ResolveConflict::Owned = T
+pub type ratatoskr_notes_contracts::SetFileProperty::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::SetFileProperty::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::SetFileProperty::Owned = T
+pub type ratatoskr_notes_contracts::UpdateFile::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::UpdateFile::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::UpdateFile::Owned = T
 pub type ratatoskr_notes_contracts::VaultChannel::Error = <U as core::convert::TryFrom<T>>::Error
 pub type ratatoskr_notes_contracts::VaultChannel::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::VaultChannel::Owned = T
@@ -486,11 +1449,41 @@ pub type ratatoskr_notes_contracts::VaultPath::Error = <U as core::convert::TryF
 pub type ratatoskr_notes_contracts::VaultPath::Error = core::convert::Infallible
 pub type ratatoskr_notes_contracts::VaultPath::Error = ratatoskr_identifiers::error::IdentifierError
 pub type ratatoskr_notes_contracts::VaultPath::Owned = T
+pub type ratatoskr_notes_contracts::VaultWritePath::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::VaultWritePath::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::VaultWritePath::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::VaultWritePath::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::VaultWritePath::Owned = T
+pub type ratatoskr_notes_contracts::WriteOperation::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::WriteOperation::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::WriteOperation::Owned = T
+pub type ratatoskr_notes_contracts::WriteOrigin::Err = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::WriteOrigin::Error = <U as core::convert::TryFrom<T>>::Error
+pub type ratatoskr_notes_contracts::WriteOrigin::Error = core::convert::Infallible
+pub type ratatoskr_notes_contracts::WriteOrigin::Error = ratatoskr_identifiers::error::IdentifierError
+pub type ratatoskr_notes_contracts::WriteOrigin::Owned = T
+pub unsafe fn ratatoskr_notes_contracts::ConflictRaised::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::ConflictResolved::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::CreateFile::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::DeleteFile::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::FileChangeKind::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::FileChanged::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::FileWriteRequested::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::MergeProposal::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::NotesContractError::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::PropertyChange::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::PropertyKey::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::PropertyValue::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::RelocateFile::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::ResolutionChoice::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::ResolveConflict::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::SetFileProperty::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::UpdateFile::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::VaultChannel::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::VaultConnected::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::VaultDisconnected::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::VaultDisplayName::clone_to_uninit(&self, *mut u8)
 pub unsafe fn ratatoskr_notes_contracts::VaultPath::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::VaultWritePath::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::WriteOperation::clone_to_uninit(&self, *mut u8)
+pub unsafe fn ratatoskr_notes_contracts::WriteOrigin::clone_to_uninit(&self, *mut u8)
