@@ -44,4 +44,6 @@ pub use crate::page::{
     Anchor, AssetRef, CalloutFold, CalloutKind, EmbedTarget, FrontmatterKey, ImageUrl, LinkUrl,
     Page, PageNode, PageRoot, PageRootType, TableAlign,
 };
-pub use crate::release::{NavigationEntry, PageTitle, Release, ReleaseAsset, ReleasePage, Slug};
+pub use crate::release::{
+    MAX_ASSET_SIZE_BYTES, NavigationEntry, PageTitle, Release, ReleaseAsset, ReleasePage, Slug,
+};

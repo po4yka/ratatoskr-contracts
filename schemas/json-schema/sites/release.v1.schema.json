@@ -55,7 +55,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:5322db1a1b573d4066ee8fefdae62e21200289688d2f91a4e616adc55bed9a42",
+    "source_digest": "sha256:e299816f7bab42a068afb1e29570d731742774aa530967c4645c9da9f3c68fa1",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {
@@ -148,9 +148,10 @@
           "$ref": "#/$defs/DigestHex"
         },
         "size_bytes": {
-          "description": "The length of the asset bytes.",
+          "description": "The length of the asset bytes, at most 2^53 - 1, the largest integer that a JavaScript\nnumber holds exactly.",
           "type": "integer",
           "format": "uint64",
+          "maximum": 9007199254740991,
           "minimum": 0
         }
       },

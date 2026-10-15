@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:aeac3f0c4a41ca4d84ea073fdb996195ece8a642006fd475d9413dd1d311b785
+ * source_digest: sha256:5831ea4d4733925c54b56f54c8a791d6aa85204bb221bac28fa34dcb01f2fd75
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -105,7 +105,8 @@ export interface ReleaseAsset {
   */
  sha256: DigestHex;
  /**
-  * The length of the asset bytes.
+  * The length of the asset bytes, at most 2^53 - 1, the largest integer that a JavaScript
+  * number holds exactly.
   *
   * Format: uint64.
   */

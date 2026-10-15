@@ -95,7 +95,10 @@ pub struct ReleaseAsset {
     /// The media type that the delivery route serves the bytes with.
     pub media_type: MediaType,
 
-    /// The length of the asset bytes.
+    /// The length of the asset bytes, at most 2^53 - 1, the largest integer that a JavaScript
+    /// number holds exactly.
+    #[serde(deserialize_with = "asset_size")]
+    #[schemars(range(max = 9_007_199_254_740_991_u64))]
     pub size_bytes: u64,
 }
 
@@ -115,6 +118,24 @@ pub struct NavigationEntry {
 
     /// The entries under this one, in the order the site shows them.
     pub children: Vec<NavigationEntry>,
+}
+
+/// The largest asset size, 2^53 - 1: the largest integer that a JavaScript number holds exactly.
+pub const MAX_ASSET_SIZE_BYTES: u64 = 9_007_199_254_740_991;
+
+/// Refuses an asset size above [`MAX_ASSET_SIZE_BYTES`].
+fn asset_size<'de, D>(deserializer: D) -> Result<u64, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let size = <u64 as serde::Deserialize>::deserialize(deserializer)?;
+    if size <= MAX_ASSET_SIZE_BYTES {
+        Ok(size)
+    } else {
+        Err(serde::de::Error::custom(format!(
+            "size_bytes must be at most {MAX_ASSET_SIZE_BYTES}, found {size}"
+        )))
+    }
 }
 
 impl Release {
