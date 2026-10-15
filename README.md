@@ -217,11 +217,23 @@ The crate also carries the write path of changeset OBS-024 (workspace spec `note
 | Subject | Producer | Consumer |
 |---|---|---|
 | `evt.notes.vault.connected.v1` | `ratatoskr-notes` | `ratatoskr-knowledge` |
-| `evt.notes.vault.disconnected.v1` | `ratatoskr-notes` | `ratatoskr-knowledge` |
-| `evt.notes.file.changed.v1` | `ratatoskr-notes` | `ratatoskr-knowledge` |
+| `evt.notes.vault.disconnected.v1` | `ratatoskr-notes` | `ratatoskr-knowledge`, `ratatoskr-sites` |
+| `evt.notes.file.changed.v1` | `ratatoskr-notes` | `ratatoskr-knowledge`, `ratatoskr-sites` |
 | `cmd.notes.file.write_requested.v1` | `ratatoskr-platform` (Edge) | `ratatoskr-notes` |
 | `evt.notes.conflict.raised.v1` | `ratatoskr-notes` | `ratatoskr-platform` |
 | `evt.notes.conflict.resolved.v1` | `ratatoskr-notes` | `ratatoskr-platform` |
+
+### Sites
+
+`ratatoskr-sites-contracts` carries the documents and messages of changeset SITE-025 (workspace change `add-site-publications`). `sites/site-manifest.v1` is the file `ratatoskr-site.toml`: a site id (3 to 40 lower-case letters, digits and `-`), one hostname, one or more publication ids and the requested capabilities, from the closed set `pages.read`, `assets.read`, `search.publication`, `live.release`, `draft.read`, `notes.edit`, `library.read` and `knowledge.search`. `sites/release.v1` is one release: the site, the publications, the pages by slug with their title and page SHA-256, the assets by SHA-256 and the navigation; its id is the SHA-256 of its RFC 8785 form. `sites/page.v1` is one page: slug, title, allowlisted frontmatter, the body as an mdast-compatible tree with `callout`, `wikiLink` and `embed`, the same body as sanitised HTML, and its links, backlinks and assets. None of them holds a vault path, and each refuses unknown members.
+
+| Subject | Producer | Consumer |
+|---|---|---|
+| `cmd.sites.release.build_requested.v1` | `ratatoskr-platform` (Edge) | `ratatoskr-sites` |
+| `evt.sites.release.published.v1` | `ratatoskr-sites` | `ratatoskr-platform` (SSE relay of SITE-027) |
+| `evt.platform.site_approval.changed.v1` | `ratatoskr-platform` | `ratatoskr-sites` |
+
+The release event names the site, the release id, the publications, the page count and `published_at`, and never a title, slug, path or content. The approval event names the site, the manifest SHA-256, the approved capabilities, the hostname and the state, `approved` or `withdrawn`.
 
 ## Proposed development workflow
 

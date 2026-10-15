@@ -50,9 +50,9 @@ fn generate_twice_produces_identical_bytes() {
     assert_eq!(first, second);
     assert_eq!(
         first.len(),
-        148,
-        "seventy-four registered roots produce seventy-four JSON Schema artifacts plus \
-         seventy-four TypeScript counterparts; update this pin when the registry changes"
+        154,
+        "seventy-seven registered roots produce seventy-seven JSON Schema artifacts plus \
+         seventy-seven TypeScript counterparts; update this pin when the registry changes"
     );
 }
 
@@ -394,8 +394,8 @@ fn generated_typescript_artifacts_mirror_the_schema_tree() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        74,
-        "seventy-four roots must yield seventy-four TypeScript files"
+        77,
+        "seventy-seven roots must yield seventy-seven TypeScript files"
     );
 
     for (path, body) in &generated {
@@ -469,8 +469,8 @@ fn generated_typescript_is_byte_deterministic() {
     let first_typescript = typescript_subset(&first);
     assert_eq!(
         first_typescript.len(),
-        74,
-        "seventy-four roots must yield seventy-four TypeScript files"
+        77,
+        "seventy-seven roots must yield seventy-seven TypeScript files"
     );
     assert_eq!(first_typescript, typescript_subset(&second));
 }
@@ -485,8 +485,8 @@ fn generated_typescript_contains_no_timestamps() {
     let typescript = typescript_subset(&generated);
     assert_eq!(
         typescript.len(),
-        74,
-        "seventy-four roots must yield seventy-four TypeScript files"
+        77,
+        "seventy-seven roots must yield seventy-seven TypeScript files"
     );
     for (path, body) in &typescript {
         if let Some(position) = iso_date_positions(&strip_block_comments(body)).first() {

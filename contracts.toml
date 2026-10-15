@@ -2086,7 +2086,7 @@ lifecycle      = "proposed"
 classification = "internal"
 owner          = "ratatoskr-notes"
 producers      = ["ratatoskr-notes"]
-consumers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-knowledge", "ratatoskr-sites"]
 crate_name     = "ratatoskr-notes-contracts"
 canonical_path = "crates/notes-contracts/src/vault.rs"
 fixtures_dir   = "fixtures/events/notes.vault.disconnected.v1"
@@ -2112,7 +2112,7 @@ lifecycle      = "proposed"
 classification = "internal"
 owner          = "ratatoskr-notes"
 producers      = ["ratatoskr-notes"]
-consumers      = ["ratatoskr-knowledge"]
+consumers      = ["ratatoskr-knowledge", "ratatoskr-sites"]
 crate_name     = "ratatoskr-notes-contracts"
 canonical_path = "crates/notes-contracts/src/file.rs"
 fixtures_dir   = "fixtures/events/notes.file.changed.v1"
@@ -2281,3 +2281,88 @@ output         = "schemas/json-schema/sites/page.v1.schema.json"
 schema_id      = "urn:ratatoskr:contracts:sites:v1:Page"
 unknown_policy = "reject"
 privacy        = "user_content"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.release_build_requested"
+family         = "commands"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-sites"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/messages.rs"
+fixtures_dir   = "fixtures/commands/sites.release.build_requested.v1"
+summary        = "Command: Edge asks ratatoskr-sites to build a release of one site, under the operation of the kind sites.release.build. Names the operation and the site only; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::ReleaseBuildRequested"
+output         = "schemas/json-schema/commands/release-build-requested.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:commands:v1:ReleaseBuildRequested"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.command]
+command_type = "sites.release.build_requested.v1"
+payload_type = "ratatoskr_sites_contracts::ReleaseBuildRequested"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.release_published"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-sites"]
+consumers      = ["ratatoskr-platform"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/messages.rs"
+fixtures_dir   = "fixtures/events/sites.release.published.v1"
+summary        = "Fact: a new release of a site became current. Names the site, the release id, the publications, the page count and the instant, never a title, slug, path or content; unknown fields are refused. Platform relays it over SSE from SITE-027."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::ReleasePublished"
+output         = "schemas/events/sites.release.published.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:ReleasePublished"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[[contract.field]]
+pointer     = "/properties/published_at"
+authority   = "producer_asserted"
+nullability = "required"
+unit        = "instant_rfc3339_utc_canonical"
+note        = "Instant at which the release became current, from the ratatoskr-sites clock, in the transaction that switches the current release."
+
+[contract.event]
+event_type   = "sites.release.published.v1"
+payload_type = "ratatoskr_sites_contracts::ReleasePublished"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "platform.site_approval_changed"
+family         = "events"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-platform"
+producers      = ["ratatoskr-platform"]
+consumers      = ["ratatoskr-sites"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/messages.rs"
+fixtures_dir   = "fixtures/events/platform.site_approval.changed.v1"
+summary        = "Fact: the owner approved or withdrew the manifest of one site in identity.site_approvals. Names the site, the manifest SHA-256, the approved capabilities, the hostname and the state; unknown fields are refused."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::SiteApprovalChanged"
+output         = "schemas/events/platform.site_approval.changed.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:events:v1:SiteApprovalChanged"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"
+
+[contract.event]
+event_type   = "platform.site_approval.changed.v1"
+payload_type = "ratatoskr_sites_contracts::SiteApprovalChanged"

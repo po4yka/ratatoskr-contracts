@@ -336,6 +336,15 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         }
         "ratatoskr_sites_contracts::Page" => render!(ratatoskr_sites_contracts::Page),
         "ratatoskr_sites_contracts::Release" => render!(ratatoskr_sites_contracts::Release),
+        "ratatoskr_sites_contracts::ReleaseBuildRequested" => {
+            render!(ratatoskr_sites_contracts::ReleaseBuildRequested)
+        }
+        "ratatoskr_sites_contracts::ReleasePublished" => {
+            render!(ratatoskr_sites_contracts::ReleasePublished)
+        }
+        "ratatoskr_sites_contracts::SiteApprovalChanged" => {
+            render!(ratatoskr_sites_contracts::SiteApprovalChanged)
+        }
         "ratatoskr_sites_contracts::SiteManifest" => {
             render!(ratatoskr_sites_contracts::SiteManifest)
         }

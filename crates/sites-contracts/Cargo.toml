@@ -9,6 +9,9 @@ repository.workspace   = true
 
 [dependencies]
 ratatoskr-identifiers.workspace = true
+# Needed for `impl EventPayload` and `impl CommandPayload` on the payloads; the orphan rule leaves
+# this crate as the only legal home for those impls.
+ratatoskr-event-envelope.workspace = true
 serde.workspace      = true
 # The frontmatter values of a page are any JSON value the note gives them.
 serde_json.workspace = true

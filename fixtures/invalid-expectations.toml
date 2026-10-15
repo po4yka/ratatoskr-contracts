@@ -1004,3 +1004,13 @@ reason         = "A conflict carries hashes, never the file text; a member outsi
 rejected_by    = ["json_schema", "serde"]
 error_contains = 'unknown field `text`'
 reason         = "A resolution carries the resulting revision hash, never the file text; a member outside the schema is refused so vault content cannot ride along."
+
+["events/sites.release.published.v1/invalid/page-title.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = 'unknown field `page_title`'
+reason         = "The release event names the site, the release, the publications, the page count and the instant; a page title or any other member is refused, so no page data reaches the bus."
+
+["events/platform.site_approval.changed.v1/invalid/unknown-capability.json"]
+rejected_by    = ["json_schema", "serde"]
+error_contains = "unknown variant `notes.delete`"
+reason         = "An approval names only capabilities of the closed set of the site-manifest spec; notes.delete is not one."

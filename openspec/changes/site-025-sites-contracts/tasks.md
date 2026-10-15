@@ -10,7 +10,7 @@
 
 ## 3. Messages (workspace SITE-025 tasks 3.5 and 3.6)
 
-- [ ] 3.1 RED: add `tools/contractsc/tests/live_message_types.rs::sites_message_types_are_registered`. It MUST fail because `sites.release.build_requested.v1` is not registered.
-- [ ] 3.2 GREEN: add `ReleaseBuildRequested`, `ReleasePublished` and `SiteApprovalChanged` with their rows and fixtures, add `ratatoskr-sites` to the consumers of `notes.file.changed.v1` and `notes.vault.disconnected.v1`, regenerate, and update the pinned counts. 3.1 passes and `cargo test --workspace` passes.
-- [ ] 3.3 Document the three messages in the `README.md` subject table. No test: documentation.
+- [x] 3.1 RED: add `tools/contractsc/tests/live_message_types.rs::sites_message_types_are_registered`. It MUST fail because `sites.release.build_requested.v1` is not registered.
+- [x] 3.2 GREEN: add `ReleaseBuildRequested`, `ReleasePublished` and `SiteApprovalChanged` with their rows and fixtures, add `ratatoskr-sites` to the consumers of `notes.file.changed.v1` and `notes.vault.disconnected.v1`, regenerate, and update the pinned counts. 3.1 passes and `cargo test --workspace` passes.
+- [x] 3.3 Document the three messages in the `README.md` subject table. No test: documentation.
 - [ ] 3.4 Bless the public API baseline of `ratatoskr-sites-contracts` with `cargo contracts api-write`. No test: a generated baseline; `cargo contracts api-check` verifies it.

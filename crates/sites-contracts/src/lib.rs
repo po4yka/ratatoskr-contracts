@@ -11,6 +11,13 @@
 //!   its assets by SHA-256 and its navigation. The release id is the SHA-256 of its RFC 8785 form.
 //! - [`Page`] — contract `sites/page.v1`: one page, with its body as an mdast-compatible tree
 //!   ([`PageRoot`], [`PageNode`], with `callout`, `wikiLink` and `embed`) and as sanitised HTML.
+//! - [`ReleaseBuildRequested`] — payload of the command `sites.release.build_requested.v1`: Edge
+//!   asks `ratatoskr-sites` to build a release of one site.
+//! - [`ReleasePublished`] — payload of `sites.release.published.v1`: a new release became
+//!   current. No title, slug, path or content.
+//! - [`SiteApprovalChanged`] — payload of `platform.site_approval.changed.v1` (contract
+//!   `platform/site-approval-changed.v1`): Platform approved or withdrew a manifest digest
+//!   ([`ApprovalState`]).
 //! - [`SiteId`] / [`PublicationId`] / [`Hostname`] / [`Slug`] / [`PageTitle`] / [`Anchor`] /
 //!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] — validated strings.
 //!
@@ -24,11 +31,15 @@
 
 mod error;
 mod manifest;
+mod messages;
 mod page;
 mod release;
 
 pub use crate::error::SitesContractError;
 pub use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, SiteManifest};
+pub use crate::messages::{
+    ApprovalState, ReleaseBuildRequested, ReleasePublished, SiteApprovalChanged,
+};
 pub use crate::page::{
     Anchor, AssetRef, CalloutFold, CalloutKind, EmbedTarget, FrontmatterKey, ImageUrl, LinkUrl,
     Page, PageNode, PageRoot, PageRootType, TableAlign,
