@@ -705,3 +705,45 @@ fn sites_message_types_are_registered() {
         );
     }
 }
+
+/// SITE-027, workspace design D5: the sites service alone announces a draft change, Edge alone
+/// reads it, and the message carries no note content and no vault path.
+#[test]
+fn sites_draft_changed_is_registered() {
+    let metadata = metadata();
+    let (kind, contract) = registered(&metadata, "sites.draft.changed.v1");
+    assert_eq!(kind, Kind::Event, "sites.draft.changed.v1 is an event");
+    assert_eq!(
+        contract.producers,
+        names(&["ratatoskr-sites"]),
+        "sites.draft.changed.v1: the only producer is ratatoskr-sites"
+    );
+    assert_eq!(
+        contract.consumers,
+        names(&["ratatoskr-platform"]),
+        "sites.draft.changed.v1: the only consumer is ratatoskr-platform"
+    );
+    let output = &contract
+        .root_types
+        .first()
+        .expect("the draft change declares its payload")
+        .output;
+    let generated =
+        generate(&metadata, GENERATOR_VERSION).expect("the committed contracts generate");
+    let schema: serde_json::Value = serde_json::from_str(
+        generated
+            .get(std::path::Path::new(output))
+            .unwrap_or_else(|| panic!("{output} is not generated")),
+    )
+    .expect("a generated schema is JSON");
+    let mut properties = Vec::new();
+    property_names(&schema, &mut properties);
+    let private: Vec<&String> = properties
+        .iter()
+        .filter(|name| name.ends_with("content") || name.ends_with("path"))
+        .collect();
+    assert!(
+        private.is_empty(),
+        "sites.draft.changed.v1 must carry no content and no path, but its schema declares {private:?}"
+    );
+}
