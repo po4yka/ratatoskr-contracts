@@ -1,0 +1,64 @@
+{
+  "slug": "handbook/links",
+  "title": "Links",
+  "frontmatter": {
+    "title": "Links"
+  },
+  "ast": {
+    "type": "root",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "value": "See "
+          },
+          {
+            "type": "wikiLink",
+            "slug": "handbook/start",
+            "anchor": "start-here",
+            "children": [
+              {
+                "type": "text",
+                "value": "the start"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "value": ", "
+          },
+          {
+            "type": "text",
+            "value": "my notes"
+          },
+          {
+            "type": "text",
+            "value": " and "
+          },
+          {
+            "type": "link",
+            "url": "https://example.test/about",
+            "children": [
+              {
+                "type": "text",
+                "value": "the site"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "value": "."
+          }
+        ]
+      }
+    ]
+  },
+  "html": "<p>See <a href=\"handbook/start#start-here\" data-wikilink>the start</a>, my notes and <a href=\"https://example.test/about\">the site</a>.</p>\n",
+  "links": [
+    "handbook/start"
+  ],
+  "backlinks": [],
+  "assets": []
+}

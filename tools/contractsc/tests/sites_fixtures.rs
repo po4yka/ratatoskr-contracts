@@ -168,3 +168,73 @@ fn site_manifest_fixtures_match_their_names() {
         }
     }
 }
+
+/// The release and page contracts: (contract name, generated schema, Rust type, fixture folder).
+const DOCUMENTS: [(&str, &str, &str, &str); 2] = [
+    (
+        "sites/release.v1",
+        "schemas/json-schema/sites/release.v1.schema.json",
+        "ratatoskr_sites_contracts::Release",
+        "fixtures/sites/release/valid",
+    ),
+    (
+        "sites/page.v1",
+        "schemas/json-schema/sites/page.v1.schema.json",
+        "ratatoskr_sites_contracts::Page",
+        "fixtures/sites/page/valid",
+    ),
+];
+
+/// Every `*.json` file directly under `folder`, sorted by name, with its parsed value.
+fn json_fixtures(folder: &str) -> Vec<(String, serde_json::Value)> {
+    let mut found: Vec<(String, serde_json::Value)> = std::fs::read_dir(repo_root().join(folder))
+        .unwrap_or_else(|error| panic!("{folder}: {error}"))
+        .flatten()
+        .map(|entry| entry.path())
+        .filter(|path| {
+            path.extension()
+                .is_some_and(|extension| extension == "json")
+        })
+        .map(|path| {
+            let text = std::fs::read_to_string(&path)
+                .unwrap_or_else(|error| panic!("{}: {error}", path.display()));
+            let parsed = serde_json::from_str(&text)
+                .unwrap_or_else(|error| panic!("{} is not JSON: {error}", path.display()));
+            (path.display().to_string(), parsed)
+        })
+        .collect();
+    found.sort_by(|left, right| left.0.cmp(&right.0));
+    found
+}
+
+/// Workspace spec `site-content-delivery`: a site reads `sites/release.v1` and `sites/page.v1`.
+/// Each fixture deserialises into its Rust type and serialises back to the same canonical bytes,
+/// so the type loses, adds and reorders nothing that a fixture carries.
+#[test]
+fn release_and_page_fixtures_round_trip() {
+    let missing: Vec<&str> = DOCUMENTS
+        .iter()
+        .filter(|(_, schema, ..)| generated_schema(schema).is_none())
+        .map(|(name, ..)| *name)
+        .collect();
+    assert!(
+        missing.is_empty(),
+        "{missing:?} do not exist: nothing generates their schemas"
+    );
+
+    for (name, _, rust_path, folder) in DOCUMENTS {
+        let fixtures = json_fixtures(folder);
+        assert!(!fixtures.is_empty(), "{name} has no fixture under {folder}");
+        for (path, parsed) in fixtures {
+            let reemitted = roundtrip(rust_path, &parsed)
+                .unwrap_or_else(|| panic!("{rust_path} is not in the registry"))
+                .unwrap_or_else(|error| panic!("{path} is refused by {rust_path}: {error}"));
+            let before = ratatoskr_identifiers::canonical_json(&parsed).expect("JSON renders");
+            let after = ratatoskr_identifiers::canonical_json(&reemitted).expect("JSON renders");
+            assert_eq!(
+                after, before,
+                "{path} does not round-trip to the same bytes"
+            );
+        }
+    }
+}

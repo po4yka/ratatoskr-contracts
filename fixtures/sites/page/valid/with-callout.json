@@ -1,0 +1,91 @@
+{
+  "slug": "handbook/start",
+  "title": "Start here",
+  "frontmatter": {
+    "tags": [
+      "handbook"
+    ],
+    "title": "Start here"
+  },
+  "ast": {
+    "type": "root",
+    "children": [
+      {
+        "type": "heading",
+        "depth": 1,
+        "anchor": "start-here",
+        "children": [
+          {
+            "type": "text",
+            "value": "Start here"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "kind": "note",
+        "fold": "open",
+        "title": [
+          {
+            "type": "text",
+            "value": "Before you read"
+          }
+        ],
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "value": "This handbook is "
+              },
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "public"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "ordered": false,
+        "spread": false,
+        "children": [
+          {
+            "type": "listItem",
+            "checked": true,
+            "spread": false,
+            "children": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Read the links page."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "html": "<h1 id=\"start-here\">Start here</h1>\n<div class=\"callout\" data-callout=\"note\" data-callout-fold=\"open\"><div class=\"callout-title\">Before you read</div><div class=\"callout-content\"><p>This handbook is <strong>public</strong>.</p></div></div>\n<ul><li><input type=\"checkbox\" checked disabled> <p>Read the links page.</p></li></ul>\n",
+  "links": [],
+  "backlinks": [
+    "handbook/diagram",
+    "handbook/links"
+  ],
+  "assets": []
+}

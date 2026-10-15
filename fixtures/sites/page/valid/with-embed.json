@@ -1,0 +1,48 @@
+{
+  "slug": "handbook/diagram",
+  "title": "Diagram",
+  "frontmatter": {},
+  "ast": {
+    "type": "root",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "embed",
+            "target": {
+              "kind": "asset",
+              "sha256": "ced0e0da2723c17bce89eac3ffc3107ca7753d95c6abc28ce29214a19667728d",
+              "media_type": "image/png",
+              "alt": "The release flow"
+            }
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "embed",
+            "target": {
+              "kind": "page",
+              "slug": "handbook/start",
+              "anchor": "start-here"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "html": "<p><img src=\"assets/ced0e0da2723c17bce89eac3ffc3107ca7753d95c6abc28ce29214a19667728d\" alt=\"The release flow\"></p>\n<p><a href=\"handbook/start#start-here\" data-embed>Start here</a></p>\n",
+  "links": [
+    "handbook/start"
+  ],
+  "backlinks": [],
+  "assets": [
+    {
+      "sha256": "ced0e0da2723c17bce89eac3ffc3107ca7753d95c6abc28ce29214a19667728d",
+      "media_type": "image/png"
+    }
+  ]
+}
