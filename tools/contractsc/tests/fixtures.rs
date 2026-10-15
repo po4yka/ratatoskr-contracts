@@ -334,6 +334,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_operational_contracts::ScheduleInspectionPage" => {
             render!(ratatoskr_operational_contracts::ScheduleInspectionPage)
         }
+        "ratatoskr_sites_contracts::SiteManifest" => {
+            render!(ratatoskr_sites_contracts::SiteManifest)
+        }
         "ratatoskr_social_contracts::SocialSourceCaptured" => {
             render!(ratatoskr_social_contracts::SocialSourceCaptured)
         }

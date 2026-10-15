@@ -49,6 +49,7 @@ crates/
 ├── backup-contracts/          (now)
 ├── notification-contracts/    (now)
 ├── notes-contracts/           (now)
+├── sites-contracts/           (now)
 └── blob-transfer-contracts/   (now)
 
 schemas/

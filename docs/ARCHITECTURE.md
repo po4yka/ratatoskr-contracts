@@ -44,6 +44,7 @@ ratatoskr-contracts/
 │   ├── backup-contracts/
 │   ├── notification-contracts/
 │   ├── notes-contracts/
+│   ├── sites-contracts/
 │   └── error-contracts/
 ├── schemas/
 │   ├── events/

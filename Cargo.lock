@@ -1435,6 +1435,7 @@ dependencies = [
  "ratatoskr-notification-contracts",
  "ratatoskr-operation-contracts",
  "ratatoskr-operational-contracts",
+ "ratatoskr-sites-contracts",
  "ratatoskr-social-contracts",
  "regex",
  "schemars",
@@ -1572,6 +1573,17 @@ dependencies = [
  "serde_json",
  "thiserror",
  "uuid",
+]
+
+[[package]]
+name = "ratatoskr-sites-contracts"
+version = "0.1.0"
+dependencies = [
+ "ratatoskr-identifiers",
+ "regex",
+ "schemars",
+ "serde",
+ "thiserror",
 ]
 
 [[package]]

@@ -1,7 +1,7 @@
 ## 1. Site manifest (workspace SITE-025 tasks 3.1 and 3.2)
 
-- [ ] 1.1 RED: add `fixtures/sites/site-manifest/{valid-minimal,valid-all-capabilities,invalid-unknown-key,invalid-unknown-capability,invalid-two-hostnames,invalid-site-id}.toml` and `tools/contractsc/tests/sites_fixtures.rs::site_manifest_fixtures_match_their_names`. It MUST fail on its first assertion, because `sites/site-manifest.v1` does not exist.
-- [ ] 1.2 GREEN: add the crate `ratatoskr-sites-contracts` with `SiteManifest` and `SiteCapability`, the row `sites.site_manifest`, `ratatoskr-sites` in the known services, the registry entries and the canonical renderer, run `cargo contracts generate`, and update the pinned counts. 1.1 passes.
+- [x] 1.1 RED: add `fixtures/sites/site-manifest/{valid-minimal,valid-all-capabilities,invalid-unknown-key,invalid-unknown-capability,invalid-two-hostnames,invalid-site-id}.toml` and `tools/contractsc/tests/sites_fixtures.rs::site_manifest_fixtures_match_their_names`. It MUST fail on its first assertion, because `sites/site-manifest.v1` does not exist.
+- [x] 1.2 GREEN: add the crate `ratatoskr-sites-contracts` with `SiteManifest` and `SiteCapability`, the row `sites.site_manifest`, `ratatoskr-sites` in the known services, the registry entries and the canonical renderer, run `cargo contracts generate`, and update the pinned counts. 1.1 passes.
 
 ## 2. Release and page (workspace SITE-025 tasks 3.3 and 3.4)
 

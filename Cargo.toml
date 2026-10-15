@@ -13,6 +13,7 @@ members = [
     "crates/backup-contracts",
     "crates/notification-contracts",
     "crates/notes-contracts",
+    "crates/sites-contracts",
     "crates/blob-transfer-contracts",
     "crates/github-contracts",
     "tools/contractsc",
@@ -39,6 +40,7 @@ ratatoskr-ai-archive-contracts = { version = "0.1.0", path = "crates/ai-archive-
 ratatoskr-backup-contracts     = { version = "0.1.0", path = "crates/backup-contracts" }
 ratatoskr-notification-contracts = { version = "0.1.0", path = "crates/notification-contracts" }
 ratatoskr-notes-contracts = { version = "0.1.0", path = "crates/notes-contracts" }
+ratatoskr-sites-contracts = { version = "0.1.0", path = "crates/sites-contracts" }
 ratatoskr-blob-transfer-contracts = { version = "0.1.0", path = "crates/blob-transfer-contracts" }
 ratatoskr-github-contracts = { version = "0.1.0", path = "crates/github-contracts" }
 
