@@ -27,6 +27,7 @@ known = [
   "ratatoskr-channel-digests",
   "ratatoskr-notes",
   "ratatoskr-sites",
+  "ratatoskr-site-sdk",
 ]
 
 # Entity kinds a fixture is allowed to carry (rule R12). The wire type stays OPEN
@@ -66,6 +67,8 @@ known = [
 # `ratatoskr-export-agent` are upload-capable clients; they appear as transfer
 # producers, not because they publish events, but because the transfer protocol's
 # request documents originate on their side of the wire.
+# `ratatoskr-site-sdk` is the client package of SITE-025 that every site builds on; it
+# appears as a consumer of sites/release.v1 and sites/page.v1, which it reads.
 [entity_kinds]
 known = [
   "ai_archive", "ai_conversation", "ai_project", "analysis", "backup_policy",
@@ -2247,7 +2250,7 @@ lifecycle      = "proposed"
 classification = "public"
 owner          = "ratatoskr-sites"
 producers      = ["ratatoskr-sites"]
-consumers      = ["ratatoskr-web"]
+consumers      = ["ratatoskr-sites", "ratatoskr-site-sdk", "ratatoskr-web"]
 crate_name     = "ratatoskr-sites-contracts"
 canonical_path = "crates/sites-contracts/src/release.rs"
 fixtures_dir   = "fixtures/sites/release"
@@ -2269,7 +2272,7 @@ lifecycle      = "proposed"
 classification = "public"
 owner          = "ratatoskr-sites"
 producers      = ["ratatoskr-sites"]
-consumers      = ["ratatoskr-web"]
+consumers      = ["ratatoskr-sites", "ratatoskr-site-sdk", "ratatoskr-web"]
 crate_name     = "ratatoskr-sites-contracts"
 canonical_path = "crates/sites-contracts/src/page.rs"
 fixtures_dir   = "fixtures/sites/page"
