@@ -79,3 +79,43 @@ fn a_path_under_the_forwarding_prefix_is_refused() {
         "a path under _r/ passes the schema"
     );
 }
+
+/// The manifest that the SDK template builds deserialises into the Rust type and serialises back
+/// to the same bytes, so the type loses, adds and reorders nothing.
+#[test]
+fn a_valid_manifest_round_trips() {
+    let path = repo_root().join(FIXTURES).join("valid/sdk-template.json");
+    let text = std::fs::read_to_string(&path).expect("the valid fixture is readable");
+    let manifest: ratatoskr_sites_contracts::BundleManifest =
+        serde_json::from_str(&text).expect("the valid fixture is a bundle manifest");
+    let again = ratatoskr_identifiers::canonical_json(&manifest).expect("the manifest renders");
+    assert_eq!(
+        again, text,
+        "the valid fixture does not round-trip to the same bytes"
+    );
+}
+
+/// Spec `site-bundles`, "A bundle ships the SDK pages": `.ratatoskr/` is accepted.
+#[test]
+fn a_manifest_with_the_reserved_sdk_path_is_valid() {
+    let schema = schema();
+    let fixture = fixture("valid/sdk-template.json");
+    let listed = fixture
+        .get("files")
+        .and_then(serde_json::Value::as_array)
+        .is_some_and(|files| {
+            files.iter().any(|file| {
+                file.get("path").and_then(serde_json::Value::as_str)
+                    == Some(".ratatoskr/sign-in/index.html")
+            })
+        });
+    assert!(
+        listed,
+        "the fixture must list .ratatoskr/sign-in/index.html"
+    );
+    assert_eq!(
+        validate(&schema, &fixture),
+        Ok(()),
+        "the SDK path is refused"
+    );
+}
