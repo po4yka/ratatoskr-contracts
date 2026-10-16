@@ -190,6 +190,7 @@ root_types! {
     "ratatoskr_sites_contracts::BundleManifest" => ratatoskr_sites_contracts::BundleManifest,
     "ratatoskr_sites_contracts::DeployActivated"
         => ratatoskr_sites_contracts::DeployActivated,
+    "ratatoskr_sites_contracts::DeployRequest" => ratatoskr_sites_contracts::DeployRequest,
     "ratatoskr_sites_contracts::DeployStored"   => ratatoskr_sites_contracts::DeployStored,
     "ratatoskr_sites_contracts::DraftChanged"   => ratatoskr_sites_contracts::DraftChanged,
     "ratatoskr_sites_contracts::Page"           => ratatoskr_sites_contracts::Page,

@@ -1,0 +1,13 @@
+{
+  "site_id": "docs",
+  "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "capabilities": [
+    "pages.read"
+  ],
+  "hostname": "docs.example.test",
+  "state": "approved",
+  "github_repository": {
+    "repository": "owner/docs-site",
+    "repository_id": "1420131804"
+  }
+}

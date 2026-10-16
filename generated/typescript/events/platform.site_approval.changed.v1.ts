@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:63bc6fb9bb81477e3be8aad31e9ff47413e0552921eaf48edf8b73e072e76870
+ * source_digest: sha256:c08fd38197dc789aa387bdf1ce9a7807182b15098aa10f1e37f3c73fb326c926
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -27,6 +27,11 @@ export interface SiteApprovalChanged {
   * The capabilities of the approved manifest, each once.
   */
  capabilities: SiteCapability[];
+ /**
+  * The repository identity covered by this approval. Absent only for legacy documents;
+  * its absence grants no deploy authority (workspace SITE-028).
+  */
+ github_repository?: GitHubRepositoryBinding | null;
  /**
   * The hostname of the approved manifest.
   */
@@ -54,6 +59,38 @@ export type ApprovalState = "approved" | "withdrawn";
  * Lowercase hexadecimal bytes of a content digest.
  */
 export type DigestHex = string;
+
+/**
+ * One repository whose signed builds the owner approves for a site.
+ *
+ * Both fields are part of the manifest digest and the approval event. A changed name or id needs
+ * a new owner approval. Absence in a legacy manifest grants no deploy authority.
+ */
+export interface GitHubRepositoryBinding {
+ /**
+  * The canonical public GitHub repository name that the owner approves.
+  */
+ repository: GitHubRepositoryName;
+ /**
+  * Its immutable GitHub repository id; a reused name does not keep this identity.
+  */
+ repository_id: GitHubRepositoryId;
+}
+
+/**
+ * The immutable positive GitHub repository id, in decimal with no leading zero.
+ *
+ * A string keeps the exact integer in generated JavaScript clients. This is public identity,
+ * not a credential. Verification compares it with the signed certificate claim.
+ */
+export type GitHubRepositoryId = string;
+
+/**
+ * The canonical lower-case GitHub repository in an approval, as `owner/name`.
+ *
+ * It names one public GitHub repository. The numeric id also has to match its signed identity.
+ */
+export type GitHubRepositoryName = string;
 
 /**
  * The DNS hostname that serves a site, in lower case, without a scheme, a port or a final dot.

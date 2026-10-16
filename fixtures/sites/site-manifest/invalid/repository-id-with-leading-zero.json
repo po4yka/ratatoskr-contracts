@@ -1,0 +1,14 @@
+{
+  "site_id": "docs",
+  "hostname": "docs.example.test",
+  "publications": [
+    "handbook"
+  ],
+  "capabilities": [
+    "pages.read"
+  ],
+  "github_repository": {
+    "repository": "owner/docs-site",
+    "repository_id": "01"
+  }
+}

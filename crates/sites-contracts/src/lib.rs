@@ -13,7 +13,7 @@
 //!   flag.
 //! - [`DeployStored`] / [`DeployActivated`] — contracts `sites/deploy-stored.v1` and
 //!   `sites/deploy-activated.v1`, the answers of `POST /v1/sites/{site}/deploys` (body: the bundle
-//!   archive, `application/x-tar`) and `POST /v1/sites/{site}/deploys/{commit}/activate` (no
+//!   request [`DeployRequest`], adopted by workspace SITE-028) and `POST /v1/sites/{site}/deploys/{commit}/activate` (no
 //!   body). The commit is the deploy id.
 //! - [`SiteEvent`] — contract `sites/site-event.v1` (changeset SITE-027): the data of one event of
 //!   `GET /v1/sites/{site}/events`, with the payloads [`ReleaseNotice`], [`DraftNotice`],
@@ -35,6 +35,9 @@
 //!   [`FrontmatterKey`] / [`CalloutKind`] / [`LinkUrl`] / [`ImageUrl`] / [`BundlePath`] /
 //!   [`RepositoryName`] / [`CommitSha`] / [`SourceRef`] — validated strings.
 //!
+//! [`GitHubRepositoryBinding`] is the optional first-version approval expansion. Its absence
+//! keeps legacy payloads readable and grants no deploy authority.
+//!
 //! # What is deliberately absent
 //!
 //! No vault path, no note that a publication does not select, no credential. Every type refuses a
@@ -50,6 +53,7 @@ mod events;
 mod manifest;
 mod messages;
 mod page;
+mod provenance;
 mod release;
 
 pub use crate::bundle::{BundleFile, BundleManifest, BundlePath, CommitSha, RepositoryName};
@@ -65,6 +69,9 @@ pub use crate::messages::{
 pub use crate::page::{
     Anchor, AssetRef, CalloutFold, CalloutKind, EmbedTarget, FrontmatterKey, ImageUrl, LinkUrl,
     Page, PageNode, PageRoot, PageRootType, TableAlign,
+};
+pub use crate::provenance::{
+    DeployRequest, GitHubRepositoryBinding, GitHubRepositoryId, GitHubRepositoryName,
 };
 pub use crate::release::{
     MAX_ASSET_SIZE_BYTES, NavigationEntry, PageTitle, Release, ReleaseAsset, ReleasePage, Slug,

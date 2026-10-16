@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:51ed02a607c148d974b900a481b9ea6665b1069b2e55ae81bd8edb5841a4dac5
+ * source_digest: sha256:b8aa31c02cb8585de8969cf60aa6222de475f40d647fed758a8ff4d2e72387ab
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -30,6 +30,11 @@ export interface SiteManifest {
   */
  capabilities: SiteCapability[];
  /**
+  * The repository identity covered by this approval. Absent only for legacy documents;
+  * its absence grants no deploy authority (workspace SITE-028).
+  */
+ github_repository?: GitHubRepositoryBinding | null;
+ /**
   * The one hostname that serves the site.
   */
  hostname: Hostname;
@@ -42,6 +47,38 @@ export interface SiteManifest {
   */
  site_id: SiteId;
 }
+
+/**
+ * One repository whose signed builds the owner approves for a site.
+ *
+ * Both fields are part of the manifest digest and the approval event. A changed name or id needs
+ * a new owner approval. Absence in a legacy manifest grants no deploy authority.
+ */
+export interface GitHubRepositoryBinding {
+ /**
+  * The canonical public GitHub repository name that the owner approves.
+  */
+ repository: GitHubRepositoryName;
+ /**
+  * Its immutable GitHub repository id; a reused name does not keep this identity.
+  */
+ repository_id: GitHubRepositoryId;
+}
+
+/**
+ * The immutable positive GitHub repository id, in decimal with no leading zero.
+ *
+ * A string keeps the exact integer in generated JavaScript clients. This is public identity,
+ * not a credential. Verification compares it with the signed certificate claim.
+ */
+export type GitHubRepositoryId = string;
+
+/**
+ * The canonical lower-case GitHub repository in an approval, as `owner/name`.
+ *
+ * It names one public GitHub repository. The numeric id also has to match its signed identity.
+ */
+export type GitHubRepositoryName = string;
 
 /**
  * The DNS hostname that serves a site, in lower case, without a scheme, a port or a final dot.

@@ -6,6 +6,7 @@ use ratatoskr_identifiers::{DigestHex, OperationId, WireTimestamp};
 use crate::error::SitesContractError;
 use crate::events::SourceRef;
 use crate::manifest::{Hostname, PublicationId, SiteCapability, SiteId, no_duplicate};
+use crate::provenance::GitHubRepositoryBinding;
 use crate::release::{Slug, strictly_ascending};
 
 /// Payload of `sites.release.build_requested.v1`: build a release of one site.
@@ -160,6 +161,11 @@ pub struct SiteApprovalChanged {
 
     /// Whether the approval is now in force.
     pub state: ApprovalState,
+
+    /// The repository identity covered by this approval. Absent only for legacy documents;
+    /// its absence grants no deploy authority (workspace SITE-028).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub github_repository: Option<GitHubRepositoryBinding>,
 }
 
 impl EventPayload for SiteApprovalChanged {
@@ -226,6 +232,8 @@ struct SiteApprovalChangedWire {
     capabilities: Vec<SiteCapability>,
     hostname: Hostname,
     state: ApprovalState,
+    #[serde(default)]
+    github_repository: Option<GitHubRepositoryBinding>,
 }
 
 impl<'de> serde::Deserialize<'de> for SiteApprovalChanged {
@@ -240,6 +248,7 @@ impl<'de> serde::Deserialize<'de> for SiteApprovalChanged {
             capabilities: wire.capabilities,
             hostname: wire.hostname,
             state: wire.state,
+            github_repository: wire.github_repository,
         };
         payload.validate().map_err(serde::de::Error::custom)?;
         Ok(payload)

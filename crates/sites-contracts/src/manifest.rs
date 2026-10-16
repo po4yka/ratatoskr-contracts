@@ -2,6 +2,8 @@
 
 use ratatoskr_identifiers::wire_string_newtype;
 
+use crate::provenance::GitHubRepositoryBinding;
+
 use crate::error::SitesContractError;
 
 wire_string_newtype! {
@@ -141,6 +143,11 @@ pub struct SiteManifest {
     /// owner approves the manifest in Platform.
     #[schemars(extend("uniqueItems" = true))]
     pub capabilities: Vec<SiteCapability>,
+
+    /// The repository identity covered by this approval. Absent only for legacy documents;
+    /// its absence grants no deploy authority (workspace SITE-028).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub github_repository: Option<GitHubRepositoryBinding>,
 }
 
 impl SiteManifest {
@@ -196,6 +203,8 @@ struct SiteManifestWire {
     hostname: Hostname,
     publications: Vec<PublicationId>,
     capabilities: Vec<SiteCapability>,
+    #[serde(default)]
+    github_repository: Option<GitHubRepositoryBinding>,
 }
 
 impl<'de> serde::Deserialize<'de> for SiteManifest {
@@ -209,6 +218,7 @@ impl<'de> serde::Deserialize<'de> for SiteManifest {
             hostname: wire.hostname,
             publications: wire.publications,
             capabilities: wire.capabilities,
+            github_repository: wire.github_repository,
         };
         manifest.validate().map_err(serde::de::Error::custom)?;
         Ok(manifest)

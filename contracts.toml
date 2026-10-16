@@ -2232,7 +2232,7 @@ consumers      = ["ratatoskr-sites"]
 crate_name     = "ratatoskr-sites-contracts"
 canonical_path = "crates/sites-contracts/src/manifest.rs"
 fixtures_dir   = "fixtures/sites/site-manifest"
-summary        = "Document: ratatoskr-site.toml, the site id, one hostname, the publications and the requested capabilities of one site. The capability set is closed and unknown keys are refused."
+summary        = "Document: ratatoskr-site.toml, the site id, one hostname, the publications, requested capabilities and optional owner-approved GitHub repository identity of one site. The capability set is closed and unknown keys are refused."
 
 [[contract.root_type]]
 rust_path      = "ratatoskr_sites_contracts::SiteManifest"
@@ -2357,7 +2357,7 @@ consumers      = ["ratatoskr-sites"]
 crate_name     = "ratatoskr-sites-contracts"
 canonical_path = "crates/sites-contracts/src/messages.rs"
 fixtures_dir   = "fixtures/events/platform.site_approval.changed.v1"
-summary        = "Fact: the owner approved or withdrew the manifest of one site in identity.site_approvals. Names the site, the manifest SHA-256, the approved capabilities, the hostname and the state; unknown fields are refused."
+summary        = "Fact: the owner approved or withdrew the manifest of one site in identity.site_approvals. Names the site, the manifest SHA-256, the approved capabilities, hostname, state and optional repository binding for SITE-028; unknown fields are refused."
 
 [[contract.root_type]]
 rust_path      = "ratatoskr_sites_contracts::SiteApprovalChanged"
@@ -2405,7 +2405,7 @@ consumers      = ["ratatoskr-site-sdk"]
 crate_name     = "ratatoskr-sites-contracts"
 canonical_path = "crates/sites-contracts/src/deploy.rs"
 fixtures_dir   = "fixtures/sites/deploy-stored"
-summary        = "Response: POST /v1/sites/{site}/deploys stored the bundle of one commit, the deploy id. Names the site, the commit, the file count, the size and whether this request created it; the request body is the bundle archive, application/x-tar; unknown fields are refused."
+summary        = "Response: POST /v1/sites/{site}/deploys stored the bundle of one commit, the deploy id. Names the site, the commit, the file count, the size and whether this request created it; the SITE-028 request body is the immutable artifact request; unknown fields are refused."
 
 [[contract.root_type]]
 rust_path      = "ratatoskr_sites_contracts::DeployStored"
@@ -2490,3 +2490,25 @@ privacy        = "boundary_metadata"
 [contract.event]
 event_type   = "sites.draft.changed.v1"
 payload_type = "ratatoskr_sites_contracts::DraftChanged"
+
+# ---------------------------------------------------------------------------
+[[contract]]
+id             = "sites.deploy_request"
+family         = "sites"
+major_version  = 1
+lifecycle      = "proposed"
+classification = "internal"
+owner          = "ratatoskr-sites"
+producers      = ["ratatoskr-site-sdk"]
+consumers      = ["ratatoskr-platform", "ratatoskr-sites"]
+crate_name     = "ratatoskr-sites-contracts"
+canonical_path = "crates/sites-contracts/src/provenance.rs"
+fixtures_dir   = "fixtures/sites/deploy-request"
+summary        = "Request: a full source commit, immutable OCI manifest digest and untrusted public Sigstore proof for the existing deploy route. The server derives the registry path from approval and verifies the signature and bytes; no host, repository or tag override."
+
+[[contract.root_type]]
+rust_path      = "ratatoskr_sites_contracts::DeployRequest"
+output         = "schemas/json-schema/sites/deploy-request.v1.schema.json"
+schema_id      = "urn:ratatoskr:contracts:sites:v1:DeployRequest"
+unknown_policy = "reject"
+privacy        = "boundary_metadata"

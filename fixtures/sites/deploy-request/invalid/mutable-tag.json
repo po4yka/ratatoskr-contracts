@@ -1,0 +1,7 @@
+{
+  "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "attestation_bundle": {
+    "mediaType": "application/vnd.dev.sigstore.bundle.v0.3+json"
+  },
+  "artifact_sha256": "sha-latest"
+}

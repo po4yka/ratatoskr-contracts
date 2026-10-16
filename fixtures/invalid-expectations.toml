@@ -1294,3 +1294,50 @@ reason         = "Each path appears once in a bundle. JSON Schema cannot state u
 rejected_by    = ["serde"]
 error_contains = "is 1026 bytes; the contract maximum is 1024"
 reason         = "A bundle path is at most 1024 UTF-8 bytes. This path has 516 characters and 1026 bytes: the schema's maxLength counts characters and accepts it, and the Rust type, which counts bytes, refuses it."
+
+# SITE-028: repository binding and immutable artifact requests.
+
+["sites/site-manifest/invalid/uppercase-repository.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "GitHubRepositoryName"
+reason = "Approval identity uses a canonical name and exact positive decimal id."
+
+["sites/site-manifest/invalid/zero-repository-id.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "GitHubRepositoryId"
+reason = "Approval identity uses a canonical name and exact positive decimal id."
+
+["sites/site-manifest/invalid/repository-id-with-leading-zero.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "GitHubRepositoryId"
+reason = "Approval identity uses a canonical name and exact positive decimal id."
+
+["sites/deploy-request/invalid/mutable-tag.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "DigestHex"
+reason = "The deploy request carries only an immutable digest, source commit and public proof object."
+
+["sites/deploy-request/invalid/short-digest.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "DigestHex"
+reason = "The deploy request carries only an immutable digest, source commit and public proof object."
+
+["sites/deploy-request/invalid/origin-override.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "host"
+reason = "The deploy request carries only an immutable digest, source commit and public proof object."
+
+["sites/deploy-request/invalid/repository-override.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "repository"
+reason = "The deploy request carries only an immutable digest, source commit and public proof object."
+
+["sites/deploy-request/invalid/null-proof.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "expected a map"
+reason = "The deploy request carries only an immutable digest, source commit and public proof object."
+
+["sites/deploy-request/invalid/missing-proof.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = "attestation_bundle"
+reason = "A deploy request must carry its untrusted proof for server verification."

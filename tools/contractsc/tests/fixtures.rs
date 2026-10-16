@@ -340,6 +340,9 @@ fn canonical(rust_path: &str, value: &serde_json::Value) -> Result<String, Strin
         "ratatoskr_sites_contracts::DeployActivated" => {
             render!(ratatoskr_sites_contracts::DeployActivated)
         }
+        "ratatoskr_sites_contracts::DeployRequest" => {
+            render!(ratatoskr_sites_contracts::DeployRequest)
+        }
         "ratatoskr_sites_contracts::DeployStored" => {
             render!(ratatoskr_sites_contracts::DeployStored)
         }
