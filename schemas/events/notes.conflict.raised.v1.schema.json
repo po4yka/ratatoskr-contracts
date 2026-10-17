@@ -53,6 +53,20 @@
           "description": "The path that the write named, relative to the vault root, in NFC.",
           "$ref": "#/$defs/VaultPath"
         },
+        "stale_paths": {
+          "description": "Every stale file of a write group, relative to the vault root, in NFC. Notes supplies\nthis private path list from the group; `path` names its first stale file. Absent when\nthe producer has no group list, so a single-file event keeps its previous form.",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/VaultPath"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "writer_hash": {
           "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
           "$ref": "#/$defs/DigestHex"
@@ -134,6 +148,20 @@
         "path": {
           "description": "The path that the write named, relative to the vault root, in NFC.",
           "$ref": "#/$defs/VaultPath"
+        },
+        "stale_paths": {
+          "description": "Every stale file of a write group, relative to the vault root, in NFC. Notes supplies\nthis private path list from the group; `path` names its first stale file. Absent when\nthe producer has no group list, so a single-file event keeps its previous form.",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/VaultPath"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "writer_hash": {
           "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
@@ -222,6 +250,20 @@
           "description": "The path that the write named, relative to the vault root, in NFC.",
           "$ref": "#/$defs/VaultPath"
         },
+        "stale_paths": {
+          "description": "Every stale file of a write group, relative to the vault root, in NFC. Notes supplies\nthis private path list from the group; `path` names its first stale file. Absent when\nthe producer has no group list, so a single-file event keeps its previous form.",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/VaultPath"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "writer_hash": {
           "description": "The lowercase hex SHA-256 of the content that the writer sent. Absent for `rename`, `move`\nand `delete`, which carry no content.",
           "anyOf": [
@@ -253,7 +295,7 @@
     "generator": "contractsc",
     "generator_version": "0.1.0",
     "schemars_version": "1.2.2",
-    "source_digest": "sha256:15cd4e5c7a35dd2665f728c586f75fe03da415073c1e2d454fc5edc5594d299c",
+    "source_digest": "sha256:9f877ef14198237cf05ec7a5d217483060400312b455424ba26cfa23c91832f8",
     "validation_note": "This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what."
   },
   "$defs": {

@@ -153,7 +153,7 @@ impl ContractUnderTest {
     }
 
     /// The generated schema, compiled as draft 2020-12 with format validation.
-    fn validator(&self) -> jsonschema::Validator {
+    pub(crate) fn validator(&self) -> jsonschema::Validator {
         let path = repo_root().join(self.schema);
         let text = std::fs::read_to_string(&path).unwrap_or_else(|error| {
             panic!(

@@ -2189,6 +2189,28 @@ schema_id      = "urn:ratatoskr:contracts:events:v1:ConflictRaised"
 unknown_policy = "reject"
 privacy        = "user_content"
 
+# The optional path list is present in each closed schema branch.
+[[contract.field]]
+pointer     = "/oneOf/0/properties/stale_paths"
+authority   = "producer_asserted"
+nullability = "omitted_when_absent"
+unit        = "vault_relative_path_list"
+note        = "Notes supplies the stale members of a write group. Private vault path metadata; the producer keeps path as the first stale file. No list is emitted when absent."
+
+[[contract.field]]
+pointer     = "/oneOf/1/properties/stale_paths"
+authority   = "producer_asserted"
+nullability = "omitted_when_absent"
+unit        = "vault_relative_path_list"
+note        = "Notes supplies the stale members of a write group. Private vault path metadata; the producer keeps path as the first stale file. No list is emitted when absent."
+
+[[contract.field]]
+pointer     = "/oneOf/2/properties/stale_paths"
+authority   = "producer_asserted"
+nullability = "omitted_when_absent"
+unit        = "vault_relative_path_list"
+note        = "Notes supplies the stale members of a write group. Private vault path metadata; the producer keeps path as the first stale file. No list is emitted when absent."
+
 [contract.event]
 event_type   = "notes.conflict.raised.v1"
 payload_type = "ratatoskr_notes_contracts::ConflictRaised"

@@ -61,6 +61,13 @@ pub struct ConflictRaised {
     /// The path that the write named, relative to the vault root, in NFC.
     pub path: VaultPath,
 
+    /// Every stale file of a write group, relative to the vault root, in NFC. Notes supplies
+    /// this private path list from the group; `path` names its first stale file. Absent when
+    /// the producer has no group list, so a single-file event keeps its previous form.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[schemars(schema_with = "stale_paths_schema")]
+    pub stale_paths: Option<Vec<VaultPath>>,
+
     /// Who asked for the write, repeated from the write: `platform` or `site:<site id>`.
     pub origin: WriteOrigin,
 
@@ -86,6 +93,15 @@ pub struct ConflictRaised {
     /// base revision is still stored, and so only when all three hashes are present.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub merge_proposal: Option<MergeProposal>,
+}
+
+/// `anyOf` has the same validation as `type: ["array", "null"]`, and the TypeScript
+/// projection supports it with the array's typed items. Its primitive-only type-array path
+/// deliberately refuses an array kind rather than emitting an unsound approximation.
+fn stale_paths_schema(generator: &mut schemars::SchemaGenerator) -> schemars::Schema {
+    schemars::json_schema!({
+        "anyOf": [generator.subschema_for::<Vec<VaultPath>>(), { "type": "null" }],
+    })
 }
 
 impl EventPayload for ConflictRaised {
@@ -225,6 +241,8 @@ struct ConflictRaisedWire {
     operation_id: OperationId,
     connection_id: NotesConnectionId,
     path: VaultPath,
+    #[serde(default)]
+    stale_paths: Option<Vec<VaultPath>>,
     origin: WriteOrigin,
     media_type: MediaType,
     #[serde(default)]
@@ -248,6 +266,7 @@ impl<'de> serde::Deserialize<'de> for ConflictRaised {
             operation_id: wire.operation_id,
             connection_id: wire.connection_id,
             path: wire.path,
+            stale_paths: wire.stale_paths,
             origin: wire.origin,
             media_type: wire.media_type,
             base_hash: wire.base_hash,

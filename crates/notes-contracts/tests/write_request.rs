@@ -96,3 +96,71 @@ fn property_value_is_a_blob_ref() {
     contract.assert_refused_by_both("inline-property-value.json");
     contract.assert_refused_by_both("property-value-not-json.json");
 }
+
+/// Vault adapters cannot distinguish a final dot or space on some file systems.
+#[test]
+fn segment_that_ends_in_a_dot_or_a_space_is_refused() {
+    let contract = write_request();
+    contract.assert_accepted_by_both("rename.json");
+    contract.assert_accepted_by_both("obsidian-like-folder.json");
+    for name in [
+        "segment-ending-in-a-dot.json",
+        "config-folder-ending-in-a-dot.json",
+        "segment-ending-in-a-space.json",
+    ] {
+        assert_unsafe_path_at_both_positions(contract, name);
+    }
+    for path in ["Notes/x.", "Notes/x ", " . /x.md", "x/ ./y.md"] {
+        assert_path_layers(contract, path, false);
+    }
+    for path in [
+        "Notes 2026/Plan.md",
+        "Notes.v1/Plan.md",
+        ".obsidian-archive/Plan.md",
+        ".o/Plan.md",
+        ".obsidia/Plan.md",
+        "..archive/Plan.md",
+        "x/.obsidian/Plan.md",
+        "x/ Plan.md",
+        "x/.hidden",
+        "x/..hidden",
+        "x/a.b",
+    ] {
+        assert_path_layers(contract, path, true);
+    }
+}
+
+/// A colon can select an alternate data stream on a supported file system.
+#[test]
+fn colon_is_refused() {
+    let contract = write_request();
+    contract.assert_accepted_by_both("rename.json");
+    assert_unsafe_path_at_both_positions(contract, "colon.json");
+    assert_path_layers(contract, "Notes/B:C.md", false);
+}
+
+fn assert_unsafe_path_at_both_positions(contract: &ContractUnderTest, name: &str) {
+    let payload = contract.fixture(&format!("invalid/{name}"));
+    let path = payload
+        .pointer("/operation/rename/path")
+        .and_then(serde_json::Value::as_str)
+        .expect("the fixture names a rename source");
+    assert_path_layers(contract, path, false);
+}
+
+fn assert_path_layers(contract: &ContractUnderTest, path: &str, accepted: bool) {
+    let validator = contract.validator();
+    for field in ["path", "target_path"] {
+        let mut payload = contract.fixture("valid/rename.json");
+        *payload
+            .pointer_mut(&format!("/operation/rename/{field}"))
+            .expect("the fixture has both rename paths") = serde_json::json!(path);
+        let serde_accepts = (contract.roundtrip)(&payload).is_ok();
+        let schema_accepts = validator.is_valid(&payload);
+        assert_eq!(
+            (serde_accepts, schema_accepts),
+            (accepted, accepted),
+            "{field} {path:?}: (serde, schema) acceptance"
+        );
+    }
+}

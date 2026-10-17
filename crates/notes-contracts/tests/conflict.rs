@@ -46,3 +46,19 @@ fn text_conflict_round_trips() {
     contract.assert_accepted_by_both("text-with-proposal.json");
     contract.assert_accepted_by_both("text-with-overlap.json");
 }
+
+/// A group conflict can name all stale files without changing the old event form.
+#[test]
+fn raised_may_name_every_stale_path() {
+    let contract = raised();
+    contract.assert_accepted_by_both("text-with-overlap.json");
+    let payload = contract.fixture("valid/group-with-stale-paths.json");
+    let parsed = (contract.roundtrip)(&payload);
+    assert_eq!(
+        (parsed.is_ok(), contract.validator().is_valid(&payload)),
+        (true, true),
+        "(serde, schema) acceptance of the group path list; serde: {parsed:?}"
+    );
+    contract.assert_accepted_by_both("group-with-stale-paths.json");
+    contract.assert_refused_by_both("group-with-invalid-stale-path.json");
+}

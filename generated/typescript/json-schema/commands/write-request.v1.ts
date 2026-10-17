@@ -7,7 +7,7 @@
  * generator: contractsc
  * generator_version: 0.1.0
  * schemars_version: 1.2.2
- * source_digest: sha256:8c75fe59fbdee0bc1822638ae43563614fdd46fdd8fe951171b43e97e1f2616d
+ * source_digest: sha256:17164ef560d693ab1f37268ee0a9131b30954e869becc00517d666f4b1e98236
  * validation_note: This schema is a LOWER BOUND on validity. Cross-field invariants and canonical-form rules are enforced by the canonical Rust type; see fixtures/invalid-expectations.toml for which layer rejects what.
  */
 /**
@@ -244,8 +244,9 @@ export interface UpdateFile {
  * `.obsidian` in any ASCII case.
  *
  * Not empty, at most 1024 UTF-8 bytes, segments separated by `/`, no leading or trailing
- * `/`, no empty, `.` or `..` segment, no backslash and no C0 or DEL control character, so a
- * path can never name a file outside the vault. `.obsidian/` is the vault configuration, and
+ * `/`, no empty, `.` or `..` segment, no colon or backslash, and no C0 or DEL control
+ * character. No segment ends in a dot or an ASCII space. These rules keep names portable
+ * across the supported vault adapters. A path can never name a file outside the vault. `.obsidian/` is the vault configuration, and
  * Ratatoskr never writes it; a case-insensitive file system maps `.OBSIDIAN/` to the same
  * folder, so every case is refused. The pattern spells the first segment without
  * look-ahead: any segment, except one that starts with `.o` and continues with exactly

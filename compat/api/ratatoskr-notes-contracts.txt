@@ -1230,6 +1230,7 @@ pub ratatoskr_notes_contracts::ConflictRaised::merge_proposal: core::option::Opt
 pub ratatoskr_notes_contracts::ConflictRaised::operation_id: ratatoskr_identifiers::uuid_ids::OperationId
 pub ratatoskr_notes_contracts::ConflictRaised::origin: ratatoskr_notes_contracts::WriteOrigin
 pub ratatoskr_notes_contracts::ConflictRaised::path: ratatoskr_notes_contracts::VaultPath
+pub ratatoskr_notes_contracts::ConflictRaised::stale_paths: core::option::Option<alloc::vec::Vec<ratatoskr_notes_contracts::VaultPath>>
 pub ratatoskr_notes_contracts::ConflictRaised::writer_hash: core::option::Option<ratatoskr_identifiers::blob::DigestHex>
 pub ratatoskr_notes_contracts::ConflictResolved::conflict_id: ratatoskr_identifiers::uuid_ids::NotesConflictId
 pub ratatoskr_notes_contracts::ConflictResolved::connection_id: ratatoskr_identifiers::uuid_ids::NotesConnectionId

@@ -1341,3 +1341,28 @@ reason = "The deploy request carries only an immutable digest, source commit and
 rejected_by = ["json_schema", "serde"]
 error_contains = "attestation_bundle"
 reason = "A deploy request must carry its untrusted proof for server verification."
+
+["commands/notes.file.write_requested.v1/invalid/segment-ending-in-a-dot.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = 'VaultWritePath "Notes./x.md" does not match'
+reason = "OBS-029: a write name must have no colon and no segment that ends in a dot or a space."
+
+["commands/notes.file.write_requested.v1/invalid/config-folder-ending-in-a-dot.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = 'VaultWritePath ".obsidian./app.json" does not match'
+reason = "OBS-029: a write name must have no colon and no segment that ends in a dot or a space."
+
+["commands/notes.file.write_requested.v1/invalid/segment-ending-in-a-space.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = 'VaultWritePath "Notes /x.md" does not match'
+reason = "OBS-029: a write name must have no colon and no segment that ends in a dot or a space."
+
+["commands/notes.file.write_requested.v1/invalid/colon.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = 'VaultWritePath "A:B.md" does not match'
+reason = "OBS-029: a write name must have no colon and no segment that ends in a dot or a space."
+
+["events/notes.conflict.raised.v1/invalid/group-with-invalid-stale-path.json"]
+rejected_by = ["json_schema", "serde"]
+error_contains = 'VaultPath "../outside.md" does not match'
+reason = "OBS-029: each stale path uses the existing relative vault path contract."

@@ -30,8 +30,9 @@ wire_string_newtype! {
     /// `.obsidian` in any ASCII case.
     ///
     /// Not empty, at most 1024 UTF-8 bytes, segments separated by `/`, no leading or trailing
-    /// `/`, no empty, `.` or `..` segment, no backslash and no C0 or DEL control character, so a
-    /// path can never name a file outside the vault. `.obsidian/` is the vault configuration, and
+    /// `/`, no empty, `.` or `..` segment, no colon or backslash, and no C0 or DEL control
+    /// character. No segment ends in a dot or an ASCII space. These rules keep names portable
+    /// across the supported vault adapters. A path can never name a file outside the vault. `.obsidian/` is the vault configuration, and
     /// Ratatoskr never writes it; a case-insensitive file system maps `.OBSIDIAN/` to the same
     /// folder, so every case is refused. The pattern spells the first segment without
     /// look-ahead: any segment, except one that starts with `.o` and continues with exactly
@@ -42,24 +43,27 @@ wire_string_newtype! {
     pub struct VaultWritePath {
         pattern  = concat!(
             "^(?:",
-            // A first segment that does not start with a dot.
-            r"[^./\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*",
-            // `.` and a character other than `.`, `o` or `O`.
-            r"|\.[^./oO\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*",
-            // `.o` and anything except exactly `bsidian` in any case.
-            r"|\.[oO](?:|[^bB/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[bB]",
-            r"(?:|[^sS/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[sS]",
-            r"(?:|[^iI/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[iI]",
-            r"(?:|[^dD/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[dD]",
-            r"(?:|[^iI/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[iI]",
-            r"(?:|[^aA/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[aA]",
-            r"(?:|[^nN/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*|[nN][^/\\\x00-\x1f\x7f]+)))))))",
-            // `..` and at least one more character.
-            r"|\.\.[^/\\\x00-\x1f\x7f][^/\\\x00-\x1f\x7f]*",
+            // A non-dot first character, then an optional tail with a portable final character.
+            r"[^./:\\\x00-\x1f\x7f ]|[^./:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]",
+            // A dot followed by a character other than dot or the configuration prefix.
+            r"|\.(?:[^.oO/:\\\x00-\x1f\x7f ]|[^.oO/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ])",
+            // Two dots need at least one more character; a final dot or space is refused.
+            r"|\.\.[^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]",
+            // Every proper prefix of `.obsidian` is allowed. A differing character
+            // either ends the segment safely or has a tail that ends safely.
+            r"|\.[oO]",
+            r"(?:|[^bB./:\\\x00-\x1f\x7f ]|[^bB/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[bB]",
+            r"(?:|[^sS./:\\\x00-\x1f\x7f ]|[^sS/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[sS]",
+            r"(?:|[^iI./:\\\x00-\x1f\x7f ]|[^iI/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[iI]",
+            r"(?:|[^dD./:\\\x00-\x1f\x7f ]|[^dD/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[dD]",
+            r"(?:|[^iI./:\\\x00-\x1f\x7f ]|[^iI/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[iI]",
+            r"(?:|[^aA./:\\\x00-\x1f\x7f ]|[^aA/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[aA]",
+            r"(?:|[^nN./:\\\x00-\x1f\x7f ]|[^nN/:\\\x00-\x1f\x7f][^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ]|[nN]",
+            // The full configuration name needs a nonempty portable suffix.
+            r"[^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ])))))))",
             ")",
-            // Every later segment follows the `VaultPath` grammar.
-            r"(?:/(?:[^./\\\x00-\x1f\x7f]|\.[^./\\\x00-\x1f\x7f]|\.\.[^/\\\x00-\x1f\x7f])",
-            r"[^/\\\x00-\x1f\x7f]*)*$",
+            // Later segments can be hidden, but each must have a portable final character.
+            r"(?:/[^/:\\\x00-\x1f\x7f]*[^./:\\\x00-\x1f\x7f ])*$",
         ),
         max_len  = 1024,
         examples = ["Projects/Plan.md", "Archive/2026/Plan.md"],
